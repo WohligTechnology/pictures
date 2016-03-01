@@ -9,49 +9,92 @@
 </div> -->
 
 <section>
-  <div class="bg1">
-    <div class="container">
-      <ul class="nav-opt1 list-unstyled">
-        <li>
-          <a>MOVIES</a>
-        </li>
-        <li>
-          <a>EVENTS</a>
-        </li>
-        <li>
-          <a>WEDDINGS</a>
-        </li>
-        <li>
-          <a>MICE</a>
-        </li>
-        <li>
-          <a>SPORTS</a>
-        </li>
-        <li>
-          <a>TALENT</a>
-        </li>
-        <li>
-          <a>WORLD TOURS</a>
-        </li>
-      </ul>
+  <div class="section1">
+    <div class="bg1">
+      <div class="container">
+        <ul class="nav-opt1 list-unstyled">
+          <li>
+            <a>MOVIES</a>
+          </li>
+          <li>
+            <a>EVENTS</a>
+          </li>
+          <li>
+            <a>WEDDINGS</a>
+          </li>
+          <li>
+            <a>MICE</a>
+          </li>
+          <li>
+            <a>SPORTS</a>
+          </li>
+          <li>
+            <a>TALENT</a>
+          </li>
+          <li>
+            <a>WORLD TOURS</a>
+          </li>
+        </ul>
+      </div>
     </div>
   </div>
 </section>
 <section>
-  <div class="bg2">
-    <div class="flex-slider">
-      <flex-slider flex-slide="item in diaries track by $index" animation="slide" animation-loop="false" item-width="320" item-margin="0" as-nav-for="#slider" slideshow="false">
-        <li>
-          <div class="testimonials-slide">
-            <img ng-src="{{item.src}}" alt="" class="quote">
-            <div class="name">
-              <p class="bold">{{item.date}}</p>
-              <p>{{item.cont}}</p>
-              <a ng-href="{{item.link}}">Read More</a>
+  <div class="section2">
+    <div class="bg2">
+      <div class="flex-slider">
+        <flex-slider flex-slide="item in diaries track by $index" animation="slide" animation-loop="false" item-width="320" item-margin="0" as-nav-for="#slider" slideshow="false">
+          <li>
+            <div class="testimonials-slide">
+              <img ng-src="{{item.src}}" alt="" class="quote">
+              <div class="name">
+                <p class="bold">{{item.date}}</p>
+                <p>{{item.cont}}</p>
+                <a ng-href="{{item.link}}">Read More</a>
+              </div>
             </div>
+          </li>
+        </flex-slider>
+      </div>
+      <div class="btn-all text-center">
+        <button class="btn btn-primary">
+          View All
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+<section>
+  <div class="section3">
+    <div class="bg3">
+      <div class="container">
+        <div class="name-cont">
+          <img src="img/" alt="" class="img-review">
+          <p>
+            Client
+            <br> Speak
+          </p>
+        </div>
+        <div class="img-review">
+          <h4>"Extra Efficient"</h4>
+          <p>- Amitabh Bachchan</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section>
+  <div class="section4">
+    <div class="subcribe">
+      <div class="container">
+        <h4>Sign up for the GS newsletter to receive latest updates.</h4>
+        <form class="bs-example bs-example-form" role="form">
+          <div class="input-group input-group-lg">
+            <input type="text" class="form-control" placeholder="Enter email address">
+            <span class="input-group-addon btn btn-primary">Subscribe</span>
           </div>
-        </li>
-      </flex-slider>
+      </div>
+      </form>
     </div>
   </div>
 </section>
