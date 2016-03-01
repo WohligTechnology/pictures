@@ -11,10 +11,35 @@ firstapp.config(function($stateProvider, $urlRouterProvider, $httpProvider, $loc
   $httpProvider.defaults.withCredentials = true;
   $stateProvider
     .state('home', {
-    url: "/home",
-    templateUrl: "views/template.html",
-    controller: 'HomeCtrl'
-  });
+      url: "/home",
+      templateUrl: "views/template.html",
+      controller: 'HomeCtrl'
+    })
+    .state('movies', {
+      url: "/movies",
+      templateUrl: "views/template.html",
+      controller: 'MoviesCtrl'
+    })
+    .state('moviesinside', {
+      url: "/moviesinside",
+      templateUrl: "views/template.html",
+      controller: 'MoviesInsideCtrl'
+    })
+    .state('talents', {
+      url: "/talents",
+      templateUrl: "views/template.html",
+      controller: 'TalentsCtrl'
+    })
+    .state('wedding', {
+      url: "/wedding",
+      templateUrl: "views/template.html",
+      controller: 'WeddingCtrl'
+    })
+    .state('weddinginside', {
+      url: "/weddinginside",
+      templateUrl: "views/template.html",
+      controller: 'WeddingInsideCtrl'
+    });
   $urlRouterProvider.otherwise("/home");
   $locationProvider.html5Mode(isproduction);
 });
@@ -41,26 +66,26 @@ firstapp.directive('img', function($compile, $parse) {
 });
 
 firstapp.directive('fancyboxBox', function($document) {
-    return {
-        restrict: 'EA',
-        replace: false,
-        link: function(scope, element, attr) {
-            var $element = $(element);
-            var target;
-            if (attr.rel) {
-               target = $("[rel='" + attr.rel + "']");
-            } else {
-                target = element;
-            }
+  return {
+    restrict: 'EA',
+    replace: false,
+    link: function(scope, element, attr) {
+      var $element = $(element);
+      var target;
+      if (attr.rel) {
+        target = $("[rel='" + attr.rel + "']");
+      } else {
+        target = element;
+      }
 
-            target.fancybox({
-                openEffect: 'fade',
-                closeEffect: 'fade',
-                closeBtn: true,
-                helpers: {
-                    media: {}
-                }
-            });
+      target.fancybox({
+        openEffect: 'fade',
+        closeEffect: 'fade',
+        closeBtn: true,
+        helpers: {
+          media: {}
         }
-    };
+      });
+    }
+  };
 });
