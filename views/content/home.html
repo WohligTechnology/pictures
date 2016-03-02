@@ -9,49 +9,141 @@
 </div> -->
 
 <section>
-  <div class="bg1">
-    <div class="container">
-      <ul class="nav-opt1 list-unstyled">
-        <li>
-          <a>MOVIES</a>
-        </li>
-        <li>
-          <a>EVENTS</a>
-        </li>
-        <li>
-          <a>WEDDINGS</a>
-        </li>
-        <li>
-          <a>MICE</a>
-        </li>
-        <li>
-          <a>SPORTS</a>
-        </li>
-        <li>
-          <a>TALENT</a>
-        </li>
-        <li>
-          <a>WORLD TOURS</a>
-        </li>
-      </ul>
+  <div class="section1">
+    <div class="bg1">
+      <div class="container">
+        <ul class="nav-opt1 list-unstyled">
+          <li>
+            <a>MOVIES</a>
+          </li>
+          <li>
+            <a>EVENTS</a>
+          </li>
+          <li>
+            <a>WEDDINGS</a>
+          </li>
+          <li>
+            <a>MICE</a>
+          </li>
+          <li>
+            <a>SPORTS</a>
+          </li>
+          <li>
+            <a>TALENT</a>
+          </li>
+          <li>
+            <a>WORLD TOURS</a>
+          </li>
+        </ul>
+      </div>
     </div>
   </div>
 </section>
 <section>
-  <div class="bg2">
-    <div class="flex-slider">
-      <flex-slider flex-slide="item in diaries track by $index" animation="slide" animation-loop="false" item-width="320" item-margin="0" as-nav-for="#slider" slideshow="false">
-        <li>
-          <div class="testimonials-slide">
-            <img ng-src="{{item.src}}" alt="" class="quote">
-            <div class="name">
-              <p class="bold">{{item.date}}</p>
-              <p>{{item.cont}}</p>
-              <a ng-href="{{item.link}}">Read More</a>
+  <div class="section2">
+    <div class="bg2">
+      <div class="flex-slider">
+        <flex-slider flex-slide="item in diaries track by $index" animation="slide" animation-loop="false" item-width="320" item-margin="0" as-nav-for="#slider" slideshow="false">
+          <li>
+            <div class="testimonials-slide">
+              <img ng-src="{{item.src}}" alt="" class="quote">
+              <div class="name">
+                <p class="bold">{{item.date}}</p>
+                <p>{{item.cont}}</p>
+                <a ng-href="{{item.link}}">Read More</a>
+              </div>
             </div>
-          </div>
-        </li>
-      </flex-slider>
+          </li>
+        </flex-slider>
+      </div>
+      <div class="btn-all text-center">
+        <button class="btn btn-primary">
+          View All
+        </button>
+      </div>
     </div>
   </div>
 </section>
+<section>
+  <div class="section3">
+    <div class="bg3">
+      <div class="container">
+        <div class="name-cont">
+          <img src="img/" alt="" class="img-review">
+          <p>
+            Client
+            <br> Speak
+          </p>
+        </div>
+        <div class="img-review">
+          <h4>"Extra Efficient"</h4>
+          <p>- Amitabh Bachchan</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section>
+  <div class="section4">
+    <div class="subcribe">
+      <div class="container">
+        <h4>Sign up for the GS newsletter to receive latest updates.</h4>
+        <form class="bs-example bs-example-form" role="form">
+          <div class="input-group input-group-lg">
+            <input type="text" class="form-control" placeholder="Enter email address">
+            <span class="input-group-addon btn btn-primary">Subscribe</span>
+          </div>
+      </div>
+      </form>
+    </div>
+  </div>
+</section>
+<div class="social">
+  <!-- <div ng-include = "'/social.html'"></div> -->
+  <section class="marg-section">
+    <div class="social-back ">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4 col-sm-4">
+            <div class="social-logo text-center">
+              <span>
+          <i class="fa fa-facebook"></i>
+        </span>
+              <div class="feed-social mt30">
+                <div class="fb-page" data-href="https://www.facebook.com/JaipurPinkPanthers/" data-tabs="timeline" data-width="360" data-height="485" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true">
+                  <div class="fb-xfbml-parse-ignore">
+                    <blockquote cite="https://www.facebook.com/JaipurPinkPanthers/">
+                      <a href="https://www.facebook.com/JaipurPinkPanthers/">Jaipur Pink Panthers</a>
+                    </blockquote>
+                  </div>
+                </div>
+                <div id="fb-root"></div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 col-sm-4">
+            <div class="social-logo text-center ">
+              <span>
+          <i class="fa fa-twitter"></i>
+        </span>
+              <div class="feed-social mt30">
+                <a class="twitter-timeline" href="https://twitter.com/JaipurPanthers" data-widget-id="692273446991073280">Tweets by @JaipurPanthers</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 col-sm-4">
+            <div class="social-logo text-center ">
+              <span>
+          <i class="fa fa-instagram"></i>
+        </span>
+              <div class="feed-social mt30">
+                <!-- INSTANSIVE WIDGET -->
+                <iframe src="//instansive.com/widgets/1fef57318c685c5b9410a3b8e18b5ad5.html" id="instansive_1fef57318c" name="instansive_1fef57318c" scrolling="no" allowtransparency="true" class="instansive-widget" style="width: 100%; border: 0; overflow: hidden;"></iframe>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
