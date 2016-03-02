@@ -16,7 +16,39 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     //   'http://flexslider.woothemes.com/images/kitchen_adventurer_donut.jpg',
     //   'http://flexslider.woothemes.com/images/kitchen_adventurer_caramel.jpg'
     // ];
-
+    $scope.diaries = [{
+      img: "img/weddings/diaries/diary1.png",
+      date: "12 January 2016",
+      desc: "Lorem Ipsum is simply dummy text of the printing industry"
+    }
+    , {
+      img: "img/weddings/diaries/diary2.png",
+      date: "12 January 2016",
+      desc: "Lorem Ipsum is simply dummy text of the printing industry"
+    }, {
+      img: "img/weddings/diaries/diary3.png",
+      date: "12 January 2016",
+      desc: "Lorem Ipsum is simply dummy text of the printing industry"
+    }
+    , {
+      img: "img/weddings/diaries/diary2.png",
+      date: "12 January 2016",
+      desc: "Lorem Ipsum is simply dummy text of the printing industry"
+    }, {
+      img: "img/weddings/diaries/diary3.png",
+      date: "12 January 2016",
+      desc: "Lorem Ipsum is simply dummy text of the printing industry"
+    }
+    , {
+      img: "img/weddings/diaries/diary2.png",
+      date: "12 January 2016",
+      desc: "Lorem Ipsum is simply dummy text of the printing industry"
+    }, {
+      img: "img/weddings/diaries/diary3.png",
+      date: "12 January 2016",
+      desc: "Lorem Ipsum is simply dummy text of the printing industry"
+    }
+  ];
   })
   .controller('MoviesCtrl', function($scope, TemplateService, NavigationService, $timeout) {
     //Used to name the .html file
@@ -37,11 +69,11 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
       img: "img/movies/released/released3.jpg",
       date: "12 January 2016",
       desc: "Lorem Ipsum is simply dummy text of the printing industry"
-    },{
+    }, {
       img: "img/movies/released/released4.jpg",
       date: "12 January 2016",
       desc: "Lorem Ipsum is simply dummy text of the printing industry"
-    },{
+    }, {
       img: "img/movies/released/released5.jpg",
       date: "12 January 2016",
       desc: "Lorem Ipsum is simply dummy text of the printing industry"
@@ -77,16 +109,16 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
     $scope.wedding = [{
       img: "img/talent/talents/talent1.jpg",
-      name:"BRAND AMBASSAORS"
+      name: "BRAND AMBASSAORS"
     }, {
       img: "img/talent/talents/talent2.jpg",
-      name:"BRAND AMBASSAORS"
+      name: "BRAND AMBASSAORS"
     }, {
       img: "img/talent/talents/talent3.jpg",
-      name:"BRAND AMBASSAORS"
+      name: "BRAND AMBASSAORS"
     }, {
       img: "img/talent/talents/talent4.jpg",
-      name:"BRAND AMBASSAORS"
+      name: "BRAND AMBASSAORS"
     }];
     $scope.weddings = [{
       img: "img/weddings/diaries/diary1.png",
@@ -109,7 +141,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     $scope.menutitle = NavigationService.makeactive("Wedding");
     TemplateService.title = $scope.menutitle;
     $scope.navigation = NavigationService.getnav();
-     $scope.oneAtATime = true;
+    $scope.oneAtATime = true;
 
     $scope.wedding = [{
       img: "img/weddings/types/type1.jpg"

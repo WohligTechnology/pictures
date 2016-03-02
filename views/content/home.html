@@ -1,38 +1,28 @@
-<!-- <div class="container">
-
-    <flex-slider flex-slide="s in mySlides">
-        <li>
-            <img ng-src="{{s}}">
-        </li>
-    </flex-slider>
-
-</div> -->
-
 <section>
   <div class="section1">
     <div class="bg1">
       <div class="container">
         <ul class="nav-opt1 list-unstyled">
           <li>
-            <a>MOVIES</a>
+            <a href="#">MOVIES</a>
           </li>
           <li>
-            <a>EVENTS</a>
+            <a href="#">EVENTS</a>
           </li>
           <li>
-            <a>WEDDINGS</a>
+            <a href="#">WEDDINGS</a>
           </li>
           <li>
-            <a>MICE</a>
+            <a href="#">MICE</a>
           </li>
           <li>
-            <a>SPORTS</a>
+            <a href="#">SPORTS</a>
           </li>
           <li>
-            <a>TALENT</a>
+            <a href="#">TALENT</a>
           </li>
           <li>
-            <a>WORLD TOURS</a>
+            <a href="#">WORLD TOURS</a>
           </li>
         </ul>
       </div>
@@ -42,15 +32,39 @@
 <section>
   <div class="section2">
     <div class="bg2">
+      <div class="text-center">
+        <div class="wedding-diary">
+          <div class="diary">
+            <img src="img/diary_white.png" alt="diary">
+            <!-- <i class="glyph-icon flaticon-book"></i> -->
+              <h4>GS DIARIES</h4>
+            </div>
+        </diV>
+      </div>
       <div class="flex-slider">
-        <flex-slider flex-slide="item in diaries track by $index" animation="slide" animation-loop="false" item-width="320" item-margin="0" as-nav-for="#slider" slideshow="false">
+        <flex-slider flex-slide="data in diaries track by $index" animation="slide" animation-loop="false" item-width="320" item-margin="0" as-nav-for="#slider" slideshow="false">
           <li>
             <div class="testimonials-slide">
-              <img ng-src="{{item.src}}" alt="" class="quote">
-              <div class="name">
-                <p class="bold">{{item.date}}</p>
-                <p>{{item.cont}}</p>
-                <a ng-href="{{item.link}}">Read More</a>
+              <div class="wed-box">
+                <div class="wed-img-list">
+                  <img ng-src="{{data.img}}" alt="" class="img-responsive">
+                  <div class="ribbon-red">
+                    <img src="img/ribbon_red.png" alt="">
+                    <span>Weddings</span>
+                  </div>
+                </div>
+                <div class="wed-desc">
+                  <div class="wed-date">
+                    <span>{{data.date}}</span>
+                  </div>
+                  <div class="wed-desc">
+                    <p>{{data.desc}}</p>
+                  </div>
+                  <div class="read-more">
+                    <a href="">Read More</a>
+                  </div>
+                </div>
+                <div class="border-red"></div>
               </div>
             </div>
           </li>
