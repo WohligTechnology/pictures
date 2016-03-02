@@ -24,6 +24,42 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     $scope.menutitle = NavigationService.makeactive("Movies");
     TemplateService.title = $scope.menutitle;
     $scope.navigation = NavigationService.getnav();
+
+    $scope.movie = [{
+      img: "img/movies/released/released1.jpg",
+      date: "12 January 2016",
+      desc: "Lorem Ipsum is simply dummy text of the printing industry"
+    }, {
+      img: "img/movies/released/released2.jpg",
+      date: "12 January 2016",
+      desc: "Lorem Ipsum is simply dummy text of the printing industry"
+    }, {
+      img: "img/movies/released/released3.jpg",
+      date: "12 January 2016",
+      desc: "Lorem Ipsum is simply dummy text of the printing industry"
+    },{
+      img: "img/movies/released/released4.jpg",
+      date: "12 January 2016",
+      desc: "Lorem Ipsum is simply dummy text of the printing industry"
+    },{
+      img: "img/movies/released/released5.jpg",
+      date: "12 January 2016",
+      desc: "Lorem Ipsum is simply dummy text of the printing industry"
+    }];
+    $scope.weddings = [{
+      img: "img/weddings/diaries/diary1.png",
+      date: "12 January 2016",
+      desc: "Lorem Ipsum is simply dummy text of the printing industry"
+    }, {
+      img: "img/weddings/diaries/diary2.png",
+      date: "12 January 2016",
+      desc: "Lorem Ipsum is simply dummy text of the printing industry"
+    }, {
+      img: "img/weddings/diaries/diary3.png",
+      date: "12 January 2016",
+      desc: "Lorem Ipsum is simply dummy text of the printing industry"
+    }];
+
   })
   .controller('MoviesInsideCtrl', function($scope, TemplateService, NavigationService, $timeout) {
     //Used to name the .html file
