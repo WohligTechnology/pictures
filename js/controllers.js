@@ -38,6 +38,34 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     $scope.menutitle = NavigationService.makeactive("Talents");
     TemplateService.title = $scope.menutitle;
     $scope.navigation = NavigationService.getnav();
+
+    $scope.wedding = [{
+      img: "img/talent/talents/talent1.jpg",
+      name:"BRAND AMBASSAORS"
+    }, {
+      img: "img/talent/talents/talent2.jpg",
+      name:"BRAND AMBASSAORS"
+    }, {
+      img: "img/talent/talents/talent3.jpg",
+      name:"BRAND AMBASSAORS"
+    }, {
+      img: "img/talent/talents/talent4.jpg",
+      name:"BRAND AMBASSAORS"
+    }];
+    $scope.weddings = [{
+      img: "img/weddings/diaries/diary1.png",
+      date: "12 January 2016",
+      desc: "Lorem Ipsum is simply dummy text of the printing industry"
+    }, {
+      img: "img/weddings/diaries/diary2.png",
+      date: "12 January 2016",
+      desc: "Lorem Ipsum is simply dummy text of the printing industry"
+    }, {
+      img: "img/weddings/diaries/diary3.png",
+      date: "12 January 2016",
+      desc: "Lorem Ipsum is simply dummy text of the printing industry"
+    }];
+
   })
   .controller('WeddingCtrl', function($scope, TemplateService, NavigationService, $timeout) {
     //Used to name the .html file
