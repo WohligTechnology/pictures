@@ -45,6 +45,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     $scope.menutitle = NavigationService.makeactive("Wedding");
     TemplateService.title = $scope.menutitle;
     $scope.navigation = NavigationService.getnav();
+     $scope.oneAtATime = true;
 
     $scope.wedding = [{
       img: "img/weddings/types/type1.jpg"
