@@ -1,0 +1,79 @@
+<section>
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="head-banner text-center">
+          <img src="img/weddings/weddings.png" class="img-responsive" title="Weddings">
+        </div>
+      </div>
+    </div>
+    <div class="row">
+    <div class="col-md-3">
+      <div class="img-tilt">
+        <img src="img/weddings/wedding_fanta.png" class="img-responsive" alt="">
+      </div>
+
+    </div>
+    <div class="col-md-9">
+<div class="wedding-fant-desc">
+  <p>gs worldwide entertainment has forayed into the vast business of Weddings. We at gs entertainment specialize in handling every aspect of your wedding, from A-Z, leaving you to spend time with your loved ones. Here at gs, your dream day is planned creatively by a host of qualified professionals who dedicate themselves entirely in making your day even more special.</p>
+</div>
+    </div>
+    </div>
+    <div class="row">
+      <div class="col-md-4" ng-repeat="data in wedding track by $index">
+        <img ng-src="{{data.img}}" class="img-responsive">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="text-center">
+        <div class="wedding-diary">
+          <ul>
+            <li>
+              <div class="diary">
+              <img src="img/weddings/diaries/diary.png" alt="diary">
+              </div>
+            </li>
+            <li>
+              <div class="diary-title">
+                <h4>wedding diares</h4>
+              </div>
+            </li>
+            <li>
+              <div class="diary">
+              <img src="img/weddings/diaries/diary_back.png" alt="diary">
+              </div>
+            </li>
+          </ul>
+        </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-4" ng-repeat="data in weddings track by $index">
+        <div class="wed-box">
+          <div class="wed-img-list">
+            <img ng-src="{{data.img}}" alt="" class="img-responsive">
+            <div class="ribbon-red">
+              <img src="img/ribbon_red.png" alt="">
+              <span>Weddings</span>
+            </div>
+          </div>
+      <div class="wed-desc">
+        <div class="wed-date">
+          <span>{{data.date}}</span>
+        </div>
+        <div class="wed-desc">
+          <p>{{data.desc}}</p>
+        </div>
+        <div class="read-more">
+          <a href="">Read More</a>
+        </div>
+      </div>
+<div class="border-red"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
