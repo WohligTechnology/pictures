@@ -17,34 +17,41 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     //   'http://flexslider.woothemes.com/images/kitchen_adventurer_caramel.jpg'
     // ];
     $scope.diaries = [{
-      img: "img/weddings/diaries/diary1.png",
+      title: "WEDDINGS",
+      img: "img/home/diaries/diary1.png",
       date: "12 January 2016",
       desc: "Lorem Ipsum is simply dummy text of the printing industry"
     }
     , {
-      img: "img/weddings/diaries/diary2.png",
+      title: "SPORTS",
+      img: "img/home/diaries/diary2.png",
       date: "12 January 2016",
       desc: "Lorem Ipsum is simply dummy text of the printing industry"
     }, {
-      img: "img/weddings/diaries/diary3.png",
+      title: "EVENTS",
+      img: "img/home/diaries/diary3.png",
       date: "12 January 2016",
       desc: "Lorem Ipsum is simply dummy text of the printing industry"
     }
     , {
-      img: "img/weddings/diaries/diary2.png",
+      title: "WEDDINGS",
+      img: "img/home/diaries/diary2.png",
       date: "12 January 2016",
       desc: "Lorem Ipsum is simply dummy text of the printing industry"
     }, {
-      img: "img/weddings/diaries/diary3.png",
+      title: "SPORTS",
+      img: "img/home/diaries/diary3.png",
       date: "12 January 2016",
       desc: "Lorem Ipsum is simply dummy text of the printing industry"
     }
     , {
-      img: "img/weddings/diaries/diary2.png",
+      title: "EVENTS",
+      img: "img/home/diaries/diary2.png",
       date: "12 January 2016",
       desc: "Lorem Ipsum is simply dummy text of the printing industry"
     }, {
-      img: "img/weddings/diaries/diary3.png",
+      title: "WEDDINGS",
+      img: "img/home/diaries/diary3.png",
       date: "12 January 2016",
       desc: "Lorem Ipsum is simply dummy text of the printing industry"
     }

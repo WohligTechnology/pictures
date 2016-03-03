@@ -1,3 +1,4 @@
+@import url(https://fonts.googleapis.com/css?family=Lato:400,100,300,700,900);
 @import "../bower_components/bourbon/app/assets/stylesheets/bourbon";
 @import "../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/mixins";
 @import "../bower_components/bootstrap-sass/assets/stylesheets/bootstrap-sprockets";
@@ -11,9 +12,13 @@ $brand-warning: #ffec39 !default;
 $brand-danger: #e23c3c !default;
 $brand-info: #000072 !default;
 @import "../bower_components/bootstrap-sass/assets/stylesheets/bootstrap";
-// body {
-//   padding-top: 70px;
-// }
+@font-face {
+  font-family: "Folklore";
+  src: url("../fonts/Folklore.otf");
+}
+body {
+  font-family: "Lato";
+}
 img.loading {
   text-align: center;
   opacity: 1;
@@ -27,6 +32,16 @@ img {
 img.doneLoading {
   opacity: 1;
 }
+a {
+  &:hover {
+    text-decoration: none;
+  }
+  &:focus {
+    text-decoration: none;
+    outline: 0;
+    outline-offset: 0;
+  }
+}
 .navbar-default {
   background-color: transparent;
   border-color: transparent;
@@ -39,11 +54,144 @@ img.doneLoading {
   background-size: cover;
   height: 310px;
 }
+header {
+  min-height: 310px;
+  background: rgba(247, 247, 247, 0.3);
+}
+.min-height-section1 {
+  min-height: 360px;
+  color: #E5E5E5;
+  background: rgba(247, 247, 247, 0.3);
+}
 ul.nav-opt1 {
   position: absolute;
   top: 130px;
-  font-size: 40px;
   left: 25%;
+  li {
+    &.pl1 {
+      padding-left: 55px;
+    }
+    &.pl2 {
+      padding-left: 35%;
+    }
+    &.pl4 {
+      padding-left: 39%;
+    }
+    &.pl5 {
+      padding-left: 15%;
+    }
+    &.pl6 {
+      padding-left: 32%;
+    }
+    a {
+      font-family: "Folklore";
+      font-size: 95px;
+      line-height: 0.8;
+      display: block;
+      img {
+        height: 65px;
+        margin-top: -20px;
+        opacity: 0;
+        @include transition(all ease 300ms);
+      }
+      &:hover {
+        img {
+          opacity: 1;
+        }
+      }
+    }
+  }
+  li:nth-child(even) a {
+    color: $brand-danger;
+    &:hover {
+      color: darken($brand-danger, 10%);
+    }
+  }
+}
+.bg2 {
+  background: url('../img/home/home-back2.png') no-repeat;
+  background-size: 100%;
+  .diary {
+    margin-top: 230px;
+    margin-bottom: 20px;
+    h4 {
+      font-size: 30px;
+      color: #fff;
+    }
+  }
+  .flex-slider {
+    width: 1060px;
+    margin: 0 auto;
+    .testimonials-slide {
+      padding: 15px;
+    }
+    .flexslider {
+      background: transparent;
+      border-color: transparent;
+        &:hover {
+      .flex-direction-nav {
+          .flex-prev {
+            left: -50px;
+          }
+          .flex-next {
+            right: -50px;
+          }
+        }
+      }
+    }
+    .flex-direction-nav {
+      a {
+        opacity: 1;
+        width: 50px;
+        height: 90px;
+        &.flex-prev:before {
+          content: url('../img/home/prev.png');
+        }
+        &.flex-next:before {
+          content: url('../img/home/next.png');
+        }
+      }
+    }
+    ol.flex-control-nav.flex-control-paging {
+      display: none;
+    }
+  }
+}
+.wed-box {
+  color: #fff;
+  .wed-img-list {
+    position: relative;
+    .ribbon-red {
+      position: absolute;
+      top: -12px;
+      color: #fff;
+      text-transform: uppercase;
+      img {
+        width: 150px!important;
+      }
+      span {
+        margin: -45px 0 0 5px;
+        display: block;
+        @include transform(rotate(-10deg));
+      }
+    }
+  }
+  .wed-date {
+    font-size: 16px;
+    margin: 5px 0;
+  }
+  .wed-desc-inside {
+    height: 40px;
+    overflow: hidden;
+    p {
+      margin-bottom: 0;
+    }
+  }
+  .read-more a {
+    color: #fff;
+    text-decoration: underline;
+    font-size: 16px;
+  }
 }
 /* Start writing sass here */
 @import "fancybox-override";

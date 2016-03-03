@@ -1,28 +1,31 @@
 <section>
   <div class="section1">
-    <div class="bg1">
+    <!-- <div class="over-text">
+  <img src="img/home/over-text.png" alt="">
+</div> -->
+    <div class="bg1 min-height-section1">
       <div class="container">
         <ul class="nav-opt1 list-unstyled">
-          <li>
-            <a href="#">MOVIES</a>
+          <li class="pl1">
+            <a href="#">MOVIES <img src="img/home/icon-arrow-blue.png" alt=""></a>
+          </li>
+          <li class="pl2">
+            <a href="#" class="color-red">EVENTS <img src="img/home/icon-arrow.png" alt=""></a>
           </li>
           <li>
-            <a href="#">EVENTS</a>
+            <a href="#">WEDDINGS <img src="img/home/icon-arrow-blue.png" alt=""></a>
           </li>
-          <li>
-            <a href="#">WEDDINGS</a>
+          <li class="pl4">
+            <a href="#" class="color-red">MICE <img src="img/home/icon-arrow.png" alt=""></a>
           </li>
-          <li>
-            <a href="#">MICE</a>
+          <li class="pl5">
+            <a href="#">SPORTS <img src="img/home/icon-arrow-blue.png" alt=""></a>
           </li>
-          <li>
-            <a href="#">SPORTS</a>
+          <li class="pl6">
+            <a href="#" class="color-red">TALENT <img src="img/home/icon-arrow.png" alt=""></a>
           </li>
-          <li>
-            <a href="#">TALENT</a>
-          </li>
-          <li>
-            <a href="#">WORLD TOURS</a>
+          <li class="">
+            <a href="#">WORLD TOURS <img src="img/home/icon-arrow-blue.png" alt=""></a>
           </li>
         </ul>
       </div>
@@ -32,66 +35,64 @@
 <section>
   <div class="section2">
     <div class="bg2">
-      <div class="text-center">
-        <div class="wedding-diary">
-          <div class="diary">
-            <img src="img/diary_white.png" alt="diary">
-            <!-- <i class="glyph-icon flaticon-book"></i> -->
-              <h4>GS DIARIES</h4>
+      <div class="container">
+        <div class="text-center">
+          <div class="wedding-diary">
+            <div class="diary">
+              <h4> <i class="glyph-icon fi flaticon-book"></i> GS DIARIES</h4>
             </div>
-        </diV>
-      </div>
-      <div class="flex-slider">
-        <flex-slider flex-slide="data in diaries track by $index" animation="slide" animation-loop="false" item-width="320" item-margin="0" as-nav-for="#slider" slideshow="false">
-          <li>
-            <div class="testimonials-slide">
-              <div class="wed-box">
-                <div class="wed-img-list">
-                  <img ng-src="{{data.img}}" alt="" class="img-responsive">
-                  <div class="ribbon-red">
-                    <img src="img/ribbon_red.png" alt="">
-                    <span>Weddings</span>
-                  </div>
-                </div>
-                <div class="wed-desc">
-                  <div class="wed-date">
-                    <span>{{data.date}}</span>
+          </diV>
+        </div>
+        <div class="flex-slider">
+          <flex-slider flex-slide="data in diaries track by $index" animation="slide" animation-loop="false" item-width="350" item-margin="0" as-nav-for="#slider" slideshow="false">
+            <li>
+              <div class="testimonials-slide">
+                <div class="wed-box">
+                  <div class="wed-img-list">
+                    <img ng-src="{{data.img}}" alt="" class="img-responsive">
+                    <div class="ribbon-red">
+                      <img src="img/ribbon_blue.png" alt="">
+                      <span>{{data.title}}</span>
+                    </div>
                   </div>
                   <div class="wed-desc">
-                    <p>{{data.desc}}</p>
+                    <div class="wed-date">
+                      <span>{{data.date}}</span>
+                    </div>
+                    <div class="wed-desc-inside">
+                      <p>{{data.desc}}</p>
+                    </div>
+                    <div class="read-more">
+                      <a href="">Read More</a>
+                    </div>
                   </div>
-                  <div class="read-more">
-                    <a href="">Read More</a>
-                  </div>
+                  <div class="border-red"></div>
                 </div>
-                <div class="border-red"></div>
               </div>
-            </div>
-          </li>
-        </flex-slider>
-      </div>
-      <div class="btn-all text-center">
-        <button class="btn btn-primary">
-          View All
-        </button>
-      </div>
-    </div>
-  </div>
-</section>
-<section>
-  <div class="section3">
-    <div class="bg3">
-      <div class="container">
-        <div class="name-cont">
-          <img src="img/" alt="" class="img-review">
-          <p>
-            Client
-            <br> Speak
-          </p>
+            </li>
+          </flex-slider>
         </div>
-        <div class="img-review">
-          <h4>"Extra Efficient"</h4>
-          <p>- Amitabh Bachchan</p>
+        <div class="btn-all text-center">
+          <button class="btn btn-primary">
+            View All
+          </button>
+        </div>
+      </div>
+      <div class="section3">
+        <div class="bg3">
+          <div class="container">
+            <div class="name-cont">
+              <img src="img/home/amitabh.jpg" alt="" class="img-review">
+              <p>
+                Client
+                <br> Speak
+              </p>
+            </div>
+            <div class="img-review">
+              <h4>"Extra Efficient"</h4>
+              <p>- Amitabh Bachchan</p>
+            </div>
+          </div>
         </div>
       </div>
     </div>
