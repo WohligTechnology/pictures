@@ -8,271 +8,273 @@
       </div>
     </div>
     <div class="row">
-      <div class="col-md-offset-2 col-md-10">
+      <div class="col-md-offset-2 col-md-8">
         <div class="wedding-fant-desc">
           <p>The first gs film 'Pyar Kiya To Darna Kya’ (1998) proved to be one of the biggest success film of the year. The film starred Dharmendra, Salman Khan, Kajol, Arbaaz Khan and Anjala Zaveri. Having proved as a hit combination by public consensus,
             Salman Khan and Arbaaz Khan featured again with Rani Mukherjee in GS Worldwide Entertainment's second Hindi feature film 'Hello Brother' (2002) directed by Sohail Khan. 'Maine Dil Tujkho Diya ' (2002) was gs worldwide entertainment’s third
             venture film. This film introduced Sohail Khan and Sameera Reddy as actors, which also starred Kabir Bedi and Sanjay Dutt directed by Sohail Khan.</p>
           <p>In 2005 GS Worldwide Entertainment produced 'Ek Ajnabee' with the superstar himself, Mr. Amitabh Bachchan who also starred in the movie along with Arjun Rampal and Perizaad Zorabian, directed by Apoorva Lakhia. National Award Winning Director
-            of the movie ‘Parzania’ Rahul Dholakia joined hands with gs worldwide entertainment to direct its 5th movie ‘Lamhaa’ (2010) that starred Sanjay Dutt, Bipasha Basu & Kunal Kapoor.</p>
+            of the movie ‘Parzania’ Rahul Dholakia joined hands with gs worldwide entertainment to direct its 5th movie ‘Lamhaa’ (2010) that starred Sanjay Dutt, Bipasha Basu &amp; Kunal Kapoor.</p>
         </div>
       </div>
     </div>
-    <div class="movie-category">
+  </div>
+  <div class="movie-category">
+    <div class="container">
       <div class="text-center">
-        <ul>
+        <ul class="list-unstyled">
           <li>
             <a href="">UPCOMING</a>
           </li>
           <li>
             <a href="">RELEASED</a>
           </li>
-
         </ul>
       </div>
       <div class="row">
+        <div class="col-md-1"></div>
         <div class="col-md-2" ng-repeat="data in movie track by $index">
           <div class="movie-box text-center">
             <img ng-src="{{data.img}}" alt="" class="img-responsive">
             <div class="movie-date">
               <span>Release Date:</span>
-              <p>{{data.date}}</p>
+              <p class="color-red">{{data.date}}</p>
             </div>
           </div>
         </div>
       </div>
     </div>
-    <div class="row">
-      <div class="col-md-6" ng-repeat="data in wedding track by $index">
-        <img ng-src="{{data.img}}" class="img-responsive">
-        <div class="name-event text-center">
-          <span>{{data.name}}</span>
+  </div>
+  <div class="row">
+    <div class="col-md-6" ng-repeat="data in wedding track by $index">
+      <img ng-src="{{data.img}}" class="img-responsive">
+      <div class="name-event text-center">
+        <span>{{data.name}}</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-12">
+      <div class="text-center">
+        <div class="wedding-diary">
+          <ul>
+            <li>
+              <div class="diary">
+                <img src="img/weddings/diaries/diary.png" alt="diary">
+
+              </div>
+            </li>
+            <li>
+              <div class="diary-title">
+                <h4>Movie DIARIES</h4>
+              </div>
+            </li>
+            <li>
+              <div class="diary">
+                <img src="img/movie.png" alt="movie">
+              </div>
+            </li>
+          </ul>
         </div>
       </div>
     </div>
-
-    <div class="row">
-      <div class="col-md-12">
-        <div class="text-center">
-          <div class="wedding-diary">
-            <ul>
-              <li>
-                <div class="diary">
-                  <img src="img/weddings/diaries/diary.png" alt="diary">
-
-                </div>
-              </li>
-              <li>
-                <div class="diary-title">
-                  <h4>Movie DIARIES</h4>
-                </div>
-              </li>
-              <li>
-                <div class="diary">
-                  <img src="img/movie.png" alt="movie">
-                </div>
-              </li>
-            </ul>
+  </div>
+  <div class="row">
+    <div class="col-md-4" ng-repeat="data in weddings track by $index">
+      <div class="wed-box">
+        <div class="wed-img-list">
+          <img ng-src="{{data.img}}" alt="" class="img-responsive">
+          <div class="ribbon-red">
+            <img src="img/ribbon_red.png" alt="">
+            <span>Movies</span>
           </div>
         </div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-md-4" ng-repeat="data in weddings track by $index">
-        <div class="wed-box">
-          <div class="wed-img-list">
-            <img ng-src="{{data.img}}" alt="" class="img-responsive">
-            <div class="ribbon-red">
-              <img src="img/ribbon_red.png" alt="">
-              <span>Movies</span>
-            </div>
+        <div class="wed-desc">
+          <div class="wed-date">
+            <span>{{data.date}}</span>
           </div>
           <div class="wed-desc">
-            <div class="wed-date">
-              <span>{{data.date}}</span>
-            </div>
-            <div class="wed-desc">
-              <p>{{data.desc}}</p>
-            </div>
-            <div class="read-more">
-              <a href="">Read More</a>
-            </div>
+            <p>{{data.desc}}</p>
           </div>
-          <div class="border-red"></div>
-        </div>
-      </div>
-    </div>
-    <div class="text-center view">
-      <button class="btn btn-outline">VIEW ALL</button>
-    </div>
-
-    <div class="subscrib-bg">
-      <div class="row">
-        <div class="col-md-12">
-          <div class="subscribe-title text-center">
-            <h4>Sign up to get autographed merchandise from GS superstars!</h4>
-            <form class="form-inline">
-              <div class="form-group">
-                <label for="inputPassword2" class="sr-only">Enter email addres</label>
-                <input type="email" class="form-control" id="inputPassword2" placeholder="Enter email addres">
-              </div>
-              <button type="submit" class="btn btn-default">Subscride</button>
-            </form>
+          <div class="read-more">
+            <a href="">Read More</a>
           </div>
         </div>
+        <div class="border-red"></div>
       </div>
     </div>
+  </div>
+  <div class="text-center view">
+    <button class="btn btn-outline">VIEW ALL</button>
+  </div>
 
+  <div class="subscrib-bg">
     <div class="row">
-      <div class="col-md-offset-2 col-md-10">
-        <div class="text-center">
-          <h4>Use #GSWedding and get to view live feed of everyone,
+      <div class="col-md-12">
+        <div class="subscribe-title text-center">
+          <h4>Sign up to get autographed merchandise from GS superstars!</h4>
+          <form class="form-inline">
+            <div class="form-group">
+              <label for="inputPassword2" class="sr-only">Enter email addres</label>
+              <input type="email" class="form-control" id="inputPassword2" placeholder="Enter email addres">
+            </div>
+            <button type="submit" class="btn btn-default">Subscride</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-offset-2 col-md-10">
+      <div class="text-center">
+        <h4>Use #GSWedding and get to view live feed of everyone,
 including yours, right here!</h4>
-        </div>
       </div>
     </div>
-    <div class="row">
-      <div class="col-md-4">
-        <div class="social-box text-center">
-          <img src="img/socials/facebook.png">
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="social-box text-center">
-          <img src="img/socials/instagram.png">
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="social-box text-center">
-          <img src="img/socials/twitter.png">
-        </div>
+  </div>
+  <div class="row">
+    <div class="col-md-4">
+      <div class="social-box text-center">
+        <img src="img/socials/facebook.png">
       </div>
     </div>
-    <div class="row">
-      <div class="col-md-offset-2 col-md-10">
-        <div class="get-in-touch">
-          <h4>GET IN TOUCH</h4>
+    <div class="col-md-4">
+      <div class="social-box text-center">
+        <img src="img/socials/instagram.png">
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="social-box text-center">
+        <img src="img/socials/twitter.png">
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-offset-2 col-md-10">
+      <div class="get-in-touch">
+        <h4>GET IN TOUCH</h4>
+      </div>
+      <form action="">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <label for="exampleInputEmail1">First Name</label>
+              <input type="text" class="form-control" id="exampleInputEmail1" placeholder="First Name">
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group">
+              <label for="exampleInputEmail1">Last Name</label>
+              <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Last Name">
+            </div>
+          </div>
         </div>
-        <form action="">
-          <div class="row">
-            <div class="col-md-6">
-              <div class="form-group">
-                <label for="exampleInputEmail1">First Name</label>
-                <input type="text" class="form-control" id="exampleInputEmail1" placeholder="First Name">
-              </div>
-            </div>
-            <div class="col-md-6">
-              <div class="form-group">
-                <label for="exampleInputEmail1">Last Name</label>
-                <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Last Name">
-              </div>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <label for="exampleInputEmail1">Email</label>
+              <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Email">
             </div>
           </div>
-          <div class="row">
-            <div class="col-md-6">
-              <div class="form-group">
-                <label for="exampleInputEmail1">Email</label>
-                <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Email">
-              </div>
-            </div>
-            <div class="col-md-6">
-              <div class="form-group">
-                <label for="exampleInputEmail1">Phone number</label>
-                <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Phone number">
-              </div>
+          <div class="col-md-6">
+            <div class="form-group">
+              <label for="exampleInputEmail1">Phone number</label>
+              <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Phone number">
             </div>
           </div>
-          <div class="row">
-            <div class="col-md-2">
-              <div class="text-enqry">
-                <span>Enquiring for </span>
-              </div>
+        </div>
+        <div class="row">
+          <div class="col-md-2">
+            <div class="text-enqry">
+              <span>Enquiring for </span>
             </div>
-            <div class="col-md-10">
-              <div class="enq-list">
-                <ul>
-                  <li>
-                    <div class="checkbox">
-                      <label>
-                        <input type="checkbox">Production
-                      </label>
-                    </div>
-                  </li>
-                  <li>
-                    <div class="checkbox">
-                      <label>
-                        <input type="checkbox">Distribution
-                      </label>
-                    </div>
-                  </li>
-                  <li>
-                    <div class="checkbox">
-                      <label>
-                        <input type="checkbox"> Casting
-                      </label>
-                    </div>
-                  </li>
+          </div>
+          <div class="col-md-10">
+            <div class="enq-list">
+              <ul>
+                <li>
+                  <div class="checkbox">
+                    <label>
+                      <input type="checkbox">Production
+                    </label>
+                  </div>
+                </li>
+                <li>
+                  <div class="checkbox">
+                    <label>
+                      <input type="checkbox">Distribution
+                    </label>
+                  </div>
+                </li>
+                <li>
+                  <div class="checkbox">
+                    <label>
+                      <input type="checkbox"> Casting
+                    </label>
+                  </div>
+                </li>
 
-                </ul>
-              </div>
+              </ul>
             </div>
           </div>
-          <div class="row">
-            <div class="col-md-6">
-              <!-- <div class="form-group">
+        </div>
+        <div class="row">
+          <div class="col-md-6">
+            <!-- <div class="form-group">
                 <label for="exampleInputEmail1">Start Date</label>
                 <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Start Date">
                 <div class="icon-calender">
                   <i class="fa fa-calendar"></i>
                 </div>
               </div> -->
-              <div class="form-group has-success has-feedback">
-                <label class="control-label" for="inputSuccess2">Start Date</label>
-                <input type="text" class="form-control" id="inputSuccess2" aria-describedby="Start Date">
-                <span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true"></span>
+            <div class="form-group has-success has-feedback">
+              <label class="control-label" for="inputSuccess2">Start Date</label>
+              <input type="text" class="form-control" id="inputSuccess2" aria-describedby="Start Date">
+              <span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true"></span>
 
-              </div>
             </div>
-            <div class="col-md-6">
-              <!-- <div class="form-group">
+          </div>
+          <div class="col-md-6">
+            <!-- <div class="form-group">
                 <label for="exampleInputEmail1">End Date</label>
                 <input type="text" class="form-control" id="exampleInputEmail1" placeholder="End Date">
                 <div class="icon-calender">
                   <i class="fa fa-calendar"></i>
                 </div>
               </div> -->
-              <div class="form-group has-success has-feedback">
-                <label class="control-label" for="inputSuccess2">End Date</label>
-                <input type="text" class="form-control" id="inputSuccess2" aria-describedby="End Date">
-                <span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true"></span>
+            <div class="form-group has-success has-feedback">
+              <label class="control-label" for="inputSuccess2">End Date</label>
+              <input type="text" class="form-control" id="inputSuccess2" aria-describedby="End Date">
+              <span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true"></span>
 
-              </div>
             </div>
           </div>
-          <div class="row">
-            <div class="col-md-6">
-              <div class="form-group">
-                <label for="exampleInputEmail1">Location</label>
-                <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Location">
-              </div>
-            </div>
-            <div class="col-md-6">
-              <div class="form-group">
-                <label for="exampleInputEmail1">Number of People Expected</label>
-                <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Number of People Expected">
-              </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <label for="exampleInputEmail1">Location</label>
+              <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Location">
             </div>
           </div>
-          <div class="row">
-            <div class="col-md-12">
-              <textarea class="form-control" rows="3"></textarea>
-              <div class="submit-btn text-center">
-                <button class="btn btn-primary" type="button" name="button">submit</button>
-              </div>
+          <div class="col-md-6">
+            <div class="form-group">
+              <label for="exampleInputEmail1">Number of People Expected</label>
+              <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Number of People Expected">
             </div>
           </div>
-        </form>
-      </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <textarea class="form-control" rows="3"></textarea>
+            <div class="submit-btn text-center">
+              <button class="btn btn-primary" type="button" name="button">submit</button>
+            </div>
+          </div>
+        </div>
+      </form>
     </div>
   </div>
 </section>

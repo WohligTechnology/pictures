@@ -63,6 +63,9 @@ a {
 .color-black {
   color: $color-black;
 }
+.color-red {
+  color: $brand-danger;
+}
 header {
   min-height: 310px;
   background: rgba(247, 247, 247, 0.3);
@@ -118,6 +121,10 @@ ul.nav-opt1 {
       font-size: 95px;
       line-height: 0.8;
       display: block;
+      // -webkit-mask-image: url("../img/home/over-text.png");
+      // -o-mask-image: url("../img/home/over-text.png");
+      // -moz-mask-image: url("../img/home/over-text.png");
+      // mask-image: url("../img/home/over-text.png");
       img {
         height: 65px;
         margin-top: -20px;
@@ -190,6 +197,11 @@ ul.nav-opt1 {
   button.btn.btn-danger.btn-lg {
     padding: 8px 20px;
     border: 1px solid #fff;
+    @include transition(all ease 300ms);
+    &:hover {
+      color: $brand-danger;
+      background-color: #fff;
+    }
   }
 }
 .wed-box {
@@ -326,7 +338,7 @@ footer {
   }
   .followus {
     position: relative;
-    height: 150px;
+    height: 140px;
     .followus-inner {
       position: absolute;
       bottom: 0;
@@ -343,6 +355,9 @@ footer {
         padding: 0;
         background: #fff;
         border-radius: 100%;
+        &:hover {
+          background: darken(#fff, 10%);
+        }
         i {
           color: $brand-danger;
         }
@@ -363,6 +378,10 @@ footer {
       background: #fff;
       font-size: 12px;
       width: 180px;
+      &:hover {
+        background: darken(#fff, 10%);
+        color: darken($brand-danger, 10%);
+      }
     }
   }
   .music {
@@ -375,7 +394,7 @@ footer {
   }
   section.footer-next {
     padding: 15px 0;
-    background: rgb(226, 60, 60);
+    background: rgba(206, 43, 43, 0.4);
     p {
       margin-bottom: 0;
       font-size: 12px;
@@ -386,6 +405,45 @@ footer {
       line-height: 0.8;
       span {
         font-size: 22px;
+      }
+    }
+  }
+}
+.head-banner img {
+  position: absolute;
+  top: -160px;
+  left: 50%;
+  width: 45%;
+  @include transform(translateX(-50%));
+}
+.wedding-fant-desc p {
+  text-align: justify;
+}
+.movie-category {
+  background: url('../img/movies/bg-movies.jpg')no-repeat;
+  padding: 20px;
+  background-size: cover;
+  background-position: 0px -65px;
+  .movie-box img {
+    margin-bottom: 25px;
+  }
+  ul {
+    margin: 0 0 15px;
+    li {
+      display: inline-block;
+      font-size: 26px;
+      margin: 0 20px;
+      @include transition(all ease 300ms);
+      a {
+        color: #053146;
+        border-bottom: 5px solid transparent;
+        font-weight: 600;
+        @include transition(all ease 300ms);
+        &.active,
+        &:hover {
+          border-color: #088fd5;
+          color: #088fd5;
+        }
       }
     }
   }
