@@ -18,8 +18,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
       img: "img/home/diaries/diary1.png",
       date: "12 January 2016",
       desc: "Lorem Ipsum is simply dummy text of the printing industry"
-    }
-    , {
+    }, {
       title: "SPORTS",
       img: "img/home/diaries/diary2.png",
       date: "12 January 2016",
@@ -29,8 +28,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
       img: "img/home/diaries/diary3.png",
       date: "12 January 2016",
       desc: "Lorem Ipsum is simply dummy text of the printing industry"
-    }
-    , {
+    }, {
       title: "WEDDINGS",
       img: "img/home/diaries/diary2.png",
       date: "12 January 2016",
@@ -40,8 +38,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
       img: "img/home/diaries/diary3.png",
       date: "12 January 2016",
       desc: "Lorem Ipsum is simply dummy text of the printing industry"
-    }
-    , {
+    }, {
       title: "EVENTS",
       img: "img/home/diaries/diary2.png",
       date: "12 January 2016",
@@ -51,8 +48,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
       img: "img/home/diaries/diary3.png",
       date: "12 January 2016",
       desc: "Lorem Ipsum is simply dummy text of the printing industry"
-    }
-  ];
+    }];
   })
   .controller('MoviesCtrl', function($scope, TemplateService, NavigationService, $timeout) {
     //Used to name the .html file
@@ -148,17 +144,23 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     $scope.oneAtATime = true;
 
     $scope.wedding = [{
-      img: "img/weddings/types/type1.jpg"
+      img: "img/weddings/types/type1.jpg",
+      name: "360 Wedding"
     }, {
-      img: "img/weddings/types/type2.jpg"
+      img: "img/weddings/types/type2.jpg",
+      name: "Mehendi & Sangeet"
     }, {
-      img: "img/weddings/types/type3.jpg"
+      img: "img/weddings/types/type3.jpg",
+      name: "Bollywood Nite"
     }, {
-      img: "img/weddings/types/type4.jpg"
+      img: "img/weddings/types/type4.jpg",
+      name: "Youngsters & Cocktail Party"
     }, {
-      img: "img/weddings/types/type5.jpg"
+      img: "img/weddings/types/type5.jpg",
+      name: "Phera & Reception"
     }, {
-      img: "img/weddings/types/type6.jpg"
+      img: "img/weddings/types/type6.jpg",
+      name: "Destination Weddingsname"
     }];
     $scope.weddings = [{
       img: "img/weddings/diaries/diary1.png",
