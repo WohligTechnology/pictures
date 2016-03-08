@@ -45,12 +45,18 @@ a {
     outline-offset: 0;
   }
 }
+.bold {
+  font-weight: 800;
+}
 .navbar-default {
   background-color: transparent;
   border-color: transparent;
   .navbar-brand img {
     width: 110px;
   }
+}
+.uppercase {
+  text-transform: uppercase;
 }
 .header {
   background: url("../img/header/home_pattern.png") no-repeat;
@@ -66,6 +72,9 @@ a {
 .color-red {
   color: $brand-danger;
 }
+.color-blue {
+  color: $brand-primary;
+}
 header {
   min-height: 310px;
   background: rgba(247, 247, 247, 0.3);
@@ -76,6 +85,7 @@ header {
 .form-control,
 .btn {
   border-radius: 0 !important;
+  @include box-shadow(none);
   &:focus,
   &.focus,
   &:active:focus,
@@ -88,8 +98,17 @@ header {
     box-shadow: none;
   }
 }
+textarea {
+  resize: none;
+}
 .mb15 {
   margin-bottom: 15px;
+}
+.mt15 {
+  margin-top: 15px;
+}
+.mr30 {
+  margin: 30px 0;
 }
 .min-height-section1 {
   min-height: 360px;
@@ -246,12 +265,6 @@ ul.nav-opt1 {
     bottom: -6px;
     left: 50%;
     @include transform(translatex(-50%));
-    &.border-blue {
-      border-color: $brand-primary;
-    }
-    &.border-red {
-      border-color: $brand-danger;
-    }
   }
 }
 .client-speak {
@@ -273,7 +286,6 @@ ul.nav-opt1 {
     }
   }
   .img-review {
-    width: 210px;
     position: absolute;
     right: 100px;
     top: 28%;
@@ -305,7 +317,6 @@ ul.nav-opt1 {
   }
 }
 .subcribe {
-  background: url('../img/home/bg-subcribe.jpg') no-repeat;
   background-size: cover;
   padding: 100px 0;
   h4 {
@@ -319,6 +330,12 @@ ul.nav-opt1 {
       background-color: darken( $brand-danger, 10%);
     }
   }
+}
+.bg-subcribe-home {
+  background: url('../img/home/bg-subcribe.jpg') no-repeat;
+}
+.bg-subcribe-movies {
+  background: url('../img/movies/bg-subcribe.jpg') no-repeat;
 }
 .social-box {
   margin: 30px 0;
@@ -411,7 +428,7 @@ footer {
 }
 .head-banner img {
   position: absolute;
-  top: -160px;
+  top: -150px;
   left: 50%;
   width: 45%;
   @include transform(translateX(-50%));
@@ -422,17 +439,26 @@ footer {
 .movie-category {
   background: url('../img/movies/bg-movies.jpg')no-repeat;
   padding: 20px;
-  background-size: cover;
-  background-position: 0px -65px;
-  .movie-box img {
-    margin-bottom: 25px;
+  background-size: 100%;
+  background-position: 0 -7px;
+  .movie-box {
+    width: 208px;
+    img {
+      margin-bottom: 25px;
+    }
+  }
+  .title-movies {
+    li {
+      font-size: 26px;
+      margin: 0 10px;
+    }
   }
   ul {
-    margin: 0 0 15px;
+    margin: 0 0 25px;
     li {
       display: inline-block;
-      font-size: 26px;
-      margin: 0 20px;
+      // font-size: 26px;
+      margin: 0 10px;
       @include transition(all ease 300ms);
       a {
         color: #053146;
@@ -447,6 +473,129 @@ footer {
       }
     }
   }
+}
+.diary-title {
+  h4 {
+    font-size: 30px;
+    letter-spacing: 3px;
+    i {
+      margin: 0 15px;
+    }
+  }
+}
+.movies-back-bg {
+  background: url('../img/movies/bg-movie_diaries.jpg')no-repeat;
+  background-size: 100%;
+  background-position: 0 65px;
+}
+.pd-side {
+  padding: 0 50px;
+}
+.wedding-fant-desc {
+  padding-bottom: 30px;
+  background: #FDFDFD;
+  margin-top: -1px;
+}
+.btn-all {
+  .btn {
+    padding: 8px 30px;
+  }
+  .btn-outline {
+    color: $brand-danger;
+    background-color: #f0f0f0;
+    border-color: $brand-danger;
+  }
+}
+.border-blue {
+  border-color: $brand-primary!important;
+}
+.border-red {
+  border-color: $brand-danger!important;
+}
+.get-in-touch {
+  .form-control {
+    background-color: #ebebeb;
+    border-color: #ebebeb;
+  }
+}
+.checkbox-inline {
+  input[type=checkbox] {
+    display: none;
+  }
+  input[type=checkbox]+label span {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    margin: -1px 4px 0 0;
+    cursor: pointer;
+    border: 1px solid $brand-danger;
+    background-color: #ebebeb;
+  }
+  input[type=checkbox]:checked+label span {
+    background-color: $brand-danger;
+  }
+  label {
+    font-weight: 400;
+  }
+}
+.banner-talent {
+  .row {
+    margin: 0;
+    .col-md-6 {
+      padding: 0;
+    }
+  }
+  .banner-wrap {
+    @include transition(all ease 300ms);
+    &:hover {
+      .hover-image {
+        opacity: 1;
+      }
+      .name-event {
+        opacity: 0;
+        &.extend-hover {
+          opacity: 1;
+        }
+      }
+    }
+    .name-event {
+      position: absolute;
+      z-index: 2;
+      width: 100%;
+      padding: 10px;
+      font-size: 16px;
+      background: rgba(0, 0, 0, 0.3);
+      letter-spacing: 2px;
+      @include transition(all ease 300ms);
+      cursor: pointer;
+      &.btm {
+        bottom: 0;
+      }
+      &.extend-hover {
+        top: 50%;
+        left: 50%;
+        @include transform(translate(-50%,-50%));
+        opacity: 0;
+        background: transparent;
+        @include transition(all ease 300ms);
+      }
+    }
+    .hover-image {
+      position: absolute;
+      z-index: 1;
+      top: 0;
+      left: 0;
+      height: 100%;
+      opacity: 0;
+      width: 100%;
+      @include transition(all ease 300ms);
+    }
+  }
+}
+.mic {
+  width: 30px;
+  margin-left: 15px;
+  margin-top: -5px;
 }
 /* Start writing sass here */
 @import "fancybox-override";

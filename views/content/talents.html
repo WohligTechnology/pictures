@@ -8,123 +8,123 @@
       </div>
     </div>
     <div class="row">
-      <div class="col-md-offset-2 col-md-10">
+      <div class="col-md-offset-2 col-md-8">
         <div class="wedding-fant-desc">
-          <p>gs worldwide entertainment represents celebrities from the Indian entertainment industry. We work closely with celebrities to help them create, develop and maintain their artistic brand identity. Whilst providing clients with quality talent to increase their commercial appeal in the marketplace. Some of the celebrities we exclusively manage are Abhishek Bachchan, Lara Dutta, Rahul Khanna, Manasi Scott, Surveen Chawla, Tisca Chopra, Jaaved Jaaferi and Shveta Salve.</p>
+          <p>gs worldwide entertainment represents celebrities from the Indian entertainment industry. We work closely with celebrities to help them create, develop and maintain their artistic brand identity. Whilst providing clients with quality talent
+            to increase their commercial appeal in the marketplace. Some of the celebrities we exclusively manage are Abhishek Bachchan, Lara Dutta, Rahul Khanna, Manasi Scott, Surveen Chawla, Tisca Chopra, Jaaved Jaaferi and Shveta Salve.</p>
+        </div>
+      </div>
+    </div>
+    <div class="banner-talent">
+      <div class="row">
+        <div class="col-md-6" ng-repeat="data in wedding track by $index">
+          <div class="banner-wrap">
+            <img ng-src="{{data.img}}" class="img-responsive">
+            <img src="img/talent/hover-banner.png" alt="" class="img-responsive hover-image">
+            <div class="name-event text-center btm">
+              <span class="color-white uppercase">{{data.name}}</span>
+            </div>
+            <div class="name-event extend-hover text-center">
+              <span class="color-red uppercase bold">{{data.name}}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="bg-moviesdiaries">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="text-center">
+              <div class="wedding-diary">
+                <div class="diary-title mr30">
+                  <h4 class="uppercase color-red"><i class="fi flaticon-book"></i>Talent DIARIES<img src="img/talent/talent_mic.png" alt="Mic" class="mic"></h4>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="pd-side">
+          <div class="row">
+            <div class="col-md-4" ng-repeat="data in weddings track by $index">
+              <div class="wed-box border-red">
+                <div class="wed-img-list">
+                  <img ng-src="{{data.img}}" alt="" class="img-responsive">
+                  <div class="ribbon-red">
+                    <img src="img/ribbon_red.png" alt="">
+                    <span class="color-white uppercase">Talent</span>
+                  </div>
+                </div>
+                <div class="wed-desc">
+                  <div class="wed-date">
+                    <span>{{data.date}}</span>
+                  </div>
+                  <div class="wed-desc-inside">
+                    <p class="bold">{{data.desc}}</p>
+                  </div>
+                  <div class="read-more">
+                    <a href="" class="color-black">Read More</a>
+                  </div>
+                </div>
+                <div class="border-blue borders"></div>
+              </div>
+            </div>
+          </div>
+          <div class="btn-all mr30 text-center">
+            <button class="btn btn-danger btn-outline">
+              View All
+            </button>
+          </div>
         </div>
       </div>
     </div>
     <div class="row">
-      <div class="col-md-6" ng-repeat="data in wedding track by $index">
-        <img ng-src="{{data.img}}" class="img-responsive">
-        <div class="name-event text-center">
-          <span>{{data.name}}</span>
+      <div class="service-bg">
+        <div class="col-md-6">
+          <div class="serv-title">
+            <h3>SERVICE</h3>
+          </div>
         </div>
-      </div>
-    </div>
-
-    <div class="row">
-      <div class="col-md-12">
-        <div class="text-center">
-          <div class="wedding-diary">
+        <div class="col-md-6">
+          <div class="list-servic">
             <ul>
               <li>
-                <div class="diary">
-                  <img src="img/weddings/diaries/diary.png" alt="diary">
-
-                </div>
+                <span>BRAND AMBASSADORS</span>
               </li>
               <li>
-                <div class="diary-title">
-                  <h4>Talent DIARIES</h4>
-                </div>
+                <span>TALENT REPRESENTATION</span>
               </li>
               <li>
-                <div class="diary">
-                  <img src="img/talent/talent_mic.png" alt="Mic">
-                </div>
+                <span>CELEBRITY ENDORSEMENTS</span>
+              </li>
+              <li>
+                <span>TV, RADIO AND PRESS INTERVIEW</span>
+              </li>
+              <li>
+                <span>EVENTS AND APPEARANCES</span>
               </li>
             </ul>
           </div>
         </div>
+
       </div>
     </div>
-    <div class="row">
-      <div class="col-md-4" ng-repeat="data in weddings track by $index">
-        <div class="wed-box">
-          <div class="wed-img-list">
-            <img ng-src="{{data.img}}" alt="" class="img-responsive">
-            <div class="ribbon-red">
-              <img src="img/ribbon_red.png" alt="">
-              <span>Talent</span>
-            </div>
+    <div class="subscrib-bg">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="subscribe-title text-center">
+            <h4>Sign up to get autographed merchandise from GS superstars!</h4>
+            <form class="form-inline">
+              <div class="form-group">
+                <label for="inputPassword2" class="sr-only">Enter email addres</label>
+                <input type="email" class="form-control" id="inputPassword2" placeholder="Enter email addres">
+              </div>
+              <button type="submit" class="btn btn-default">Subscride</button>
+            </form>
           </div>
-          <div class="wed-desc">
-            <div class="wed-date">
-              <span>{{data.date}}</span>
-            </div>
-            <div class="wed-desc">
-              <p>{{data.desc}}</p>
-            </div>
-            <div class="read-more">
-              <a href="">Read More</a>
-            </div>
-          </div>
-          <div class="border-red"></div>
         </div>
       </div>
     </div>
-    <div class="text-center view">
-      <button class="btn btn-outline">VIEW ALL</button>
-    </div>
-
-<div class="row">
-  <div class="service-bg">
-    <div class="col-md-6">
-    <div class="serv-title">
-      <h3>SERVICE</h3>
-    </div>
-    </div>
-    <div class="col-md-6">
-      <div class="list-servic">
-        <ul>
-          <li>
-            <span>BRAND AMBASSADORS</span>
-          </li>
-          <li>
-            <span>TALENT REPRESENTATION</span>
-          </li>
-          <li>
-            <span>CELEBRITY ENDORSEMENTS</span>
-          </li>
-          <li>
-            <span>TV, RADIO AND PRESS INTERVIEW</span>
-          </li>
-          <li>
-            <span>EVENTS AND APPEARANCES</span>
-          </li>
-        </ul>
-      </div>
-    </div>
-
-  </div>
-</div>
-<div class="subscrib-bg">
-  <div class="row">
-    <div class="col-md-12">
-      <div class="subscribe-title text-center">
-        <h4>Sign up to get autographed merchandise from GS superstars!</h4>
-        <form class="form-inline">
-  <div class="form-group">
-    <label for="inputPassword2" class="sr-only">Enter email addres</label>
-    <input type="email" class="form-control" id="inputPassword2" placeholder="Enter email addres">
-  </div>
-  <button type="submit" class="btn btn-default">Subscride</button>
-</form>
-      </div>
-    </div>
-  </div>
-</div>
 
     <div class="row">
       <div class="col-md-offset-2 col-md-10">
@@ -250,11 +250,11 @@ including yours, right here!</h4>
                 </div>
               </div> -->
               <div class="form-group has-success has-feedback">
-  <label class="control-label" for="inputSuccess2">Start Date</label>
-  <input type="text" class="form-control" id="inputSuccess2" aria-describedby="Start Date">
-  <span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true"></span>
+                <label class="control-label" for="inputSuccess2">Start Date</label>
+                <input type="text" class="form-control" id="inputSuccess2" aria-describedby="Start Date">
+                <span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true"></span>
 
-</div>
+              </div>
             </div>
             <div class="col-md-6">
               <!-- <div class="form-group">
@@ -265,11 +265,11 @@ including yours, right here!</h4>
                 </div>
               </div> -->
               <div class="form-group has-success has-feedback">
-  <label class="control-label" for="inputSuccess2">End Date</label>
-  <input type="text" class="form-control" id="inputSuccess2" aria-describedby="End Date">
-  <span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true"></span>
+                <label class="control-label" for="inputSuccess2">End Date</label>
+                <input type="text" class="form-control" id="inputSuccess2" aria-describedby="End Date">
+                <span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true"></span>
 
-</div>
+              </div>
             </div>
           </div>
           <div class="row">

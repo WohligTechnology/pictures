@@ -25,8 +25,8 @@ firstapp.config(function($stateProvider, $urlRouterProvider, $httpProvider, $loc
       templateUrl: "views/template.html",
       controller: 'MoviesInsideCtrl'
     })
-    .state('talents', {
-      url: "/talents",
+    .state('talent', {
+      url: "/talent",
       templateUrl: "views/template.html",
       controller: 'TalentsCtrl'
     })

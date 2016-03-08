@@ -116,13 +116,13 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
       name: "BRAND AMBASSAORS"
     }, {
       img: "img/talent/talents/talent2.jpg",
-      name: "BRAND AMBASSAORS"
+      name: "Appearances"
     }, {
       img: "img/talent/talents/talent3.jpg",
-      name: "BRAND AMBASSAORS"
+      name: "TALENT REPRESENTATION"
     }, {
       img: "img/talent/talents/talent4.jpg",
-      name: "BRAND AMBASSAORS"
+      name: "CELEBRITY ENDORSEMENTS"
     }];
     $scope.weddings = [{
       img: "img/weddings/diaries/diary1.png",

@@ -1,6 +1,6 @@
     /*
     Flaticon icon font: Flaticon
-    Creation date: 01/03/2016 14:22
+    Creation date: 07/03/2016 06:33
     */
 
     @font-face {
@@ -21,8 +21,8 @@
   }
 }
 
-    .fi:before{
-        display: inline-block;
+  .fi:before{
+  display: inline-block;
   font-family: "Flaticon";
   font-style: normal;
   font-weight: normal;
@@ -36,12 +36,14 @@
   font-smoothing: antialiased;
     }
 
-    .flaticon-book:before { content: "\f100"; }
+.flaticon-book:before { content: "\f100"; }
 .flaticon-clock:before { content: "\f101"; }
 .flaticon-letter:before { content: "\f102"; }
-.flaticon-web:before { content: "\f103"; }
+.flaticon-tool:before { content: "\f103"; }
+.flaticon-web:before { content: "\f104"; }
 
     $font-Flaticon-book: "\f100";
     $font-Flaticon-clock: "\f101";
     $font-Flaticon-letter: "\f102";
-    $font-Flaticon-web: "\f103";
+    $font-Flaticon-tool: "\f103";
+    $font-Flaticon-web: "\f104";
