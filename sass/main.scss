@@ -36,6 +36,7 @@ img.doneLoading {
   opacity: 1;
 }
 a {
+  cursor: pointer;
   &:hover {
     text-decoration: none;
   }
@@ -347,7 +348,7 @@ footer {
   margin-top: 20px;
   a {
     &:hover {
-      color: darken(#fff, 10%);
+      color: darken(#fff, 20%);
     }
   }
   .footer-menu ul li a {
@@ -488,6 +489,50 @@ footer {
   background-size: 100%;
   background-position: 0 65px;
 }
+.bg-all-talent {
+  background: url('../img/talent/bg-img.png')no-repeat;
+  background-size: 100%;
+  background-position: 0 40px;
+}
+.bg-subcribe-talents {
+  background: url('../img/talent/subscribe_back.jpg')no-repeat;
+  background-size: cover;
+}
+.service-bg {
+  background: url('../img/talent/services_back.png')no-repeat;
+  background-size: cover;
+  min-height: 360px;
+  padding: 0 40px;
+  .min-hght {
+    min-height: 360px;
+    .make-center {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%,-50%);
+      color: #fff;
+    }
+    h3 {
+      font-size: 36px;
+      letter-spacing: 2px;
+      font-weight: 600;
+    }
+  }
+  .list-service {
+    ul.make-center {
+      top: 72%;
+      transform: translate(-50%, -70%);
+      li {
+        padding: 15px 0;
+        a {
+          &:hover {
+            color: darken($color-white, 15%);
+          }
+        }
+      }
+    }
+  }
+}
 .pd-side {
   padding: 0 50px;
 }
@@ -556,6 +601,9 @@ footer {
         &.extend-hover {
           opacity: 1;
         }
+        &.opacityplay {
+          opacity: 0!important;
+        }
       }
     }
     .name-event {
@@ -579,6 +627,9 @@ footer {
         background: transparent;
         @include transition(all ease 300ms);
       }
+      &.opacityplay {
+        opacity: 1!important;
+      }
     }
     .hover-image {
       position: absolute;
@@ -596,6 +647,34 @@ footer {
   width: 30px;
   margin-left: 15px;
   margin-top: -5px;
+}
+.checkbox-inline.equire {
+  padding-left: 0;
+  margin-top: 0;
+  width: 85px;
+  float: left;
+  height: 50px;
+}
+.checkbox-inline {
+  padding-left: 15px;
+}
+.img-tilt {
+  padding: 10px;
+}
+.wedding {
+  .row {
+    .col-md-4 {
+      padding: 0;
+    }
+  }
+}
+.service{
+.services-list{
+  .panel-group{ .panel {
+    border-radius: 0px;
+}
+}
+}
 }
 /* Start writing sass here */
 @import "fancybox-override";

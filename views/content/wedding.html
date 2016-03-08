@@ -8,25 +8,35 @@
       </div>
     </div>
     <div class="row">
-      <div class="col-md-3">
+      <div class="col-md-offset-2 col-md-2">
         <div class="img-tilt">
           <img src="img/weddings/wedding_fanta.png" class="img-responsive" alt="">
         </div>
-
       </div>
-      <div class="col-md-9">
-        <div class="wedding-fant-desc">
+      <div class="col-md-6">
+        <div class="wedding-fant-desc mt50">
           <p>gs worldwide entertainment has forayed into the vast business of Weddings. We at gs entertainment specialize in handling every aspect of your wedding, from A-Z, leaving you to spend time with your loved ones. Here at gs, your dream day is planned
             creatively by a host of qualified professionals who dedicate themselves entirely in making your day even more special.</p>
         </div>
       </div>
     </div>
-    <div class="row">
-      <div class="col-md-4" ng-repeat="data in wedding track by $index">
-        <img ng-src="{{data.img}}" class="img-responsive">
+    <div class="wedding banner-talent">
+      <div class="row">
+        <div class="col-md-4" ng-repeat="data in wedding track by $index">
+          <div class="banner-wrap">
+            <img ng-src="{{data.img}}" class="img-responsive">
+            <img src="img/weddings/hover-banner.png" alt="" class="img-responsive hover-image">
+            <div class="name-event extend-hover text-center opacityplay">
+              <span class="color-white uppercase">{{data.name}}</span>
+            </div>
+            <div class="name-event extend-hover text-center">
+              <span class="color-red uppercase bold">{{data.name}}</span>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
-    <div class="row">
+    <!-- <div class="row">
       <div class="col-md-12">
         <div class="text-center">
           <div class="wedding-diary">
@@ -50,40 +60,57 @@
           </div>
         </div>
       </div>
-    </div>
-    <div class="row">
-      <div class="col-md-4" ng-repeat="data in weddings track by $index">
-        <div class="wed-box">
-          <div class="wed-img-list">
-            <img ng-src="{{data.img}}" alt="" class="img-responsive">
-            <div class="ribbon-red">
-              <img src="img/ribbon_red.png" alt="">
-              <span>Weddings</span>
+    </div> -->
+    <div class="bg-moviesdiaries">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="text-center">
+            <div class="wedding-diary">
+              <div class="diary-title mr30">
+                <h4 class="uppercase color-red"><i class="fi flaticon-book"></i>wedding DIARIES<img src="img/weddings/diaries/diary_back.png" alt="diary" class="mic"></h4>
+              </div>
             </div>
           </div>
-          <div class="wed-desc">
-            <div class="wed-date">
-              <span>{{data.date}}</span>
-            </div>
-            <div class="wed-desc">
-              <p>{{data.desc}}</p>
-            </div>
-            <div class="read-more">
-              <a href="">Read More</a>
-            </div>
-          </div>
-          <div class="border-red borders"></div>
         </div>
       </div>
-    </div>
-    <div class="text-center view">
-      <button class="btn btn-outline">VIEW ALL</button>
+      <div class="pd-side">
+        <div class="row">
+          <div class="col-md-4" ng-repeat="data in weddings track by $index">
+            <div class="wed-box border-red">
+              <div class="wed-img-list">
+                <img ng-src="{{data.img}}" alt="" class="img-responsive">
+                <div class="ribbon-red">
+                  <img src="img/ribbon_red.png" alt="">
+                  <span class="color-white uppercase">Talent</span>
+                </div>
+              </div>
+              <div class="wed-desc">
+                <div class="wed-date">
+                  <span>{{data.date}}</span>
+                </div>
+                <div class="wed-desc-inside">
+                  <p class="bold">{{data.desc}}</p>
+                </div>
+                <div class="read-more">
+                  <a href="" class="color-black">Read More</a>
+                </div>
+              </div>
+              <div class="border-blue borders"></div>
+            </div>
+          </div>
+        </div>
+        <div class="btn-all mr30 text-center">
+          <button class="btn btn-danger btn-outline">
+            View All
+          </button>
+        </div>
+      </div>
     </div>
     <div class="row">
       <div class="col-md-12">
         <div class="service">
-          <div class="text-center">
-            <h4>services</h4>
+          <div class="title">
+            <h3 class="uppercase color-red bold text-center">services</h3>
           </div>
           <div class="services-list">
             <uib-accordion close-others="oneAtATime">
@@ -171,176 +198,176 @@
         </div>
       </div>
     </div>
-    <div class="row">
-      <div class="col-md-offset-2 col-md-10">
-        <div class="text-center">
-          <h4>Use #GSWedding and get to view live feed of everyone,
-including yours, right here!</h4>
+    <div class="section3">
+      <div class="bg3">
+        <div class="container">
+          <div class="client-speak">
+            <div class="name-cont color-white">
+              <img src="img/inverted.png" alt="">
+              <span>Talent Speak</span>
+            </div>
+            <div class="img-holder">
+              <img src="img/talent/sachin.jpg" alt="" class="img-reponsive">
+            </div>
+            <div class="img-review color-white">
+              <h4>"Extra Efficient"</h4>
+              <p>- Sachin Joshi</p>
+            </div>
+          </div>
         </div>
       </div>
     </div>
-    <div class="row">
-      <div class="col-md-4">
-        <div class="social-box text-center">
-          <img src="img/socials/facebook.png">
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="social-box text-center">
-          <img src="img/socials/instagram.png">
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="social-box text-center">
-          <img src="img/socials/twitter.png">
-        </div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-md-offset-2 col-md-10">
-        <div class="get-in-touch">
-          <h4>GET IN TOUCH</h4>
-        </div>
-        <form action="">
-          <div class="row">
-            <div class="col-md-6">
-              <div class="form-group">
-                <label for="exampleInputEmail1">First Name</label>
-                <input type="text" class="form-control" id="exampleInputEmail1" placeholder="First Name">
-              </div>
-            </div>
-            <div class="col-md-6">
-              <div class="form-group">
-                <label for="exampleInputEmail1">Last Name</label>
-                <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Last Name">
-              </div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-md-6">
-              <div class="form-group">
-                <label for="exampleInputEmail1">Email</label>
-                <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Email">
-              </div>
-            </div>
-            <div class="col-md-6">
-              <div class="form-group">
-                <label for="exampleInputEmail1">Phone number</label>
-                <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Phone number">
-              </div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-md-2">
-              <div class="text-enqry">
-                <span>Enquiring for </span>
-              </div>
-            </div>
-            <div class="col-md-10">
-              <div class="enq-list">
-                <ul>
-                  <li>
-                    <div class="checkbox">
-                      <label>
-                        <input type="checkbox">360 Wedding
-                      </label>
-                    </div>
-                  </li>
-                  <li>
-                    <div class="checkbox">
-                      <label>
-                        <input type="checkbox">Bollywood Nite
-                      </label>
-                    </div>
-                  </li>
-                  <li>
-                    <div class="checkbox">
-                      <label>
-                        <input type="checkbox"> Destination Weddings
-                      </label>
-                    </div>
-                  </li>
-                  <li>
-                    <div class="checkbox">
-                      <label>
-                        <input type="checkbox">Youngsters & Cocktail Party
-                      </label>
-                    </div>
-                  </li>
-                  <li>
-                    <div class="checkbox">
-                      <label>
-                        <input type="checkbox">Mehendi & Sangeet
-                      </label>
-                    </div>
-                  </li>
-                  <li>
-                    <div class="checkbox">
-                      <label>
-                        <input type="checkbox">Phera & Reception
-                      </label>
-                    </div>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-md-6">
-              <!-- <div class="form-group">
-                <label for="exampleInputEmail1">Start Date</label>
-                <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Start Date">
-                <div class="icon-calender">
-                  <i class="fa fa-calendar"></i>
+    <div class="social">
+      <!-- <div ng-include = "'/social.html'"></div> -->
+      <section class="marg-section">
+        <div class="social-back ">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-4 col-sm-4">
+                <div class="social-box text-center">
+                  <img src="img/socials/facebook.png" class="doneLoading">
                 </div>
-              </div> -->
-              <div class="form-group has-success has-feedback">
-  <label class="control-label" for="inputSuccess2">Start Date</label>
-  <input type="text" class="form-control" id="inputSuccess2" aria-describedby="Start Date">
-  <span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true"></span>
-
-</div>
-            </div>
-            <div class="col-md-6">
-              <!-- <div class="form-group">
-                <label for="exampleInputEmail1">End Date</label>
-                <input type="text" class="form-control" id="exampleInputEmail1" placeholder="End Date">
-                <div class="icon-calender">
-                  <i class="fa fa-calendar"></i>
+                <div class="social-logo text-center">
+                  <img src="img/facebook.jpg" alt="" class="img-responsive">
                 </div>
-              </div> -->
-              <div class="form-group has-success has-feedback">
-  <label class="control-label" for="inputSuccess2">End Date</label>
-  <input type="text" class="form-control" id="inputSuccess2" aria-describedby="End Date">
-  <span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true"></span>
-
-</div>
+              </div>
+              <div class="col-md-4 col-sm-4">
+                <div class="social-box text-center">
+                  <img src="img/socials/twitter.png" class="doneLoading">
+                </div>
+                <div class="social-logo text-center ">
+                  <img src="img/twitter.jpg" alt="" class="img-responsive">
+                </div>
+              </div>
+              <div class="col-md-4 col-sm-4">
+                <div class="social-box text-center">
+                  <img src="img/socials/instagram.png" class="doneLoading">
+                </div>
+                <div class="social-logo text-center ">
+                  <img src="img/instagram.jpg" alt="" class="img-responsive">
+                </div>
+              </div>
             </div>
           </div>
-          <div class="row">
-            <div class="col-md-6">
+        </div>
+      </section>
+    </div>
+    <div class="mr30">
+      <div class="row">
+        <div class="col-md-offset-2 col-md-8">
+          <div class="get-in-touch">
+            <h3 class="color-red uppercase bold">GET IN TOUCH</h3>
+            <form action="">
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <input type="text" class="form-control" id="exampleInputEmail1" placeholder="First Name">
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Last Name">
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Email">
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Phone number">
+                  </div>
+                </div>
+              </div>
               <div class="form-group">
-                <label for="exampleInputEmail1">Location</label>
-                <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Location">
+                <div class="row">
+                  <div class="col-md-10">
+                    <div class="enq-list">
+                      <label class="checkbox-inline equire" style="padding-left:0;margin-top:0px;">
+                        <span class="color-red">Enquiring for </span>
+                      </label>
+                      <label class="checkbox-inline">
+                        <input type="checkbox" id="wedding" value="wedding">
+                        <label for="wedding"><span></span> 360 Wedding </label>
+                      </label>
+                      <label class="checkbox-inline">
+                        <input type="checkbox" id="nite" value="nite">
+                        <label for="nite"><span></span> Bollywood Nite </label>
+                      </label>
+                      <label class="checkbox-inline">
+                        <input type="checkbox" id="weddings" value="weddings">
+                        <label for="weddings"><span></span>Destination Weddings</label>
+                      </label>
+                      <label class="checkbox-inline">
+                        <input type="checkbox" id="cocktail" value="cocktail">
+                        <label for="cocktail"><span></span>Youngsters &amp; Cocktail Party </label>
+                      </label>
+                      <label class="checkbox-inline">
+                        <input type="checkbox" id="sangeet" value="sangeet">
+                        <label for="sangeet"><span></span>Mehendi &amp; Sangeet </label>
+                      </label>
+                      <label class="checkbox-inline">
+                        <input type="checkbox" id="reception" value="reception">
+                        <label for="reception"><span></span>Phera &amp; Reception</label>
+                      </label>
+                    </div>
+                  </div>
+                </div>
               </div>
-            </div>
-            <div class="col-md-6">
-              <div class="form-group">
-                <label for="exampleInputEmail1">Number of People Expected</label>
-                <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Number of People Expected">
+              <div class="row">
+                <div class="col-md-6">
+                  <!-- <div class="form-group">
+                    <label for="exampleInputEmail1">Start Date</label>
+                    <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Start Date">
+                    <div class="icon-calender">
+                      <i class="fa fa-calendar"></i>
+                    </div>
+                  </div> -->
+                  <div class="form-group has-feedback">
+                    <input type="date" class="form-control" id="inputSuccess2" aria-describedby="Start Date" placeholder="Start Date">
+                    <span class="fa fa-calendar color-red form-control-feedback" aria-hidden="true"></span>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <!-- <div class="form-group">
+                    <label for="exampleInputEmail1">End Date</label>
+                    <input type="text" class="form-control" id="exampleInputEmail1" placeholder="End Date">
+                    <div class="icon-calender">
+                      <i class="fa fa-calendar"></i>
+                    </div>
+                  </div> -->
+                  <div class="form-group has-feedback">
+                    <input type="date" class="form-control" id="inputSuccess2" aria-describedby="End Date" placeholder="End Date">
+                    <span class="fa fa-calendar color-red form-control-feedback" aria-hidden="true"></span>
+                  </div>
+                </div>
               </div>
-            </div>
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Location">
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Number of People Expected">
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-12">
+                  <textarea class="form-control" rows="3" placeholder="Say Something"></textarea>
+                  <div class="submit-btn btn-all text-center mt15">
+                    <button class="btn btn-danger" type="button" name="button">submit</button>
+                  </div>
+                </div>
+              </div>
+            </form>
           </div>
-          <div class="row">
-            <div class="col-md-12">
-              <textarea class="form-control" rows="3"></textarea>
-              <div class="submit-btn text-center">
-                <button class="btn btn-primary" type="button" name="button">submit</button>
-              </div>
-            </div>
-          </div>
-        </form>
+        </div>
       </div>
     </div>
-  </div>
 </section>
