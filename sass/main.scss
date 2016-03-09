@@ -668,13 +668,42 @@ footer {
     }
   }
 }
-.service{
-.services-list{
-  .panel-group{ .panel {
-    border-radius: 0px;
-}
-}
-}
+.service {
+  .title {
+    margin: 15px 0;
+    border-bottom: 4px solid $brand-danger;
+    h3 {
+      letter-spacing: 2px;
+      font-size: 36px;
+      color: #f13748;
+    }
+  }
+  .services-list {
+    .panel-group {
+      .panel {
+        border-radius: 0;
+      }
+      .panel-body{
+        padding-left: 0;
+      }
+      .panel-default {
+        border: 0;
+        border-bottom: 2px solid;
+        border-color: $brand-danger;
+        box-shadow: none;
+        .panel-heading {
+          color: #333333;
+          background-color: transparent;
+          border: 0;
+          box-shadow: none;
+          padding-left: 0;
+          &+ .panel-collapse > .panel-body {
+            border-top: 0;
+          }
+        }
+      }
+    }
+  }
 }
 /* Start writing sass here */
 @import "fancybox-override";
