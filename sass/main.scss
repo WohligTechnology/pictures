@@ -59,10 +59,149 @@ a {
 .uppercase {
   text-transform: uppercase;
 }
+.hamburger {
+  width: 25px;
+  height: 25px;
+  display: inline-block;
+  position: relative;
+  z-index: 10;
+  cursor: pointer;
+  .icon-bar {
+    width: 25px;
+    height: 3px;
+    margin: 3px 0;
+    background-color: #fff;
+    @include transition(all 400ms ease-in-out);
+  }
+  .top-bar {
+    @include transform(rotate(45deg));
+    position: absolute;
+    top: 7px !important;
+  }
+  .mid-bar {
+    opacity: 0;
+    position: absolute;
+  }
+  .down-bar {
+    @include transform(rotate(-45deg));
+    top: 7px !important;
+    position: absolute;
+  }
+}
 .header {
   background: url("../img/header/home_pattern.png") no-repeat;
   background-size: cover;
   height: 310px;
+}
+.menu-out {
+  height: 310px;
+  @include transform(translateY(-500px));
+  @include transition(all 300ms linear);
+  position: absolute;
+  width: 100%;
+  z-index: 99;
+}
+.menu-in {
+  background: url('../img/menu-bg.png')no-repeat;
+  background-size: cover;
+  @include transform(translateY(0));
+  @include transition(all 300ms linear);
+  position: absolute;
+  width: 100%;
+  z-index: 99;
+}
+.nav-list {
+  padding-top: 100px;
+  ul {
+    li {
+      a {
+        padding: 2px 20px;
+        display: block;
+        font-size: 26px;
+        font-weight: 600;
+        @include transition(all ease 300ms);
+        &:before {
+          margin-right: 5px;
+          vertical-align: middle;
+          @include transition(all ease 300ms);
+        }
+        &.movies:before {
+          content: url('../img/menuicons/movies.png');
+        }
+        &.talent:before {
+          content: url('../img/menuicons/talent.png');
+        }
+        &.wedding:before {
+          content: url('../img/menuicons/wedding.png');
+        }
+        &.events:before {
+          content: url('../img/menuicons/events.png');
+        }
+        &.sports:before {
+          content: url('../img/menuicons/sports.png');
+        }
+        &.worldtour:before {
+          content: url('../img/menuicons/worldtour.png');
+        }
+        &:hover {
+          color: $brand-danger;
+          &.movies:before {
+            content: url('../img/menuicons/movies-hover.png');
+          }
+          &.talent:before {
+            content: url('../img/menuicons/talent-hover.png');
+          }
+          &.wedding:before {
+            content: url('../img/menuicons/wedding-hover.png');
+          }
+          &.events:before {
+            content: url('../img/menuicons/events-hover.png');
+          }
+          &.sports:before {
+            content: url('../img/menuicons/sports-hover.png');
+          }
+          &.worldtour:before {
+            content: url('../img/menuicons/worldtour-hover.png');
+          }
+        }
+      }
+    }
+  }
+}
+.nav-inline {
+  ul {
+    li+li {
+      border-left: 3px solid $brand-primary;
+    }
+    li {
+      display: inline-block;
+      a {
+        padding: 2px 20px;
+        display: block;
+        font-size: 26px;
+        font-weight: 600;
+        @include transition(all ease 300ms);
+        &:hover {
+          color: $brand-danger;
+        }
+      }
+    }
+  }
+}
+.firstbar {
+  @include transform(rotate(-45deg));
+  position: absolute;
+  left: 10px;
+  top: 13px;
+}
+.secondbar {
+  opacity: 0;
+}
+.thirdbar {
+  @include transform(rotate(45deg));
+  position: absolute;
+  left: 10px;
+  top: 12px;
 }
 .color-white {
   color: $color-white;
@@ -79,6 +218,23 @@ a {
 header {
   min-height: 310px;
   background: rgba(247, 247, 247, 0.3);
+}
+.navbar-default {
+  .navbar-toggle {
+    display: block;
+    border-color: transparent;
+    &:hover .icon-bar {
+      background-color: darken($brand-danger, 10%);
+    }
+    .icon-bar {
+      background-color: $brand-danger;
+      border-radius: 5px;
+    }
+    &:hover,
+    &:focus {
+      background-color: transparent;
+    }
+  }
 }
 .btn {
   text-transform: uppercase;
@@ -289,7 +445,8 @@ ul.nav-opt1 {
   .img-review {
     position: absolute;
     right: 100px;
-    top: 28%;
+    top: 26%;
+    width: 225px;
     h4 {
       color: #fff;
       font-size: 24px;
@@ -549,6 +706,12 @@ footer {
     color: $brand-danger;
     background-color: #f0f0f0;
     border-color: $brand-danger;
+    @include transition(all ease 300ms);
+    &:hover {
+      color: #f0f0f0;
+      background-color: $brand-danger;
+      border-color: $brand-danger;
+    }
   }
 }
 .border-blue {
@@ -683,7 +846,7 @@ footer {
       .panel {
         border-radius: 0;
       }
-      .panel-body{
+      .panel-body {
         padding-left: 0;
       }
       .panel-default {

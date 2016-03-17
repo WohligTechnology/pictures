@@ -1,4 +1,4 @@
-<header>
+<header ng-controller="headerctrl">
   <nav class="navbar navbar-default">
     <div class="container">
       <!-- <div class="navbar-header">
@@ -14,13 +14,43 @@
         <div class="collapse navbar-collapse" id="nav-collapse">
                <div ng-include="template.menu" class="template menu"></div>
         </div> -->
-        <div class="row">
-          <div class="col-xs-6">  <a class="navbar-brand" href="#/home"><img src="img/logo.png" alt="logo"> </a></div>
-          <div class="col-xs-6">  <a class="navbar-brand pull-right" href="#/home"><img src="img/years.png" alt="logo"> </a></div>
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="navbar-header hamburger">
+            <button type="button" class="navbar-toggle collapsed" ng-click="getnav();">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar {{onebar}}"></span>
+              <span class="icon-bar {{secondbar}}"></span>
+              <span class="icon-bar {{thirdbar}}"></span>
+            </button>
+          </div>
+          <a class="navbar-brand pull-right" href="#/home"><img src="img/years.png" alt="logo"> </a>
+          <a class="navbar-brand" href="#/home"><img src="img/logo.png" alt="logo"> </a>
+          <div class="sidemenu {{getslide}}">
+            <nav class="nav-list">
+              <ul class="list-unstyled">
+                <li><a class="movies" ui-serf="">MOVIES</a></li>
+                <li><a class="wedding" ui-serf="">WEDDINGS</a></li>
+                <li><a class="sports" ui-serf="">SPORTS</a></li>
+                <li><a class="events" ui-serf="">EVENTS</a></li>
+                <li><a class="talent" ui-serf="">TALENT</a></li>
+                <li><a class="worldtour" ui-serf="">WORLD TOUR</a></li>
+              </ul>
+            </nav>
+            <nav class="nav-inline">
+              <ul class="list-unstyled">
+                <li><a href="">ABOUT US</a></li>
+                <li><a href="">BLOG</a></li>
+                <li><a href="">MEDIA</a></li>
+                <li><a href="">CAREERS</a></li>
+                <li><a href="">CONTACT US</a></li>
+              </ul>
+          </div>
         </div>
+      </div>
       <div class="collapse navbar-collapse" id="nav-collapse">
         <!-- <div ng-include="template.menu" class="template menu"></div> -->
       </div>
     </div>
-  </nav>
+    </nav>
 </header>
