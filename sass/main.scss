@@ -510,6 +510,7 @@ footer {
   }
   .footer-menu ul li a {
     line-height: 150%;
+    display: block;
   }
   .followus {
     position: relative;
@@ -753,6 +754,7 @@ footer {
       padding: 0;
     }
   }
+
   .banner-wrap {
     @include transition(all ease 300ms);
     &:hover {
@@ -870,3 +872,4 @@ footer {
 }
 /* Start writing sass here */
 @import "fancybox-override";
+@import "mobile";
