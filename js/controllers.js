@@ -1,63 +1,156 @@
 angular.module('phonecatControllers', ['templateservicemod', 'navigationservice', 'ui.bootstrap', 'ngAnimate', 'ngSanitize', 'angular-flexslider'])
 
 .controller('HomeCtrl', function($scope, TemplateService, NavigationService, $timeout) {
-    //Used to name the .html file
-    $scope.template = TemplateService.changecontent("home");
-    $scope.menutitle = NavigationService.makeactive("Home");
-    TemplateService.title = $scope.menutitle;
-    $scope.navigation = NavigationService.getnav();
+  //Used to name the .html file
+  $scope.template = TemplateService.changecontent("home");
+  $scope.menutitle = NavigationService.makeactive("Home");
+  TemplateService.title = $scope.menutitle;
+  $scope.navigation = NavigationService.getnav();
 
-    // $scope.mySlides = [
-    //   'http://flexslider.woothemes.com/images/kitchen_adventurer_cheesecake_brownie.jpg',
-    //   'http://flexslider.woothemes.com/images/kitchen_adventurer_lemon.jpg',
-    //   'http://flexslider.woothemes.com/images/kitchen_adventurer_donut.jpg',
-    //   'http://flexslider.woothemes.com/images/kitchen_adventurer_caramel.jpg'
-    // ];
-    $scope.diaries = [{
-      title: "WEDDINGS",
-      img: "img/home/diaries/diary1.png",
-      date: "12 January 2016",
-      desc: "Lorem Ipsum is simply dummy text of the printing industry"
-    }, {
-      title: "SPORTS",
-      img: "img/home/diaries/diary2.png",
-      date: "12 January 2016",
-      desc: "Lorem Ipsum is simply dummy text of the printing industry"
-    }, {
-      title: "EVENTS",
-      img: "img/home/diaries/diary3.png",
-      date: "12 January 2016",
-      desc: "Lorem Ipsum is simply dummy text of the printing industry"
-    }, {
-      title: "WEDDINGS",
-      img: "img/home/diaries/diary2.png",
-      date: "12 January 2016",
-      desc: "Lorem Ipsum is simply dummy text of the printing industry"
-    }, {
-      title: "SPORTS",
-      img: "img/home/diaries/diary3.png",
-      date: "12 January 2016",
-      desc: "Lorem Ipsum is simply dummy text of the printing industry"
-    }, {
-      title: "EVENTS",
-      img: "img/home/diaries/diary2.png",
-      date: "12 January 2016",
-      desc: "Lorem Ipsum is simply dummy text of the printing industry"
-    }, {
-      title: "WEDDINGS",
-      img: "img/home/diaries/diary3.png",
-      date: "12 January 2016",
-      desc: "Lorem Ipsum is simply dummy text of the printing industry"
-    }];
-  })
-  .controller('MoviesCtrl', function($scope, TemplateService, NavigationService, $timeout) {
+  // $scope.mySlides = [
+  //   'http://flexslider.woothemes.com/images/kitchen_adventurer_cheesecake_brownie.jpg',
+  //   'http://flexslider.woothemes.com/images/kitchen_adventurer_lemon.jpg',
+  //   'http://flexslider.woothemes.com/images/kitchen_adventurer_donut.jpg',
+  //   'http://flexslider.woothemes.com/images/kitchen_adventurer_caramel.jpg'
+  // ];
+  $scope.clientspeak = {
+    category: "Client Speak",
+    text: "Extra Efficient",
+    name: "Amitabh Bachchan",
+    img: "../img/home/amitabh.jpg"
+  };
+  $scope.diaries = [{
+    title: "WEDDINGS",
+    img: "img/home/diaries/diary1.png",
+    date: "12 January 2016",
+    desc: "Lorem Ipsum is simply dummy text of the printing industry"
+  }, {
+    title: "SPORTS",
+    img: "img/home/diaries/diary2.png",
+    date: "12 January 2016",
+    desc: "Lorem Ipsum is simply dummy text of the printing industry"
+  }, {
+    title: "EVENTS",
+    img: "img/home/diaries/diary3.png",
+    date: "12 January 2016",
+    desc: "Lorem Ipsum is simply dummy text of the printing industry"
+  }, {
+    title: "WEDDINGS",
+    img: "img/home/diaries/diary2.png",
+    date: "12 January 2016",
+    desc: "Lorem Ipsum is simply dummy text of the printing industry"
+  }, {
+    title: "SPORTS",
+    img: "img/home/diaries/diary3.png",
+    date: "12 January 2016",
+    desc: "Lorem Ipsum is simply dummy text of the printing industry"
+  }, {
+    title: "EVENTS",
+    img: "img/home/diaries/diary2.png",
+    date: "12 January 2016",
+    desc: "Lorem Ipsum is simply dummy text of the printing industry"
+  }, {
+    title: "WEDDINGS",
+    img: "img/home/diaries/diary3.png",
+    date: "12 January 2016",
+    desc: "Lorem Ipsum is simply dummy text of the printing industry"
+  }];
+})
+//
+.controller('MoviesCtrl', function($scope, TemplateService, NavigationService, $timeout) {
     //Used to name the .html file
     $scope.template = TemplateService.changecontent("movies");
     $scope.menutitle = NavigationService.makeactive("Movies");
     TemplateService.title = $scope.menutitle;
     $scope.navigation = NavigationService.getnav();
 
-    $scope.movie = [{
+    $scope.moviereleased = [{
+      img: "img/movies/released/released1.jpg",
+      date: "12 January 2016",
+      // desc: "Lorem Ipsum is simply dummy text of the printing industry"
+    }, {
+      img: "img/movies/released/released2.jpg",
+      date: "12 January 2016",
+      // desc: "Lorem Ipsum is simply dummy text of the printing industry"
+    }, {
+      img: "img/movies/released/released3.jpg",
+      date: "12 January 2016",
+      // desc: "Lorem Ipsum is simply dummy text of the printing industry"
+    }, {
+      img: "img/movies/released/released4.jpg",
+      date: "12 January 2016",
+      // desc: "Lorem Ipsum is simply dummy text of the printing industry"
+    }, {
+      img: "img/movies/released/released4.jpg",
+      date: "12 January 2016",
+      // desc: "Lorem Ipsum is simply dummy text of the printing industry"
+    }, {
+      img: "img/movies/released/released4.jpg",
+      date: "12 January 2016",
+      // desc: "Lorem Ipsum is simply dummy text of the printing industry"
+    }, {
+      img: "img/movies/released/released5.jpg",
+      date: "12 January 2016",
+      // desc: "Lorem Ipsum is simply dummy text of the printing industry"
+    }];
+    $scope.movieupcoming = [{
+      img: "img/movies/released/released1.jpg",
+      date: "12 January 2016",
+      // desc: "Lorem Ipsum is simply dummy text of the printing industry"
+    }, {
+      img: "img/movies/released/released4.jpg",
+      date: "12 January 2016",
+      // desc: "Lorem Ipsum is simply dummy text of the printing industry"
+    }, {
+      img: "img/movies/released/released2.jpg",
+      date: "12 January 2016",
+      // desc: "Lorem Ipsum is simply dummy text of the printing industry"
+    }, {
+      img: "img/movies/released/released3.jpg",
+      date: "12 January 2016",
+      // desc: "Lorem Ipsum is simply dummy text of the printing industry"
+    }, {
+      img: "img/movies/released/released4.jpg",
+      date: "12 January 2016",
+      // desc: "Lorem Ipsum is simply dummy text of the printing industry"
+    }, {
+      img: "img/movies/released/released5.jpg",
+      date: "12 January 2016",
+      // desc: "Lorem Ipsum is simply dummy text of the printing industry"
+    }];
+    $scope.weddings = [{
+      img: "img/weddings/diaries/diary1.png",
+      date: "12 January 2016",
+      desc: "Lorem Ipsum is simply dummy text of the printing industry"
+    }, {
+      img: "img/weddings/diaries/diary2.png",
+      date: "12 January 2016",
+      desc: "Lorem Ipsum is simply dummy text of the printing industry"
+    }, {
+      img: "img/weddings/diaries/diary3.png",
+      date: "12 January 2016",
+      desc: "Lorem Ipsum is simply dummy text of the printing industry"
+    }];
+    $scope.clientspeak = {
+      category: "Actor Speak",
+      text: "Awesome teamwork and planning",
+      name: "Ranbir Kapoor",
+      img: "../img/movies/ranbir.jpg"
+    };
+  })
+  .controller('MoviesInsideCtrl', function($scope, TemplateService, NavigationService, $timeout) {
+    //Used to name the .html file
+    $scope.template = TemplateService.changecontent("moviesinside");
+    $scope.menutitle = NavigationService.makeactive("Movies");
+    TemplateService.title = $scope.menutitle;
+    $scope.navigation = NavigationService.getnav();
+    $scope.clientspeak = {
+      category: "Client Speak",
+      text: "Extra Efficient",
+      name: "Amitabh Bachchan",
+      img: "../img/home/amitabh.jpg"
+    };
+    $scope.moviereleased = [{
       img: "img/movies/released/released1.jpg",
       date: "12 January 2016",
       desc: "Lorem Ipsum is simply dummy text of the printing industry"
@@ -78,27 +171,6 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
       date: "12 January 2016",
       desc: "Lorem Ipsum is simply dummy text of the printing industry"
     }];
-    $scope.weddings = [{
-      img: "img/weddings/diaries/diary1.png",
-      date: "12 January 2016",
-      desc: "Lorem Ipsum is simply dummy text of the printing industry"
-    }, {
-      img: "img/weddings/diaries/diary2.png",
-      date: "12 January 2016",
-      desc: "Lorem Ipsum is simply dummy text of the printing industry"
-    }, {
-      img: "img/weddings/diaries/diary3.png",
-      date: "12 January 2016",
-      desc: "Lorem Ipsum is simply dummy text of the printing industry"
-    }];
-
-  })
-  .controller('MoviesInsideCtrl', function($scope, TemplateService, NavigationService, $timeout) {
-    //Used to name the .html file
-    $scope.template = TemplateService.changecontent("moviesinside");
-    $scope.menutitle = NavigationService.makeactive("Movies");
-    TemplateService.title = $scope.menutitle;
-    $scope.navigation = NavigationService.getnav();
   })
   .controller('TalentsCtrl', function($scope, TemplateService, NavigationService, $timeout) {
     //Used to name the .html file
@@ -189,13 +261,12 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
   var get = false;
   $scope.getslide = "menu-out";
   $scope.getnav = function() {
-    if($scope.getslide == "menu-in") {
+    if ($scope.getslide == "menu-in") {
       $scope.getslide = "menu-out";
       $scope.onebar = "";
       $scope.secondbar = "";
       $scope.thirdbar = "";
-    }
-    else {
+    } else {
       $scope.getslide = "menu-in";
       $scope.onebar = "firstbar";
       $scope.secondbar = "secondbar";

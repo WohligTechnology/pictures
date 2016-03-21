@@ -84,14 +84,15 @@
             <div class="client-speak">
               <div class="name-cont color-white">
                 <img src="img/inverted.png" alt="">
-                <span>Client Speak</span>
+                <!-- {{clientspeak}} -->
+                <span>{{clientspeak.category}}</span>
               </div>
               <div class="img-holder">
-                <img src="img/home/amitabh.jpg" alt="" class="img-reponsive">
+                <img src="{{clientspeak.img}}" alt="" class="img-reponsive">
               </div>
               <div class="img-review color-white">
-                <h4>"Extra Efficient"</h4>
-                <p>- Amitabh Bachchan</p>
+                <h4>"{{clientspeak.text}}"</h4>
+                <p>- {{clientspeak.name}}</p>
               </div>
             </div>
           </div>

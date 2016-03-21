@@ -23,27 +23,38 @@
   </div>
   <div class="movie-category">
     <div class="container">
-      <div class="text-center">
-        <ul class="list-unstyled title-movies">
-          <li>
-            <a href="">UPCOMING</a>
-          </li>
-          <li>
-            <a href="">RELEASED</a>
-          </li>
-        </ul>
-      </div>
-      <ul class="movies-box list-unstyled">
-        <li ng-repeat="data in movie track by $index">
-          <div class="movie-box text-center">
-            <img ng-src="{{data.img}}" alt="" class="img-responsive">
-            <div class="movie-date">
-              <span>Release Date:</span>
-              <p class="color-red">{{data.date}}</p>
-            </div>
+      <uib-tabset active="active">
+        <uib-tab index="0" heading="RELEASED">
+          <div class="flex-slider">
+            <flex-slider flex-slide="data in moviereleased track by $index" animation="slide" animation-loop="false" item-width="218" item-margin="10">
+              <li>
+                <div class="movie-box text-center">
+                  <img ng-src="{{data.img}}" alt="" class="img-responsive">
+                  <div class="movie-date">
+                    <span>Release Date:</span>
+                    <p class="color-red">{{data.date}}</p>
+                  </div>
+                </div>
+              </li>
+              <flex-slider>
           </div>
-        </li>
-      </ul>
+        </uib-tab>
+        <uib-tab index="1" heading="UPCOMING">
+          <div class="flex-slider">
+                <flex-slider flex-slide="data in movieupcoming track by $index" animation="slide" animation-loop="false" item-width="220" item-margin="8" as-nav-for="#sliders" slideshow="false">
+              <li>
+                <div class="movie-box text-center">
+                  <img ng-src="{{data.img}}" alt="" class="img-responsive">
+                  <div class="movie-date">
+                    <span>Release Date:</span>
+                    <p class="color-red">{{data.date}}</p>
+                  </div>
+                </div>
+              </li>
+              <flex-slider>
+          </div>
+        </uib-tab>
+      </uib-tabset>
     </div>
   </div>
   <div class="row">
@@ -70,7 +81,7 @@
         </div>
         <div class="pd-side">
           <div class="row">
-            <div class="col-md-4" ng-repeat="data in weddings track by $index">
+            <div class="col-md-4 col-sm-4 col-xs-6" ng-repeat="data in weddings track by $index">
               <div class="wed-box border-red">
                 <div class="wed-img-list">
                   <img ng-src="{{data.img}}" alt="" class="img-responsive">
@@ -125,14 +136,15 @@
           <div class="client-speak">
             <div class="name-cont color-white">
               <img src="img/inverted.png" alt="">
-              <span>Actor Speak</span>
+              <!-- {{clientspeak}} -->
+              <span>{{clientspeak.category}}</span>
             </div>
             <div class="img-holder">
-              <img src="img/movies/ranbir.jpg" alt="" class="img-reponsive">
+              <img src="{{clientspeak.img}}" alt="" class="img-reponsive">
             </div>
             <div class="img-review color-white">
-              <h4>"Awesome teamwork <br> and planning"</h4>
-              <p>-Ranbir Kapoor</p>
+              <h4>"{{clientspeak.text}}"</h4>
+              <p>- {{clientspeak.name}}</p>
             </div>
           </div>
         </div>
@@ -143,13 +155,12 @@
     <div class="row">
       <div class="col-md-offset-2 col-md-8">
         <div class="text-center">
-          <h4 class="uppercase color-blue bold">Use <span class="color-red">#GSWedding</span> and get to view live feed of everyone,<br>
+          <h4 class="uppercase color-blue bold">Use <a class="color-red" target="_blank">#GSWedding</a> and get to view live feed of everyone,<br>
 including yours, right here!</h4>
         </div>
       </div>
     </div>
     <div class="social">
-      <!-- <div ng-include = "'/social.html'"></div> -->
       <section class="marg-section">
         <div class="social-back ">
           <div class="container">
@@ -215,14 +226,9 @@ including yours, right here!</h4>
               </div>
               <div class="form-group">
                 <div class="row">
-                  <!-- <div class="col-md-2">
-                    <div class="text-enqry">
-                      <span class="color-red">Enquiring for </span>
-                    </div>
-                  </div> -->
                   <div class="col-md-10">
                     <div class="enq-list">
-                      <label class="checkbox-inline" style="padding-left:0;margin-top:-6px;">
+                      <label class="checkbox-inline text-label" style="padding-left:0;margin-top:-6px;">
                         <span class="color-red">Enquiring for </span>
                       </label>
                       <label class="checkbox-inline">

@@ -21,6 +21,7 @@ $color-black: #000!default;
 }
 body {
   font-family: "Lato";
+  overflow-x: hidden;
 }
 img.loading {
   text-align: center;
@@ -383,6 +384,7 @@ ul.nav-opt1 {
 .wed-box {
   border-bottom: 6px solid $brand-border;
   padding-bottom: 20px;
+  margin-bottom: 20px;
   position: relative;
   .wed-img-list {
     position: relative;
@@ -454,6 +456,7 @@ ul.nav-opt1 {
     }
     p {
       text-align: right;
+      text-transform: capitalize;
     }
   }
   .name-cont {
@@ -471,6 +474,7 @@ ul.nav-opt1 {
       font-size: 24px;
       vertical-align: middle;
       line-height: 1;
+      text-transform: capitalize;
     }
   }
 }
@@ -600,39 +604,73 @@ footer {
   padding: 20px;
   background-size: 100%;
   background-position: 0 -7px;
+  .flexslider {
+    background: transparent;
+    border-color: transparent;
+  }
   .movie-box {
-    width: 208px;
     img {
       margin-bottom: 25px;
     }
   }
-  .title-movies {
+  ul.nav.nav-tabs {
+    text-align: center;
     li {
-      font-size: 26px;
-      margin: 0 10px;
+      float: none;
     }
   }
-  ul {
-    margin: 0 0 25px;
-    li {
-      display: inline-block;
-      // font-size: 26px;
-      margin: 0 10px;
-      @include transition(all ease 300ms);
+  .nav > li > a {
+    padding: 2px 20px;
+  }
+  .nav-tabs > li {
+    a {
+      color: #053146;
+      border: 0;
+      border-bottom: 5px solid transparent;
+      background: transparent;
+      font-weight: 600;
+      font-size: 26px;
+      &:hover,
+      &:focus {
+        border: 0;
+        background: transparent;
+        border-bottom: 5px solid #088fd5;
+        color: #088fd5;
+      }
+    }
+    &.active {
       a {
-        color: #053146;
-        border-bottom: 5px solid transparent;
-        font-weight: 600;
-        @include transition(all ease 300ms);
-        &.active,
-        &:hover {
-          border-color: #088fd5;
-          color: #088fd5;
-        }
+        border-color: #088fd5;
+        color: #088fd5;
       }
     }
   }
+  ul {
+    margin: 5px 0;
+    border: 0;
+    li {
+      display: inline-block;
+      margin: 0 00px;
+      @include transition(all ease 300ms);
+      // a {
+      //   color: #053146;
+      //   border-bottom: 5px solid transparent;
+      //   font-weight: 600;
+      //   @include transition(all ease 300ms);
+      //   &.active,
+      //   &:hover {
+      //     border-color: #088fd5;
+      //     color: #088fd5;
+      //   }
+      // }
+    }
+  }
 }
+// .upcoming-slider {
+//   .flexslider .slides > li {
+//     width: auto !important;
+//   }
+// }
 .diary-title {
   h4 {
     font-size: 30px;
@@ -754,7 +792,6 @@ footer {
       padding: 0;
     }
   }
-
   .banner-wrap {
     @include transition(all ease 300ms);
     &:hover {
