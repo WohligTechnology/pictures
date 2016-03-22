@@ -12,6 +12,7 @@ $brand-warning: #ffec39 !default;
 $brand-danger: #e23c3c !default;
 $brand-info: #000072 !default;
 $brand-border: #d7d7d7!default;
+$bg-grey: #f0f0f0!default;
 $color-white: #fff!default;
 $color-black: #000!default;
 @import "../bower_components/bootstrap-sass/assets/stylesheets/bootstrap";
@@ -35,6 +36,15 @@ img {
 }
 img.doneLoading {
   opacity: 1;
+}
+.bg-grey {
+  background: $bg-grey;
+}
+.ab {
+  position: absolute;
+}
+.mb30 {
+  margin-bottom: 30px;
 }
 a {
   cursor: pointer;
@@ -110,6 +120,10 @@ a {
   position: absolute;
   width: 100%;
   z-index: 99;
+}
+.bg-pattern {
+  background: url('../img/moviedetail/bg-grey.png')no-repeat;
+  background-size: 100%;
 }
 .nav-list {
   padding-top: 100px;
@@ -431,7 +445,7 @@ ul.nav-opt1 {
   width: 800px;
   height: 250px;
   background-size: 100%;
-  margin: 30px auto;
+  margin: 20px auto;
   position: relative;
   .img-holder {
     width: 175px;
@@ -604,6 +618,9 @@ footer {
   padding: 20px;
   background-size: 100%;
   background-position: 0 -7px;
+  ul.flex-direction-nav {
+    display: none;
+  }
   .flexslider {
     background: transparent;
     border-color: transparent;
@@ -630,6 +647,7 @@ footer {
       background: transparent;
       font-weight: 600;
       font-size: 26px;
+        @include transition(all ease 300ms);
       &:hover,
       &:focus {
         border: 0;
@@ -650,19 +668,8 @@ footer {
     border: 0;
     li {
       display: inline-block;
-      margin: 0 00px;
+      margin: 0;
       @include transition(all ease 300ms);
-      // a {
-      //   color: #053146;
-      //   border-bottom: 5px solid transparent;
-      //   font-weight: 600;
-      //   @include transition(all ease 300ms);
-      //   &.active,
-      //   &:hover {
-      //     border-color: #088fd5;
-      //     color: #088fd5;
-      //   }
-      // }
     }
   }
 }
@@ -902,6 +909,164 @@ footer {
           &+ .panel-collapse > .panel-body {
             border-top: 0;
           }
+        }
+      }
+    }
+  }
+}
+.banner-movies {
+  top: 140px;
+}
+.mt180 {
+  margin-top: 180px;
+}
+.movie-abt {
+  .title-main {
+    h3 {
+      font-size: 30px;
+      letter-spacing: 3px;
+    }
+  }
+  .title-subtitle {
+    h4 {
+      letter-spacing: 3px;
+    }
+  }
+  .cast-crew table tr td {
+    padding: 5px;
+  }
+}
+h4.title-movies {
+  font-size: 30px;
+}
+.videoslider {
+  margin-top: 150px;
+  margin-bottom: 50px;
+  .thumbnail-movies li {
+    padding-bottom: 10px;
+    width: 87%;
+  }
+  .plr5 {
+    padding: 0 5px;
+  }
+}
+.tab-insidemovies {
+  .nav > li > a {
+    padding: 2px 20px;
+  }
+  .nav-tabs {
+    border: 0;
+    margin-bottom: 30px;
+    li {
+      a {
+        color: #053146;
+        border: 0;
+        border-bottom: 5px solid transparent;
+        background: transparent;
+        font-weight: 600;
+        font-size: 26px;
+        text-transform: uppercase;
+          @include transition(all ease 300ms);
+        &:hover,
+        &:focus {
+          border: 0;
+          background: transparent;
+          border-bottom: 5px solid $brand-danger;
+          color: $brand-danger;
+        }
+      }
+      &.active {
+        a {
+          border-color: $brand-danger;
+          color: $brand-danger;
+        }
+      }
+    }
+  }
+  .flex-slider {
+    .flexslider {
+      background: transparent;
+      border-color: transparent;
+      margin-bottom: 30px;
+    }
+    ol.flex-control-nav.flex-control-paging {
+      display: none;
+    }
+    .flex-direction-nav {
+      .flex-next {
+        right: -100px;
+        text-align: right;
+      }
+      .flex-prev {
+        left: -100px;
+        text-align: left;
+      }
+      a {
+        opacity: 1;
+        width: 50px;
+        height: 65px;
+        &.flex-next:before {
+          content: url("../img/moviedetail/next.png");
+        }
+        &.flex-prev:before {
+          content: url("../img/moviedetail/prev.png");
+        }
+      }
+      .flex-control-nav {
+        display: none;
+      }
+    }
+  }
+}
+.bg-award {
+  background: url('../img/moviedetail/bg-red.png')no-repeat;
+  background-size: cover;
+  margin-top: -50px;
+}
+.awards {
+  margin-top: 200px;
+  margin-bottom:30px;
+   .title {
+    margin-bottom: 40px;
+    h3 {
+      font-size: 36px;
+    }
+  }
+  .awards-title {
+    ul {
+      display: inline-block;
+      padding: 50px 20px 20px 0;
+      li {
+        color: #fff;
+      }
+    }
+  }
+  .nav > li > a {
+    padding: 2px 20px;
+  }
+  .nav-tabs {
+    border: 0;
+    li {
+      a {
+        color: #000;
+        border: 0;
+        border-bottom: 5px solid transparent;
+        background: transparent;
+        font-size: 26px;
+        text-transform: uppercase;
+        @include transition(all ease 300ms);
+        &:hover,
+        &:focus {
+          border: 0;
+          background: transparent;
+          border-bottom: 5px solid #fff;
+          color: #fff;
+        }
+      }
+      &.active {
+        a {
+          border-color: #fff;
+          color: #fff;
         }
       }
     }
