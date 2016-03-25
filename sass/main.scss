@@ -40,6 +40,9 @@ img.doneLoading {
 .bg-grey {
   background: $bg-grey;
 }
+.bg-halfgrey {
+  @include background(linear-gradient(to bottom, #FFFFFF 55%, #EBEBEB 56%, #E8E8E8 80%, #E7E7E7 80%));
+}
 .ab {
   position: absolute;
 }
@@ -647,7 +650,7 @@ footer {
       background: transparent;
       font-weight: 600;
       font-size: 26px;
-        @include transition(all ease 300ms);
+      @include transition(all ease 300ms);
       &:hover,
       &:focus {
         border: 0;
@@ -714,6 +717,7 @@ footer {
       left: 50%;
       transform: translate(-50%,-50%);
       color: #fff;
+      margin: 0;
     }
     h3 {
       font-size: 36px;
@@ -722,12 +726,11 @@ footer {
     }
   }
   .list-service {
-    ul.make-center {
-      top: 72%;
-      transform: translate(-50%, -70%);
+    ul.serviceul {
       li {
         padding: 15px 0;
         a {
+          display: block;
           &:hover {
             color: darken($color-white, 15%);
           }
@@ -795,7 +798,7 @@ footer {
 .banner-talent {
   .row {
     margin: 0;
-    .col-md-6 {
+    .col-sm-6 {
       padding: 0;
     }
   }
@@ -805,39 +808,37 @@ footer {
       .hover-image {
         opacity: 1;
       }
-      .name-event {
-        opacity: 0;
-        &.extend-hover {
-          opacity: 1;
-        }
-        &.opacityplay {
-          opacity: 0!important;
-        }
-      }
     }
     .name-event {
       position: absolute;
-      z-index: 2;
+      z-index: 10;
       width: 100%;
       padding: 10px;
-      font-size: 16px;
-      background: rgba(0, 0, 0, 0.3);
       letter-spacing: 2px;
+      font-weight: 600;
       @include transition(all ease 300ms);
       cursor: pointer;
+      hr {
+        width: 47px;
+        margin: 8px auto;
+        border: 2px solid #f6c87b;
+      }
       &.btm {
         bottom: 0;
+        background: $brand-danger;
       }
-      &.extend-hover {
+      &.center-make {
         top: 50%;
         left: 50%;
         @include transform(translate(-50%,-50%));
-        opacity: 0;
-        background: transparent;
-        @include transition(all ease 300ms);
       }
-      &.opacityplay {
-        opacity: 1!important;
+      span {
+        margin-top: 6px;
+        display: inline-block;
+        font-size: 18px;
+      }
+      .btn {
+        background: #fff;
       }
     }
     .hover-image {
@@ -851,13 +852,24 @@ footer {
       @include transition(all ease 300ms);
     }
   }
+  &.wedding {
+    .banner-wrap {
+      &:hover {
+        .name-event {
+          span {
+            color: $brand-danger;
+          }
+        }
+      }
+    }
+  }
 }
 .mic {
   width: 30px;
   margin-left: 15px;
   margin-top: -5px;
 }
-.checkbox-inline.equire {
+.checkbox-inline.enquire {
   padding-left: 0;
   margin-top: 0;
   width: 85px;
@@ -869,6 +881,10 @@ footer {
 }
 .img-tilt {
   padding: 10px;
+  text-align: center;
+  img {
+    display: inline-block;
+  }
 }
 .wedding {
   .row {
@@ -881,6 +897,15 @@ footer {
   .title {
     margin: 15px 0;
     border-bottom: 4px solid $brand-danger;
+    position: relative;
+    .border-blue.borders {
+      border: 4px solid;
+      position: absolute;
+      width: 80px;
+      bottom: -5px;
+      left: 50%;
+      @include transform(translatex(-50%));
+    }
     h3 {
       letter-spacing: 2px;
       font-size: 36px;
@@ -888,6 +913,7 @@ footer {
     }
   }
   .services-list {
+    padding: 0 20px;
     .panel-group {
       .panel {
         border-radius: 0;
@@ -919,6 +945,9 @@ footer {
 }
 .mt180 {
   margin-top: 180px;
+}
+.mt110 {
+  margin-top: 110px;
 }
 .movie-abt {
   .title-main {
@@ -966,7 +995,7 @@ h4.title-movies {
         font-weight: 600;
         font-size: 26px;
         text-transform: uppercase;
-          @include transition(all ease 300ms);
+        @include transition(all ease 300ms);
         &:hover,
         &:focus {
           border: 0;
@@ -1025,8 +1054,8 @@ h4.title-movies {
 }
 .awards {
   margin-top: 200px;
-  margin-bottom:30px;
-   .title {
+  margin-bottom: 30px;
+  .title {
     margin-bottom: 40px;
     h3 {
       font-size: 36px;
@@ -1070,6 +1099,12 @@ h4.title-movies {
         }
       }
     }
+  }
+}
+.w-button {
+  .btn {
+    padding: 4px 20px;
+    margin-right: -2px;
   }
 }
 /* Start writing sass here */

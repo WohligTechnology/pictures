@@ -20,16 +20,19 @@
     <div class="container">
       <div class="banner-talent">
         <div class="row">
-          <div class="col-md-6" ng-repeat="data in wedding track by $index">
+          <div class="col-sm-6" ng-repeat="data in wedding track by $index">
             <div class="banner-wrap">
               <img ng-src="{{data.img}}" class="img-responsive">
               <img src="img/talent/hover-banner.png" alt="" class="img-responsive hover-image">
-              <div class="name-event text-center btm">
+              <div class="name-event btm">
                 <span class="color-white uppercase">{{data.name}}</span>
+                <div class="pull-right btn-all">
+                  <button type="button" name="button" class="btn btn-small color-red">Enter</button>
+                </div>
               </div>
-              <div class="name-event extend-hover text-center">
+              <!-- <div class="name-event extend-hover text-center">
                 <span class="color-red uppercase bold">{{data.name}}</span>
-              </div>
+              </div> -->
             </div>
           </div>
         </div>
@@ -48,7 +51,7 @@
         </div>
         <div class="pd-side">
           <div class="row">
-            <div class="col-md-4" ng-repeat="data in weddings track by $index">
+            <div class="col-md-4 col-sm-4 col-xs-6" ng-repeat="data in weddings track by $index">
               <div class="wed-box border-red">
                 <div class="wed-img-list">
                   <img ng-src="{{data.img}}" alt="" class="img-responsive">
@@ -79,32 +82,48 @@
           </div>
         </div>
       </div>
-      <div class="service-bg">
+      <div class="service-bg bg-red-mobile">
         <div class="row">
           <div class="col-xs-6">
             <div class="serv-title min-hght">
               <h3 class="uppercase bold make-center">SERVICES</h3>
             </div>
           </div>
-          <div class="col-xs-6">
-            <div class="list-service make-center min-hght">
-              <ul class="list-unstyled make-center">
-                <li>
-                  <a class="color-white" ui-sref="home">BRAND AMBASSADORS</a>
-                </li>
-                <li>
-                  <a class="color-white" ui-sref="home">TALENT REPRESENTATION</a>
-                </li>
-                <li>
-                  <a class="color-white" ui-sref="home">CELEBRITY ENDORSEMENTS</a>
-                </li>
-                <li>
-                  <a class="color-white" ui-sref="home">TV, RADIO AND PRESS INTERVIEW</a>
-                </li>
-                <li>
-                  <a class="color-white" ui-sref="home">EVENTS AND APPEARANCES</a>
-                </li>
-              </ul>
+          <div class="col-xs-6 mt110">
+            <div class="row">
+              <div class="col-md-6">
+                <div class="list-service">
+                  <ul class="list-unstyled serviceul">
+                    <li>
+                      <a class="color-white uppercase" ui-sref="home">Brand Endorsements</a>
+                    </li>
+                    <li>
+                      <a class="color-white uppercase" ui-sref="home">Event Appreances</a>
+                    </li>
+                    <li>
+                      <a class="color-white uppercase" ui-sref="home">Live Performances</a>
+                    </li>
+                    <li>
+                      <a class="color-white uppercase" ui-sref="home">Talent Representation</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="list-service">
+                  <ul class="list-unstyled serviceul">
+                    <li>
+                      <a class="color-white uppercase" ui-sref="home">Film Casting</a>
+                    </li>
+                    <li>
+                      <a class="color-white uppercase" ui-sref="home">Fashion &amp; Modeling</a>
+                    </li>
+                    <li>
+                      <a class="color-white uppercase" ui-sref="home">Sports Management</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -223,30 +242,38 @@
               </div>
               <div class="form-group">
                 <div class="row">
-                  <div class="col-md-10">
+                  <div class="col-md-12">
                     <div class="enq-list">
-                      <label class="checkbox-inline equire" style="padding-left:0;margin-top:0px;">
+                      <label class="checkbox-inline enquire text-label" style="padding-left:0;margin-top:0px;">
                         <span class="color-red">Enquiring for </span>
                       </label>
                       <label class="checkbox-inline">
                         <input type="checkbox" id="ambassador" value="ambassador">
-                        <label for="ambassador"><span></span> Brand Ambassadors </label>
+                        <label for="ambassador"><span></span>Brand Endorsements</label>
                       </label>
                       <label class="checkbox-inline">
                         <input type="checkbox" id="representation" value="representation">
-                        <label for="representation"><span></span> Talent Representation</label>
+                        <label for="representation"><span></span>Event Appreances</label>
+                      </label>
+                      <label class="checkbox-inline">
+                        <input type="checkbox" id="performances" value="representation">
+                        <label for="performances"><span></span>Live Performances</label>
                       </label>
                       <label class="checkbox-inline">
                         <input type="checkbox" id="endorsements" value="endorsements">
-                        <label for="endorsements"><span></span>Celebrity Endorsements</label>
+                        <label for="endorsements"><span></span>Talent Representation</label>
                       </label>
                       <label class="checkbox-inline">
                         <input type="checkbox" id="tv" value="tv">
-                        <label for="tv"><span></span>TV, Radio &amp; Press Interview </label>
+                        <label for="tv"><span></span>Film Casting</label>
                       </label>
                       <label class="checkbox-inline">
                         <input type="checkbox" id="events" value="events">
-                        <label for="events"><span></span>Events &amp; Appearances</label>
+                        <label for="events"><span></span>  Fashion &amp; Modeling</label>
+                      </label>
+                      <label class="checkbox-inline">
+                        <input type="checkbox" id="sports" value="events">
+                        <label for="sports"><span></span>  Sports Management</label>
                       </label>
                     </div>
                   </div>

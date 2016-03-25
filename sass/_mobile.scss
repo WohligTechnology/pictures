@@ -67,6 +67,19 @@
       margin-top: -10px;
     }
   }
+  .service-bg .list-service ul.serviceul li {
+    padding: 5px 0;
+  }
+  .banner-talent .banner-wrap .name-event {
+    span {
+      margin-top: 6px;
+      display: inline-block;
+      font-size: 12px;
+    }
+    .btn-all .btn {
+      padding: 4px 20px;
+    }
+  }
   .bg2 {
     .flex-slider {
       width: 700px;
@@ -166,7 +179,7 @@
       left: 25px;
       top: 22%;
       span {
-        font-size: 18px;
+        font-size: 16px;
       }
       img {
         margin-right: 5px;
@@ -183,7 +196,7 @@
       top: 22%;
       width: 150px;
       h4 {
-        font-size: 18px;
+        font-size: 16px;
         margin-top: 0;
       }
     }
@@ -231,6 +244,13 @@
 @media (max-width: 480px) {
   .navbar-default .navbar-brand img {
     width: 70px;
+  }
+  .service-bg .list-service ul.serviceul li a {
+    display: block;
+    font-size: 12px;
+  }
+  .bg-red-mobile {
+    background: $brand-danger;
   }
   .client-speak {
     width: 285px;
@@ -286,10 +306,108 @@
     .text-label {
       display: block;
       margin-top: 0 !important;
+      width: 100%;
+      height: auto;
     }
   }
   .diary-title h4 {
     font-size: 22px;
     letter-spacing: 1px;
+  }
+  .bg-award {
+    background: $brand-danger;
+    .awards {
+      margin-top: 30px;
+      margin-bottom: 30px;
+      .title {
+        margin-bottom: 20px;
+        h3 {
+          font-size: 24px;
+        }
+      }
+      .nav > li > a {
+        padding: 2px 8px;
+      }
+      .nav-tabs li a {
+        font-size: 14px;
+      }
+      .awards-title {
+        padding-top: 10px;
+        ul {
+          display: inline-block;
+          padding: 10px 15px 0 0;
+        }
+      }
+    }
+  }
+  .movie-abt {
+    .title-main h3 {
+      font-size: 24px;
+      letter-spacing: 2px;
+    }
+    .title-subtitle h4 {
+      letter-spacing: 2px;
+    }
+  }
+  .videoslider {
+    margin-top: 50px;
+    margin-bottom: 10px;
+  }
+  h4.title-movies {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  .tab-insidemovies .nav-tabs li a {
+    font-size: 20px;
+  }
+  .mt180 {
+    margin-top: 0;
+  }
+  .banner-talent .banner-wrap .name-event span {
+    margin-top: 6px;
+    display: inline-block;
+    font-size: 12px;
+    letter-spacing: 0;
+  }
+  .wed-box .wed-img-list .ribbon-red {
+    top: -8px;
+    img {
+      width: 100px !important;
+    }
+    span {
+      margin: -30px 0 0 5px;
+      font-size: 10px;
+    }
+  }
+  .service-bg .min-hght h3 {
+    font-size: 24px;
+    letter-spacing: 2px;
+    font-weight: 600;
+  }
+  .mt110 {
+    margin-top: 20px;
+    margin-bottom: 10px;
+  }
+  .service {
+    .panel-title {
+      font-size: 12px;
+    }
+  }
+}
+@media (max-width: 360px) {
+  .bg-award .awards .nav > li > a {
+    padding: 2px 4px;
+    font-size: 12px;
+  }
+  .tab-insidemovies {
+    .nav-tabs {
+      border: 0;
+      margin-bottom: 10px;
+      li {
+        a {
+          font-size: 14px;
+        }
+      }
+    }
   }
 }

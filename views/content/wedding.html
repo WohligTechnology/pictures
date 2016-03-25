@@ -8,12 +8,12 @@
       </div>
     </div>
     <div class="row">
-      <div class="col-md-offset-2 col-md-2">
+      <div class="col-md-offset-2 col-md-2 col-sm-4">
         <div class="img-tilt">
           <img src="img/weddings/wedding_fanta.png" class="img-responsive" alt="">
         </div>
       </div>
-      <div class="col-md-6">
+      <div class="col-md-6 col-sm-8">
         <div class="wedding-fant-desc mt50">
           <p>gs worldwide entertainment has forayed into the vast business of Weddings. We at gs entertainment specialize in handling every aspect of your wedding, from A-Z, leaving you to spend time with your loved ones. Here at gs, your dream day is planned
             creatively by a host of qualified professionals who dedicate themselves entirely in making your day even more special.</p>
@@ -22,45 +22,18 @@
     </div>
     <div class="wedding banner-talent">
       <div class="row">
-        <div class="col-md-4" ng-repeat="data in wedding track by $index">
+        <div class="col-md-4 col-sm-4 col-xs-6" ng-repeat="data in wedding track by $index">
           <div class="banner-wrap">
             <img ng-src="{{data.img}}" class="img-responsive">
             <img src="img/weddings/hover-banner.png" alt="" class="img-responsive hover-image">
-            <div class="name-event extend-hover text-center opacityplay">
+            <div class="name-event extend-hover text-center center-make">
               <span class="color-white uppercase">{{data.name}}</span>
-            </div>
-            <div class="name-event extend-hover text-center">
-              <span class="color-red uppercase bold">{{data.name}}</span>
+              <hr class="wedding-border">
             </div>
           </div>
         </div>
       </div>
     </div>
-    <!-- <div class="row">
-      <div class="col-md-12">
-        <div class="text-center">
-          <div class="wedding-diary">
-            <ul>
-              <li>
-                <div class="diary">
-                  <img src="img/weddings/diaries/diary.png" alt="diary">
-                </div>
-              </li>
-              <li>
-                <div class="diary-title">
-                  <h4>wedding diares</h4>
-                </div>
-              </li>
-              <li>
-                <div class="diary">
-                  <img src="img/weddings/diaries/diary_back.png" alt="diary">
-                </div>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div> -->
     <div class="bg-moviesdiaries">
       <div class="row">
         <div class="col-md-12">
@@ -75,13 +48,13 @@
       </div>
       <div class="pd-side">
         <div class="row">
-          <div class="col-md-4" ng-repeat="data in weddings track by $index">
+          <div class="col-sm-4 col-xs-6" ng-repeat="data in weddings track by $index">
             <div class="wed-box border-red">
               <div class="wed-img-list">
                 <img ng-src="{{data.img}}" alt="" class="img-responsive">
                 <div class="ribbon-red">
                   <img src="img/ribbon_red.png" alt="">
-                  <span class="color-white uppercase">Talent</span>
+                  <span class="color-white uppercase">Wedding</span>
                 </div>
               </div>
               <div class="wed-desc">
@@ -111,88 +84,91 @@
         <div class="service">
           <div class="title">
             <h3 class="uppercase bold text-center">services</h3>
+            <div class="border-blue borders"></div>
           </div>
           <div class="services-list">
-            <uib-accordion close-others="oneAtATime">
-              <uib-accordion-group is-open="status.isFirstOpen" is-disabled="status.isFirstDisabled">
+            <uib-accordion close-others="oneAtATime" is-open="status.open">
+              <uib-accordion-group is-open="status.open1" is-disabled="status.isFirstDisabled" ng-repeat="data in services">
                 <uib-accordion-heading>
-                  Wedding Planning
+                  <span class="uppercase bold">{{data.title}}</span>
+                  <i class="pull-right fa" ng-class="{'fa-minus': status.open1, 'fa-plus': !status.open1}"></i>
                 </uib-accordion-heading>
-                <h4></h4>
+                <!-- <div class="" ng-bind-html="{{data.content}}">{{data.content}}</div> -->
+                <div class="" >{{data.content}}</div>
               </uib-accordion-group>
-              <uib-accordion-group>
+              <!-- <uib-accordion-group is-open="status.open2">
                 <uib-accordion-heading>
-                  Wedding Design and Production
-                </uib-accordion-heading>
-                This is just some content to illustrate fancy headings.
-              </uib-accordion-group>
-              <uib-accordion-group>
-                <uib-accordion-heading>
-                  Destination Management
+                  <span class="uppercase bold">  Wedding Design and Production </span> <i class="pull-right fa" ng-class="{'fa-minus': status.open2, 'fa-plus': !status.open2}"></i>
                 </uib-accordion-heading>
                 This is just some content to illustrate fancy headings.
               </uib-accordion-group>
               <uib-accordion-group>
                 <uib-accordion-heading>
-                  Entertainment &amp; Talent
+                  <span class="uppercase bold">  Destination Management </span><i class="pull-right fa" ng-class="{'fa-minus': status.open, 'fa-plus': !status.open}"></i>
                 </uib-accordion-heading>
                 This is just some content to illustrate fancy headings.
               </uib-accordion-group>
               <uib-accordion-group>
                 <uib-accordion-heading>
-                  Photography &amp; Videography
+                  <span class="uppercase bold">  Entertainment &amp; Talent </span> <i class="pull-right fa" ng-class="{'fa-minus': status.open, 'fa-plus': !status.open}"></i>
                 </uib-accordion-heading>
                 This is just some content to illustrate fancy headings.
               </uib-accordion-group>
               <uib-accordion-group>
                 <uib-accordion-heading>
-                  Catering Liasion
+                  <span class="uppercase bold">  Photography &amp; Videography </span> <i class="pull-right fa" ng-class="{'fa-minus': status.open, 'fa-plus': !status.open}"></i>
                 </uib-accordion-heading>
                 This is just some content to illustrate fancy headings.
               </uib-accordion-group>
               <uib-accordion-group>
                 <uib-accordion-heading>
-                  RSVP, Hospitality &amp; Transport
+                  <span class="uppercase bold">  Catering Liasion </span> <i class="pull-right fa" ng-class="{'fa-minus': status.open, 'fa-plus': !status.open}"></i>
                 </uib-accordion-heading>
                 This is just some content to illustrate fancy headings.
               </uib-accordion-group>
               <uib-accordion-group>
                 <uib-accordion-heading>
-                  VENUE SELECTION
+                  <span class="uppercase bold">  RSVP, Hospitality &amp; Transport </span> <i class="pull-right fa" ng-class="{'fa-minus': status.open, 'fa-plus': !status.open}"></i>
                 </uib-accordion-heading>
                 This is just some content to illustrate fancy headings.
               </uib-accordion-group>
               <uib-accordion-group>
                 <uib-accordion-heading>
-                  THEMED EVENTS
+                  <span class="uppercase bold">  VENUE SELECTION </span> <i class="pull-right fa" ng-class="{'fa-minus': status.open, 'fa-plus': !status.open}"></i>
                 </uib-accordion-heading>
                 This is just some content to illustrate fancy headings.
               </uib-accordion-group>
               <uib-accordion-group>
                 <uib-accordion-heading>
-                  TRAVEL &amp; STAY
+                  <span class="uppercase bold">  THEMED EVENTS </span> <i class="pull-right fa" ng-class="{'fa-minus': status.open, 'fa-plus': !status.open}"></i>
                 </uib-accordion-heading>
                 This is just some content to illustrate fancy headings.
               </uib-accordion-group>
               <uib-accordion-group>
                 <uib-accordion-heading>
-                  DECOR
+                  <span class="uppercase bold">  TRAVEL &amp; STAY </span> <i class="pull-right fa" ng-class="{'fa-minus': status.open, 'fa-plus': !status.open}"></i>
                 </uib-accordion-heading>
                 This is just some content to illustrate fancy headings.
               </uib-accordion-group>
               <uib-accordion-group>
                 <uib-accordion-heading>
-                  ENTERTAINMENT
+                  <span class="uppercase bold">  DECOR </span> <i class="pull-right fa" ng-class="{'fa-minus': status.open, 'fa-plus': !status.open}"></i>
+                </uib-accordion-heading>
+                Décor is like a crown of jewels…special attention is paid to colours of drapes, flower arrangements, backdrops, props, lighting, seating, etc. for a tasteful presentation. We execute all these minute details with perfection. We understand how important
+                it is to match the colour of the flowers of the centre piece with that of the bow of the chair…we understand the scheme of colours, the fall of the fabrics.
+              </uib-accordion-group>
+              <uib-accordion-group>
+                <uib-accordion-heading>
+                  <span class="uppercase bold">  ENTERTAINMENT </span> <i class="pull-right fa" ng-class="{'fa-minus': status.open, 'fa-plus': !status.open}"></i>
                 </uib-accordion-heading>
                 This is just some content to illustrate fancy headings.
               </uib-accordion-group>
               <uib-accordion-group>
                 <uib-accordion-heading>
-                  CATERING
+                  <span class="uppercase bold">  CATERING </span> <i class="pull-right fa" ng-class="{'fa-minus': status.open, 'fa-plus': !status.open}"></i>
                 </uib-accordion-heading>
                 This is just some content to illustrate fancy headings.
-              </uib-accordion-group>
-
+              </uib-accordion-group> -->
             </uib-accordion>
           </div>
         </div>
@@ -286,7 +262,7 @@
                 <div class="row">
                   <div class="col-md-10">
                     <div class="enq-list">
-                      <label class="checkbox-inline equire" style="padding-left:0;margin-top:0px;">
+                      <label class="checkbox-inline enquire text-label" style="padding-left:0;margin-top:0px;">
                         <span class="color-red">Enquiring for </span>
                       </label>
                       <label class="checkbox-inline">
@@ -319,26 +295,12 @@
               </div>
               <div class="row">
                 <div class="col-md-6">
-                  <!-- <div class="form-group">
-                    <label for="exampleInputEmail1">Start Date</label>
-                    <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Start Date">
-                    <div class="icon-calender">
-                      <i class="fa fa-calendar"></i>
-                    </div>
-                  </div> -->
                   <div class="form-group has-feedback">
                     <input type="date" class="form-control" id="inputSuccess2" aria-describedby="Start Date" placeholder="Start Date">
                     <span class="fa fa-calendar color-red form-control-feedback" aria-hidden="true"></span>
                   </div>
                 </div>
                 <div class="col-md-6">
-                  <!-- <div class="form-group">
-                    <label for="exampleInputEmail1">End Date</label>
-                    <input type="text" class="form-control" id="exampleInputEmail1" placeholder="End Date">
-                    <div class="icon-calender">
-                      <i class="fa fa-calendar"></i>
-                    </div>
-                  </div> -->
                   <div class="form-group has-feedback">
                     <input type="date" class="form-control" id="inputSuccess2" aria-describedby="End Date" placeholder="End Date">
                     <span class="fa fa-calendar color-red form-control-feedback" aria-hidden="true"></span>
