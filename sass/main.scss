@@ -67,7 +67,7 @@ a {
   background-color: transparent;
   border-color: transparent;
   .navbar-brand img {
-    width: 110px;
+    width: 120px;
   }
 }
 .uppercase {
@@ -285,7 +285,8 @@ textarea {
 .mr30 {
   margin: 30px 0;
 }
-.min-height-section1 {
+.min-height-section1,
+.min-height-bg1 {
   min-height: 360px;
   color: #E5E5E5;
   background: rgba(247, 247, 247, 0.3);
@@ -667,7 +668,7 @@ footer {
     }
   }
   ul {
-    margin: 5px 0;
+    margin: 10px 0;
     border: 0;
     li {
       display: inline-block;
@@ -721,7 +722,7 @@ footer {
     }
     h3 {
       font-size: 36px;
-      letter-spacing: 2px;
+      letter-spacing: 3px;
       font-weight: 600;
     }
   }
@@ -750,12 +751,12 @@ footer {
 .btn-all {
   .btn {
     padding: 8px 30px;
+    @include transition(all ease 300ms);
   }
   .btn-outline {
     color: $brand-danger;
-    background-color: #f0f0f0;
+    background: #fff;
     border-color: $brand-danger;
-    @include transition(all ease 300ms);
     &:hover {
       color: #f0f0f0;
       background-color: $brand-danger;
@@ -814,7 +815,7 @@ footer {
       z-index: 10;
       width: 100%;
       padding: 10px;
-      letter-spacing: 2px;
+      letter-spacing: 3px;
       font-weight: 600;
       @include transition(all ease 300ms);
       cursor: pointer;
@@ -941,10 +942,14 @@ footer {
   }
 }
 .banner-movies {
-  top: 140px;
+  top: 150px;
+  width: 100%;
 }
 .mt180 {
   margin-top: 180px;
+}
+.mt45 {
+  margin-top: 45px;
 }
 .mt110 {
   margin-top: 110px;
@@ -1063,15 +1068,24 @@ h4.title-movies {
   }
   .awards-title {
     ul {
-      display: inline-block;
-      padding: 50px 20px 20px 0;
+      padding: 50px 65px 20px 75px;
+      display: table-cell;
+      width: 1%;
       li {
         color: #fff;
+        line-height: 2;
       }
     }
   }
   .nav > li > a {
     padding: 2px 20px;
+    margin: 0 5px;
+  }
+  .nav-tabs.nav-justified > .active > a {
+    border: 0;
+    background: transparent;
+    border-bottom: 5px solid #fff;
+    color: #fff;
   }
   .nav-tabs {
     border: 0;
@@ -1081,7 +1095,7 @@ h4.title-movies {
         border: 0;
         border-bottom: 5px solid transparent;
         background: transparent;
-        font-size: 26px;
+        font-size: 22px;
         text-transform: uppercase;
         @include transition(all ease 300ms);
         &:hover,
@@ -1101,10 +1115,83 @@ h4.title-movies {
     }
   }
 }
-.w-button {
-  .btn {
-    padding: 4px 20px;
-    margin-right: -2px;
+.pd30 {
+  padding: 30px;
+}
+.wedding-detail {
+  .w-title h4 {
+    letter-spacing: 3px;
+    border-bottom: 3px solid #ffc999;
+    margin-bottom: 0;
+    padding-bottom: 10px;
+  }
+  .asfc-title {
+    border-bottom: 3px solid #ffc999;
+    margin-bottom: 0;
+    padding-bottom: 10px;
+  }
+  .asfc-title h4 {
+    letter-spacing: 3px;
+    margin: 0 0 7px;
+  }
+  .w-button {
+    .btn-danger {
+      background-color: #f13748;
+      border-color: #f13748;
+      @include transition(all ease 300ms);
+      &:hover {
+        background: darken(#f13748, 10%);
+        border-color: darken(#f13748, 10%);
+      }
+      &.dark-red {
+        background-color: #c82b39;
+        border-color: #c82b39;
+        &:hover {
+          background: darken(#c82b39, 10%);
+          border-color: darken(#c82b39, 10%);
+        }
+      }
+    }
+    .btn {
+      padding: 4px 20px;
+      margin-right: -4px;
+      text-transform: capitalize;
+      i {
+        margin-left: 5px;
+      }
+    }
+  }
+}
+.title-asfc {
+  h3 {
+    font-size: 30px;
+    letter-spacing: 3px;
+  }
+}
+.banner-asfc {
+  top: 120px;
+  width: 100%;
+}
+.row-flex {
+  display: flex;
+  flex: 1;
+  .col-flex {
+    flex: 1;
+  }
+}
+.playersasfc {
+  .player-img {
+    position: relative;
+    margin: 5px;
+    figcaption {
+      color: #fff;
+      background: $brand-danger;
+      text-align: center;
+      width: 100%;
+      padding: 10px;
+      bottom: 0;
+      letter-spacing: 2px;
+    }
   }
 }
 /* Start writing sass here */
