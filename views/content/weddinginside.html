@@ -10,30 +10,39 @@
 </section>
 <section>
   <div class="container">
-    <div class="row">
-      <div class="col-md-6">
-        <div class="wedding-imgbox">
-          <img src="img/weddings/w1.png" class="img-responsive" alt="">
+    <div class="row mt180">
+      <div class="col-md-offset-1 col-md-10">
+        <div class="row pd30" ng-repeat="data in weddingdetail">
+          <div class="col-sm-6">
+            <div class="wedding-imgbox">
+              <img ng-src="{{data.img}}" class="img-responsive" alt="">
+            </div>
+          </div>
+          <div class="col-sm-6">
+            <div class="wedding-detail mt45">
+              <div class="w-title">
+                <h4 class="uppercase color-red bold">
+              {{data.name}}
+                </h4>
+              </div>
+              <div class="w-detail mt15 mb15">
+                <p>
+                  {{data.detail}}
+                </p>
+              </div>
+              <div class="w-button">
+                <button class="btn btn-danger">Photos <i class="fa fa-camera"></i></button>
+                <button class="btn btn-danger dark-red">Video <i class="fa fa-play"></i></button>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-      <div class="col-md-6">
-        <div class="wedding-detail">
-          <div class="w-title">
-            <h4>
-              Choksi-Talera Wedding Setup
-            </h4>
-          </div>
-          <div class="w-detail">
-            <p>
-              The beautiful #choksitalerawedding took place at Mohini Mahal on 16th April, 2014. The entire #event was organized and managed by GS Worldwide Entertainment. #gswedding
-            </p>
-          </div>
-          <div class="w-button">
-            <button class="btn btn-danger">Photos <i class="fa fa-camera"></i></button>
-            <button class="btn btn-danger">Video <i class="fa fa-play"></i></button>
-          </div>
-        </div>
-      </div>
+    </div>
+    <div class="btn-all text-center">
+      <button class="btn btn-outline">
+        View all
+      </button>
     </div>
   </div>
 </section>

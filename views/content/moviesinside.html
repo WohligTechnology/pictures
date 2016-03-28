@@ -18,8 +18,7 @@
               </div>
               <div class="cont-main">
                 <p class="text-justify">
-                  Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has
-                  survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with including versions of Lorem Ipsum.
+                  {{moviesdetail.detail}}
                 </p>
                 <div class="btn-all mt15 mb15">
                   <button class="btn btn-danger">
@@ -38,19 +37,19 @@
                 <table>
                   <tr>
                     <td class="bold">Producer :</td>
-                    <td>Bunty Walia, Juspreet Singh Walia and Vashu Bhagnani</td>
+                    <td>{{moviesdetail.producer}}</td>
                   </tr>
                   <tr>
                     <td class="bold">Director :</td>
-                    <td>Sohail Khan</td>
+                    <td>{{moviesdetail.director}}</td>
                   </tr>
                   <tr>
                     <td class="bold">Casts :</td>
-                    <td>Salman Khan, Kajol, Arbaaz Khan, Dharmendra</td>
+                    <td>{{moviesdetail.cast}}</td>
                   </tr>
                   <tr>
                     <td class="bold">Music :</td>
-                    <td>Jatin-Lalit, Himesh Reshammiya and Sajid-Wajid</td>
+                    <td>{{moviesdetail.music}}</td>
                   </tr>
                 </table>
               </div>
@@ -142,7 +141,7 @@
       </h3>
             </div>
             <div class="tabs-awards">
-              <uib-tabset active="activePill" type="">
+              <uib-tabset active="activeJustified" justified="true" type="">
                 <uib-tab index="0" heading="Filmfare">
                   <div class="awards-title">
                     <ul class="list-unstyled" ng-repeat="data in awards">

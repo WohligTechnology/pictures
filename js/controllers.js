@@ -137,6 +137,14 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
       name: "Amitabh Bachchan",
       img: "img/home/amitabh.jpg"
     };
+    $scope.moviesdetail = {
+      detail: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with including versions of Lorem Ipsum.",
+      producer: "Bunty Walia, Juspreet Singh Walia and Vashu Bhagnani",
+      director: "Sohail Khan",
+      cast: "Salman Khan, Kajol, Arbaaz Khan, Dharmendra",
+      music: "Jatin-Lalit, Himesh Reshammiya and Sajid-Wajid"
+    };
+
     $scope.moviereleased = [{
       img: "img/movies/released/released1.jpg",
       date: "12 January 2016",
@@ -159,19 +167,19 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
       desc: "Lorem Ipsum is simply dummy text of the printing industry"
     }];
     $scope.wallpapers = [{
-      img: "../img/moviedetail/wallpapers/wallpaper1.jpg"
+      img: "img/moviedetail/wallpapers/wallpaper1.jpg"
     }, {
-      img: "../img/moviedetail/wallpapers/wallpaper2.jpg"
+      img: "img/moviedetail/wallpapers/wallpaper2.jpg"
     }, {
-      img: "../img/moviedetail/wallpapers/wallpaper3.jpg"
+      img: "img/moviedetail/wallpapers/wallpaper3.jpg"
     }, {
-      img: "../img/moviedetail/wallpapers/wallpaper4.jpg"
+      img: "img/moviedetail/wallpapers/wallpaper4.jpg"
     }, {
-      img: "../img/moviedetail/wallpapers/wallpaper5.jpg"
+      img: "img/moviedetail/wallpapers/wallpaper5.jpg"
     }, {
-      img: "../img/moviedetail/wallpapers/wallpaper5.jpg"
+      img: "img/moviedetail/wallpapers/wallpaper5.jpg"
     }, {
-      img: "../img/moviedetail/wallpapers/wallpaper6.jpg"
+      img: "img/moviedetail/wallpapers/wallpaper6.jpg"
     }];
     $scope.wallpapers = _.chunk($scope.wallpapers, 6);
     for (var i = 0; i < $scope.wallpapers.length; i++) {
@@ -271,57 +279,57 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
       desc: "Lorem Ipsum is simply dummy text of the printing industry"
     }];
     $scope.services = [{
-        title: "Wedding Planning",
-        content: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel a at atque ipsum mollitia officia veniam. Maxime, ab. Alias facilis voluptatum nobis, praesentium porro quis. Harum inventore magnam a delectus."
-      }, {
-        title: "Wedding Design and Production",
-        content: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel a at atque ipsum mollitia officia veniam. Maxime, ab. Alias facilis voluptatum nobis, praesentium porro quis. Harum inventore magnam a delectus."
-      }, {
-        title: "Destination Management",
-        content: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel a at atque ipsum mollitia officia veniam. Maxime, ab. Alias facilis voluptatum nobis, praesentium porro quis. Harum inventore magnam a delectus."
-      }, {
-        title: "Entertainment & Talent",
-        content: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel a at atque ipsum mollitia officia veniam. Maxime, ab. Alias facilis voluptatum nobis, praesentium porro quis. Harum inventore magnam a delectus."
-      }, {
-        title: "Photography & Videography",
-        content: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel a at atque ipsum mollitia officia veniam. Maxime, ab. Alias facilis voluptatum nobis, praesentium porro quis. Harum inventore magnam a delectus."
-      }, {
-        title: "Catering Liasion",
-        content: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel a at atque ipsum mollitia officia veniam. Maxime, ab. Alias facilis voluptatum nobis, praesentium porro quis. Harum inventore magnam a delectus."
-      }, {
-        title: "RSVP, Hospitality & Transport",
-        content: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel a at atque ipsum mollitia officia veniam. Maxime, ab. Alias facilis voluptatum nobis, praesentium porro quis. Harum inventore magnam a delectus."
-      }, {
-        title: "VENUE SELECTION",
-        content: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel a at atque ipsum mollitia officia veniam. Maxime, ab. Alias facilis voluptatum nobis, praesentium porro quis. Harum inventore magnam a delectus."
-      }, {
-        title: "THEMED EVENTS",
-        content: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel a at atque ipsum mollitia officia veniam. Maxime, ab. Alias facilis voluptatum nobis, praesentium porro quis. Harum inventore magnam a delectus."
-      }, {
-        title: "TRAVEL & STAY",
-        content: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel a at atque ipsum mollitia officia veniam. Maxime, ab. Alias facilis voluptatum nobis, praesentium porro quis. Harum inventore magnam a delectus."
-      }, {
-        title: "DECOR",
-        content: "Décor is like a crown of jewels…special attention is paid to colours of drapes, flower arrangements, backdrops, props, lighting, seating, etc. for a tasteful presentation. We execute all these minute details with perfection. We understand how important it is to match the colour of the flowers of the centre piece with that of the bow of the chair…we understand the scheme of colours, the fall of the fabrics."
-      }, {
-        title: "ENTERTAINMENT",
-        content: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel a at atque ipsum mollitia officia veniam. Maxime, ab. Alias facilis voluptatum nobis, praesentium porro quis. Harum inventore magnam a delectus."
-      }, {
-        title: "CATERING",
-        content: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel a at atque ipsum mollitia officia veniam. Maxime, ab. Alias facilis voluptatum nobis, praesentium porro quis. Harum inventore magnam a delectus."
-      }, {
-        title: "Styling",
-        content: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel a at atque ipsum mollitia officia veniam. Maxime, ab. Alias facilis voluptatum nobis, praesentium porro quis. Harum inventore magnam a delectus."
-      }, {
-        title: "Security & Licenses",
-        content: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel a at atque ipsum mollitia officia veniam. Maxime, ab. Alias facilis voluptatum nobis, praesentium porro quis. Harum inventore magnam a delectus."
-      }, {
-        title: "Website and Social Media",
-        content: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel a at atque ipsum mollitia officia veniam. Maxime, ab. Alias facilis voluptatum nobis, praesentium porro quis. Harum inventore magnam a delectus."
-      }, {
-        title: "E-invites and Social-Media Presence",
-        content: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel a at atque ipsum mollitia officia veniam. Maxime, ab. Alias facilis voluptatum nobis, praesentium porro quis. Harum inventore magnam a delectus."
-      }];
+      title: "Wedding Planning",
+      content: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel a at atque ipsum mollitia officia veniam. Maxime, ab. Alias facilis voluptatum nobis, praesentium porro quis. Harum inventore magnam a delectus."
+    }, {
+      title: "Wedding Design and Production",
+      content: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel a at atque ipsum mollitia officia veniam. Maxime, ab. Alias facilis voluptatum nobis, praesentium porro quis. Harum inventore magnam a delectus."
+    }, {
+      title: "Destination Management",
+      content: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel a at atque ipsum mollitia officia veniam. Maxime, ab. Alias facilis voluptatum nobis, praesentium porro quis. Harum inventore magnam a delectus."
+    }, {
+      title: "Entertainment & Talent",
+      content: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel a at atque ipsum mollitia officia veniam. Maxime, ab. Alias facilis voluptatum nobis, praesentium porro quis. Harum inventore magnam a delectus."
+    }, {
+      title: "Photography & Videography",
+      content: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel a at atque ipsum mollitia officia veniam. Maxime, ab. Alias facilis voluptatum nobis, praesentium porro quis. Harum inventore magnam a delectus."
+    }, {
+      title: "Catering Liasion",
+      content: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel a at atque ipsum mollitia officia veniam. Maxime, ab. Alias facilis voluptatum nobis, praesentium porro quis. Harum inventore magnam a delectus."
+    }, {
+      title: "RSVP, Hospitality & Transport",
+      content: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel a at atque ipsum mollitia officia veniam. Maxime, ab. Alias facilis voluptatum nobis, praesentium porro quis. Harum inventore magnam a delectus."
+    }, {
+      title: "VENUE SELECTION",
+      content: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel a at atque ipsum mollitia officia veniam. Maxime, ab. Alias facilis voluptatum nobis, praesentium porro quis. Harum inventore magnam a delectus."
+    }, {
+      title: "THEMED EVENTS",
+      content: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel a at atque ipsum mollitia officia veniam. Maxime, ab. Alias facilis voluptatum nobis, praesentium porro quis. Harum inventore magnam a delectus."
+    }, {
+      title: "TRAVEL & STAY",
+      content: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel a at atque ipsum mollitia officia veniam. Maxime, ab. Alias facilis voluptatum nobis, praesentium porro quis. Harum inventore magnam a delectus."
+    }, {
+      title: "DECOR",
+      content: "Décor is like a crown of jewels…special attention is paid to colours of drapes, flower arrangements, backdrops, props, lighting, seating, etc. for a tasteful presentation. We execute all these minute details with perfection. We understand how important it is to match the colour of the flowers of the centre piece with that of the bow of the chair…we understand the scheme of colours, the fall of the fabrics."
+    }, {
+      title: "ENTERTAINMENT",
+      content: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel a at atque ipsum mollitia officia veniam. Maxime, ab. Alias facilis voluptatum nobis, praesentium porro quis. Harum inventore magnam a delectus."
+    }, {
+      title: "CATERING",
+      content: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel a at atque ipsum mollitia officia veniam. Maxime, ab. Alias facilis voluptatum nobis, praesentium porro quis. Harum inventore magnam a delectus."
+    }, {
+      title: "Styling",
+      content: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel a at atque ipsum mollitia officia veniam. Maxime, ab. Alias facilis voluptatum nobis, praesentium porro quis. Harum inventore magnam a delectus."
+    }, {
+      title: "Security & Licenses",
+      content: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel a at atque ipsum mollitia officia veniam. Maxime, ab. Alias facilis voluptatum nobis, praesentium porro quis. Harum inventore magnam a delectus."
+    }, {
+      title: "Website and Social Media",
+      content: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel a at atque ipsum mollitia officia veniam. Maxime, ab. Alias facilis voluptatum nobis, praesentium porro quis. Harum inventore magnam a delectus."
+    }, {
+      title: "E-invites and Social-Media Presence",
+      content: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel a at atque ipsum mollitia officia veniam. Maxime, ab. Alias facilis voluptatum nobis, praesentium porro quis. Harum inventore magnam a delectus."
+    }];
   })
   .controller('WeddingInsideCtrl', function($scope, TemplateService, NavigationService, $timeout) {
     //Used to name the .html file
@@ -329,7 +337,75 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     $scope.menutitle = NavigationService.makeactive("Wedding");
     TemplateService.title = $scope.menutitle;
     $scope.navigation = NavigationService.getnav();
+    $scope.weddingdetail = [{
+      img: "img/weddings/w1.png",
+      name: "Choksi-Talera Wedding Setup",
+      detail: "The beautiful #choksitalerawedding took place at Mohini Mahal on 16th April, 2014. The entire #event was organized and managed by GS Worldwide Entertainment. #gswedding "
+    }, {
+      img: "img/weddings/w1.png",
+      name: "Jhosi Wedding",
+      detail: "The beautiful #choksitalerawedding took place at Mohini Mahal on 16th April, 2014. The entire #event was organized and managed by GS Worldwide Entertainment. #gswedding"
+    }];
   })
+
+.controller('asfcCtrl', function($scope, TemplateService, NavigationService, $timeout) {
+  //Used to name the .html file
+  $scope.template = TemplateService.changecontent("asfc");
+  $scope.menutitle = NavigationService.makeactive("Sports");
+  TemplateService.title = $scope.menutitle;
+  $scope.navigation = NavigationService.getnav();
+  $scope.asfcdetail = [{
+    img: "img/ASFC/w1.jpg",
+    team1: "AHFC",
+    team2: "AHFC",
+    date: "15 Sep 2015",
+    location: "Bangalore",
+    detail: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
+  }, {
+    img: "img/ASFC/w2.jpg",
+    team1: "AHFC",
+    team2: "AHFC",
+    date: "15 Sep 2015",
+    location: "Bangalore",
+    detail: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
+  }, {
+    img: "img/ASFC/w3.jpg",
+    team1: "AHFC",
+    team2: "AHFC",
+    date: "15 Sep 2015",
+    location: "Bangalore",
+    detail: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
+  }, {
+    img: "img/ASFC/w4.jpg",
+    team1: "AHFC",
+    team2: "AHFC",
+    date: "15 Sep 2015",
+    location: "Bangalore",
+    detail: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
+  }];
+  $scope.asfcplayer = [{
+    img: "img/ASFC/player1.jpg",
+    name: "Abhisek Bachchan",
+  }, {
+    img: "img/ASFC/player2.jpg",
+    name: "Ranbir Kapoor",
+  }, {
+    img: "img/ASFC/player3.jpg",
+    name: "Aditya Roy Kapoor",
+  }, {
+    img: "img/ASFC/player4.jpg",
+    name: "Arjun Kapoor",
+  }, {
+    img: "img/ASFC/player5.jpg",
+    name: "Dino Morea",
+  }];
+  $scope.clientspeak = {
+    category: "Players Speak",
+    text: "Awesome teamwork and planning",
+    name: "Sunil Joshi",
+    img: "img/movies/ranbir.jpg"
+  };
+})
 
 .controller('headerctrl', function($scope, TemplateService) {
   $scope.template = TemplateService;

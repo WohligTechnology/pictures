@@ -1,0 +1,326 @@
+<section>
+  <div class="banner banner-asfc ab text-center">
+    <img src="img/ASFC/logo.png" class="" style="width:15%;">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+          <div class="content mt15">
+            <p class="text-justify">
+              All Star Football Club a team owned by Playing For Humanity and managed by GS Sports. The All Stars Football Club spearheaded by Bollywood icons Abhishek Bachchan (Captain), Ranbir Kapoor, Dino Morea, , Arjun Kapoor, Marc Robinson, Shabir Ahluwalia, Karan
+              Wahi, Ameet Gaur, Aditya Roy Kapoor, Sachiin Joshi, Raj Kundra, Caesar Gonzales, Rohan Shreshtaother icons from the Entertainment and Sports industry. The main aim of the All Star Football Club is to collect money for charity while using
+              the ever growing game of football in India as a platform to do so. This is in turn also helps promoting the sport Football in India. ASFC will bring Sports and entertainment together and demonstrate each other’s strengths by adding immense
+              value to the business of brands.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section>
+  <div class="container">
+    <div class="playersasfc mt180">
+      <div class="title-asfc">
+        <h3 class="text-center color-red bold uppercase">
+        PLAYER LINE UP
+      </h3>
+      </div>
+      <div class="row-flex">
+        <div class="col-flex" ng-repeat="data in asfcplayer">
+          <figure class="player-img">
+            <img ng-src="{{data.img}}" alt="" class="img-responsive">
+            <figcaption class="ab uppercase">
+              {{data.name}}
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+      <div class="btn-all text-center mt15 mb15">
+        <button class="btn btn-outline">
+          View all
+        </button>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-offset-1 col-md-10">
+        <div class="title-asfc">
+          <h3 class="text-center color-red bold uppercase">
+          PREVIOUS GAMES HIGHLIGHTS
+        </h3>
+        </div>
+        <div class="row pd30" ng-repeat="data in asfcdetail">
+          <div class="col-sm-6">
+            <div class="wedding-imgbox">
+              <img ng-src="{{data.img}}" class="img-responsive" alt="">
+            </div>
+          </div>
+          <div class="col-sm-6">
+            <div class="wedding-detail">
+              <div class="asfc-title">
+                <h4 class="uppercase color-red bold">
+              {{data.team1}} VS {{data.team2}}
+                </h4>
+                <div class="row">
+                  <div class="col-sm-6">
+                    <span class="color-red">Date:</span> <span>{{data.date}}</span>
+                  </div>
+                  <div class="col-sm-6">
+                    <span class="color-red">Location:</span> <span>{{data.location}}</span>
+                  </div>
+                </div>
+              </div>
+              <div class="w-detail mt15 mb15">
+                <p>
+                  {{data.detail}}
+                </p>
+              </div>
+              <div class="w-button">
+                <button class="btn btn-danger">Photos <i class="fa fa-camera"></i></button>
+                <button class="btn btn-danger dark-red">Video <i class="fa fa-play"></i></button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="btn-all text-center">
+      <button class="btn btn-outline">
+        View all
+      </button>
+    </div>
+    <div class="coming-game">
+      <div class="title-asfc">
+        <h3 class="text-center color-white bold uppercase">
+        PREVIOUS GAMES HIGHLIGHTS
+      </h3>
+      </div>
+      <div class="row">
+        <div class="col-md-offset-2 col-md-8">
+          <div class="row">
+            <div class="col-md-4">
+              <div class="team text-center">
+                <img src="img/ASFC/asfc.png" alt="" class="img-responsive">
+              </div>
+              <div class="date text-center">
+                <p>Date: 04.02.2016</p>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="vs text-center">
+                vs
+              </div>
+              <div class="stadium text-center">
+                DY Patil Stadium
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="team text-center">
+                <img src="img/ASFC/dfc.png" alt="" class="img-responsive">
+              </div>
+              <div class="date text-center">
+                <p>20:00 (IST)</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="prv-game">
+      <div class="row">
+        <div class="col-md-4">
+          <div class="title text-center bold">
+            PREVIOUS GAME
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="vs text-center">
+            <img src="img/ASFC/fc.png" alt="" width="30px">
+            <span>2 : 1</span>
+            <img src="img/ASFC/dfc.png" alt="" width="30px">
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="btn-all mt15 mb-15">
+            <button class="btn btn-danger">View Scorecard</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="magic-bus">
+      <div class="row">
+        <div class="col-sm-6">
+          <span class="color-red">Preferred Charity Partner :</span> <img src="img/ASFC/magicbuslogo.png" alt="" />
+        </div>
+        <div class="col-sm-6">
+          <span class="color-red">Kitting Partner :</span> <img src="img/ASFC/nike.png" alt="" />
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="section3">
+    <div class="bg3">
+      <div class="container">
+        <div class="client-speak">
+          <div class="name-cont color-white">
+            <img src="img/inverted.png" alt="">
+            <!-- {{clientspeak}} -->
+            <span>{{clientspeak.category}}</span>
+          </div>
+          <div class="img-holder">
+            <img src="{{clientspeak.img}}" alt="" class="img-reponsive">
+          </div>
+          <div class="img-review color-white">
+            <h4>"{{clientspeak.text}}"</h4>
+            <p>- {{clientspeak.name}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-offset-2 col-md-8">
+        <div class="text-center">
+          <h4 class="uppercase color-blue bold">Use <a class="color-red" target="_blank">#GSWedding</a> and get to view live feed of everyone,<br>
+including yours, right here!</h4>
+        </div>
+      </div>
+    </div>
+    <div class="social">
+      <section class="marg-section">
+        <div class="social-back ">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-4 col-sm-4">
+                <div class="social-box text-center">
+                  <img src="img/socials/facebook.png" class="doneLoading">
+                </div>
+                <div class="social-logo text-center">
+                  <img src="img/facebook.jpg" alt="" class="img-responsive">
+                </div>
+              </div>
+              <div class="col-md-4 col-sm-4">
+                <div class="social-box text-center">
+                  <img src="img/socials/twitter.png" class="doneLoading">
+                </div>
+                <div class="social-logo text-center ">
+                  <img src="img/twitter.jpg" alt="" class="img-responsive">
+                </div>
+              </div>
+              <div class="col-md-4 col-sm-4">
+                <div class="social-box text-center">
+                  <img src="img/socials/instagram.png" class="doneLoading">
+                </div>
+                <div class="social-logo text-center ">
+                  <img src="img/instagram.jpg" alt="" class="img-responsive">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+    <div class="download">
+      <div class="row">
+        <div class="col-md-4">
+          <div class="site text-center">
+            <img src="img\ASFC\imac.jpg" alt="">
+            <div class="btn-all mt15 mb15  text-center">
+              <div class="btn btn-primary color-white">
+                View Site
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="andriod text-center">
+            <img src="img\ASFC\googleplay.png" alt="">
+            <div class="btn-all mt15 mb15  text-center">
+              <div class="btn btn-primary color-white">
+                Download App
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="apple text-center">
+            <img src="img\ASFC\apple.png" alt="">
+            <div class="btn-all mt15 mb15  text-center">
+              <div class="btn btn-primary color-white">
+                Download App
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="mr30">
+      <div class="row">
+        <div class="col-md-offset-2 col-md-8">
+          <div class="get-in-touch">
+            <h3 class="color-red uppercase bold">GET IN TOUCH</h3>
+            <form action="">
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <input type="text" class="form-control" id="exampleInputEmail1" placeholder="First Name">
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Last Name">
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Email">
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Phone number">
+                  </div>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="row">
+                  <div class="col-md-10">
+                    <div class="enq-list">
+                      <label class="checkbox-inline text-label" style="padding-left:0;margin-top:-6px;">
+                        <span class="color-red">Enquiring for </span>
+                      </label>
+                      <label class="checkbox-inline">
+                        <input type="checkbox" id="production" value="">
+                        <label for="production"><span></span> Book the team</label>
+                      </label>
+                      <label class="checkbox-inline">
+                        <input type="checkbox" id="distribution" value="">
+                        <label for="distribution"><span></span> Become a partner</label>
+                      </label>
+                      <label class="checkbox-inline">
+                        <input type="checkbox" id="casting" value="">
+                        <label for="casting"><span></span> Become a sponsor</label>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-12">
+                  <textarea class="form-control" rows="3" placeholder="Say Something"></textarea>
+                  <div class="submit-btn btn-all text-center mt15">
+                    <button class="btn btn-danger" type="button" name="button">submit</button>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

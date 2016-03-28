@@ -39,6 +39,11 @@ firstapp.config(function($stateProvider, $urlRouterProvider, $httpProvider, $loc
       url: "/weddinginside",
       templateUrl: "views/template.html",
       controller: 'WeddingInsideCtrl'
+    })
+    .state('asfc', {
+      url: "/asfc",
+      templateUrl: "views/template.html",
+      controller: 'asfcCtrl'
     });
   $urlRouterProvider.otherwise("/home");
   $locationProvider.html5Mode(isproduction);
