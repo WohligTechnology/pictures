@@ -81,31 +81,33 @@
               GALLERY
             </h3>
           </div>
-          <uib-tabset active="active">
-            <uib-tab index="0" heading="WALLPAPERS" vertical="true" type="pills">
-              <div class="bg-grey pd20">
-                <div class="row">
-                  <div class="col-xs-4" ng-repeat="data in wallpaper">
-                    <div class="mb15">
-                      <img ng-src="{{data.img}}" alt="" class="img-responsive">
+          <div class="mb15">
+            <uib-tabset active="active">
+              <uib-tab index="0" heading="WALLPAPERS" vertical="true" type="pills">
+                <div class="bg-grey pd20">
+                  <div class="row">
+                    <div class="col-xs-4" ng-repeat="data in wallpaper">
+                      <div class="mb15">
+                        <img ng-src="{{data.img}}" alt="" class="img-responsive">
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
-            </uib-tab>
-            <uib-tab index="1" heading="VIDEOS" vertical="true" type="pills" class="bg-grey">
-              <div class="bg-grey pd20">
-                <div class="row">
-                  <div class="col-xs-4" ng-repeat="data in wallpaper">
-                    <div class="mb15">
-                      <img ng-src="{{data.img}}" alt="" class="img-responsive">
+              </uib-tab>
+              <uib-tab index="1" heading="VIDEOS" vertical="true" type="pills" class="bg-grey">
+                <div class="bg-grey pd20">
+                  <div class="row">
+                    <div class="col-xs-4" ng-repeat="data in wallpaper">
+                      <div class="mb15">
+                        <img ng-src="{{data.img}}" alt="" class="img-responsive">
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
-            </uib-tab>
-          </uib-tabset>
-          <div class="vist-web mt15">
+              </uib-tab>
+            </uib-tabset>
+          </div>
+          <div class="vist-web">
             <h4 class="text-center bold">
               FOR MORE INFORMATION VISIT
             </h4>

@@ -1251,7 +1251,7 @@ h4.title-movies {
   }
   .title h4 {
     letter-spacing: 3px;
-    font-size: 24px;
+    font-size: 30px;
   }
   .pbt35 {
     padding: 35px 0;
@@ -1287,6 +1287,19 @@ h4.title-movies {
   }
   .col-xs-4 {
     padding: 0 8px;
+  }
+  .vist-web {
+    margin-top: 20px;
+    h4 {
+      color: #646464;
+    }
+  }
+  .title {
+    padding: 20px 0;
+    h3 {
+      font-size: 30px;
+      letter-spacing: 3px;
+    }
   }
 }
 /* Start writing sass here */
