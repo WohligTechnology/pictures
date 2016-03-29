@@ -1,0 +1,156 @@
+<section>
+  <div class="banner banner-asfc ab text-center">
+    <img src="img/jpp/jpp.png" class="" style="width:25%;">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+          <div class="content mt15">
+            <p class="text-justify">
+              Jaipur Pink Panthers are the first champions of the Pro Kabaddi League 2014. The team is owned by the bollywood star Abhishek Bachchan. The team has played in various cities across India like Mumbai, Kolkata, Delhi, Patna, Pune, Vizag, Jaipur and Bengaluru.
+              Jaipur Pink Panthers team and the home matches is execlusively managed by GS Worldwide Entertainment.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="mt180">
+  <div class="jpp-fixtures bg-red-jpp">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-offset-1 col-md-10">
+          <div class="head">
+            <div class="title">
+              <h4 class="color-white">
+              2016 FIXTURES
+            </h4>
+            </div>
+            <div class="list" ng-repeat="data in jppdetail">
+              <div class="row">
+                <div class="col-md-9">
+                  <div class="row bg-light">
+                    <div class="col-md-6">
+                      <div class="list-img">
+                        <ul class="list-unstyled">
+                          <li>
+                            <img src="{{data.team1}}" alt="" class="img-responsive">
+                          </li>
+                          <li class="color-primary text-center">
+                            <div class="circle bold">vs</div>
+                          </li>
+                          <li>
+                            <img src="{{data.team2}}" alt="" class="img-responsive">
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="list-make">
+                        <ul class="list-unstyled">
+                          <li>{{data.date}}</li>
+                          <li class="venue">
+                            <label for="">Venue:</label> {{data.venu}}</li>
+                          <li>
+                            <label for="">Time: </label> {{data.time}}</li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-3">
+                  <div class="btn-all pbt35">
+                    <a href="#" class="btn color-red btn-info" target="_blank">Book Tickets</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section>
+  <div class="jpp-category nav-tab-middle ">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-offset-1 col-md-10">
+          <div class="title">
+            <h3 class="letter-spacing color-red text-center bold">
+              GALLERY
+            </h3>
+          </div>
+          <uib-tabset active="active">
+            <uib-tab index="0" heading="WALLPAPERS" vertical="true" type="pills">
+              <div class="bg-grey pd20">
+                <div class="row">
+                  <div class="col-xs-4" ng-repeat="data in wallpaper">
+                    <div class="mb15">
+                      <img ng-src="{{data.img}}" alt="" class="img-responsive">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </uib-tab>
+            <uib-tab index="1" heading="VIDEOS" vertical="true" type="pills" class="bg-grey">
+              <div class="bg-grey pd20">
+                <div class="row">
+                  <div class="col-xs-4" ng-repeat="data in wallpaper">
+                    <div class="mb15">
+                      <img ng-src="{{data.img}}" alt="" class="img-responsive">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </uib-tab>
+          </uib-tabset>
+          <div class="vist-web mt15">
+            <h4 class="text-center bold">
+              FOR MORE INFORMATION VISIT
+            </h4>
+            <div class="btn-all text-center">
+              <a href="http://jaipurpinkpanthers.com/home" target="_blank" class="btn btn-primary btn-lg">
+                www.jpp.com
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<div class="social">
+  <section class="marg-section">
+    <div class="social-back ">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4 col-sm-4">
+            <div class="social-box text-center">
+              <img src="img/socials/facebook.png" class="doneLoading">
+            </div>
+            <div class="social-logo text-center">
+              <img src="img/facebook.jpg" alt="" class="img-responsive">
+            </div>
+          </div>
+          <div class="col-md-4 col-sm-4">
+            <div class="social-box text-center">
+              <img src="img/socials/twitter.png" class="doneLoading">
+            </div>
+            <div class="social-logo text-center ">
+              <img src="img/twitter.jpg" alt="" class="img-responsive">
+            </div>
+          </div>
+          <div class="col-md-4 col-sm-4">
+            <div class="social-box text-center">
+              <img src="img/socials/instagram.png" class="doneLoading">
+            </div>
+            <div class="social-logo text-center ">
+              <img src="img/instagram.jpg" alt="" class="img-responsive">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

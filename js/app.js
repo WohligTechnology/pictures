@@ -44,6 +44,11 @@ firstapp.config(function($stateProvider, $urlRouterProvider, $httpProvider, $loc
       url: "/asfc",
       templateUrl: "views/template.html",
       controller: 'asfcCtrl'
+    })
+    .state('jpp', {
+      url: "/jpp",
+      templateUrl: "views/template.html",
+      controller: 'jppCtrl'
     });
   $urlRouterProvider.otherwise("/home");
   $locationProvider.html5Mode(isproduction);

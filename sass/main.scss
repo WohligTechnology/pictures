@@ -10,7 +10,7 @@ $brand-primary: #15acff !default;
 $brand-success: #84ce3c !default;
 $brand-warning: #ffec39 !default;
 $brand-danger: #e23c3c !default;
-$brand-info: #000072 !default;
+$brand-info: #fff !default;
 $brand-border: #d7d7d7!default;
 $bg-grey: #f0f0f0!default;
 $color-white: #fff!default;
@@ -127,6 +127,10 @@ a {
 .bg-pattern {
   background: url('../img/moviedetail/bg-grey.png')no-repeat;
   background-size: 100%;
+}
+.bg-red-jpp {
+  background: url('../img/bg-red.png')no-repeat;
+  background-size: cover;
 }
 .nav-list {
   padding-top: 100px;
@@ -617,11 +621,25 @@ footer {
 .wedding-fant-desc p {
   text-align: justify;
 }
+.nav-tab-middle {
+  ul.nav.nav-tabs {
+    text-align: center;
+    li {
+      float: none;
+      display: inline-block;
+    }
+  }
+  .nav > li > a {
+    padding: 2px 20px;
+  }
+}
 .movie-category {
-  background: url('../img/movies/bg-movies.jpg')no-repeat;
   padding: 20px;
-  background-size: 100%;
   background-position: 0 -7px;
+  &.bg-grey {
+    background: url('../img/movies/bg-movies.jpg')no-repeat;
+    background-size: 100%;
+  }
   ul.flex-direction-nav {
     display: none;
   }
@@ -633,15 +651,6 @@ footer {
     img {
       margin-bottom: 25px;
     }
-  }
-  ul.nav.nav-tabs {
-    text-align: center;
-    li {
-      float: none;
-    }
-  }
-  .nav > li > a {
-    padding: 2px 20px;
   }
   .nav-tabs > li {
     a {
@@ -815,7 +824,7 @@ footer {
       z-index: 10;
       width: 100%;
       padding: 10px;
-      letter-spacing: 3px;
+      letter-spacing: 2px;
       font-weight: 600;
       @include transition(all ease 300ms);
       cursor: pointer;
@@ -866,7 +875,7 @@ footer {
   }
 }
 .mic {
-  width: 30px;
+  width: 40px;
   margin-left: 15px;
   margin-top: -5px;
 }
@@ -1192,6 +1201,92 @@ h4.title-movies {
       bottom: 0;
       letter-spacing: 2px;
     }
+  }
+}
+.jpp-fixtures {
+  padding: 180px 0;
+  .circle {
+    width: 30px;
+    height: 30px;
+    margin: 0 auto;
+    border-radius: 50%;
+    border: 1px solid #fff;
+    background: #fff;
+    font-size: 18px;
+    text-align: center;
+    color: $brand-primary;
+    padding: 1px 0;
+  }
+  .list {
+    margin-bottom: 10px;
+    .list-img ul {
+      margin-bottom: 0;
+      li {
+        display: inline-block;
+        width: 30%;
+        vertical-align: middle;
+        img {
+          width: 65px;
+          margin: 0 auto;
+        }
+      }
+    }
+  }
+  .bg-light {
+    padding: 20px;
+    background: rgba(238, 138, 138, 0.7);
+    margin: 0;
+  }
+  .list-make {
+    ul {
+      margin-bottom: 10px;
+      li {
+        line-height: 150%;
+        letter-spacing: 2px;
+        label {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+  .title h4 {
+    letter-spacing: 3px;
+    font-size: 24px;
+  }
+  .pbt35 {
+    padding: 35px 0;
+  }
+}
+.jpp-category {
+  .nav > li {
+    background: #fff;
+    a {
+      padding: 5px 20px;
+      border-radius: 0;
+      font-weight: 600;
+      font-size: 16px;
+      border: 0;
+      color: #646464;
+      background: #fff;
+    }
+  }
+  .pd20 {
+    padding: 20px;
+  }
+  ul.nav.nav-tabs {
+    border: 0;
+  }
+  .nav-tabs > li.active > a,
+  .nav-tabs > li.active > a:hover,
+  .nav-tabs > li.active > a:focus {
+    color: #2063a1;
+    background: #ebebeb;
+    border: 0;
+    border-bottom-color: transparent;
+    cursor: default;
+  }
+  .col-xs-4 {
+    padding: 0 8px;
   }
 }
 /* Start writing sass here */
