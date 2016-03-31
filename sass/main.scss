@@ -606,7 +606,8 @@ footer {
       font-weight: 300;
       line-height: 0.8;
       span {
-        font-size: 22px;
+        font-size: 24px;
+        vertical-align: middle;
       }
     }
   }
@@ -705,9 +706,23 @@ footer {
   background-size: 100%;
   background-position: 0 65px;
 }
-.bg-all-talent {
+.bg-grey-similar {
   background: url('../img/talent/bg-img.png')no-repeat;
   background-size: 100%;
+}
+.bg-grey-asfc {
+  background: url('../img/back-bg.jpg')no-repeat;
+  background-size: 100% 100%;
+}
+.bg-blue-asfc {
+  background: url('../img/bg-blue.jpg')no-repeat;
+  background-size: 100% 100%;
+}
+.bg-brown-asfc {
+  background: url('../img/bg-line.jpg')no-repeat;
+  background-size: 100%;
+}
+.bg-all-talent {
   background-position: 0 40px;
 }
 .bg-subcribe-talents {
@@ -1175,6 +1190,8 @@ h4.title-movies {
   h3 {
     font-size: 30px;
     letter-spacing: 3px;
+    font-weight: 600;
+    margin-top: 0;
   }
 }
 .banner-asfc {
@@ -1301,6 +1318,38 @@ h4.title-movies {
       letter-spacing: 3px;
     }
   }
+}
+.pdasfc {
+  padding-top: 130px;
+  padding-bottom: 20px;
+}
+.upcoming-game {
+  padding: 100px 0 0;
+  .team-logo img {
+    width: 180px;
+    margin: 0 auto;
+  }
+  .date {
+    padding-top: 15px;
+  }
+  .vs {
+    font-size: 36px;
+    text-transform: uppercase;
+    margin: 70px 0;
+  }
+  .min-hgt {
+    min-height: 300px;
+    position: relative;
+  }
+}
+
+.prv-team {
+  img {
+    width: 100px;
+  }
+}
+.title {
+    font-size: 20px;
 }
 /* Start writing sass here */
 @import "fancybox-override";
