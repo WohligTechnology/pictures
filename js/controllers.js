@@ -238,13 +238,23 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     }];
 
   })
-  .controller('WeddingCtrl', function($scope, TemplateService, NavigationService, $timeout) {
+  .controller('WeddingCtrl', function($scope, TemplateService, NavigationService, $timeout, $state) {
     //Used to name the .html file
     $scope.template = TemplateService.changecontent("wedding");
     $scope.menutitle = NavigationService.makeactive("Wedding");
     TemplateService.title = $scope.menutitle;
     $scope.navigation = NavigationService.getnav();
     $scope.oneAtATime = true;
+$scope.formData={};
+    $scope.weddingSubmitForm = function(formValid,formData) {
+      if (formValid.$valid && $scope.formData) {
+        // NavigationService.userCreateSubmit($scope.userForm, function(data) {
+        //   console.log('userform', $scope.userForm);
+          $state.go("wedding");
+        // });
+
+      }
+    };
 
     $scope.wedding = [{
       img: "img/weddings/types/type1.jpg",

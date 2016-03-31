@@ -233,28 +233,32 @@
         <div class="col-md-offset-2 col-md-8">
           <div class="get-in-touch">
             <h3 class="color-red uppercase bold">GET IN TOUCH</h3>
-            <form action="">
+            <form name="wed" >
               <div class="row">
                 <div class="col-md-6">
                   <div class="form-group">
-                    <input type="text" class="form-control" id="exampleInputEmail1" placeholder="First Name">
+                    <input type="text" ng-model="formData.name" name="name" class="form-control" id="exampleInputEmail1" placeholder="First Name" required>
+                    <div class="error-msg" ng-show="wed.name.$error.required && wed.name.$touched">Please Enter Your First Name.</div>
                   </div>
                 </div>
                 <div class="col-md-6">
                   <div class="form-group">
-                    <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Last Name">
+                    <input type="text" ng-model="formData.name1" name="name1" class="form-control" id="exampleInputEmail1" placeholder="Last Name" required>
+                    <div class="error-msg" ng-show="wed.name1.$error.required && wed.name1.$touched">Please Enter Your Last Name.</div>
                   </div>
                 </div>
               </div>
               <div class="row">
                 <div class="col-md-6">
                   <div class="form-group">
-                    <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Email">
+                    <input type="email" ng-model="formData.email" name="email" class="form-control" id="exampleInputEmail1" placeholder="Email" required>
+                    <div class="error-msg" ng-show="wed.email.$error.required && wed.email.$touched">Please Enter Your Email.</div>
                   </div>
                 </div>
                 <div class="col-md-6">
                   <div class="form-group">
-                    <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Phone number">
+                    <input type="tel" ng-model="formData.phone" name="phone" class="form-control" id="exampleInputEmail1" minlength="13" placeholder="Phone number" required>
+                    <div class="error-msg" ng-show="wed.phone.$error.required && wed.phone.$touched">Please Enter Phone number.</div>
                   </div>
                 </div>
               </div>
@@ -296,13 +300,13 @@
               <div class="row">
                 <div class="col-md-6">
                   <div class="form-group has-feedback">
-                    <input type="date" class="form-control" id="inputSuccess2" aria-describedby="Start Date" placeholder="Start Date">
+                    <input type="date" class="form-control" required id="inputSuccess2" aria-describedby="Start Date" placeholder="Start Date">
                     <span class="fa fa-calendar color-red form-control-feedback" aria-hidden="true"></span>
                   </div>
                 </div>
                 <div class="col-md-6">
                   <div class="form-group has-feedback">
-                    <input type="date" class="form-control" id="inputSuccess2" aria-describedby="End Date" placeholder="End Date">
+                    <input type="date" class="form-control" required id="inputSuccess2" aria-describedby="End Date" placeholder="End Date">
                     <span class="fa fa-calendar color-red form-control-feedback" aria-hidden="true"></span>
                   </div>
                 </div>
@@ -310,7 +314,7 @@
               <div class="row">
                 <div class="col-md-6">
                   <div class="form-group">
-                    <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Location">
+                    <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Location" required>
                   </div>
                 </div>
                 <div class="col-md-6">
@@ -321,9 +325,9 @@
               </div>
               <div class="row">
                 <div class="col-md-12">
-                  <textarea class="form-control" rows="3" placeholder="Say Something"></textarea>
+                  <textarea class="form-control" rows="3" placeholder="Say Something" required></textarea>
                   <div class="submit-btn btn-all text-center mt15">
-                    <button class="btn btn-danger" type="button" name="button">submit</button>
+                    <button class="btn btn-danger" type="button" name="button" ng-class="{'disabled' : !wed.$valid }" ng-click="weddingSubmitForm(wed,formData)">submit</button>
                   </div>
                 </div>
               </div>
