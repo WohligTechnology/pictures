@@ -718,10 +718,10 @@ footer {
   background: url('../img/bg-blue.jpg')no-repeat;
   background-size: 100% 100%;
 }
-.bg-brown-asfc {
-  background: url('../img/bg-line.jpg')no-repeat;
-  background-size: 100%;
-}
+// .bg-brown-asfc {
+//   background: url('../img/bg-line.jpg')no-repeat;
+//   background-size: 100%;
+// }
 .bg-all-talent {
   background-position: 0 40px;
 }
@@ -1342,14 +1342,59 @@ h4.title-movies {
     position: relative;
   }
 }
-
-.prv-team {
-  img {
-    width: 100px;
+.prv-game {
+  min-height: 120px;
+  .prv-team {
+    min-height: 120px;
+    img {
+      width: 105px;
+    }
+  }
+  .title {
+    font-size: 20px;
+  }
+  .team-img1 {
+    position: absolute;
+    left: 20px;
+    top: 15px;
+  }
+  .team-img2 {
+    position: absolute;
+    right: 18px;
+    top: 10px;
+  }
+  span {
+    font-size: 20px;
+    font-weight: 600;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    @include transform(translate(-50%, -50%));
+  }
+  .m40 {
+    margin-top: 45px;
   }
 }
-.title {
-    font-size: 20px;
+.asfc-rl {
+  position: relative;
+  margin-top: -75px;
+  .prv-game {
+    min-height: 120px;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 100%;
+  }
+}
+.img-asfc img {
+  width: 100px;
+  margin: 0 20px;
+}
+.magic-bus {
+  background: url("../img/sketch.jpg");
+  min-height: 304px;
+  background-size: 100%;
+  padding-top: 100px;
 }
 /* Start writing sass here */
 @import "fancybox-override";
