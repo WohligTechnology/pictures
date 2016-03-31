@@ -105,10 +105,13 @@
         <div class="row">
           <div class="col-md-6 col-md-offset-3">
             <h4 class="text-center color-white">Sign up for the GS newsletter to receive latest updates.</h4>
-            <form class="bs-example bs-example-form" role="form">
+            <form name="subForm"class="bs-example bs-example-form" role="form">
               <div class="input-group">
-                <input type="text" class="form-control" placeholder="Enter email address">
-                <span class="input-group-addon btn btn-danger">Subscribe</span>
+                <input type="email" class="form-control" placeholder="Enter email address" ng-model="subscribe.email" required>
+                <span class="input-group-addon btn btn-danger" ng-click="subscribe(subscribe.email);">Subscribe</span>
+                <!-- <div ng-messages="subForm.email.$error" ng-messages-include="error-messages"></div>
+                <h4 ng-if="subscribeEmail">Thankyou For Subscribing</h4>
+                <h4 ng-if="checkEmail">This email already exists</h4> -->
               </div>
             </form>
           </div>

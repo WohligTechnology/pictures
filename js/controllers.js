@@ -63,7 +63,16 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     $scope.menutitle = NavigationService.makeactive("Movies");
     TemplateService.title = $scope.menutitle;
     $scope.navigation = NavigationService.getnav();
+    $scope.formData={};
+        $scope.moviesSubmitForm = function(formValid,formData) {
+          if (formValid.$valid && $scope.formData) {
+            // NavigationService.userCreateSubmit($scope.userForm, function(data) {
+            //   console.log('userform', $scope.userForm);
+              $state.go("movies");
+            // });
 
+          }
+        };
     $scope.moviereleased = [{
       img: "img/movies/released/released1.jpg",
       date: "12 January 2016",
@@ -209,7 +218,16 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     $scope.menutitle = NavigationService.makeactive("Talents");
     TemplateService.title = $scope.menutitle;
     $scope.navigation = NavigationService.getnav();
+    $scope.formData={};
+        $scope.talentSubmitForm = function(formValid,formData) {
+          if (formValid.$valid && $scope.formData) {
+            // NavigationService.userCreateSubmit($scope.userForm, function(data) {
+            //   console.log('userform', $scope.userForm);
+              $state.go("talent");
+            // });
 
+          }
+        };
     $scope.wedding = [{
       img: "img/talent/talents/talent1.jpg",
       name: "BRAND AMBASSAORS"
@@ -238,13 +256,23 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     }];
 
   })
-  .controller('WeddingCtrl', function($scope, TemplateService, NavigationService, $timeout) {
+  .controller('WeddingCtrl', function($scope, TemplateService, NavigationService, $timeout, $state) {
     //Used to name the .html file
     $scope.template = TemplateService.changecontent("wedding");
     $scope.menutitle = NavigationService.makeactive("Wedding");
     TemplateService.title = $scope.menutitle;
     $scope.navigation = NavigationService.getnav();
     $scope.oneAtATime = true;
+$scope.formData={};
+    $scope.weddingSubmitForm = function(formValid,formData) {
+      if (formValid.$valid && $scope.formData) {
+        // NavigationService.userCreateSubmit($scope.userForm, function(data) {
+        //   console.log('userform', $scope.userForm);
+          $state.go("wedding");
+        // });
+
+      }
+    };
 
     $scope.wedding = [{
       img: "img/weddings/types/type1.jpg",
