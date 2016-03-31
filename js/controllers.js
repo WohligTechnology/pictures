@@ -63,7 +63,16 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     $scope.menutitle = NavigationService.makeactive("Movies");
     TemplateService.title = $scope.menutitle;
     $scope.navigation = NavigationService.getnav();
+    $scope.formData={};
+        $scope.moviesSubmitForm = function(formValid,formData) {
+          if (formValid.$valid && $scope.formData) {
+            // NavigationService.userCreateSubmit($scope.userForm, function(data) {
+            //   console.log('userform', $scope.userForm);
+              $state.go("movies");
+            // });
 
+          }
+        };
     $scope.moviereleased = [{
       img: "img/movies/released/released1.jpg",
       date: "12 January 2016",
@@ -209,7 +218,16 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     $scope.menutitle = NavigationService.makeactive("Talents");
     TemplateService.title = $scope.menutitle;
     $scope.navigation = NavigationService.getnav();
+    $scope.formData={};
+        $scope.talentSubmitForm = function(formValid,formData) {
+          if (formValid.$valid && $scope.formData) {
+            // NavigationService.userCreateSubmit($scope.userForm, function(data) {
+            //   console.log('userform', $scope.userForm);
+              $state.go("talent");
+            // });
 
+          }
+        };
     $scope.wedding = [{
       img: "img/talent/talents/talent1.jpg",
       name: "BRAND AMBASSAORS"
