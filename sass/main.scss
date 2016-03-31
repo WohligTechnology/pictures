@@ -1386,15 +1386,25 @@ h4.title-movies {
     width: 100%;
   }
 }
-.img-asfc img {
-  width: 100px;
-  margin: 0 20px;
+.img-asfc {
+  img {
+    height: 90px;
+    margin: 0 20px;
+  }
+  span {
+    font-size: 18px;
+    letter-spacing: 3px;
+  }
 }
 .magic-bus {
   background: url("../img/sketch.jpg");
-  min-height: 304px;
-  background-size: 100%;
+  min-height: 300px;
+  background-size: 100% 100%;
   padding-top: 100px;
+  padding-bottom: 50px;
+}
+.mtminus {
+  margin-top: -125px;
 }
 /* Start writing sass here */
 @import "fancybox-override";
