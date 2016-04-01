@@ -119,10 +119,13 @@
           <div class="row">
             <div class="col-md-6 col-md-offset-3">
               <h4 class="text-center color-white">Sign up for the GS newsletter to receive latest updates.</h4>
-              <form class="bs-example bs-example-form" role="form">
+              <form name="subForm" class="bs-example bs-example-form" role="form">
                 <div class="input-group">
-                  <input type="text" class="form-control" placeholder="Enter email address">
-                  <span class="input-group-addon btn btn-danger">Subscribe</span>
+                  <input type="email" class="form-control" placeholder="Enter email address" ng-model="subscribe.email" required>
+                  <span class="input-group-addon btn btn-danger" ng-click="subscribe(subscribe.email);">Subscribe</span>
+                  <div ng-messages="subForm.email.$error" ng-messages-include="error-messages"></div>
+                  <h4 ng-if="subscribeEmail">Thankyou For Subscribing</h4>
+                  <h4 ng-if="checkEmail">This email already exists</h4>
                 </div>
               </form>
             </div>
@@ -199,28 +202,32 @@ including yours, right here!</h4>
         <div class="col-md-offset-2 col-md-8">
           <div class="get-in-touch">
             <h3 class="color-red uppercase bold">GET IN TOUCH</h3>
-            <form action="">
+            <form name="movies">
               <div class="row">
                 <div class="col-md-6">
                   <div class="form-group">
-                    <input type="text" class="form-control" id="exampleInputEmail1" placeholder="First Name">
+                    <input type="text" ng-model="formData.name" name="name" class="form-control" id="exampleInputEmail1" placeholder="First Name" required>
+                    <div class="error-msg" ng-show="movies.name.$error.required && movies.name.$touched">Please Enter Your First Name.</div>
                   </div>
                 </div>
                 <div class="col-md-6">
                   <div class="form-group">
-                    <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Last Name">
+                    <input type="text" ng-model="formData.name1" name="name1" class="form-control" id="exampleInputEmail1" placeholder="Last Name" required>
+                    <div class="error-msg" ng-show="movies.name1.$error.required && movies.name1.$touched">Please Enter Your Last Name.</div>
                   </div>
                 </div>
               </div>
               <div class="row">
                 <div class="col-md-6">
                   <div class="form-group">
-                    <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Email">
+                    <input type="email" ng-model="formData.email" name="email" class="form-control" id="exampleInputEmail1" placeholder="Email" required>
+                    <div class="error-msg" ng-show="movies.email.$error.required && movies.email.$touched">Please Enter Your Email.</div>
                   </div>
                 </div>
                 <div class="col-md-6">
                   <div class="form-group">
-                    <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Phone number">
+                    <input type="tel" ng-model="formData.phone" name="phone" class="form-control" id="exampleInputEmail1" maxlength="13" placeholder="Phone number" required>
+                    <div class="error-msg" ng-show="movies.phone.$error.required && movies.phone.$touched">Please Enter Phone number.</div>
                   </div>
                 </div>
               </div>
@@ -250,7 +257,8 @@ including yours, right here!</h4>
               <div class="row">
                 <div class="col-md-6">
                   <div class="form-group">
-                    <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Location">
+                    <input type="text" ng-model="formData.loc" name="loc" class="form-control" id="exampleInputEmail1" placeholder="Location" required="required">
+<div class="error-msg" ng-show="movies.loc.$error.required && movies.loc.$touched">Enter Location</div>
                   </div>
                 </div>
                 <div class="col-md-6">
@@ -261,9 +269,10 @@ including yours, right here!</h4>
               </div>
               <div class="row">
                 <div class="col-md-12">
-                  <textarea class="form-control" rows="3" placeholder="Say Something"></textarea>
+                  <textarea class="form-control" ng-model="formData.say" name="say" rows="3" placeholder="Say Something" required="required"></textarea>
+                  <div class="error-msg" ng-show="movies.say.$error.required && movies.say.$touched">Enter Something</div>
                   <div class="submit-btn btn-all text-center mt15">
-                    <button class="btn btn-danger" type="button" name="button">submit</button>
+                    <button class="btn btn-danger" type="button" name="button" ng-class="{'disabled' : !movies.$valid }" ng-click="moviesSubmitForm(movies,formData)">submit</button>
                   </div>
                 </div>
               </div>
