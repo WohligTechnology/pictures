@@ -13,38 +13,6 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     //   'http://flexslider.woothemes.com/images/kitchen_adventurer_donut.jpg',
     //   'http://flexslider.woothemes.com/images/kitchen_adventurer_caramel.jpg'
     // ];
-    $scope.subscribe = {};
-    $scope.subscribe.email = "";
-    //
-    // $scope.checkemail=function(email){
-    //
-    // }
-
-    $scope.checkEmail = false;
-    $scope.subscribeEmail = false;
-    $scope.subscribe = function(email) {
-      // if(!email) {
-      //     alert("please enter your email");
-      // }
-      // console.log('Email subscribe: ', email);
-      NavigationService.subscribe(email, function(data) {
-
-        // console.log(data);
-        if (!data.value) {
-          if ($scope.subscribe.email) {
-            $scope.checkEmail = true;
-            $scope.subscribeEmail = false;
-          }
-        } else {
-          $scope.subscribeEmail = true;
-          $scope.checkEmail = false;
-        }
-        //console.log(email);
-        $scope.subscribe.email = "";
-      });
-
-      // $scope.subscribeEmail = data;
-    };
     $scope.clientspeak = {
       category: "Client Speak",
       text: "Extra Efficient",
@@ -104,38 +72,6 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             // });
 
           }
-        };
-        $scope.subscribe = {};
-        $scope.subscribe.email = "";
-        //
-        // $scope.checkemail=function(email){
-        //
-        // }
-
-        $scope.checkEmail = false;
-        $scope.subscribeEmail = false;
-        $scope.subscribe = function(email) {
-          // if(!email) {
-          //     alert("please enter your email");
-          // }
-          // console.log('Email subscribe: ', email);
-          NavigationService.subscribe(email, function(data) {
-
-            // console.log(data);
-            if (!data.value) {
-              if ($scope.subscribe.email) {
-                $scope.checkEmail = true;
-                $scope.subscribeEmail = false;
-              }
-            } else {
-              $scope.subscribeEmail = true;
-              $scope.checkEmail = false;
-            }
-            //console.log(email);
-            $scope.subscribe.email = "";
-          });
-
-          // $scope.subscribeEmail = data;
         };
     $scope.moviereleased = [{
       img: "img/movies/released/released1.jpg",
@@ -291,38 +227,6 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             // });
 
           }
-        };
-        $scope.subscribe = {};
-        $scope.subscribe.email = "";
-        //
-        // $scope.checkemail=function(email){
-        //
-        // }
-
-        $scope.checkEmail = false;
-        $scope.subscribeEmail = false;
-        $scope.subscribe = function(email) {
-          // if(!email) {
-          //     alert("please enter your email");
-          // }
-          // console.log('Email subscribe: ', email);
-          NavigationService.subscribe(email, function(data) {
-
-            // console.log(data);
-            if (!data.value) {
-              if ($scope.subscribe.email) {
-                $scope.checkEmail = true;
-                $scope.subscribeEmail = false;
-              }
-            } else {
-              $scope.subscribeEmail = true;
-              $scope.checkEmail = false;
-            }
-            //console.log(email);
-            $scope.subscribe.email = "";
-          });
-
-          // $scope.subscribeEmail = data;
         };
     $scope.wedding = [{
       img: "img/talent/talents/talent1.jpg",
