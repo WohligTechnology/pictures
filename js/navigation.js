@@ -25,6 +25,10 @@ var navigationservice = angular.module('navigationservice', [])
     getnav: function() {
       return navigation;
     },
+    subscribe: function(mail, callback) {
+        // console.log(mail);
+        $http.get(adminurl + 'getSubscribers?email=' + mail).success(callback);
+      },
     makeactive: function(menuname) {
       for (var i = 0; i < navigation.length; i++) {
         if (navigation[i].name == menuname) {
