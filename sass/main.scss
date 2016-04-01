@@ -66,8 +66,15 @@ a {
 .navbar-default {
   background-color: transparent;
   border-color: transparent;
-  .navbar-brand img {
-    width: 120px;
+  .navbar-brand {
+    position: relative;
+    z-index: 999;
+    &.mt8 {
+      margin-top: -8px;
+    }
+    img {
+      width: 120px;
+    }
   }
 }
 .uppercase {
@@ -210,11 +217,18 @@ a {
     }
   }
 }
+.bg-white {
+  background: #fff;
+  position: absolute;
+  width: 100%;
+  z-index: 222;
+  min-height: 427px;
+}
 .firstbar {
   @include transform(rotate(-45deg));
   position: absolute;
   left: 10px;
-  top: 13px;
+  top: 16px;
 }
 .secondbar {
   opacity: 0;
@@ -245,6 +259,8 @@ header {
   .navbar-toggle {
     display: block;
     border-color: transparent;
+    z-index: 111;
+    position: relative;
     &:hover .icon-bar {
       background-color: darken($brand-danger, 10%);
     }
@@ -302,28 +318,86 @@ ul.nav-opt1 {
   li {
     &.pl1 {
       padding-left: 55px;
+      a {
+        &:hover {
+          -webkit-text-fill-color: transparent;
+          @include background(linear-gradient(transparent, transparent), url("../img/movie.jpg") repeat);
+          background-clip: text;
+          -webkit-background-clip: text;
+        }
+      }
     }
     &.pl2 {
       padding-left: 35%;
+      a {
+        &:hover {
+          -webkit-text-fill-color: transparent;
+          @include background(linear-gradient(transparent, transparent), url("../img/event.jpg") repeat);
+          background-clip: text;
+          -webkit-background-clip: text;
+        }
+      }
+    }
+    &.pl3 {
+      a {
+        &:hover {
+          -webkit-text-fill-color: transparent;
+          @include background(linear-gradient(transparent, transparent), url("../img/wedding.jpg") repeat);
+          background-clip: text;
+          -webkit-background-clip: text;
+        }
+      }
     }
     &.pl4 {
       padding-left: 39%;
+      a {
+        &:hover {
+          -webkit-text-fill-color: transparent;
+          @include background(linear-gradient(transparent, transparent), url("../img/mice.jpg") repeat);
+          background-clip: text;
+          -webkit-background-clip: text;
+        }
+      }
     }
     &.pl5 {
       padding-left: 15%;
+      a {
+        &:hover {
+          -webkit-text-fill-color: transparent;
+          @include background(linear-gradient(transparent, transparent), url("../img/sport.jpg") repeat);
+          background-clip: text;
+          -webkit-background-clip: text;
+        }
+      }
     }
     &.pl6 {
       padding-left: 32%;
+      a {
+        &:hover {
+          -webkit-text-fill-color: transparent;
+          @include background(linear-gradient(transparent, transparent), url("../img/talents.jpg") repeat);
+          background-clip: text;
+          -webkit-background-clip: text;
+        }
+      }
+    }
+    &.pl7 {
+      a {
+        &:hover {
+          -webkit-text-fill-color: transparent;
+          @include background(linear-gradient(transparent, transparent), url("../img/worldtours.jpg") repeat);
+          background-clip: text;
+          -webkit-background-clip: text;
+        }
+      }
     }
     a {
       font-family: "Folklore";
       font-size: 95px;
       line-height: 0.8;
       display: block;
-      // -webkit-mask-image: url("../img/home/over-text.png");
-      // -o-mask-image: url("../img/home/over-text.png");
-      // -moz-mask-image: url("../img/home/over-text.png");
-      // mask-image: url("../img/home/over-text.png");
+      // @include transition(all ease 600ms);
+      -webkit-transition: all 0.2s ease;
       img {
         height: 65px;
         margin-top: -20px;
@@ -1405,6 +1479,16 @@ h4.title-movies {
 }
 .mtminus {
   margin-top: -125px;
+}
+.download {
+  background: url('../img/asfc/download.png');
+  background-size: cover;
+  padding: 25px 0 50px;
+  min-height: 400px;
+  margin-top: 20px;
+  img {
+    width: 200px;
+  }
 }
 /* Start writing sass here */
 @import "fancybox-override";
