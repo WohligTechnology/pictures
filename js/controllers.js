@@ -536,6 +536,15 @@ $scope.formData={};
     $scope.menutitle = NavigationService.makeactive("Sports");
     TemplateService.title = $scope.menutitle;
     $scope.navigation = NavigationService.getnav();
+    $scope.asfcSubmitForm = function(formValid,formData) {
+      if (formValid.$valid && $scope.formData) {
+        // NavigationService.userCreateSubmit($scope.userForm, function(data) {
+        //   console.log('userform', $scope.userForm);
+          $state.go("asfc");
+        // });
+
+      }
+    };
     $scope.asfcdetail = [{
       img: "img/ASFC/w1.jpg",
       team1: "AHFC",
