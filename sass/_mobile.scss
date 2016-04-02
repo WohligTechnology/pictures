@@ -18,6 +18,13 @@
       font-size: 14px;
     }
   }
+  .prv-game .m40 {
+    margin-top: 34px;
+    text-align: center;
+  }
+  .playersasfc .player-img figcaption {
+    min-height: 55px;
+  }
   .client-speak {
     width: 730px;
     height: 250px;
@@ -65,6 +72,16 @@
     img {
       height: 50px;
       margin-top: -10px;
+    }
+  }
+  .navbar-default .navbar-brand img {
+    width: 100px;
+  }
+  .nav-inline,
+  .nav-list {
+    ul li a {
+      font-size: 24px;
+      padding: 2px 10px;
     }
   }
   .service-bg .list-service ul.serviceul li {
@@ -117,9 +134,47 @@
       top: 22%;
     }
   }
+  .asfc-rl {
+    margin-top: -50px;
+    .prv-game {
+      min-height: 95px;
+      top: -1px;
+      left: 15px;
+      .team-img1 {
+        left: 3%;
+        top: 11%;
+      }
+      .team-img2 {
+        right: 3%;
+        top: 11%;
+      }
+    }
+  }
+  .prv-game .prv-team {
+    min-height: 95px;
+    img {
+      width: 80px;
+    }
+  }
+  .img-asfc img {
+    height: 75px;
+  }
   footer {
-    .btn-footer {
-      text-align: center;
+    section.footer-next {
+      padding: 10px 0;
+      .madein {
+        font-size: 12px;
+        span {
+          font-size: 20px;
+          vertical-align: middle;
+        }
+      }
+      .btn-footer {
+        text-align: center;
+      }
+      p {
+        font-size: 10px;
+      }
     }
   }
   .flex-direction-nav .flex-next {
@@ -148,6 +203,34 @@
   }
 }
 @media (max-width: $screen-xs-max) {
+  .navbar-default {
+    .navbar-toggle {
+      position: absolute;
+      left: 15px;
+      margin-top: 16px;
+    }
+    .navbar-brand {
+      margin-left: 55px;
+      img {
+        width: 80px;
+      }
+    }
+  }
+  .nav-list ul li a {
+    font-size: 14px;
+    &:before {
+      content: url("../img/menuicons/movies.png");
+      transform: scale(0.6);
+      height: 30px;
+      width: 25px;
+      display: inline-block;
+      background-color: white;
+    }
+  }
+  .nav-inline ul li a {
+    padding: 2px 10px;
+    font-size: 14px;
+  }
   .mobile-pt0 {
     padding-left: 0 !important;
   }
@@ -204,6 +287,67 @@
       }
     }
   }
+  .magic-bus {
+    padding-top: 75px;
+  }
+  .download,
+  .bg-grey-asfc {
+    background: #f0f0f0;
+  }
+  .bg-blue-asfc {
+    background: #098FD6;
+  }
+  .pd30 {
+    padding: 20px;
+  }
+  .wedding-detail {
+    padding: 20px 0;
+  }
+  .upcoming-game {
+    padding: 20px 0 170px;
+    .team-logo img {
+      width: 100px;
+      margin: 0 auto;
+    }
+    .min-hgt {
+      min-height: auto;
+      margin-bottom: 10px;
+    }
+    .vs {
+      margin: 10px 0;
+    }
+  }
+  .asfc-rl {
+    margin-top: -85px;
+    left: 15px;
+  }
+  .pdasfc {
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+  .prv-asfc {
+    img {
+      display: none;
+    }
+  }
+  .prv-game {
+    background: #f0f0f0;
+    position: static!important;
+    .m40 {
+      margin-top: 0;
+    }
+    .prv-team {
+      min-height: auto;
+    }
+    .team-img1,
+    .team-img2,
+    span {
+      position: static;
+    }
+    .prv-team {
+      margin: 10px 0;
+    }
+  }
   footer {
     background: $brand-danger;
     .followus {
@@ -243,10 +387,41 @@
       font-size: 16px;
     }
   }
+  .movie-category {
+    .nav-tabs > li a {
+      font-size: 14px;
+    }
+    &.bg-grey {
+      background: transparent;
+    }
+  }
+  .service {
+    .services-list {
+      padding: 0 10px;
+    }
+    .title h3 {
+      letter-spacing: 2px;
+      font-size: 24px;
+      color: #f13748;
+    }
+  }
+  .playersasfc.mt180 {
+    margin-top: 180px;
+    .col-flex {
+      flex: 1 50%;
+    }
+  }
+  .mt15 {
+    margin-top: 5px;
+  }
 }
 @media (max-width: 480px) {
   .navbar-default .navbar-brand img {
     width: 70px;
+  }
+  .nav-inline ul li {
+    display: block;
+    border: 0!important;
   }
   .service-bg .list-service ul.serviceul li a {
     display: block;
@@ -254,6 +429,12 @@
   }
   .bg-red-mobile {
     background: $brand-danger;
+  }
+  .magic-bus {
+    background: #f0f0f0;
+  }
+  .playersasfc .player-img {
+    width: 100%;
   }
   .client-speak {
     width: 285px;
@@ -396,11 +577,17 @@
       font-size: 12px;
     }
   }
+  .mt15 {
+    margin-top: 5px;
+  }
 }
 @media (max-width: 360px) {
   .bg-award .awards .nav > li > a {
     padding: 2px 4px;
     font-size: 12px;
+  }
+  .playersasfc.mt180 {
+    margin-top: 220px;
   }
   .tab-insidemovies {
     .nav-tabs {

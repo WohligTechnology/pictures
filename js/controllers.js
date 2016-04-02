@@ -95,48 +95,48 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     $scope.menutitle = NavigationService.makeactive("Movies");
     TemplateService.title = $scope.menutitle;
     $scope.navigation = NavigationService.getnav();
-    $scope.formData={};
-        $scope.moviesSubmitForm = function(formValid,formData) {
-          if (formValid.$valid && $scope.formData) {
-            // NavigationService.userCreateSubmit($scope.userForm, function(data) {
-            //   console.log('userform', $scope.userForm);
-              $state.go("movies");
-            // });
+    $scope.formData = {};
+    $scope.moviesSubmitForm = function(formValid, formData) {
+      if (formValid.$valid && $scope.formData) {
+        // NavigationService.userCreateSubmit($scope.userForm, function(data) {
+        //   console.log('userform', $scope.userForm);
+        $state.go("movies");
+        // });
 
+      }
+    };
+    $scope.subscribe = {};
+    $scope.subscribe.email = "";
+    //
+    // $scope.checkemail=function(email){
+    //
+    // }
+
+    $scope.checkEmail = false;
+    $scope.subscribeEmail = false;
+    $scope.subscribe = function(email) {
+      // if(!email) {
+      //     alert("please enter your email");
+      // }
+      // console.log('Email subscribe: ', email);
+      NavigationService.subscribe(email, function(data) {
+
+        // console.log(data);
+        if (!data.value) {
+          if ($scope.subscribe.email) {
+            $scope.checkEmail = true;
+            $scope.subscribeEmail = false;
           }
-        };
-        $scope.subscribe = {};
+        } else {
+          $scope.subscribeEmail = true;
+          $scope.checkEmail = false;
+        }
+        //console.log(email);
         $scope.subscribe.email = "";
-        //
-        // $scope.checkemail=function(email){
-        //
-        // }
+      });
 
-        $scope.checkEmail = false;
-        $scope.subscribeEmail = false;
-        $scope.subscribe = function(email) {
-          // if(!email) {
-          //     alert("please enter your email");
-          // }
-          // console.log('Email subscribe: ', email);
-          NavigationService.subscribe(email, function(data) {
-
-            // console.log(data);
-            if (!data.value) {
-              if ($scope.subscribe.email) {
-                $scope.checkEmail = true;
-                $scope.subscribeEmail = false;
-              }
-            } else {
-              $scope.subscribeEmail = true;
-              $scope.checkEmail = false;
-            }
-            //console.log(email);
-            $scope.subscribe.email = "";
-          });
-
-          // $scope.subscribeEmail = data;
-        };
+      // $scope.subscribeEmail = data;
+    };
     $scope.moviereleased = [{
       img: "img/movies/released/released1.jpg",
       date: "12 January 2016",
@@ -282,48 +282,48 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     $scope.menutitle = NavigationService.makeactive("Talents");
     TemplateService.title = $scope.menutitle;
     $scope.navigation = NavigationService.getnav();
-    $scope.formData={};
-        $scope.talentSubmitForm = function(formValid,formData) {
-          if (formValid.$valid && $scope.formData) {
-            // NavigationService.userCreateSubmit($scope.userForm, function(data) {
-            //   console.log('userform', $scope.userForm);
-              $state.go("talent");
-            // });
+    $scope.formData = {};
+    $scope.talentSubmitForm = function(formValid, formData) {
+      if (formValid.$valid && $scope.formData) {
+        // NavigationService.userCreateSubmit($scope.userForm, function(data) {
+        //   console.log('userform', $scope.userForm);
+        $state.go("talent");
+        // });
 
+      }
+    };
+    $scope.subscribe = {};
+    $scope.subscribe.email = "";
+    //
+    // $scope.checkemail=function(email){
+    //
+    // }
+
+    $scope.checkEmail = false;
+    $scope.subscribeEmail = false;
+    $scope.subscribe = function(email) {
+      // if(!email) {
+      //     alert("please enter your email");
+      // }
+      // console.log('Email subscribe: ', email);
+      NavigationService.subscribe(email, function(data) {
+
+        // console.log(data);
+        if (!data.value) {
+          if ($scope.subscribe.email) {
+            $scope.checkEmail = true;
+            $scope.subscribeEmail = false;
           }
-        };
-        $scope.subscribe = {};
+        } else {
+          $scope.subscribeEmail = true;
+          $scope.checkEmail = false;
+        }
+        //console.log(email);
         $scope.subscribe.email = "";
-        //
-        // $scope.checkemail=function(email){
-        //
-        // }
+      });
 
-        $scope.checkEmail = false;
-        $scope.subscribeEmail = false;
-        $scope.subscribe = function(email) {
-          // if(!email) {
-          //     alert("please enter your email");
-          // }
-          // console.log('Email subscribe: ', email);
-          NavigationService.subscribe(email, function(data) {
-
-            // console.log(data);
-            if (!data.value) {
-              if ($scope.subscribe.email) {
-                $scope.checkEmail = true;
-                $scope.subscribeEmail = false;
-              }
-            } else {
-              $scope.subscribeEmail = true;
-              $scope.checkEmail = false;
-            }
-            //console.log(email);
-            $scope.subscribe.email = "";
-          });
-
-          // $scope.subscribeEmail = data;
-        };
+      // $scope.subscribeEmail = data;
+    };
     $scope.wedding = [{
       img: "img/talent/talents/talent1.jpg",
       name: "BRAND AMBASSAORS"
@@ -359,12 +359,12 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     TemplateService.title = $scope.menutitle;
     $scope.navigation = NavigationService.getnav();
     $scope.oneAtATime = true;
-$scope.formData={};
-    $scope.weddingSubmitForm = function(formValid,formData) {
+    $scope.formData = {};
+    $scope.weddingSubmitForm = function(formValid, formData) {
       if (formValid.$valid && $scope.formData) {
         // NavigationService.userCreateSubmit($scope.userForm, function(data) {
         //   console.log('userform', $scope.userForm);
-          $state.go("wedding");
+        $state.go("wedding");
         // });
 
       }
@@ -454,6 +454,65 @@ $scope.formData={};
       title: "E-invites and Social-Media Presence",
       content: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel a at atque ipsum mollitia officia veniam. Maxime, ab. Alias facilis voluptatum nobis, praesentium porro quis. Harum inventore magnam a delectus."
     }];
+
+
+
+    $scope.today = function() {
+      $scope.dt = new Date();
+    };
+    $scope.today();
+
+    $scope.toggleMin = function() {
+      $scope.minDate = $scope.minDate ? null : new Date();
+    };
+
+    $scope.toggleMin();
+    $scope.maxDate = new Date(2020, 5, 22);
+
+    $scope.open1 = function() {
+      $scope.popup1.opened = true;
+    };
+
+    $scope.setDate = function(year, month, day) {
+      $scope.dt = new Date(year, month, day);
+    };
+
+    $scope.dateOptions = {
+      formatYear: 'yy',
+      startingDay: 1
+    };
+    $scope.open1 = function() {
+      $scope.popup1.opened = true;
+    };
+
+    $scope.open2 = function() {
+      $scope.popup2.opened = true;
+    };
+
+    $scope.formats = ['dd-MMMM-yyyy', 'yyyy/MM/dd', 'dd.MM.yyyy', 'shortDate'];
+    $scope.format = $scope.formats[0];
+    $scope.altInputFormats = ['M!/d!/yyyy'];
+
+    $scope.popup1 = {
+      opened: false
+    };
+
+    $scope.popup2 = {
+      opened: false
+    };
+
+    $scope.getDayClass = function(date, mode) {
+      if (mode === 'day') {
+        var dayToCheck = new Date(date).setHours(0, 0, 0, 0);
+        for (var i = 0; i < $scope.events.length; i++) {
+          var currentDay = new Date($scope.events[i].date).setHours(0, 0, 0, 0);
+          if (dayToCheck === currentDay) {
+            return $scope.events[i].status;
+          }
+        }
+      }
+      return '';
+    };
   })
   .controller('WeddingInsideCtrl', function($scope, TemplateService, NavigationService, $timeout) {
     //Used to name the .html file
@@ -536,11 +595,11 @@ $scope.formData={};
     $scope.menutitle = NavigationService.makeactive("Sports");
     TemplateService.title = $scope.menutitle;
     $scope.navigation = NavigationService.getnav();
-    $scope.asfcSubmitForm = function(formValid,formData) {
+    $scope.asfcSubmitForm = function(formValid, formData) {
       if (formValid.$valid && $scope.formData) {
         // NavigationService.userCreateSubmit($scope.userForm, function(data) {
         //   console.log('userform', $scope.userForm);
-          $state.go("asfc");
+        $state.go("asfc");
         // });
 
       }

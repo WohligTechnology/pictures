@@ -94,7 +94,7 @@
                   <i class="pull-right fa" ng-class="{'fa-minus': status.open1, 'fa-plus': !status.open1}"></i>
                 </uib-accordion-heading>
                 <!-- <div class="" ng-bind-html="{{data.content}}">{{data.content}}</div> -->
-                <div class="" >{{data.content}}</div>
+                <div class="">{{data.content}}</div>
               </uib-accordion-group>
               <!-- <uib-accordion-group is-open="status.open2">
                 <uib-accordion-heading>
@@ -233,7 +233,7 @@
         <div class="col-md-offset-2 col-md-8">
           <div class="get-in-touch">
             <h3 class="color-red uppercase bold">GET IN TOUCH</h3>
-            <form name="wed" >
+            <form name="wed">
               <div class="row">
                 <div class="col-md-6">
                   <div class="form-group">
@@ -300,14 +300,28 @@
               <div class="row">
                 <div class="col-md-6">
                   <div class="form-group has-feedback">
-                    <input type="date" class="form-control" required id="inputSuccess2" aria-describedby="Start Date" placeholder="Start Date">
-                    <span class="fa fa-calendar color-red form-control-feedback" aria-hidden="true"></span>
+                    <!-- <input type="date" class="form-control" required id="inputSuccess2" aria-describedby="Start Date" placeholder="Start Date">
+                    <span class="fa fa-calendar color-red form-control-feedback" aria-hidden="true"></span> -->
+
+                    <p class="input-group">
+                      <input type="text" class="form-control" uib-datepicker-popup="{{format}}" ng-model="dt" is-open="popup1.opened" datepicker-options="dateOptions" ng-required="true" close-text="Close" alt-input-formats="altInputFormats" />
+                      <span class="input-group-btn">
+            <button type="button" class="btn btn-default" ng-click="open1()"><i class="fa fa-calendar color-red form-control-feedback"></i></button>
+          </span>
+                    </p>
                   </div>
                 </div>
                 <div class="col-md-6">
                   <div class="form-group has-feedback">
-                    <input type="date" class="form-control" required id="inputSuccess2" aria-describedby="End Date" placeholder="End Date">
-                    <span class="fa fa-calendar color-red form-control-feedback" aria-hidden="true"></span>
+                    <!-- <input type="date" class="form-control" required id="inputSuccess2" aria-describedby="Start Date" placeholder="Start Date">
+                    <span class="fa fa-calendar color-red form-control-feedback" aria-hidden="true"></span> -->
+
+                    <p class="input-group">
+                      <input type="text" class="form-control" uib-datepicker-popup="{{format}}" ng-model="dt" is-open="popup2.opened" datepicker-options="dateOptions" ng-required="true" close-text="Close" alt-input-formats="altInputFormats" />
+                      <span class="input-group-btn">
+            <button type="button" class="btn btn-default" ng-click="open1()"><i class="fa fa-calendar color-red form-control-feedback"></i></button>
+          </span>
+                    </p>
                   </div>
                 </div>
               </div>
@@ -315,7 +329,7 @@
                 <div class="col-md-6">
                   <div class="form-group">
                     <input type="text" ng-model="formData.loc" name="loc" class="form-control" id="exampleInputEmail1" placeholder="Location" required="required">
-<div class="error-msg" ng-show="wed.loc.$error.required && wed.loc.$touched">Enter Location</div>
+                    <div class="error-msg" ng-show="wed.loc.$error.required && wed.loc.$touched">Enter Location</div>
                   </div>
                 </div>
                 <div class="col-md-6">
