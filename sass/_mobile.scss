@@ -203,6 +203,9 @@
   }
 }
 @media (max-width: $screen-xs-max) {
+  .bg-red-jpp {
+    background: $brand-danger;
+  }
   .navbar-default {
     .navbar-toggle {
       position: absolute;
@@ -407,12 +410,33 @@
   }
   .playersasfc.mt180 {
     margin-top: 180px;
-    .col-flex {
-      flex: 1 50%;
+    .row-flex {
+      @include display(block);
+    }
+    .player-img img {
+      width: 100%;
     }
   }
   .mt15 {
     margin-top: 5px;
+  }
+  .banner-asfc {
+    top: 100px;
+    width: 100%;
+    img {
+      width: 40% !important;
+    }
+  }
+  .jpp-fixtures {
+    padding: 20px 0;
+    margin-top: 100px;
+    background: #E63E3E;
+    .title h4 {
+      font-size: 24px;
+    }
+    .pbt35 {
+      padding: 10px 0;
+    }
   }
 }
 @media (max-width: 480px) {

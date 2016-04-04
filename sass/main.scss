@@ -1,9 +1,10 @@
-@import url(https://fonts.googleapis.com/css?family=Lato:400,100,300,700,900);
+@import url(https://fonts.googleapis.com/css?family=Lato:400,300,300italic,400italic,700,700italic,900);
 @import "../bower_components/bourbon/app/assets/stylesheets/bourbon";
 @import "../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/mixins";
 @import "../bower_components/bootstrap-sass/assets/stylesheets/bootstrap-sprockets";
 @import "../bower_components/flexslider/flexslider.css";
 @import "../bower_components/font-awesome/css/font-awesome.min.css";
+@import "../bower_components/fancyBox/source/jquery.fancybox.css";
 @import "flaticon";
 /* Bootstrap Variables Goes Here */
 $brand-primary: #15acff !default;
@@ -20,7 +21,9 @@ $color-black: #000!default;
   font-family: "Oxygen";
   src: url("../fonts/Oxygen-Light.ttf");
 }
-body {
+body,
+p,
+a {
   font-family: "Lato";
   overflow-x: hidden;
 }
@@ -1489,7 +1492,7 @@ h4.title-movies {
   margin-top: -125px;
 }
 .download {
-  background: url('../img/asfc/download.png');
+  background: url('../img/ASFC/download.png');
   background-size: cover;
   padding: 25px 0 50px;
   min-height: 400px;

@@ -28,9 +28,9 @@
             </div>
             <div class="list" ng-repeat="data in jppdetail">
               <div class="row">
-                <div class="col-md-9">
+                <div class="col-sm-9">
                   <div class="row bg-light">
-                    <div class="col-md-6">
+                    <div class="col-sm-6">
                       <div class="list-img">
                         <ul class="list-unstyled">
                           <li>
@@ -45,7 +45,7 @@
                         </ul>
                       </div>
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-sm-6">
                       <div class="list-make">
                         <ul class="list-unstyled">
                           <li>{{data.date}}</li>
@@ -58,7 +58,7 @@
                     </div>
                   </div>
                 </div>
-                <div class="col-md-3">
+                <div class="col-sm-3">
                   <div class="btn-all pbt35">
                     <a href="#" class="btn color-red btn-info" target="_blank">Book Tickets</a>
                   </div>
@@ -88,7 +88,9 @@
                   <div class="row">
                     <div class="col-xs-4" ng-repeat="data in wallpaper">
                       <div class="mb15">
-                        <img ng-src="{{data.img}}" alt="" class="img-responsive">
+                        <a class="fancybox" rel="group" href="{{data.img}}" fancyboxBox>
+                          <img ng-src="{{data.img}}" alt="" class="img-responsive">
+                        </a>
                       </div>
                     </div>
                   </div>
@@ -99,7 +101,9 @@
                   <div class="row">
                     <div class="col-xs-4" ng-repeat="data in wallpaper">
                       <div class="mb15">
-                        <img ng-src="{{data.img}}" alt="" class="img-responsive">
+                        <a class="fancybox" rel="group" href="{{data.img}}" fancyboxBox>
+                          <img ng-src="{{data.img}}" alt="" class="img-responsive">
+                        </a>
                       </div>
                     </div>
                   </div>
@@ -127,7 +131,7 @@
     <div class="social-back ">
       <div class="container">
         <div class="row">
-          <div class="col-md-4 col-sm-4">
+          <div class="col-sm-4">
             <div class="social-box text-center">
               <img src="img/socials/facebook.png" class="doneLoading">
             </div>
@@ -135,7 +139,7 @@
               <img src="img/facebook.jpg" alt="" class="img-responsive">
             </div>
           </div>
-          <div class="col-md-4 col-sm-4">
+          <div class="col-sm-4">
             <div class="social-box text-center">
               <img src="img/socials/twitter.png" class="doneLoading">
             </div>
@@ -143,7 +147,7 @@
               <img src="img/twitter.jpg" alt="" class="img-responsive">
             </div>
           </div>
-          <div class="col-md-4 col-sm-4">
+          <div class="col-sm-4">
             <div class="social-box text-center">
               <img src="img/socials/instagram.png" class="doneLoading">
             </div>
