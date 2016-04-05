@@ -1,4 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=Lato:400,300,300italic,400italic,700,700italic,900);
+@import url(https://fonts.googleapis.com/css?family=Lato:400,100,300,700,900);
 @import "../bower_components/bourbon/app/assets/stylesheets/bourbon";
 @import "../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/mixins";
 @import "../bower_components/bootstrap-sass/assets/stylesheets/bootstrap-sprockets";
@@ -21,9 +21,11 @@ $color-black: #000!default;
   font-family: "Oxygen";
   src: url("../fonts/Oxygen-Light.ttf");
 }
-body,
-p,
-a {
+@font-face {
+  font-family: "Folklore";
+  src: url("../fonts/Folklore.otf");
+}
+body {
   font-family: "Lato";
   overflow-x: hidden;
 }
