@@ -337,6 +337,7 @@ ul.nav-opt1 {
           @include background(linear-gradient(transparent, transparent), url("../img/movie.jpg") repeat);
           background-clip: text;
           -webkit-background-clip: text;
+          background-position: -114px -36px;
         }
       }
     }
@@ -348,6 +349,7 @@ ul.nav-opt1 {
           @include background(linear-gradient(transparent, transparent), url("../img/event.jpg") repeat);
           background-clip: text;
           -webkit-background-clip: text;
+          background-position: -180px -15px;
         }
       }
     }
@@ -358,6 +360,7 @@ ul.nav-opt1 {
           @include background(linear-gradient(transparent, transparent), url("../img/wedding.jpg") repeat);
           background-clip: text;
           -webkit-background-clip: text;
+          background-position: -5px -160px;
         }
       }
     }
@@ -369,6 +372,7 @@ ul.nav-opt1 {
           @include background(linear-gradient(transparent, transparent), url("../img/mice.jpg") repeat);
           background-clip: text;
           -webkit-background-clip: text;
+          background-position: -100px;
         }
       }
     }
@@ -380,6 +384,7 @@ ul.nav-opt1 {
           @include background(linear-gradient(transparent, transparent), url("../img/sport.jpg") repeat);
           background-clip: text;
           -webkit-background-clip: text;
+          background-position: -18px -85px;
         }
       }
     }
