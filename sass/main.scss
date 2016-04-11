@@ -77,8 +77,11 @@ a {
     &.mt8 {
       margin-top: -8px;
     }
-    img {
-      width: 120px;
+    img.logo {
+      width: 145px;
+    }
+    img.years {
+      width: 90px;
     }
   }
   .navbar-toggle {
@@ -163,7 +166,7 @@ a {
         font-weight: 600;
         @include transition(all ease 300ms);
         &:before {
-          margin-right: 5px;
+          margin-right: 20px;
           vertical-align: middle;
           @include transition(all ease 300ms);
         }
@@ -211,6 +214,7 @@ a {
   }
 }
 .nav-inline {
+  margin-left: 50px;
   ul {
     li+li {
       border-left: 3px solid $brand-primary;
