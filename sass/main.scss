@@ -342,6 +342,7 @@ ul.nav-opt1 {
           background-clip: text;
           -webkit-background-clip: text;
           background-position: -114px -36px;
+          background-size: cover;
         }
       }
     }
@@ -400,6 +401,7 @@ ul.nav-opt1 {
           @include background(linear-gradient(transparent, transparent), url("../img/talents.jpg") repeat);
           background-clip: text;
           -webkit-background-clip: text;
+          background-position: 69px 4px;
         }
       }
     }
@@ -410,6 +412,8 @@ ul.nav-opt1 {
           @include background(linear-gradient(transparent, transparent), url("../img/worldtours.jpg") repeat);
           background-clip: text;
           -webkit-background-clip: text;
+          background-position: -26px -84px;
+          background-size: cover;
         }
       }
     }
