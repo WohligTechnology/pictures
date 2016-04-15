@@ -6,13 +6,6 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     $scope.menutitle = NavigationService.makeactive("Home");
     TemplateService.title = $scope.menutitle;
     $scope.navigation = NavigationService.getnav();
-
-    // $scope.mySlides = [
-    //   'http://flexslider.woothemes.com/images/kitchen_adventurer_cheesecake_brownie.jpg',
-    //   'http://flexslider.woothemes.com/images/kitchen_adventurer_lemon.jpg',
-    //   'http://flexslider.woothemes.com/images/kitchen_adventurer_donut.jpg',
-    //   'http://flexslider.woothemes.com/images/kitchen_adventurer_caramel.jpg'
-    // ];
     $scope.subscribe = {};
     $scope.subscribe.email = "";
     //
@@ -404,55 +397,37 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     }];
     $scope.services = [{
       title: "Wedding Planning",
-      content: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel a at atque ipsum mollitia officia veniam. Maxime, ab. Alias facilis voluptatum nobis, praesentium porro quis. Harum inventore magnam a delectus."
+      content: "<p>We ensure your wedding is the perfect moment in your life, and more so, you enjoy it! No matter how elaborate or intimate you would like the celebrations to be, we are there to help you through them. The first step to wedding planning is meeting the couple and all the family members involved in the planning process to get a clear brief and understanding of the vision for the wedding. Questions, Questions, Questions! Our team takes you through a list of numerous questions in order to get a precise brief from you – what your likes & dislikes are, themes you like, the ceremonies involved, décor, talent, food, how you would like to see each function unravel, and so on. We then make a detailed plans based on your requirements and guide you through every step.<p><p> To us,a great wedding is in the detail. </p>"
     }, {
-      title: "Wedding Design and Production",
-      content: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel a at atque ipsum mollitia officia veniam. Maxime, ab. Alias facilis voluptatum nobis, praesentium porro quis. Harum inventore magnam a delectus."
+      title: "Venue Selection",
+      content: "<p>Selecting an apt venue for an event is as important as choosing the right apparel and accessories for the occasion. Our team can assist in finding the right venue across the length and breadth of India as well as overseas from our exhaustive data bank of venues suitable for all types of budgets and criteria irrespective of whether we are contracted for a full event management package or purely specific services such as interiors/décor and lighting schemes.</p>"
+    }, {
+      title: "Design and Production",
+      content: "<p>We oversee the design and construction of elegant and flawless designs for all our events to create beautiful, unforgettable functions. Our design team will creatively think through your requirements and mould them to suit each venue, artist, ceremony and budget to create bespoke designs & decor.  Planning the ‘event’ for all functions and ensuring quality control of execution and delivery of what’s promised is what we’re best at doing. Our experienced and hands-on show & production teams will oversee every detail to deliver The Perfect Function.Whether your influences are traditional Indian, Balinese naturalist, European eclectic or classic English… our designs will take your breath away.</p> <h4>Decor</h4><p>Décor is like a crown of jewels…special attention is paid to colours of drapes, flower arrangements, backdrops, props, lighting, seating, etc. for a tasteful presentation. We execute all these minute details with perfection. We understand how important it is to match the colour of the flowers of the centre piece with that of the bow of the chair…we understand the scheme of colours, the fall of the fabrics.</p> <h4>Themed Weddings</h4><p>You simply state the type of event you desire whether a casino setting/bollywood nite/egyptian/medieval/70’s style office party/awards ceremony/Moroccan wedding/a special ball. We will weave the magic to create and perform the themed event.</p><h4>Technicals</h4><p>Lighting is the most important part of your wedding decor because it not only affects the look, but can completely change the mood and feel of the event. We work with experienced, creative and professional lighting, sound and audio production designers.</p><h4>Pyrotechs</h4><p>Our high caliber public firework displays are designed, not only to entertain large audience but to capture them in a pyrotechnic spell, taking them on a magical journey. We also ensures that state-of-the-art, superior pyrotechnic equipment is used for all its aerial shows to ensure quality and safety.</p>"
     }, {
       title: "Destination Management",
-      content: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel a at atque ipsum mollitia officia veniam. Maxime, ab. Alias facilis voluptatum nobis, praesentium porro quis. Harum inventore magnam a delectus."
+      content: "<p>Destination Wedding can be magical, whether you are planning an intimate island wedding or decadent celebration, we offer a full planning service with bespoke recommendations to gently guide you to plan your dream destination wedding just point the way. </p><p>Having a wedding away from your hometown is unique and something your guests would always remember. It is ideal for couples who like to keep things intimate and personal, and want only their closest friends and family to attend the event. The landscape and the scenic beauty of the location, adds to the charm of the décor.</p>"
     }, {
-      title: "Entertainment & Talent",
-      content: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel a at atque ipsum mollitia officia veniam. Maxime, ab. Alias facilis voluptatum nobis, praesentium porro quis. Harum inventore magnam a delectus."
+      title: "Hospitality & Guest Management",
+      content: "<p>Managing the guests can be a daunting task even for the most organised so we ensure that your guests are taken care of and assisted to. We track RSVPs of your guests so you can focus on other important details. Right from their arrival to departure and everything in between is handled by us. We help you arrange accommodation for your guests, taking care that every need is met with, our aim is to give your guests an overall pleasurable experience and a wedding that they will remember for their lifetime.</p> <h4>RSVP</h4> <p>Over years of experience with planning intimate and large scale Indian weddings we have realised the best RSVP process is a one custom-made specially for each family and wedding. Whether information on guests must come from New York or Nagpur, Surat or Singapore, the designated RSVP teams carefully & meticulously collate all sources of information ensuring no information is left out. It is an area of real expertise and pride for us. From the Save-the-Dates right through to the Thank You letters, our Hospitality Teams can design a smooth and efficient process that will provide your family and guests with a warm and memorable experience.</p> <h4>Logistics</h4><p>We supervise the entire logistics to make your wedding a smooth sailing and enjoyable experience. We take care of the , RSVPs, guests, hotels, airport pick ups and any other logistical requirement for the wedding. Get the ground transportation right and you’ve got yourself happy guests. Limos, Helicopters, Private Jets, Cruise Liners, a Harley Davidson parade, a Vintage Car cavalcade… or the odd Camel Cart! We can arrange to hire the most varied modes of transport. Our experience and accountability ensure a smooth ride for all your occasions.</p>"
     }, {
-      title: "Photography & Videography",
-      content: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel a at atque ipsum mollitia officia veniam. Maxime, ab. Alias facilis voluptatum nobis, praesentium porro quis. Harum inventore magnam a delectus."
+      title: "Catering",
+      content: "<p>We make your special day unforgettable for people attending the wedding with indulging food. We help you with selecting a menu that has a fine balance of Indian feasts and global cuisine that will delight the palate of your guests. For your sweet-tooth indulge in wide variety of mouth-watering gourmet desserts. Beverages both alcoholic and non-alcoholic can be served; having your own signature cocktail menu will add a personalised touch to the celebrations.</p><h4>Menu Selection</h4><p>Experienced advice on one of the most crucial elements of a successful weddings, FOOD! Eclectic and visually delightful selections that will linger forever.</p> <h4>Liquor</h4> <p>From the Bubbly to the rare Malts, our liquor partners will keep everyone in high spirits.!!!</p>"
     }, {
-      title: "Catering Liasion",
-      content: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel a at atque ipsum mollitia officia veniam. Maxime, ab. Alias facilis voluptatum nobis, praesentium porro quis. Harum inventore magnam a delectus."
+      title: "Entertainment",
+      content: "Performances and themes that will enthral and entertain your guests! Who to work with. Who to avoid! Talent sourcing, negotiation and liaison to get the very best out of each event and artist. Entertainers and stars at every budget, from every art-form and culture, and for every occasion. As per your aspirations and specifications, we organise the entertainment <ul><li>Artists Band</li><li> Singers </li><li>DJ</li><li>Standup Comedians</li><li>Celebrity</li><li>Choreographers</li></ul>"
     }, {
-      title: "RSVP, Hospitality & Transport",
-      content: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel a at atque ipsum mollitia officia veniam. Maxime, ab. Alias facilis voluptatum nobis, praesentium porro quis. Harum inventore magnam a delectus."
-    }, {
-      title: "VENUE SELECTION",
-      content: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel a at atque ipsum mollitia officia veniam. Maxime, ab. Alias facilis voluptatum nobis, praesentium porro quis. Harum inventore magnam a delectus."
-    }, {
-      title: "THEMED EVENTS",
-      content: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel a at atque ipsum mollitia officia veniam. Maxime, ab. Alias facilis voluptatum nobis, praesentium porro quis. Harum inventore magnam a delectus."
-    }, {
-      title: "TRAVEL & STAY",
-      content: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel a at atque ipsum mollitia officia veniam. Maxime, ab. Alias facilis voluptatum nobis, praesentium porro quis. Harum inventore magnam a delectus."
-    }, {
-      title: "DECOR",
-      content: "Décor is like a crown of jewels…special attention is paid to colours of drapes, flower arrangements, backdrops, props, lighting, seating, etc. for a tasteful presentation. We execute all these minute details with perfection. We understand how important it is to match the colour of the flowers of the centre piece with that of the bow of the chair…we understand the scheme of colours, the fall of the fabrics."
-    }, {
-      title: "ENTERTAINMENT",
-      content: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel a at atque ipsum mollitia officia veniam. Maxime, ab. Alias facilis voluptatum nobis, praesentium porro quis. Harum inventore magnam a delectus."
-    }, {
-      title: "CATERING",
-      content: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel a at atque ipsum mollitia officia veniam. Maxime, ab. Alias facilis voluptatum nobis, praesentium porro quis. Harum inventore magnam a delectus."
+      title: "Photographers & Videographers",
+      content: "<p>A wedding day is always remembered fondly by photographs and wedding videos, thus capturing true essence of the wedding day is important. A couple goes to great lengths to make sure that their wedding day is just as envisioned, so we make sure that every emotion is captured beautifully. It is important that the wedding photos and videos capture the love and festivities of the celebration.</p><p>In understanding the importance of wedding photos, teams up with a special team of Photographers & Cinematographers who have a personalised approach to eachwedding capturing candid moments.</p>"
     }, {
       title: "Styling",
-      content: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel a at atque ipsum mollitia officia veniam. Maxime, ab. Alias facilis voluptatum nobis, praesentium porro quis. Harum inventore magnam a delectus."
+      content: "<p>Every bride and groom deserves to look their very best on their special day. We make sure that every aspect of your styling and your wedding party is taken care of. Your trousseau for every function should reflect on the mood and the festivities of each ceremony. Wedding attire will be a part of your heritage in form of family heirloom, thus it is an important aspect of the wedding.</p>"
     }, {
       title: "Security & Licenses",
-      content: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel a at atque ipsum mollitia officia veniam. Maxime, ab. Alias facilis voluptatum nobis, praesentium porro quis. Harum inventore magnam a delectus."
+      content: "<p>We ensure that your wedding day goes as smooth as possible. Weddings are a grand affair and there are a lot of important licenses and permissions that need to be procured, we provide you necessary council and help you acquire the required permits. All the technical aspects and necessary legal formalities are taken care of.</p><p>On-site security is important to deal with gate-crashers or any other emergencies. We also have a special team of professionals who manage any unforeseen circumstances on site.</p>"
     }, {
       title: "Website and Social Media",
-      content: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel a at atque ipsum mollitia officia veniam. Maxime, ab. Alias facilis voluptatum nobis, praesentium porro quis. Harum inventore magnam a delectus."
-    }, {
-      title: "E-invites and Social-Media Presence",
-      content: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel a at atque ipsum mollitia officia veniam. Maxime, ab. Alias facilis voluptatum nobis, praesentium porro quis. Harum inventore magnam a delectus."
+      content: "<p>We as a team know that the web space is turning into a major interface for couples who are planning their wedding. For the same, our web specialists can design, what we call, a custom-made wedding website for the couple where in the couple can post information and details about their wedding. Such a wedding website would be managed by our team with customized information from the couple.</p><p>The main advantage of having a wedding website is that it can be a comprehensive interface for couples who are based abroad and who have guests flying in from various places. A wedding website can also give a personalised feel to the guests and will give them a chance to know the couple more closely.</p><h4>E-invites and Social-Media Presence</h4><p>Our team also undertake the designing of e-invites on the wedding website or on a separate page as a whole. We can also write blog entries, mini-advertorials and design other creative wedding communication for your big day!</p>"
     }];
 
 
@@ -529,6 +504,54 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
       name: "Jhosi Wedding",
       detail: "The beautiful #choksitalerawedding took place at Mohini Mahal on 16th April, 2014. The entire #event was organized and managed by GS Worldwide Entertainment. #gswedding"
     }];
+  })
+  .controller('ClientsCtrl', function($scope, TemplateService, NavigationService, $timeout) {
+    //Used to name the .html file
+    $scope.template = TemplateService.changecontent("clients");
+    $scope.menutitle = NavigationService.makeactive("Clients");
+    TemplateService.title = $scope.menutitle;
+    $scope.navigation = NavigationService.getnav();
+    $scope.clientimage = [{
+      img: "img/client/1.png",
+      alt: ""
+    }, {
+      img: "img/client/2.png",
+      alt: ""
+    }, {
+      img: "img/client/3.png",
+      alt: ""
+    }, {
+      img: "img/client/4.png",
+      alt: ""
+    }, {
+      img: "img/client/5.png",
+      alt: ""
+    }, {
+      img: "img/client/6.png",
+      alt: ""
+    }, {
+      img: "img/client/7.png",
+      alt: ""
+    }, {
+      img: "img/client/8.png",
+      alt: ""
+    }];
+
+    $scope.strip = [{
+      img: "img/client/jpp1.jpg",
+      name: "Jaipur Pink Panthers"
+    },{
+      img: "img/client/jpp2.jpg",
+      name: "Kings XI Panjab"
+    },{
+      img: "img/client/jpp3.jpg",
+      name: "CHENNAYIN F.C."
+    },{
+      img: "img/client/jpp4.jpg",
+      name: "KOTAK"
+    },
+
+  ];
   })
 
 .controller('asfcCtrl', function($scope, TemplateService, NavigationService, $timeout) {

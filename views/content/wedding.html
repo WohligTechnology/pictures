@@ -90,85 +90,13 @@
             <uib-accordion close-others="oneAtATime" is-open="status.open">
               <uib-accordion-group is-open="status.open1" is-disabled="status.isFirstDisabled" ng-repeat="data in services">
                 <uib-accordion-heading>
-                  <span class="uppercase bold">{{data.title}}</span>
-                  <i class="pull-right fa" ng-class="{'fa-minus': status.open1, 'fa-plus': !status.open1}"></i>
+                  <h4>
+                     <span class="uppercase bold">{{data.title}}</span>
+                      <i class="pull-right fa" ng-class="{'fa-minus': status.open1, 'fa-plus': !status.open1}"></i>
+                    </h4>
                 </uib-accordion-heading>
-                <!-- <div class="" ng-bind-html="{{data.content}}">{{data.content}}</div> -->
-                <div class="">{{data.content}}</div>
+                <div class="" ng-bind-html="data.content"></div>
               </uib-accordion-group>
-              <!-- <uib-accordion-group is-open="status.open2">
-                <uib-accordion-heading>
-                  <span class="uppercase bold">  Wedding Design and Production </span> <i class="pull-right fa" ng-class="{'fa-minus': status.open2, 'fa-plus': !status.open2}"></i>
-                </uib-accordion-heading>
-                This is just some content to illustrate fancy headings.
-              </uib-accordion-group>
-              <uib-accordion-group>
-                <uib-accordion-heading>
-                  <span class="uppercase bold">  Destination Management </span><i class="pull-right fa" ng-class="{'fa-minus': status.open, 'fa-plus': !status.open}"></i>
-                </uib-accordion-heading>
-                This is just some content to illustrate fancy headings.
-              </uib-accordion-group>
-              <uib-accordion-group>
-                <uib-accordion-heading>
-                  <span class="uppercase bold">  Entertainment &amp; Talent </span> <i class="pull-right fa" ng-class="{'fa-minus': status.open, 'fa-plus': !status.open}"></i>
-                </uib-accordion-heading>
-                This is just some content to illustrate fancy headings.
-              </uib-accordion-group>
-              <uib-accordion-group>
-                <uib-accordion-heading>
-                  <span class="uppercase bold">  Photography &amp; Videography </span> <i class="pull-right fa" ng-class="{'fa-minus': status.open, 'fa-plus': !status.open}"></i>
-                </uib-accordion-heading>
-                This is just some content to illustrate fancy headings.
-              </uib-accordion-group>
-              <uib-accordion-group>
-                <uib-accordion-heading>
-                  <span class="uppercase bold">  Catering Liasion </span> <i class="pull-right fa" ng-class="{'fa-minus': status.open, 'fa-plus': !status.open}"></i>
-                </uib-accordion-heading>
-                This is just some content to illustrate fancy headings.
-              </uib-accordion-group>
-              <uib-accordion-group>
-                <uib-accordion-heading>
-                  <span class="uppercase bold">  RSVP, Hospitality &amp; Transport </span> <i class="pull-right fa" ng-class="{'fa-minus': status.open, 'fa-plus': !status.open}"></i>
-                </uib-accordion-heading>
-                This is just some content to illustrate fancy headings.
-              </uib-accordion-group>
-              <uib-accordion-group>
-                <uib-accordion-heading>
-                  <span class="uppercase bold">  VENUE SELECTION </span> <i class="pull-right fa" ng-class="{'fa-minus': status.open, 'fa-plus': !status.open}"></i>
-                </uib-accordion-heading>
-                This is just some content to illustrate fancy headings.
-              </uib-accordion-group>
-              <uib-accordion-group>
-                <uib-accordion-heading>
-                  <span class="uppercase bold">  THEMED EVENTS </span> <i class="pull-right fa" ng-class="{'fa-minus': status.open, 'fa-plus': !status.open}"></i>
-                </uib-accordion-heading>
-                This is just some content to illustrate fancy headings.
-              </uib-accordion-group>
-              <uib-accordion-group>
-                <uib-accordion-heading>
-                  <span class="uppercase bold">  TRAVEL &amp; STAY </span> <i class="pull-right fa" ng-class="{'fa-minus': status.open, 'fa-plus': !status.open}"></i>
-                </uib-accordion-heading>
-                This is just some content to illustrate fancy headings.
-              </uib-accordion-group>
-              <uib-accordion-group>
-                <uib-accordion-heading>
-                  <span class="uppercase bold">  DECOR </span> <i class="pull-right fa" ng-class="{'fa-minus': status.open, 'fa-plus': !status.open}"></i>
-                </uib-accordion-heading>
-                Décor is like a crown of jewels…special attention is paid to colours of drapes, flower arrangements, backdrops, props, lighting, seating, etc. for a tasteful presentation. We execute all these minute details with perfection. We understand how important
-                it is to match the colour of the flowers of the centre piece with that of the bow of the chair…we understand the scheme of colours, the fall of the fabrics.
-              </uib-accordion-group>
-              <uib-accordion-group>
-                <uib-accordion-heading>
-                  <span class="uppercase bold">  ENTERTAINMENT </span> <i class="pull-right fa" ng-class="{'fa-minus': status.open, 'fa-plus': !status.open}"></i>
-                </uib-accordion-heading>
-                This is just some content to illustrate fancy headings.
-              </uib-accordion-group>
-              <uib-accordion-group>
-                <uib-accordion-heading>
-                  <span class="uppercase bold">  CATERING </span> <i class="pull-right fa" ng-class="{'fa-minus': status.open, 'fa-plus': !status.open}"></i>
-                </uib-accordion-heading>
-                This is just some content to illustrate fancy headings.
-              </uib-accordion-group> -->
             </uib-accordion>
           </div>
         </div>

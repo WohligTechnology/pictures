@@ -1,0 +1,118 @@
+<section>
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="head-banner text-center">
+          <img src="img/client/client.png" class="img-responsive" title="Weddings">
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-offset-2 col-sm-8">
+        <div class="wedding-fant-desc mt50">
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea cupiditate laboriosam qui laborum atque, impedit sapiente minima sequi non voluptas assumenda saepe id quo, eos, ducimus consequuntur excepturi doloribus, fuga. Lorem ipsum dolor sit
+            amet, consectetur adipisicing elit. Ea cupiditate laboriosam qui laborum atque, impedit sapiente minima sequi non voluptas assumenda saepe id quo, eos, ducimus consequuntur excepturi doloribus, fuga. Lorem ipsum dolor sit amet, consectetur
+            adipisicing elit. Ea cupiditate laboriosam qui laborum atque, impedit sapiente minima sequi non voluptas assumenda saepe id quo, eos, ducimus consequuntur excepturi doloribus, fuga.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="mt50 plr100">
+    <div class="row">
+      <div class="col-md-3 col-sm-3 col-xs-6" ng-repeat="data in clientimage">
+        <img src="{{data.img}}" alt="{{data.alt}}" class="img-responsive">
+      </div>
+      <div class="col-md-3 col-sm-3 col-xs-6" ng-repeat="data in clientimage">
+        <img src="{{data.img}}" alt="{{data.alt}}" class="img-responsive">
+      </div>
+    </div>
+    <div class="btn-all mr30 text-center">
+      <button class="btn btn-danger btn-outline">
+        View All
+      </button>
+    </div>
+  </div>
+  <div class="resources mt45">
+    <div class="row-flex">
+      <div class="col-flex">
+        <img src="img/client/jpp.jpg" alt="" class="img-responsive">
+      </div>
+      <div class="col-flex">
+        <div class="rl data-up">
+          <div class="red-img">
+            <img src="img/client/red.jpg" alt="" class="img-responsive">
+          </div>
+          <div class="text-cont">
+            <h4>SEASON 1</h4>
+            <p>
+              Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has
+              survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with
+              desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+            </p>
+            <div class="btn-all mb15 text-right">
+              <button class="btn btn-danger btn-ouline">
+                View All
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="flex-client">
+    <div class="row-flex">
+      <div class="col-flex" ng-repeat="data in strip">
+        <div class="box-clients">
+          <div class="box-clients-inside">
+            <img src="{{data.img}}" alt="{{data.name}}" class="img-responsive">
+          </div>
+          <div class="client-caption">
+            {{data.name}}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="social client-social">
+    <!-- <div ng-include = "'/social.html'"></div> -->
+    <section class="marg-section">
+      <div class="social-back">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-4 col-sm-4">
+              <div class="social-box text-center">
+                <img src="img/socials/facebook.png" class="doneLoading">
+              </div>
+              <div class="social-logo text-center">
+                <div class="feed-social mt30">
+                  <div class="fb-page" data-href="https://www.facebook.com/GSWorldwideEnt/" data-tabs="timeline" data-width="360" data-height="480" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true">
+                    <div class="fb-xfbml-parse-ignore">
+                      <blockquote cite="https://www.facebook.com/GSWorldwideEnt/">
+                        <a href="https://www.facebook.com/GSWorldwideEnt/">GS Worldwide Entertainment.</a></blockquote>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4 col-sm-4">
+              <div class="social-box text-center">
+                <img src="img/socials/twitter.png" class="doneLoading">
+              </div>
+              <div class="social-logo text-center ">
+                <a class="twitter-timeline" href="https://twitter.com/GSWorldwideEnt" data-widget-id="716880459599228928">Tweets by @GSWorldwideEnt</a>
+              </div>
+            </div>
+            <div class="col-md-4 col-sm-4">
+              <div class="social-box text-center">
+                <img src="img/socials/instagram.png" class="doneLoading">
+              </div>
+              <div class="social-logo text-center ">
+                <iframe src="//lightwidget.com/widgets/6d2d4c5998a151858aa8809aa079549f.html" id="lightwidget_6d2d4c5998" name="lightwidget_6d2d4c5998" scrolling="no" allowtransparency="true" class="lightwidget-widget" style="width: 100%; border: 0; overflow: hidden;"></iframe>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</section>

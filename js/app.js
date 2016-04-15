@@ -40,6 +40,11 @@ firstapp.config(function($stateProvider, $urlRouterProvider, $httpProvider, $loc
       templateUrl: "views/template.html",
       controller: 'WeddingInsideCtrl'
     })
+    .state('clients', {
+      url: "/clients",
+      templateUrl: "views/template.html",
+      controller: 'ClientsCtrl'
+    })
     .state('asfc', {
       url: "/asfc",
       templateUrl: "views/template.html",
