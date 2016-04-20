@@ -155,6 +155,10 @@ a {
   background: url('../img/bg-red.png')no-repeat;
   background-size: cover;
 }
+.social-box-bg {
+  background: url('../img/bg-asfcsocial.png')no-repeat;
+  background-size: 100%;
+}
 .nav-list {
   padding-top: 100px;
   ul {
@@ -817,7 +821,8 @@ footer {
 }
 .bg-blue-asfc {
   background: url('../img/bg-blue.jpg')no-repeat;
-  background-size: 100% 100%;
+  background-size: 100%;
+  padding: 50px 0;
 }
 // .bg-brown-asfc {
 //   background: url('../img/bg-line.jpg')no-repeat;
@@ -841,7 +846,7 @@ footer {
       position: absolute;
       top: 50%;
       left: 50%;
-      transform: translate(-50%,-50%);
+      @include transform(translate(-50%,-50%));
       color: #fff;
       margin: 0;
     }
@@ -873,6 +878,11 @@ footer {
   background: #FDFDFD;
   margin-top: -1px;
 }
+.btn-grey {
+  .btn-outline {
+    background: #f0f0f0;
+  }
+}
 .btn-all {
   .btn {
     padding: 8px 30px;
@@ -882,6 +892,9 @@ footer {
     color: $brand-danger;
     background: #fff;
     border-color: $brand-danger;
+    &.btn-grey {
+      background: #F0F0F0;
+    }
     &:hover {
       color: #f0f0f0;
       background-color: $brand-danger;
@@ -1299,7 +1312,7 @@ h4.title-movies {
   h3 {
     font-size: 30px;
     letter-spacing: 3px;
-    font-weight: 600;
+    font-weight: 400;
     margin-top: 0;
   }
 }
@@ -1429,21 +1442,68 @@ h4.title-movies {
 }
 .pdasfc {
   padding-top: 130px;
-  padding-bottom: 20px;
+  padding-bottom: 30px;
 }
 .upcoming-game {
-  padding: 100px 0 0;
   .team-logo img {
     width: 180px;
     margin: 0 auto;
   }
+  .title-asfc {
+    background: #f0f0f0;
+    h3 {
+      width: 350px;
+      color: #fff;
+      background: $brand-danger;
+      padding: 15px 25px;
+      margin: 0 auto;
+    }
+  }
   .date {
-    padding-top: 15px;
+    padding: 20px 0 10px;
+    span {
+      background: rgba(221, 221, 221, 0.65);
+      padding: 5px 30px;
+      text-transform: uppercase;
+      font-weight: 900;
+      color: #000;
+      font-size: 18px;
+    }
+  }
+  .stadium {
+    margin: 24px 0;
+    span {
+      padding: 7px 30px;
+      font-weight: 900;
+      position: relative;
+      background: #fff;
+      color: #000;
+      font-size: 20px;
+      display: block;
+      &:after,
+      &:before {
+        content: '';
+        bottom: 0;
+        border-top: 70px solid #fff;
+        position: absolute;
+        display: block;
+      }
+      &:after {
+        right: -30px;
+        border-right: 30px solid transparent;
+      }
+      &:before {
+        left: -30px;
+        border-left: 30px solid transparent;
+      }
+    }
   }
   .vs {
-    font-size: 36px;
+    font-size: 100px;
     text-transform: uppercase;
-    margin: 70px 0;
+    margin: 30px 0 0;
+    font-weight: 800;
+    text-shadow: -3px 2px 12px #fff;
   }
   .min-hgt {
     min-height: 300px;
@@ -1459,21 +1519,21 @@ h4.title-movies {
     }
   }
   .title {
-    font-size: 20px;
+    font-size: 24px;
   }
   .team-img1 {
     position: absolute;
     left: 3%;
-    top: 1%;
+    top: 10%;
   }
   .team-img2 {
     position: absolute;
     right: 1%;
-    top: 1%;
+    top: 10%;
   }
   span {
-    font-size: 20px;
-    font-weight: 600;
+    font-size: 22px;
+    font-weight: 800;
     position: absolute;
     left: 50%;
     top: 50%;
@@ -1485,13 +1545,18 @@ h4.title-movies {
 }
 .asfc-rl {
   position: relative;
-  margin-top: -75px;
+  margin-top: -65px;
+  color: #fff;
   .prv-game {
     min-height: 120px;
     position: absolute;
     top: 10px;
     left: 10px;
     width: 100%;
+  }
+  a {
+    color: #fff;
+    font-size: 20px;
   }
 }
 .img-asfc {
@@ -1505,23 +1570,36 @@ h4.title-movies {
   }
 }
 .magic-bus {
-  background: url("../img/sketch.jpg");
-  min-height: 300px;
-  background-size: 100% 100%;
-  padding-top: 100px;
-  padding-bottom: 50px;
-}
-.mtminus {
-  margin-top: -125px;
+  background: #f9f9f9;
+  padding: 20px 0;
+  .img-asfc-pft {
+    padding-top: 20px;
+  }
 }
 .download {
-  background: url('../img/ASFC/download.png');
+  background: url('../img/ASFC/shareband.jpg');
   background-size: cover;
-  padding: 25px 0 50px;
-  min-height: 400px;
-  margin-top: 20px;
-  img {
-    width: 200px;
+  min-height: 95px;
+  margin: 25px 0 60px;
+  position: relative;
+  p {
+    font-size: 36px;
+    padding: 22px;
+    color: #fff;
+    letter-spacing: 3px;
+    font-family: "Oxygen";
+    a {
+      font-size: 30px;
+      color: #fff;
+    }
+  }
+  .imac {
+    bottom: -60px;
+    @include transform(translateX(-25%));
+    left: 25%;
+    img {
+      width: 140px;
+    }
   }
 }
 .has-feedback {
@@ -1549,7 +1627,7 @@ h4.title-movies {
     padding: 50px;
     color: #fff;
     top: 50%;
-    transform: translatey(-50%);
+    @include transform(translatey(-50%));
     width: 80%;
     h4 {
       text-transform: uppercase;
@@ -1580,7 +1658,7 @@ h4.title-movies {
     left: 50%;
     color: #fff;
     text-transform: uppercase;
-    transform: translate(-50%,-50%);
+    @include transform(translate(-50%,-50%));
     font-size: 22px;
     font-weight: 600;
     width: 100%;
