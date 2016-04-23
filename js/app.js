@@ -48,12 +48,32 @@ firstapp.config(function($stateProvider, $urlRouterProvider, $httpProvider, $loc
     .state('asfc', {
       url: "/asfc",
       templateUrl: "views/template.html",
-      controller: 'asfcCtrl'
+      controller: 'AsfcCtrl'
     })
     .state('jpp', {
       url: "/jpp",
       templateUrl: "views/template.html",
-      controller: 'jppCtrl'
+      controller: 'JppCtrl'
+    })
+    .state('jppseason1', {
+      url: "/jppseason1",
+      templateUrl: "views/template.html",
+      controller: 'Jppseason1Ctrl'
+    })
+    .state('phf', {
+      url: "/phf",
+      templateUrl: "views/template.html",
+      controller: 'PhfCtrl'
+    })
+    .state('sport', {
+      url: "/sport",
+      templateUrl: "views/template.html",
+      controller: 'SportCtrl'
+    })
+    .state('dairies', {
+      url: "/dairies",
+      templateUrl: "views/template.html",
+      controller: 'DairiesCtrl'
     });
   $urlRouterProvider.otherwise("/home");
   $locationProvider.html5Mode(isproduction);

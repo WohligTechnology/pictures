@@ -15,7 +15,68 @@
     </div>
   </div>
 </section>
-<section class="mt180">
+<div class="social-box-bg mt180 pdjpp">
+  <div class="row">
+    <div class="col-md-offset-1 col-md-10">
+      <div class="title-asfc mt15">
+        <h3 class="text-center color-red bold uppercase">
+        PREVIOUS GAMES HIGHLIGHTS
+      </h3>
+      </div>
+      <div class="row pd30" ng-repeat="data in jppdetail">
+        <div class="col-sm-6">
+          <div class="wedding-imgbox">
+            <img ng-src="{{data.img}}" class="img-responsive" alt="">
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <div class="wedding-detail">
+            <div class="asfc-title">
+              <h4 class="uppercase color-red bold">
+            {{data.content}}
+          </h4>
+            </div>
+            <div class="w-detail mt15 mb15">
+              <p>
+                {{data.detail}}
+              </p>
+            </div>
+            <div class="w-button">
+              <button class="btn btn-danger">Photos <i class="fa fa-camera"></i></button>
+              <button class="btn btn-danger dark-red">Video <i class="fa fa-play"></i></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="btn-all text-center">
+    <button class="btn btn-outline btn-grey">
+      View all
+    </button>
+  </div>
+  <div class="section3">
+    <div class="bg3">
+      <div class="container">
+        <div class="client-speak">
+          <div class="name-cont color-white">
+            <img src="img/inverted.png" alt="">
+            <!-- {{clientspeak}} -->
+            <span>{{clientspeak.category}}</span>
+          </div>
+          <div class="img-holder">
+            <img src="{{clientspeak.img}}" alt="" class="img-reponsive">
+          </div>
+          <div class="img-review color-white">
+            <h4>"{{clientspeak.text}}"</h4>
+            <p>- {{clientspeak.name}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- <section class="mt180">
   <div class="jpp-fixtures bg-red-jpp">
     <div class="container">
       <div class="row">
@@ -71,61 +132,101 @@
     </div>
   </div>
 </section>
-<section>
-  <div class="jpp-category nav-tab-middle ">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-offset-1 col-md-10">
-          <div class="title">
-            <h3 class="letter-spacing color-red text-center bold">
+<section> -->
+<!-- <div class="jpp-category nav-tab-middle ">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-offset-1 col-md-10">
+        <div class="title">
+          <h3 class="letter-spacing color-red text-center bold">
               GALLERY
             </h3>
-          </div>
-          <div class="mb15">
-            <uib-tabset active="active">
-              <uib-tab index="0" heading="WALLPAPERS" vertical="true" type="pills">
-                <div class="bg-grey pd20">
-                  <div class="row">
-                    <div class="col-xs-4" ng-repeat="data in wallpaper">
-                      <div class="mb15">
-                        <!-- <a class="fancybox" rel="group" href="{{data.img}}" fancyboxBox> -->
-                          <img ng-src="{{data.img}}" alt="" class="img-responsive">
-                        <!-- </a> -->
-                      </div>
+        </div>
+        <div class="mb15">
+          <uib-tabset active="active">
+            <uib-tab index="0" heading="WALLPAPERS" vertical="true" type="pills">
+              <div class="bg-grey pd20">
+                <div class="row">
+                  <div class="col-xs-4" ng-repeat="data in wallpaper">
+                    <div class="mb15">
+                      <img ng-src="{{data.img}}" alt="" class="img-responsive">
                     </div>
                   </div>
                 </div>
-              </uib-tab>
-              <uib-tab index="1" heading="VIDEOS" vertical="true" type="pills" class="bg-grey">
-                <div class="bg-grey pd20">
-                  <div class="row">
-                    <div class="col-xs-4" ng-repeat="data in wallpaper">
-                      <div class="mb15">
-                        <!-- <a class="fancybox" rel="group" href="{{data.img}}" fancyboxBox> -->
-                          <img ng-src="{{data.img}}" alt="" class="img-responsive">
-                        <!-- </a> -->
-                      </div>
+              </div>
+            </uib-tab>
+            <uib-tab index="1" heading="VIDEOS" vertical="true" type="pills" class="bg-grey">
+              <div class="bg-grey pd20">
+                <div class="row">
+                  <div class="col-xs-4" ng-repeat="data in wallpaper">
+                    <div class="mb15">
+                      <img ng-src="{{data.img}}" alt="" class="img-responsive">
                     </div>
                   </div>
                 </div>
-              </uib-tab>
-            </uib-tabset>
-          </div>
-          <div class="vist-web">
-            <h4 class="text-center bold">
+              </div>
+            </uib-tab>
+          </uib-tabset>
+        </div>
+        <div class="vist-web">
+          <h4 class="text-center bold">
               FOR MORE INFORMATION VISIT
             </h4>
-            <div class="btn-all text-center">
-              <a href="http://jaipurpinkpanthers.com/home" target="_blank" class="btn btn-primary btn-lg">
+          <div class="btn-all text-center">
+            <a href="http://jaipurpinkpanthers.com/home" target="_blank" class="btn btn-primary btn-lg">
                 www.jpp.com
               </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div> -->
+<!-- </section> -->
+<div class="sharejpp">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-3">
+        <div class="website">
+          <img src="img/jpp/imacjpp.png" alt="">
+          <div class="btn-all text-center">
+            <button class="btn btn-primary">
+              View site
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-9">
+        <div class="row">
+          <div class="col-md-4">
+            <div class="ios-andriod">
+              <img src="img/jpp/android-ios.png" alt="">
+            </div>
+          </div>
+          <div class="col-md-8">
+            <div class="title-made">
+              Download the JPP App
+            </div>
+            <div class="ios-andriod">
+              <ul class="list-unstyled">
+                <li>
+                  <a href="#">
+                    <img src="img/jpp/android.png" alt="">
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <img src="img/jpp/apple.png" alt="">
+                  </a>
+                </li>
+              </ul>
             </div>
           </div>
         </div>
       </div>
     </div>
   </div>
-</section>
+</div>
 <div class="social">
   <section class="marg-section">
     <div class="social-back mt50">
