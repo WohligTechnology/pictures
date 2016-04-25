@@ -2,7 +2,7 @@
   <div class="banner-movies ab">
     <img src="img/jppseason1/banner.jpg" alt="" class="img-responsive">
   </div>
-  <div class="banner banner-asfc text-center">
+  <div class="banner banner-asfc text-center mt180">
     <div class="container">
       <div class="row">
         <div class="col-md-8 col-md-offset-2">
@@ -14,6 +14,114 @@
           </div>
         </div>
       </div>
+    </div>
+  </div>
+</section>
+<section>
+  <div class="jpp-category nav-tab-middle ">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-offset-1 col-md-10">
+          <div class="title">
+            <h3 class="letter-spacing color-red bold">
+            Image Gallery
+            </h3>
+          </div>
+          <div class="mb15">
+            <div class="slider-client">
+              <flex-slider flex-slide="slide in wallpaper track by $index" animation="slide" animation-loop="false" as-nav-for="#slider" slideshow="false" item-margin="20">
+                <li class="">
+                  <div class="row" ng-repeat="row in slide">
+                    <div class="col-xs-4" ng-repeat="wallpaper in row">
+                      <div class="mb15">
+                        <img ng-src="{{wallpaper.img}}" alt="" class="img-responsive">
+                      </div>
+                    </div>
+                  </div>
+                </li>
+              </flex-slider>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section>
+  <div class="jpp-movie">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-offset-1 col-md-10">
+          <div class="title">
+            <h3 class="letter-spacing color-red bold">
+              FEATURED VIDEOS
+            </h3>
+          </div>
+          <div class="mb15">
+            <div class="slider-client">
+              <flex-slider slide="image in videos track by $index" slider-id="slider" prev-text="" next-text="" sync="#carousel" slideshow="false" animation="slide">
+                <li>
+                  <div class="">
+                    <img src="{{image.img}}" alt="" class="img-responsive">
+                  </div>
+                </li>
+              </flex-slider>
+              <flex-slider slide="image in videos track by $index" animation="slide" animation-loop="false" item-width="280" item-margin="40" as-nav-for="#slider" slideshow="false" control-nav="false" prev-text="" next-text="" slider-id="carousel" animation-loop="false">
+                <li>
+                  <div class="row">
+                    <img src="{{image.img}}" alt="">
+                  </div>
+                </li>
+              </flex-slider>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="text-center">
+        <div class="wedding-diary">
+          <div class="diary-title mr30">
+            <h4 class="uppercase color-red">RELATED ARTICLES</h4>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="pd-side">
+    <div class="row">
+      <div class="col-md-4 col-sm-4 col-xs-6" ng-repeat="data in weddings track by $index">
+        <div class="wed-box border-red">
+          <div class="wed-img-list">
+            <img ng-src="{{data.img}}" alt="" class="img-responsive">
+            <div class="ribbon-red">
+              <img src="img/ribbon_red.png" alt="">
+              <span class="color-white uppercase">Sports</span>
+            </div>
+          </div>
+          <div class="wed-desc">
+            <div class="wed-date">
+              <span>{{data.date}}</span>
+            </div>
+            <div class="wed-desc-inside">
+              <p class="bold">{{data.desc}}</p>
+            </div>
+            <div class="read-more">
+              <a href="" class="color-black">Read More</a>
+            </div>
+          </div>
+          <div class="border-blue borders"></div>
+        </div>
+      </div>
+    </div>
+    <div class="btn-all mr30 text-center">
+      <button class="btn btn-danger btn-outline">
+        View All
+      </button>
     </div>
   </div>
 </section>

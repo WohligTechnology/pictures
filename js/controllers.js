@@ -659,13 +659,91 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     $scope.menutitle = NavigationService.makeactive("Sports");
     TemplateService.title = $scope.menutitle;
     $scope.navigation = NavigationService.getnav();
+    $scope.wallpaper = [{
+      img: "img/jpp/w1.jpg",
+    }, {
+      img: "img/jpp/w2.jpg",
+    }, {
+      img: "img/jpp/w3.jpg",
+    }, {
+      img: "img/jpp/w4.jpg",
+    }, {
+      img: "img/jpp/w5.jpg",
+    }, {
+      img: "img/jpp/w6.jpg",
+    }, {
+      img: "img/jpp/w1.jpg",
+    }, {
+      img: "img/jpp/w2.jpg",
+    }, {
+      img: "img/jpp/w3.jpg",
+    }, {
+      img: "img/jpp/w4.jpg",
+    }, {
+      img: "img/jpp/w5.jpg",
+    }, {
+      img: "img/jpp/w6.jpg",
+    }];
+    $scope.weddings = [{
+      img: "img/jppseason1/1.png",
+      date: "12 January 2016",
+      desc: "Lorem Ipsum is simply dummy text of the printing industry"
+    }, {
+      img: "img/jppseason1/2.png",
+      date: "12 January 2016",
+      desc: "Lorem Ipsum is simply dummy text of the printing industry"
+    }, {
+      img: "img/jppseason1/3.png",
+      date: "12 January 2016",
+      desc: "Lorem Ipsum is simply dummy text of the printing industry"
+    }];
+    $scope.videos = [{
+      img: "img/jpp/w11.jpg",
+    }, {
+      img: "img/jpp/w11.jpg",
+    }, {
+      img: "img/jpp/w11.jpg",
+    }, {
+      img: "img/jpp/w11.jpg",
+    }, {
+      img: "img/jpp/w11.jpg",
+    }, {
+      img: "img/jpp/w11.jpg",
+    }];
+    $scope.wallpaper = _.chunk($scope.wallpaper, 6);
+    for (var i = 0; i < $scope.wallpaper.length; i++) {
+      $scope.wallpaper[i] = _.chunk($scope.wallpaper[i], 3);
+    }
   })
-.controller('DairiesCtrl', function($scope, TemplateService, NavigationService, $timeout) {
+  .controller('DairiesCtrl', function($scope, TemplateService, NavigationService, $timeout) {
     //Used to name the .html file
     $scope.template = TemplateService.changecontent("dairies");
     $scope.menutitle = NavigationService.makeactive("Dairies");
     TemplateService.title = $scope.menutitle;
     $scope.navigation = NavigationService.getnav();
+    $scope.diariesfull2 = {
+      img: "img/dairies/events.png",
+      date: "12 January 2016",
+      desc: "Lorem Ipsum is simply dummy text of the printing industry simply dummy text of the printing industry printing industry simply dummy text of the printing industry.",
+      name: "Events"
+    };
+    $scope.diariesfull1 = {
+      img: "img/dairies/wedding.png",
+      date: "12 January 2016",
+      desc: "Lorem Ipsum is simply dummy text of the printing industry simply dummy text of the printing industry printing industry simply dummy text of the printing industry",
+      name: "WEDDINGS"
+    };
+    $scope.diaries = [{
+      img: "img/movies/movie_diaries/diary1.png",
+      date: "12 January 2016",
+      desc: "Lorem Ipsum is simply dummy text of the printing industry",
+      name: "Movies"
+    }, {
+      img: "img/jppseason1/2.png",
+      date: "12 January 2016",
+      desc: "Lorem Ipsum is simply dummy text of the printing industry",
+      name: "Sports"
+    }];
   })
   .controller('SportCtrl', function($scope, TemplateService, NavigationService, $timeout) {
     //Used to name the .html file
@@ -680,6 +758,27 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     $scope.menutitle = NavigationService.makeactive("PHF");
     TemplateService.title = $scope.menutitle;
     $scope.navigation = NavigationService.getnav();
+    $scope.asfcdetail = [{
+      img: "img/ASFC/w1.jpg",
+      team1: "AHFC",
+      team2: "AHFC",
+      date: "15 Sep 2015",
+      location: "Bangalore",
+      detail: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
+    }, {
+      img: "img/ASFC/w2.jpg",
+      team1: "AHFC",
+      team2: "AHFC",
+      date: "15 Sep 2015",
+      location: "Bangalore",
+      detail: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
+    }];
+    $scope.clientspeak = {
+      category: "Partner Speak",
+      text: "Extra Efficient",
+      name: "Navneet Gautam",
+      img: "img/movies/ranbir.jpg"
+    };
   })
 
 .controller('headerctrl', function($scope, TemplateService) {

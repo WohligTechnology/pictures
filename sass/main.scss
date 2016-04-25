@@ -91,6 +91,9 @@ a {
 .uppercase {
   text-transform: uppercase;
 }
+.letter-spacing {
+  letter-spacing: 3px;
+}
 .hamburger {
   width: 25px;
   height: 25px;
@@ -621,6 +624,9 @@ ul.nav-opt1 {
 }
 .bg-subcribe-home {
   background: url('../img/home/bg-subcribe.jpg') no-repeat;
+}
+.bg-subcribe-phf {
+  background: url('../img/PHF/bg-subcribe.jpg') no-repeat;
 }
 .bg-subcribe-movies {
   background: url('../img/movies/bg-subcribe.jpg') no-repeat;
@@ -1423,8 +1429,11 @@ h4.title-movies {
     border-bottom-color: transparent;
     cursor: default;
   }
+  .row {
+    margin: 0;
+  }
   .col-xs-4 {
-    padding: 0 8px;
+    padding: 0 7px 0 8px;
   }
   .vist-web {
     margin-top: 20px;
@@ -1691,6 +1700,23 @@ h4.title-movies {
 .pdjpp {
   padding-top: 170px;
   padding-bottom: 30px;
+}
+#carousel img {
+  display: block;
+  opacity: 0.4;
+  cursor: pointer;
+}
+#carousel .flex-active-slide img {
+  opacity: 1;
+  cursor: default;
+}
+.diaries-banner {
+  img {
+    width: 65%;
+  }
+}
+.mtb5 {
+  margin: 5px 0;
 }
 /* Start writing sass here */
 @import "fancybox-override";

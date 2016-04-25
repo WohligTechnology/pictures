@@ -1,0 +1,152 @@
+<section>
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="head-banner diaries-banner text-center">
+          <img src="img/dairies/banner.png" class="img-responsive" title="Dairies">
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="wedding-fant-desc">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-offset-2 col-md-8">
+          <p>Lorem Ipsum proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan
+            ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non mauris vitae erat consequat auctor eu in elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Mauris in erat justo. Nullam
+            ac urna eu felis dapibus condimentum sit amet a augue. Sed non neque elit. Sed ut imperdiet nisi. Proin condimentum fermentum nunc. Etiam pharetra, erat sed fermentum feugiat, velit mauris egestas quam, ut aliquam massa nisl quis neque. Suspendisse
+            in orci enim.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="container">
+  <div class="row">
+    <div class="col-sm-8">
+      <div class="pd-side mb15">
+        <div class="row">
+          <div class="col-sm-12">
+            <div class="wed-box border-red">
+              <div class="wed-img-list">
+                <img ng-src="{{diariesfull1.img}}" alt="" class="img-responsive">
+                <div class="ribbon-red">
+                  <img src="img/ribbon_red.png" alt="">
+                  <span class="color-white uppercase">{{diariesfull1.name}}</span>
+                </div>
+              </div>
+              <div class="wed-desc">
+                <div class="wed-desc-inside">
+                  <p class="bold">{{diariesfull1.desc}}</p>
+                </div>
+                <div class="read-more pull-right mtb5">
+                  <a href="" class="color-black bold">Read More</a>
+                </div>
+                <div class="wed-date">
+                  <span>{{diariesfull1.date}}</span>
+                </div>
+              </div>
+              <div class="border-blue borders"></div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-6" ng-repeat="data in diaries track by $index">
+            <div class="wed-box border-red">
+              <div class="wed-img-list">
+                <img ng-src="{{data.img}}" alt="" class="img-responsive">
+                <div class="ribbon-red">
+                  <img src="img/ribbon_red.png" alt="">
+                  <span class="color-white uppercase">{{data.name}}</span>
+                </div>
+              </div>
+              <div class="wed-desc">
+                <div class="wed-desc-inside">
+                  <p class="bold">{{data.desc}}</p>
+                </div>
+                <div class="read-more pull-right mtb5">
+                  <a href="" class="color-black bold">Read More</a>
+                </div>
+                <div class="wed-date">
+                  <span>{{diariesfull1.date}}</span>
+                </div>
+              </div>
+              <div class="border-blue borders"></div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-12">
+            <div class="wed-box border-red mb15">
+              <div class="wed-img-list">
+                <img ng-src="{{diariesfull2.img}}" alt="" class="img-responsive">
+                <div class="ribbon-red">
+                  <img src="img/ribbon_red.png" alt="">
+                  <span class="color-white uppercase">{{diariesfull2.name}}</span>
+                </div>
+              </div>
+              <div class="wed-desc">
+                <div class="wed-desc-inside">
+                  <p class="bold">{{diariesfull2.desc}}</p>
+                </div>
+                <div class="read-more pull-right mtb5">
+                  <a href="" class="color-black bold">Read More</a>
+                </div>
+                <div class="wed-date">
+                  <span>{{diariesfull1.date}}</span>
+                </div>
+              </div>
+              <div class="border-blue borders"></div>
+            </div>
+          </div>
+        </div>
+        <div class="btn-all mr30">
+          <button class="btn btn-danger btn-outline">
+            Prev
+          </button>
+          <button class="btn btn-danger btn-outline pull-right">
+            Next
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="text-center brd-line">
+        <div class="title-subtitle">
+          <h4 class="uppercase color-red bold">CATEGORIES</h4>
+        </div>
+        <ul class="list-unstyled uppercase">
+          <li>MOVIES</li>
+          <li>WEDDINGS</li>
+          <li>SPORTS</li>
+          <li>EVENTS</li>
+          <li>TALENT</li>
+          <li>MICE</li>
+          <li>WORLD TOUR</li>
+          <li>NEWS</li>
+          <li>PHOTOS</li>
+          <li>VIDEOS</li>
+        </ul>
+        <div class="border-blue borders"></div>
+      </div>
+      <div class="text-center brd-line">
+        <div class="title-subtitle">
+          <h4 class="uppercase color-red bold">ARCHIVES</h4>
+        </div>
+        <ul class="list-unstyled uppercase">
+          <li>March 2016</li>
+          <li>February 2016</li>
+          <li>January 2016</li>
+          <li>DECEmber 2015</li>
+          <li>november 2015</li>
+        </ul>
+        <div class="border-blue borders"></div>
+      </div>
+      <div class="btn-all mr30 text-center">
+        <button class="btn btn-danger btn-outline">
+          View all
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
