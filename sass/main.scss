@@ -45,8 +45,18 @@ img.doneLoading {
 .bg-grey {
   background: $bg-grey;
 }
+.bg-grey-diaries {
+  background: url('../img/dairies/background.png') no-repeat;
+  background-size: 100% 100%;
+  background-position-y: 20px;
+}
 .bg-halfgrey {
   @include background(linear-gradient(to bottom, #FFFFFF 55%, #EBEBEB 56%, #E8E8E8 80%, #E7E7E7 80%));
+}
+.bg3-sports {
+  background: url('../img/sports/bgclient.png') center no-repeat;
+  background-size: 100% 100%;
+  background-position-y: -35px;
 }
 .ab {
   position: absolute;
@@ -93,6 +103,18 @@ a {
 }
 .letter-spacing {
   letter-spacing: 3px;
+}
+.pd20 {
+  padding: 20px;
+}
+.pd70 {
+  padding: 70px;
+}
+.read-more {
+  a :hover,
+  :focus {
+    color: lighten(#000, 30%);
+  }
 }
 .hamburger {
   width: 25px;
@@ -631,6 +653,9 @@ ul.nav-opt1 {
 .bg-subcribe-movies {
   background: url('../img/movies/bg-subcribe.jpg') no-repeat;
 }
+.bg-subcribe-sport {
+  background: url('../img/sports/bg-subcribe.jpg') no-repeat;
+}
 .social-box {
   margin: 30px 0;
 }
@@ -638,7 +663,7 @@ footer {
   background: url("../img/bg-footer.png") no-repeat;
   background-size: cover;
   padding: 70px 0 0;
-  margin-top: 20px;
+  margin-top: 0;
   a {
     &:hover {
       color: darken(#fff, 20%);
@@ -807,6 +832,7 @@ footer {
   h4 {
     font-size: 30px;
     letter-spacing: 3px;
+    font-weight: 600;
     i {
       margin: 0 15px;
     }
@@ -820,6 +846,9 @@ footer {
 .bg-grey-similar {
   background: url('../img/talent/bg-img.png')no-repeat;
   background-size: 100%;
+  &.bg-sports {
+    background-size: 100% 80%;
+  }
 }
 .bg-grey-asfc {
   background: url('../img/back-bg.jpg')no-repeat;
@@ -860,6 +889,7 @@ footer {
       font-size: 36px;
       letter-spacing: 3px;
       font-weight: 600;
+      margin-top: 30px !important;
     }
   }
   .list-service {
@@ -891,7 +921,7 @@ footer {
 }
 .btn-all {
   .btn {
-    padding: 8px 30px;
+    padding: 8px 40px;
     @include transition(all ease 300ms);
   }
   .btn-outline {
@@ -947,12 +977,27 @@ footer {
       padding: 0;
     }
   }
+  &.banner-sports {
+    .col-sm-6 {
+      padding: 1px;
+    }
+    .banner-wrap .name-event {
+      width: 99.7%;
+    }
+  }
   .banner-wrap {
     @include transition(all ease 300ms);
     &:hover {
       .hover-image {
         opacity: 1;
       }
+    }
+    .make-make {
+      position: absolute;
+      z-index: 11;
+      bottom: 15px;
+      left: 15px;
+      width: 100px;
     }
     .name-event {
       position: absolute;
@@ -1053,8 +1098,9 @@ footer {
     }
     h3 {
       letter-spacing: 2px;
-      font-size: 36px;
+      font-size: 45px;
       color: #f13748;
+      font-weight: 600;
     }
   }
   .services-list {
@@ -1080,7 +1126,10 @@ footer {
           h4 {
             font-size: 16px;
             margin: 0;
-            padding: 0.3em 0;
+            padding: 0.3em 5px;
+            i {
+              color: #979797;
+            }
           }
           &+ .panel-collapse > .panel-body {
             border-top: 0;
@@ -1414,9 +1463,6 @@ h4.title-movies {
       background: #fff;
     }
   }
-  .pd20 {
-    padding: 20px;
-  }
   ul.nav.nav-tabs {
     border: 0;
   }
@@ -1717,6 +1763,188 @@ h4.title-movies {
 }
 .mtb5 {
   margin: 5px 0;
+}
+.br {
+  border-right: 1px solid #000;
+}
+.fund-raised {
+  background: url('../img/PHF/redbg.jpg');
+  background-size: 100%;
+  sup {
+    font-size: 12px;
+    left: -2px;
+  }
+  .btn-primary {
+    background-color: darken($brand-primary,10%);
+    border-color: darken($brand-primary,10%);
+    &:hover {
+      background-color: darken($brand-primary,15%);
+      border-color: darken($brand-primary,15%);
+    }
+  }
+  .title.bg-blue-box {
+    h3 {
+      margin: -15px auto 15px;
+      width: 300px;
+      background: darken($brand-primary,10%);
+      padding: 15px;
+      font-weight: 600;
+    }
+  }
+  .contain-fund {
+    padding: 20px;
+    .sub-title {
+      font-size: 22px;
+      line-height: 120%;
+      margin-top: 2px;
+    }
+    .fundamt {
+      ul {
+        li {
+          display: inline-block;
+          background: url('../img/PHF/numbers.png') no-repeat center;
+          padding: 10px;
+          font-size: 20px;
+          font-weight: 600;
+          margin: 5px 0;
+        }
+      }
+    }
+  }
+}
+.dairies-box {
+  margin-bottom: 20px;
+  .wed-box.pdnone {
+    padding-bottom: 0;
+    margin-bottom: 40px;
+  }
+  .wed-box {
+    .wed-desc-inside {
+      height: 60px;
+      p {
+        margin: 10px 0;
+      }
+    }
+    &.box-big {
+      .wed-desc-inside {
+        p {
+          font-size: 16px;
+        }
+      }
+    }
+  }
+  .btn-all {
+    .btn-outline {
+      color: $brand-danger;
+      background-color: transparent;
+       :hover {
+        color: darken($brand-danger,30%);
+        border-color: darken($brand-danger,30%);
+        background-color: transparent;
+      }
+    }
+  }
+}
+.box-side-diaries {
+  background: url('../img/dairies/box-side.jpg') no-repeat center;
+  background-size: cover;
+  padding: 10px;
+  ul {
+    li {
+      a {
+        color: #000;
+        display: block;
+        line-height: 250%;
+        @include transition(all ease 300ms);
+        &:hover,
+        .active {
+          color: lighten(#000, 30%);
+        }
+      }
+    }
+  }
+}
+.sharejpp {
+  background: url('../img/jpp/bgback.jpg')no-repeat center;
+  background-size: cover;
+  .title-made {
+    font-size: 30px;
+    margin-top: 100px;
+    margin-bottom: 10px;
+    font-weight: 600;
+  }
+  .ios-andriod {
+    ul {
+      li {
+        display: inline-block;
+        img {
+          width: 180px;
+        }
+      }
+    }
+  }
+}
+.jppseason {
+  .flexslider {
+    background: transparent;
+    border-color: transparent;
+    margin-bottom: 15px;
+    &:hover {
+      .flex-direction-nav {
+        .flex-prev {
+          left: -50px;
+        }
+        .flex-next {
+          right: -50px;
+        }
+      }
+    }
+  }
+  .flex-direction-nav {
+    a {
+      opacity: 1;
+      width: 50px;
+      height: 90px;
+      &.flex-prev:before {
+        content: url('../img/prv.png');
+      }
+      &.flex-next:before {
+        content: url('../img/nxt.png');
+      }
+    }
+  }
+  ol.flex-control-nav.flex-control-paging {
+    display: none;
+  }
+  .jpp-movie {
+    background: url('../img/bg-red.png') no-repeat center;
+    background-size: 100% 90%;
+    padding-top: 120px;
+    background-position: 0 0;
+    .flex-direction-nav {
+      a {
+        &.flex-prev:before {
+          content: url('../img/home/prev.png');
+        }
+        &.flex-next:before {
+          content: url('../img/home/next.png');
+        }
+      }
+    }
+  }
+  .image-navigation {
+    .flex-direction-nav {
+      display: none;
+    }
+  }
+  .title {
+    h3 {
+      font-weight: 600;
+    }
+  }
+  .flexslider {
+    margin: 0;
+  }
 }
 /* Start writing sass here */
 @import "fancybox-override";

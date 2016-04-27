@@ -18,6 +18,11 @@
       font-size: 14px;
     }
   }
+  .client-speak .img-holder {
+    width: 159px;
+    left: 32%;
+    top: 17px;
+  }
   .prv-game .m40 {
     margin-top: 34px;
     text-align: center;
@@ -47,22 +52,26 @@
     width: 910px;
     margin: 0 auto;
   }
+  .bg3-sports {
+    background-position-y: -60px;
+    .client-speak {
+      margin: 20px auto;
+    }
+  }
 }
 @media (max-width: 1024px) {
   .bg2 .diary {
     margin-top: 160px;
     margin-bottom: 10px;
   }
-  .client-speak .img-holder {
-    width: 160px;
-    left: 32%;
-    top: 17px;
-  }
   .wedding-fant-desc {
     padding-bottom: 50px;
   }
   ul.nav-opt1 {
     left: 15%;
+  }
+  .client-speak .img-holder {
+    width: 160px;
   }
 }
 @media (max-width: $screen-sm-max) {
@@ -208,6 +217,13 @@
   }
   .rl.data-up .text-cont {
     width: 100%;
+  }
+  .bg3-sports {
+    background-position-y: -88px;
+    .client-speak {
+      height: 250px;
+      margin: 20px auto;
+    }
   }
 }
 @media (max-width: $screen-xs-max) {
@@ -465,6 +481,13 @@
   .flex-client .row-flex {
     display: block;
   }
+  .bg3-sports {
+    background-position-y: -28px;
+    .client-speak {
+      height: 130px;
+      margin: 20px auto;
+    }
+  }
 }
 @media (max-width: 480px) {
   .navbar-default .navbar-brand {
@@ -635,6 +658,12 @@
   }
   .mt15 {
     margin-top: 5px;
+  }
+  .bg3-sports {
+    .client-speak {
+      height: 100px;
+      margin: 15px auto;
+    }
   }
 }
 @media (max-width: 400px) {

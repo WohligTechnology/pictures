@@ -60,20 +60,20 @@ firstapp.config(function($stateProvider, $urlRouterProvider, $httpProvider, $loc
       templateUrl: "views/template.html",
       controller: 'Jppseason1Ctrl'
     })
-    .state('phf', {
-      url: "/phf",
+    .state('pfh', {
+      url: "/pfh",
       templateUrl: "views/template.html",
-      controller: 'PhfCtrl'
+      controller: 'PfhCtrl'
     })
-    .state('sport', {
-      url: "/sport",
+    .state('sports', {
+      url: "/sports",
       templateUrl: "views/template.html",
       controller: 'SportCtrl'
     })
-    .state('dairies', {
-      url: "/dairies",
+    .state('diaries', {
+      url: "/diaries",
       templateUrl: "views/template.html",
-      controller: 'DairiesCtrl'
+      controller: 'DiariesCtrl'
     });
   $urlRouterProvider.otherwise("/home");
   $locationProvider.html5Mode(isproduction);

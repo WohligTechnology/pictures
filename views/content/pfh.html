@@ -1,0 +1,302 @@
+<section>
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="head-banner diaries-banner text-center">
+          <img src="img/PHF/banner.png" class="img-responsive" title="Dairies">
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="wedding-fant-desc mt45">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-offset-2 col-md-8">
+          <p>An initiative of GS Worldwide Entertainment, the All Stars Football Club – a property of charitable trust, Playing forHumanity – spearheaded by Bollywood icons Abhishek Bachchan, Ranbir Kapoor and several others .With the aim to raise funds
+            for numerous non-profit organisation such as Magic Bus and others. Playing for Humanity along with its partners such as Magic Bus works towards creating a better future for over a million children living in poverty from childhood all the way
+            through to gainful employment, “Playing for Humanity”, has used the ever growing game of football as a platform. This venture looks at bringing Sports and Entertainment together to demonstrate each other’s strengths by adding immense value
+            to the business of brands.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section>
+  <div class="bg-blue bg-grey-asfc pdasfc">
+    <div class="mb30">
+      <div class="row">
+        <div class="col-md-offset-1 col-md-10">
+          <div class="title-asfc">
+            <h3 class="text-center color-red bold uppercase">
+          HIGHLIGHTS OF CHARITY SUPPORTS
+        </h3>
+          </div>
+          <div class="row pd30" ng-repeat="data in asfcdetail">
+            <div class="col-sm-6">
+              <div class="wedding-imgbox">
+                <img ng-src="{{data.img}}" class="img-responsive" alt="">
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <div class="wedding-detail">
+                <div class="asfc-title">
+                  <h4 class="uppercase color-red bold">
+              {{data.title}}
+                </h4>
+                </div>
+                <div class="w-detail mt15 mb15">
+                  <p>
+                    {{data.detail}}
+                  </p>
+                </div>
+                <div class="w-button">
+                  <button class="btn btn-danger">Know More</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="btn-all text-center">
+        <button class="btn btn-outline btn-grey">
+          View all
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="fund-raised mb30">
+  <div class="container">
+    <div class="title bg-blue-box">
+      <h3 class="text-center uppercase color-white">Fundraising Drive</h3>
+    </div>
+    <div class="contain-fund">
+      <div class="row mb15">
+        <div class="col-md-6">
+          <div class="fundamt">
+            <ul class="list-unstyled text-right">
+              <li>$</li>
+              <li>1</li>
+              <li>7</li>
+              <li>4</li>
+              <li>3</li>
+              <li>2</li>
+              <li>1</li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="sub-title uppercase color-white">
+            Total Funds
+            <br> Raised
+          </div>
+        </div>
+        <div class="clearfix"></div>
+        <div class="col-md-6">
+          <div class="fundamt">
+            <ul class="list-unstyled text-right">
+              <li>7</li>
+              <li>4</li>
+              <li>3</li>
+              <li>2</li>
+              <li>1</li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="sub-title uppercase color-white">
+            Successfully
+            <br> Funded projects
+          </div>
+        </div>
+        <div class="clearfix"></div>
+        <div class="col-md-6">
+          <div class="fundamt">
+            <ul class="list-unstyled text-right">
+              <li>1</li>
+              <li>7</li>
+              <li>4</li>
+              <li>3</li>
+              <li>2</li>
+              <li>1</li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="sub-title uppercase color-white">
+            Total Backers as
+            <br> of 4 <sup>th</sup> April, 2016
+          </div>
+        </div>
+        <div class="clearfix"></div>
+      </div>
+      <div class="row">
+        <div class="col-md-offset-4 col-md-4">
+          <div class="text-center color-white">
+            <p>Help us to help them by showing your support and donating towards various charities.</p>
+            <p><a href="" class="color-white">Click here to make a donation today!</a></p>
+          </div>
+        </div>
+      </div>
+      <div class="btn-all text-center">
+        <button class="btn btn-primary">Donate</button>
+      </div>
+    </div>
+  </div>
+</section>
+<section>
+  <div class="bg-subcribe-phf subcribe">
+    <div class="container">
+      <div class="row">
+        <h4 class="text-center color-white">Sign up to our GS newsletter and get the latest updates on PFH!</h4>
+        <div class="col-md-6 col-md-offset-3">
+          <form name="subForm" class="bs-example bs-example-form" role="form">
+            <div class="input-group">
+              <input type="email" class="form-control" placeholder="Enter email address" ng-model="subscribe.email" required>
+              <span class="input-group-addon btn btn-danger" ng-click="subscribe(subscribe.email);">Subscribe</span>
+              <div ng-messages="subForm.email.$error" ng-messages-include="error-messages"></div>
+              <h4 ng-if="subscribeEmail">Thankyou For Subscribing</h4>
+              <h4 ng-if="checkEmail">This email already exists</h4>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section>
+  <div class="section3">
+    <div class="bg3-sports">
+      <div class="container">
+        <div class="client-speak">
+          <div class="name-cont color-white">
+            <img src="img/inverted.png" alt="">
+            <span>{{clientspeak.category}}</span>
+          </div>
+          <div class="img-holder">
+            <img ng-src="{{clientspeak.img}}" alt="" class="img-reponsive">
+          </div>
+          <div class="img-review color-white">
+            <h4>"{{clientspeak.text}}"</h4>
+            <p>- {{clientspeak.name}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-offset-2 col-md-8">
+        <div class="text-center">
+          <h4 class="uppercase color-blue bold">Use <a class="color-red" target="_blank">#PFH</a> and get to view live feed of everyone,<br>
+including yours, right here!</h4>
+        </div>
+      </div>
+    </div>
+    <div class="social">
+      <!-- <div ng-include = "'/social.html'"></div> -->
+      <section class="marg-section">
+        <div class="social-back ">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-4 col-sm-4">
+                <div class="social-box text-center">
+                  <img src="img/socials/facebook.png" class="doneLoading">
+                </div>
+                <div class="social-logo text-center">
+                  <div class="feed-social mt30">
+                    <div class="fb-page" data-href="https://www.facebook.com/GSWorldwideEnt/" data-tabs="timeline" data-width="360" data-height="480" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true">
+                      <div class="fb-xfbml-parse-ignore">
+                        <blockquote cite="https://www.facebook.com/GSWorldwideEnt/">
+                          <a href="https://www.facebook.com/GSWorldwideEnt/">GS Worldwide Entertainment.</a></blockquote>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4 col-sm-4">
+                <div class="social-box text-center">
+                  <img src="img/socials/twitter.png" class="doneLoading">
+                </div>
+                <div class="social-logo text-center ">
+                  <a class="twitter-timeline" href="https://twitter.com/GSWorldwideEnt" data-widget-id="716880459599228928">Tweets by @GSWorldwideEnt</a>
+                </div>
+              </div>
+              <div class="col-md-4 col-sm-4">
+                <div class="social-box text-center">
+                  <img src="img/socials/instagram.png" class="doneLoading">
+                </div>
+                <div class="social-logo text-center ">
+                  <iframe src="//lightwidget.com/widgets/2965b7333833557283d4029e025bd4e8.html" id="lightwidget_2965b73338" name="lightwidget_2965b73338" scrolling="no" allowtransparency="true" class="lightwidget-widget" style="width: 100%; border: 0; overflow: hidden;"></iframe>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+    <div class="mr30">
+      <div class="row">
+        <div class="col-md-offset-2 col-md-8">
+          <div class="get-in-touch">
+            <h3 class="color-red uppercase bold">GET IN TOUCH</h3>
+            <form name="movies">
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <input type="text" ng-model="formData.name" name="name" class="form-control" id="exampleInputEmail1" placeholder="First Name" required>
+                    <div class="error-msg" ng-show="movies.name.$error.required && movies.name.$touched">Please Enter Your First Name.</div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <input type="text" ng-model="formData.name1" name="name1" class="form-control" id="exampleInputEmail1" placeholder="Last Name" required>
+                    <div class="error-msg" ng-show="movies.name1.$error.required && movies.name1.$touched">Please Enter Your Last Name.</div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <input type="email" ng-model="formData.email" name="email" class="form-control" id="exampleInputEmail1" placeholder="Email" required>
+                    <div class="error-msg" ng-show="movies.email.$error.required && movies.email.$touched">Please Enter Your Email.</div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <input type="tel" ng-model="formData.phone" name="phone" class="form-control" id="exampleInputEmail1" maxlength="13" placeholder="Phone number" required>
+                    <div class="error-msg" ng-show="movies.phone.$error.required && movies.phone.$touched">Please Enter Phone number.</div>
+                  </div>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="row">
+                  <div class="col-md-10">
+                    <div class="enq-list">
+                      <label class="checkbox-inline text-label" style="padding-left:0;margin-top:-6px;">
+                        <span class="color-red">Enquiring for </span>
+                      </label>
+                      <label class="checkbox-inline">
+                        <input type="checkbox" id="production" value="">
+                        <label for="production"><span></span> Book the Playing for Humanity Team</label>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-12">
+                  <textarea class="form-control" ng-model="formData.say" name="say" rows="3" placeholder="Say Something" required="required"></textarea>
+                  <div class="error-msg" ng-show="movies.say.$error.required && movies.say.$touched">Enter Something</div>
+                  <div class="submit-btn btn-all text-center mt15">
+                    <button class="btn btn-danger" type="button" name="button" ng-class="{'disabled' : !movies.$valid }" ng-click="moviesSubmitForm(movies,formData)">submit</button>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

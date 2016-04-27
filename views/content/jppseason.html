@@ -17,19 +17,19 @@
     </div>
   </div>
 </section>
-<section>
-  <div class="jpp-category nav-tab-middle ">
+<section class="jppseason">
+  <div class="jpp-gallery nav-tab-middle ">
     <div class="container">
       <div class="row">
         <div class="col-md-offset-1 col-md-10">
           <div class="title">
-            <h3 class="letter-spacing color-red bold">
+            <h3 class="letter-spacing color-red uppercase">
             Image Gallery
             </h3>
           </div>
           <div class="mb15">
             <div class="slider-client">
-              <flex-slider flex-slide="slide in wallpaper track by $index" animation="slide" animation-loop="false" as-nav-for="#slider" slideshow="false" item-margin="20">
+              <flex-slider flex-slide="slide in wallpaper track by $index" animation="slide" animation-loop="false" as-nav-for="#slider" slideshow="false" item-margin="20" prev-text="" next-text="">
                 <li class="">
                   <div class="row" ng-repeat="row in slide">
                     <div class="col-xs-4" ng-repeat="wallpaper in row">
@@ -47,34 +47,40 @@
     </div>
   </div>
 </section>
-<section>
+<section class="jppseason">
   <div class="jpp-movie">
     <div class="container">
       <div class="row">
         <div class="col-md-offset-1 col-md-10">
           <div class="title">
-            <h3 class="letter-spacing color-red bold">
+            <h3 class="letter-spacing color-white uppercase">
               FEATURED VIDEOS
             </h3>
           </div>
-          <div class="mb15">
-            <div class="slider-client">
-              <flex-slider slide="image in videos track by $index" slider-id="slider" prev-text="" next-text="" sync="#carousel" slideshow="false" animation="slide">
-                <li>
-                  <div class="">
-                    <img src="{{image.img}}" alt="" class="img-responsive">
-                  </div>
-                </li>
-              </flex-slider>
-              <flex-slider slide="image in videos track by $index" animation="slide" animation-loop="false" item-width="280" item-margin="40" as-nav-for="#slider" slideshow="false" control-nav="false" prev-text="" next-text="" slider-id="carousel" animation-loop="false">
-                <li>
-                  <div class="row">
-                    <img src="{{image.img}}" alt="">
-                  </div>
-                </li>
-              </flex-slider>
-            </div>
+          <div class="slider-client">
+            <flex-slider slide="image in videos track by $index" slider-id="slider" prev-text="" next-text="" sync="#carousel" slideshow="false" animation="slide">
+              <li>
+                <div class="">
+                  <img src="{{image.img}}" alt="" class="img-responsive">
+                </div>
+              </li>
+            </flex-slider>
           </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-offset-1 col-md-10">
+        <div class="image-navigation">
+          <flex-slider slide="image in videos track by $index" animation="slide" animation-loop="false" item-width="280" item-margin="40" as-nav-for="#slider" slideshow="false" control-nav="false" prev-text="" next-text="" slider-id="carousel" animation-loop="false">
+            <li>
+              <div class="row">
+                <img src="{{image.img}}" alt="">
+              </div>
+            </li>
+          </flex-slider>
         </div>
       </div>
     </div>
