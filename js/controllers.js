@@ -861,7 +861,140 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
       img: "img/movies/ranbir.jpg"
     };
   })
+  .controller('MehendiCtrl', function($scope, TemplateService, NavigationService, $timeout) {
+      //Used to name the .html file
+      $scope.template = TemplateService.changecontent("mehendi");
+      $scope.menutitle = NavigationService.makeactive("Mehendi & Sangeet");
+      TemplateService.title = $scope.menutitle;
+      $scope.navigation = NavigationService.getnav();
+      $scope.wallpaper = [{
+        img: "img/mehendi/w1.jpg",
+      }, {
+        img: "img/mehendi/w2.jpg",
+      }, {
+        img: "img/mehendi/w3.jpg",
+      }, {
+        img: "img/mehendi/w4.jpg",
+      }, {
+        img: "img/mehendi/w5.jpg",
+      }, {
+        img: "img/mehendi/w6.jpg",
+      }, {
+        img: "img/mehendi/w1.jpg",
+      }, {
+        img: "img/mehendi/w2.jpg",
+      }, {
+        img: "img/mehendi/w3.jpg",
+      }, {
+        img: "img/mehendi/w4.jpg",
+      }, {
+        img: "img/mehendi/w5.jpg",
+      }, {
+        img: "img/mehendi/w6.jpg",
+      }];
+      $scope.videos = [{
+        img: "img/mehendi/w11.jpg",
+      }, {
+        img: "img/mehendi/w11.jpg",
+      }, {
+        img: "img/mehendi/w11.jpg",
+      }, {
+        img: "img/mehendi/w11.jpg",
+      }, {
+        img: "img/mehendi/w11.jpg",
+      }, {
+        img: "img/mehendi/w11.jpg",
+      }];
+      $scope.video = [{
+        img: "img/mehendi/w11.jpg",
+      }, {
+        img: "img/mehendi/w11.jpg",
+      }, {
+        img: "img/mehendi/w11.jpg",
+      }, {
+        img: "img/mehendi/w12.jpg",
+      }, {
+        img: "img/mehendi/w12.jpg",
+      }, {
+        img: "img/mehendi/w12.jpg",
+      }];
+      $scope.wallpapers = [{
+        img: "img/mehendi/w1.jpg",
+      }, {
+        img: "img/mehendi/w1.jpg",
+      }, {
+        img: "img/mehendi/w2.jpg",
+      }, {
+        img: "img/mehendi/w2.jpg",
+      }, {
+        img: "img/mehendi/w3.jpg",
+      }, {
+        img: "img/mehendi/w3.jpg",
+      }, {
+        img: "img/mehendi/w4.jpg",
+      }, {
+        img: "img/mehendi/w4.jpg",
+      }, {
+        img: "img/mehendi/w5.jpg",
+      }, {
+        img: "img/mehendi/w5.jpg",
+      }, {
+        img: "img/mehendi/w6.jpg",
+      }, {
+        img: "img/mehendi/w6.jpg",
+      }];
+      $scope.weddings = [{
+        img: "img/mehendi/1.png",
+        date: "12 January 2016",
+        desc: "Lorem Ipsum is simply dummy text of the printing industry"
+      }, {
+        img: "img/mehendi/2.png",
+        date: "12 January 2016",
+        desc: "Lorem Ipsum is simply dummy text of the printing industry"
+      }, {
+        img: "img/mehendi/3.png",
+        date: "12 January 2016",
+        desc: "Lorem Ipsum is simply dummy text of the printing industry"
+      }];
 
+      $scope.wallpaper = _.chunk($scope.wallpaper, 6);
+      for (var i = 0; i < $scope.wallpaper.length; i++) {
+        $scope.wallpaper[i] = _.chunk($scope.wallpaper[i], 3);
+      }
+      $scope.wallpapers = _.chunk($scope.wallpapers, 6);
+      for (var i = 0; i < $scope.wallpapers.length; i++) {
+        $scope.wallpapers[i] = _.chunk($scope.wallpapers[i], 3);
+      }
+
+      $scope.doActive= function(param) {
+        if (param === 1) {
+          $scope.styleActive="active";
+          $scope.styleNoActive="";
+          $scope.vid=$scope.video;
+        }else {
+          $scope.styleActive="";
+          $scope.styleNoActive="active";
+          $scope.vid=$scope.videos;
+        }
+      }
+      $scope.doActive(1);
+      $scope.doActives= function(params) {
+        if (params === 1) {
+          console.log($scope.wallpapers);
+          $scope.styleActives="actives";
+          $scope.styleNoActives="";
+          $scope.wall=$scope.wallpapers;
+        }else {
+          console.log($scope.wallpaper);
+
+          $scope.styleActives="";
+          $scope.styleNoActives="actives";
+          $scope.wall=$scope.wallpaper;
+        }
+      }
+      $scope.doActives(1);
+
+    })
 .controller('headerctrl', function($scope, TemplateService) {
   $scope.template = TemplateService;
   var get = false;

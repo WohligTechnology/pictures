@@ -155,20 +155,20 @@ a {
 }
 .menu-out {
   height: 310px;
-  @include transform(translateY(-500px));
+  @include transform(translateX(-300px));
   @include transition(all 300ms linear);
   position: absolute;
-  width: 100%;
+  width: 300px;
   z-index: 99;
   left: 0;
 }
 .menu-in {
-  background: url('../img/menu-bg.png')no-repeat;
+  background: url('../img/menubg.png')no-repeat;
   background-size: cover;
-  @include transform(translateY(0));
+  @include transform(translateX(0));
   @include transition(all 300ms linear);
   position: absolute;
-  width: 100%;
+  width: 300px;
   z-index: 99;
   left: 0;
 }
@@ -1945,6 +1945,112 @@ h4.title-movies {
   .flexslider {
     margin: 0;
   }
+}
+.mehendi {
+  .flexslider {
+    background: transparent;
+    border-color: transparent;
+    margin-bottom: 15px;
+    &:hover {
+      .flex-direction-nav {
+        .flex-prev {
+          left: -50px;
+        }
+        .flex-next {
+          right: -50px;
+        }
+      }
+    }
+  }
+  .flex-direction-nav {
+    a {
+      opacity: 1;
+      width: 50px;
+      height: 90px;
+      &.flex-prev:before {
+        content: url('../img/prv.png');
+      }
+      &.flex-next:before {
+        content: url('../img/nxt.png');
+      }
+    }
+  }
+  ol.flex-control-nav.flex-control-paging {
+    display: none;
+  }
+  .mehendi-movie {
+    background: url('../img/bg-red.png') no-repeat center;
+    background-size: 100% 90%;
+    padding-top: 120px;
+    background-position: 0 0;
+    .flex-direction-nav {
+      a {
+        &.flex-prev:before {
+          content: url('../img/home/prev.png');
+        }
+        &.flex-next:before {
+          content: url('../img/home/next.png');
+        }
+      }
+    }
+    .title {
+      h3 {
+        margin-bottom: 20px;
+        font-weight: 600;
+      }
+       h4 {
+        color:#043146;
+        font-weight: 600;
+        letter-spacing: 2px;
+        margin-right: 24px;
+        margin-bottom: 18px;
+        &:hover{
+          color:#ffffff;
+          cursor:pointer;
+          border-bottom: 4px solid #ffffff;
+        }
+      }
+    }
+  }
+  .image-navigation {
+    .flex-direction-nav {
+      display: none;
+    }
+  }
+  .title {
+    h3 {
+      font-weight: 600;
+      margin-bottom: 20px;
+    }
+    h4 {
+      color:#043146;
+      font-weight: 600;
+      letter-spacing: 2px;
+      margin-right: 24px;
+      margin-bottom: 18px;
+      &:hover{
+        color:#f13748;
+        cursor:pointer;
+        border-bottom: 4px solid #f13748;
+      }
+    }
+  }
+  .flexslider {
+    margin: 0;
+  }
+  .display-inline{
+    display: inline-block;
+  }
+}
+.active {
+  color:#ffffff !important;
+  cursor:pointer;
+  border-bottom: 4px solid #ffffff;
+}
+.actives{
+  color:#f13748 !important;
+  cursor:pointer;
+  border-bottom: 4px solid #f13748;
 }
 /* Start writing sass here */
 @import "fancybox-override";
