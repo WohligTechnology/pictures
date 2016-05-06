@@ -83,7 +83,7 @@ a {
   border-color: transparent;
   .navbar-brand {
     position: relative;
-    z-index: 999;
+    z-index: 98;
     &.mt8 {
       margin-top: -8px;
     }
@@ -273,8 +273,10 @@ a {
 .firstbar {
   @include transform(rotate(-45deg));
   position: absolute;
-  left: 10px;
+  left: 160px;
   top: 16px;
+  background-color:$brand-info !important;
+  cursor: pointer;
 }
 .secondbar {
   opacity: 0;
@@ -282,8 +284,10 @@ a {
 .thirdbar {
   @include transform(rotate(45deg));
   position: absolute;
-  left: 10px;
+  left: 160px;
   top: 12px;
+  background-color:$brand-info !important;
+  cursor:pointer;
 }
 .color-white {
   color: $color-white;
