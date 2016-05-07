@@ -79,6 +79,11 @@ firstapp.config(function($stateProvider, $urlRouterProvider, $httpProvider, $loc
       url: "/mehendi",
       templateUrl: "views/template.html",
       controller: 'MehendiCtrl'
+    })
+    .state('contact', {
+      url: "/contact",
+      templateUrl: "views/template.html",
+      controller: 'ContactCtrl'
     });
   $urlRouterProvider.otherwise("/home");
   $locationProvider.html5Mode(isproduction);

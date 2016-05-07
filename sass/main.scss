@@ -167,10 +167,12 @@ a {
     background-size: cover;
     @include transform(translateX(0));
     @include transition(all 300ms linear);
-    position: absolute;
+    position: fixed;
     width: 300px;
     z-index: 99;
     left: 0;
+    top:0;
+    bottom:0;
 }
 .bg-pattern {
     background: url('../img/moviedetail/bg-grey.png')no-repeat;
@@ -184,13 +186,47 @@ a {
     background: url('../img/bg-asfcsocial.png')no-repeat;
     background-size: 100% 100%;
 }
+/* Let's get this party started */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    background: rgba(255,255,255,0.8);
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5);
+}
+::-webkit-scrollbar-thumb:window-inactive {
+	background: rgba(255,255,255,0.4);
+}
+.custscroll{
+  top: 20px;
+  left: 20px;
+  bottom: 20px;
+  right: 20px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+
+}
 .nav-list {
-    padding: 100px 28px 0;
-    h4 {
+    padding: 100px 20px 0;
+    overflow: auto;
+        h4 {
         padding: 2px 38px;
     }
     .menu-title {
         color: $color-white;
+        padding: 4px 28px 4px;
+        margin: 0 12px 0 0;
         background: linear-gradient(to right, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.1));
     }
     .display-inline {
@@ -366,7 +402,7 @@ a {
 .firstbar {
     @include transform(rotate(-45deg));
     position: absolute;
-    left: 160px;
+    left: 200px;
     top: 16px;
     background-color: $brand-info !important;
     cursor: pointer;
@@ -377,7 +413,7 @@ a {
 .thirdbar {
     @include transform(rotate(45deg));
     position: absolute;
-    left: 160px;
+    left: 200px;
     top: 12px;
     background-color: $brand-info !important;
     cursor: pointer;
@@ -2148,6 +2184,16 @@ h4.title-movies {
     color: #f13748 !important;
     cursor: pointer;
     border-bottom: 4px solid #f13748;
+}
+//contact
+.contact-fant-desc {
+    padding-bottom: 30px;
+    background: #FDFDFD;
+    margin-top: -1px;
+    p {
+        text-align: center;
+        margin: 0;
+    }
 }
 /* Start writing sass here */
 @import "fancybox-override";
