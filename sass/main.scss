@@ -2195,6 +2195,95 @@ h4.title-movies {
         margin: 0;
     }
 }
+.borright{
+  border-right: 1px solid #d8d8d8;
+  margin-bottom: 10px;
+}
+.location{
+  p{
+    text-decoration: underline;
+    color: #218ecd;
+    font-weight: 600;
+    text-align: center;
+    font-size: 16px;
+    margin: 0 0 16px;
+  }
+  h4{
+    color: #f13748;
+    font-weight: 600;
+    font-size: 16px;
+    margin-bottom: 5px;
+    text-align: center;
+  }
+  address{
+    color: #646464;
+    font-size: 16px;
+    margin-left: 74px;
+  }
+}
+.back{
+  background: url('../img/contact/bg2.png') no-repeat;
+  height:54px;
+  margin: 0 16px;
+  .dates{
+    p{
+      text-align: center;
+      font-family: HelveticaNeue;
+      color: #646464;
+      font-size: 16px;
+      font-weight: 300;
+      margin: 0;
+    }
+  }
+}
+.bordright{
+border-right: 1px solid #646464;
+    margin-top: 6px;
+}
+.sign{
+  h4{
+    color: #686868;
+    font-weight: 600;
+  }
+  margin:30px 0;
+  .input-group-addon {
+    background-color: #e23c3c;
+    border-color: #e23c3c;
+    color: #fff;
+}
+}
+.para{
+  margin: 56px 0 30px;
+  p{
+    padding: 0;
+  margin: 0;
+  color: #646464;
+  line-height: 20px;
+  letter-spacing: 1px;
+  font-size: 17px;
+  font-weight: 600;
+  }
+}
+.search{
+  background: url("../img/contact/bg4.png") no-repeat center center;
+  background-size: 100% 100%;
+  height: 54px;
+  margin: 30px 0;
+  .enterloc{
+    color:#646464;
+    letter-spacing: 1px;
+    h4{
+      margin-bottom: 0;
+    }
+  }
+  .searchgo
+  {
+
+  }
+  .view{
+    margin: 17px 0;
+  }
+}
 /* Start writing sass here */
 @import "fancybox-override";
 @import "mobile";
