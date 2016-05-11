@@ -1,4 +1,5 @@
-<section>
+<section class="section8">
+  <img src="img/contact/hiring.png" class="img-responsive imgposition" alt="">
     <div class="container">
         <div class="row">
             <div class="col-xs-12">
@@ -19,11 +20,11 @@
             </div>
         </div>
     </div>
-    <div class="contact-tab">
+    <div class="contact-tab" ng-init="active1=true;active2=false;showNext=false;showThanks=false;">
         <div class="container">
             <div class="row">
                 <div class="col-md-4">
-                    <div class="inlblo pull-right text-center borbot">
+                    <div class="inlblo pull-right text-center triangle1" ng-class="{borbot:active1==true || showNext==true || showThanks==true}" ng-click="active1=true;active2=false;showNext=false;showThanks=false;">
                         <h3>Proposed Project</h3>
                         <p>I have a project in mind.</p>
                     </div>
@@ -34,7 +35,7 @@
                     </div>
                 </div>
                 <div class="col-md-4">
-                    <div class="inlblo pull-left text-center borbot">
+                    <div class="inlblo pull-left text-center triangle2" ng-class="{borbot:active2==true}" ng-click="active1=false;active2=true;showNext=false;showThanks=false;">
                         <h3>General Enquiry</h3>
                         <p>I'd just like to say "Hi!"</p>
                     </div>
@@ -43,7 +44,7 @@
         </div>
     </div>
 
-    <div class="general">
+    <div class="general" ng-show="active2">
         <div class="container">
             <div class="row">
                 <form class="martop">
@@ -69,7 +70,7 @@
                             <input class="form-control" type="email" placeholder="Email Address">
                         </div>
                         <div class="form-group">
-                            <input class="form-control" type="url" placeholder="Existing WEb Address">
+                            <input class="form-control" type="url" placeholder="Existing Web Address">
                         </div>
                     </div>
                     <div class="col-md-4">
@@ -84,161 +85,209 @@
             </div>
         </div>
     </div>
-    <div class="propro">
+    <div class="propro" ng-show="active1">
         <div class="container">
             <div class="row">
                 <div class="proposed martop">
                     <h3>First, tell us a bit about yourself.</h3>
                     <h4>Please answer all of the following</h4>
                     <hr>
-                    <form>
                         <div class="row">
-                            <div class="col-md-4">
-                                <div class="form-group">
-                                    <input class="form-control" type="text" placeholder="Your Name" required>
-
-                                </div>
-                                <div class="form-group">
-                                    <input class="form-control" type="text" placeholder="Company">
-
-                                </div>
-                                <div class="form-group">
-                                    <input class="form-control" type="url" placeholder="Existing WEb Address">
-
-                                </div>
-                                <div class="form-group">
-                                    <input class="form-control" type="text" placeholder="Country">
-
-                                </div>
-                                <div class="form-group">
-                                    <input class="form-control" type="tel" placeholder="Telephone number">
-
-                                </div>
-                                <div class="form-group">
-                                    <input class="form-control" type="email" placeholder="Email Address" required>
-
-                                </div>
-                                <div class="">
-                                    <button class="btn btn-danger">Next</button>
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                              <div class="yoname">
-                                  It makes the communication more personal!
+                            <div class="col-md-12">
+                              <form>
+                              <div class="form-group">
+                                  <div class="col-md-10">
+                                    <div class="contact-focus">
+                                      <input class="form-control" type="text" placeholder="Your Name" required>
+                                      <div class="yoname">
+                                        It makes the communication more personal!
+                                      </div>
+                                    </div>
+                                  </div>
                               </div>
-                              <div class="yoname">
-                                  This is optional
+                              <div class="form-group">
+                                  <div class="col-md-10">
+                                    <div class="contact-focus">
+                                      <input class="form-control" type="text" placeholder="Company">
+                                      <div class="yoname">
+                                        This is optional
+                                      </div>
+                                    </div>
+                                  </div>
                               </div>
-                              <div class="yoname">
-                                  It helps us understand you better!
+                              <div class="form-group">
+                                  <div class="col-md-10">
+                                    <div class="contact-focus">
+                                      <input class="form-control" type="url" placeholder="Existing Web Address">
+                                      <div class="yoname">
+                                        It helps us understand you better!
+                                      </div>
+                                    </div>
+                                  </div>
                               </div>
-                              <div class="yoname">
-                                  What part of the world do you call home?
+                              <div class="form-group">
+                                  <div class="col-md-10">
+                                    <div class="contact-focus">
+                                      <input class="form-control" type="text" placeholder="Country">
+                                      <div class="yoname">
+                                        What part of the world do you call home?
+                                      </div>
+                                    </div>
+                                  </div>
                               </div>
-                              <div class="yoname">
-                                  So we can keep in touch!
+                              <div class="form-group">
+                                  <div class="col-md-10">
+                                    <div class="contact-focus">
+                                      <input class="form-control" type="tel" placeholder="Telephone number">
+                                      <div class="yoname">
+                                        So we can keep in touch!
+                                      </div>
+                                    </div>
+                                  </div>
                               </div>
-                              <div class="yoname">
-                                  We promise not to SPAM!
+                              <div class="form-group">
+                                  <div class="col-md-10">
+                                    <div class="contact-focus">
+                                      <input class="form-control" type="email" placeholder="Email Address" required>
+                                      <div class="yoname">
+                                        We promise not to SPAM!
+                                      </div>
+                                    </div>
+                                  </div>
                               </div>
-                            </div>
+                                <div class="col-md-6">
+                                <button class="btn btn-danger" ng-click="active1=false;showNext=true;">Next</button>
+                              </div>
+                            </form>
+                          </div>
                         </div>
-                    </form>
                 </div>
             </div>
         </div>
     </div>
-    <div class="projects">
+    <div class="projects" ng-show="showNext">
         <div class="container">
             <div class="row">
                 <div class="project martop">
                     <h3>Great, thanks for that.</h3>
                     <h4>Now, let’s talk a bit about your project.</h4>
                     <hr>
-                    <div class="form-group">
+                    <form>
+                    <div class="form-groups">
                         <div class="row">
-                            <div class="col-md-12">
+                            <div class="col-md-8">
                                 <div class="enq-list">
-                                    <label class=" enquire text-label" style="padding-left:0;margin-top:0px;">
-                                        <span class="color-red">Which of the following best describes your project?</span>
+                                    <label>
+                                        <span>Which of the following best describes your project?</span>
                                     </label>
-                                    <label class="">
-                                        <input type="checkbox" id="ambassador" value="ambassador">
-                                        <label for="ambassador"><span></span>REDESIGN OF EXISTING WEB APPLICATION / WEBSITE</label>
-                                    </label>
-                                    <label class="">
-                                        <input type="checkbox" id="representation" value="representation">
-                                        <label for="representation"><span></span>NEW WEB APPLICATION / WEBSITE</label>
-                                    </label>
-                                    <label class="">
-                                        <input type="checkbox" id="performances" value="representation">
-                                        <label for="performances"><span></span>OTHER</label>
-                                    </label>
+                                    <div class="checkbox">
+                                      <label>
+                                          <input type="checkbox" id="ambassador" value="ambassador">
+                                          REDESIGN OF EXISTING WEB APPLICATION / WEBSITE
+                                      </label>
+                                    </div>
+                                    <div class="checkbox">
+                                      <label>
+                                          <input type="checkbox" id="representation" value="representation">
+                                          NEW WEB APPLICATION / WEBSITE
+                                      </label>
+                                    </div>
+                                    <div class="checkbox">
+                                      <label>
+                                          <input type="checkbox" id="performances" value="representation">
+                                          OTHER
+                                      </label>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="form-group">
+                    <div class="form-groups">
                         <div class="row">
-                            <div class="col-md-12">
+                            <div class="col-md-8">
                                 <div class="enq-list">
-                                    <label class=" enquire text-label" style="padding-left:0;margin-top:0px;">
-                                        <span class="color-red">What is your budget for the proposed project?</span>
+                                    <label>
+                                        <span>What is your budget for the proposed project?</span>
                                     </label>
-                                    <input type="checkbox" id="representation" value="representation">
-                                    <label for="representation"><span></span>£20-50K (If your budget is less than £20k the project may not reach our minimum criteria)</label>
-                                    <input type="checkbox" id="ambassador" value="ambassador">
-                                    <label for="ambassador"><span></span>£50-£100K</label>
-                                    <input type="checkbox" id="performances" value="representation">
-                                    <label for="performances"><span></span>£100K+</label>
+                                    <div class="checkbox">
+                                      <label>
+                                          <input type="checkbox" id="representation" value="representation">
+                                          £20-50K (If your budget is less than £20k the project may not reach our minimum criteria)
+                                      </label>
+                                    </div>
+                                    <div class="checkbox">
+                                      <label>
+                                          <input type="checkbox" id="ambassador" value="ambassador">
+                                          £50-£100K
+                                      </label>
+                                    </div>
+                                    <div class="checkbox">
+                                      <label>
+                                          <input type="checkbox" id="performances" value="representation">
+                                          £100K+
+                                      </label>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="form-group">
+                    <div class="form-groups">
                         <div class="row">
-                            <div class="col-md-12">
+                            <div class="col-md-8">
                                 <div class="enq-list">
-                                    <label class="enquire text-label color-red">
-                                        When would you like to take delivery of the project?
+                                    <label>
+                                        <span>When would you like to take delivery of the project?</span>
                                     </label>
-
-                                    <input type="checkbox" id="ambassador" value="ambassador">
-                                    <label for="ambassador"><span></span>LESS THAN 3 MONTHS (8–12 weeks is probably the minimum time required for a small project)</label>
-
-
-                                    <input type="checkbox" id="representation" value="representation">
-                                    <label for="representation"><span></span>LESS THAN 6 MONTHS</label>
-
-
-                                    <input type="checkbox" id="performances" value="representation">
-                                    <label for="performances"><span></span>PROJECT WOULD BE ONGOING</label>
-
-                                    <input type="checkbox" id="tv" value="tv">
-                                    <label for="tv"><span></span>TIMESCALES ARE NOT IMPORTANT TO ME, IT’S QUALITY THAT COUNTS</label>
+                                    <div class="checkbox">
+                                      <label>
+                                          <input type="checkbox" id="ambassador" value="ambassador">
+                                          LESS THAN 3 MONTHS (8–12 weeks is probably the minimum time required for a small project)
+                                     </label>
+                                    </div>
+                                    <div class="checkbox">
+                                      <label>
+                                          <input type="checkbox" id="representation" value="representation">
+                                          LESS THAN 6 MONTHS
+                                      </label>
+                                    </div>
+                                    <div class="checkbox">
+                                      <label>
+                                          <input type="checkbox" id="performances" value="representation">
+                                          PROJECT WOULD BE ONGOING
+                                      </label>
+                                    </div>
+                                    <div class="checkbox">
+                                      <label>
+                                          <input type="checkbox" id="tv" value="tv">
+                                          TIMESCALES ARE NOT IMPORTANT TO ME, IT’S QUALITY THAT COUNTS
+                                      </label>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="form-group">
+                    <div class="form-groups">
                         <div class="row">
-                            <div class="col-md-12">
-                                <label class="enquire text-label color-red">
-                                    Please describe your proposed project in a single sentence (Required)
+                            <div class="col-md-8">
+                              <div class="enq-list">
+                                <label>
+                                  <span>Please describe your proposed project in a single sentence (Required)</span>
                                 </label>
-                                <textarea name="name" rows="8" cols="40"></textarea>
+                                <div class="texttop">
+                                  <textarea rows="8" cols="56" style="background-color:#d8d8d8;border: 0;"></textarea>
+                                </div>
+                              </div>
                             </div>
                         </div>
                     </div>
-                    <div class="">
-                        <button class="btn btn-danger" type="button">Back</button>
-                        <button class="btn btn-danger" type="button">Send</button>
-                    </div>
+                        <button class="btn btn-danger marright ffamily" type="button" ng-click="active1=true;showNext=false;showThanks=false;">Back</button>
+                        <button class="btn btn-danger ffamily" type="button" ng-click="showNext=false;showThanks=true;">Send</button>
+                  </form>
                 </div>
             </div>
         </div>
     </div>
-    <div class="thankyou">
+    <div class="thankyou" ng-show="showThanks">
         <div class="container">
             <div class="row">
                     <div class="tyback">
@@ -252,7 +301,7 @@
         </div>
     </div>
     <div class="container">
-        <div class="row">
+        <div class="row mbottom">
             <div class="col-md-4 borright">
                 <div class="location">
                     <p>MUMBAI</p>
@@ -354,7 +403,7 @@
                         <h4>Enter a UK location or postcode for driving directions to our office</h4>
                     </div>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-5">
                     <div class="searchgo">
                         <form class="bs-example bs-example-form" role="form">
                             <div class="form-group">
@@ -367,7 +416,7 @@
                         </form>
                     </div>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-3">
                     <div class="view">
                         <i class="fa fa-caret-right"></i>
                         <a href="">View on google maps</a>
@@ -390,8 +439,8 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-flex flex-center">
-                    <div class="ccc-quality  ship">
+                <div class="col-flex flex-center ship">
+                    <div class="ccc-quality">
                         <p class="text-uppercase">Wedding</p>
                         <span>30</span>
                         <div class="inlblo">
@@ -408,8 +457,8 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-flex flex-center">
-                    <div class="ccc-quality  ship">
+                <div class="col-flex flex-center ship">
+                    <div class="ccc-quality">
                         <p class="text-uppercase">Celebrity management</p>
                         <span>40</span>
                         <div class="inlblo">
@@ -428,86 +477,8 @@
                 </div>
             </div>
         </div>
-        <!-- <div class="container">
-        <div class="row">
-          <div class="count">
-            <h3 class="text-uppercase text-center statement">We take everything we do, to the next level.</h3>
-            <ul>
-              <li>
-                <h3>Movies</h3>
-                <span>50</span>
-                <img src="img/contact/movie.png" alt="">
-              </li>
-              <li class="borderright">
-                <h3>Wedding</h3>
-                <span>30</span>
-                <img src="img/contact/wedd.png" alt="">
-              </li>
-              <li>
-                <h3>Sport Team</h3>
-                <h3>Management</h3>
-                <span>25</span>
-                <img src="img/contact/sport.png" alt="">
-              </li>
-              <li class="borderright">
-                <h3>Celebrity</h3>
-                <h3>management</h3>
-                <span>40</span>
-                <img src="img/contact/star.png" alt="">
-              </li>
-              <li>
-                <h3>Sporting Events</h3>
-                <span>30</span>
-                <img src="img/contact/event.png" alt="">
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div> -->
     </div>
 </section>
-<div class="social">
-    <!-- <div ng-include = "'/social.html'"></div> -->
-    <section class="marg-section">
-        <div class="social-back ">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-4 col-sm-4">
-                        <div class="social-box text-center">
-                            <img src="img/socials/facebook.png" class="doneLoading">
-                        </div>
-                        <div class="social-logo text-center">
-                            <div class="feed-social mt30">
-                                <div class="fb-page" data-href="https://www.facebook.com/GSWorldwideEnt/" data-tabs="timeline" data-width="360" data-height="480" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true">
-                                    <div class="fb-xfbml-parse-ignore">
-                                        <blockquote cite="https://www.facebook.com/GSWorldwideEnt/">
-                                            <a href="https://www.facebook.com/GSWorldwideEnt/">GS Worldwide Entertainment.</a></blockquote>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 col-sm-4">
-                        <div class="social-box text-center">
-                            <img src="img/socials/twitter.png" class="doneLoading">
-                        </div>
-                        <div class="social-logo text-center ">
-                            <a class="twitter-timeline" href="https://twitter.com/GSWorldwideEnt" data-widget-id="716880459599228928">Tweets by @GSWorldwideEnt</a>
-                        </div>
-                    </div>
-                    <div class="col-md-4 col-sm-4">
-                        <div class="social-box text-center">
-                            <img src="img/socials/instagram.png" class="doneLoading">
-                        </div>
-                        <div class="social-logo text-center ">
-                            <iframe src="//lightwidget.com/widgets/2965b7333833557283d4029e025bd4e8.html" id="lightwidget_2965b73338" name="lightwidget_2965b73338" scrolling="no" allowtransparency="true" class="lightwidget-widget" style="width: 100%; border: 0; overflow: hidden;"></iframe>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-</div>
 <div class="social">
     <!-- <div ng-include = "'/social.html'"></div> -->
     <section class="marg-section">
