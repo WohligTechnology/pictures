@@ -2525,7 +2525,7 @@ hr{
     border-top: 17px solid transparent;
     border-bottom: 17px solid transparent;
     position: absolute;
-    top: -1px;
+    top: 1px;
     left: -33px;
 }
 .contact-focus input:focus + .yoname { display: inline-block; }
@@ -2564,7 +2564,16 @@ hr{
 }
 .marright{
   margin: 0 10px 0 15px;
+  background-color: rgba(170, 170, 170, 0.85);
+  border-color: rgba(170, 170, 170, 0.85);
+  color:#fff;
+  &:hover{
+    background-color: #aaaaaa;
+    border-color: #aaaaaa;
+    color:#fff;
+  }
 }
+
 .ffamily{
   font-family: 'Oxygen';
 }
@@ -2580,6 +2589,9 @@ label{
     color:#646464;
     font-weight: 500;
   }
+  .fsize{
+    font-size: 12px;
+  }
 }
 .texttop{
    margin-top: 8px;
@@ -2588,6 +2600,12 @@ label{
   color:#646464;
   margin-top: 5px;
   margin-bottom: 5px;
+  // input[type=checkbox] {
+  //     display: none;
+  // }
+  span{
+    font-size: 12px;
+  }
 }
 }
 }
