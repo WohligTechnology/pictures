@@ -84,6 +84,21 @@ firstapp.config(function($stateProvider, $urlRouterProvider, $httpProvider, $loc
       url: "/contact",
       templateUrl: "views/template.html",
       controller: 'ContactCtrl'
+    })
+    .state('blogtext', {
+      url: "/blogtext",
+      templateUrl: "views/template.html",
+      controller: 'BlogTextCtrl'
+    })
+    .state('blogimage', {
+      url: "/blogimage",
+      templateUrl: "views/template.html",
+      controller: 'BlogImageCtrl'
+    })
+    .state('blogvideo', {
+      url: "/blogvideo",
+      templateUrl: "views/template.html",
+      controller: 'BlogVideoCtrl'
     });
   $urlRouterProvider.otherwise("/home");
   $locationProvider.html5Mode(isproduction);
