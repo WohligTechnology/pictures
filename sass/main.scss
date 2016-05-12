@@ -225,6 +225,7 @@ a {
   left: 20px;
   bottom: 20px;
   right: 20px;
+  height: 38vw;
   overflow-y: scroll;
   overflow-x: hidden;
 
@@ -238,33 +239,38 @@ a {
     .menu-title {
         color: $color-white;
         padding: 4px 28px 4px;
-        margin: 0 12px 0 0;
+        margin: 0 12px 4px 0;
         background: linear-gradient(to right, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.1));
     }
     .display-inline {
         display: inline-block;
     }
     .social{
-      padding: 4px 29px;
+      padding: 8px 29px 4px;
+      .marbot{
+        margin-bottom: 3px;
+      }
     }
     .btnsign{
-      font-size: 15px;
+      font-size: 14px;
     margin: 0 0 12px 5px;
     /* font-weight: bold; */
     color: #ffffff;
-    padding: 5px 8px;
+    padding: 4px 16px;
     background-color: #1aafff;
     border-radius: 8px;
     border: 1px solid #1aafff;
     }
     hr {
-        margin-top: 30px;
-        margin-bottom: 15px;
+        margin: 30px 6px 17px 5px;
         border: 0;
         border-top: 1px solid #eeeeee;
     }
     .fa-inverse{
     color: $brand-danger;
+    }
+    .fa-stack-2x {
+    font-size: 1.9em;
     }
     .fsize{
       font-size: 12px;
@@ -272,7 +278,7 @@ a {
     }
     .menu-bottom {
         font-family: oxygen;
-        margin-bottom: 70px;
+        margin-bottom: 20px;
         .bgcolor {
             background-color: #00aeef;
             border-radius: 50%;
@@ -283,9 +289,13 @@ a {
             width: 29px;
             height: 29px;
         }
-        span {
-            font-size: 10px;
-        }
+    }
+    .copy{
+      margin:0 0 14px 0;
+      span {
+          font-family: oxygen;
+          font-size: 10px;
+      }
     }
     ul {
         li {
@@ -293,7 +303,7 @@ a {
                 padding: 2px 28px;
                 letter-spacing: 1px;
                 display: block;
-                font-size: 18px;
+                font-size: 15px;
                 color: $color-white;
                 @include transition(all ease 300ms);
                 &:before {
@@ -413,9 +423,9 @@ a {
 }
 .firstbar {
     @include transform(rotate(-45deg));
-    position: absolute;
-    left: 200px;
-    top: 16px;
+    position: fixed;
+    left: 245px;
+    top: 41px;
     background-color: $brand-info !important;
     cursor: pointer;
 }
@@ -424,9 +434,9 @@ a {
 }
 .thirdbar {
     @include transform(rotate(45deg));
-    position: absolute;
-    left: 200px;
-    top: 12px;
+    position: fixed;
+    left: 245px;
+    top: 37px;
     background-color: $brand-info !important;
     cursor: pointer;
 }
@@ -2436,19 +2446,7 @@ position: relative;
   border-bottom: 35px solid transparent;
   position: absolute;
   top: 132%;
-  z-index: 1000;
-  left: 50%;
-  transform: translatex(-50%);
-}
-.borbot:after {
-  content: "";
-  border-right: 24px solid transparent;
-  border-left: 22px solid transparent;
-  border-top: 36px solid #fff;
-  border-bottom: 35px solid transparent;
-  position: absolute;
-  top: 132%;
-  z-index: 1000;
+  z-index: 10;
   left: 50%;
   transform: translatex(-50%);
 }
