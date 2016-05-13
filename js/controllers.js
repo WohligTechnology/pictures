@@ -1021,6 +1021,32 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             date: "12 January 2016",
             desc: "Lorem Ipsum is simply dummy text of the printing industry"
         }];
+        $scope.bgtext = [{
+          img: "img/blog/text/t1.png",
+          desc: "Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro."
+        },{
+          img: "img/blog/text/t2.png",
+          desc: "Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet."
+        },{
+          img: "img/blog/text/t3.png",
+          desc: "Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro."
+        }];
+        $scope.commentlist = [{
+          img: "img/blog/text/p2.png",
+          name:"Sohan Honekari",
+          time:"27 minutes",
+          desc: "Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro."
+        },{
+          img: "img/blog/text/p2.png",
+          name:"Raj Shah",
+          time:"2 hours",
+          desc: "Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet."
+        },{
+          img: "img/blog/text/p2.png",
+          name:"Pooja Thakkare",
+          time:"20 seconds",
+          desc: "Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro."
+        }];
     })
     .controller('BlogImageCtrl', function($scope, TemplateService, NavigationService, $timeout) {
         //Used to name the .html file
@@ -1041,6 +1067,64 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             date: "12 January 2016",
             desc: "Lorem Ipsum is simply dummy text of the printing industry"
         }];
+        $scope.commentlist = [{
+          img: "img/blog/text/p2.png",
+          name:"Sohan Honekari",
+          time:"27 minutes",
+          desc: "Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro."
+        },{
+          img: "img/blog/text/p2.png",
+          name:"Raj Shah",
+          time:"2 hours",
+          desc: "Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet."
+        },{
+          img: "img/blog/text/p2.png",
+          name:"Raj Shah",
+          time:"2 hours",
+          desc: "Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet."
+        },{
+          img: "img/blog/text/p2.png",
+          name:"Raj Shah",
+          time:"2 hours",
+          desc: "Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet."
+        },{
+          img: "img/blog/text/p2.png",
+          name:"Pooja Thakkare",
+          time:"20 seconds",
+          desc: "Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro."
+        },{
+          img: "img/blog/text/p2.png",
+          name:"Raj Shah",
+          time:"2 hours",
+          desc: "Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet."
+        },{
+          img: "img/blog/text/p2.png",
+          name:"Raj Shah",
+          time:"2 hours",
+          desc: "Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet."
+        },{
+          img: "img/blog/text/p2.png",
+          name:"Raj Shah",
+          time:"2 hours",
+          desc: "Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet."
+        }];
+        $scope.images = [{
+            img: "img/blog/image/i1.png",
+          },{
+              img: "img/blog/image/i1.png",
+          },{
+              img: "img/blog/image/i1.png",
+          },{
+              img: "img/blog/image/i1.png",
+          },{
+              img: "img/blog/image/i1.png",
+          },{
+              img: "img/blog/image/i1.png",
+          },{
+              img: "img/blog/image/i1.png",
+          },{
+              img: "img/blog/image/i1.png",
+          }];
     })
     .controller('BlogVideoCtrl', function($scope, TemplateService, NavigationService, $timeout) {
         //Used to name the .html file
@@ -1061,6 +1145,64 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             date: "12 January 2016",
             desc: "Lorem Ipsum is simply dummy text of the printing industry"
         }];
+        $scope.commentlist = [{
+          img: "img/blog/text/p2.png",
+          name:"Sohan Honekari",
+          time:"27 minutes",
+          desc: "Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro."
+        },{
+          img: "img/blog/text/p2.png",
+          name:"Raj Shah",
+          time:"2 hours",
+          desc: "Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet."
+        },{
+          img: "img/blog/text/p2.png",
+          name:"Raj Shah",
+          time:"2 hours",
+          desc: "Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet."
+        },{
+          img: "img/blog/text/p2.png",
+          name:"Raj Shah",
+          time:"2 hours",
+          desc: "Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet."
+        },{
+          img: "img/blog/text/p2.png",
+          name:"Pooja Thakkare",
+          time:"20 seconds",
+          desc: "Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro."
+        },{
+          img: "img/blog/text/p2.png",
+          name:"Raj Shah",
+          time:"2 hours",
+          desc: "Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet."
+        },{
+          img: "img/blog/text/p2.png",
+          name:"Raj Shah",
+          time:"2 hours",
+          desc: "Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet."
+        },{
+          img: "img/blog/text/p2.png",
+          name:"Raj Shah",
+          time:"2 hours",
+          desc: "Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet."
+        }];
+        $scope.images = [{
+            img: "img/blog/video/v1.png",
+          },{
+              img: "img/blog/video/v1.png",
+          },{
+              img: "img/blog/video/v1.png",
+          },{
+              img: "img/blog/video/v1.png",
+          },{
+              img: "img/blog/video/v1.png",
+          },{
+              img: "img/blog/video/v1.png",
+          },{
+              img: "img/blog/video/v1.png",
+          },{
+              img: "img/blog/video/v1.png",
+          }];
     })
     .controller('headerctrl', function($scope, TemplateService) {
         $scope.template = TemplateService;

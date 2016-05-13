@@ -2755,6 +2755,18 @@ h4.title-movies {
     -o-transform: translatex(-50%);
     transform: translatex(-50%);
 }
+.bgborders{
+  border: 3px solid;
+  position: absolute;
+  width: 200px;
+  bottom: -6px;
+  left: 50%;
+  -webkit-transform: translatex(-50%);
+  -moz-transform: translatex(-50%);
+  -ms-transform: translatex(-50%);
+  -o-transform: translatex(-50%);
+  transform: translatex(-50%);
+}
 .blog-side-diaries {
     background: url("../img/blog/box-side.jpg") no-repeat center;
     background-size: cover;

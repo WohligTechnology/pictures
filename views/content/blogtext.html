@@ -14,91 +14,51 @@
     <div class="container">
         <div class="row">
             <div class="col-sm-9">
-                <!-- <div class="dairies-box pd-side mb15">
-          <div class="row">
-            <div class="col-sm-12">
-              <div class="wed-box box-big border-red pdnone mb30">
-                <div class="wed-img-list">
-                  <img ng-src="{{diariesfull1.img}}" alt="" class="img-responsive">
-                  <div class="ribbon-red">
-                    <img src="img/ribbon_red.png" alt="">
-                    <span class="color-white uppercase">{{diariesfull1.name}}</span>
-                  </div>
-                </div>
-                <div class="wed-desc">
-                  <div class="wed-desc-inside">
-                    <p class="bold">{{diariesfull1.desc}}</p>
-                  </div>
-                  <div class="read-more pull-right mtb5">
-                    <a href="" class="color-black bold">Read More</a>
-                  </div>
-                  <div class="wed-date">
-                    <span>{{diariesfull1.date}}</span>
-                  </div>
-                </div>
-                <div class="border-blue borders"></div>
+              <div class="bthead">
+                <h3 class="text-uppercase">JPP SEASON 1 MATCH highlight</h3>
+                <p class="date-time">23rd Feb 2016&nbsp;<span>|</span>&nbsp;&nbsp;7.00pm</p>
               </div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-sm-6" ng-repeat="data in diaries track by $index">
-              <div class="wed-box border-red pdnone mb15">
-                <div class="wed-img-list">
-                  <img ng-src="{{data.img}}" alt="" class="img-responsive">
-                  <div class="ribbon-red">
-                    <img src="img/ribbon_red.png" alt="">
-                    <span class="color-white uppercase">{{data.name}}</span>
-                  </div>
+              <div class="wed-box border-red">
+                <div class="btext" ng-repeat="data in bgtext track by $index">
+                  <img ng-src="{{data.img}}" alt="Jpp season1 images are not supported." class="img-responsive">
+                  <p>{{data.desc}}</p>
                 </div>
-                <div class="wed-desc">
-                  <div class="wed-desc-inside">
-                    <p class="bold">{{data.desc}}</p>
-                  </div>
-                  <div class="read-more pull-right mtb5">
-                    <a href="" class="color-black bold">Read More</a>
-                  </div>
-                  <div class="wed-date">
-                    <span>{{diariesfull1.date}}</span>
-                  </div>
-                </div>
-                <div class="border-blue borders"></div>
+                <div class="border-blue bgborders"></div>
               </div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-sm-12">
-              <div class="wed-box border-red box-big mb15 pdnone">
-                <div class="wed-img-list">
-                  <img ng-src="{{diariesfull2.img}}" alt="" class="img-responsive">
-                  <div class="ribbon-red">
-                    <img src="img/ribbon_red.png" alt="">
-                    <span class="color-white uppercase">{{diariesfull2.name}}</span>
+                <div class="share">
+                  <h4>share it on</h4>
+                </div>
+                <div class="social-share">
+                  <i class="fa fa-facebook"></i>
+                  <i class="fa fa-twitter"></i>
+                  <i class="fa fa-envelope-o"></i>
+                </div>
+                <div class="bgcomment">
+                  <div class="comment-box">
+                    <p>comments.<span>12<span></p>
+                      <div class="row">
+                        <div class="col-md-2">
+                          <img src="img/blog/text/p1.png" alt="No Profile Photo Found." class="img-responsive">
+                        </div>
+                        <div class="col-md-10">
+                          <textarea name="name" class="form-control"></textarea>
+                        </div>
+                      </div>
+                  </div>
+                  <hr>
+                  <div class="comments" ng-repeat="data in commentlist track by $index">
+                    <div class="row">
+                      <div class="col-md-2">
+                        <img ng-src="{{data.img}}" alt="" class="img-responsive">
+                      </div>
+                      <div class="col-md-10">
+                        <p>{{data.name}}</p>
+                        <p>{{data.time}}&nbsp;ago</p>
+                        <p>{{data.desc}}</p>
+                      </div>
+                    </div>
                   </div>
                 </div>
-                <div class="wed-desc">
-                  <div class="wed-desc-inside">
-                    <p class="bold">{{diariesfull2.desc}}</p>
-                  </div>
-                  <div class="read-more pull-right mtb5">
-                    <a href="" class="color-black bold">Read More</a>
-                  </div>
-                  <div class="wed-date">
-                    <span>{{diariesfull1.date}}</span>
-                  </div>
-                </div>
-                <div class="border-blue borders"></div>
-              </div>
-            </div>
-          </div>
-          <div class="btn-all mr30">
-            <button class="btn btn-danger btn-outline">
-              Prev
-            </button>
-            <button class="btn btn-danger btn-outline pull-right">
-              Next
-            </button>
-          </div>
-        </div> -->
             </div>
             <div class="col-md-3">
                 <div class="text-center wed-boxs blog-side-diaries border-red">
@@ -117,7 +77,7 @@
                         <li><a href="" class="uppercase">PHOTOS</a></li>
                         <li><a href="" class="uppercase">VIDEOS</a></li>
                     </ul>
-                    <div class="border-blue borders"></div>
+                    <div class="border-blue bborders"></div>
                 </div>
                 <div class="text-center wed-boxs border-red blog-side-diaries">
                     <div class="title-subtitle">
@@ -135,7 +95,7 @@
                             View all
                         </button>
                     </div>
-                    <div class="border-blue borders"></div>
+                    <div class="border-blue bborders"></div>
                 </div>
                 <div class="text-center">
                     <div class="article">
@@ -168,6 +128,6 @@
                     </div>
                 </div>
             </div>
-    </div>
+        </div>
     </div>
 </section>
