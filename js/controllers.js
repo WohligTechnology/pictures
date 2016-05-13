@@ -1008,6 +1008,19 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $scope.menutitle = NavigationService.makeactive("Blog-Text");
         TemplateService.title = $scope.menutitle;
         $scope.navigation = NavigationService.getnav();
+        $scope.blogtext = [{
+            img: "img/blog/text/1.png",
+            date: "12 January 2016",
+            desc: "Lorem Ipsum is simply dummy text of the printing industry"
+        }, {
+            img: "img/blog/text/1.png",
+            date: "12 January 2016",
+            desc: "Lorem Ipsum is simply dummy text of the printing industry"
+        }, {
+            img: "img/blog/text/1.png",
+            date: "12 January 2016",
+            desc: "Lorem Ipsum is simply dummy text of the printing industry"
+        }];
     })
     .controller('BlogImageCtrl', function($scope, TemplateService, NavigationService, $timeout) {
         //Used to name the .html file
@@ -1015,6 +1028,19 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $scope.menutitle = NavigationService.makeactive("Blog-Image");
         TemplateService.title = $scope.menutitle;
         $scope.navigation = NavigationService.getnav();
+        $scope.blogimage = [{
+            img: "img/blog/image/1.png",
+            date: "12 January 2016",
+            desc: "Lorem Ipsum is simply dummy text of the printing industry"
+        }, {
+            img: "img/blog/image/1.png",
+            date: "12 January 2016",
+            desc: "Lorem Ipsum is simply dummy text of the printing industry"
+        }, {
+            img: "img/blog/image/1.png",
+            date: "12 January 2016",
+            desc: "Lorem Ipsum is simply dummy text of the printing industry"
+        }];
     })
     .controller('BlogVideoCtrl', function($scope, TemplateService, NavigationService, $timeout) {
         //Used to name the .html file
@@ -1022,6 +1048,19 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $scope.menutitle = NavigationService.makeactive("Blog-Video");
         TemplateService.title = $scope.menutitle;
         $scope.navigation = NavigationService.getnav();
+        $scope.blogvideo = [{
+            img: "img/blog/video/1.png",
+            date: "12 January 2016",
+            desc: "Lorem Ipsum is simply dummy text of the printing industry"
+        }, {
+            img: "img/blog/video/1.png",
+            date: "12 January 2016",
+            desc: "Lorem Ipsum is simply dummy text of the printing industry"
+        }, {
+            img: "img/blog/video/1.png",
+            date: "12 January 2016",
+            desc: "Lorem Ipsum is simply dummy text of the printing industry"
+        }];
     })
     .controller('headerctrl', function($scope, TemplateService) {
         $scope.template = TemplateService;

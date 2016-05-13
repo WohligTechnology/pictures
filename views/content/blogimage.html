@@ -1,19 +1,20 @@
 <section>
-  <div class="container">
-    <div class="row">
-      <div class="col-xs-12">
-        <div class="head-banner diaries-banner text-center">
-          <img src="img/dairies/banner.png" class="img-responsive" title="Dairies">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="head-banner diaries-banner text-center">
+                    <img src="img/blog/banner.png" class="img-responsive" title="Blogimage">
+                </div>
+            </div>
         </div>
-      </div>
     </div>
-  </div>
 </section>
-<section class="bg-grey-diaries pd70">
-  <div class="container">
-    <div class="row">
-      <div class="col-sm-9">
-        <!-- <div class="dairies-box pd-side mb15">
+<!-- <section class="bg-grey-diaries pd70"> -->
+<section class="bg-blog">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-9">
+                <!-- <div class="dairies-box pd-side mb15">
           <div class="row">
             <div class="col-sm-12">
               <div class="wed-box box-big border-red pdnone mb30">
@@ -98,45 +99,75 @@
             </button>
           </div>
         </div> -->
-      </div>
-      <div class="col-md-3">
-        <div class="text-center wed-box box-side-diaries border-red">
-          <div class="title-subtitle">
-            <h4 class="uppercase color-red bold letter-spacing">CATEGORIES</h4>
-          </div>
-          <ul class="list-unstyled">
-            <li><a href="" class="uppercase">MOVIES</a></li>
-            <li><a href="" class="uppercase">WEDDINGS</a></li>
-            <li><a href="" class="uppercase">SPORTS</a></li>
-            <li><a href="" class="uppercase">EVENTS</a></li>
-            <li><a href="" class="uppercase">TALENT</a></li>
-            <li><a href="" class="uppercase">MICE</a></li>
-            <li><a href="" class="uppercase">WORLD TOUR</a></li>
-            <li><a href="" class="uppercase">NEWS</a></li>
-            <li><a href="" class="uppercase">PHOTOS</a></li>
-            <li><a href="" class="uppercase">VIDEOS</a></li>
-          </ul>
-          <div class="border-blue borders"></div>
-        </div>
-        <div class="text-center wed-box border-red box-side-diaries">
-          <div class="title-subtitle">
-            <h4 class="uppercase color-red bold letter-spacing">ARCHIVES</h4>
-          </div>
-          <ul class="list-unstyled">
-            <li><a href="" class="uppercase">March 2016</a></li>
-            <li><a href="" class="uppercase">February 2016</a></li>
-            <li><a href="" class="uppercase">January 2016</a></li>
-            <li><a href="" class="uppercase">DECEmber 2015</a></li>
-            <li><a href="" class="uppercase">november 2015</a></li>
-          </ul>
-          <div class="btn-all text-center mb15">
-            <button class="btn btn-danger btn-outline">
-              View all
-            </button>
-          </div>
-          <div class="border-blue borders"></div>
-        </div>
-      </div>
+            </div>
+            <div class="col-md-3">
+                <div class="text-center wed-boxs blog-side-diaries border-red">
+                    <div class="title-subtitle">
+                        <h4 class="uppercase color-red bold letter-spacing">CATEGORIES</h4>
+                    </div>
+                    <ul class="list-unstyled">
+                        <li><a href="" class="uppercase">MOVIES</a></li>
+                        <li><a href="" class="uppercase">WEDDINGS</a></li>
+                        <li><a href="" class="uppercase">SPORTS</a></li>
+                        <li><a href="" class="uppercase">EVENTS</a></li>
+                        <li><a href="" class="uppercase">TALENT</a></li>
+                        <li><a href="" class="uppercase">MICE</a></li>
+                        <li><a href="" class="uppercase">WORLD TOUR</a></li>
+                        <li><a href="" class="uppercase">NEWS</a></li>
+                        <li><a href="" class="uppercase">PHOTOS</a></li>
+                        <li><a href="" class="uppercase">VIDEOS</a></li>
+                    </ul>
+                    <div class="border-blue borders"></div>
+                </div>
+                <div class="text-center wed-boxs border-red blog-side-diaries">
+                    <div class="title-subtitle">
+                        <h4 class="uppercase color-red bold letter-spacing">ARCHIVES</h4>
+                    </div>
+                    <ul class="list-unstyled">
+                        <li><a href="" class="uppercase">March 2016</a></li>
+                        <li><a href="" class="uppercase">February 2016</a></li>
+                        <li><a href="" class="uppercase">January 2016</a></li>
+                        <li><a href="" class="uppercase">DECEmber 2015</a></li>
+                        <li><a href="" class="uppercase">november 2015</a></li>
+                    </ul>
+                    <div class="btn-all text-center mb15">
+                        <button class="btn btn-danger btn-outline">
+                            View all
+                        </button>
+                    </div>
+                    <div class="border-blue borders"></div>
+                </div>
+                <div class="text-center">
+                    <div class="article">
+                        <div class="article-title">
+                            <h4 class="uppercase color-red">RELATED ARTICLES</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="related" ng-repeat="data in blogimage track by $index">
+                    <div class="wed-box border-red">
+                        <div class="wed-img-list">
+                            <img ng-src="{{data.img}}" alt="" class="img-responsive">
+                            <div class="red-ribbon">
+                                <img src="img/ribbon_red.png" alt="">
+                                <span class="color-white uppercase">Sports</span>
+                            </div>
+                        </div>
+                        <div class="blog-desc">
+                            <div class="wed-desc-inside">
+                                <p class="bold">{{data.desc}}</p>
+                            </div>
+                            <div class="wed-date">
+                                <span>{{data.date}}</span>
+                            </div>
+                            <div class="read-more">
+                                <a href="" class="color-black">Read More</a>
+                            </div>
+                        </div>
+                        <div class="border-blue bborders"></div>
+                    </div>
+                </div>
+            </div>
     </div>
-  </div>
+    </div>
 </section>
