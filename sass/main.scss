@@ -2674,6 +2674,9 @@ h4.title-movies {
     left: 75%;
     width: 15%;
 }
+
+//blog
+
 .wed-boxs{
   border-bottom: 6px solid $brand-border;
   padding-bottom: 20px;
@@ -2759,7 +2762,7 @@ h4.title-movies {
   border: 3px solid;
   position: absolute;
   width: 200px;
-  bottom: -6px;
+  bottom: -5px;
   left: 50%;
   -webkit-transform: translatex(-50%);
   -moz-transform: translatex(-50%);
@@ -2784,6 +2787,48 @@ h4.title-movies {
                 }
             }
         }
+    }
+}
+.bthead{
+  h3{
+    color: #f13748;
+  letter-spacing: 1px;
+  font-weight: 600;
+  margin: 0px 0 2px;
+  }
+  p{
+    color:#404042;
+  }
+}
+.wed-boxer{
+  border-bottom: 6px solid #d7d7d7;
+  margin-bottom: 20px;
+  position: relative;
+}
+.btext{
+  p{
+    font-size: 16px;
+    color:#404042;
+    margin:5px 0 24px;
+  }
+}
+.share{
+  display:inline-block;
+  h4{
+    font-size: 16px;
+    color:#f13748;
+    font-weight: 600;
+  }
+}
+.social-share{
+    display:inline-block;
+    a{
+      color:#f13748;
+      .fa{
+        border-radius: 50%;
+        border: 1px solid #f13748;
+        color:#f13748;
+      }
     }
 }
 /* Start writing sass here */
