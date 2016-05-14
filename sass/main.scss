@@ -2674,25 +2674,23 @@ h4.title-movies {
     left: 75%;
     width: 15%;
 }
-
 //blog
-
-.wed-boxs{
-  border-bottom: 6px solid $brand-border;
-  padding-bottom: 20px;
-  margin-bottom: 35px;
-  position: relative;
+.wed-boxs {
+    border-bottom: 6px solid $brand-border;
+    padding-bottom: 20px;
+    margin-bottom: 35px;
+    position: relative;
 }
 .related {
     margin: 0 30px;
-    .wed-box{
-      margin-bottom: 40px;
+    .wed-box {
+        margin-bottom: 40px;
     }
 }
 .article-title h4 {
     font-size: 24px;
     font-weight: 700;
-    margin:0 0 20px;
+    margin: 0 0 20px;
 }
 .red-ribbon {
     position: absolute;
@@ -2758,17 +2756,17 @@ h4.title-movies {
     -o-transform: translatex(-50%);
     transform: translatex(-50%);
 }
-.bgborders{
-  border: 3px solid;
-  position: absolute;
-  width: 200px;
-  bottom: -5px;
-  left: 50%;
-  -webkit-transform: translatex(-50%);
-  -moz-transform: translatex(-50%);
-  -ms-transform: translatex(-50%);
-  -o-transform: translatex(-50%);
-  transform: translatex(-50%);
+.bgborders {
+    border: 3px solid;
+    position: absolute;
+    width: 200px;
+    bottom: -5px;
+    left: 50%;
+    -webkit-transform: translatex(-50%);
+    -moz-transform: translatex(-50%);
+    -ms-transform: translatex(-50%);
+    -o-transform: translatex(-50%);
+    transform: translatex(-50%);
 }
 .blog-side-diaries {
     background: url("../img/blog/box-side.jpg") no-repeat center;
@@ -2789,47 +2787,200 @@ h4.title-movies {
         }
     }
 }
-.bthead{
-  h3{
-    color: #f13748;
-  letter-spacing: 1px;
-  font-weight: 600;
-  margin: 0px 0 2px;
-  }
-  p{
-    color:#404042;
-  }
+.bthead {
+    h3 {
+        color: #f13748;
+        letter-spacing: 1px;
+        font-weight: 600;
+        margin: 0 0 2px;
+    }
+    p {
+        color: #404042;
+        margin: 0 0 14px;
+    }
 }
-.wed-boxer{
-  border-bottom: 6px solid #d7d7d7;
-  margin-bottom: 20px;
-  position: relative;
+.wed-boxer {
+    border-bottom: 6px solid #d7d7d7;
+    margin-bottom: 10px;
+    position: relative;
 }
-.btext{
-  p{
+.btext {
+    p {
+        font-size: 16px;
+        color: #404042;
+        margin: 5px 0 24px;
+    }
+}
+.share {
+    h4 {
+        display: inline-block;
+        font-size: 15px;
+        color: #f13748;
+        font-weight: 600;
+    }
+    margin: 0 0 14px;
+}
+.social-share {
+    margin: 0 0 0 5px;
+    a {
+        color: #f13748;
+        .fa {
+            border-radius: 50%;
+            border: 1px solid #f13748;
+            color: #f13748;
+            width: 26px;
+            height: 26px;
+            padding: 5px 6px;
+            margin: 0 0 0 2px;
+        }
+    }
+}
+.fa-facebook:before {
+    font-size: 15px;
+}
+.fa-envelope-o:before {
+    font-size: 12px;
+}
+.bgcomment {
+    background-color: #ffffff;
+    padding: 24px 12px 0;
+}
+.comment-box {
+    p {
+        margin: 0 0 10px 22px;
+        font-size: 15px;
+        color: #404042;
+        text-transform: uppercase;
+        font-weight: 600;
+    }
+    hr {
+        margin-top: 20px;
+        margin-bottom: 20px;
+        border: 0;
+        border-top: 3px solid;
+        border-color: rgba(172, 172, 172, 0.3);
+    }
+    .profilephoto {
+        img {
+            margin: 0 auto;
+        }
+    }
+    .form-control {
+        height: 115px;
+    }
+}
+.comments {
+    margin: 0 0 10px;
+    .profilephoto {
+        img {
+            margin: 0 auto;
+        }
+    }
+    .commented {
+        p {
+            display: inline-block;
+            color: #f13748;
+            font-size: 14px;
+            margin: 0 0 6px;
+            text-transform: capitalize;
+        }
+        span {
+            margin: 0 0 0 50px;
+            color: #414042;
+            font-size: 14px;
+        }
+        .paras {
+            p {
+                line-height: initial;
+                color: #404042;
+                font-size: 14px;
+                height: 50px;
+                overflow: auto;
+            }
+        }
+    }
+}
+.many-images {
+    margin-bottom: 20px;
+    p {
+        font-size: 15px;
+        color: #f13748;
+        font-weight: 600;
+        margin-bottom: 12px;
+    }
+    .toomany {
+        .blog-image {
+            margin: 0 0 26px;
+            position: relative;
+        }
+        .fa {
+            position: absolute;
+            top: 40%;
+            font-size: 18px;
+            border-radius: 50%;
+            border: 5px solid #fff;
+            width: 40px;
+            padding: 7px 10px 0;
+            height: 40px;
+            color: #fff;
+            left: 47%;
+            transform: translate(-40%,-47%);
+        }
+    }
+}
+.nimage {
+  p {
+    display: inline-block;
+      font-size: 16px;
+      color: #404042;
+      margin: 5px 0 24px;
+      font-weight: 600;
+  }
+  span{
     font-size: 16px;
-    color:#404042;
-    margin:5px 0 24px;
-  }
-}
-.share{
-  display:inline-block;
-  h4{
-    font-size: 16px;
-    color:#f13748;
+    color: #088fd5;
+    margin: 5px 0 24px;
     font-weight: 600;
   }
-}
-.social-share{
-    display:inline-block;
-    a{
-      color:#f13748;
-      .fa{
-        border-radius: 50%;
-        border: 1px solid #f13748;
-        color:#f13748;
-      }
+    .videolink {
+        position: relative;
     }
+    .fa {
+        position: absolute;
+        top: 15%;
+        font-size: 25px;
+        border-radius: 50%;
+        border: 5px solid #fff;
+        width: 50px;
+        padding: 9px 13px 0;
+        height: 50px;
+        color: #fff;
+        left: 51%;
+        transform: translate(-15%,-51%);
+    }
+}
+.btn-alls {
+    .btn {
+        padding: 8px 40px;
+        @include transition(all ease 300ms);
+    }
+    .btn-outlines {
+        color: #404042;
+        border-style: solid;
+        border-width: 1px;
+        border-color:  #f13748;
+        background-color:  rgba(255, 255, 255, 0);
+        &:hover {
+            color: #404042;
+            background-color: rgba(255, 255, 255,0.4);
+            border-color: #f13748;
+        }
+    }
+}
+.bg-blog {
+    background: url('../img/blog/bg-blog.jpg') no-repeat;
+    background-size: 100% 100%;
+    padding: 50px 0 0;
 }
 /* Start writing sass here */
 @import "fancybox-override";

@@ -14,225 +14,151 @@
     <div class="container">
         <div class="row">
             <div class="col-sm-9">
-              <div class="bthead">
-                <h3 class="text-uppercase">JPP SEASON 1 MATCH highlight</h3>
-                <p class="date-time">23rd Feb 2016&nbsp;<span>|</span>&nbsp;&nbsp;7.00pm</p>
-              </div>
-              <div class="nimage">
-                <div class="videolink">
-                  <img src="img/blog/image/i.png" alt="No Image Found." class="img-responsive">
+                <div class="bthead">
+                    <h3 class="text-uppercase">JPP SEASON 1 MATCH highlight</h3>
+                    <p class="date-time">12th January 2016&nbsp;<span>|</span>&nbsp;&nbsp;08.30pm</p>
                 </div>
-                <a href=""><i class="fa fa-play-circle-o"></i></a>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                <p> 2 0f 10</p>
-              </div>
-              <div class="btn-all mr30">
-                <button class="btn btn-danger btn-outline">
-                  Prev
-                </button>
-                <button class="btn btn-danger btn-outline pull-right">
-                  Next
-                </button>
-              </div>
-              <div class="many-videos">
-                  <p class="text-uppercase">Other Videos</p>
-                    <div class="toomany" ng-repeat="data in images track by $index">
-                      <div class="col-md-3">
-                        <div class="videos">
-                          <img src="{{data.img}}" alt="No Images" class="img-responsive" />
+                <div class="nimage">
+                    <div class="videolink">
+                        <img src="img/blog/video/v.png" alt="No Image Found." class="img-responsive">
+                    </div>
+                    <a href=""><i class="fa fa-play"></i></a>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                    <span> 2 0f 10</span>
+                </div>
+                <div class="btn-alls mr30">
+                    <button class="btn btn-danger btn-outlines">
+                        Prev
+                    </button>
+                    <button class="btn btn-danger btn-outlines pull-right">
+                        Next
+                    </button>
+                </div>
+                <div class="many-images">
+                    <p class="text-uppercase">Other videos</p>
+                    <div class="row">
+                    <div class="toomany" ng-repeat="data in images">
+                        <div class="col-md-3">
+                          <div class="blog-image">
+                            <img src="{{data.img}}" alt="No Images" class="img-responsive" />
+                          </div>
+                          <a href=""><i class="fa fa-play"></i></a>
                         </div>
-                        <a href=""><i class="fa fa-play-circle-o"></i></a>
                       </div>
-                  </div>
-              </div>
-              <div class="share">
-                <h4>share it on</h4>
-              </div>
-              <div class="social-share">
-                <a href=""><i class="fa fa-facebook"></i></a>
-                <a href=""><i class="fa fa-twitter"></i></a>
-                <a href=""><i class="fa fa-envelope-o"></i></a>
-              </div>
-              <div class="bgcomment">
-                <div class="comment-box">
-                  <p>comments.<span>12<span></p>
+                    </div>
+                </div>
+                <div class="share">
+                    <h4 class="text-uppercase">share it on</h4>
+                    <span class="social-share">
+                  <a href=""><i class="fa fa-facebook"></i></a>
+                  <a href=""><i class="fa fa-twitter"></i></a>
+                  <a href=""><i class="fa fa-envelope-o"></i></a>
+                </span>
+                </div>
+                <div class="bgcomment">
+                    <div class="comment-box">
+                        <p>comments . <span>12<span></p>
                     <div class="row">
                       <div class="col-md-2">
-                        <img src="img/blog/text/p1.png" alt="No Profile Photo Found." class="img-responsive">
+                        <div class="profilephoto">
+                          <img src="img/blog/text/p1.png" alt="No Profile Photo Found." class="img-responsive">
+                        </div>
                       </div>
                       <div class="col-md-10">
                         <textarea name="name" class="form-control"></textarea>
                       </div>
                     </div>
-                </div>
-                <hr>
-                <div class="comments" ng-repeat="data in commentlist track by $index">
-                  <div class="row">
-                    <div class="col-md-2">
-                      <img ng-src="{{data.img}}" alt="" class="img-responsive">
-                    </div>
-                    <div class="col-md-10">
-                      <p>{{data.name}}</p>
-                      <p>{{data.time}}&nbsp;ago</p>
-                      <p>{{data.desc}}</p>
-                    </div>
+                    <hr>
                   </div>
-                </div>
-              </div>
-                <!-- <div class="dairies-box pd-side mb15">
-          <div class="row">
-            <div class="col-sm-12">
-              <div class="wed-box box-big border-red pdnone mb30">
-                <div class="wed-img-list">
-                  <img ng-src="{{diariesfull1.img}}" alt="" class="img-responsive">
-                  <div class="ribbon-red">
-                    <img src="img/ribbon_red.png" alt="">
-                    <span class="color-white uppercase">{{diariesfull1.name}}</span>
-                  </div>
-                </div>
-                <div class="wed-desc">
-                  <div class="wed-desc-inside">
-                    <p class="bold">{{diariesfull1.desc}}</p>
-                  </div>
-                  <div class="read-more pull-right mtb5">
-                    <a href="" class="color-black bold">Read More</a>
-                  </div>
-                  <div class="wed-date">
-                    <span>{{diariesfull1.date}}</span>
-                  </div>
-                </div>
-                <div class="border-blue borders"></div>
-              </div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-sm-6" ng-repeat="data in diaries track by $index">
-              <div class="wed-box border-red pdnone mb15">
-                <div class="wed-img-list">
-                  <img ng-src="{{data.img}}" alt="" class="img-responsive">
-                  <div class="ribbon-red">
-                    <img src="img/ribbon_red.png" alt="">
-                    <span class="color-white uppercase">{{data.name}}</span>
-                  </div>
-                </div>
-                <div class="wed-desc">
-                  <div class="wed-desc-inside">
-                    <p class="bold">{{data.desc}}</p>
-                  </div>
-                  <div class="read-more pull-right mtb5">
-                    <a href="" class="color-black bold">Read More</a>
-                  </div>
-                  <div class="wed-date">
-                    <span>{{diariesfull1.date}}</span>
-                  </div>
-                </div>
-                <div class="border-blue borders"></div>
-              </div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-sm-12">
-              <div class="wed-box border-red box-big mb15 pdnone">
-                <div class="wed-img-list">
-                  <img ng-src="{{diariesfull2.img}}" alt="" class="img-responsive">
-                  <div class="ribbon-red">
-                    <img src="img/ribbon_red.png" alt="">
-                    <span class="color-white uppercase">{{diariesfull2.name}}</span>
-                  </div>
-                </div>
-                <div class="wed-desc">
-                  <div class="wed-desc-inside">
-                    <p class="bold">{{diariesfull2.desc}}</p>
-                  </div>
-                  <div class="read-more pull-right mtb5">
-                    <a href="" class="color-black bold">Read More</a>
-                  </div>
-                  <div class="wed-date">
-                    <span>{{diariesfull1.date}}</span>
-                  </div>
-                </div>
-                <div class="border-blue borders"></div>
-              </div>
-            </div>
-          </div>
-          <div class="btn-all mr30">
-            <button class="btn btn-danger btn-outline">
-              Prev
-            </button>
-            <button class="btn btn-danger btn-outline pull-right">
-              Next
-            </button>
-          </div>
-        </div> -->
-            </div>
-            <div class="col-md-3">
-                <div class="text-center wed-boxs blog-side-diaries border-red">
-                    <div class="title-subtitle">
-                        <h4 class="uppercase color-red bold letter-spacing">CATEGORIES</h4>
-                    </div>
-                    <ul class="list-unstyled">
-                        <li><a href="" class="uppercase">MOVIES</a></li>
-                        <li><a href="" class="uppercase">WEDDINGS</a></li>
-                        <li><a href="" class="uppercase">SPORTS</a></li>
-                        <li><a href="" class="uppercase">EVENTS</a></li>
-                        <li><a href="" class="uppercase">TALENT</a></li>
-                        <li><a href="" class="uppercase">MICE</a></li>
-                        <li><a href="" class="uppercase">WORLD TOUR</a></li>
-                        <li><a href="" class="uppercase">NEWS</a></li>
-                        <li><a href="" class="uppercase">PHOTOS</a></li>
-                        <li><a href="" class="uppercase">VIDEOS</a></li>
-                    </ul>
-                    <div class="border-blue bborders"></div>
-                </div>
-                <div class="text-center wed-boxs border-red blog-side-diaries">
-                    <div class="title-subtitle">
-                        <h4 class="uppercase color-red bold letter-spacing">ARCHIVES</h4>
-                    </div>
-                    <ul class="list-unstyled">
-                        <li><a href="" class="uppercase">March 2016</a></li>
-                        <li><a href="" class="uppercase">February 2016</a></li>
-                        <li><a href="" class="uppercase">January 2016</a></li>
-                        <li><a href="" class="uppercase">DECEmber 2015</a></li>
-                        <li><a href="" class="uppercase">november 2015</a></li>
-                    </ul>
-                    <div class="btn-all text-center mb15">
-                        <button class="btn btn-danger btn-outline">
-                            View all
-                        </button>
-                    </div>
-                    <div class="border-blue bborders"></div>
-                </div>
-                <div class="text-center">
-                    <div class="article">
-                        <div class="article-title">
-                            <h4 class="uppercase color-red">RELATED ARTICLES</h4>
-                        </div>
-                    </div>
-                </div>
-                <div class="related" ng-repeat="data in blogvideo track by $index">
-                    <div class="wed-box border-red">
-                        <div class="wed-img-list">
+                    <div class="comments" ng-repeat="data in commentlist track by $index">
+                      <div class="row">
+                        <div class="col-md-2">
+                          <div class="profilephoto">
                             <img ng-src="{{data.img}}" alt="" class="img-responsive">
-                            <div class="red-ribbon">
-                                <img src="img/ribbon_red.png" alt="">
-                                <span class="color-white uppercase">Sports</span>
-                            </div>
+                          </div>
                         </div>
-                        <div class="blog-desc">
-                            <div class="wed-desc-inside">
-                                <p class="bold">{{data.desc}}</p>
+                        <div class="col-md-10">
+                          <div class="commented">
+                            <p>{{data.name}}</p>
+                            <span>{{data.time}}&nbsp;ago</span>
+                            <div class="paras">
+                                <p>{{data.desc}}</p>
                             </div>
-                            <div class="wed-date">
-                                <span>{{data.date}}</span>
-                            </div>
-                            <div class="read-more">
-                                <a href="" class="color-black">Read More</a>
-                            </div>
-                        </div>
-                        <div class="border-blue bborders"></div>
                     </div>
                 </div>
             </div>
+        </div>
+    </div>
+    </div>
+    <div class="col-md-3">
+        <div class="text-center wed-boxs blog-side-diaries border-red">
+            <div class="title-subtitle">
+                <h4 class="uppercase color-red bold letter-spacing">CATEGORIES</h4>
+            </div>
+            <ul class="list-unstyled">
+                <li><a href="" class="uppercase">MOVIES</a></li>
+                <li><a href="" class="uppercase">WEDDINGS</a></li>
+                <li><a href="" class="uppercase">SPORTS</a></li>
+                <li><a href="" class="uppercase">EVENTS</a></li>
+                <li><a href="" class="uppercase">TALENT</a></li>
+                <li><a href="" class="uppercase">MICE</a></li>
+                <li><a href="" class="uppercase">WORLD TOUR</a></li>
+                <li><a href="" class="uppercase">NEWS</a></li>
+                <li><a href="" class="uppercase">PHOTOS</a></li>
+                <li><a href="" class="uppercase">VIDEOS</a></li>
+            </ul>
+            <div class="border-blue bborders"></div>
+        </div>
+        <div class="text-center wed-boxs border-red blog-side-diaries">
+            <div class="title-subtitle">
+                <h4 class="uppercase color-red bold letter-spacing">ARCHIVES</h4>
+            </div>
+            <ul class="list-unstyled">
+                <li><a href="" class="uppercase">March 2016</a></li>
+                <li><a href="" class="uppercase">February 2016</a></li>
+                <li><a href="" class="uppercase">January 2016</a></li>
+                <li><a href="" class="uppercase">DECEmber 2015</a></li>
+                <li><a href="" class="uppercase">november 2015</a></li>
+            </ul>
+            <div class="btn-all text-center mb15">
+                <button class="btn btn-danger btn-outline">
+                    View all
+                </button>
+            </div>
+            <div class="border-blue bborders"></div>
+        </div>
+        <div class="text-center">
+            <div class="article">
+                <div class="article-title">
+                    <h4 class="uppercase color-red">RELATED ARTICLES</h4>
+                </div>
+            </div>
+        </div>
+        <div class="related" ng-repeat="data in blogvideo track by $index">
+            <div class="wed-box border-red">
+                <div class="wed-img-list">
+                    <img ng-src="{{data.img}}" alt="" class="img-responsive">
+                    <div class="red-ribbon">
+                        <img src="img/ribbon_red.png" alt="">
+                        <span class="color-white uppercase">Sports</span>
+                    </div>
+                </div>
+                <div class="blog-desc">
+                    <div class="wed-desc-inside">
+                        <p class="bold">{{data.desc}}</p>
+                    </div>
+                    <div class="wed-date">
+                        <span>{{data.date}}</span>
+                    </div>
+                    <div class="read-more">
+                        <a href="" class="color-black">Read More</a>
+                    </div>
+                </div>
+                <div class="border-blue bborders"></div>
+            </div>
+        </div>
+    </div>
     </div>
     </div>
 </section>
