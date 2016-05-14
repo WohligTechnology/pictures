@@ -2372,6 +2372,7 @@ h4.title-movies {
         line-height: 0.99;
         font-size: 27px;
         padding: 0 19px;
+        height: 52px;
     }
     span {
         font-family: 'RBNo2.1ab';
@@ -2393,6 +2394,7 @@ h4.title-movies {
     width: 100%;
     p {
         padding: 0 24px;
+        height: 52px;
     }
 }
 .contact-tab {
@@ -2668,11 +2670,18 @@ h4.title-movies {
     }
 }
 .imgposition {
+  z-index: 9999;
+position: fixed;
+bottom: -160px;
+left: 75%;
+width: 15%;
+  &:hover{
     z-index: 9999;
     position: fixed;
     bottom: 0;
     left: 75%;
     width: 15%;
+  }
 }
 //blog
 .wed-boxs {
@@ -2828,9 +2837,9 @@ h4.title-movies {
             border-radius: 50%;
             border: 1px solid #f13748;
             color: #f13748;
-            width: 26px;
-            height: 26px;
-            padding: 5px 6px;
+            width: 24px;
+            height: 24px;
+            padding: 4px 5px;
             margin: 0 0 0 2px;
         }
     }
@@ -2928,20 +2937,26 @@ h4.title-movies {
         }
     }
 }
+.mr12 {
+    margin: 12px 0 40px;
+}
 .nimage {
-  p {
-    display: inline-block;
-      font-size: 16px;
-      color: #404042;
-      margin: 5px 0 24px;
-      font-weight: 600;
-  }
-  span{
-    font-size: 16px;
-    color: #088fd5;
-    margin: 5px 0 24px;
-    font-weight: 600;
-  }
+    p {
+        display: inline-block;
+        font-size: 16px;
+        color: #404042;
+        height: 44px;
+        overflow: hidden;
+        margin: 5px 0;
+        font-weight: 600;
+    }
+    span {
+        font-size: 16px;
+        color: #088fd5;
+        margin: 5px 0;
+        float: right;
+        font-weight: 600;
+    }
     .videolink {
         position: relative;
     }
@@ -2968,8 +2983,8 @@ h4.title-movies {
         color: #404042;
         border-style: solid;
         border-width: 1px;
-        border-color:  #f13748;
-        background-color:  rgba(255, 255, 255, 0);
+        border-color: #f13748;
+        background-color: rgba(255, 255, 255, 0);
         &:hover {
             color: #404042;
             background-color: rgba(255, 255, 255,0.4);
