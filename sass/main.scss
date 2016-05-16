@@ -2670,18 +2670,18 @@ h4.title-movies {
     }
 }
 .imgposition {
-  z-index: 9999;
-position: fixed;
-bottom: -160px;
-left: 75%;
-width: 15%;
-  &:hover{
     z-index: 9999;
     position: fixed;
-    bottom: 0;
+    bottom: -160px;
     left: 75%;
     width: 15%;
-  }
+    &:hover {
+        z-index: 9999;
+        position: fixed;
+        bottom: 0;
+        left: 75%;
+        width: 15%;
+    }
 }
 //blog
 .wed-boxs {
@@ -2769,7 +2769,7 @@ width: 15%;
     border: 3px solid;
     position: absolute;
     width: 200px;
-    bottom: -5px;
+    bottom: -6px;
     left: 50%;
     -webkit-transform: translatex(-50%);
     -moz-transform: translatex(-50%);
@@ -2833,6 +2833,7 @@ width: 15%;
     margin: 0 0 0 5px;
     a {
         color: #f13748;
+        text-align: center;
         .fa {
             border-radius: 50%;
             border: 1px solid #f13748;
@@ -2866,10 +2867,12 @@ width: 15%;
         margin-top: 20px;
         margin-bottom: 20px;
         border: 0;
-        border-top: 3px solid;
+        border-top: 2px solid;
         border-color: rgba(172, 172, 172, 0.3);
     }
     .profilephoto {
+      max-width: 100%;
+      max-height: 100%;
         img {
             margin: 0 auto;
         }
@@ -2879,8 +2882,10 @@ width: 15%;
     }
 }
 .comments {
-    margin: 0 0 10px;
+    margin: 0 0 26px;
     .profilephoto {
+        max-width: 100%;
+        max-height: 100%;
         img {
             margin: 0 auto;
         }
@@ -2919,6 +2924,8 @@ width: 15%;
     }
     .toomany {
         .blog-image {
+            max-width: 100%;
+            max-height: 100%;
             margin: 0 0 26px;
             position: relative;
         }
@@ -2957,9 +2964,6 @@ width: 15%;
         float: right;
         font-weight: 600;
     }
-    .videolink {
-        position: relative;
-    }
     .fa {
         position: absolute;
         top: 15%;
@@ -2973,6 +2977,11 @@ width: 15%;
         left: 51%;
         transform: translate(-15%,-51%);
     }
+}
+.videolink {
+    position: relative;
+    max-width: 100%;
+    max-height: 100%;
 }
 .btn-alls {
     .btn {
