@@ -168,7 +168,7 @@ a {
 .menu-out {
     height: 310px;
     @include transform(translateX(-300px));
-    @include transition(all 300ms linear);
+    // @include transition(all 300ms linear);
     position: absolute;
     width: 300px;
     z-index: 99;
@@ -178,7 +178,7 @@ a {
     background: url('../img/menubg.png')no-repeat;
     background-size: cover;
     @include transform(translateX(0));
-    @include transition(all 300ms linear);
+    // @include transition(all 300ms linear);
     position: fixed;
     width: 300px;
     z-index: 99;
@@ -247,6 +247,28 @@ a {
         .marbot {
             margin-bottom: 3px;
         }
+        ul{
+          li{
+            a {
+              display: inline-block;
+              margin-right: 5px;
+              text-align: center;
+              width: 28px;
+              height: 28px;
+              font-size: 19px;
+              padding: 0px 6px;
+              background: #fff;
+              border-radius: 100%;
+              &:hover {
+                background: darken(#fff, 10%);
+              }
+              i {
+                color: $brand-danger;
+              }
+            }
+          }
+        }
+        }
     }
     .btnsign {
         font-size: 14px;
@@ -263,16 +285,16 @@ a {
         border: 0;
         border-top: 1px solid #eeeeee;
     }
-    .fa-inverse {
-        color: $brand-danger;
-    }
-    .fa-stack-2x {
-        font-size: 1.9em;
-    }
-    .fsize {
-        font-size: 12px;
-        padding: 0 3px 0 0;
-    }
+    // .fa-inverse {
+    //     color: $brand-danger;
+    // }
+    // .fa-stack-2x {
+    //     font-size: 1.9em;
+    // }
+    // .fsize {
+    //     font-size: 12px;
+    //     padding: 0 3px 0 0;
+    // }
     .menu-bottom {
         font-family: oxygen;
         margin-bottom: 20px;
@@ -292,6 +314,7 @@ a {
         span {
             font-family: oxygen;
             font-size: 10px;
+            color: $color-white;
         }
     }
     ul {
@@ -302,11 +325,11 @@ a {
                 display: block;
                 font-size: 15px;
                 color: $color-white;
-                @include transition(all ease 300ms);
+                // @include transition(all ease 300ms);
                 &:before {
                     margin-right: 10px;
                     vertical-align: middle;
-                    @include transition(all ease 300ms);
+                    // @include transition(all ease 300ms);
                 }
                 &.movies:before {
                     content: url('../img/menuicons/movies.png');
@@ -365,6 +388,9 @@ a {
                 &.king:before {
                     content: url('../img/menuicons/bat.png');
                 }
+                &:hover{
+                  color:$color-white;
+                }
                 // &:hover {
                 //   color: $brand-danger;
                 //   &.movies:before {
@@ -389,7 +415,6 @@ a {
             }
         }
     }
-}
 .nav-inline {
     margin-left: 50px;
     ul {
@@ -403,13 +428,20 @@ a {
                 display: block;
                 font-size: 26px;
                 font-weight: 600;
-                @include transition(all ease 300ms);
                 &:hover {
                     color: $brand-danger;
                 }
             }
         }
     }
+}
+.buttonpos{
+  position: fixed;
+      left: 173px;
+      top: 28px;
+      padding: 0;
+      margin: 0;
+      border: 0;
 }
 .bg-white {
     background: #fff;
@@ -428,6 +460,9 @@ a {
 }
 .secondbar {
     opacity: 0;
+    position: fixed;
+    left: 245px;
+    top: 41px;
 }
 .thirdbar {
     @include transform(rotate(45deg));
@@ -2843,6 +2878,7 @@ h4.title-movies {
             padding: 4px 5px;
             margin: 0 0 0 2px;
         }
+
     }
 }
 .fa-facebook:before {
