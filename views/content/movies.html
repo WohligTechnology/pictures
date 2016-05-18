@@ -10,13 +10,13 @@
    </div>
    <div class="wedding-fant-desc">
       <div class="container">
-         <div class="row">
-            <div class="col-md-offset-2 col-md-8">
-               <p>The first gs film 'Pyar Kiya To Darna Kya’ (1998) proved to be one of the biggest success film of the year. The film starred Dharmendra, Salman Khan, Kajol, Arbaaz Khan and Anjala Zaveri. Having proved as a hit combination by public consensus,
+         <div class="row" ng-if="movieData && movieData.description && movieData.description.content">
+            <div class="col-md-offset-2 col-md-8" ng-bind-html="movieData.description.content">
+               <!-- <p>The first gs film 'Pyar Kiya To Darna Kya’ (1998) proved to be one of the biggest success film of the year. The film starred Dharmendra, Salman Khan, Kajol, Arbaaz Khan and Anjala Zaveri. Having proved as a hit combination by public consensus,
                   Salman Khan and Arbaaz Khan featured again with Rani Mukherjee in GS Worldwide Entertainment's second Hindi feature film 'Hello Brother' (2002) directed by Sohail Khan. 'Maine Dil Tujkho Diya ' (2002) was gs worldwide entertainment’s
                   third venture film. This film introduced Sohail Khan and Sameera Reddy as actors, which also starred Kabir Bedi and Sanjay Dutt directed by Sohail Khan.</p>
                <p>In 2005 GS Worldwide Entertainment produced 'Ek Ajnabee' with the superstar himself, Mr. Amitabh Bachchan who also starred in the movie along with Arjun Rampal and Perizaad Zorabian, directed by Apoorva Lakhia. National Award Winning Director
-                  of the movie ‘Parzania’ Rahul Dholakia joined hands with gs worldwide entertainment to direct its 5th movie ‘Lamhaa’ (2010) that starred Sanjay Dutt, Bipasha Basu &amp; Kunal Kapoor.</p>
+                  of the movie ‘Parzania’ Rahul Dholakia joined hands with gs worldwide entertainment to direct its 5th movie ‘Lamhaa’ (2010) that starred Sanjay Dutt, Bipasha Basu &amp; Kunal Kapoor.</p> -->
             </div>
          </div>
       </div>
@@ -24,30 +24,30 @@
    <div class="movie-category bg-grey nav-tab-middle">
       <div class="container">
          <uib-tabset active="active">
-            <uib-tab index="0" heading="RELEASED">
+            <uib-tab index="0" heading="RELEASED" ng-if="movieData && movieData.isreleased && movieData.isreleased.length>0">
                <div class="flex-slider">
-                  <flex-slider flex-slide="data in moviereleased track by $index" animation="slide" animation-loop="false" item-width="218" item-margin="10">
-                     <li>
+                  <flex-slider flex-slide="data in movieData.isreleased track by $index" animation="slide" animation-loop="false" item-width="218" item-margin="10">
+                     <li ui-sref="moviesinside({id:data.id})">
                         <div class="movie-box text-center">
-                           <img ng-src="{{data.img}}" alt="" class="img-responsive">
+                           <img ng-src="{{data.image | uploadpath}}" alt="" class="img-responsive">
                            <div class="movie-date">
                               <span>Release Date:</span>
-                              <p class="color-red">{{data.date}}</p>
+                              <p class="color-red">{{data.releasedate | date:'mediumDate'}}</p>
                            </div>
                         </div>
                      </li>
                   </flex-slider>
                </div>
             </uib-tab>
-            <uib-tab index="1" heading="UPCOMING">
+            <uib-tab index="1" heading="UPCOMING" ng-if="movieData && movieData.isupcoming && movieData.isupcoming.length>0">
                <div class="flex-slider">
-                  <flex-slider flex-slide="data in movieupcoming track by $index" animation="slide" animation-loop="false" item-width="218" item-margin="10">
+                  <flex-slider flex-slide="data in movieData.isupcoming track by $index" animation="slide" animation-loop="false" item-width="218" item-margin="10">
                      <li>
                         <div class="movie-box text-center">
-                           <img ng-src="{{data.img}}" alt="" class="img-responsive">
+                           <img ng-src="{{data.image | uploadpath}}" alt="" class="img-responsive">
                            <div class="movie-date">
                               <span>Release Date:</span>
-                              <p class="color-red">{{data.date}}</p>
+                              <p class="color-red">{{data.releasedate | date:'mediumDate'}}</p>
                            </div>
                         </div>
                      </li>
@@ -66,7 +66,7 @@
       </div>
    </div>
    <div class="movies-back-bg">
-      <div class="bg-moviesdiaries">
+      <div class="bg-moviesdiaries" ng-if="movieData && movieData.moviediaries && movieData.moviediaries.length>0">
          <div class="container">
             <div class="row">
                <div class="col-md-12">
@@ -81,10 +81,10 @@
             </div>
             <div class="pd-side">
                <div class="row">
-                  <div class="col-md-4 col-sm-4 col-xs-6" ng-repeat="data in weddings track by $index">
+                  <div class="col-md-4 col-sm-4 col-xs-6" ng-repeat="data in movieData.moviediaries track by $index">
                      <div class="wed-box border-red">
                         <div class="wed-img-list">
-                           <img ng-src="{{data.img}}" alt="" class="img-responsive">
+                           <img ng-src="{{data.image | uploadpath}}" alt="" class="img-responsive">
                            <div class="ribbon-red">
                               <img src="img/ribbon_red.png" alt="">
                               <span class="color-white uppercase">Movies</span>
@@ -92,10 +92,10 @@
                         </div>
                         <div class="wed-desc">
                            <div class="wed-date">
-                              <span>{{data.date}}</span>
+                              <span>{{data.date | date:'mediumDate'}}</span>
                            </div>
-                           <div class="wed-desc-inside">
-                              <p class="bold">{{data.desc}}</p>
+                           <div class="wed-desc-inside" ng-bind-html="data.content">
+                              <!-- <p class="bold">{{data.content}}</p> -->
                            </div>
                            <div class="read-more">
                               <a href="" class="color-black">Read More</a>
@@ -133,21 +133,21 @@
             </div>
          </div>
       </section>
-      <div class="section3">
+      <div class="section3" ng-if="movieData && movieData.testimonial && movieData.testimonial.length>0">
          <div class="bg3">
             <div class="container">
                <div class="client-speak">
                   <div class="name-cont color-white">
                      <img src="img/inverted.png" alt="">
                      <!-- {{clientspeak}} -->
-                     <span>{{clientspeak.category}}</span>
+                     <span>{{movieData.testimonial[0].name}}</span>
                   </div>
                   <div class="img-holder">
-                     <img src="{{clientspeak.img}}" alt="" class="img-reponsive">
+                     <img src="{{movieData.testimonial[0].image | uploadpath}}" alt="" class="img-reponsive">
                   </div>
                   <div class="img-review color-white">
-                     <h4>"{{clientspeak.text}}"</h4>
-                     <p>- {{clientspeak.name}}</p>
+                     <h4>"{{movieData.testimonial[0].quote}}"</h4>
+                     <p>- {{movieData.testimonial[0].author}}</p>
                   </div>
                </div>
             </div>

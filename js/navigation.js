@@ -7,6 +7,7 @@ if (isproduction) {
 
 adminURL = "http://192.168.1.109/gsebackend/";
 var apiUrl = adminURL + "index.php/json/";
+var imgpath = adminURL + "uploads/";
 
 var navigationservice = angular.module('navigationservice', [])
 
@@ -40,6 +41,9 @@ var navigationservice = angular.module('navigationservice', [])
         },
         getMoviesData: function(callback) {
             $http.get(apiUrl + 'getMovieDetails').success(callback);
+        },
+        getWeddingData: function(callback) {
+            $http.get(apiUrl + 'getWeddingDetails').success(callback);
         },
         makeactive: function(menuname) {
             for (var i = 0; i < navigation.length; i++) {
