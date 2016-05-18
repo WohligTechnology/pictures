@@ -82,116 +82,161 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         }];
     })
     //
-    .controller('MoviesCtrl', function($scope, TemplateService, NavigationService, $timeout) {
-        //Used to name the .html file
-        $scope.template = TemplateService.changecontent("movies");
-        $scope.menutitle = NavigationService.makeactive("Movies");
-        TemplateService.title = $scope.menutitle;
-        $scope.navigation = NavigationService.getnav();
-        $scope.formData = {};
-        $scope.moviesSubmitForm = function(formValid, formData) {
-            if (formValid.$valid && $scope.formData) {
-                // NavigationService.userCreateSubmit($scope.userForm, function(data) {
-                //   console.log('userform', $scope.userForm);
-                $state.go("movies");
-                // });
 
+.controller('MoviesCtrl', function($scope, TemplateService, NavigationService, $timeout) {
+    //Used to name the .html file
+    $scope.template = TemplateService.changecontent("movies");
+    $scope.menutitle = NavigationService.makeactive("Movies");
+    TemplateService.title = $scope.menutitle;
+    $scope.navigation = NavigationService.getnav();
+    $scope.getin = {};
+    $scope.getin.enquiryarr = [];
+    $scope.showThanks = false;
+
+    NavigationService.getMoviesData(function(data) {
+        console.log(data);
+        if (data.value != false) {
+
+        }
+    });
+
+    $scope.moviesSubmitForm = function(formValid) {
+        $scope.getin.enquiry = "";
+        if (formValid.$valid && $scope.getin) {
+            if ($scope.getin.enquiryarr.length > 0) {
+                _.each($scope.getin.enquiryarr, function(n) {
+                    $scope.getin.enquiry += n + ",";
+                })
+                $scope.getin.enquiry = $scope.getin.enquiry.substring(0, $scope.getin.enquiry.length - 1);
             }
-        };
-        $scope.subscribe = {};
-        $scope.subscribe.email = "";
-        //
-        // $scope.checkemail=function(email){
-        //
-        // }
-
-        $scope.checkEmail = false;
-        $scope.subscribeEmail = false;
-        $scope.subscribe = function(email) {
-            // if(!email) {
-            //     alert("please enter your email");
-            // }
-            // console.log('Email subscribe: ', email);
-            NavigationService.subscribe(email, function(data) {
-
-                // console.log(data);
-                if (!data.value) {
-                    if ($scope.subscribe.email) {
-                        $scope.checkEmail = true;
-                        $scope.subscribeEmail = false;
-                    }
-                } else {
-                    $scope.subscribeEmail = true;
-                    $scope.checkEmail = false;
+            $scope.getin.category = 1;
+            NavigationService.getInTouch($scope.getin, function(data) {
+                console.log(data);
+                if (data.value != false) {
+                    $scope.showThanks = true;
                 }
-                //console.log(email);
-                $scope.subscribe.email = "";
             });
+        }
+    };
 
-            // $scope.subscribeEmail = data;
-        };
-        $scope.moviereleased = [{
-            img: "img/movies/released/released1.jpg",
-            date: "12 January 2016",
-        }, {
-            img: "img/movies/released/released2.jpg",
-            date: "12 January 2016",
-        }, {
-            img: "img/movies/released/released3.jpg",
-            date: "12 January 2016",
-        }, {
-            img: "img/movies/released/released4.jpg",
-            date: "12 January 2016",
-        }, {
-            img: "img/movies/released/released4.jpg",
-            date: "12 January 2016",
-        }, {
-            img: "img/movies/released/released4.jpg",
-            date: "12 January 2016",
-        }, {
-            img: "img/movies/released/released5.jpg",
-            date: "12 January 2016",
-        }];
-        $scope.movieupcoming = [{
-            img: "img/movies/released/released1.jpg",
-            date: "12 January 2016",
-        }, {
-            img: "img/movies/released/released4.jpg",
-            date: "12 January 2016",
-        }, {
-            img: "img/movies/released/released2.jpg",
-            date: "12 January 2016",
-        }, {
-            img: "img/movies/released/released3.jpg",
-            date: "12 January 2016",
-        }, {
-            img: "img/movies/released/released4.jpg",
-            date: "12 January 2016",
-        }, {
-            img: "img/movies/released/released5.jpg",
-            date: "12 January 2016",
-        }];
-        $scope.weddings = [{
-            img: "img/weddings/diaries/diary1.png",
-            date: "12 January 2016",
-            desc: "Lorem Ipsum is simply dummy text of the printing industry"
-        }, {
-            img: "img/weddings/diaries/diary2.png",
-            date: "12 January 2016",
-            desc: "Lorem Ipsum is simply dummy text of the printing industry"
-        }, {
-            img: "img/weddings/diaries/diary3.png",
-            date: "12 January 2016",
-            desc: "Lorem Ipsum is simply dummy text of the printing industry"
-        }];
-        $scope.clientspeak = {
-            category: "Actor Speak",
-            text: "Awesome teamwork and planning",
-            name: "Ranbir Kapoor",
-            img: "img/movies/ranbir.jpg"
-        };
-    })
-    .controller('MoviesInsideCtrl', function($scope, TemplateService, NavigationService, $timeout) {
+    $scope.pushorpop = function(val) {
+        var foundIndex = $scope.getin.enquiryarr.indexOf(val);
+        if (foundIndex == -1) {
+            $scope.getin.enquiryarr.push(val);
+        } else {
+            $scope.getin.enquiryarr.splice(foundIndex, 1);
+        }
+    }
+
+    $scope.subscribe = {};
+    $scope.subscribe.email = "";
+    //
+    // $scope.checkemail=function(email){
+    //
+    // }
+
+    $scope.checkEmail = false;
+    $scope.subscribeEmail = false;
+    $scope.subscribe = function(email) {
+        // if(!email) {
+        //     alert("please enter your email");
+        // }
+        // console.log('Email subscribe: ', email);
+        NavigationService.subscribe(email, function(data) {
+
+            // console.log(data);
+            if (!data.value) {
+                if ($scope.subscribe.email) {
+                    $scope.checkEmail = true;
+                    $scope.subscribeEmail = false;
+                }
+            } else {
+                $scope.subscribeEmail = true;
+                $scope.checkEmail = false;
+            }
+            //console.log(email);
+            $scope.subscribe.email = "";
+        });
+
+        // $scope.subscribeEmail = data;
+    };
+    $scope.moviereleased = [{
+        "img": "img/movies/released/released1.jpg",
+        "date": "12 January 2016",
+        "isupcoming": 1,
+        "isreleased": 1
+    }, {
+        "img": "img/movies/released/released2.jpg",
+        "date": "12 January 2016",
+        "isupcoming": 1,
+        "isreleased": 1
+    }, {
+        "img": "img/movies/released/released3.jpg",
+        "date": "12 January 2016",
+        "isupcoming": 1,
+        "isreleased": 1
+    }, {
+        "img": "img/movies/released/released4.jpg",
+        "date": "12 January 2016",
+        "isupcoming": 1,
+        "isreleased": 1
+    }, {
+        "img": "img/movies/released/released4.jpg",
+        "date": "12 January 2016",
+        "isupcoming": 1,
+        "isreleased": 1
+    }, {
+        "img": "img/movies/released/released4.jpg",
+        "date": "12 January 2016",
+        "isupcoming": 1,
+        "isreleased": 1
+    }, {
+        "img": "img/movies/released/released5.jpg",
+        "date": "12 January 2016",
+        "isupcoming": 1,
+        "isreleased": 1
+    }];
+    $scope.movieupcoming = [{
+        img: "img/movies/released/released1.jpg",
+        date: "12 January 2016",
+    }, {
+        img: "img/movies/released/released4.jpg",
+        date: "12 January 2016",
+    }, {
+        img: "img/movies/released/released2.jpg",
+        date: "12 January 2016",
+    }, {
+        img: "img/movies/released/released3.jpg",
+        date: "12 January 2016",
+    }, {
+        img: "img/movies/released/released4.jpg",
+        date: "12 January 2016",
+    }, {
+        img: "img/movies/released/released5.jpg",
+        date: "12 January 2016",
+    }];
+    $scope.weddings = [{
+        img: "img/weddings/diaries/diary1.png",
+        date: "12 January 2016",
+        desc: "Lorem Ipsum is simply dummy text of the printing industry"
+    }, {
+        img: "img/weddings/diaries/diary2.png",
+        date: "12 January 2016",
+        desc: "Lorem Ipsum is simply dummy text of the printing industry"
+    }, {
+        img: "img/weddings/diaries/diary3.png",
+        date: "12 January 2016",
+        desc: "Lorem Ipsum is simply dummy text of the printing industry"
+    }];
+    $scope.clientspeak = {
+        category: "Actor Speak",
+        text: "Awesome teamwork and planning",
+        name: "Ranbir Kapoor",
+        img: "img/movies/ranbir.jpg"
+    };
+})
+
+.controller('MoviesInsideCtrl', function($scope, TemplateService, NavigationService, $timeout) {
         //Used to name the .html file
         $scope.template = TemplateService.changecontent("moviesinside");
         $scope.menutitle = NavigationService.makeactive("Movies");
@@ -1022,30 +1067,30 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             desc: "Lorem Ipsum is simply dummy text of the printing industry"
         }];
         $scope.bgtext = [{
-          img: "img/blog/text/t1.png",
-          desc: "Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro."
-        },{
-          img: "img/blog/text/t2.png",
-          desc: "Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet."
-        },{
-          img: "img/blog/text/t3.png",
-          desc: "Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro."
+            img: "img/blog/text/t1.png",
+            desc: "Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro."
+        }, {
+            img: "img/blog/text/t2.png",
+            desc: "Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet."
+        }, {
+            img: "img/blog/text/t3.png",
+            desc: "Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro."
         }];
         $scope.commentlist = [{
-          img: "img/blog/text/p2.png",
-          name:"Sohan Honekari",
-          time:"27 minutes",
-          desc: "Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro."
-        },{
-          img: "img/blog/text/p2.png",
-          name:"Raj Shah",
-          time:"2 hours",
-          desc: "Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet."
-        },{
-          img: "img/blog/text/p2.png",
-          name:"pooja thakkare",
-          time:"20 seconds",
-          desc: "Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro."
+            img: "img/blog/text/p2.png",
+            name: "Sohan Honekari",
+            time: "27 minutes",
+            desc: "Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro."
+        }, {
+            img: "img/blog/text/p2.png",
+            name: "Raj Shah",
+            time: "2 hours",
+            desc: "Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet."
+        }, {
+            img: "img/blog/text/p2.png",
+            name: "pooja thakkare",
+            time: "20 seconds",
+            desc: "Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro."
         }];
     })
     .controller('BlogImageCtrl', function($scope, TemplateService, NavigationService, $timeout) {
@@ -1068,43 +1113,43 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             desc: "Lorem Ipsum is simply dummy text of the printing industry"
         }];
         $scope.commentlist = [{
-          img: "img/blog/text/p2.png",
-          name:"Sohan Honekari",
-          time:"27 minutes",
-          desc: "Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro."
-        },{
-          img: "img/blog/text/p2.png",
-          name:"Raj Shah",
-          time:"2 hours",
-          desc: "Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet."
-        },{
-          img: "img/blog/text/p2.png",
-          name:"Raj Shah",
-          time:"2 hours",
-          desc: "Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet."
-        },{
-          img: "img/blog/text/p2.png",
-          name:"Raj Shah",
-          time:"2 hours",
-          desc: "Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet."
+            img: "img/blog/text/p2.png",
+            name: "Sohan Honekari",
+            time: "27 minutes",
+            desc: "Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro."
+        }, {
+            img: "img/blog/text/p2.png",
+            name: "Raj Shah",
+            time: "2 hours",
+            desc: "Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet."
+        }, {
+            img: "img/blog/text/p2.png",
+            name: "Raj Shah",
+            time: "2 hours",
+            desc: "Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet."
+        }, {
+            img: "img/blog/text/p2.png",
+            name: "Raj Shah",
+            time: "2 hours",
+            desc: "Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet."
         }];
         $scope.images = [{
             img: "img/blog/image/i1.png",
-          },{
-              img: "img/blog/image/i1.png",
-          },{
-              img: "img/blog/image/i1.png",
-          },{
-              img: "img/blog/image/i1.png",
-          },{
-              img: "img/blog/image/i1.png",
-          },{
-              img: "img/blog/image/i1.png",
-          },{
-              img: "img/blog/image/i1.png",
-          },{
-              img: "img/blog/image/i1.png",
-          }];
+        }, {
+            img: "img/blog/image/i1.png",
+        }, {
+            img: "img/blog/image/i1.png",
+        }, {
+            img: "img/blog/image/i1.png",
+        }, {
+            img: "img/blog/image/i1.png",
+        }, {
+            img: "img/blog/image/i1.png",
+        }, {
+            img: "img/blog/image/i1.png",
+        }, {
+            img: "img/blog/image/i1.png",
+        }];
     })
     .controller('BlogVideoCtrl', function($scope, TemplateService, NavigationService, $timeout) {
         //Used to name the .html file
@@ -1126,43 +1171,43 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             desc: "Lorem Ipsum is simply dummy text of the printing industry"
         }];
         $scope.commentlist = [{
-          img: "img/blog/text/p2.png",
-          name:"Sohan Honekari",
-          time:"27 minutes",
-          desc: "Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro."
-        },{
-          img: "img/blog/text/p2.png",
-          name:"Raj Shah",
-          time:"2 hours",
-          desc: "Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet."
-        },{
-          img: "img/blog/text/p2.png",
-          name:"Raj Shah",
-          time:"2 hours",
-          desc: "Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet."
-        },{
-          img: "img/blog/text/p2.png",
-          name:"Raj Shah",
-          time:"2 hours",
-          desc: "Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet."
+            img: "img/blog/text/p2.png",
+            name: "Sohan Honekari",
+            time: "27 minutes",
+            desc: "Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro."
+        }, {
+            img: "img/blog/text/p2.png",
+            name: "Raj Shah",
+            time: "2 hours",
+            desc: "Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet."
+        }, {
+            img: "img/blog/text/p2.png",
+            name: "Raj Shah",
+            time: "2 hours",
+            desc: "Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet."
+        }, {
+            img: "img/blog/text/p2.png",
+            name: "Raj Shah",
+            time: "2 hours",
+            desc: "Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet."
         }];
         $scope.images = [{
             img: "img/blog/video/v1.png",
-          },{
-              img: "img/blog/video/v1.png",
-          },{
-              img: "img/blog/video/v1.png",
-          },{
-              img: "img/blog/video/v1.png",
-          },{
-              img: "img/blog/video/v1.png",
-          },{
-              img: "img/blog/video/v1.png",
-          },{
-              img: "img/blog/video/v1.png",
-          },{
-              img: "img/blog/video/v1.png",
-          }];
+        }, {
+            img: "img/blog/video/v1.png",
+        }, {
+            img: "img/blog/video/v1.png",
+        }, {
+            img: "img/blog/video/v1.png",
+        }, {
+            img: "img/blog/video/v1.png",
+        }, {
+            img: "img/blog/video/v1.png",
+        }, {
+            img: "img/blog/video/v1.png",
+        }, {
+            img: "img/blog/video/v1.png",
+        }];
     })
     .controller('headerctrl', function($scope, TemplateService) {
         $scope.template = TemplateService;
@@ -1174,13 +1219,13 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
                 $scope.onebar = "";
                 $scope.secondbar = "";
                 $scope.thirdbar = "";
-                $scope.buttonpos = "";
+                $scope.bgwhite = "";
             } else {
                 $scope.getslide = "menu-in";
                 $scope.onebar = "firstbar";
                 $scope.secondbar = "secondbar";
                 $scope.thirdbar = "thirdbar";
-                $scope.buttonpos = "buttonpos";
+                $scope.bgwhite = "bg-white";
             }
         }
     });
