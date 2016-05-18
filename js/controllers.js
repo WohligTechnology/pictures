@@ -200,7 +200,16 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         img: "img/movies/released/released1.jpg",
         date: "12 January 2016",
     }, {
+        img: "img/movies/released/released1.jpg",
+        date: "12 January 2016",
+    }, {
         img: "img/movies/released/released4.jpg",
+        date: "12 January 2016",
+    }, {
+        img: "img/movies/released/released4.jpg",
+        date: "12 January 2016",
+    }, {
+        img: "img/movies/released/released2.jpg",
         date: "12 January 2016",
     }, {
         img: "img/movies/released/released2.jpg",
@@ -209,7 +218,10 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         img: "img/movies/released/released3.jpg",
         date: "12 January 2016",
     }, {
-        img: "img/movies/released/released4.jpg",
+        img: "img/movies/released/released3.jpg",
+        date: "12 January 2016",
+    }, {
+        img: "img/movies/released/released5.jpg",
         date: "12 January 2016",
     }, {
         img: "img/movies/released/released5.jpg",
@@ -234,6 +246,22 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         name: "Ranbir Kapoor",
         img: "img/movies/ranbir.jpg"
     };
+
+    $scope.doActives = function(params) {
+        if (params === 1) {
+            console.log($scope.wallpapers);
+            $scope.styleActives = "mactives";
+            $scope.styleNoActives = "";
+            $scope.movie = $scope.moviereleased;
+        } else {
+            console.log($scope.wallpaper);
+
+            $scope.styleActives = "";
+            $scope.styleNoActives = "mactives";
+            $scope.movie = $scope.movieupcoming;
+        }
+    }
+    $scope.doActives(1);
 })
 
 .controller('MoviesInsideCtrl', function($scope, TemplateService, NavigationService, $timeout) {
@@ -278,24 +306,75 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             desc: "Lorem Ipsum is simply dummy text of the printing industry"
         }];
         $scope.wallpapers = [{
-            img: "img/moviedetail/wallpapers/wallpaper1.jpg"
-        }, {
-            img: "img/moviedetail/wallpapers/wallpaper2.jpg"
-        }, {
-            img: "img/moviedetail/wallpapers/wallpaper3.jpg"
-        }, {
-            img: "img/moviedetail/wallpapers/wallpaper4.jpg"
-        }, {
-            img: "img/moviedetail/wallpapers/wallpaper5.jpg"
-        }, {
-            img: "img/moviedetail/wallpapers/wallpaper5.jpg"
-        }, {
-            img: "img/moviedetail/wallpapers/wallpaper6.jpg"
-        }];
-        $scope.wallpapers = _.chunk($scope.wallpapers, 6);
-        for (var i = 0; i < $scope.wallpapers.length; i++) {
-            $scope.wallpapers[i] = _.chunk($scope.wallpapers[i], 3);
+              img: "img/moviedetail/wallpapers/wallpaper1.jpg"
+          }, {
+              img: "img/moviedetail/wallpapers/wallpaper2.jpg"
+          }, {
+              img: "img/moviedetail/wallpapers/wallpaper3.jpg"
+          }, {
+              img: "img/moviedetail/wallpapers/wallpaper4.jpg"
+          }, {
+              img: "img/moviedetail/wallpapers/wallpaper5.jpg"
+          }, {
+              img: "img/moviedetail/wallpapers/wallpaper6.jpg"
+          },{
+              img: "img/moviedetail/wallpapers/wallpaper1.jpg"
+          }, {
+              img: "img/moviedetail/wallpapers/wallpaper2.jpg"
+          }, {
+              img: "img/moviedetail/wallpapers/wallpaper3.jpg"
+          }, {
+              img: "img/moviedetail/wallpapers/wallpaper4.jpg"
+          }, {
+              img: "img/moviedetail/wallpapers/wallpaper5.jpg"
+          }, {
+              img: "img/moviedetail/wallpapers/wallpaper6.jpg"
+          }];
+          $scope.wallpapers = _.chunk($scope.wallpapers, 6);
+          for (var i = 0; i < $scope.wallpapers.length; i++) {
+              $scope.wallpapers[i] = _.chunk($scope.wallpapers[i], 3);
+          }
+          $scope.wallpaper = [{
+              img: "img/moviedetail/wallpapers/wallpaper1.jpg"
+          }, {
+              img: "img/moviedetail/wallpapers/wallpaper1.jpg"
+          }, {
+              img: "img/moviedetail/wallpapers/wallpaper2.jpg"
+          }, {
+              img: "img/moviedetail/wallpapers/wallpaper2.jpg"
+          }, {
+              img: "img/moviedetail/wallpapers/wallpaper3.jpg"
+          }, {
+              img: "img/moviedetail/wallpapers/wallpaper3.jpg"
+          }, {
+              img: "img/moviedetail/wallpapers/wallpaper4.jpg"
+          }, {
+              img: "img/moviedetail/wallpapers/wallpaper4.jpg"
+          }, {
+              img: "img/moviedetail/wallpapers/wallpaper5.jpg"
+          }, {
+              img: "img/moviedetail/wallpapers/wallpaper5.jpg"
+          }, {
+              img: "img/moviedetail/wallpapers/wallpaper6.jpg"
+          }, {
+              img: "img/moviedetail/wallpapers/wallpaper6.jpg"
+          }];
+          $scope.wallpaper = _.chunk($scope.wallpaper, 6);
+          for (var i = 0; i < $scope.wallpaper.length; i++) {
+              $scope.wallpaper[i] = _.chunk($scope.wallpaper[i], 3);
+          }
+        $scope.doActives = function(param) {
+            if (param === 1) {
+                $scope.styleActives = "actives";
+                $scope.styleNoActives = "";
+                $scope.paper = $scope.wallpaper;
+            } else {
+                $scope.styleActives = "";
+                $scope.styleNoActives = "actives";
+                $scope.paper = $scope.wallpapers;
+            }
         }
+          $scope.doActives(1);
         $scope.awards = [{
             name: "Kamaal Khan",
             title: "R.D. Burman Award",

@@ -964,6 +964,22 @@ footer {
         background: url('../img/movies/bg-movies.jpg')no-repeat;
         background-size: 100%;
     }
+    .title {
+      text-align: center;
+        h4 {
+            color: #053146;
+            font-weight: 600;
+            font-size: 26px;
+            display: inline-block;
+            padding: 2px 10px;
+            margin: 5px 16px 10px;
+            &:hover {
+              color: #088fd5 !important;
+              cursor: pointer;
+              border-bottom: 4px solid #088fd5;
+            }
+        }
+    }
     ul.flex-direction-nav {
         display: none;
     }
@@ -1004,6 +1020,7 @@ footer {
         margin: 10px 0;
         border: 0;
         li {
+          cursor: pointer;
             display: inline-block;
             margin: 0;
             @include transition(all ease 300ms);
@@ -1372,74 +1389,94 @@ h4.title-movies {
         padding: 0 5px;
     }
 }
-.tab-insidemovies {
-    .nav > li > a {
-        padding: 2px 20px;
-    }
-    .nav-tabs {
-        border: 0;
-        margin-bottom: 30px;
-        li {
-            a {
-                color: #053146;
-                border: 0;
-                border-bottom: 5px solid transparent;
-                background: transparent;
-                font-weight: 600;
-                font-size: 26px;
-                text-transform: uppercase;
-                @include transition(all ease 300ms);
-                &:focus,
-                &:hover {
-                    border: 0;
-                    background: transparent;
-                    border-bottom: 5px solid $brand-danger;
-                    color: $brand-danger;
-                }
-            }
-            &.active {
-                a {
-                    border-color: $brand-danger;
-                    color: $brand-danger;
-                }
-            }
-        }
-    }
-    .flex-slider {
-        .flexslider {
-            background: transparent;
-            border-color: transparent;
-            margin-bottom: 30px;
-        }
-        ol.flex-control-nav.flex-control-paging {
-            display: none;
-        }
-        .flex-direction-nav {
-            .flex-next {
-                right: -100px;
-                text-align: right;
-            }
-            .flex-prev {
-                left: -100px;
-                text-align: left;
-            }
-            a {
-                opacity: 1;
-                width: 50px;
-                height: 65px;
-                &.flex-next:before {
-                    content: url("../img/moviedetail/next.png");
-                }
-                &.flex-prev:before {
-                    content: url("../img/moviedetail/prev.png");
-                }
-            }
-            .flex-control-nav {
-                display: none;
-            }
-        }
-    }
-}
+// .tab-insidemovies {
+//     .nav > li > a {
+//         padding: 2px 20px;
+//     }
+//     .nav-tabs {
+//         border: 0;
+//         margin-bottom: 30px;
+//         li {
+//             a {
+//                 color: #053146;
+//                 border: 0;
+//                 border-bottom: 5px solid transparent;
+//                 background: transparent;
+//                 font-weight: 600;
+//                 font-size: 26px;
+//                 text-transform: uppercase;
+//                 @include transition(all ease 300ms);
+//                 &:focus,
+//                 &:hover {
+//                     border: 0;
+//                     background: transparent;
+//                     border-bottom: 5px solid $brand-danger;
+//                     color: $brand-danger;
+//                 }
+//             }
+//             &.active {
+//                 a {
+//                     border-color: $brand-danger;
+//                     color: $brand-danger;
+//                 }
+//             }
+//         }
+//     }
+// }
+.mislider{
+  .title {
+    text-align: center;
+      h4 {
+          color: #053146;
+          font-weight: 600;
+          font-size: 26px;
+          display: inline-block;
+          padding: 2px 10px;
+          margin: 5px 16px 10px;
+          &:hover {
+            color: #f13748 !important;
+            cursor: pointer;
+            border-bottom: 4px solid #f13748;
+          }
+      }
+  }
+  .flex-slider {
+      .flexslider {
+          background: transparent;
+          border-color: transparent;
+          margin-bottom: 30px;
+      }
+      ol.flex-control-nav.flex-control-paging {
+          display: none;
+      }
+      .flex-direction-nav {
+          .flex-next {
+              right: -100px;
+              text-align: right;
+          }
+          .flex-prev {
+              left: -100px;
+              text-align: left;
+          }
+          a {
+              opacity: 1;
+              width: 50px;
+              height: 65px;
+              &.flex-next:before {
+                  content: url("../img/moviedetail/next.png");
+              }
+              &.flex-prev:before {
+                  content: url("../img/moviedetail/prev.png");
+              }
+          }
+          .flex-control-nav {
+              display: none;
+          }
+      }
+  }
+
+  }
+
 .bg-award {
     background: url('../img/moviedetail/bg-red.png')no-repeat;
     background-size: cover;
@@ -2238,6 +2275,11 @@ h4.title-movies {
     color: #f13748 !important;
     cursor: pointer;
     border-bottom: 4px solid #f13748;
+}
+.mactives {
+    color: #088fd5 !important;
+    cursor: pointer;
+    border-bottom: 4px solid #088fd5;
 }
 //contact
 .section8 {

@@ -23,6 +23,44 @@
    </div>
    <div class="movie-category bg-grey nav-tab-middle">
       <div class="container">
+        <div class="title">
+          <h4 class="display-inline uppercase {{styleActives}}" ng-click="doActives(1);">
+          Released
+          </h4>
+          <h4 class="display-inline uppercase {{styleNoActives}}" ng-click="doActives(2);">
+          Upcoming
+        </h4>
+        </div>
+               <div class="flex-slider">
+                  <flex-slider flex-slide="data in movie track by $index" ng-if="styleActives == 'mactives'" animation="slide" animation-loop="false" item-width="218" item-margin="10">
+                     <li ui-sref="moviesinside({id:data.isreleased})">
+                        <div class="movie-box text-center">
+                           <img ng-src="{{data.img}}" alt="" class="img-responsive">
+                           <div class="movie-date">
+                              <span>Release Date:</span>
+                              <p class="color-red">{{data.date}}</p>
+                           </div>
+                        </div>
+                     </li>
+                  </flex-slider>
+               </div>
+               <div class="flex-slider">
+                  <flex-slider flex-slide="data in movie track by $index" ng-if="styleNoActives == 'mactives'" animation="slide" animation-loop="false" item-width="218" item-margin="10">
+                     <li>
+                        <div class="movie-box text-center">
+                           <img ng-src="{{data.img}}" alt="" class="img-responsive">
+                           <div class="movie-date">
+                              <span>Release Date:</span>
+                              <p class="color-red">{{data.date}}</p>
+                           </div>
+                        </div>
+                     </li>
+                  </flex-slider>
+            </div>
+       </div>
+   </div>
+   <!-- <div class="movie-category bg-grey nav-tab-middle">
+      <div class="container">
          <uib-tabset active="active">
             <uib-tab index="0" heading="RELEASED" ng-if="movieData && movieData.isreleased && movieData.isreleased.length>0">
                <div class="flex-slider">
@@ -56,7 +94,7 @@
             </uib-tab>
          </uib-tabset>
       </div>
-   </div>
+   </div> -->
    <div class="row">
       <div class="col-md-6" ng-repeat="data in wedding track by $index">
          <img ng-src="{{data.img}}" class="img-responsive">
@@ -143,7 +181,7 @@
                      <span>{{movieData.testimonial[0].name}}</span>
                   </div>
                   <div class="img-holder">
-                     <img src="{{movieData.testimonial[0].image | uploadpath}}" alt="" class="img-reponsive">
+                     <img ng-src="{{movieData.testimonial[0].image | uploadpath}}" alt="" class="img-reponsive">
                   </div>
                   <div class="img-review color-white">
                      <h4>"{{movieData.testimonial[0].quote}}"</h4>

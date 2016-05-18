@@ -85,8 +85,49 @@
                 </div>
               </div>
             </div>
-            <div class="tab-insidemovies nav-tab-middle">
-              <uib-tabset active="active">
+            <div class="tab-insidemovies nav-tab-middle mislider">
+              <div class="title">
+                  <h4 class="display-inline uppercase {{styleActives}}" ng-click="doActives(1);">
+                    Image Gallery
+                  </h4>
+                  <h4 class="display-inline uppercase {{styleNoActives}}" ng-click="doActives(2);">
+                    Wallpapers
+                  </h4>
+                </div>
+                <div class="flex-slider">
+                  <flex-slider flex-slide="slide in paper track by $index" ng-if="styleActives == 'actives'" animation="slide" animation-loop="false" as-nav-for="#sliders" slideshow="false">
+                    <li class="">
+                      <div class="wallpaper">
+                        <div class="row mb30" ng-repeat="row in slide">
+                          <div class="col-xs-4 plr10" ng-repeat="images in row">
+                            <div class="image-holder text-center">
+                              <img ng-src="{{images.img}}" class="doneLoading" alt="">
+                            </div>
+                          </div>
+                          <div class="clearfix"></div>
+                        </div>
+                      </div>
+                    </li>
+                  </flex-slider>
+                </div>
+                <div class="flex-slider">
+                  <flex-slider flex-slide="slide in paper track by $index" ng-if="styleNoActives == 'actives'" animation="slide" animation-loop="false" as-nav-for="#sliders" slideshow="false">
+                    <li class="">
+                      <div class="wallpaper">
+                        <div class="row mb30" ng-repeat="row in slide">
+                          <div class="col-xs-4 plr10" ng-repeat="images in row">
+                            <div class="image-holder text-center">
+                              <img ng-src="{{images.img}}" class="doneLoading" alt="">
+                            </div>
+                          </div>
+                          <div class="clearfix"></div>
+                        </div>
+                      </div>
+                    </li>
+                  </flex-slider>
+                </div>
+            </div>
+              <!-- <uib-tabset active="active">
                 <uib-tab index="0" heading="IMAGE GALLERY">
                   <div class="flex-slider">
                     <flex-slider flex-slide="slide in wallpapers track by $index" animation="slide" animation-loop="false" as-nav-for="#sliders" slideshow="false">
@@ -123,8 +164,7 @@
                     </flex-slider>
                   </div>
                 </uib-tab>
-              </uib-tabset>
-            </div>
+              </uib-tabset> -->
           </div>
         </div>
       </div>
