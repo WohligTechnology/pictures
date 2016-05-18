@@ -409,6 +409,18 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             }
             $scope.getin.category = 2;
             console.log($scope.getin);
+            if ($scope.getin.date) {
+                var formatdate = $scope.getin.date.getFullYear();
+                formatdate += "/" + $scope.getin.date.getMonth();
+                formatdate += "/" + $scope.getin.date.getDate();
+                $scope.getin.date = formatdate;
+            }
+            if ($scope.getin.enddate) {
+                var formatdate = $scope.getin.enddate.getFullYear();
+                formatdate += "/" + $scope.getin.enddate.getMonth();
+                formatdate += "/" + $scope.getin.enddate.getDate();
+                $scope.getin.enddate = formatdate;
+            }
             NavigationService.getInTouch($scope.getin, function(data) {
                 console.log(data);
                 if (data.value != false) {
