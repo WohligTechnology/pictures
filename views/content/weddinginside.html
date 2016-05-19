@@ -1,47 +1,45 @@
 <section>
-  <div class="banner banner-movies ab">
-    <img src="img/weddings/banner.jpg" class="img-responsive" style="width:100%;">
-    <!-- <div class="banner-title text-center">
+   <div class="banner banner-movies ab">
+      <img ng-src="{{weddingBanner | uploadpath}}" class="img-responsive" style="width:100%;">
+      <!-- <div class="banner-title text-center">
       <h4>
         360 Weddings
       </h4>
     </div> -->
-  </div>
+   </div>
 </section>
-<section>
-  <div class="container">
-    <div class="row mt180">
-      <div class="col-md-offset-1 col-md-10">
-        <div class="row pd30" ng-repeat="data in weddingdetail">
-          <div class="col-sm-6">
-            <div class="wedding-imgbox">
-              <img ng-src="{{data.img}}" class="img-responsive" alt="">
+<section infinite-scroll='addMoreItems();' infinite-scroll-distance="0" infinite-scroll-disabled="shouldscroll">
+   <div class="container">
+      <div class="row mt180">
+         <div class="col-md-offset-1 col-md-10">
+            <div class="row pd30" ng-repeat="data in weddingSubtype">
+               <div class="col-sm-6">
+                  <div class="wedding-imgbox">
+                     <img ng-src="{{data.image | uploadpath}}" class="img-responsive" alt="">
+                  </div>
+               </div>
+               <div class="col-sm-6">
+                  <div class="wedding-detail mt45">
+                     <div class="w-title">
+                        <h4 class="uppercase color-red bold">{{data.name}}</h4>
+                     </div>
+                     <div class="w-detail mt15 mb15">
+                        <p>
+                           {{data.content}}
+                        </p>
+                     </div>
+                     <div class="w-button">
+                        <button class="btn btn-danger">Know More</button>
+                     </div>
+                  </div>
+               </div>
             </div>
-          </div>
-          <div class="col-sm-6">
-            <div class="wedding-detail mt45">
-              <div class="w-title">
-                <h4 class="uppercase color-red bold">
-              {{data.name}}
-                </h4>
-              </div>
-              <div class="w-detail mt15 mb15">
-                <p>
-                  {{data.detail}}
-                </p>
-              </div>
-              <div class="w-button">
-                <button class="btn btn-danger">Know More</button>
-              </div>
-            </div>
-          </div>
-        </div>
+         </div>
       </div>
-    </div>
-    <div class="btn-all text-center">
-      <button class="btn btn-outline">
-        View all
-      </button>
-    </div>
-  </div>
+      <!-- <div class="btn-all text-center">
+         <button class="btn btn-outline">
+            View all
+         </button>
+      </div> -->
+   </div>
 </section>

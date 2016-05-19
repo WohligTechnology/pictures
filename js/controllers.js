@@ -1,4 +1,4 @@
-angular.module('phonecatControllers', ['templateservicemod', 'navigationservice', 'ui.bootstrap', 'ngAnimate', 'ngSanitize', 'angular-flexslider'])
+angular.module('phonecatControllers', ['templateservicemod', 'navigationservice', 'ui.bootstrap', 'ngAnimate', 'ngSanitize', 'angular-flexslider', 'infinite-scroll', 'angular-loading-bar'])
 
 .controller('HomeCtrl', function($scope, TemplateService, NavigationService, $timeout) {
     //Used to name the .html file
@@ -667,70 +667,115 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     };
 })
 
-.controller('WeddingInsideCtrl', function($scope, TemplateService, NavigationService, $timeout) {
-        //Used to name the .html file
-        $scope.template = TemplateService.changecontent("weddinginside");
-        $scope.menutitle = NavigationService.makeactive("Wedding");
-        TemplateService.title = $scope.menutitle;
-        $scope.navigation = NavigationService.getnav();
-        $scope.weddingdetail = [{
-            img: "img/weddings/w1.png",
-            name: "Choksi-Talera Wedding Setup",
-            detail: "The beautiful #choksitalerawedding took place at Mohini Mahal on 16th April, 2014. The entire #event was organized and managed by GS Worldwide Entertainment. #gswedding "
-        }, {
-            img: "img/weddings/w1.png",
-            name: "Jhosi Wedding",
-            detail: "The beautiful #choksitalerawedding took place at Mohini Mahal on 16th April, 2014. The entire #event was organized and managed by GS Worldwide Entertainment. #gswedding"
-        }];
-    })
-    .controller('ClientsCtrl', function($scope, TemplateService, NavigationService, $timeout) {
-        //Used to name the .html file
-        $scope.template = TemplateService.changecontent("clients");
-        $scope.menutitle = NavigationService.makeactive("Clients");
-        TemplateService.title = $scope.menutitle;
-        $scope.navigation = NavigationService.getnav();
-        $scope.clientimage = [{
-            img: "img/client/1.png",
-            alt: ""
-        }, {
-            img: "img/client/2.png",
-            alt: ""
-        }, {
-            img: "img/client/3.png",
-            alt: ""
-        }, {
-            img: "img/client/4.png",
-            alt: ""
-        }, {
-            img: "img/client/5.png",
-            alt: ""
-        }, {
-            img: "img/client/6.png",
-            alt: ""
-        }, {
-            img: "img/client/7.png",
-            alt: ""
-        }, {
-            img: "img/client/8.png",
-            alt: ""
-        }];
+.controller('WeddingInsideCtrl', function($scope, TemplateService, NavigationService, $timeout, $stateParams) {
+    //Used to name the .html file
+    $scope.template = TemplateService.changecontent("weddinginside");
+    $scope.menutitle = NavigationService.makeactive("Wedding");
+    TemplateService.title = $scope.menutitle;
+    $scope.navigation = NavigationService.getnav();
 
-        $scope.strip = [{
-                img: "img/client/jpp1.jpg",
-                name: "Jaipur Pink Panthers"
-            }, {
-                img: "img/client/jpp2.jpg",
-                name: "Kings XI Panjab"
-            }, {
-                img: "img/client/jpp3.jpg",
-                name: "CHENNAYIN F.C."
-            }, {
-                img: "img/client/jpp4.jpg",
-                name: "KOTAK"
-            },
+    $scope.pagedata = {};
+    $scope.pagedata.pageno = 0;
+    $scope.pagedata.id = $stateParams.id;
+    var lastpage = 1;
 
-        ];
+    $scope.weddingSubtype = [];
+
+    $scope.getWeddingSubtype = function() {
+        NavigationService.getWeddingInside($scope.pagedata, function(data) {
+            lastpage = data.lastpage;
+            if (data.queryresult.length > 0) {
+                _.each(data.queryresult, function(n) {
+                    $scope.weddingSubtype.push(n);
+                })
+                $scope.shouldscroll = false;
+            } else {
+                $scope.shouldscroll = true;
+            }
+            console.log($scope.weddingSubtype);
+        })
+    }
+
+    $scope.addMoreItems = function() {
+        // console.log("addMoreItems");
+        if (lastpage > $scope.pagedata.pageno) {
+            $scope.pagedata.pageno++;
+            $scope.shouldscroll = true;
+            $scope.getWeddingSubtype();
+        } else {
+            $scope.shouldscroll = true;
+        }
+    }
+
+    $scope.addMoreItems();
+
+    NavigationService.getWeddingInsideBanner($stateParams.id, function(data) {
+        console.log(data);
+        if (data.value != false) {
+            if (data.data && data.data.banner)
+                $scope.weddingBanner = data.data.banner;
+        }
     })
+
+    $scope.weddingdetail = [{
+        img: "img/weddings/w1.png",
+        name: "Choksi-Talera Wedding Setup",
+        detail: "The beautiful #choksitalerawedding took place at Mohini Mahal on 16th April, 2014. The entire #event was organized and managed by GS Worldwide Entertainment. #gswedding "
+    }, {
+        img: "img/weddings/w1.png",
+        name: "Jhosi Wedding",
+        detail: "The beautiful #choksitalerawedding took place at Mohini Mahal on 16th April, 2014. The entire #event was organized and managed by GS Worldwide Entertainment. #gswedding"
+    }];
+})
+
+.controller('ClientsCtrl', function($scope, TemplateService, NavigationService, $timeout) {
+    //Used to name the .html file
+    $scope.template = TemplateService.changecontent("clients");
+    $scope.menutitle = NavigationService.makeactive("Clients");
+    TemplateService.title = $scope.menutitle;
+    $scope.navigation = NavigationService.getnav();
+    $scope.clientimage = [{
+        img: "img/client/1.png",
+        alt: ""
+    }, {
+        img: "img/client/2.png",
+        alt: ""
+    }, {
+        img: "img/client/3.png",
+        alt: ""
+    }, {
+        img: "img/client/4.png",
+        alt: ""
+    }, {
+        img: "img/client/5.png",
+        alt: ""
+    }, {
+        img: "img/client/6.png",
+        alt: ""
+    }, {
+        img: "img/client/7.png",
+        alt: ""
+    }, {
+        img: "img/client/8.png",
+        alt: ""
+    }];
+
+    $scope.strip = [{
+            img: "img/client/jpp1.jpg",
+            name: "Jaipur Pink Panthers"
+        }, {
+            img: "img/client/jpp2.jpg",
+            name: "Kings XI Panjab"
+        }, {
+            img: "img/client/jpp3.jpg",
+            name: "CHENNAYIN F.C."
+        }, {
+            img: "img/client/jpp4.jpg",
+            name: "KOTAK"
+        },
+
+    ];
+})
 
 .controller('AsfcCtrl', function($scope, TemplateService, NavigationService, $timeout) {
     //Used to name the .html file

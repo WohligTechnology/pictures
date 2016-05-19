@@ -6,8 +6,10 @@ var firstapp = angular.module('firstapp', [
     'navigationservice'
 ]);
 
-firstapp.config(function($stateProvider, $urlRouterProvider, $httpProvider, $locationProvider) {
+firstapp.config(function($stateProvider, $urlRouterProvider, $httpProvider, $locationProvider,cfpLoadingBarProvider) {
     // for http request with session
+    cfpLoadingBarProvider.includeSpinner = false;
+    cfpLoadingBarProvider.includeBar = true;
     $httpProvider.defaults.withCredentials = true;
     $stateProvider
         .state('home', {
@@ -36,7 +38,7 @@ firstapp.config(function($stateProvider, $urlRouterProvider, $httpProvider, $loc
             controller: 'WeddingCtrl'
         })
         .state('weddinginside', {
-            url: "/weddinginside",
+            url: "/weddinginside/:id",
             templateUrl: "views/template.html",
             controller: 'WeddingInsideCtrl'
         })

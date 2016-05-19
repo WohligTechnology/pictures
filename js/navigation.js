@@ -48,6 +48,12 @@ var navigationservice = angular.module('navigationservice', [])
         getWeddingData: function(callback) {
             $http.get(apiUrl + 'getWeddingDetails').success(callback);
         },
+        getWeddingInside: function(obj, callback) {
+            $http.get(apiUrl + 'getWeddingInside?id=' + obj.id + "&pageno=" + obj.pageno + "&maxrow=2").success(callback);
+        },
+        getWeddingInsideBanner: function(movieid, callback) {
+            $http.get(apiUrl + 'getWeddingInsideBanner?id=' + movieid).success(callback);
+        },
         makeactive: function(menuname) {
             for (var i = 0; i < navigation.length; i++) {
                 if (navigation[i].name == menuname) {
