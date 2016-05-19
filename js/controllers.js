@@ -1202,12 +1202,12 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
         $scope.doActive = function(param) {
             if (param === 1) {
-                $scope.styleActive = "active";
+                $scope.styleActive = "vactive";
                 $scope.styleNoActive = "";
                 $scope.vid = $scope.video;
             } else {
                 $scope.styleActive = "";
-                $scope.styleNoActive = "active";
+                $scope.styleNoActive = "vactive";
                 $scope.vid = $scope.videos;
             }
         }
