@@ -5,7 +5,7 @@ if (isproduction) {
     adminURL = "http://localhost/demo/index.php";
 }
 
-adminURL = "http://192.168.1.109/gsebackend/";
+adminURL = "http://192.168.1.108/gsebackend/";
 var apiUrl = adminURL + "index.php/json/";
 var imgpath = adminURL + "uploads/";
 
@@ -41,6 +41,9 @@ var navigationservice = angular.module('navigationservice', [])
         },
         getMoviesData: function(callback) {
             $http.get(apiUrl + 'getMovieDetails').success(callback);
+        },
+        getMovieInside: function(movieid, callback) {
+            $http.get(apiUrl + 'getMovieInside?id=' + movieid).success(callback);
         },
         getWeddingData: function(callback) {
             $http.get(apiUrl + 'getWeddingDetails').success(callback);

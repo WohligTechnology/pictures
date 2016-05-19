@@ -23,41 +23,37 @@
    </div>
    <div class="movie-category bg-grey nav-tab-middle">
       <div class="container">
-        <div class="title">
-          <h4 class="display-inline uppercase {{styleActives}}" ng-click="doActives(1);">
-          Released
-          </h4>
-          <h4 class="display-inline uppercase {{styleNoActives}}" ng-click="doActives(2);">
-          Upcoming
-        </h4>
-        </div>
-               <div class="flex-slider">
-                  <flex-slider flex-slide="data in movie track by $index" ng-if="styleActives == 'mactives'" animation="slide" animation-loop="false" item-width="218" item-margin="10">
-                     <li ui-sref="moviesinside({id:data.isreleased})">
-                        <div class="movie-box text-center">
-                           <img ng-src="{{data.img}}" alt="" class="img-responsive">
-                           <div class="movie-date">
-                              <span>Release Date:</span>
-                              <p class="color-red">{{data.date}}</p>
-                           </div>
-                        </div>
-                     </li>
-                  </flex-slider>
-               </div>
-               <div class="flex-slider">
-                  <flex-slider flex-slide="data in movie track by $index" ng-if="styleNoActives == 'mactives'" animation="slide" animation-loop="false" item-width="218" item-margin="10">
-                     <li>
-                        <div class="movie-box text-center">
-                           <img ng-src="{{data.img}}" alt="" class="img-responsive">
-                           <div class="movie-date">
-                              <span>Release Date:</span>
-                              <p class="color-red">{{data.date}}</p>
-                           </div>
-                        </div>
-                     </li>
-                  </flex-slider>
-            </div>
-       </div>
+         <div class="title">
+            <h4 class="display-inline uppercase {{styleActives}}" ng-click="doActives(1);" ng-if="movieData && movieData.isreleased && movieData.isreleased.length>0">Released</h4>
+            <h4 class="display-inline uppercase {{styleNoActives}}" ng-click="doActives(2);" ng-if="movieData && movieData.isupcoming && movieData.isupcoming.length>0">Upcoming</h4>
+         </div>
+         <div class="flex-slider" ng-if="movieData && movieData.isreleased && movieData.isreleased.length>0">
+            <flex-slider flex-slide="data in movieData.isreleased track by $index" ng-if="styleActives == 'mactives'" animation="slide" animation-loop="false" item-width="218" item-margin="10">
+               <li ui-sref="moviesinside({id:data.id})">
+                  <div class="movie-box text-center">
+                     <img ng-src="{{data.image | uploadpath}}" alt="" class="img-responsive">
+                     <div class="movie-date">
+                        <span>Release Date:</span>
+                        <p class="color-red">{{data.releasedate | date:'mediumDate'}}</p>
+                     </div>
+                  </div>
+               </li>
+            </flex-slider>
+         </div>
+         <div class="flex-slider" ng-if="movieData && movieData.isupcoming && movieData.isupcoming.length>0">
+            <flex-slider flex-slide="data in movieData.isupcoming track by $index" ng-if="styleNoActives == 'mactives'" animation="slide" animation-loop="false" item-width="218" item-margin="10">
+               <li ui-sref="moviesinside({id:data.id})">
+                  <div class="movie-box text-center">
+                     <img ng-src="{{data.image | uploadpath}}" alt="" class="img-responsive">
+                     <div class="movie-date">
+                        <span>Release Date:</span>
+                        <p class="color-red">{{data.releasedate | date:'mediumDate'}}</p>
+                     </div>
+                  </div>
+               </li>
+            </flex-slider>
+         </div>
+      </div>
    </div>
    <!-- <div class="movie-category bg-grey nav-tab-middle">
       <div class="container">

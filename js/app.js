@@ -150,6 +150,48 @@ firstapp.directive('fancyboxBox', function($document) {
     };
 });
 
+firstapp.directive('fancybox', function($document) {
+    return {
+        restrict: 'EA',
+        replace: false,
+        link: function(scope, element, attr) {
+            // console.log(attr);
+            var $element = $(element);
+            var disc = attr.title;
+            var target;
+            if (attr.rel) {
+                target = $(".fancybox-button");
+            } else {
+                target = element;
+            }
+
+            target.fancybox({
+                // beforeShow: function() {
+                //   if (this.title) {
+                //   }
+                // },
+                maxWidth: 800,
+                maxHeight: 600,
+                fitToView: false,
+                width: '70%',
+                height: '70%',
+                autoSize: false,
+                closeClick: false,
+                openEffect: 'none',
+                closeEffect: 'none',
+                // closeBtn: true,
+                helpers: {
+                    media: {},
+                    title: {
+                        type: 'inside'
+                    },
+                    buttons: {}
+                }
+            });
+        }
+    };
+});
+
 firstapp.filter('uploadpath', function() {
     return function(input, width, height, style) {
         var other = "";
@@ -164,6 +206,24 @@ firstapp.filter('uploadpath', function() {
         }
         if (input) {
             return imgpath + input + other;
+        }
+    };
+});
+firstapp.filter('youtubethumb', function() {
+    return function(input, onlyid) {
+        if (input) {
+            var videoid = input.match(/(?:https?:\/{2})?(?:w{3}\.)?youtu(?:be)?\.(?:com|be)(?:\/watch\?v=|\/)([^\s&]+)/);
+            if (videoid != null) {
+                if (onlyid == false) {
+                    return "http://i.ytimg.com/vi/" + videoid[1] + "/maxresdefault.jpg";
+                } else if (onlyid == true) {
+                    return videoid[1];
+                }
+            } else {
+                return input;
+            }
+        } else {
+            return input;
         }
     };
 });

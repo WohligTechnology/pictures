@@ -1,87 +1,87 @@
 angular.module('phonecatControllers', ['templateservicemod', 'navigationservice', 'ui.bootstrap', 'ngAnimate', 'ngSanitize', 'angular-flexslider'])
 
 .controller('HomeCtrl', function($scope, TemplateService, NavigationService, $timeout) {
-        //Used to name the .html file
-        $scope.template = TemplateService.changecontent("home");
-        $scope.menutitle = NavigationService.makeactive("Home");
-        TemplateService.title = $scope.menutitle;
-        $scope.navigation = NavigationService.getnav();
-        $scope.subscribe = {};
-        $scope.subscribe.email = "";
-        //
-        // $scope.checkemail=function(email){
-        //
-        // }
-
-        $scope.checkEmail = false;
-        $scope.subscribeEmail = false;
-        $scope.subscribe = function(email) {
-            // if(!email) {
-            //     alert("please enter your email");
-            // }
-            // console.log('Email subscribe: ', email);
-            NavigationService.subscribe(email, function(data) {
-
-                // console.log(data);
-                if (!data.value) {
-                    if ($scope.subscribe.email) {
-                        $scope.checkEmail = true;
-                        $scope.subscribeEmail = false;
-                    }
-                } else {
-                    $scope.subscribeEmail = true;
-                    $scope.checkEmail = false;
-                }
-                //console.log(email);
-                $scope.subscribe.email = "";
-            });
-
-            // $scope.subscribeEmail = data;
-        };
-        $scope.clientspeak = {
-            category: "Client Speak",
-            text: "Extra Efficient",
-            name: "Amitabh Bachchan",
-            img: "img/home/amitabh.jpg"
-        };
-        $scope.diaries = [{
-            title: "WEDDINGS",
-            img: "img/home/diaries/diary1.png",
-            date: "12 January 2016",
-            desc: "Lorem Ipsum is simply dummy text of the printing industry"
-        }, {
-            title: "SPORTS",
-            img: "img/home/diaries/diary2.png",
-            date: "12 January 2016",
-            desc: "Lorem Ipsum is simply dummy text of the printing industry"
-        }, {
-            title: "EVENTS",
-            img: "img/home/diaries/diary3.png",
-            date: "12 January 2016",
-            desc: "Lorem Ipsum is simply dummy text of the printing industry"
-        }, {
-            title: "WEDDINGS",
-            img: "img/home/diaries/diary2.png",
-            date: "12 January 2016",
-            desc: "Lorem Ipsum is simply dummy text of the printing industry"
-        }, {
-            title: "SPORTS",
-            img: "img/home/diaries/diary3.png",
-            date: "12 January 2016",
-            desc: "Lorem Ipsum is simply dummy text of the printing industry"
-        }, {
-            title: "EVENTS",
-            img: "img/home/diaries/diary2.png",
-            date: "12 January 2016",
-            desc: "Lorem Ipsum is simply dummy text of the printing industry"
-        }, {
-            title: "WEDDINGS",
-            img: "img/home/diaries/diary3.png",
-            date: "12 January 2016",
-            desc: "Lorem Ipsum is simply dummy text of the printing industry"
-        }];
-    })
+    //Used to name the .html file
+    $scope.template = TemplateService.changecontent("home");
+    $scope.menutitle = NavigationService.makeactive("Home");
+    TemplateService.title = $scope.menutitle;
+    $scope.navigation = NavigationService.getnav();
+    $scope.subscribe = {};
+    $scope.subscribe.email = "";
     //
+    // $scope.checkemail=function(email){
+    //
+    // }
+
+    $scope.checkEmail = false;
+    $scope.subscribeEmail = false;
+    $scope.subscribe = function(email) {
+        // if(!email) {
+        //     alert("please enter your email");
+        // }
+        // console.log('Email subscribe: ', email);
+        NavigationService.subscribe(email, function(data) {
+
+            // console.log(data);
+            if (!data.value) {
+                if ($scope.subscribe.email) {
+                    $scope.checkEmail = true;
+                    $scope.subscribeEmail = false;
+                }
+            } else {
+                $scope.subscribeEmail = true;
+                $scope.checkEmail = false;
+            }
+            //console.log(email);
+            $scope.subscribe.email = "";
+        });
+
+        // $scope.subscribeEmail = data;
+    };
+    $scope.clientspeak = {
+        category: "Client Speak",
+        text: "Extra Efficient",
+        name: "Amitabh Bachchan",
+        img: "img/home/amitabh.jpg"
+    };
+    $scope.diaries = [{
+        title: "WEDDINGS",
+        img: "img/home/diaries/diary1.png",
+        date: "12 January 2016",
+        desc: "Lorem Ipsum is simply dummy text of the printing industry"
+    }, {
+        title: "SPORTS",
+        img: "img/home/diaries/diary2.png",
+        date: "12 January 2016",
+        desc: "Lorem Ipsum is simply dummy text of the printing industry"
+    }, {
+        title: "EVENTS",
+        img: "img/home/diaries/diary3.png",
+        date: "12 January 2016",
+        desc: "Lorem Ipsum is simply dummy text of the printing industry"
+    }, {
+        title: "WEDDINGS",
+        img: "img/home/diaries/diary2.png",
+        date: "12 January 2016",
+        desc: "Lorem Ipsum is simply dummy text of the printing industry"
+    }, {
+        title: "SPORTS",
+        img: "img/home/diaries/diary3.png",
+        date: "12 January 2016",
+        desc: "Lorem Ipsum is simply dummy text of the printing industry"
+    }, {
+        title: "EVENTS",
+        img: "img/home/diaries/diary2.png",
+        date: "12 January 2016",
+        desc: "Lorem Ipsum is simply dummy text of the printing industry"
+    }, {
+        title: "WEDDINGS",
+        img: "img/home/diaries/diary3.png",
+        date: "12 January 2016",
+        desc: "Lorem Ipsum is simply dummy text of the printing industry"
+    }];
+})
+
 
 .controller('MoviesCtrl', function($scope, TemplateService, NavigationService, $timeout) {
     //Used to name the .html file
@@ -264,200 +264,222 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     $scope.doActives(1);
 })
 
-.controller('MoviesInsideCtrl', function($scope, TemplateService, NavigationService, $timeout) {
-        //Used to name the .html file
-        $scope.template = TemplateService.changecontent("moviesinside");
-        $scope.menutitle = NavigationService.makeactive("Movies");
-        TemplateService.title = $scope.menutitle;
-        $scope.navigation = NavigationService.getnav();
-        $scope.clientspeak = {
-            category: "Client Speak",
-            text: "Extra Efficient",
-            name: "Amitabh Bachchan",
-            img: "img/home/amitabh.jpg"
-        };
-        $scope.moviesdetail = {
-            detail: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with including versions of Lorem Ipsum.",
-            producer: "Bunty Walia, Juspreet Singh Walia and Vashu Bhagnani",
-            director: "Sohail Khan",
-            cast: "Salman Khan, Kajol, Arbaaz Khan, Dharmendra",
-            music: "Jatin-Lalit, Himesh Reshammiya and Sajid-Wajid"
-        };
+.controller('MoviesInsideCtrl', function($scope, TemplateService, NavigationService, $timeout, $stateParams) {
+    //Used to name the .html file
+    $scope.template = TemplateService.changecontent("moviesinside");
+    $scope.menutitle = NavigationService.makeactive("Movies");
+    TemplateService.title = $scope.menutitle;
+    $scope.navigation = NavigationService.getnav();
 
-        $scope.moviereleased = [{
-            img: "img/movies/released/released1.jpg",
-            date: "12 January 2016",
-            desc: "Lorem Ipsum is simply dummy text of the printing industry"
-        }, {
-            img: "img/movies/released/released2.jpg",
-            date: "12 January 2016",
-            desc: "Lorem Ipsum is simply dummy text of the printing industry"
-        }, {
-            img: "img/movies/released/released3.jpg",
-            date: "12 January 2016",
-            desc: "Lorem Ipsum is simply dummy text of the printing industry"
-        }, {
-            img: "img/movies/released/released4.jpg",
-            date: "12 January 2016",
-            desc: "Lorem Ipsum is simply dummy text of the printing industry"
-        }, {
-            img: "img/movies/released/released5.jpg",
-            date: "12 January 2016",
-            desc: "Lorem Ipsum is simply dummy text of the printing industry"
-        }];
-        $scope.wallpapers = [{
-              img: "img/moviedetail/wallpapers/wallpaper1.jpg"
-          }, {
-              img: "img/moviedetail/wallpapers/wallpaper2.jpg"
-          }, {
-              img: "img/moviedetail/wallpapers/wallpaper3.jpg"
-          }, {
-              img: "img/moviedetail/wallpapers/wallpaper4.jpg"
-          }, {
-              img: "img/moviedetail/wallpapers/wallpaper5.jpg"
-          }, {
-              img: "img/moviedetail/wallpapers/wallpaper6.jpg"
-          },{
-              img: "img/moviedetail/wallpapers/wallpaper1.jpg"
-          }, {
-              img: "img/moviedetail/wallpapers/wallpaper2.jpg"
-          }, {
-              img: "img/moviedetail/wallpapers/wallpaper3.jpg"
-          }, {
-              img: "img/moviedetail/wallpapers/wallpaper4.jpg"
-          }, {
-              img: "img/moviedetail/wallpapers/wallpaper5.jpg"
-          }, {
-              img: "img/moviedetail/wallpapers/wallpaper6.jpg"
-          }];
-          $scope.wallpapers = _.chunk($scope.wallpapers, 6);
-          for (var i = 0; i < $scope.wallpapers.length; i++) {
-              $scope.wallpapers[i] = _.chunk($scope.wallpapers[i], 3);
-          }
-          $scope.wallpaper = [{
-              img: "img/moviedetail/wallpapers/wallpaper1.jpg"
-          }, {
-              img: "img/moviedetail/wallpapers/wallpaper1.jpg"
-          }, {
-              img: "img/moviedetail/wallpapers/wallpaper2.jpg"
-          }, {
-              img: "img/moviedetail/wallpapers/wallpaper2.jpg"
-          }, {
-              img: "img/moviedetail/wallpapers/wallpaper3.jpg"
-          }, {
-              img: "img/moviedetail/wallpapers/wallpaper3.jpg"
-          }, {
-              img: "img/moviedetail/wallpapers/wallpaper4.jpg"
-          }, {
-              img: "img/moviedetail/wallpapers/wallpaper4.jpg"
-          }, {
-              img: "img/moviedetail/wallpapers/wallpaper5.jpg"
-          }, {
-              img: "img/moviedetail/wallpapers/wallpaper5.jpg"
-          }, {
-              img: "img/moviedetail/wallpapers/wallpaper6.jpg"
-          }, {
-              img: "img/moviedetail/wallpapers/wallpaper6.jpg"
-          }];
-          $scope.wallpaper = _.chunk($scope.wallpaper, 6);
-          for (var i = 0; i < $scope.wallpaper.length; i++) {
-              $scope.wallpaper[i] = _.chunk($scope.wallpaper[i], 3);
-          }
-        $scope.doActives = function(param) {
-            if (param === 1) {
-                $scope.styleActives = "actives";
-                $scope.styleNoActives = "";
-                $scope.paper = $scope.wallpaper;
-            } else {
-                $scope.styleActives = "";
-                $scope.styleNoActives = "actives";
-                $scope.paper = $scope.wallpapers;
+    NavigationService.getMovieInside($stateParams.id, function(data) {
+        console.log(data);
+        if (data.value != false) {
+            $scope.movieInside = data.data;
+            if ($scope.movieInside && $scope.movieInside.imagegallery && $scope.movieInside.imagegallery.length) {
+                $scope.movieInside.imagegallery = _.chunk($scope.movieInside.imagegallery, 6);
+                for (var i = 0; i < $scope.movieInside.imagegallery.length; i++) {
+                    $scope.movieInside.imagegallery[i] = _.chunk($scope.movieInside.imagegallery[i], 3);
+                }
+            }
+            if ($scope.movieInside && $scope.movieInside.wallpaper && $scope.movieInside.wallpaper.length) {
+                $scope.movieInside.wallpaper = _.chunk($scope.movieInside.wallpaper, 6);
+                for (var i = 0; i < $scope.movieInside.wallpaper.length; i++) {
+                    $scope.movieInside.wallpaper[i] = _.chunk($scope.movieInside.wallpaper[i], 3);
+                }
             }
         }
-          $scope.doActives(1);
-        $scope.awards = [{
-            name: "Kamaal Khan",
-            title: "R.D. Burman Award",
-            fortitle: "O o jaane jaana"
-        }, {
-            name: "Kamaal Khan",
-            title: "R.D. Burman Award",
-            fortitle: "O o jaane jaana"
-        }, {
-            name: "Kamaal Khan",
-            title: "R.D. Burman Award",
-            fortitle: "O o jaane jaana"
-        }, {
-            name: "Kamaal Khan",
-            title: "R.D. Burman Award",
-            fortitle: "O o jaane jaana"
-        }];
     })
-    .controller('TalentsCtrl', function($scope, TemplateService, NavigationService, $timeout) {
-        //Used to name the .html file
-        $scope.template = TemplateService.changecontent("talents");
-        $scope.menutitle = NavigationService.makeactive("Talents");
-        TemplateService.title = $scope.menutitle;
-        $scope.navigation = NavigationService.getnav();
-        $scope.formData = {};
-        $scope.talentSubmitForm = function(formValid, formData) {
-            if (formValid.$valid && $scope.formData) {
-                $state.go("talent");
 
-            }
-        };
-        $scope.subscribe = {};
-        $scope.subscribe.email = "";
+    $scope.clientspeak = {
+        category: "Client Speak",
+        text: "Extra Efficient",
+        name: "Amitabh Bachchan",
+        img: "img/home/amitabh.jpg"
+    };
+    $scope.moviesdetail = {
+        detail: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with including versions of Lorem Ipsum.",
+        producer: "Bunty Walia, Juspreet Singh Walia and Vashu Bhagnani",
+        director: "Sohail Khan",
+        cast: "Salman Khan, Kajol, Arbaaz Khan, Dharmendra",
+        music: "Jatin-Lalit, Himesh Reshammiya and Sajid-Wajid"
+    };
 
-        $scope.checkEmail = false;
-        $scope.subscribeEmail = false;
-        $scope.subscribe = function(email) {
-            NavigationService.subscribe(email, function(data) {
+    $scope.moviereleased = [{
+        img: "img/movies/released/released1.jpg",
+        date: "12 January 2016",
+        desc: "Lorem Ipsum is simply dummy text of the printing industry"
+    }, {
+        img: "img/movies/released/released2.jpg",
+        date: "12 January 2016",
+        desc: "Lorem Ipsum is simply dummy text of the printing industry"
+    }, {
+        img: "img/movies/released/released3.jpg",
+        date: "12 January 2016",
+        desc: "Lorem Ipsum is simply dummy text of the printing industry"
+    }, {
+        img: "img/movies/released/released4.jpg",
+        date: "12 January 2016",
+        desc: "Lorem Ipsum is simply dummy text of the printing industry"
+    }, {
+        img: "img/movies/released/released5.jpg",
+        date: "12 January 2016",
+        desc: "Lorem Ipsum is simply dummy text of the printing industry"
+    }];
+    $scope.wallpapers = [{
+        img: "img/moviedetail/wallpapers/wallpaper1.jpg"
+    }, {
+        img: "img/moviedetail/wallpapers/wallpaper2.jpg"
+    }, {
+        img: "img/moviedetail/wallpapers/wallpaper3.jpg"
+    }, {
+        img: "img/moviedetail/wallpapers/wallpaper4.jpg"
+    }, {
+        img: "img/moviedetail/wallpapers/wallpaper5.jpg"
+    }, {
+        img: "img/moviedetail/wallpapers/wallpaper6.jpg"
+    }, {
+        img: "img/moviedetail/wallpapers/wallpaper1.jpg"
+    }, {
+        img: "img/moviedetail/wallpapers/wallpaper2.jpg"
+    }, {
+        img: "img/moviedetail/wallpapers/wallpaper3.jpg"
+    }, {
+        img: "img/moviedetail/wallpapers/wallpaper4.jpg"
+    }, {
+        img: "img/moviedetail/wallpapers/wallpaper5.jpg"
+    }, {
+        img: "img/moviedetail/wallpapers/wallpaper6.jpg"
+    }];
+    $scope.wallpapers = _.chunk($scope.wallpapers, 6);
+    for (var i = 0; i < $scope.wallpapers.length; i++) {
+        $scope.wallpapers[i] = _.chunk($scope.wallpapers[i], 3);
+    }
 
-                // console.log(data);
-                if (!data.value) {
-                    if ($scope.subscribe.email) {
-                        $scope.checkEmail = true;
-                        $scope.subscribeEmail = false;
-                    }
-                } else {
-                    $scope.subscribeEmail = true;
-                    $scope.checkEmail = false;
+    $scope.wallpaper = [{
+        img: "img/moviedetail/wallpapers/wallpaper1.jpg"
+    }, {
+        img: "img/moviedetail/wallpapers/wallpaper1.jpg"
+    }, {
+        img: "img/moviedetail/wallpapers/wallpaper2.jpg"
+    }, {
+        img: "img/moviedetail/wallpapers/wallpaper2.jpg"
+    }, {
+        img: "img/moviedetail/wallpapers/wallpaper3.jpg"
+    }, {
+        img: "img/moviedetail/wallpapers/wallpaper3.jpg"
+    }, {
+        img: "img/moviedetail/wallpapers/wallpaper4.jpg"
+    }, {
+        img: "img/moviedetail/wallpapers/wallpaper4.jpg"
+    }, {
+        img: "img/moviedetail/wallpapers/wallpaper5.jpg"
+    }, {
+        img: "img/moviedetail/wallpapers/wallpaper5.jpg"
+    }, {
+        img: "img/moviedetail/wallpapers/wallpaper6.jpg"
+    }, {
+        img: "img/moviedetail/wallpapers/wallpaper6.jpg"
+    }];
+    $scope.wallpaper = _.chunk($scope.wallpaper, 6);
+    for (var i = 0; i < $scope.wallpaper.length; i++) {
+        $scope.wallpaper[i] = _.chunk($scope.wallpaper[i], 3);
+    }
+    $scope.doActives = function(param) {
+        if (param === 1) {
+            $scope.styleActives = "actives";
+            $scope.styleNoActives = "";
+            $scope.paper = $scope.wallpaper;
+        } else {
+            $scope.styleActives = "";
+            $scope.styleNoActives = "actives";
+            $scope.paper = $scope.wallpapers;
+        }
+    }
+    $scope.doActives(1);
+    $scope.awards = [{
+        name: "Kamaal Khan",
+        title: "R.D. Burman Award",
+        fortitle: "O o jaane jaana"
+    }, {
+        name: "Kamaal Khan",
+        title: "R.D. Burman Award",
+        fortitle: "O o jaane jaana"
+    }, {
+        name: "Kamaal Khan",
+        title: "R.D. Burman Award",
+        fortitle: "O o jaane jaana"
+    }, {
+        name: "Kamaal Khan",
+        title: "R.D. Burman Award",
+        fortitle: "O o jaane jaana"
+    }];
+})
+
+.controller('TalentsCtrl', function($scope, TemplateService, NavigationService, $timeout) {
+    //Used to name the .html file
+    $scope.template = TemplateService.changecontent("talents");
+    $scope.menutitle = NavigationService.makeactive("Talents");
+    TemplateService.title = $scope.menutitle;
+    $scope.navigation = NavigationService.getnav();
+    $scope.formData = {};
+    $scope.talentSubmitForm = function(formValid, formData) {
+        if (formValid.$valid && $scope.formData) {
+            $state.go("talent");
+
+        }
+    };
+    $scope.subscribe = {};
+    $scope.subscribe.email = "";
+
+    $scope.checkEmail = false;
+    $scope.subscribeEmail = false;
+    $scope.subscribe = function(email) {
+        NavigationService.subscribe(email, function(data) {
+
+            // console.log(data);
+            if (!data.value) {
+                if ($scope.subscribe.email) {
+                    $scope.checkEmail = true;
+                    $scope.subscribeEmail = false;
                 }
-                //console.log(email);
-                $scope.subscribe.email = "";
-            });
+            } else {
+                $scope.subscribeEmail = true;
+                $scope.checkEmail = false;
+            }
+            //console.log(email);
+            $scope.subscribe.email = "";
+        });
 
-            // $scope.subscribeEmail = data;
-        };
-        $scope.wedding = [{
-            img: "img/talent/talents/talent1.jpg",
-            name: "BRAND AMBASSAORS"
-        }, {
-            img: "img/talent/talents/talent2.jpg",
-            name: "Appearances"
-        }, {
-            img: "img/talent/talents/talent3.jpg",
-            name: "TALENT REPRESENTATION"
-        }, {
-            img: "img/talent/talents/talent4.jpg",
-            name: "CELEBRITY ENDORSEMENTS"
-        }];
-        $scope.weddings = [{
-            img: "img/weddings/diaries/diary1.png",
-            date: "12 January 2016",
-            desc: "Lorem Ipsum is simply dummy text of the printing industry"
-        }, {
-            img: "img/weddings/diaries/diary2.png",
-            date: "12 January 2016",
-            desc: "Lorem Ipsum is simply dummy text of the printing industry"
-        }, {
-            img: "img/weddings/diaries/diary3.png",
-            date: "12 January 2016",
-            desc: "Lorem Ipsum is simply dummy text of the printing industry"
-        }];
+        // $scope.subscribeEmail = data;
+    };
+    $scope.wedding = [{
+        img: "img/talent/talents/talent1.jpg",
+        name: "BRAND AMBASSAORS"
+    }, {
+        img: "img/talent/talents/talent2.jpg",
+        name: "Appearances"
+    }, {
+        img: "img/talent/talents/talent3.jpg",
+        name: "TALENT REPRESENTATION"
+    }, {
+        img: "img/talent/talents/talent4.jpg",
+        name: "CELEBRITY ENDORSEMENTS"
+    }];
+    $scope.weddings = [{
+        img: "img/weddings/diaries/diary1.png",
+        date: "12 January 2016",
+        desc: "Lorem Ipsum is simply dummy text of the printing industry"
+    }, {
+        img: "img/weddings/diaries/diary2.png",
+        date: "12 January 2016",
+        desc: "Lorem Ipsum is simply dummy text of the printing industry"
+    }, {
+        img: "img/weddings/diaries/diary3.png",
+        date: "12 January 2016",
+        desc: "Lorem Ipsum is simply dummy text of the printing industry"
+    }];
 
-    })
+})
 
 .controller('WeddingCtrl', function($scope, TemplateService, NavigationService, $timeout, $state) {
     //Used to name the .html file
