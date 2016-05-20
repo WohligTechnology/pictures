@@ -18,10 +18,10 @@
   </div>
   <div class="bg-all-talent bg-grey-similar">
     <div class="container">
-      <div class="banner-talent">
+      <div class="banner-talents">
         <div class="row">
           <div class="col-sm-6" ng-repeat="data in wedding track by $index">
-            <div class="banner-wrap">
+            <div class="banner-wrap" style="padding:0 5px 5px 0;">
               <img ng-src="{{data.img}}" class="img-responsive">
               <img src="img/talent/hover-banner.png" alt="" class="img-responsive hover-image">
               <div class="name-event btm">
@@ -82,7 +82,8 @@
           </div>
         </div>
       </div>
-      <div class="service-bg bg-red-mobile">
+
+      <!-- <div class="service-bg bg-red-mobile">
         <div class="row">
           <div class="col-xs-6">
             <div class="serv-title min-hght">
@@ -127,8 +128,35 @@
             </div>
           </div>
         </div>
-      </div>
+      </div> -->
     </div>
+    <section class="container">
+      <div class="pd-sides">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="tservice mb30">
+              <div class="title">
+                <h3 class="uppercase text-center">services</h3>
+                <div class="border-blue borders"></div>
+              </div>
+              <div class="tservices-list">
+                <uib-accordion close-others="oneAtATime" is-open="status.open">
+                  <uib-accordion-group is-open="status.open1" is-disabled="status.isFirstDisabled" ng-repeat="data in services">
+                    <uib-accordion-heading>
+                      <h4>
+                       <span class="uppercase bold">{{data.title}}</span>
+                        <i class="pull-right fa" ng-class="{'fa-minus': status.open1, 'fa-plus': !status.open1}"></i>
+                      </h4>
+                    </uib-accordion-heading>
+                    <div class="" ng-bind-html="data.content" style="background-color:whitesmoke;"></div>
+                  </uib-accordion-group>
+                </uib-accordion>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
     <section>
       <div class="bg-subcribe-talents subcribe">
         <div class="container">
