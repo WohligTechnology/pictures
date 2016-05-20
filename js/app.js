@@ -101,6 +101,56 @@ firstapp.config(function($stateProvider, $urlRouterProvider, $httpProvider, $loc
             url: "/blogvideo",
             templateUrl: "views/template.html",
             controller: 'BlogVideoCtrl'
+        })
+        .state('career', {
+            url: "/careers",
+            templateUrl: "views/template.html",
+            controller: 'CareerCtrl'
+        })
+        .state('mice', {
+            url: "/mice",
+            templateUrl: "views/template.html",
+            controller: 'MiceCtrl'
+        })
+        .state('media_corner', {
+            url: "/mediacorner",
+            templateUrl: "views/template.html",
+            controller: 'MediaCornerCtrl'
+        })
+        .state('event', {
+            url: "/events",
+            templateUrl: "views/template.html",
+            controller: 'EventCtrl'
+        })
+        .state('eventinside', {
+            url: "/eventinside",
+            templateUrl: "views/template.html",
+            controller: 'EventInsideCtrl'
+        })
+        .state('eventinsidedetail', {
+            url: "/eventinsidedetail",
+            templateUrl: "views/template.html",
+            controller: 'EventInsideDetailCtrl'
+        })
+        .state('talentinside', {
+            url: "/talentinside",
+            templateUrl: "views/template.html",
+            controller: 'TalentInsideCtrl'
+        })
+        .state('talentinsidedetail', {
+            url: "/talentinsidedetail",
+            templateUrl: "views/template.html",
+            controller: 'TalentInsideDetailCtrl'
+        })
+        .state('worldtour', {
+            url: "/worldtours",
+            templateUrl: "views/template.html",
+            controller: 'WorldTourCtrl'
+        })
+        .state('worldtourinside', {
+            url: "/worldtourinside",
+            templateUrl: "views/template.html",
+            controller: 'WorldTourInsideCtrl'
         });
     $urlRouterProvider.otherwise("/home");
     $locationProvider.html5Mode(isproduction);

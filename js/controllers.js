@@ -1409,6 +1409,76 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             img: "img/blog/video/v1.png",
         }];
     })
+    .controller('CareersCtrl', function($scope, TemplateService, NavigationService, $timeout) {
+        //Used to name the .html file
+        $scope.template = TemplateService.changecontent("career");
+        $scope.menutitle = NavigationService.makeactive("Careers");
+        TemplateService.title = $scope.menutitle;
+        $scope.navigation = NavigationService.getnav();
+      })
+    .controller('MiceCtrl', function($scope, TemplateService, NavigationService, $timeout) {
+        //Used to name the .html file
+        $scope.template = TemplateService.changecontent("mice");
+        $scope.menutitle = NavigationService.makeactive("Mice");
+        TemplateService.title = $scope.menutitle;
+        $scope.navigation = NavigationService.getnav();
+      })
+    .controller('MediaCornerCtrl', function($scope, TemplateService, NavigationService, $timeout) {
+        //Used to name the .html file
+        $scope.template = TemplateService.changecontent("mediacorner");
+        $scope.menutitle = NavigationService.makeactive("Media Corner");
+        TemplateService.title = $scope.menutitle;
+        $scope.navigation = NavigationService.getnav();
+      })
+    .controller('EventCtrl', function($scope, TemplateService, NavigationService, $timeout) {
+        //Used to name the .html file
+        $scope.template = TemplateService.changecontent("event");
+        $scope.menutitle = NavigationService.makeactive("Events");
+        TemplateService.title = $scope.menutitle;
+        $scope.navigation = NavigationService.getnav();
+      })
+    .controller('EventInsideCtrl', function($scope, TemplateService, NavigationService, $timeout) {
+        //Used to name the .html file
+        $scope.template = TemplateService.changecontent("eventinside");
+        $scope.menutitle = NavigationService.makeactive("Events");
+        TemplateService.title = $scope.menutitle;
+        $scope.navigation = NavigationService.getnav();
+      })
+    .controller('EventInsideDetailCtrl', function($scope, TemplateService, NavigationService, $timeout) {
+        //Used to name the .html file
+        $scope.template = TemplateService.changecontent("eventdetail");
+        $scope.menutitle = NavigationService.makeactive("Events");
+        TemplateService.title = $scope.menutitle;
+        $scope.navigation = NavigationService.getnav();
+      })
+    .controller('TalentInsideCtrl', function($scope, TemplateService, NavigationService, $timeout) {
+        //Used to name the .html file
+        $scope.template = TemplateService.changecontent("talentinside");
+        $scope.menutitle = NavigationService.makeactive("Talents");
+        TemplateService.title = $scope.menutitle;
+        $scope.navigation = NavigationService.getnav();
+      })
+    .controller('TalentInsideDetailCtrl', function($scope, TemplateService, NavigationService, $timeout) {
+        //Used to name the .html file
+        $scope.template = TemplateService.changecontent("talentdetail");
+        $scope.menutitle = NavigationService.makeactive("Talents");
+        TemplateService.title = $scope.menutitle;
+        $scope.navigation = NavigationService.getnav();
+      })
+    .controller('WorldTourCtrl', function($scope, TemplateService, NavigationService, $timeout) {
+        //Used to name the .html file
+        $scope.template = TemplateService.changecontent("worldtour");
+        $scope.menutitle = NavigationService.makeactive("World Tours");
+        TemplateService.title = $scope.menutitle;
+        $scope.navigation = NavigationService.getnav();
+      })
+    .controller('WorldTourInsideCtrl', function($scope, TemplateService, NavigationService, $timeout) {
+        //Used to name the .html file
+        $scope.template = TemplateService.changecontent("worldtourinside");
+        $scope.menutitle = NavigationService.makeactive("World Tours");
+        TemplateService.title = $scope.menutitle;
+        $scope.navigation = NavigationService.getnav();
+      })
     .controller('headerctrl', function($scope, TemplateService) {
         $scope.template = TemplateService;
         var get = false;
