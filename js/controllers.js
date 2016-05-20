@@ -492,6 +492,17 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     $scope.getin.enquiryarr = [];
     $scope.getin.enquiry = "";
     $scope.showThanks = false;
+    $scope.eoptions = {};
+
+    $scope.soptions = {
+        minDate: new Date()
+    }
+
+    $scope.changeEOptions = function() {
+        $scope.eoptions = {
+            minDate: new Date($scope.getin.date)
+        }
+    }
 
     NavigationService.getWeddingData(function(data) {
         console.log(data);

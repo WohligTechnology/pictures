@@ -241,7 +241,7 @@
                     <span class="fa fa-calendar color-red form-control-feedback" aria-hidden="true"></span> -->
 
                               <p class="input-group">
-                                 <input type="text" placeholder="Start Date" class="form-control" uib-datepicker-popup="{{format}}" ng-model="getin.date" is-open="popup1.opened" datepicker-options="dateOptions" ng-required="true" close-text="Close" alt-input-formats="altInputFormats" />
+                                 <input type="text" placeholder="Start Date" class="form-control" uib-datepicker-popup="{{format}}" ng-model="getin.date" is-open="popup1.opened" datepicker-options="soptions" ng-required="true" close-text="Close" alt-input-formats="altInputFormats" ng-change="changeEOptions();" />
                                  <span class="input-group-btn">
                                       <button type="button" class="btn btn-default" ng-click="open1()">
                                           <i class="fa fa-calendar color-red form-control-feedback"></i>
@@ -256,7 +256,7 @@
                     <span class="fa fa-calendar color-red form-control-feedback" aria-hidden="true"></span> -->
 
                               <p class="input-group">
-                                 <input type="text" placeholder="End Date" class="form-control" uib-datepicker-popup="{{format}}" ng-model="getin.enddate" is-open="popup2.opened" datepicker-options="dateOptions" ng-required="true" close-text="Close" alt-input-formats="altInputFormats" />
+                                 <input type="text" placeholder="End Date" class="form-control" uib-datepicker-popup="{{format}}" ng-model="getin.enddate" is-open="popup2.opened" datepicker-options="eoptions" ng-required="true" close-text="Close" alt-input-formats="altInputFormats" />
                                  <span class="input-group-btn">
                                     <button type="button" class="btn btn-default" ng-click="open2()">
                                       <i class="fa fa-calendar color-red form-control-feedback"></i>
