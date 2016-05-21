@@ -1450,6 +1450,43 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $scope.menutitle = NavigationService.makeactive("Media Corner");
         TemplateService.title = $scope.menutitle;
         $scope.navigation = NavigationService.getnav();
+        $scope.weddings = [{
+            img: "img/mediacorner/1.png",
+            date: "May 18th, 2016",
+            desc: "Lorem Ipsum is simply dummy text of the printing industry"
+        }, {
+            img: "img/mediacorner/2.png",
+            date: "May 18th, 2016",
+            desc: "Lorem Ipsum is simply dummy text of the printing industry"
+        }, {
+            img: "img/mediacorner/3.png",
+            date: "May 18th, 2016",
+            desc: "Lorem Ipsum is simply dummy text of the printing industry"
+        }, {
+            img: "img/mediacorner/1.png",
+            date: "May 18th, 2016",
+            desc: "Lorem Ipsum is simply dummy text of the printing industry"
+        }, {
+            img: "img/mediacorner/2.png",
+            date: "May 18th, 2016",
+            desc: "Lorem Ipsum is simply dummy text of the printing industry"
+        }, {
+            img: "img/mediacorner/3.png",
+            date: "May 18th, 2016",
+            desc: "Lorem Ipsum is simply dummy text of the printing industry"
+        }, {
+            img: "img/mediacorner/1.png",
+            date: "May 18th, 2016",
+            desc: "Lorem Ipsum is simply dummy text of the printing industry"
+        }, {
+            img: "img/mediacorner/2.png",
+            date: "May 18th, 2016",
+            desc: "Lorem Ipsum is simply dummy text of the printing industry"
+        }, {
+            img: "img/mediacorner/3.png",
+            date: "May 18th, 2016",
+            desc: "Lorem Ipsum is simply dummy text of the printing industry"
+        }];
       })
     .controller('EventCtrl', function($scope, TemplateService, NavigationService, $timeout) {
         //Used to name the .html file
