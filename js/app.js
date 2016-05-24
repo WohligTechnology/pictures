@@ -202,48 +202,6 @@ firstapp.directive('fancyboxBox', function($document) {
     };
 });
 
-firstapp.directive('fancybox', function($document) {
-    return {
-        restrict: 'EA',
-        replace: false,
-        link: function(scope, element, attr) {
-            // console.log(attr);
-            var $element = $(element);
-            var disc = attr.title;
-            var target;
-            if (attr.rel) {
-                target = $(".fancybox-button");
-            } else {
-                target = element;
-            }
-
-            target.fancybox({
-                // beforeShow: function() {
-                //   if (this.title) {
-                //   }
-                // },
-                maxWidth: 800,
-                maxHeight: 600,
-                fitToView: false,
-                width: '70%',
-                height: '70%',
-                autoSize: false,
-                closeClick: false,
-                openEffect: 'none',
-                closeEffect: 'none',
-                // closeBtn: true,
-                helpers: {
-                    media: {},
-                    title: {
-                        type: 'inside'
-                    },
-                    buttons: {}
-                }
-            });
-        }
-    };
-});
-
 firstapp.filter('uploadpath', function() {
     return function(input, width, height, style) {
         var other = "";

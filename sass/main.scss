@@ -3233,6 +3233,13 @@ h4.title-movies {
   background-size: 100% 100%;
   padding: 50px 0 0;
 }
+.video-main img {
+  width: 100%;
+}
+.thumbnail-movies {
+  height: 450px;
+  overflow: auto;
+}
 /* Start writing sass here */
 @import "fancybox-override";
 @import "mobile";

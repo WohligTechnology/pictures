@@ -69,7 +69,7 @@
                         </div>
                         <div class="col-xs-9 plr5">
                            <!-- <a class="various fancybox.iframe" fancybox href="http://www.youtube.com/embed/{{gal.url}}?autoplay=1&modestbranding=0&showinfo=0&rel=0&loop=1"></a> -->
-                           <a fancybox href="http://www.youtube.com/embed/{{movieInside.featuredvideos[0].content | youtubethumb:true}}?autoplay=1&modestbranding=0&showinfo=0&rel=0&loop=1" class="fancybox-button" rel="fancybox-button">
+                           <a fancybox-box href="http://www.youtube.com/embed/{{movieInside.featuredvideos[0].content | youtubethumb:true}}?autoplay=1&modestbranding=0&showinfo=0&rel=0&loop=1" rel="movies" data-fancybox-type="iframe">
                               <div class="video-main">
                                  <img ng-src="{{movieInside.featuredvideos[0].content | youtubethumb:false}}" alt="" class="img-responsive">
                               </div>
