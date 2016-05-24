@@ -78,7 +78,7 @@
                         <div class="col-xs-3 plr5">
                            <div class="thumbnail-movies">
                               <ul class="list-unstyled">
-                                 <li ng-repeat="video in movieInside.featuredvideos" ng-if="$index>0">
+                                 <li ng-repeat="video in movieInside.featuredvideos" ng-if="$index>0" ng-click="makeActive(video,$index)">
                                     <img ng-src="{{video.content | youtubethumb:false}}" alt="" class="img-responsive">
                                  </li>
                                  <!-- <li> <img src="img/moviedetail/videos/video3.jpg" alt="" class="img-responsive"></li>

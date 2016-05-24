@@ -290,6 +290,11 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         }
     })
 
+    $scope.makeActive = function(video, index) {
+        $scope.movieInside.featuredvideos.splice(index, 1);
+        $scope.movieInside.featuredvideos.unshift(video);
+    }
+
     $scope.clientspeak = {
         category: "Client Speak",
         text: "Extra Efficient",
@@ -1436,14 +1441,14 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $scope.menutitle = NavigationService.makeactive("Careers");
         TemplateService.title = $scope.menutitle;
         $scope.navigation = NavigationService.getnav();
-      })
+    })
     .controller('MiceCtrl', function($scope, TemplateService, NavigationService, $timeout) {
         //Used to name the .html file
         $scope.template = TemplateService.changecontent("mice");
         $scope.menutitle = NavigationService.makeactive("Mice");
         TemplateService.title = $scope.menutitle;
         $scope.navigation = NavigationService.getnav();
-      })
+    })
     .controller('MediaCornerCtrl', function($scope, TemplateService, NavigationService, $timeout) {
         //Used to name the .html file
         $scope.template = TemplateService.changecontent("mediacorner");
@@ -1488,7 +1493,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             desc: "Lorem Ipsum is simply dummy text of the printing industry"
         }];
 
-      })
+    })
     .controller('EventCtrl', function($scope, TemplateService, NavigationService, $timeout) {
         //Used to name the .html file
         $scope.template = TemplateService.changecontent("event");
@@ -1553,7 +1558,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             name: "Corporate Events"
         }];
 
-      })
+    })
     .controller('EventInsideCtrl', function($scope, TemplateService, NavigationService, $timeout) {
         //Used to name the .html file
         $scope.template = TemplateService.changecontent("eventinside");
@@ -1573,14 +1578,14 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             img: "img/talent/talentinside/w3.png",
             detail: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
         }];
-      })
+    })
     .controller('EventInsideDetailCtrl', function($scope, TemplateService, NavigationService, $timeout) {
         //Used to name the .html file
         $scope.template = TemplateService.changecontent("eventdetail");
         $scope.menutitle = NavigationService.makeactive("Events");
         TemplateService.title = $scope.menutitle;
         $scope.navigation = NavigationService.getnav();
-      })
+    })
     .controller('TalentInsideCtrl', function($scope, TemplateService, NavigationService, $timeout) {
         //Used to name the .html file
         $scope.template = TemplateService.changecontent("talentinside");
@@ -1589,42 +1594,42 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $scope.navigation = NavigationService.getnav();
         $scope.weddingSubtype = [{
             content: "JPP Stadium Branding: (Season 1, 2 & 3)",
-            date:"May 18th, 2016",
+            date: "May 18th, 2016",
             img: "img/talent/talentinside/w1.png",
             detail: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
         }, {
             content: "JPP Team Management: Season 1",
-            date:"May 18th, 2016",
+            date: "May 18th, 2016",
             img: "img/talent/talentinside/w2.png",
             detail: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
         }, {
             content: "JPP Team Management: Season 2",
-            date:"May 18th, 2016",
+            date: "May 18th, 2016",
             img: "img/talent/talentinside/w3.png",
             detail: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
         }];
-      })
+    })
     .controller('TalentInsideDetailCtrl', function($scope, TemplateService, NavigationService, $timeout) {
         //Used to name the .html file
         $scope.template = TemplateService.changecontent("talentdetail");
         $scope.menutitle = NavigationService.makeactive("Talents");
         TemplateService.title = $scope.menutitle;
         $scope.navigation = NavigationService.getnav();
-      })
+    })
     .controller('WorldTourCtrl', function($scope, TemplateService, NavigationService, $timeout) {
         //Used to name the .html file
         $scope.template = TemplateService.changecontent("worldtour");
         $scope.menutitle = NavigationService.makeactive("World Tours");
         TemplateService.title = $scope.menutitle;
         $scope.navigation = NavigationService.getnav();
-      })
+    })
     .controller('WorldTourInsideCtrl', function($scope, TemplateService, NavigationService, $timeout) {
         //Used to name the .html file
         $scope.template = TemplateService.changecontent("worldtourinside");
         $scope.menutitle = NavigationService.makeactive("World Tours");
         TemplateService.title = $scope.menutitle;
         $scope.navigation = NavigationService.getnav();
-      })
+    })
     .controller('headerctrl', function($scope, TemplateService) {
         $scope.template = TemplateService;
         var get = false;
