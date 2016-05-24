@@ -1,11 +1,11 @@
 var adminURL = "";
 if (isproduction) {
-    adminURL = "http://www.wohlig.co.in/demo/index.php";
+    adminURL = "http://wohlig.co.in/gsebackend/index.php";
 } else {
     adminURL = "http://localhost/demo/index.php";
 }
 
-adminURL = "http://192.168.1.108/gsebackend/";
+adminURL = "http://wohlig.co.in/gsebackend/";
 var apiUrl = adminURL + "index.php/json/";
 var imgpath = adminURL + "uploads/";
 
