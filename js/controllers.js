@@ -1640,13 +1640,13 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
                 $scope.onebar = "";
                 $scope.secondbar = "";
                 $scope.thirdbar = "";
-                $scope.bgwhite = "";
+                $scope.buttonpos = "";
             } else {
                 $scope.getslide = "menu-in";
                 $scope.onebar = "firstbar";
                 $scope.secondbar = "secondbar";
                 $scope.thirdbar = "thirdbar";
-                $scope.bgwhite = "bg-white";
+                $scope.buttonpos = "buttonpos";
             }
         }
     });
