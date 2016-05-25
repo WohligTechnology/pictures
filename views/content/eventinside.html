@@ -1,6 +1,6 @@
 <section>
    <div class="banner banner-movies ab">
-      <img src="img/talent/talentinside/talent.png" class="img-responsive" style="width:100%;">
+     <img src="img/event/eventinside/event.png" class="img-responsive" style="width:100%;">
       <!-- <div class="banner-title text-center">
       <h4>
         360 Weddings
@@ -8,24 +8,30 @@
     </div> -->
    </div>
 </section>
-<section infinite-scroll='addMoreItems();' infinite-scroll-distance="0" infinite-scroll-disabled="shouldscroll">
+<section>
+<!-- <section infinite-scroll='addMoreItems();' infinite-scroll-distance="0" infinite-scroll-disabled="shouldscroll"> -->
    <div class="container">
       <div class="row mt180">
          <div class="col-md-offset-1 col-md-10">
             <div class="row pd30" ng-repeat="data in weddingSubtype">
                <div class="col-sm-6">
                   <div class="wedding-imgbox">
-                     <img ng-src="{{data.image}}" class="img-responsive" alt="">
+                     <img src="{{data.img}}" class="img-responsive" alt="">
                   </div>
                </div>
                <div class="col-sm-6">
                   <div class="wedding-detail mt45">
                      <div class="w-title">
-                        <h4 class="uppercase color-red bold">{{data.name}}</h4>
+                        <h4 class="uppercase color-red bold">{{data.content}}</h4>
+                        <div class="wed-date">
+                          <span>{{data.date}}</span>
+                          <span>|</span>
+                          <span>Mumbai</span>
+                        </div>
                      </div>
                      <div class="w-detail mt15 mb15">
                         <p>
-                           {{data.content}}
+                           {{data.detail}}
                         </p>
                      </div>
                      <div class="w-button">
@@ -36,11 +42,11 @@
             </div>
          </div>
       </div>
-      <!-- <div class="btn-all text-center">
+      <div class="btn-all text-center">
          <button class="btn btn-outline">
             View all
          </button>
-      </div> -->
+      </div>
    </div>
 </section>
 <div class="social">
