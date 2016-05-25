@@ -237,3 +237,10 @@ firstapp.filter('youtubethumb', function() {
         }
     };
 });
+
+$(document).ready(function() {
+	$(".fancybox").fancybox({
+		openEffect	: 'none',
+		closeEffect	: 'none'
+	});
+});
