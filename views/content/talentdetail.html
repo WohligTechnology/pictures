@@ -1,0 +1,178 @@
+<section>
+  <div class="banner-movies ab">
+    <img src="img/talent/talentinsidedetail/talent.png" alt="" class="img-responsive">
+  </div>
+  <div class="banner banner-asfc text-center mt180">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+          <div class="content mt15">
+            <p class="text-justify">
+              Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with   including versions of Lorem Ipsum.
+            </p>
+          </div>
+          <!-- <div class="content mt15">
+            <p class="text-justify">
+              Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with   including versions of Lorem Ipsum.
+            </p>
+          </div> -->
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="mehendi">
+  <div class="mehendi-gallery nav-tab-middle ">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-offset-1 col-md-10">
+          <div class="title">
+            <h3 class="letter-spacing color-red uppercase">
+            Image Gallery
+            </h3>
+          </div>
+          <!-- <div class="title">
+            <h4 class="display-inline uppercase {{styleActives}}" ng-click="doActives(1);">
+            Mehendi
+          </h4>
+            <h4 class="display-inline uppercase {{styleNoActives}}" ng-click="doActives(2);">
+            Sangeet
+          </h4>
+          </div> -->
+          <div class="mb15">
+            <div class="slider-client">
+              <flex-slider flex-slide="slide in wallpaper track by $index" animation="slide" animation-loop="false" as-nav-for="#slider" slideshow="false" item-margin="20" prev-text="" next-text="">
+                <li class="">
+                  <div class="row" ng-repeat="row in slide">
+                    <div class="col-xs-4" ng-repeat="wall in row">
+                      <div class="mb15">
+                        <img ng-src="{{wall.img}}" alt="" class="img-responsive">
+                      </div>
+                    </div>
+                  </div>
+                </li>
+              </flex-slider>
+              <!-- <flex-slider flex-slide="slide in wall track by $index" ng-if="styleNoActives == 'actives'" animation="slide" animation-loop="false" as-nav-for="#slider" slideshow="false" item-margin="20" prev-text="" next-text="">
+                <li class="">
+                  <div class="row" ng-repeat="row in slide">
+                    <div class="col-xs-4" ng-repeat="wallpaper in row">
+                      <div class="mb15">
+                        <img ng-src="{{wallpaper.img}}" alt="" class="img-responsive">
+                      </div>
+                    </div>
+                  </div>
+                </li>
+              </flex-slider> -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="mehendi">
+  <div class="mehendi-movie">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-offset-1 col-md-10">
+          <div class="title">
+            <h3 class="letter-spacing color-white uppercase">
+              FEATURED VIDEOS
+            </h3>
+          </div>
+          <!-- <div class="title">
+            <h4 class="display-inline uppercase {{styleActive}}" ng-click="doActive(1);">
+            Mehendi
+          </h4>
+            <h4 class="display-inline uppercase {{styleNoActive}}" ng-click="doActive(2);">
+            Sangeet
+          </h4>
+          </div> -->
+          <div class="slider-client">
+            <flex-slider slide="image in video track by $index" slider-id="slider" prev-text="" next-text="" sync="#carousel" slideshow="false" animation="slide">
+              <li>
+                <div class="">
+                  <img src="{{image.img}}" alt="" class="img-responsive">
+                </div>
+              </li>
+            </flex-slider>
+            <!-- <flex-slider slide="image in vid track by $index" ng-if="styleNoActive == 'vactive'" slider-id="slider" prev-text="" next-text="" sync="#carousel" slideshow="false" animation="slide">
+              <li>
+                <div class="">
+                  <img src="{{image.img}}" alt="" class="img-responsive">
+                </div>
+              </li>
+            </flex-slider> -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-offset-1 col-md-10">
+        <div class="image-navigation">
+          <flex-slider slide="image in video track by $index" animation="slide" animation-loop="false" item-width="280" item-margin="40" as-nav-for="#slider" slideshow="false" control-nav="false" prev-text="" next-text="" slider-id="carousel" animation-loop="false">
+            <li>
+              <div class="row">
+                <img src="{{image.img}}" alt="">
+              </div>
+            </li>
+          </flex-slider>
+          <!-- <flex-slider slide="image in vid track by $index" ng-if="styleNoActive == 'vactive'" animation="slide" animation-loop="false" item-width="280" item-margin="40" as-nav-for="#slider" slideshow="false" control-nav="false" prev-text="" next-text="" slider-id="carousel" animation-loop="false">
+            <li>
+              <div class="row">
+                <img src="{{image.img}}" alt="">
+              </div>
+            </li>
+          </flex-slider> -->
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="text-center">
+        <div class="wedding-diary">
+          <div class="diary-title mr30">
+            <h4 class="uppercase color-red">RELATED ARTICLES</h4>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="pd-side">
+    <div class="row">
+      <div class="col-md-4 col-sm-4 col-xs-6" ng-repeat="data in weddings track by $index">
+        <div class="wed-box border-red">
+          <div class="wed-img-list">
+            <img ng-src="{{data.img}}" alt="" class="img-responsive">
+            <div class="ribbon-red">
+              <img src="img/ribbon_red.png" alt="">
+              <span class="color-white uppercase">Talent</span>
+            </div>
+          </div>
+          <div class="wed-desc">
+            <div class="wed-date">
+              <span>{{data.date}}</span>
+            </div>
+            <div class="wed-desc-inside">
+              <p class="bold">{{data.desc}}</p>
+            </div>
+            <div class="read-more">
+              <a href="" class="color-black">Read More</a>
+            </div>
+          </div>
+          <div class="border-blue borders"></div>
+        </div>
+      </div>
+    </div>
+    <div class="btn-all mr30 text-center">
+      <button class="btn btn-danger btn-outline">
+        View All
+      </button>
+    </div>
+  </div>
+</section>

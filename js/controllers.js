@@ -1648,6 +1648,58 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $scope.menutitle = NavigationService.makeactive("Events");
         TemplateService.title = $scope.menutitle;
         $scope.navigation = NavigationService.getnav();
+        $scope.wallpaper = [{
+            img: "img/talent/talentinsidedetail/1.png",
+        }, {
+            img: "img/talent/talentinsidedetail/2.png",
+        }, {
+            img: "img/talent/talentinsidedetail/3.png",
+        }, {
+            img: "img/talent/talentinsidedetail/4.png",
+        }, {
+            img: "img/talent/talentinsidedetail/5.png",
+        }, {
+            img: "img/talent/talentinsidedetail/6.png",
+        }, {
+            img: "img/talent/talentinsidedetail/1.png",
+        }, {
+            img: "img/talent/talentinsidedetail/2.png",
+        }, {
+            img: "img/talent/talentinsidedetail/3.png",
+        }, {
+            img: "img/talent/talentinsidedetail/4.png",
+        }, {
+            img: "img/talent/talentinsidedetail/5.png",
+        }, {
+            img: "img/talent/talentinsidedetail/6.png",
+        }];
+        $scope.video = [{
+            img: "img/talent/talentinsidedetail/v2.png",
+        }, {
+            img: "img/talent/talentinsidedetail/v3.png",
+        }, {
+            img: "img/talent/talentinsidedetail/v2.png",
+        }, {
+            img: "img/talent/talentinsidedetail/v4.png",
+        }];
+        $scope.weddings = [{
+            img: "img/talent/talentinsidedetail/ra1.png",
+            date: "12 January 2016",
+            desc: "Lorem Ipsum is simply dummy text of the printing industry"
+        }, {
+            img: "img/talent/talentinsidedetail/ra2.png",
+            date: "12 January 2016",
+            desc: "Lorem Ipsum is simply dummy text of the printing industry"
+        }, {
+            img: "img/talent/talentinsidedetail/ra3.png",
+            date: "12 January 2016",
+            desc: "Lorem Ipsum is simply dummy text of the printing industry"
+        }];
+
+        $scope.wallpaper = _.chunk($scope.wallpaper, 6);
+        for (var i = 0; i < $scope.wallpaper.length; i++) {
+            $scope.wallpaper[i] = _.chunk($scope.wallpaper[i], 3);
+        }
     })
     .controller('TalentInsideCtrl', function($scope, TemplateService, NavigationService, $timeout) {
         //Used to name the .html file
@@ -1678,6 +1730,58 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $scope.menutitle = NavigationService.makeactive("Talents");
         TemplateService.title = $scope.menutitle;
         $scope.navigation = NavigationService.getnav();
+        $scope.wallpaper = [{
+            img: "img/talent/talentinsidedetail/1.png",
+        }, {
+            img: "img/talent/talentinsidedetail/2.png",
+        }, {
+            img: "img/talent/talentinsidedetail/3.png",
+        }, {
+            img: "img/talent/talentinsidedetail/4.png",
+        }, {
+            img: "img/talent/talentinsidedetail/5.png",
+        }, {
+            img: "img/talent/talentinsidedetail/6.png",
+        }, {
+            img: "img/talent/talentinsidedetail/1.png",
+        }, {
+            img: "img/talent/talentinsidedetail/2.png",
+        }, {
+            img: "img/talent/talentinsidedetail/3.png",
+        }, {
+            img: "img/talent/talentinsidedetail/4.png",
+        }, {
+            img: "img/talent/talentinsidedetail/5.png",
+        }, {
+            img: "img/talent/talentinsidedetail/6.png",
+        }];
+        $scope.video = [{
+            img: "img/talent/talentinsidedetail/v2.png",
+        }, {
+            img: "img/talent/talentinsidedetail/v3.png",
+        }, {
+            img: "img/talent/talentinsidedetail/v2.png",
+        }, {
+            img: "img/talent/talentinsidedetail/v4.png",
+        }];
+        $scope.weddings = [{
+            img: "img/talent/talentinsidedetail/ra1.png",
+            date: "12 January 2016",
+            desc: "Lorem Ipsum is simply dummy text of the printing industry"
+        }, {
+            img: "img/talent/talentinsidedetail/ra2.png",
+            date: "12 January 2016",
+            desc: "Lorem Ipsum is simply dummy text of the printing industry"
+        }, {
+            img: "img/talent/talentinsidedetail/ra3.png",
+            date: "12 January 2016",
+            desc: "Lorem Ipsum is simply dummy text of the printing industry"
+        }];
+
+        $scope.wallpaper = _.chunk($scope.wallpaper, 6);
+        for (var i = 0; i < $scope.wallpaper.length; i++) {
+            $scope.wallpaper[i] = _.chunk($scope.wallpaper[i], 3);
+        }
     })
     .controller('WorldTourCtrl', function($scope, TemplateService, NavigationService, $timeout) {
         //Used to name the .html file
