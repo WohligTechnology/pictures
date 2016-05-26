@@ -116,10 +116,10 @@ a {
             margin-top: -8px;
         }
         img.logo {
-            width: 145px;
+            width: 170px;
         }
         img.years {
-            width: 90px;
+            width: 80px;
         }
     }
     .navbar-toggle {
@@ -3256,6 +3256,52 @@ h4.title-movies {
     height: 450px;
     overflow: auto;
 }
+.slider-client{
+  position: relative;
+.fa{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  font-size: 25px;
+  border-radius: 50%;
+  border: 5px solid #fff;
+  width: 50px;
+  padding: 8px 13px 0;
+  height: 50px;
+  color: #fff;
+  transform: translate(-50%,-50%);
+}
+}
+//mice
+.mice{
+  .mt50{
+    margin-top: 50px;
+  }
+  .banner-talent.banner-sports .banner-wrap .name-event{
+    width:99.3%;
+    margin:0 0 0 1px;
+  }
+}
+//event
+// .eventdetail{
+//   .banner-movies{
+//     width: 100%;
+//     position: relative;
+//         .fa{
+//           position: absolute;
+//     top: 50%;
+//     left: 50%;
+//     font-size: 25px;
+//     border-radius: 50%;
+//     border: 5px solid #fff;
+//     width: 50px;
+//     padding: 8px 13px 0;
+//     height: 50px;
+//     color: #fff;
+//     transform: translate(-50%, -50%);
+//         }
+//   }
+// }
 /* Start writing sass here */
 @import "fancybox-override";
 @import "mobile";
