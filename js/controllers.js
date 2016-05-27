@@ -1615,7 +1615,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             name: "Corporate Events"
         }, {
             img: "img/event/6.png",
-            name: "Corporate Events"
+            name: "Concerts"
         }];
 
     })

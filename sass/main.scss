@@ -67,18 +67,18 @@ img.doneLoading {
 }
 .video-main {
     position: relative;
-    .fa{
-      position: absolute;
-      top: 50%;
-      left:50%;
-      font-size: 25px;
-      border-radius: 50%;
-      border: 5px solid #fff;
-      width: 50px;
-      padding: 9px 13px 0;
-      height: 50px;
-      color: #fff;
-      transform:translate(-50%,-50%);
+    .fa {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        font-size: 25px;
+        border-radius: 50%;
+        border: 5px solid #fff;
+        width: 50px;
+        padding: 9px 13px 0;
+        height: 50px;
+        color: #fff;
+        transform: translate(-50%,-50%);
     }
 }
 .bg3-sports {
@@ -3256,44 +3256,65 @@ h4.title-movies {
     height: 450px;
     overflow: auto;
 }
-.slider-client{
-  position: relative;
-.fa{
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  font-size: 25px;
-  border-radius: 50%;
-  border: 5px solid #fff;
-  width: 50px;
-  padding: 8px 13px 0;
-  height: 50px;
-  color: #fff;
-  transform: translate(-50%,-50%);
-}
+.slider-client {
+    position: relative;
+    .fa {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        font-size: 25px;
+        border-radius: 50%;
+        border: 5px solid #fff;
+        width: 50px;
+        padding: 8px 13px 0;
+        height: 50px;
+        color: #fff;
+        transform: translate(-50%,-50%);
+    }
 }
 //mice
-.mice{
-  .mt50{
-    margin-top: 50px;
-  }
-  .banner-talent.banner-sports .banner-wrap .name-event{
-    width:99.3%;
-    margin:0 0 0 1px;
-  }
+.mice {
+    .mt50 {
+        margin-top: 50px;
+    }
+    .banner-talent.banner-sports .banner-wrap .name-event {
+        width: 99.3%;
+        margin: 0 0 0 1px;
+    }
 }
 //worldtourinside
-.worlddetail{
-  .cast-crew{
-    margin-top: 35px;
-  }
-  .mislider .title{
-    text-align:left;
-  }
-  .videoslider{
-    margin-bottom: 0px;
-   }
+.worlddetail {
+    .cast-crew {
+        margin-top: 35px;
+    }
+    .mislider .title {
+        text-align: left;
+    }
+    .videoslider {
+        margin-bottom: 0;
+    }
 }
-/* Start writing sass here */
-@import "fancybox-override";
-@import "mobile";
+//insidepage
+.inside {
+    .wedding-detail {
+        .w-title {
+          padding-bottom: 5px;
+          border-bottom: 3px solid #ffc999;
+            h4 {
+                letter-spacing: 1px;
+                margin-bottom: 0;
+                padding-bottom: 5px;
+                border: 0;
+                margin-top: 0;
+            }
+            .wed-date{
+              span{
+                padding-right: 10px;
+              }
+            }
+        }
+    }
+  }
+    /* Start writing sass here */
+    @import "fancybox-override";
+    @import "mobile";
