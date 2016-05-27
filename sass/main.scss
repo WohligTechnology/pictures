@@ -3282,26 +3282,18 @@ h4.title-movies {
     margin:0 0 0 1px;
   }
 }
-//event
-// .eventdetail{
-//   .banner-movies{
-//     width: 100%;
-//     position: relative;
-//         .fa{
-//           position: absolute;
-//     top: 50%;
-//     left: 50%;
-//     font-size: 25px;
-//     border-radius: 50%;
-//     border: 5px solid #fff;
-//     width: 50px;
-//     padding: 8px 13px 0;
-//     height: 50px;
-//     color: #fff;
-//     transform: translate(-50%, -50%);
-//         }
-//   }
-// }
+//worldtourinside
+.worlddetail{
+  .cast-crew{
+    margin-top: 35px;
+  }
+  .mislider .title{
+    text-align:left;
+  }
+  .videoslider{
+    margin-bottom: 0px;
+   }
+}
 /* Start writing sass here */
 @import "fancybox-override";
 @import "mobile";
