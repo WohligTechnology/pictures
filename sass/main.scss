@@ -3298,8 +3298,8 @@ h4.title-movies {
 .inside {
     .wedding-detail {
         .w-title {
-          padding-bottom: 5px;
-          border-bottom: 3px solid #ffc999;
+            padding-bottom: 5px;
+            border-bottom: 3px solid #ffc999;
             h4 {
                 letter-spacing: 1px;
                 margin-bottom: 0;
@@ -3307,14 +3307,61 @@ h4.title-movies {
                 border: 0;
                 margin-top: 0;
             }
-            .wed-date{
-              span{
-                padding-right: 10px;
-              }
+            .wed-date {
+                span {
+                    padding-right: 10px;
+                }
             }
         }
     }
-  }
-    /* Start writing sass here */
-    @import "fancybox-override";
-    @import "mobile";
+}
+//mediacorner
+.mediacorner {
+    .wed-box {
+      .wed-desc-inside{
+        height:28px;
+        p{
+          text-transform: uppercase;
+          color: #f13748;
+          letter-spacing: 2px;
+          font-size: 18px;
+          margin: 5px 0;
+          font-family: 'Oxygen';
+          font-weight: bolder;
+         }
+        }
+        .wed-date {
+            font-size: 14px;
+            margin: 5px 0;
+            span{
+              color:#646464;
+              padding-right: 10px;
+            }
+        }
+        .social{
+          a{
+            .fa{
+                  color: white;
+                  background-color: #646464;
+                  border-radius: 50%;
+                  width: 28px;
+                  height: 28px;
+                  text-align: center;
+                  padding: 6px 7px 0 7px;
+                  margin: 4px 6px -4px 0;
+                  font-size: 16px;
+            }
+            .fa-envelope-o:before {
+                  font-size: 16px;
+            }
+            .fa-facebook:before {
+                  font-size: 16px;
+            }
+          }
+        }
+    }
+}
+
+/* Start writing sass here */
+@import "fancybox-override";
+@import "mobile";
