@@ -877,6 +877,7 @@ footer {
     .footer-menu ul li a {
         line-height: 150%;
         display: block;
+        padding: 2px 19px;
     }
     .followus {
         position: relative;
@@ -946,8 +947,8 @@ footer {
             font-weight: 300;
             line-height: 0.8;
             font-family: "Oxygen";
-            span {
-                font-size: 24px;
+            img {
+                width: 20px;
                 vertical-align: middle;
             }
         }
@@ -3318,50 +3319,113 @@ h4.title-movies {
 //mediacorner
 .mediacorner {
     .wed-box {
-      .wed-desc-inside{
-        height:28px;
-        p{
-          text-transform: uppercase;
-          color: #f13748;
-          letter-spacing: 2px;
-          font-size: 18px;
-          margin: 5px 0;
-          font-family: 'Oxygen';
-          font-weight: bolder;
-         }
+        .wed-desc-inside {
+            height: 28px;
+            p {
+                text-transform: uppercase;
+                color: #f13748;
+                letter-spacing: 2px;
+                font-size: 18px;
+                margin: 5px 0;
+                font-family: 'Oxygen';
+                font-weight: bolder;
+            }
         }
         .wed-date {
             font-size: 14px;
             margin: 5px 0;
-            span{
-              color:#646464;
-              padding-right: 10px;
+            span {
+                color: #646464;
+                padding-right: 10px;
             }
         }
-        .social{
-          a{
-            .fa{
-                  color: white;
-                  background-color: #646464;
-                  border-radius: 50%;
-                  width: 28px;
-                  height: 28px;
-                  text-align: center;
-                  padding: 6px 7px 0 7px;
-                  margin: 4px 6px -4px 0;
-                  font-size: 16px;
+        .social {
+            a {
+                .fa {
+                    color: white;
+                    background-color: #646464;
+                    border-radius: 50%;
+                    width: 28px;
+                    height: 28px;
+                    text-align: center;
+                    padding: 6px 7px 0;
+                    margin: 4px 6px -4px 0;
+                    font-size: 16px;
+                }
+                .fa-envelope-o:before {
+                    font-size: 16px;
+                }
+                .fa-facebook:before {
+                    font-size: 16px;
+                }
             }
-            .fa-envelope-o:before {
-                  font-size: 16px;
-            }
-            .fa-facebook:before {
-                  font-size: 16px;
-            }
-          }
         }
     }
 }
-
+//career
+.career {
+    .contact-fant-desc {
+        text-align: center;
+        h2 {
+            color: #218ecd;
+            font-weight: 700;
+            margin: 0 0 1px;
+        }
+        span {
+            color: #646464;
+            line-height: 28px;
+            font-size: 22px;
+        }
+        p {
+            color: #646464;
+            font-weight: 400;
+            line-height: 28px;
+            margin: 12px 0 0;
+            font-size: 22px;
+        }
+    }
+    .job{
+      margin: 20px 0;
+      h3 {
+        color: #218ecd;
+        font-weight: 700;
+        margin: 0 0 1px;
+      }
+      p{
+        color: #646464;
+        font-weight: 400;
+        line-height: 28px;
+        font-size: 22px;
+      }
+    }
+    .apply{
+      h3{
+        text-transform: uppercase;
+        color: #f13748;
+        letter-spacing: 1px;
+        font-size: 22px;
+        font-weight: 900;
+        a{
+          border-bottom: 3px solid #f13748;
+          color: #f13748;
+        }
+      }
+    }
+    .careervision{
+      .stats{
+        text-align: center;
+        border: 2px solid #f13748;
+        h4{
+            color: #313c41;
+            text-transform: uppercase;
+        }
+        p{
+            color: #4c4c4c;
+            margin: 0 90px 10px;
+        }
+      }
+    }
+}
 /* Start writing sass here */
 @import "fancybox-override";
 @import "mobile";
