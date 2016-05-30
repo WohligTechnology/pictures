@@ -107,6 +107,11 @@ firstapp.config(function($stateProvider, $urlRouterProvider, $httpProvider, $loc
             templateUrl: "views/template.html",
             controller: 'CareerCtrl'
         })
+        .state('careerforms', {
+            url: "/careerform",
+            templateUrl: "views/template.html",
+            controller: 'CareerFormCtrl'
+        })
         .state('mice', {
             url: "/mice",
             templateUrl: "views/template.html",
