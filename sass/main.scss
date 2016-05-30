@@ -3366,6 +3366,7 @@ h4.title-movies {
 .career {
     .contact-fant-desc {
         text-align: center;
+        padding-bottom: 50px;
         h2 {
             color: #218ecd;
             font-weight: 700;
@@ -3384,46 +3385,115 @@ h4.title-movies {
             font-size: 22px;
         }
     }
-    .job{
-      margin: 20px 0;
-      h3 {
-        color: #218ecd;
-        font-weight: 700;
-        margin: 0 0 1px;
-      }
-      p{
-        color: #646464;
-        font-weight: 400;
-        line-height: 28px;
-        font-size: 22px;
-      }
-    }
-    .apply{
-      h3{
-        text-transform: uppercase;
-        color: #f13748;
-        letter-spacing: 1px;
-        font-size: 22px;
-        font-weight: 900;
-        a{
-          border-bottom: 3px solid #f13748;
-          color: #f13748;
+    .job {
+        margin: 40px 0 30px;
+        h3 {
+            color: #218ecd;
+            font-weight: 700;
+            margin: 0 0 1px;
         }
-      }
+        p {
+            color: #646464;
+            font-weight: 400;
+            line-height: 28px;
+            font-size: 22px;
+        }
     }
-    .careervision{
-      .stats{
-        text-align: center;
-        border: 2px solid #f13748;
-        h4{
-            color: #313c41;
+    .apply {
+        h3 {
             text-transform: uppercase;
+            color: #f13748;
+            letter-spacing: 1px;
+            font-size: 22px;
+            font-weight: 900;
+            margin: 35px 0;
+            a {
+                border-bottom: 3px solid #f13748;
+                color: #f13748;
+            }
         }
-        p{
-            color: #4c4c4c;
-            margin: 0 90px 10px;
+    }
+    .careervision {
+        .stats {
+            text-align: center;
+            border: 2px solid #f13748;
+            .cimage {
+                margin: 20px;
+                img {
+                    width: 66px;
+                }
+            }
+            h4 {
+                color: #313c41;
+                text-transform: uppercase;
+            }
+            p {
+                color: #4c4c4c;
+                margin: 0 90px 10px;
+            }
         }
-      }
+    }
+    .jobvacancy {
+        .vacancy {
+            border: 2px solid #f13748;
+            height: 150px;
+            overflow: hidden;
+            margin: 15px 0;
+            padding: 5px 10px;
+            font-family: "Lato";
+            h4 {
+                text-transform: uppercase;
+                color: #218ecd;
+                font-weight: 700;
+            }
+            .blue {
+                color: #218ecd;
+                font-size: 16px;
+            }
+            span {
+                color: #646464;
+                font-size: 16px;
+                line-height: 1.5;
+            }
+            &:hover {
+                background: url("../img/career/hover.jpg") no-repeat;
+                background-position: center;
+                background-size: cover;
+                cursor: pointer;
+                .blue,
+                h4,
+                span {
+                    color: #ffffff;
+                }
+            }
+        }
+    }
+    .cimage1 {
+        margin: 42px 0;
+        position: relative;
+        img {
+            width: 100%;
+        }
+        .parag {
+            margin: 0 22%;
+            text-align: center;
+            position: absolute;
+            top: 45%;
+            left: 29%;
+            transform: translate(-50%,-50%);
+            .pblue {
+                color: #218ecd;
+                font-size: 28px;
+            }
+            p {
+                color: #646464;
+                font-size: 20px;
+                span {
+                    color: #f13748;
+                    font-size: 28px;
+                }
+            }
+        }
     }
 }
 /* Start writing sass here */
