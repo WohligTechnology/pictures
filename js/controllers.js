@@ -1594,7 +1594,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             date: "12 January 2016",
             desc: "Lorem Ipsum is simply dummy text of the printing industry"
         }, {
-            img: "img/event/e2.png",
+            img: "img/event/e1.png",
             date: "12 January 2016",
             desc: "Lorem Ipsum is simply dummy text of the printing industry"
         }];
