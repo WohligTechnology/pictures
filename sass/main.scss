@@ -699,6 +699,11 @@ ul.nav-opt1 {
             background: transparent;
             border-color: transparent;
             margin-bottom: 15px;
+            .flex-direction-nav {
+                .flex-prev {
+                    left: -92px !important;
+                }
+              }
             &:hover {
                 .flex-direction-nav {
                     .flex-prev {
@@ -715,6 +720,7 @@ ul.nav-opt1 {
                 opacity: 1;
                 width: 50px;
                 height: 90px;
+                padding: 2px 46px !important;
                 &.flex-prev:before {
                     content: url('../img/home/prev.png');
                 }
@@ -1631,6 +1637,7 @@ h4.title-movies {
                 opacity: 1;
                 width: 50px;
                 height: 65px;
+                padding: 2px 46px !important;
                 &.flex-next:before {
                     content: url("../img/moviedetail/next.png");
                 }
@@ -2280,6 +2287,11 @@ h4.title-movies {
         background: transparent;
         border-color: transparent;
         margin-bottom: 15px;
+        .flex-direction-nav {
+            .flex-prev {
+                left: -92px !important;
+            }
+          }
         &:hover {
             .flex-direction-nav {
                 .flex-prev {
@@ -2296,6 +2308,7 @@ h4.title-movies {
             opacity: 1;
             width: 50px;
             height: 90px;
+            padding: 2px 46px !important;
             &.flex-prev:before {
                 content: url('../img/prv.png');
             }
@@ -2342,6 +2355,11 @@ h4.title-movies {
         background: transparent;
         border-color: transparent;
         margin-bottom: 15px;
+        .flex-direction-nav {
+            .flex-prev {
+                left: -92px !important;
+            }
+          }
         &:hover {
             .flex-direction-nav {
                 .flex-prev {
@@ -2358,6 +2376,7 @@ h4.title-movies {
             opacity: 1;
             width: 50px;
             height: 90px;
+            padding: 2px 46px !important;
             &.flex-prev:before {
                 content: url('../img/prv.png');
             }
@@ -3494,6 +3513,94 @@ h4.title-movies {
                 }
             }
         }
+    }
+}
+//career form
+.jobform {
+    background: url('../img/career/bg.png') no-repeat;
+    background-size: cover;
+    padding: 48px 0;
+    font-family: 'Oxygen';
+    .control-label {
+        text-align: left;
+    }
+    h4 {
+        padding: 7px 0 0 14px;
+        color: #4c4c4c;
+        font-weight: 400;
+        margin: 18px 0 10px;
+    }
+    label {
+        color: #4c4c4c;
+        font-weight: 300;
+        span {
+            color: #f13748;
+        }
+    }
+    .checkbox {
+        padding-top: 0;
+        label {
+            padding-left: 0;
+            padding-top: 0;
+            padding-right: 30px;
+        }
+    }
+    .jobcat {
+        font-size: 18px;
+        color: #4c4c4c;
+        font-weight: 400;
+        display: inline;
+        margin-right: 18px;
+    }
+    .checkbox-inline input[type=checkbox] + label span {
+        width: 18px;
+        height: 18px;
+        vertical-align: middle;
+        margin: -1px 7px 0 0;
+    }
+    .attach {
+        .fa {
+            font-size: 20px;
+            vertical-align: middle;
+            padding: 0 5px 0 3px;
+            transform: rotate(80deg);
+        }
+    }
+    .custom-select {
+        display: inline;
+        position: relative;
+        select {
+            border-width: 2px;
+            border-color: #f13748;
+            border-style: solid;
+            background-color: #d8d8d8;
+            cursor: pointer;
+            width: 78%;
+            display: inline;
+            position: relative;
+        }
+        &:after {
+            font: normal normal normal 14px/1 FontAwesome;
+            content: "\f0d7";
+            height: 33px;
+            padding: 2px 12px;
+            width: 40px;
+            color: white;
+            background-color: #f13748;
+            position: absolute;
+            top: -8px;
+            right: 0;
+            text-align: center;
+            font-size: 28px;
+        }
+    }
+    p {
+        font-size: 15px;
+        color: #4c4c4c;
+        font-weight: 300;
+    }
+    .form-control {
+        background-color: #d8d8d8;
     }
 }
 /* Start writing sass here */
