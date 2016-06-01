@@ -706,7 +706,7 @@ ul.nav-opt1 {
                 .flex-next {
                     right: -110px !important;
                 }
-              }
+            }
             &:hover {
                 .flex-direction-nav {
                     .flex-prev {
@@ -727,7 +727,6 @@ ul.nav-opt1 {
                 &.flex-prev:before {
                     content: url('../img/home/prev.png');
                     transform: scale(0.7,0.7);
-
                 }
                 &.flex-next:before {
                     content: url('../img/home/next.png');
@@ -1501,7 +1500,6 @@ footer {
                 box-shadow: none;
                 .panel-heading {
                     color: #333333;
-                    background-color: transparent;
                     border: 0;
                     box-shadow: none;
                     padding: 0;
@@ -1525,6 +1523,14 @@ footer {
         .panel-group .panel + .panel {
             margin-top: 0;
         }
+    }
+}
+.event {
+    .panel-body {
+        background-color: #f0f0f0;
+    }
+    .panel-heading {
+        background-color: #f0f0f0;
     }
 }
 .banner-movies {
@@ -2294,13 +2300,13 @@ h4.title-movies {
         border-color: transparent;
         margin-bottom: 15px;
         .flex-direction-nav {
-          .flex-prev {
-              left: -160px !important;
-          }
-          .flex-next {
-              right: -110px !important;
-          }
-          }
+            .flex-prev {
+                left: -160px !important;
+            }
+            .flex-next {
+                right: -110px !important;
+            }
+        }
         &:hover {
             .flex-direction-nav {
                 .flex-prev {
@@ -2367,13 +2373,13 @@ h4.title-movies {
         border-color: transparent;
         margin-bottom: 15px;
         .flex-direction-nav {
-          .flex-prev {
-              left: -160px !important;
-          }
-          .flex-next {
-              right: -110px !important;
-          }
-          }
+            .flex-prev {
+                left: -160px !important;
+            }
+            .flex-next {
+                right: -110px !important;
+            }
+        }
         &:hover {
             .flex-direction-nav {
                 .flex-prev {
@@ -3351,9 +3357,13 @@ h4.title-movies {
         }
     }
 }
-.w-detail{
-  height: 81px;
-overflow: hidden;
+.w-detail {
+    height: 81px;
+    overflow: hidden;
+}
+.bg-event {
+    background: url('../img/bg-asfcsocial.png') no-repeat;
+    background-size: cover;
 }
 //mediacorner
 .mediacorner {

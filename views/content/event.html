@@ -1,4 +1,4 @@
-<section>
+<section class="event">
     <div class=container>
         <div class=row>
             <div class=col-xs-12>
@@ -12,94 +12,99 @@
                 </div>
             </div>
         </div>
-        <div class="wedding banner-talent">
+      </div>
+        <div class="bg-event">
+          <div class="container">
+          <div class="wedding banner-talent">
             <div class=row>
-                <div class="col-md-4 col-sm-4 col-xs-6" ng-repeat="data in wedding track by $index">
-                    <div class=banner-wrap><img ng-src={{data.img}} class=img-responsive> <img src=img/event/roller-hover.png class="img-responsive hover-image">
-                        <div class="name-event extend-hover text-center center-make"><span class="color-white uppercase">{{data.name}}</span>
-                            <hr class=wedding-border>
-                        </div>
-                    </div>
+              <div class="col-md-4 col-sm-4 col-xs-6" ng-repeat="data in wedding track by $index">
+                <div class=banner-wrap><img ng-src={{data.img}} class=img-responsive> <img src=img/event/roller-hover.png class="img-responsive hover-image">
+                  <div class="name-event extend-hover text-center center-make"><span class="color-white uppercase">{{data.name}}</span>
+                    <hr class=wedding-border>
+                  </div>
                 </div>
+              </div>
             </div>
-        </div>
-        <div class=bg-moviesdiaries>
+          </div>
+          <div class=bg-moviesdiaries>
             <div class=row>
-                <div class=col-md-12>
-                    <div class=text-center>
-                        <div class=wedding-diary>
-                            <div class="diary-title mr30">
-                                <h4 class="uppercase color-red"><i class="fi flaticon-book"></i>event DIARIES</div>
-                        </div>
+              <div class=col-md-12>
+                <div class=text-center>
+                  <div class=wedding-diary>
+                    <div class="diary-title mr30">
+                      <h4 class="uppercase color-red"><i class="fi flaticon-book"></i>event DIARIES</div>
+                      </div>
                     </div>
+                  </div>
                 </div>
-            </div>
-            <div class=pd-side>
-                <div class=row>
+                <div class=pd-side>
+                  <div class=row>
                     <div class="col-sm-4 col-xs-6" ng-repeat="data in weddings track by $index">
-                        <div class="wed-box border-red">
-                            <div class=wed-img-list><img ng-src={{data.img}} class=img-responsive>
-                                <div class=ribbon-red><img src=img/ribbon_red.png> <span class="color-white uppercase">Event</span></div>
-                            </div>
-                            <div class=wed-desc>
-                                <div class=wed-date><span>{{data.date}}</span></div>
-                                <div class=wed-desc-inside>
-                                    <p class=bold>{{data.desc}}</p>
-                                </div>
-                                <div class=read-more><a class=color-black>Read More</a></div>
-                            </div>
-                            <div class="border-blue borders"></div>
+                      <div class="wed-box border-red">
+                        <div class=wed-img-list><img ng-src={{data.img}} class=img-responsive>
+                          <div class=ribbon-red><img src=img/ribbon_red.png> <span class="color-white uppercase">Event</span></div>
                         </div>
+                        <div class=wed-desc>
+                          <div class=wed-date><span>{{data.date}}</span></div>
+                          <div class=wed-desc-inside>
+                            <p class=bold>{{data.desc}}</p>
+                          </div>
+                          <div class=read-more><a class=color-black>Read More</a></div>
+                        </div>
+                        <div class="border-blue borders"></div>
+                      </div>
                     </div>
-                </div>
-                <div class="btn-all mr30 text-center">
+                  </div>
+                  <div class="btn-all mr30 text-center">
                     <button class="btn btn-danger btn-outline">View All</button>
+                  </div>
                 </div>
-            </div>
-        </div>
-        <div class=pd-side>
-            <div class=row>
-                <div class=col-md-12>
+              </div>
+              <div class=pd-side>
+                <div class=row>
+                  <div class=col-md-12>
                     <div class=service>
-                        <div class=title>
-                            <h3 class="uppercase bold text-center">services</h3>
-                            <div class="border-blue borders"></div>
+                      <div class=title>
+                        <h3 class="uppercase bold text-center">services</h3>
+                        <div class="border-blue borders"></div>
+                      </div>
+                      <div class=services-list>
+                        <uib-accordion close-others=oneAtATime is-open=status.open>
+                          <uib-accordion-group is-open=status.open1 is-disabled=status.isFirstDisabled ng-repeat="data in services">
+                            <uib-accordion-heading>
+                              <h4><span class="uppercase bold">{{data.title}}</span> <i class="pull-right fa" ng-class="{'fa-minus': status.open1, 'fa-plus': !status.open1}"></i></h4></uib-accordion-heading>
+                              <div ng-bind-html=data.content></div>
+                            </uib-accordion-group>
+                          </uib-accordion>
                         </div>
-                        <div class=services-list>
-                            <uib-accordion close-others=oneAtATime is-open=status.open>
-                                <uib-accordion-group is-open=status.open1 is-disabled=status.isFirstDisabled ng-repeat="data in services">
-                                    <uib-accordion-heading>
-                                        <h4><span class="uppercase bold">{{data.title}}</span> <i class="pull-right fa" ng-class="{'fa-minus': status.open1, 'fa-plus': !status.open1}"></i></h4></uib-accordion-heading>
-                                    <div ng-bind-html=data.content></div>
-                                </uib-accordion-group>
-                            </uib-accordion>
-                        </div>
+                      </div>
                     </div>
+                  </div>
                 </div>
-            </div>
-        </div>
-        <div class=section3>
-            <div class=bg3>
-                <div class=container>
-                    <div class=client-speak>
+                <div class=section3>
+                  <div class=bg3>
+                    <div class=container>
+                      <div class=client-speak>
                         <div class="name-cont color-white"><img src=img/inverted.png> <span>Client Speak</span></div>
                         <div class=img-holder><img src=img/talent/sachin.jpg class=img-reponsive></div>
                         <div class="img-review color-white">
-                            <h4>"Extra Efficient"</h4>
-                            <p>- Sachin Joshi</p>
+                          <h4>"Extra Efficient"</h4>
+                          <p>- Sachin Joshi</p>
                         </div>
-                    </div>
-                    <div class="row">
-                       <div class="col-md-offset-2 col-md-8">
+                      </div>
+                      <div class="row">
+                        <div class="col-md-offset-2 col-md-8">
                           <div class="text-center">
-                             <h4 class="uppercase color-blue bold">Use <a class="color-red" target="_blank">#GSEvents</a> and get to view live feed of everyone,<br>
-              including yours, right here!</h4>
+                            <h4 class="uppercase color-blue bold">Use <a class="color-red" target="_blank">#GSEvents</a> and get to view live feed of everyone,<br>
+                              including yours, right here!</h4>
+                            </div>
                           </div>
-                       </div>
+                        </div>
+                      </div>
                     </div>
-                </div>
-            </div>
+                  </div>
         </div>
+      </div>
         <div class=social>
             <section class=marg-section>
                 <div class=social-back>
@@ -132,6 +137,7 @@
                 </div>
             </section>
         </div>
+        <div class="container">
         <div class=mr30>
             <div class=row>
                 <div class="col-md-offset-2 col-md-8">

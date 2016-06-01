@@ -46,7 +46,9 @@
                   <div class="row" ng-repeat="row in slide">
                     <div class="col-xs-4" ng-repeat="wall in row">
                       <div class="mb15">
-                        <img ng-src="{{wall.image | uploadpath}}" alt="" class="img-responsive">
+                        <a fancybox-box href="{{wall.image | uploadpath}}">
+                          <img ng-src="{{wall.image | uploadpath}}" alt="" class="img-responsive">
+                        </a>
                       </div>
                     </div>
                   </div>
@@ -91,16 +93,18 @@
           <div class="slider-client">
             <flex-slider slide="video in weddetail.featuredvideos track by $index" slider-id="slider" prev-text="" next-text="" sync="#carousel" slideshow="false" animation="slide">
               <li>
-                <div class="">
+                <div class="video-main">
                   <!-- <img ng-src="{{image.img}}" alt="" class="img-responsive"> -->
                     <img ng-src="{{video.name | youtubethumb:false}}" alt="" class="img-responsive">
-                    <a fancybox-box href="http://www.youtube.com/embed/{{weddetail.featuredvideos[0].content | youtubethumb:true}}?autoplay=1&modestbranding=0&showinfo=0&rel=0&loop=1" rel="movies" data-fancybox-type="iframe">
-                        <i class="fa fa-play"></i>
-                    </a>
+                    <a fancybox-box href="http://www.youtube.com/embed/{{video.name | youtubethumb:true}}?autoplay=1&modestbranding=0&showinfo=0&rel=0&loop=1" rel="movies" data-fancybox-type="iframe">
+                    <i class="fa fa-play"></i>
+                  </a>
                 </div>
               </li>
             </flex-slider>
+            <!-- <a fancybox-box href="http://www.youtube.com/embed/{{weddetail.featuredvideos.name | youtubethumb:true}}?autoplay=1&modestbranding=0&showinfo=0&rel=0&loop=1" rel="movies">
             <i class="fa fa-play"></i>
+          </a> -->
             <!-- <flex-slider slide="image in vid track by $index" ng-if="styleNoActive == 'vactive'" slider-id="slider" prev-text="" next-text="" sync="#carousel" slideshow="false" animation="slide">
               <li>
                 <div class="">
@@ -117,10 +121,11 @@
     <div class="row">
       <div class="col-md-offset-1 col-md-10">
         <div class="image-navigation">
-          <flex-slider slide="image in video track by $index" animation="slide" animation-loop="false" item-width="280" item-margin="40" as-nav-for="#slider" slideshow="false" control-nav="false" prev-text="" next-text="" slider-id="carousel" animation-loop="false">
+          <flex-slider slide="image in weddetail.featuredvideos track by $index" animation="slide" animation-loop="false" item-width="280" item-margin="40" as-nav-for="#slider" slideshow="false" control-nav="false" prev-text="" next-text="" slider-id="carousel" animation-loop="false">
             <li>
               <div class="row">
-                <img ng-src="{{image.img}}" alt="">
+                <!-- <img ng-src="{{image.img}}" alt=""> -->
+                <img ng-src="{{image.name | youtubethumb:false}}" alt="">
               </div>
             </li>
           </flex-slider>

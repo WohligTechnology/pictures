@@ -796,6 +796,10 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
       // $scope.weddetail.imagegallery = _.chunk($scope.weddetail.imagegallery, 3);
     }
   })
+  $scope.makeActive = function(video, index) {
+    $scope.weddetail.featuredvideos.splice(index, 1);
+    $scope.weddetail.featuredvideos.unshift(video);
+  }
 })
 
 .controller('ClientsCtrl', function($scope, TemplateService, NavigationService, $timeout) {
