@@ -701,7 +701,10 @@ ul.nav-opt1 {
             margin-bottom: 15px;
             .flex-direction-nav {
                 .flex-prev {
-                    left: -92px !important;
+                    left: -160px !important;
+                }
+                .flex-next {
+                    right: -110px !important;
                 }
               }
             &:hover {
@@ -723,9 +726,12 @@ ul.nav-opt1 {
                 padding: 2px 46px !important;
                 &.flex-prev:before {
                     content: url('../img/home/prev.png');
+                    transform: scale(0.7,0.7);
+
                 }
                 &.flex-next:before {
                     content: url('../img/home/next.png');
+                    transform: scale(0.7,0.7);
                 }
             }
         }
@@ -2288,9 +2294,12 @@ h4.title-movies {
         border-color: transparent;
         margin-bottom: 15px;
         .flex-direction-nav {
-            .flex-prev {
-                left: -92px !important;
-            }
+          .flex-prev {
+              left: -160px !important;
+          }
+          .flex-next {
+              right: -110px !important;
+          }
           }
         &:hover {
             .flex-direction-nav {
@@ -2329,9 +2338,11 @@ h4.title-movies {
             a {
                 &.flex-prev:before {
                     content: url('../img/home/prev.png');
+                    transform: scale(0.7,0.7);
                 }
                 &.flex-next:before {
                     content: url('../img/home/next.png');
+                    transform: scale(0.7,0.7);
                 }
             }
         }
@@ -2356,9 +2367,12 @@ h4.title-movies {
         border-color: transparent;
         margin-bottom: 15px;
         .flex-direction-nav {
-            .flex-prev {
-                left: -92px !important;
-            }
+          .flex-prev {
+              left: -160px !important;
+          }
+          .flex-next {
+              right: -110px !important;
+          }
           }
         &:hover {
             .flex-direction-nav {
@@ -2397,9 +2411,11 @@ h4.title-movies {
             a {
                 &.flex-prev:before {
                     content: url('../img/home/prev.png');
+                    transform: scale(0.7,0.7);
                 }
                 &.flex-next:before {
                     content: url('../img/home/next.png');
+                    transform: scale(0.7,0.7);
                 }
             }
         }
@@ -3334,6 +3350,10 @@ h4.title-movies {
             }
         }
     }
+}
+.w-detail{
+  height: 81px;
+overflow: hidden;
 }
 //mediacorner
 .mediacorner {
