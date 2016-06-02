@@ -58,6 +58,9 @@ var navigationservice = angular.module('navigationservice', [])
         getWeddingInsideBanner: function(movieid, callback) {
             $http.get(apiUrl + 'getWeddingInsideBanner?id=' + movieid).success(callback);
         },
+        getEventData: function(callback) {
+            $http.get(apiUrl + 'getEvents').success(callback);
+        },
         makeactive: function(menuname) {
             for (var i = 0; i < navigation.length; i++) {
                 if (navigation[i].name == menuname) {

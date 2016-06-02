@@ -5,20 +5,22 @@
                 <div class="head-banner text-center"><img src=img/event/event.png class=img-responsive title=Events></div>
             </div>
         </div>
-        <div class=row>
+        <div class=row ng-if="eventData && eventData.description && eventData.description.content">
             <div class="col-md-offset-2 col-md-8">
-                <div class="wedding-fant-desc mt50">
-                    <p>GS Entertainment is a full service event management company in Mumbai dedicated to quality and excellence. We as a team provides innovative thinking, expertise and dynamise that will make your event a truly and highly memorable experience. All our events are planned down to the minutest of details, from conceptualization to production, meticulous planning and precise execution are strictly adhered to, resulting in events that are nothing less than perfect.</p>
+                <div class="wedding-fant-desc mt50" ng-bind-html="eventData.description.content">
+                    <!-- <p>GS Entertainment is a full service event management company in Mumbai dedicated to quality and excellence. We as a team provides innovative thinking, expertise and dynamise that will make your event a truly and highly memorable experience. All our events are planned down to the minutest of details, from conceptualization to production, meticulous planning and precise execution are strictly adhered to, resulting in events that are nothing less than perfect.</p> -->
                 </div>
             </div>
         </div>
       </div>
         <div class="bg-event">
           <div class="container">
-          <div class="wedding banner-talent">
+          <div class="wedding banner-talent" ng-if="eventData.events.length > 0">
             <div class=row>
-              <div class="col-md-4 col-sm-4 col-xs-6" ng-repeat="data in wedding track by $index">
-                <div class=banner-wrap><img ng-src={{data.img}} class=img-responsive> <img src=img/event/roller-hover.png class="img-responsive hover-image">
+              <div class="col-md-4 col-sm-4 col-xs-6" ng-repeat="data in eventData.events track by $index">
+                <div class="banner-wrap" ui-sref="eventinside({id:data.id})">
+                   <img ng-src="{{data.image | uploadpath}}" class="img-responsive">
+               <img src=img/event/roller-hover.png class="img-responsive hover-image">
                   <div class="name-event extend-hover text-center center-make"><span class="color-white uppercase">{{data.name}}</span>
                     <hr class=wedding-border>
                   </div>
@@ -26,7 +28,7 @@
               </div>
             </div>
           </div>
-          <div class=bg-moviesdiaries>
+          <div class="bg-moviesdiaries" ng-if="eventData.eventdiaries.length>0">
             <div class=row>
               <div class=col-md-12>
                 <div class=text-center>
@@ -39,17 +41,17 @@
                 </div>
                 <div class=pd-side>
                   <div class=row>
-                    <div class="col-sm-4 col-xs-6" ng-repeat="data in weddings track by $index">
+                    <div class="col-sm-4 col-xs-6" ng-repeat="data in eventData.eventdiaries track by $index">
                       <div class="wed-box border-red">
-                        <div class=wed-img-list><img ng-src={{data.img}} class=img-responsive>
+                        <div class=wed-img-list><img ng-src="{{data.image | uploadpath}}" class=img-responsive>
                           <div class=ribbon-red><img src=img/ribbon_red.png> <span class="color-white uppercase">Event</span></div>
                         </div>
                         <div class=wed-desc>
                           <div class=wed-date><span>{{data.date}}</span></div>
-                          <div class=wed-desc-inside>
-                            <p class=bold>{{data.desc}}</p>
+                          <div class="wed-desc-inside" ng-bind-html="data.content">
+
                           </div>
-                          <div class=read-more><a class=color-black>Read More</a></div>
+                          <div class="read-more"><a class=color-black>Read More</a></div>
                         </div>
                         <div class="border-blue borders"></div>
                       </div>
@@ -60,7 +62,7 @@
                   </div>
                 </div>
               </div>
-              <div class=pd-side>
+              <div class="pd-side" ng-if="eventData.services.length>0">
                 <div class=row>
                   <div class=col-md-12>
                     <div class=service>
@@ -70,10 +72,10 @@
                       </div>
                       <div class=services-list>
                         <uib-accordion close-others=oneAtATime is-open=status.open>
-                          <uib-accordion-group is-open=status.open1 is-disabled=status.isFirstDisabled ng-repeat="data in services">
+                          <uib-accordion-group is-open=status.open1 is-disabled=status.isFirstDisabled ng-repeat="data in eventData.services">
                             <uib-accordion-heading>
-                              <h4><span class="uppercase bold">{{data.title}}</span> <i class="pull-right fa" ng-class="{'fa-minus': status.open1, 'fa-plus': !status.open1}"></i></h4></uib-accordion-heading>
-                              <div ng-bind-html=data.content></div>
+                              <h4><span class="uppercase bold">{{data.name}}</span> <i class="pull-right fa" ng-class="{'fa-minus': status.open1, 'fa-plus': !status.open1}"></i></h4></uib-accordion-heading>
+                              <div ng-bind-html="data.content"></div>
                             </uib-accordion-group>
                           </uib-accordion>
                         </div>
@@ -81,7 +83,7 @@
                     </div>
                   </div>
                 </div>
-                <div class=section3>
+                <div class="section3" ng-if="eventData.testimonial.length>0">
                   <div class=bg3>
                     <div class=container>
                       <div class=client-speak>
