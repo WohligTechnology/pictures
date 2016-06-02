@@ -215,25 +215,7 @@ a {
     background-size: 100% 100%;
 }
 /* Let's get this party started */
-::-webkit-scrollbar {
-    width: 8px;
-}
-/* Track */
-::-webkit-scrollbar-track {
-    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
-    -webkit-border-radius: 10px;
-    border-radius: 10px;
-}
-/* Handle */
-::-webkit-scrollbar-thumb {
-    -webkit-border-radius: 10px;
-    border-radius: 10px;
-    background: rgba(255,255,255,0.8);
-    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5);
-}
-::-webkit-scrollbar-thumb:window-inactive {
-    background: rgba(255,255,255,0.4);
-}
+
 .custscroll {
     top: 20px;
     left: 20px;
@@ -285,6 +267,44 @@ a {
             }
         }
     }
+     ::-webkit-scrollbar {
+          width: 8px;
+      }
+      /* Track */
+      ::-webkit-scrollbar-track {
+          -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+          -webkit-border-radius: 10px;
+          border-radius: 10px;
+      }
+      /* Handle */
+      ::-webkit-scrollbar-thumb {
+          -webkit-border-radius: 10px;
+          border-radius: 10px;
+          background: rgba(255,255,255,0.8);
+          -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5);
+      }
+      ::-webkit-scrollbar-thumb:window-inactive {
+          background: rgba(255,255,255,0.4);
+      }
+      ::-webkit-scrollbar {
+          width: 8px;
+      }
+      /* Track */
+      ::-webkit-scrollbar-track {
+          -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+          -webkit-border-radius: 10px;
+          border-radius: 10px;
+      }
+      /* Handle */
+      ::-webkit-scrollbar-thumb {
+          -webkit-border-radius: 10px;
+          border-radius: 10px;
+          background: rgba(255,255,255,0.8);
+          -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5);
+      }
+      ::-webkit-scrollbar-thumb:window-inactive {
+          background: rgba(255,255,255,0.4);
+      }
 }
 .btnsign {
     font-size: 14px;
@@ -3652,7 +3672,7 @@ h4.title-movies {
   .mehendi{
     background: url('../img/worldtour/bg.png')no-repeat;
     background-size: 100% 100%;
-    background-position: 0px -94px;
+    background-position: 0px -275px;
   }
   .title{
     text-align: center;
@@ -3666,6 +3686,22 @@ margin-bottom: 28px;
     color: #088fd5;
     cursor: pointer;
     border-bottom: 4px solid #088fd5;
+}
+.wt-data{
+  margin-top: 20px;
+  text-align: center;
+  h4{
+    margin: 0;
+    padding: 0;
+  }
+  p{
+    font-size: 16px;
+    margin-bottom: 0;
+  }
+  .red{
+    font-size: 18px;
+    color:#ec3647;
+  }
 }
 }
 /* Start writing sass here */
