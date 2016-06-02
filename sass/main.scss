@@ -22,6 +22,10 @@ $color-black: #000!default;
     src: url("../fonts/Oxygen-Light.ttf");
 }
 @font-face {
+    font-family: "OxygenReg";
+    src: url("../fonts/Oxygen_Regular.otf");
+}
+@font-face {
     font-family: "Folklore";
     src: url("../fonts/Folklore.otf");
 }
@@ -425,7 +429,7 @@ ul {
                 content: url('../img/menuicons/bat.png');
             }
             &:hover {
-                color: $color-white;
+                color: darken( #fff, 20%);
             }
             // &:hover {
             //   color: $brand-danger;
@@ -902,7 +906,7 @@ footer {
     margin-top: 0;
     a {
         &:hover {
-            color: darken(#fff, 20%);
+            color: darken(#fff, 20%) !important;
         }
     }
     .footer-menu ul li a {
@@ -1552,6 +1556,9 @@ footer {
     }
     .panel-heading {
         background-color: #f0f0f0 !important;
+    }
+    .mt60{
+      margin-top: 60px;
     }
 }
 .banner-movies {
@@ -2289,7 +2296,8 @@ h4.title-movies {
                 @include transition(all ease 300ms);
                 &:hover,
                 .active {
-                    color: lighten(#000, 30%);
+                  color: #088fd5;
+                  text-decoration: underline;
                 }
             }
         }
@@ -3096,7 +3104,8 @@ h4.title-movies {
                 @include transition(all ease 300ms);
                 &:hover,
                 .active {
-                    color: lighten(#000, 30%);
+                    color: #088fd5;
+                    text-decoration: underline;
                 }
             }
         }
@@ -3340,6 +3349,9 @@ h4.title-movies {
     .mt50 {
         margin-top: 50px;
     }
+    .mt60{
+      margin-top: 60px;
+    }
     .banner-talent.banner-sports .banner-wrap .name-event {
         width: 99.3%;
         margin: 0 0 0 1px;
@@ -3427,12 +3439,15 @@ h4.title-movies {
                     width: 28px;
                     height: 28px;
                     text-align: center;
-                    padding: 6px 7px 0;
+                    padding: 5px 7px 0;
                     margin: 4px 6px -4px 0;
                     font-size: 16px;
+                    &:hover{
+                      background-color: red;
+                    }
                 }
                 .fa-envelope-o:before {
-                    font-size: 16px;
+                    font-size: 14px;
                 }
                 .fa-facebook:before {
                     font-size: 16px;
@@ -3515,7 +3530,7 @@ h4.title-movies {
     .jobvacancy {
         .vacancy {
             border: 2px solid #f13748;
-            height: 150px;
+            height: 246px;
             overflow: hidden;
             margin: 15px 0;
             padding: 5px 10px;
@@ -3575,12 +3590,17 @@ h4.title-movies {
         }
     }
 }
+.fancybox-nav{
+    top: 10%;
+    width: 10%;
+    height: 80%;
+}
 //career form
 .jobform {
     background: url('../img/career/bg.png') no-repeat;
     background-size: cover;
     padding: 48px 0;
-    font-family: 'Oxygen';
+    font-family: "OxygenReg";
     .control-label {
         text-align: left;
     }
@@ -3638,6 +3658,8 @@ h4.title-movies {
             width: 78%;
             display: inline;
             position: relative;
+            z-index: 99;
+            -webkit-appearance: none;
         }
         &:after {
             font: normal normal normal 14px/1 FontAwesome;
@@ -3652,6 +3674,8 @@ h4.title-movies {
             right: 0;
             text-align: center;
             font-size: 28px;
+            pointer-events: none;
+            z-index: 999;
         }
     }
     p {
