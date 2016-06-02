@@ -785,9 +785,11 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
   $scope.menutitle = NavigationService.makeactive("Wedding");
   TemplateService.title = $scope.menutitle;
   $scope.navigation = NavigationService.getnav();
+  $scope.weddetail = {};
   NavigationService.getWeddingInsideDetails($stateParams.id, function(data) {
     console.log(data);
     $scope.weddetail = data.data;
+    console.log("$scope.weddetail",$scope.weddetail);
     if ($scope.weddetail.imagegallery && $scope.weddetail.imagegallery.length > 0) {
       $scope.weddetail.imagegallery = _.chunk($scope.weddetail.imagegallery, 6);
       for (var i = 0; i < $scope.weddetail.imagegallery.length; i++) {

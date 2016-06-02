@@ -21,7 +21,7 @@
     </div>
   </div>
 </section>
-<section class="mehendi">
+<section class="mehendi" ng-if="weddetail.imagegallery.length > 0">
   <div class="mehendi-gallery nav-tab-middle ">
     <div class="container">
       <div class="row">
@@ -31,14 +31,6 @@
             Image Gallery
             </h3>
           </div>
-          <!-- <div class="title">
-            <h4 class="display-inline uppercase {{styleActives}}" ng-click="doActives(1);">
-            Mehendi
-          </h4>
-            <h4 class="display-inline uppercase {{styleNoActives}}" ng-click="doActives(2);">
-            Sangeet
-          </h4>
-          </div> -->
           <div class="mb15">
             <div class="slider-client">
               <flex-slider flex-slide="slide in weddetail.imagegallery track by $index" animation="slide" animation-loop="false" as-nav-for="#slider" slideshow="false" item-margin="20" prev-text="" next-text="">
@@ -54,17 +46,6 @@
                   </div>
                 </li>
               </flex-slider>
-              <!-- <flex-slider flex-slide="slide in wall track by $index" ng-if="styleNoActives == 'actives'" animation="slide" animation-loop="false" as-nav-for="#slider" slideshow="false" item-margin="20" prev-text="" next-text="">
-                <li class="">
-                  <div class="row" ng-repeat="row in slide">
-                    <div class="col-xs-4" ng-repeat="wallpaper in row">
-                      <div class="mb15">
-                        <img ng-src="{{wallpaper.img}}" alt="" class="img-responsive">
-                      </div>
-                    </div>
-                  </div>
-                </li>
-              </flex-slider> -->
             </div>
           </div>
         </div>
@@ -73,118 +54,97 @@
   </div>
 </section>
 <div class="bg-mehendi">
-<section class="mehendi">
-  <div class="mehendi-movie">
+  <section class="mehendi" ng-if="weddetail.featuredvideos.length > 0">
+    <div class="mehendi-movie">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-offset-1 col-md-10">
+            <div class="title">
+              <h3 class="letter-spacing color-white uppercase">
+              FEATURED VIDEOS
+            </h3>
+            </div>
+
+            <div class="slider-client">
+              <flex-slider slide="video in weddetail.featuredvideos track by $index" slider-id="slider" prev-text="" next-text="" sync="#carousel" slideshow="false" animation="slide">
+                <li>
+                  <div class="video-main">
+                    <!-- <img ng-src="{{image.img}}" alt="" class="img-responsive"> -->
+                    <img ng-src="{{video.name | youtubethumb:false}}" alt="" class="img-responsive">
+                    <a fancybox-box href="http://www.youtube.com/embed/{{video.name | youtubethumb:true}}?autoplay=1&modestbranding=0&showinfo=0&rel=0&loop=1" rel="movies" data-fancybox-type="iframe">
+                      <i class="fa fa-play"></i>
+                    </a>
+                  </div>
+                </li>
+              </flex-slider>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
     <div class="container">
       <div class="row">
         <div class="col-md-offset-1 col-md-10">
-          <div class="title">
-            <h3 class="letter-spacing color-white uppercase">
-              FEATURED VIDEOS
-            </h3>
-          </div>
-          <!-- <div class="title">
-            <h4 class="display-inline uppercase {{styleActive}}" ng-click="doActive(1);">
-            Mehendi
-          </h4>
-            <h4 class="display-inline uppercase {{styleNoActive}}" ng-click="doActive(2);">
-            Sangeet
-          </h4>
-          </div> -->
-          <div class="slider-client">
-            <flex-slider slide="video in weddetail.featuredvideos track by $index" slider-id="slider" prev-text="" next-text="" sync="#carousel" slideshow="false" animation="slide">
+          <div class="image-navigation">
+            <flex-slider slide="image in weddetail.featuredvideos track by $index" animation="slide" animation-loop="false" item-width="280" item-margin="40" as-nav-for="#slider" slideshow="false" control-nav="false" prev-text="" next-text="" slider-id="carousel"
+              animation-loop="false">
               <li>
-                <div class="video-main">
-                  <!-- <img ng-src="{{image.img}}" alt="" class="img-responsive"> -->
-                    <img ng-src="{{video.name | youtubethumb:false}}" alt="" class="img-responsive">
-                    <a fancybox-box href="http://www.youtube.com/embed/{{video.name | youtubethumb:true}}?autoplay=1&modestbranding=0&showinfo=0&rel=0&loop=1" rel="movies" data-fancybox-type="iframe">
-                    <i class="fa fa-play"></i>
-                  </a>
+                <div class="row">
+                  <!-- <img ng-src="{{image.img}}" alt=""> -->
+                  <img ng-src="{{image.name | youtubethumb:false}}" alt="">
                 </div>
               </li>
             </flex-slider>
-            <!-- <a fancybox-box href="http://www.youtube.com/embed/{{weddetail.featuredvideos.name | youtubethumb:true}}?autoplay=1&modestbranding=0&showinfo=0&rel=0&loop=1" rel="movies">
-            <i class="fa fa-play"></i>
-          </a> -->
-            <!-- <flex-slider slide="image in vid track by $index" ng-if="styleNoActive == 'vactive'" slider-id="slider" prev-text="" next-text="" sync="#carousel" slideshow="false" animation="slide">
-              <li>
-                <div class="">
-                  <img src="{{image.img}}" alt="" class="img-responsive">
-                </div>
-              </li>
-            </flex-slider> -->
+
           </div>
         </div>
       </div>
     </div>
-  </div>
-  <div class="container">
+  </section>
+  <section class="container" ng-if="weddetail.relatedarticles.length > 0">
     <div class="row">
-      <div class="col-md-offset-1 col-md-10">
-        <div class="image-navigation">
-          <flex-slider slide="image in weddetail.featuredvideos track by $index" animation="slide" animation-loop="false" item-width="280" item-margin="40" as-nav-for="#slider" slideshow="false" control-nav="false" prev-text="" next-text="" slider-id="carousel" animation-loop="false">
-            <li>
-              <div class="row">
-                <!-- <img ng-src="{{image.img}}" alt=""> -->
-                <img ng-src="{{image.name | youtubethumb:false}}" alt="">
+      <div class="col-md-12">
+        <div class="text-center">
+          <div class="wedding-diary">
+            <div class="diary-title mr30">
+              <h4 class="uppercase color-red">RELATED ARTICLES</h4>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pd-side">
+      <div class="row">
+        <div class="col-md-4 col-sm-4 col-xs-6" ng-repeat="data in weddetail.relatedarticles track by $index">
+          <div class="wed-box border-red">
+            <div class="wed-img-list">
+              <img ng-src="{{data.image | uploadpath}}" alt="" class="img-responsive">
+              <div class="ribbon-red">
+                <img src="img/ribbon_red.png" alt="">
+                <span class="color-white uppercase">Wedding</span>
               </div>
-            </li>
-          </flex-slider>
-          <!-- <flex-slider slide="image in vid track by $index" ng-if="styleNoActive == 'vactive'" animation="slide" animation-loop="false" item-width="280" item-margin="40" as-nav-for="#slider" slideshow="false" control-nav="false" prev-text="" next-text="" slider-id="carousel" animation-loop="false">
-            <li>
-              <div class="row">
-                <img src="{{image.img}}" alt="">
+            </div>
+            <div class="wed-desc">
+              <div class="wed-date">
+                <span>{{data.date}}</span>
               </div>
-            </li>
-          </flex-slider> -->
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-<section class="container">
-  <div class="row">
-    <div class="col-md-12">
-      <div class="text-center">
-        <div class="wedding-diary">
-          <div class="diary-title mr30">
-            <h4 class="uppercase color-red">RELATED ARTICLES</h4>
+              <div class="wed-desc-inside" ng-bind-html="data.content">
+                {{data.content}}
+              </div>
+              <div class="read-more">
+                <a class="color-black" ui-sref="weddinginsidedetail({id:data.id})">Read More</a>
+              </div>
+            </div>
+            <div class="border-blue borders"></div>
           </div>
         </div>
       </div>
-    </div>
-  </div>
-  <div class="pd-side">
-    <div class="row">
-      <div class="col-md-4 col-sm-4 col-xs-6" ng-repeat="data in weddetail.relatedarticles track by $index">
-        <div class="wed-box border-red">
-          <div class="wed-img-list">
-            <img ng-src="{{data.image | uploadpath}}" alt="" class="img-responsive">
-            <div class="ribbon-red">
-              <img src="img/ribbon_red.png" alt="">
-              <span class="color-white uppercase">Wedding</span>
-            </div>
-          </div>
-          <div class="wed-desc">
-            <div class="wed-date">
-              <span>{{data.date}}</span>
-            </div>
-            <div class="wed-desc-inside" ng-bind-html="data.content">
-              {{data.content}}
-            </div>
-            <div class="read-more">
-              <a href="" class="color-black">Read More</a>
-            </div>
-          </div>
-          <div class="border-blue borders"></div>
-        </div>
+      <div class="btn-all mr30 text-center" ng-repeat="data in weddetail.relatedarticles | limitTo:1">
+        <button ui-sref="weddinginside({id:data.wedding})" class="btn btn-danger btn-outline">
+          View All
+        </button>
       </div>
     </div>
-    <div class="btn-all mr30 text-center">
-      <button class="btn btn-danger btn-outline">
-        View All
-      </button>
-    </div>
-  </div>
-</section>
+  </section>
 </div>
