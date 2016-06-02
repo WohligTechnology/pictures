@@ -1,8 +1,8 @@
-<section>
+<section class="worldtour">
     <div class=container>
         <div class=row>
             <div class=col-xs-12>
-                <div class="head-banner text-center"><img src="img/worldtour/worldtour.png" class=img-responsive title="Worldtour"></div>
+                <div class="head-banner text-center"><img src="img/worldtour/world.png" class=img-responsive title="Worldtour"></div>
             </div>
         </div>
         <div class=row>
@@ -13,44 +13,7 @@
                 </div>
             </div>
         </div>
-        <div class="movie-category bg-grey nav-tab-middle">
-            <div class="container">
-                <div class="title">
-                    <h4 class="display-inline uppercase {{styleActives}}" ng-click="doActives(1);">
-            Past Concerts
-           </h4>
-                    <h4 class="display-inline uppercase {{styleNoActives}}" ng-click="doActives(2);">
-            Upcoming Concerts
-         </h4>
-                </div>
-                <div class="flex-slider">
-                    <flex-slider flex-slide="data in movie track by $index" ng-if="styleActives == 'mactives'" animation="slide" animation-loop="false" item-width="218" item-margin="10">
-                        <li ui-sref="moviesinside({id:data.isreleased})">
-                            <div class="movie-box text-center">
-                                <img ng-src="{{data.img}}" alt="" class="img-responsive">
-                                <div class="movie-date">
-                                    <span>Release Date:</span>
-                                    <p class="color-red">{{data.date}}</p>
-                                </div>
-                            </div>
-                        </li>
-                    </flex-slider>
-                </div>
-                <div class="flex-slider">
-                    <flex-slider flex-slide="data in movie track by $index" ng-if="styleNoActives == 'mactives'" animation="slide" animation-loop="false" item-width="218" item-margin="10">
-                        <li>
-                            <div class="movie-box text-center">
-                                <img ng-src="{{data.img}}" alt="" class="img-responsive">
-                                <div class="movie-date">
-                                    <span>Release Date:</span>
-                                    <p class="color-red">{{data.date}}</p>
-                                </div>
-                            </div>
-                        </li>
-                    </flex-slider>
-                </div>
-            </div>
-        </div>
+      </div>
         <section class="mehendi">
             <div class="mehendi-gallery nav-tab-middle ">
                 <div class="container">
@@ -58,16 +21,16 @@
                         <div class="col-md-offset-1 col-md-10">
                             <div class="title">
                                 <h4 class="display-inline uppercase {{styleActives}}" ng-click="doActives(1);">
-                    Past Concerts
-                  </h4>
+                                    Past Concerts
+                                </h4>
                                 <h4 class="display-inline uppercase {{styleNoActives}}" ng-click="doActives(2);">
-                    Upcoming Concerts
-                  </h4>
+                                    Upcoming Concerts
+                                </h4>
                             </div>
                             <div class="mb15">
                                 <div class="slider-client">
-                                    <flex-slider flex-slide="slide in wall track by $index" ng-if="styleActives == 'actives'" animation="slide" animation-loop="false" as-nav-for="#slider" slideshow="false" item-margin="20" prev-text="" next-text="">
-                                        <li class="">
+                                    <flex-slider flex-slide="slide in wall track by $index" ng-if="styleActives == 'mactives'" animation="slide" animation-loop="false" as-nav-for="#slider" slideshow="false" prev-text="" next-text="">
+                                        <li>
                                             <div class="row" ng-repeat="row in slide">
                                                 <div class="col-xs-4" ng-repeat="wallpaper in row">
                                                     <div class="mb15">
@@ -77,7 +40,7 @@
                                             </div>
                                         </li>
                                     </flex-slider>
-                                    <flex-slider flex-slide="slide in wall track by $index" ng-if="styleNoActives == 'actives'" animation="slide" animation-loop="false" as-nav-for="#slider" slideshow="false" item-margin="20" prev-text="" next-text="">
+                                    <flex-slider flex-slide="slide in wall track by $index" ng-if="styleNoActives == 'mactives'" animation="slide" animation-loop="false" as-nav-for="#slider" slideshow="false" prev-text="" next-text="">
                                         <li class="">
                                             <div class="row" ng-repeat="row in slide">
                                                 <div class="col-xs-4" ng-repeat="wallpaper in row">
@@ -95,6 +58,7 @@
                 </div>
             </div>
         </section>
+        <div class="container">
         <div class=bg-moviesdiaries>
             <div class=row>
                 <div class=col-md-12>

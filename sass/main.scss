@@ -1528,10 +1528,10 @@ footer {
 }
 .event {
     .panel-body {
-        background-color: #f0f0f0;
+        background-color: #f0f0f0 !important;
     }
     .panel-heading {
-        background-color: #f0f0f0;
+        background-color: #f0f0f0 !important;
     }
 }
 .banner-movies {
@@ -3324,6 +3324,14 @@ h4.title-movies {
         width: 99.3%;
         margin: 0 0 0 1px;
     }
+    .bg-grey-similar {
+        background: url('../img/talent/bg-img.png')no-repeat;
+        &.bg-sports {
+          background-size: 100% 60% !important;
+          background-position: 0px 112px;
+        }
+
+    }
 }
 //worldtourinside
 .worlddetail {
@@ -3364,7 +3372,8 @@ h4.title-movies {
 }
 .bg-event {
     background: url('../img/bg-asfcsocial.png') no-repeat;
-    background-size: cover;
+    background-size: 100% 70%;
+    background-position: 0 93px;
 }
 //mediacorner
 .mediacorner {
@@ -3633,6 +3642,31 @@ h4.title-movies {
     .form-control {
         background-color: #d8d8d8;
     }
+}
+.bg-mehendi{
+  background: url('../img/talent/bg-img.png')no-repeat;
+  background-size: 100% 60%;
+  background-position: 0px 340px;
+}
+.worldtour{
+  .mehendi{
+    background: url('../img/worldtour/bg.png')no-repeat;
+    background-size: 100% 100%;
+    background-position: 0px -94px;
+  }
+  .title{
+    text-align: center;
+margin: 20px 0 0 0;
+  }
+    .mehendi .title h4{
+font-size: 28px;
+margin-bottom: 28px;
+}
+  .mehendi .title h4:hover {
+    color: #088fd5;
+    cursor: pointer;
+    border-bottom: 4px solid #088fd5;
+}
 }
 /* Start writing sass here */
 @import "fancybox-override";
