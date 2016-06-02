@@ -3427,12 +3427,12 @@ h4.title-movies {
                     width: 28px;
                     height: 28px;
                     text-align: center;
-                    padding: 6px 7px 0;
+                    padding: 5px 7px 0;
                     margin: 4px 6px -4px 0;
                     font-size: 16px;
                 }
                 .fa-envelope-o:before {
-                    font-size: 16px;
+                    font-size: 14px;
                 }
                 .fa-facebook:before {
                     font-size: 16px;
@@ -3638,6 +3638,8 @@ h4.title-movies {
             width: 78%;
             display: inline;
             position: relative;
+            z-index: 99;
+            -webkit-appearance: none;
         }
         &:after {
             font: normal normal normal 14px/1 FontAwesome;
@@ -3652,6 +3654,8 @@ h4.title-movies {
             right: 0;
             text-align: center;
             font-size: 28px;
+            pointer-events: none;
+            z-index: 999;
         }
     }
     p {
