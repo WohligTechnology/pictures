@@ -1,6 +1,7 @@
 <section>
    <div class="banner banner-movies ab">
-     <img src="img/event/eventinside/event.png" class="img-responsive" style="width:100%;">
+     <!-- <img src="img/event/eventinside/event.png" class="img-responsive" > -->
+     <img ng-src="{{eventBanner.banner | uploadpath}}" class="img-responsive" style="width:100%;">
       <!-- <div class="banner-title text-center">
       <h4>
         360 Weddings
@@ -8,30 +9,30 @@
     </div> -->
    </div>
 </section>
-<section class="inside">
+<section class="inside" ng-if="eventInside.length>0">
 <!-- <section infinite-scroll='addMoreItems();' infinite-scroll-distance="0" infinite-scroll-disabled="shouldscroll"> -->
    <div class="container">
       <div class="row mt180">
          <div class="col-md-offset-1 col-md-10">
-            <div class="row pd30" ng-repeat="data in weddingSubtype">
+            <div class="row pd30" ng-repeat="data in eventInside">
                <div class="col-sm-6">
                   <div class="wedding-imgbox">
-                     <img src="{{data.img}}" class="img-responsive" alt="">
+                     <img src="{{data.image | uploadpath}}" class="img-responsive" alt="">
                   </div>
                </div>
                <div class="col-sm-6">
                   <div class="wedding-detail">
                      <div class="w-title">
-                        <h4 class="uppercase color-red bold">{{data.content}}</h4>
+                        <h4 class="uppercase color-red bold">{{data.name}}</h4>
                         <div class="wed-date">
                           <span>{{data.date}}</span>
                           <span>|</span>
-                          <span>Mumbai</span>
+                          <span>{{data.location}}</span>
                         </div>
                      </div>
                      <div class="w-detail mt15 mb15">
                         <p>
-                           {{data.detail}}
+                           {{data.content}}
                         </p>
                      </div>
                      <div class="w-button">

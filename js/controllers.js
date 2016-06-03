@@ -1635,12 +1635,26 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     }];
 
   })
-  .controller('EventInsideCtrl', function($scope, TemplateService, NavigationService, $timeout) {
+  .controller('EventInsideCtrl', function($scope, TemplateService, NavigationService, $timeout,$stateParams) {
     //Used to name the .html file
     $scope.template = TemplateService.changecontent("eventinside");
     $scope.menutitle = NavigationService.makeactive("Events");
     TemplateService.title = $scope.menutitle;
     $scope.navigation = NavigationService.getnav();
+    NavigationService.getEventInsideBanner($stateParams.id, function(data) {
+      console.log(data);
+      if (data.value != false) {
+        $scope.eventBanner = data.data;
+        console.log("banner",$scope.eventBanner);
+      }
+    });
+    NavigationService.getEventInside($stateParams.id, function(data) {
+      console.log(data);
+      if (data.value != false) {
+        $scope.eventInside = data.queryresult;
+        
+      }
+    });
     $scope.weddingSubtype = [{
       content: "JPP Stadium Branding: (Season 1, 2 & 3)",
       img: "img/event/eventinside/w1.png",
