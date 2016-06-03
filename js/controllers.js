@@ -1600,7 +1600,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         console.log($scope.eventData);
       }
     });
-    
+
     $scope.weddings = [{
       img: "img/event/e1.png",
       date: "12 January 2016",
@@ -1850,19 +1850,6 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     }, {
       img: "img/worldtour/4.jpg",
     }];
-    // $scope.weddings = [{
-    //   img: "img/mehendi/1.png",
-    //   date: "12 January 2016",
-    //   desc: "Lorem Ipsum is simply dummy text of the printing industry"
-    // }, {
-    //   img: "img/mehendi/2.png",
-    //   date: "12 January 2016",
-    //   desc: "Lorem Ipsum is simply dummy text of the printing industry"
-    // }, {
-    //   img: "img/mehendi/3.png",
-    //   date: "12 January 2016",
-    //   desc: "Lorem Ipsum is simply dummy text of the printing industry"
-    // }];
     $scope.wallpaper = _.chunk($scope.wallpaper, 3);
     for (var i = 0; i < $scope.wallpaper.length; i++) {
       $scope.wallpaper[i] = _.chunk($scope.wallpaper[i], 3);
@@ -1887,6 +1874,56 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     }
     $scope.doActives(1);
 
+    $scope.moviereleased = [{
+      img: "img/worldtour/1.jpg",
+    }, {
+      img: "img/worldtour/2.jpg",
+    }, {
+      img: "img/worldtour/3.jpg",
+    }, {
+      img: "img/worldtour/4.jpg",
+    }, {
+      img: "img/worldtour/5.jpg",
+    }, {
+      img: "img/worldtour/3.jpg",
+    }, {
+      img: "img/worldtour/1.jpg",
+    }, {
+      img: "img/worldtour/2.jpg",
+    }];
+    $scope.movieupcoming = [{
+      img: "img/worldtour/1.jpg",
+    }, {
+      img: "img/worldtour/1.jpg",
+    }, {
+      img: "img/worldtour/2.jpg",
+    }, {
+      img: "img/worldtour/2.jpg",
+    }, {
+      img: "img/worldtour/3.jpg",
+    }, {
+      img: "img/worldtour/3.jpg",
+    }, {
+      img: "img/worldtour/4.jpg",
+    }, {
+      img: "img/worldtour/4.jpg",
+    }];
+
+    $scope.doActives = function(params) {
+      if (params === 1) {
+        console.log($scope.wallpapers);
+        $scope.styleActives = "mactives";
+        $scope.styleNoActives = "";
+        $scope.movie = $scope.moviereleased;
+      } else {
+        console.log($scope.wallpaper);
+
+        $scope.styleActives = "";
+        $scope.styleNoActives = "mactives";
+        $scope.movie = $scope.movieupcoming;
+      }
+    }
+    $scope.doActives(1);
 
   })
   .controller('WorldTourInsideCtrl', function($scope, TemplateService, NavigationService, $timeout) {

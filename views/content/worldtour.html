@@ -13,7 +13,47 @@
             </div>
         </div>
       </div>
-        <section class="mehendi">
+      <div class="movie-category bg-grey nav-tab-middle">
+         <div class="container">
+           <div class="title">
+               <h4 class="display-inline uppercase {{styleActives}}" ng-click="doActives(1);">
+                   Past Concerts
+               </h4>
+               <h4 class="display-inline uppercase {{styleNoActives}}" ng-click="doActives(2);">
+                   Upcoming Concerts
+               </h4>
+           </div>
+            <div class="flex-slider">
+               <flex-slider flex-slide="data in movie track by $index" ng-if="styleActives == 'mactives'" animation="slide" animation-loop="false" item-width="218" item-margin="10">
+                  <li>
+                     <div class="movie-box text-center">
+                        <img ng-src="{{data.img}}" alt="" class="img-responsive">
+                        <div class="wt-data">
+                          <h4>ZEE CINE AWARDS</h4>
+                          <p>Marina Sands Bay, Singapore</p>
+                          <p class="red">14<sup>th</sup> January 2011</p>
+                        </div>
+                     </div>
+                  </li>
+               </flex-slider>
+            </div>
+            <div class="flex-slider">
+               <flex-slider flex-slide="data in movie track by $index" ng-if="styleNoActives == 'mactives'" animation="slide" animation-loop="false" item-width="218" item-margin="10">
+                  <li>
+                     <div class="movie-box text-center">
+                        <img ng-src="{{data.img}}" alt="" class="img-responsive">
+                        <div class="wt-data">
+                          <h4>ZEE CINE AWARDS</h4>
+                          <p>Marina Sands Bay, Singapore</p>
+                          <p class="red">14<sup>th</sup> January 2011</p>
+                        </div>
+                     </div>
+                  </li>
+               </flex-slider>
+            </div>
+         </div>
+      </div>
+        <!-- <section class="mehendi">
             <div class="mehendi-gallery nav-tab-middle ">
                 <div class="container">
                     <div class="row">
@@ -66,7 +106,7 @@
                     </div>
                 </div>
             </div>
-        </section>
+        </section> -->
         <div class="container">
         <div class=bg-moviesdiaries>
             <div class=row>
