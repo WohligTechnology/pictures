@@ -789,7 +789,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
   NavigationService.getWeddingInsideDetails($stateParams.id, function(data) {
     console.log(data);
     $scope.weddetail = data.data;
-    console.log("$scope.weddetail",$scope.weddetail);
+    console.log("$scope.weddetail", $scope.weddetail);
     if ($scope.weddetail.imagegallery && $scope.weddetail.imagegallery.length > 0) {
       $scope.weddetail.imagegallery = _.chunk($scope.weddetail.imagegallery, 6);
       for (var i = 0; i < $scope.weddetail.imagegallery.length; i++) {
@@ -1600,7 +1600,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         console.log($scope.eventData);
       }
     });
-  
+    
     $scope.weddings = [{
       img: "img/event/e1.png",
       date: "12 January 2016",
@@ -1900,17 +1900,17 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     }, {
       img: "img/worldtour/worldtourinside/2.jpg"
     }, {
-    img: "img/worldtour/worldtourinside/3.jpg"
+      img: "img/worldtour/worldtourinside/3.jpg"
     }, {
-    img: "img/worldtour/worldtourinside/4.jpg"
+      img: "img/worldtour/worldtourinside/4.jpg"
     }, {
-    img: "img/worldtour/worldtourinside/5.jpg"
+      img: "img/worldtour/worldtourinside/5.jpg"
     }, {
       img: "img/worldtour/worldtourinside/6.jpg"
     }, {
       img: "img/worldtour/worldtourinside/1.jpg"
     }, {
-    img: "img/worldtour/worldtourinside/2.jpg"
+      img: "img/worldtour/worldtourinside/2.jpg"
     }, {
       img: "img/worldtour/worldtourinside/3.jpg"
     }, {
@@ -1930,17 +1930,17 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     }, {
       img: "img/worldtour/worldtourinside/1.jpg"
     }, {
-    img: "img/worldtour/worldtourinside/2.jpg"
+      img: "img/worldtour/worldtourinside/2.jpg"
     }, {
-    img: "img/worldtour/worldtourinside/2.jpg"
+      img: "img/worldtour/worldtourinside/2.jpg"
     }, {
-    img: "img/worldtour/worldtourinside/3.jpg"
+      img: "img/worldtour/worldtourinside/3.jpg"
     }, {
       img: "img/worldtour/worldtourinside/3.jpg"
     }, {
       img: "img/worldtour/worldtourinside/4.jpg"
     }, {
-    img: "img/worldtour/worldtourinside/4.jpg"
+      img: "img/worldtour/worldtourinside/4.jpg"
     }, {
       img: "img/worldtour/worldtourinside/5.jpg"
     }, {
