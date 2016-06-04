@@ -1600,42 +1600,8 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         console.log($scope.eventData);
       }
     });
-
-    $scope.weddings = [{
-      img: "img/event/e1.png",
-      date: "12 January 2016",
-      desc: "Lorem Ipsum is simply dummy text of the printing industry"
-    }, {
-      img: "img/event/e3.png",
-      date: "12 January 2016",
-      desc: "Lorem Ipsum is simply dummy text of the printing industry"
-    }, {
-      img: "img/event/e1.png",
-      date: "12 January 2016",
-      desc: "Lorem Ipsum is simply dummy text of the printing industry"
-    }];
-    $scope.wedding = [{
-      img: "img/event/1.png",
-      name: "Product Launch & Press Conference"
-    }, {
-      img: "img/event/2.png",
-      name: "Gala Dinner"
-    }, {
-      img: "img/event/3.png",
-      name: "Award Nite"
-    }, {
-      img: "img/event/4.png",
-      name: "Birthday"
-    }, {
-      img: "img/event/5.png",
-      name: "Corporate Events"
-    }, {
-      img: "img/event/6.png",
-      name: "Concerts"
-    }];
-
   })
-  .controller('EventInsideCtrl', function($scope, TemplateService, NavigationService, $timeout,$stateParams) {
+  .controller('EventInsideCtrl', function($scope, TemplateService, NavigationService, $timeout, $stateParams) {
     //Used to name the .html file
     $scope.template = TemplateService.changecontent("eventinside");
     $scope.menutitle = NavigationService.makeactive("Events");
@@ -1645,16 +1611,9 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
       console.log(data);
       if (data.value != false) {
         $scope.eventBanner = data.data;
-        console.log("banner",$scope.eventBanner);
+        console.log("banner", $scope.eventBanner);
       }
     });
-    // NavigationService.getEventInside($stateParams.id, function(data) {
-    //   console.log(data);
-    //   if (data.value != false) {
-    //     $scope.eventInside = data.queryresult;
-    //
-    //   }
-    // });
     $scope.pagedata = {};
     $scope.pagedata.pageno = 0;
     $scope.pagedata.id = $stateParams.id;
@@ -1691,7 +1650,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     $scope.addMoreItems();
 
   })
-  .controller('EventInsideDetailCtrl', function($scope, TemplateService, NavigationService, $timeout,$stateParams) {
+  .controller('EventInsideDetailCtrl', function($scope, TemplateService, NavigationService, $timeout, $stateParams) {
     //Used to name the .html file
     $scope.template = TemplateService.changecontent("eventdetail");
     $scope.menutitle = NavigationService.makeactive("Events");
@@ -1743,7 +1702,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     //   desc: "Lorem Ipsum is simply dummy text of the printing industry"
     // }];
 
-    $scope.weddetail = {};
+    $scope.eventdetail = {};
     NavigationService.getEventInsideDetails($stateParams.id, function(data) {
       console.log(data);
       $scope.eventdetail = data.data;
