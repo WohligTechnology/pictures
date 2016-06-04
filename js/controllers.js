@@ -1691,62 +1691,76 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     $scope.addMoreItems();
 
   })
-  .controller('EventInsideDetailCtrl', function($scope, TemplateService, NavigationService, $timeout) {
+  .controller('EventInsideDetailCtrl', function($scope, TemplateService, NavigationService, $timeout,$stateParams) {
     //Used to name the .html file
     $scope.template = TemplateService.changecontent("eventdetail");
     $scope.menutitle = NavigationService.makeactive("Events");
     TemplateService.title = $scope.menutitle;
     $scope.navigation = NavigationService.getnav();
-    $scope.wallpaper = [{
-      img: "img/event/eventinsidedetail/1.png",
-    }, {
-      img: "img/event/eventinsidedetail/2.png",
-    }, {
-      img: "img/event/eventinsidedetail/3.png",
-    }, {
-      img: "img/event/eventinsidedetail/4.png",
-    }, {
-      img: "img/event/eventinsidedetail/5.png",
-    }, {
-      img: "img/event/eventinsidedetail/6.png",
-    }, {
-      img: "img/event/eventinsidedetail/1.png",
-    }, {
-      img: "img/event/eventinsidedetail/2.png",
-    }, {
-      img: "img/event/eventinsidedetail/3.png",
-    }, {
-      img: "img/event/eventinsidedetail/4.png",
-    }, {
-      img: "img/event/eventinsidedetail/5.png",
-    }, {
-      img: "img/event/eventinsidedetail/6.png",
-    }];
-    $scope.video = [{
-      img: "img/event/eventinsidedetail/v2.png",
-    }, {
-      img: "img/event/eventinsidedetail/v3.png",
-    }, {
-      img: "img/event/eventinsidedetail/v4.png",
-    }];
-    $scope.weddings = [{
-      img: "img/event/eventinsidedetail/ra1.png",
-      date: "12 January 2016",
-      desc: "Lorem Ipsum is simply dummy text of the printing industry"
-    }, {
-      img: "img/event/eventinsidedetail/ra2.png",
-      date: "12 January 2016",
-      desc: "Lorem Ipsum is simply dummy text of the printing industry"
-    }, {
-      img: "img/event/eventinsidedetail/ra3.png",
-      date: "12 January 2016",
-      desc: "Lorem Ipsum is simply dummy text of the printing industry"
-    }];
+    // $scope.wallpaper = [{
+    //   img: "img/event/eventinsidedetail/1.png",
+    // }, {
+    //   img: "img/event/eventinsidedetail/2.png",
+    // }, {
+    //   img: "img/event/eventinsidedetail/3.png",
+    // }, {
+    //   img: "img/event/eventinsidedetail/4.png",
+    // }, {
+    //   img: "img/event/eventinsidedetail/5.png",
+    // }, {
+    //   img: "img/event/eventinsidedetail/6.png",
+    // }, {
+    //   img: "img/event/eventinsidedetail/1.png",
+    // }, {
+    //   img: "img/event/eventinsidedetail/2.png",
+    // }, {
+    //   img: "img/event/eventinsidedetail/3.png",
+    // }, {
+    //   img: "img/event/eventinsidedetail/4.png",
+    // }, {
+    //   img: "img/event/eventinsidedetail/5.png",
+    // }, {
+    //   img: "img/event/eventinsidedetail/6.png",
+    // }];
+    // $scope.video = [{
+    //   img: "img/event/eventinsidedetail/v2.png",
+    // }, {
+    //   img: "img/event/eventinsidedetail/v3.png",
+    // }, {
+    //   img: "img/event/eventinsidedetail/v4.png",
+    // }];
+    // $scope.weddings = [{
+    //   img: "img/event/eventinsidedetail/ra1.png",
+    //   date: "12 January 2016",
+    //   desc: "Lorem Ipsum is simply dummy text of the printing industry"
+    // }, {
+    //   img: "img/event/eventinsidedetail/ra2.png",
+    //   date: "12 January 2016",
+    //   desc: "Lorem Ipsum is simply dummy text of the printing industry"
+    // }, {
+    //   img: "img/event/eventinsidedetail/ra3.png",
+    //   date: "12 January 2016",
+    //   desc: "Lorem Ipsum is simply dummy text of the printing industry"
+    // }];
 
-    $scope.wallpaper = _.chunk($scope.wallpaper, 6);
-    for (var i = 0; i < $scope.wallpaper.length; i++) {
-      $scope.wallpaper[i] = _.chunk($scope.wallpaper[i], 3);
+    $scope.weddetail = {};
+    NavigationService.getEventInsideDetails($stateParams.id, function(data) {
+      console.log(data);
+      $scope.eventdetail = data.data;
+      console.log("$scope.eventdetail", $scope.eventdetail);
+      if ($scope.eventdetail.imagegallery && $scope.eventdetail.imagegallery.length > 0) {
+        $scope.eventdetail.imagegallery = _.chunk($scope.eventdetail.imagegallery, 6);
+        for (var i = 0; i < $scope.eventdetail.imagegallery.length; i++) {
+          $scope.eventdetail.imagegallery[i] = _.chunk($scope.eventdetail.imagegallery[i], 3);
+        }
+        // $scope.weddetail.imagegallery = _.chunk($scope.weddetail.imagegallery, 3);
+      }
+    })
+    $scope.makeActive = function(video, index) {
+      $scope.eventdetail.featuredvideos.splice(index, 1);
+      $scope.eventdetail.featuredvideos.unshift(video);
     }
+
   })
   .controller('TalentInsideCtrl', function($scope, TemplateService, NavigationService, $timeout) {
     //Used to name the .html file

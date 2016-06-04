@@ -6,7 +6,7 @@ var adminURL = "";
 // }
 
 adminURL = "http://wohlig.co.in/gsebackend/";
-// adminURL = "http://192.168.1.137/gsebackend/";
+adminURL = "http://192.168.1.137/gsebackend/";
 // adminURL = "http://localhost/gsebackend/";
 var apiUrl = adminURL + "index.php/json/";
 var imgpath = adminURL + "uploads/";
@@ -67,6 +67,9 @@ var navigationservice = angular.module('navigationservice', [])
     },
     getEventInside: function(obj, callback) {
       $http.get(apiUrl + 'getEventInside?id=' + obj.id + "&pageno=" + obj.pageno + "&maxrow=2").success(callback);
+    },
+    getEventInsideDetails: function(id, callback) {
+      $http.get(apiUrl + 'getEventInsideDetails?id=' + id).success(callback);
     },
     makeactive: function(menuname) {
       for (var i = 0; i < navigation.length; i++) {

@@ -138,7 +138,7 @@ firstapp.config(function($stateProvider, $urlRouterProvider, $httpProvider, $loc
             controller: 'EventInsideCtrl'
         })
         .state('eventinsidedetail', {
-            url: "/eventinsidedetail",
+            url: "/eventinsidedetail/:id",
             templateUrl: "views/template.html",
             controller: 'EventInsideDetailCtrl'
         })
