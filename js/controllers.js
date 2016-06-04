@@ -1810,27 +1810,44 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     TemplateService.title = $scope.menutitle;
     $scope.navigation = NavigationService.getnav();
     $scope.tourdata={};
+        $scope.formData={};
+        $scope.formData.enquiryarr = [];
+        $scope.showThanks = false;
+
+      // $scope.formData.enquiry = "";
     NavigationService.getworldtourdetail(function(data){
       console.log(data);
       if(data.value!=false){
         $scope.tourdata=data.data;
       }
     })
-    $scope.formData={};
-    $scope.weddingSubmitForm = function(formValid) {
-      $scope.formData.enquiryarr={};
-    NavigationService.gettourform($scope.formData,function(data){
-console.log('$scope.formData',$scope.formData);
-    })
+
+    $scope.worldTourSubmitForm = function(formValid) {
+      $scope.formData.enquiry = "";
+      if (formValid.$valid && $scope.formData) {
+        if ($scope.formData.enquiryarr.length > 0) {
+          _.each($scope.formData.enquiryarr, function(n) {
+            $scope.formData.enquiry += n + ",";
+          })
+          $scope.formData.enquiry = $scope.formData.enquiry.substring(0, $scope.formData.enquiry.length - 1);
+        }
+        $scope.formData.category = 1;
+        NavigationService.gettourform($scope.formData,function(data){
+    console.log('$scope.formData',$scope.formData);
+        })
+      }
+      // $scope.formData.enquiryarr={};
+
   };
-  $scope.pushorpop = function(val) {
-    var foundIndex = $scope.formData.enquiryarr.indexOf(val);
-    if (foundIndex == -1) {
-      $scope.formData.enquiryarr.push(val);
-    } else {
-      $scope.formData.enquiryarr.splice(foundIndex, 1);
+
+    $scope.pushorpop = function(val) {
+      var foundIndex = $scope.formData.enquiryarr.indexOf(val);
+      if (foundIndex == -1) {
+        $scope.formData.enquiryarr.push(val);
+      } else {
+        $scope.formData.enquiryarr.splice(foundIndex, 1);
+      }
     }
-  }
     $scope.weddings = [{
       img: "img/worldtour/ra1.png",
       date: "12 January 2016",
