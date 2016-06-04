@@ -71,6 +71,17 @@ var navigationservice = angular.module('navigationservice', [])
     getEventInsideDetails: function(id, callback) {
       $http.get(apiUrl + 'getEventInsideDetails?id=' + id).success(callback);
     },
+    getworldtourdetail:function(callback){
+      $http.get(apiUrl + 'getWorldTour').success(callback);
+    },
+    gettourform:function(data1,callback){
+      $http({
+        url: apiUrl + 'getInTouch',
+        method: 'POST',
+        withCredentials: true,
+        data: data1
+      }).success(callback);
+    },
     makeactive: function(menuname) {
       for (var i = 0; i < navigation.length; i++) {
         if (navigation[i].name == menuname) {

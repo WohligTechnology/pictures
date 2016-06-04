@@ -1809,6 +1809,18 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     $scope.menutitle = NavigationService.makeactive("World Tours");
     TemplateService.title = $scope.menutitle;
     $scope.navigation = NavigationService.getnav();
+    $scope.tourdata={};
+    NavigationService.getworldtourdetail(function(data){
+      console.log(data);
+      if(data.value!=false){
+        $scope.tourdata=data.data;
+      }
+    })
+    $scope.weddingSubmitForm = function(formValid) {
+    NavigationService.gettourform($scope.tourform,function(data){
+
+    })
+  };
     $scope.weddings = [{
       img: "img/worldtour/ra1.png",
       date: "12 January 2016",

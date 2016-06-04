@@ -7,8 +7,9 @@
         </div>
         <div class=row>
             <div class="col-md-offset-2 col-md-8">
-                <div class="wedding-fant-desc mt50">
-                    <p>GS  provides one point of contact for our clients to implement their vision for even the most complex mega-events - competently and with no surprises. Events may be in the form of a unique concert, a full festival or a global touring strategy, we own, manage and represent across every major region in the world.</p>
+                <div class="wedding-fant-desc mt50" ng-bind-html="tourdata.description.content">
+                    <!-- <p>GS  provides one point of contact for our clients to implement their vision for even the most complex mega-events - competently and with no surprises. Events may be in the form of a unique concert, a full festival or a global touring strategy, we own, manage and represent across every major region in the world.</p> -->
+
                 </div>
             </div>
         </div>
@@ -25,20 +26,21 @@
                </h4>
            </div>
             <div class="flex-slider">
-               <flex-slider flex-slide="data in movie track by $index" ng-if="styleActives == 'mactives'" animation="slide" animation-loop="false" item-width="218" item-margin="10">
+               <flex-slider flex-slide="data in tourdata.worldtourpast track by $index" ng-if="styleActives == 'mactives'" animation="slide" animation-loop="false" item-width="218" item-margin="10">
                   <li>
                      <div class="movie-box text-center">
-                        <img ng-src="{{data.img}}" alt="" class="img-responsive">
+                        <img ng-src="{{data.image | uploadpath}}" alt="{{data.image}}" class="img-responsive">
                         <div class="wt-data">
-                          <h4>ZEE CINE AWARDS</h4>
-                          <p>Marina Sands Bay, Singapore</p>
-                          <p class="red">14<sup>th</sup> January 2011</p>
+                          <h4>{{data.name}}</h4>
+                          <p>{{data.location}}</p>
+                          <!-- <p class="red">14<sup>th</sup> January 2011</p> -->
+                          <p>{{data.date}}</p>
                         </div>
                      </div>
                   </li>
                </flex-slider>
             </div>
-            <div class="flex-slider">
+            <!-- <div class="flex-slider">
                <flex-slider flex-slide="data in movie track by $index" ng-if="styleNoActives == 'mactives'" animation="slide" animation-loop="false" item-width="218" item-margin="10">
                   <li>
                      <div class="movie-box text-center">
@@ -51,7 +53,7 @@
                      </div>
                   </li>
                </flex-slider>
-            </div>
+            </div> -->
          </div>
       </div>
     </div>
@@ -123,15 +125,15 @@
             </div>
             <div class=pd-side>
                 <div class=row>
-                    <div class="col-sm-4 col-xs-6" ng-repeat="data in weddings track by $index">
+                    <div class="col-sm-4 col-xs-6" ng-repeat="data in tourdata.worldtourdiaries track by $index">
                         <div class="wed-box border-red">
-                            <div class=wed-img-list><img ng-src={{data.img}} class=img-responsive>
+                            <div class=wed-img-list><img ng-src="{{data.image | uploadpath}}" class=img-responsive>
                                 <div class=ribbon-red><img src=img/ribbon_red.png> <span class="color-white uppercase">tour</span></div>
                             </div>
                             <div class=wed-desc>
                                 <div class=wed-date><span>{{data.date}}</span></div>
-                                <div class=wed-desc-inside>
-                                    <p class=bold>{{data.desc}}</p>
+                                <div class="wed-desc-inside" ng-bind-html="data.content">
+                                    <!-- <p class=bold>{{data.desc}}</p> -->
                                 </div>
                                 <div class=read-more><a class=color-black>Read More</a></div>
                             </div>
@@ -171,12 +173,14 @@
 <div class=section3>
     <div class=bg3>
         <div class=container>
-            <div class=client-speak>
+            <div class=client-speak ng-repeat="data in tourdata.testimonial | limitTo : 1">
                 <div class="name-cont color-white"><img src=img/inverted.png> <span>Client Speak</span></div>
-                <div class=img-holder><img src=img/worldtour/ranbir.jpg class=img-reponsive></div>
+                <div class=img-holder><img ng-src="{{data.image | uploadpath}}" class=img-reponsive></div>
                 <div class="img-review color-white">
-                    <h4>"Awesome teamwork and planning"</h4>
-                    <p>- Ranbir Kapoor</p>
+                    <h4>{{data.quote}}</h4>
+                    <p>{{data.name}}</p>
+                    <!-- <h4>"Awesome teamwork and planning"</h4>
+                    <p>- Ranbir Kapoor</p> -->
                 </div>
             </div>
             <div class="row">
@@ -227,7 +231,7 @@
         <div class="col-md-offset-2 col-md-8">
             <div class=get-in-touch>
                 <h3 class="color-red uppercase bold">GET IN TOUCH</h3>
-                <form name=wed>
+                <form name="wed">
                     <div class=row>
                         <div class=col-md-6>
                             <div class=form-group>
@@ -309,7 +313,7 @@
                             <textarea class=form-control ng-model=formData.say name=say rows=3 placeholder="Say Something" required=required></textarea>
                             <div class=error-msg ng-show="wed.say.$error.required && wed.say.$touched">Enter Something</div>
                             <div class="submit-btn btn-all text-center mt15">
-                                <button class="btn btn-danger" type=button name=button ng-class="{'disabled' : !wed.$valid }" ng-click=weddingSubmitForm(wed,formData)>submit</button>
+                                <button class="btn btn-danger" type=button name=button ng-class="{'disabled' : !wed.$valid }" ng-click=weddingSubmitForm(wed)>submit</button>
                             </div>
                         </div>
                     </div>
