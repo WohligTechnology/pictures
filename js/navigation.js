@@ -74,12 +74,12 @@ var navigationservice = angular.module('navigationservice', [])
     getworldtourdetail:function(callback){
       $http.get(apiUrl + 'getWorldTour').success(callback);
     },
-    gettourform:function(data1,callback){
+    gettourform:function(mydata,callback){
       $http({
         url: apiUrl + 'getInTouch',
         method: 'POST',
         withCredentials: true,
-        data: data1
+        data: mydata
       }).success(callback);
     },
     makeactive: function(menuname) {

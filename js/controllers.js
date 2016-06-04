@@ -1816,11 +1816,21 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $scope.tourdata=data.data;
       }
     })
+    $scope.formData={};
     $scope.weddingSubmitForm = function(formValid) {
-    NavigationService.gettourform($scope.tourform,function(data){
-
+      $scope.formData.enquiryarr={};
+    NavigationService.gettourform($scope.formData,function(data){
+console.log('$scope.formData',$scope.formData);
     })
   };
+  $scope.pushorpop = function(val) {
+    var foundIndex = $scope.formData.enquiryarr.indexOf(val);
+    if (foundIndex == -1) {
+      $scope.formData.enquiryarr.push(val);
+    } else {
+      $scope.formData.enquiryarr.splice(foundIndex, 1);
+    }
+  }
     $scope.weddings = [{
       img: "img/worldtour/ra1.png",
       date: "12 January 2016",

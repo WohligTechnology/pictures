@@ -266,15 +266,15 @@
                                 <div class=enq-list>
                                     <label class="checkbox-inline text-label" style="padding:0;margin-top:-6px;"><span class=color-red>Enquiring for</span></label>
                                     <label class=checkbox-inline>
-                                        <input type=checkbox id=wedding value=wedding>
+                                        <input type=checkbox id=wedding value="wedding" ng-model="formData.wedding" ng-click="pushorpop('Production')">
                                         <label for=wedding><span></span>Production</label>
                                     </label>
                                     <label class=checkbox-inline>
-                                        <input type=checkbox id=nite value=nite>
+                                        <input type=checkbox id=nite value="nite" ng-model="formData.nite" ng-click="pushorpop('Distribution')">
                                         <label for=nite><span></span>Distribution</label>
                                     </label>
                                     <label class=checkbox-inline>
-                                        <input type=checkbox id=weddings value=weddings>
+                                        <input type=checkbox id=weddings value="weddings" ng-model="formData.weddings" ng-click="pushorpop('Casting')">
                                         <label for=weddings><span></span>Casting</label>
                                     </label>
                                 </div>
