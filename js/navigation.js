@@ -65,8 +65,8 @@ var navigationservice = angular.module('navigationservice', [])
     getEventInsideBanner: function(id, callback) {
       $http.get(apiUrl + 'getEventInsideBanner?id=' + id).success(callback);
     },
-    getEventInside: function(id, callback) {
-      $http.get(apiUrl + 'getEventInside?id=' + id).success(callback);
+    getEventInside: function(obj, callback) {
+      $http.get(apiUrl + 'getEventInside?id=' + obj.id + "&pageno=" + obj.pageno + "&maxrow=2").success(callback);
     },
     makeactive: function(menuname) {
       for (var i = 0; i < navigation.length; i++) {

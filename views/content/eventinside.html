@@ -9,12 +9,12 @@
     </div> -->
    </div>
 </section>
-<section class="inside" ng-if="eventInside.length>0">
+<section class="inside" infinite-scroll='addMoreItems();' infinite-scroll-distance="0" infinite-scroll-disabled="shouldscroll">
 <!-- <section infinite-scroll='addMoreItems();' infinite-scroll-distance="0" infinite-scroll-disabled="shouldscroll"> -->
    <div class="container">
       <div class="row mt180">
          <div class="col-md-offset-1 col-md-10">
-            <div class="row pd30" ng-repeat="data in eventInside">
+            <div class="row pd30" ng-repeat="data in eventSubtype">
                <div class="col-sm-6">
                   <div class="wedding-imgbox">
                      <img src="{{data.image | uploadpath}}" class="img-responsive" alt="">
@@ -36,18 +36,18 @@
                         </p>
                      </div>
                      <div class="w-button">
-                        <button class="btn btn-danger">Know More</button>
+                        <button class="btn btn-danger" ui-sref="eventinsidedetail">Know More</button>
                      </div>
                   </div>
                </div>
             </div>
          </div>
       </div>
-      <div class="btn-all text-center">
+      <!-- <div class="btn-all text-center">
          <button class="btn btn-outline">
             View all
          </button>
-      </div>
+      </div> -->
    </div>
 </section>
 <div class="social">

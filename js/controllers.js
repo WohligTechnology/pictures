@@ -1648,29 +1648,48 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         console.log("banner",$scope.eventBanner);
       }
     });
-    NavigationService.getEventInside($stateParams.id, function(data) {
-      console.log(data);
-      if (data.value != false) {
-        $scope.eventInside = data.queryresult;
-        
+    // NavigationService.getEventInside($stateParams.id, function(data) {
+    //   console.log(data);
+    //   if (data.value != false) {
+    //     $scope.eventInside = data.queryresult;
+    //
+    //   }
+    // });
+    $scope.pagedata = {};
+    $scope.pagedata.pageno = 0;
+    $scope.pagedata.id = $stateParams.id;
+    var lastpage = 1;
+
+    $scope.eventSubtype = [];
+
+    $scope.getEventSubtype = function() {
+      NavigationService.getEventInside($scope.pagedata, function(data) {
+        lastpage = data.lastpage;
+        if (data.queryresult.length > 0) {
+          _.each(data.queryresult, function(n) {
+            $scope.eventSubtype.push(n);
+          })
+          $scope.shouldscroll = false;
+        } else {
+          $scope.shouldscroll = true;
+        }
+        console.log($scope.eventSubtype);
+      })
+    }
+
+    $scope.addMoreItems = function() {
+      // console.log("addMoreItems");
+      if (lastpage > $scope.pagedata.pageno) {
+        $scope.pagedata.pageno++;
+        $scope.shouldscroll = true;
+        $scope.getEventSubtype();
+      } else {
+        $scope.shouldscroll = true;
       }
-    });
-    $scope.weddingSubtype = [{
-      content: "JPP Stadium Branding: (Season 1, 2 & 3)",
-      img: "img/event/eventinside/w1.png",
-      date: "May 18th, 2016",
-      detail: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
-    }, {
-      content: "JPP Team Management: Season 1",
-      img: "img/event/eventinside/w2.png",
-      date: "May 18th, 2016",
-      detail: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
-    }, {
-      content: "JPP Team Management: Season 2",
-      img: "img/event/eventinside/w3.png",
-      date: "May 18th, 2016",
-      detail: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
-    }];
+    }
+
+    $scope.addMoreItems();
+
   })
   .controller('EventInsideDetailCtrl', function($scope, TemplateService, NavigationService, $timeout) {
     //Used to name the .html file
