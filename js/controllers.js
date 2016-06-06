@@ -1809,16 +1809,16 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     $scope.menutitle = NavigationService.makeactive("World Tours");
     TemplateService.title = $scope.menutitle;
     $scope.navigation = NavigationService.getnav();
-    $scope.tourdata={};
-        $scope.formData={};
-        $scope.formData.enquiryarr = [];
-        $scope.showThanks = false;
+    $scope.tourdata = {};
+    $scope.formData = {};
+    $scope.formData.enquiryarr = [];
+    $scope.showThanks = false;
 
-      // $scope.formData.enquiry = "";
-    NavigationService.getworldtourdetail(function(data){
+    // $scope.formData.enquiry = "";
+    NavigationService.getworldtourdetail(function(data) {
       console.log(data);
-      if(data.value!=false){
-        $scope.tourdata=data.data;
+      if (data.value != false) {
+        $scope.tourdata = data.data;
       }
     })
 
@@ -1832,77 +1832,77 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
           $scope.formData.enquiry = $scope.formData.enquiry.substring(0, $scope.formData.enquiry.length - 1);
         }
         $scope.formData.category = 7;
-        NavigationService.gettourform($scope.formData,function(data){
-    console.log('$scope.formData',$scope.formData);
+        NavigationService.gettourform($scope.formData, function(data) {
+          console.log('$scope.formData', $scope.formData);
         })
       }
       // $scope.formData.enquiryarr={};
 
-  };
+    };
 
     $scope.pushorpop = function(val) {
-      var foundIndex = $scope.formData.enquiryarr.indexOf(val);
-      if (foundIndex == -1) {
-        $scope.formData.enquiryarr.push(val);
-      } else {
-        $scope.formData.enquiryarr.splice(foundIndex, 1);
+        var foundIndex = $scope.formData.enquiryarr.indexOf(val);
+        if (foundIndex == -1) {
+          $scope.formData.enquiryarr.push(val);
+        } else {
+          $scope.formData.enquiryarr.splice(foundIndex, 1);
+        }
       }
-    }
-    // $scope.weddings = [{
-    //   img: "img/worldtour/ra1.png",
-    //   date: "12 January 2016",
-    //   desc: "Lorem Ipsum is simply dummy text of the printing industry"
-    // }, {
-    //   img: "img/worldtour/ra2.png",
-    //   date: "12 January 2016",
-    //   desc: "Lorem Ipsum is simply dummy text of the printing industry"
-    // }, {
-    //   img: "img/worldtour/ra3.png",
-    //   date: "12 January 2016",
-    //   desc: "Lorem Ipsum is simply dummy text of the printing industry"
-    // }];
-    // $scope.wallpaper = [{
-    //   img: "img/worldtour/1.jpg",
-    // }, {
-    //   img: "img/worldtour/2.jpg",
-    // }, {
-    //   img: "img/worldtour/3.jpg",
-    // }, {
-    //   img: "img/worldtour/4.jpg",
-    // }, {
-    //   img: "img/worldtour/5.jpg",
-    // }, {
-    //   img: "img/worldtour/3.jpg",
-    // }, {
-    //   img: "img/worldtour/1.jpg",
-    // }, {
-    //   img: "img/worldtour/2.jpg",
-    // }];
-    // $scope.wallpapers = [{
-    //   img: "img/worldtour/1.jpg",
-    // }, {
-    //   img: "img/worldtour/1.jpg",
-    // }, {
-    //   img: "img/worldtour/2.jpg",
-    // }, {
-    //   img: "img/worldtour/2.jpg",
-    // }, {
-    //   img: "img/worldtour/3.jpg",
-    // }, {
-    //   img: "img/worldtour/3.jpg",
-    // }, {
-    //   img: "img/worldtour/4.jpg",
-    // }, {
-    //   img: "img/worldtour/4.jpg",
-    // }];
-    // $scope.wallpaper = _.chunk($scope.wallpaper, 3);
-    // for (var i = 0; i < $scope.wallpaper.length; i++) {
-    //   $scope.wallpaper[i] = _.chunk($scope.wallpaper[i], 3);
-    // }
-    // $scope.wallpapers = _.chunk($scope.wallpapers, 3);
-    // for (var i = 0; i < $scope.wallpapers.length; i++) {
-    //   $scope.wallpapers[i] = _.chunk($scope.wallpapers[i], 3);
-    // }
+      // $scope.weddings = [{
+      //   img: "img/worldtour/ra1.png",
+      //   date: "12 January 2016",
+      //   desc: "Lorem Ipsum is simply dummy text of the printing industry"
+      // }, {
+      //   img: "img/worldtour/ra2.png",
+      //   date: "12 January 2016",
+      //   desc: "Lorem Ipsum is simply dummy text of the printing industry"
+      // }, {
+      //   img: "img/worldtour/ra3.png",
+      //   date: "12 January 2016",
+      //   desc: "Lorem Ipsum is simply dummy text of the printing industry"
+      // }];
+      // $scope.wallpaper = [{
+      //   img: "img/worldtour/1.jpg",
+      // }, {
+      //   img: "img/worldtour/2.jpg",
+      // }, {
+      //   img: "img/worldtour/3.jpg",
+      // }, {
+      //   img: "img/worldtour/4.jpg",
+      // }, {
+      //   img: "img/worldtour/5.jpg",
+      // }, {
+      //   img: "img/worldtour/3.jpg",
+      // }, {
+      //   img: "img/worldtour/1.jpg",
+      // }, {
+      //   img: "img/worldtour/2.jpg",
+      // }];
+      // $scope.wallpapers = [{
+      //   img: "img/worldtour/1.jpg",
+      // }, {
+      //   img: "img/worldtour/1.jpg",
+      // }, {
+      //   img: "img/worldtour/2.jpg",
+      // }, {
+      //   img: "img/worldtour/2.jpg",
+      // }, {
+      //   img: "img/worldtour/3.jpg",
+      // }, {
+      //   img: "img/worldtour/3.jpg",
+      // }, {
+      //   img: "img/worldtour/4.jpg",
+      // }, {
+      //   img: "img/worldtour/4.jpg",
+      // }];
+      // $scope.wallpaper = _.chunk($scope.wallpaper, 3);
+      // for (var i = 0; i < $scope.wallpaper.length; i++) {
+      //   $scope.wallpaper[i] = _.chunk($scope.wallpaper[i], 3);
+      // }
+      // $scope.wallpapers = _.chunk($scope.wallpapers, 3);
+      // for (var i = 0; i < $scope.wallpapers.length; i++) {
+      //   $scope.wallpapers[i] = _.chunk($scope.wallpapers[i], 3);
+      // }
     $scope.doActives = function(params) {
       if (params === 1) {
         console.log($scope.wallpapers);
@@ -1971,7 +1971,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     $scope.doActives(1);
 
   })
-  .controller('WorldTourInsideCtrl', function($scope, TemplateService, NavigationService, $timeout,$stateParams) {
+  .controller('WorldTourInsideCtrl', function($scope, TemplateService, NavigationService, $timeout, $stateParams) {
     //Used to name the .html file
     $scope.template = TemplateService.changecontent("worldtourinside");
     $scope.menutitle = NavigationService.makeactive("World Tours");
@@ -2001,6 +2001,16 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
       $scope.tourInside.featuredvideos.splice(index, 1);
       $scope.tourInside.featuredvideos.unshift(video);
     }
+    $scope.doActives = function(params) {
+      if (params === 1) {
+        $scope.styleActives = "mactives";
+        $scope.styleNoActives = "";
+      } else {
+        $scope.styleActives = "";
+        $scope.styleNoActives = "mactives";
+      }
+    }
+    $scope.doActives(1);
   })
   .controller('headerctrl', function($scope, TemplateService) {
     $scope.template = TemplateService;
