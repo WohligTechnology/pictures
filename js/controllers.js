@@ -1831,7 +1831,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
           })
           $scope.formData.enquiry = $scope.formData.enquiry.substring(0, $scope.formData.enquiry.length - 1);
         }
-        $scope.formData.category = 1;
+        $scope.formData.category = 7;
         NavigationService.gettourform($scope.formData,function(data){
     console.log('$scope.formData',$scope.formData);
         })
