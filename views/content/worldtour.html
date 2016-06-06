@@ -18,18 +18,18 @@
       <div class="movie-category wt-category bg-grey nav-tab-middle">
          <div class="container">
            <div class="title">
-               <h4 class="display-inline uppercase {{styleActives}}" ng-click="doActives(1);">
+               <h4 ng-if="tourdata.worldtourpast.length>0" class="display-inline uppercase {{styleActives}}" ng-click="doActives(1);">
                    Past Concerts
                </h4>
-               <h4 class="display-inline uppercase {{styleNoActives}}" ng-click="doActives(2);">
+               <h4 ng-if="tourdata.worldtourupcoming.length>0" class="display-inline uppercase {{styleNoActives}}" ng-click="doActives(2);">
                    Upcoming Concerts
                </h4>
            </div>
-            <div class="flex-slider">
+            <div class="flex-slider" ng-if="tourdata.worldtourpast.length>0">
                <flex-slider flex-slide="data in tourdata.worldtourpast track by $index" ng-if="styleActives == 'mactives'" animation="slide" animation-loop="false" item-width="218" item-margin="10">
-                  <li>
+                  <li >
                      <div class="movie-box text-center">
-                        <img ng-src="{{data.image | uploadpath}}" alt="{{data.image}}" class="img-responsive">
+                        <img ui-sref="worldtourinside({id:data.id})"  ng-src="{{data.image | uploadpath}}" alt="{{data.image}}" class="img-responsive">
                         <div class="wt-data">
                           <h4>{{data.name}}</h4>
                           <p>{{data.location}}</p>
@@ -40,20 +40,20 @@
                   </li>
                </flex-slider>
             </div>
-            <!-- <div class="flex-slider">
-               <flex-slider flex-slide="data in movie track by $index" ng-if="styleNoActives == 'mactives'" animation="slide" animation-loop="false" item-width="218" item-margin="10">
+            <div class="flex-slider"  ng-if="tourdata.worldtourupcoming.length>0">
+               <flex-slider flex-slide="data in tourdata.worldtourupcoming track by $index" ng-if="styleNoActives == 'mactives'" animation="slide" animation-loop="false" item-width="218" item-margin="10">
                   <li>
                      <div class="movie-box text-center">
-                        <img ng-src="{{data.img}}" alt="" class="img-responsive">
+                        <img ui-sref="worldtourinside({id:data.id})" ng-src="{{data.image | uploadpath}}" alt="" class="img-responsive">
                         <div class="wt-data">
-                          <h4>ZEE CINE AWARDS</h4>
-                          <p>Marina Sands Bay, Singapore</p>
-                          <p class="red">14<sup>th</sup> January 2011</p>
+                          <h4>{{data.name}}</h4>
+                          <p>{{data.location}}</p>
+                          <p class="red">{{data.date}}</p>
                         </div>
                      </div>
                   </li>
                </flex-slider>
-            </div> -->
+            </div>
          </div>
       </div>
     </div>

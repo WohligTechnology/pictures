@@ -74,6 +74,9 @@ var navigationservice = angular.module('navigationservice', [])
     getworldtourdetail:function(callback){
       $http.get(apiUrl + 'getWorldTour').success(callback);
     },
+    getWorldtourInside: function(tourid, callback) {
+      $http.get(apiUrl + 'getWorldTourInsideDetails?id=' + tourid).success(callback);
+    },
     gettourform:function(mydata,callback){
       $http({
         url: apiUrl + 'getInTouch',

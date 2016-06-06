@@ -1848,61 +1848,61 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $scope.formData.enquiryarr.splice(foundIndex, 1);
       }
     }
-    $scope.weddings = [{
-      img: "img/worldtour/ra1.png",
-      date: "12 January 2016",
-      desc: "Lorem Ipsum is simply dummy text of the printing industry"
-    }, {
-      img: "img/worldtour/ra2.png",
-      date: "12 January 2016",
-      desc: "Lorem Ipsum is simply dummy text of the printing industry"
-    }, {
-      img: "img/worldtour/ra3.png",
-      date: "12 January 2016",
-      desc: "Lorem Ipsum is simply dummy text of the printing industry"
-    }];
-    $scope.wallpaper = [{
-      img: "img/worldtour/1.jpg",
-    }, {
-      img: "img/worldtour/2.jpg",
-    }, {
-      img: "img/worldtour/3.jpg",
-    }, {
-      img: "img/worldtour/4.jpg",
-    }, {
-      img: "img/worldtour/5.jpg",
-    }, {
-      img: "img/worldtour/3.jpg",
-    }, {
-      img: "img/worldtour/1.jpg",
-    }, {
-      img: "img/worldtour/2.jpg",
-    }];
-    $scope.wallpapers = [{
-      img: "img/worldtour/1.jpg",
-    }, {
-      img: "img/worldtour/1.jpg",
-    }, {
-      img: "img/worldtour/2.jpg",
-    }, {
-      img: "img/worldtour/2.jpg",
-    }, {
-      img: "img/worldtour/3.jpg",
-    }, {
-      img: "img/worldtour/3.jpg",
-    }, {
-      img: "img/worldtour/4.jpg",
-    }, {
-      img: "img/worldtour/4.jpg",
-    }];
-    $scope.wallpaper = _.chunk($scope.wallpaper, 3);
-    for (var i = 0; i < $scope.wallpaper.length; i++) {
-      $scope.wallpaper[i] = _.chunk($scope.wallpaper[i], 3);
-    }
-    $scope.wallpapers = _.chunk($scope.wallpapers, 3);
-    for (var i = 0; i < $scope.wallpapers.length; i++) {
-      $scope.wallpapers[i] = _.chunk($scope.wallpapers[i], 3);
-    }
+    // $scope.weddings = [{
+    //   img: "img/worldtour/ra1.png",
+    //   date: "12 January 2016",
+    //   desc: "Lorem Ipsum is simply dummy text of the printing industry"
+    // }, {
+    //   img: "img/worldtour/ra2.png",
+    //   date: "12 January 2016",
+    //   desc: "Lorem Ipsum is simply dummy text of the printing industry"
+    // }, {
+    //   img: "img/worldtour/ra3.png",
+    //   date: "12 January 2016",
+    //   desc: "Lorem Ipsum is simply dummy text of the printing industry"
+    // }];
+    // $scope.wallpaper = [{
+    //   img: "img/worldtour/1.jpg",
+    // }, {
+    //   img: "img/worldtour/2.jpg",
+    // }, {
+    //   img: "img/worldtour/3.jpg",
+    // }, {
+    //   img: "img/worldtour/4.jpg",
+    // }, {
+    //   img: "img/worldtour/5.jpg",
+    // }, {
+    //   img: "img/worldtour/3.jpg",
+    // }, {
+    //   img: "img/worldtour/1.jpg",
+    // }, {
+    //   img: "img/worldtour/2.jpg",
+    // }];
+    // $scope.wallpapers = [{
+    //   img: "img/worldtour/1.jpg",
+    // }, {
+    //   img: "img/worldtour/1.jpg",
+    // }, {
+    //   img: "img/worldtour/2.jpg",
+    // }, {
+    //   img: "img/worldtour/2.jpg",
+    // }, {
+    //   img: "img/worldtour/3.jpg",
+    // }, {
+    //   img: "img/worldtour/3.jpg",
+    // }, {
+    //   img: "img/worldtour/4.jpg",
+    // }, {
+    //   img: "img/worldtour/4.jpg",
+    // }];
+    // $scope.wallpaper = _.chunk($scope.wallpaper, 3);
+    // for (var i = 0; i < $scope.wallpaper.length; i++) {
+    //   $scope.wallpaper[i] = _.chunk($scope.wallpaper[i], 3);
+    // }
+    // $scope.wallpapers = _.chunk($scope.wallpapers, 3);
+    // for (var i = 0; i < $scope.wallpapers.length; i++) {
+    //   $scope.wallpapers[i] = _.chunk($scope.wallpapers[i], 3);
+    // }
     $scope.doActives = function(params) {
       if (params === 1) {
         console.log($scope.wallpapers);
@@ -1971,83 +1971,36 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     $scope.doActives(1);
 
   })
-  .controller('WorldTourInsideCtrl', function($scope, TemplateService, NavigationService, $timeout) {
+  .controller('WorldTourInsideCtrl', function($scope, TemplateService, NavigationService, $timeout,$stateParams) {
     //Used to name the .html file
     $scope.template = TemplateService.changecontent("worldtourinside");
     $scope.menutitle = NavigationService.makeactive("World Tours");
     TemplateService.title = $scope.menutitle;
     $scope.navigation = NavigationService.getnav();
-    $scope.wallpapers = [{
-      img: "img/worldtour/worldtourinside/1.jpg"
-    }, {
-      img: "img/worldtour/worldtourinside/2.jpg"
-    }, {
-      img: "img/worldtour/worldtourinside/3.jpg"
-    }, {
-      img: "img/worldtour/worldtourinside/4.jpg"
-    }, {
-      img: "img/worldtour/worldtourinside/5.jpg"
-    }, {
-      img: "img/worldtour/worldtourinside/6.jpg"
-    }, {
-      img: "img/worldtour/worldtourinside/1.jpg"
-    }, {
-      img: "img/worldtour/worldtourinside/2.jpg"
-    }, {
-      img: "img/worldtour/worldtourinside/3.jpg"
-    }, {
-      img: "img/worldtour/worldtourinside/4.jpg"
-    }, {
-      img: "img/worldtour/worldtourinside/5.jpg"
-    }, {
-      img: "img/worldtour/worldtourinside/6.jpg"
-    }];
-    $scope.wallpapers = _.chunk($scope.wallpapers, 6);
-    for (var i = 0; i < $scope.wallpapers.length; i++) {
-      $scope.wallpapers[i] = _.chunk($scope.wallpapers[i], 3);
-    }
-
-    $scope.wallpaper = [{
-      img: "img/worldtour/worldtourinside/1.jpg"
-    }, {
-      img: "img/worldtour/worldtourinside/1.jpg"
-    }, {
-      img: "img/worldtour/worldtourinside/2.jpg"
-    }, {
-      img: "img/worldtour/worldtourinside/2.jpg"
-    }, {
-      img: "img/worldtour/worldtourinside/3.jpg"
-    }, {
-      img: "img/worldtour/worldtourinside/3.jpg"
-    }, {
-      img: "img/worldtour/worldtourinside/4.jpg"
-    }, {
-      img: "img/worldtour/worldtourinside/4.jpg"
-    }, {
-      img: "img/worldtour/worldtourinside/5.jpg"
-    }, {
-      img: "img/worldtour/worldtourinside/5.jpg"
-    }, {
-      img: "img/worldtour/worldtourinside/6.jpg"
-    }, {
-      img: "img/worldtour/worldtourinside/6.jpg"
-    }];
-    $scope.wallpaper = _.chunk($scope.wallpaper, 6);
-    for (var i = 0; i < $scope.wallpaper.length; i++) {
-      $scope.wallpaper[i] = _.chunk($scope.wallpaper[i], 3);
-    }
-    $scope.doActives = function(param) {
-      if (param === 1) {
-        $scope.styleActives = "actives";
-        $scope.styleNoActives = "";
-        $scope.movieInside = $scope.wallpaper;
-      } else {
-        $scope.styleActives = "";
-        $scope.styleNoActives = "actives";
-        $scope.movieInside = $scope.wallpapers;
+    NavigationService.getWorldtourInside($stateParams.id, function(data) {
+      console.log(data);
+      if (data.value != false) {
+        $scope.tourInside = data.data;
+        console.log($scope.tourInside);
+        if ($scope.tourInside && $scope.tourInside.imagegallery && $scope.tourInside.imagegallery.length) {
+          $scope.tourInside.imagegallery = _.chunk($scope.tourInside.imagegallery, 6);
+          for (var i = 0; i < $scope.tourInside.imagegallery.length; i++) {
+            $scope.tourInside.imagegallery[i] = _.chunk($scope.tourInside.imagegallery[i], 3);
+          }
+        }
+        if ($scope.tourInside && $scope.tourInside.wallpaper && $scope.tourInside.wallpaper.length) {
+          $scope.tourInside.wallpaper = _.chunk($scope.tourInside.wallpaper, 6);
+          for (var i = 0; i < $scope.tourInside.wallpaper.length; i++) {
+            $scope.tourInside.wallpaper[i] = _.chunk($scope.tourInside.wallpaper[i], 3);
+          }
+        }
       }
+    })
+
+    $scope.makeActive = function(video, index) {
+      $scope.tourInside.featuredvideos.splice(index, 1);
+      $scope.tourInside.featuredvideos.unshift(video);
     }
-    $scope.doActives(1);
   })
   .controller('headerctrl', function($scope, TemplateService) {
     $scope.template = TemplateService;

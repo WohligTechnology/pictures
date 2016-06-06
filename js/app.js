@@ -158,7 +158,7 @@ firstapp.config(function($stateProvider, $urlRouterProvider, $httpProvider, $loc
             controller: 'WorldTourCtrl'
         })
         .state('worldtourinside', {
-            url: "/worldtourinside",
+            url: "/worldtourinside/:id",
             templateUrl: "views/template.html",
             controller: 'WorldTourInsideCtrl'
         });
