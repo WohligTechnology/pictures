@@ -142,6 +142,16 @@ firstapp.config(function($stateProvider, $urlRouterProvider, $httpProvider, $loc
             templateUrl: "views/template.html",
             controller: 'EventInsideDetailCtrl'
         })
+        .state('miceinside', {
+            url: "/miceinside/:id",
+            templateUrl: "views/template.html",
+            controller: 'MiceInsideCtrl'
+        })
+        .state('miceinsidedetail', {
+            url: "/miceinsidedetail/:id",
+            templateUrl: "views/template.html",
+            controller: 'MiceInsideDetailCtrl'
+        })
         .state('talentinside', {
             url: "/talentinside",
             templateUrl: "views/template.html",

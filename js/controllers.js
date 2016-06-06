@@ -1494,57 +1494,89 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     $scope.menutitle = NavigationService.makeactive("Mice");
     TemplateService.title = $scope.menutitle;
     $scope.navigation = NavigationService.getnav();
-    $scope.services = [{
-      title: "Branding solution",
-      content: "<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. </p>"
-    }, {
-      title: "Production",
-      content: "<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. </p>"
-    }, {
-      title: "Hospitality & Logistic",
-      content: "<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. </p>"
-    }, {
-      title: "Team & Player Management",
-      content: "<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. </p>"
-    }, {
-      title: "Kit Management",
-      content: "<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. </p>"
-    }, {
-      title: "Ticketing",
-      content: "<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. </p>"
-    }, {
-      title: "Licensing",
-      content: "<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. </p>"
-    }, {
-      title: "Digital Solution Management",
-      content: "<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. </p>"
-    }, {
-      title: "Ancillary Events",
-      content: "<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. </p>"
-    }, {
-      title: "Out reach program",
-      content: "<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. </p>"
-    }];
-    $scope.weddings = [{
-      img: "img/mice/m1.png",
-      date: "12 January 2016",
-      desc: "Lorem Ipsum is simply dummy text of the printing industry"
-    }, {
-      img: "img/mice/m2.png",
-      date: "12 January 2016",
-      desc: "Lorem Ipsum is simply dummy text of the printing industry"
-    }, {
-      img: "img/mice/m3.png",
-      date: "12 January 2016",
-      desc: "Lorem Ipsum is simply dummy text of the printing industry"
-    }];
-    $scope.wedding = [{
-      img: "img/mice/2.png",
-      name: "MEETINGS & INCENTIVES"
-    }, {
-      img: "img/mice/1.png",
-      name: "CONFERENCES & EXHIBITIONS"
-    }];
+
+
+    $scope.micedata="";
+    NavigationService.getMice(function(data){
+      console.log(data);
+      $scope.micedata=data.data;
+      console.log($scope.micedata);
+
+    })
+  })
+  .controller('MiceInsideCtrl', function($scope, TemplateService, NavigationService, $timeout, $stateParams) {
+    //Used to name the .html file
+    $scope.template = TemplateService.changecontent("miceinside");
+    $scope.menutitle = NavigationService.makeactive("Mices");
+    TemplateService.title = $scope.menutitle;
+    $scope.navigation = NavigationService.getnav();
+    NavigationService.getMiceInsideBanner($stateParams.id, function(data) {
+      console.log(data);
+      if (data.value != false) {
+        $scope.miceBanner = data.data;
+        console.log("banner", $scope.miceBanner);
+      }
+    });
+    $scope.pagedata = {};
+    $scope.pagedata.pageno = 0;
+    $scope.pagedata.id = $stateParams.id;
+    var lastpage = 1;
+
+    $scope.miceSubtype = [];
+
+    $scope.getMiceSubtype = function() {
+      NavigationService.getMiceInside($scope.pagedata, function(data) {
+        lastpage = data.lastpage;
+        if (data.queryresult.length > 0) {
+          _.each(data.queryresult, function(n) {
+            $scope.miceSubtype.push(n);
+          })
+          $scope.shouldscroll = false;
+        } else {
+          $scope.shouldscroll = true;
+        }
+        console.log($scope.miceSubtype);
+      })
+    }
+
+    $scope.addMoreItems = function() {
+      // console.log("addMoreItems");
+      if (lastpage > $scope.pagedata.pageno) {
+        $scope.pagedata.pageno++;
+        $scope.shouldscroll = true;
+        $scope.getMiceSubtype();
+      } else {
+        $scope.shouldscroll = true;
+      }
+    }
+
+    $scope.addMoreItems();
+
+  })
+  .controller('MiceInsideDetailCtrl', function($scope, TemplateService, NavigationService, $timeout, $stateParams) {
+    //Used to name the .html file
+    $scope.template = TemplateService.changecontent("micedetail");
+    $scope.menutitle = NavigationService.makeactive("Mices");
+    TemplateService.title = $scope.menutitle;
+    $scope.navigation = NavigationService.getnav();
+    $scope.micedetail = {};
+    NavigationService.getMiceInsideDetails($stateParams.id, function(data) {
+      console.log(data);
+      $scope.micedetail = data.data;
+      console.log("$scope.micedetail", $scope.micedetail);
+      if ($scope.micedetail.imagegallery && $scope.micedetail.imagegallery.length > 0) {
+        $scope.micedetail.imagegallery = _.chunk($scope.micedetail.imagegallery, 6);
+        for (var i = 0; i < $scope.micedetail.imagegallery.length; i++) {
+          $scope.micedetail.imagegallery[i] = _.chunk($scope.micedetail.imagegallery[i], 3);
+        }
+        // $scope.weddetail.imagegallery = _.chunk($scope.weddetail.imagegallery, 3);
+      }
+    })
+    $scope.makeActive = function(video, index) {
+      $scope.micedetail.featuredvideos.splice(index, 1);
+      $scope.micedetail.featuredvideos.unshift(video);
+    }
+
   })
   .controller('MediaCornerCtrl', function($scope, TemplateService, NavigationService, $timeout) {
     //Used to name the .html file
@@ -1809,16 +1841,16 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     $scope.menutitle = NavigationService.makeactive("World Tours");
     TemplateService.title = $scope.menutitle;
     $scope.navigation = NavigationService.getnav();
-    $scope.tourdata = {};
-    $scope.formData = {};
-    $scope.formData.enquiryarr = [];
-    $scope.showThanks = false;
+    $scope.tourdata={};
+        $scope.formData={};
+        $scope.formData.enquiryarr = [];
+        $scope.showThanks = false;
 
-    // $scope.formData.enquiry = "";
-    NavigationService.getworldtourdetail(function(data) {
+      // $scope.formData.enquiry = "";
+    NavigationService.getworldtourdetail(function(data){
       console.log(data);
-      if (data.value != false) {
-        $scope.tourdata = data.data;
+      if(data.value!=false){
+        $scope.tourdata=data.data;
       }
     })
 
@@ -1832,77 +1864,77 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
           $scope.formData.enquiry = $scope.formData.enquiry.substring(0, $scope.formData.enquiry.length - 1);
         }
         $scope.formData.category = 7;
-        NavigationService.gettourform($scope.formData, function(data) {
-          console.log('$scope.formData', $scope.formData);
+        NavigationService.gettourform($scope.formData,function(data){
+    console.log('$scope.formData',$scope.formData);
         })
       }
       // $scope.formData.enquiryarr={};
 
-    };
+  };
 
     $scope.pushorpop = function(val) {
-        var foundIndex = $scope.formData.enquiryarr.indexOf(val);
-        if (foundIndex == -1) {
-          $scope.formData.enquiryarr.push(val);
-        } else {
-          $scope.formData.enquiryarr.splice(foundIndex, 1);
-        }
+      var foundIndex = $scope.formData.enquiryarr.indexOf(val);
+      if (foundIndex == -1) {
+        $scope.formData.enquiryarr.push(val);
+      } else {
+        $scope.formData.enquiryarr.splice(foundIndex, 1);
       }
-      // $scope.weddings = [{
-      //   img: "img/worldtour/ra1.png",
-      //   date: "12 January 2016",
-      //   desc: "Lorem Ipsum is simply dummy text of the printing industry"
-      // }, {
-      //   img: "img/worldtour/ra2.png",
-      //   date: "12 January 2016",
-      //   desc: "Lorem Ipsum is simply dummy text of the printing industry"
-      // }, {
-      //   img: "img/worldtour/ra3.png",
-      //   date: "12 January 2016",
-      //   desc: "Lorem Ipsum is simply dummy text of the printing industry"
-      // }];
-      // $scope.wallpaper = [{
-      //   img: "img/worldtour/1.jpg",
-      // }, {
-      //   img: "img/worldtour/2.jpg",
-      // }, {
-      //   img: "img/worldtour/3.jpg",
-      // }, {
-      //   img: "img/worldtour/4.jpg",
-      // }, {
-      //   img: "img/worldtour/5.jpg",
-      // }, {
-      //   img: "img/worldtour/3.jpg",
-      // }, {
-      //   img: "img/worldtour/1.jpg",
-      // }, {
-      //   img: "img/worldtour/2.jpg",
-      // }];
-      // $scope.wallpapers = [{
-      //   img: "img/worldtour/1.jpg",
-      // }, {
-      //   img: "img/worldtour/1.jpg",
-      // }, {
-      //   img: "img/worldtour/2.jpg",
-      // }, {
-      //   img: "img/worldtour/2.jpg",
-      // }, {
-      //   img: "img/worldtour/3.jpg",
-      // }, {
-      //   img: "img/worldtour/3.jpg",
-      // }, {
-      //   img: "img/worldtour/4.jpg",
-      // }, {
-      //   img: "img/worldtour/4.jpg",
-      // }];
-      // $scope.wallpaper = _.chunk($scope.wallpaper, 3);
-      // for (var i = 0; i < $scope.wallpaper.length; i++) {
-      //   $scope.wallpaper[i] = _.chunk($scope.wallpaper[i], 3);
-      // }
-      // $scope.wallpapers = _.chunk($scope.wallpapers, 3);
-      // for (var i = 0; i < $scope.wallpapers.length; i++) {
-      //   $scope.wallpapers[i] = _.chunk($scope.wallpapers[i], 3);
-      // }
+    }
+    // $scope.weddings = [{
+    //   img: "img/worldtour/ra1.png",
+    //   date: "12 January 2016",
+    //   desc: "Lorem Ipsum is simply dummy text of the printing industry"
+    // }, {
+    //   img: "img/worldtour/ra2.png",
+    //   date: "12 January 2016",
+    //   desc: "Lorem Ipsum is simply dummy text of the printing industry"
+    // }, {
+    //   img: "img/worldtour/ra3.png",
+    //   date: "12 January 2016",
+    //   desc: "Lorem Ipsum is simply dummy text of the printing industry"
+    // }];
+    // $scope.wallpaper = [{
+    //   img: "img/worldtour/1.jpg",
+    // }, {
+    //   img: "img/worldtour/2.jpg",
+    // }, {
+    //   img: "img/worldtour/3.jpg",
+    // }, {
+    //   img: "img/worldtour/4.jpg",
+    // }, {
+    //   img: "img/worldtour/5.jpg",
+    // }, {
+    //   img: "img/worldtour/3.jpg",
+    // }, {
+    //   img: "img/worldtour/1.jpg",
+    // }, {
+    //   img: "img/worldtour/2.jpg",
+    // }];
+    // $scope.wallpapers = [{
+    //   img: "img/worldtour/1.jpg",
+    // }, {
+    //   img: "img/worldtour/1.jpg",
+    // }, {
+    //   img: "img/worldtour/2.jpg",
+    // }, {
+    //   img: "img/worldtour/2.jpg",
+    // }, {
+    //   img: "img/worldtour/3.jpg",
+    // }, {
+    //   img: "img/worldtour/3.jpg",
+    // }, {
+    //   img: "img/worldtour/4.jpg",
+    // }, {
+    //   img: "img/worldtour/4.jpg",
+    // }];
+    // $scope.wallpaper = _.chunk($scope.wallpaper, 3);
+    // for (var i = 0; i < $scope.wallpaper.length; i++) {
+    //   $scope.wallpaper[i] = _.chunk($scope.wallpaper[i], 3);
+    // }
+    // $scope.wallpapers = _.chunk($scope.wallpapers, 3);
+    // for (var i = 0; i < $scope.wallpapers.length; i++) {
+    //   $scope.wallpapers[i] = _.chunk($scope.wallpapers[i], 3);
+    // }
     $scope.doActives = function(params) {
       if (params === 1) {
         console.log($scope.wallpapers);
@@ -1971,7 +2003,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     $scope.doActives(1);
 
   })
-  .controller('WorldTourInsideCtrl', function($scope, TemplateService, NavigationService, $timeout, $stateParams) {
+  .controller('WorldTourInsideCtrl', function($scope, TemplateService, NavigationService, $timeout,$stateParams) {
     //Used to name the .html file
     $scope.template = TemplateService.changecontent("worldtourinside");
     $scope.menutitle = NavigationService.makeactive("World Tours");
@@ -2001,16 +2033,6 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
       $scope.tourInside.featuredvideos.splice(index, 1);
       $scope.tourInside.featuredvideos.unshift(video);
     }
-    $scope.doActives = function(params) {
-      if (params === 1) {
-        $scope.styleActives = "mactives";
-        $scope.styleNoActives = "";
-      } else {
-        $scope.styleActives = "";
-        $scope.styleNoActives = "mactives";
-      }
-    }
-    $scope.doActives(1);
   })
   .controller('headerctrl', function($scope, TemplateService) {
     $scope.template = TemplateService;

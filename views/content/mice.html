@@ -7,32 +7,31 @@
         </div>
         <div class=row>
             <div class="col-md-offset-2 col-md-8">
-                <div class="wedding-fant-desc mt50">
-                    <p>What’s trending these days is the theme based corporate conferences and events for employees. These events act as a motivation factor and promote interpersonal bonding amongst the employees. Conducting such types of business meetings,
-                        incentive tours, conferences and exhibitions at interesting locations also acquires recognition in the business community.</p>
+                <div class="wedding-fant-desc mt50" ng-bind-html="micedata.description.content">
+                    <!-- <p>{{micedata.description.content}}</p> -->
                 </div>
             </div>
         </div>
     </div>
     <div class="bg-grey-similar bg-sports">
         <div class="container">
-            <div class="banner-talent banner-sports">
+            <div class="banner-talent banner-sports" ng-if="micedata.mice && micedata.mice.length>0">
                 <div class="row">
-                    <div class="col-sm-6" ng-repeat="data in wedding track by $index">
+                    <div class="col-sm-6" ng-repeat="data in micedata.mice track by $index">
                         <div class="banner-wrap">
-                            <img ng-src="{{data.img}}" class="img-responsive">
+                            <img ng-src="{{data.image | uploadpath}}" class="img-responsive">
                             <!-- <img src="img/talent/hover-banner.png" alt="" class="img-responsive hover-image"> -->
                             <div class="name-event btm">
                                 <span class="color-white uppercase">{{data.name}}</span>
                                 <div class="pull-right btn-all">
-                                    <button type="button" name="button" class="btn btn-small color-red" ui-sref="{{data.link}}">Enter</button>
+                                    <button type="button" name="button" class="btn btn-small color-red" ui-sref="miceinside({id:data.id})">Enter</button>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="bg-moviesdiaries">
+            <div class="bg-moviesdiaries" ng-if="micedata.micediaries && micedata.micediaries.length>0">
                 <div class="row">
                     <div class="col-md-12">
                         <div class="text-center">
@@ -46,10 +45,10 @@
                 </div>
                 <div class="pd-side">
                     <div class="row">
-                        <div class="col-md-4 col-sm-4 col-xs-6" ng-repeat="data in weddings track by $index">
+                        <div class="col-md-4 col-sm-4 col-xs-6" ng-repeat="data in micedata.micediaries track by $index">
                             <div class="wed-box border-red">
                                 <div class="wed-img-list">
-                                    <img ng-src="{{data.img}}" alt="" class="img-responsive">
+                                    <img ng-src="{{data.image | uploadpath}}" alt="" class="img-responsive">
                                     <div class="ribbon-red">
                                         <img src="img/ribbon_red.png" alt="">
                                         <span class="color-white uppercase">Mice</span>
@@ -59,8 +58,8 @@
                                     <div class="wed-date">
                                         <span>{{data.date}}</span>
                                     </div>
-                                    <div class="wed-desc-inside">
-                                        <p class="bold">{{data.desc}}</p>
+                                    <div class="wed-desc-inside" ng-bind-html="data.content">
+                                        <!-- <p class="bold">{{data.desc}}</p> -->
                                     </div>
                                     <div class="read-more">
                                         <a href="" class="color-black">Read More</a>
@@ -80,7 +79,7 @@
         </div>
     </div>
     <div class="container">
-        <div class=pd-side>
+        <div class=pd-side ng-if="micedata.services && micedata.services.length>0">
             <div class=row>
                 <div class=col-md-12>
                     <div class=service>
@@ -90,9 +89,9 @@
                         </div>
                         <div class=services-list>
                             <uib-accordion close-others=oneAtATime is-open=status.open>
-                                <uib-accordion-group is-open=status.open1 is-disabled=status.isFirstDisabled ng-repeat="data in services">
+                                <uib-accordion-group is-open=status.open1 is-disabled=status.isFirstDisabled ng-repeat="data in micedata.services">
                                     <uib-accordion-heading>
-                                        <h4><span class="uppercase bold">{{data.title}}</span> <i class="pull-right fa" ng-class="{'fa-minus': status.open1, 'fa-plus': !status.open1}"></i></h4></uib-accordion-heading>
+                                        <h4><span class="uppercase bold">{{data.name}}</span> <i class="pull-right fa" ng-class="{'fa-minus': status.open1, 'fa-plus': !status.open1}"></i></h4></uib-accordion-heading>
                                     <div ng-bind-html=data.content></div>
                                 </uib-accordion-group>
                             </uib-accordion>
@@ -160,31 +159,31 @@
                 <div class="col-md-offset-2 col-md-8">
                     <div class=get-in-touch>
                         <h3 class="color-red uppercase bold">GET IN TOUCH</h3>
-                        <form name=wed>
+                        <form name="wed">
                             <div class=row>
                                 <div class=col-md-6>
                                     <div class=form-group>
-                                        <input type=text ng-model=formData.name name=name class=form-control id=exampleInputEmail1 placeholder="First Name" required="">
-                                        <div class=error-msg ng-show="wed.name.$error.required && wed.name.$touched">Please Enter Your First Name.</div>
+                                        <input type=text ng-model="formData.firstname" name="firstname" class=form-control id=exampleInputEmail1 placeholder="First Name" required="">
+                                        <div class=error-msg ng-show="wed.firstname.$error.required && wed.firstname.$touched">Please Enter Your First Name.</div>
                                     </div>
                                 </div>
                                 <div class=col-md-6>
                                     <div class=form-group>
-                                        <input type=text ng-model=formData.name1 name=name1 class=form-control id=exampleInputEmail1 placeholder="Last Name" required="">
-                                        <div class=error-msg ng-show="wed.name1.$error.required && wed.name1.$touched">Please Enter Your Last Name.</div>
+                                        <input type=text ng-model="formData.lastname" name="lastname" class=form-control id=exampleInputEmail1 placeholder="Last Name" required="">
+                                        <div class=error-msg ng-show="wed.lastname.$error.required && wed.name1.$touched">Please Enter Your Last Name.</div>
                                     </div>
                                 </div>
                             </div>
                             <div class=row>
                                 <div class=col-md-6>
                                     <div class=form-group>
-                                        <input type=email ng-model=formData.email name=email class=form-control id=exampleInputEmail1 placeholder="Email" required="">
+                                        <input type=email ng-model="formData.email" name="email" class=form-control id=exampleInputEmail1 placeholder="Email" required="">
                                         <div class=error-msg ng-show="wed.email.$error.required && wed.email.$touched">Please Enter Your Email.</div>
                                     </div>
                                 </div>
                                 <div class=col-md-6>
                                     <div class=form-group>
-                                        <input type=tel ng-model=formData.phone name=phone class=form-control id=exampleInputEmail1 maxlength=13 placeholder="Phone Number" required="">
+                                        <input type=tel ng-model="formData.phone" name="phone" class=form-control id=exampleInputEmail1 maxlength=13 placeholder="Phone Number" required="">
                                         <div class=error-msg ng-show="wed.phone.$error.required && wed.phone.$touched">Please Enter Phone number.</div>
                                     </div>
                                 </div>

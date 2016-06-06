@@ -71,11 +71,23 @@ var navigationservice = angular.module('navigationservice', [])
     getEventInsideDetails: function(id, callback) {
       $http.get(apiUrl + 'getEventInsideDetails?id=' + id).success(callback);
     },
+    getMiceInsideBanner: function(id, callback) {
+      $http.get(apiUrl + 'getMiceInsideBanner?id=' + id).success(callback);
+    },
+    getMiceInside: function(obj, callback) {
+      $http.get(apiUrl + 'getMiceInside?id=' + obj.id + "&pageno=" + obj.pageno + "&maxrow=2").success(callback);
+    },
+    getMiceInsideDetails: function(id, callback) {
+      $http.get(apiUrl + 'getMiceInsideDetails?id=' + id).success(callback);
+    },
     getworldtourdetail:function(callback){
       $http.get(apiUrl + 'getWorldTour').success(callback);
     },
     getWorldtourInside: function(tourid, callback) {
       $http.get(apiUrl + 'getWorldTourInsideDetails?id=' + tourid).success(callback);
+    },
+    getMice: function(callback) {
+      $http.get(apiUrl + 'getMice').success(callback);
     },
     gettourform:function(mydata,callback){
       $http({
