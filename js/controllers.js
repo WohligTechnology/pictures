@@ -1050,13 +1050,17 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     $scope.menutitle = NavigationService.makeactive("Sports");
     TemplateService.title = $scope.menutitle;
     $scope.navigation = NavigationService.getnav();
+    $scope.formData={};
+    $scope.formData.enquiryarr = [];
+    $scope.showThanks = false;
+    // $scope.formData="";
 
-    $scope.talentSubmitForm = function(formValid, formData) {
-      if (formValid.$valid && $scope.formData) {
-        $state.go("talent");
-
-      }
-    };
+    // $scope.talentSubmitForm = function(formValid, formData) {
+    //   if (formValid.$valid && $scope.formData) {
+    //     $state.go("talent");
+    //
+    //   }
+    // };
     $scope.subscribe = {};
     $scope.subscribe.email = "";
 
@@ -1087,6 +1091,43 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
       $scope.sportdata=data.data;
       console.log('$scope.sportdata',$scope.sportdata);
     })
+
+
+
+
+
+  // $scope.formData.enquiry = "";
+
+
+$scope.talentSubmitForm = function(formValid) {
+  $scope.formData.enquiry = "";
+  if (formValid.$valid && $scope.formData) {
+    if ($scope.formData.enquiryarr.length > 0) {
+      _.each($scope.formData.enquiryarr, function(n) {
+        $scope.formData.enquiry += n + ",";
+      })
+      $scope.formData.enquiry = $scope.formData.enquiry.substring(0, $scope.formData.enquiry.length - 1);
+    }
+    $scope.formData.category = 7;
+    NavigationService.gettourform($scope.formData,function(data){
+      if (data.value != false) {
+        $scope.showThanks = true;
+console.log('$scope.formData',$scope.formData);
+}
+    })
+  }
+  // $scope.formData.enquiryarr={};
+
+};
+
+$scope.pushorpop = function(val) {
+  var foundIndex = $scope.formData.enquiryarr.indexOf(val);
+  if (foundIndex == -1) {
+    $scope.formData.enquiryarr.push(val);
+  } else {
+    $scope.formData.enquiryarr.splice(foundIndex, 1);
+  }
+}
     // $scope.wedding = [{
     //   img: "img/sports/asfc.jpg",
     //   logo: "img/ASFC/asfc.png",
@@ -1500,6 +1541,21 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     $scope.menutitle = NavigationService.makeactive("Mice");
     TemplateService.title = $scope.menutitle;
     $scope.navigation = NavigationService.getnav();
+    $scope.formData={};
+    $scope.formData.enquiryarr = [];
+    $scope.showThanks = false;
+    $scope.eoptions = {};
+
+    $scope.soptions = {
+      minDate: new Date()
+    }
+
+    $scope.changeEOptions = function() {
+      $scope.eoptions = {
+        minDate: new Date($scope.formData.date)
+      }
+    }
+
 
 
     $scope.micedata="";
@@ -1508,7 +1564,107 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
       $scope.micedata=data.data;
       console.log($scope.micedata);
 
+
+
+      $scope.miceSubmitForm = function(formValid) {
+        $scope.formData.enquiry = "";
+        if (formValid.$valid && $scope.formData) {
+          if ($scope.formData.enquiryarr.length > 0) {
+            _.each($scope.formData.enquiryarr, function(n) {
+              $scope.formData.enquiry += n + ",";
+            })
+            $scope.formData.enquiry = $scope.formData.enquiry.substring(0, $scope.formData.enquiry.length - 1);
+          }
+          $scope.formData.category = 7;
+          if ($scope.formData.date) {
+            var formatdate = $scope.formData.date.getFullYear();
+            formatdate += "/" + $scope.formData.date.getMonth();
+            formatdate += "/" + $scope.formData.date.getDate();
+            $scope.formData.date = formatdate;
+          }
+          if ($scope.formData.enddate) {
+            var formatdate = $scope.formData.enddate.getFullYear();
+            formatdate += "/" + $scope.formData.enddate.getMonth();
+            formatdate += "/" + $scope.formData.enddate.getDate();
+            $scope.formData.enddate = formatdate;
+          }
+          NavigationService.gettourform($scope.formData,function(data){
+            if (data.value != false) {
+              $scope.showThanks = true;
+      console.log('$scope.formData',$scope.formData);
+      }
+          })
+        }
+        // $scope.formData.enquiryarr={};
+
+      };
+
+      $scope.pushorpop = function(val) {
+        var foundIndex = $scope.formData.enquiryarr.indexOf(val);
+        if (foundIndex == -1) {
+          $scope.formData.enquiryarr.push(val);
+        } else {
+          $scope.formData.enquiryarr.splice(foundIndex, 1);
+        }
+      }
     })
+
+      $scope.today = function() {
+        $scope.dt = new Date();
+      };
+      $scope.today();
+
+      $scope.toggleMin = function() {
+        $scope.minDate = $scope.minDate ? null : new Date();
+      };
+
+      $scope.toggleMin();
+      $scope.maxDate = new Date(2020, 5, 22);
+
+      $scope.open1 = function() {
+        $scope.popup1.opened = true;
+      };
+
+      $scope.setDate = function(year, month, day) {
+        $scope.dt = new Date(year, month, day);
+      };
+
+      $scope.dateOptions = {
+        formatYear: 'yy',
+        startingDay: 1
+      };
+      $scope.open1 = function() {
+        $scope.popup1.opened = true;
+      };
+
+      $scope.open2 = function() {
+        $scope.popup2.opened = true;
+      };
+
+      $scope.formats = ['dd-MMMM-yyyy', 'yyyy/MM/dd', 'dd.MM.yyyy', 'shortDate'];
+      $scope.format = $scope.formats[0];
+      $scope.altInputFormats = ['M!/d!/yyyy'];
+
+      $scope.popup1 = {
+        opened: false
+      };
+
+      $scope.popup2 = {
+        opened: false
+      };
+
+      $scope.getDayClass = function(date, mode) {
+        if (mode === 'day') {
+          var dayToCheck = new Date(date).setHours(0, 0, 0, 0);
+          for (var i = 0; i < $scope.events.length; i++) {
+            var currentDay = new Date($scope.events[i].date).setHours(0, 0, 0, 0);
+            if (dayToCheck === currentDay) {
+              return $scope.events[i].status;
+            }
+          }
+        }
+        return '';
+      };
   })
   .controller('MiceInsideCtrl', function($scope, TemplateService, NavigationService, $timeout, $stateParams) {
     //Used to name the .html file
@@ -1871,7 +2027,10 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         }
         $scope.formData.category = 7;
         NavigationService.gettourform($scope.formData,function(data){
+          if (data.value != false) {
+            $scope.showThanks = true;
     console.log('$scope.formData',$scope.formData);
+  }
         })
       }
       // $scope.formData.enquiryarr={};
