@@ -89,6 +89,9 @@ var navigationservice = angular.module('navigationservice', [])
     getMice: function(callback) {
       $http.get(apiUrl + 'getMice').success(callback);
     },
+    getSportdata: function(callback) {
+      $http.get(apiUrl + 'getSport').success(callback);
+    },
     gettourform:function(mydata,callback){
       $http({
         url: apiUrl + 'getInTouch',

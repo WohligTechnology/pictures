@@ -14,10 +14,10 @@
         </div>
       </div>
       <div class="col-md-6 col-sm-6">
-        <div class="wedding-fant-desc mt50">
-          <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+        <div class="wedding-fant-desc mt50" ng-bind-html="sportdata.description.content">
+          <!-- <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
             It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently
-            with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+            with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p> -->
         </div>
       </div>
     </div>
@@ -26,22 +26,22 @@
     <div class="container">
       <div class="banner-talent banner-sports">
         <div class="row">
-          <div class="col-sm-6" ng-repeat="data in wedding track by $index">
+          <div class="col-sm-6" ng-repeat="data in sportdata.sports track by $index">
             <div class="banner-wrap">
-              <img ng-src="{{data.img}}" class="img-responsive">
-              <img ng-src="{{data.logo}}" class="make-make">
+              <img ng-src="{{data.image | uploadpath}}" class="img-responsive">
+              <!-- <img ng-src="{{data.logo}}" class="make-make"> -->
               <!-- <img src="img/talent/hover-banner.png" alt="" class="img-responsive hover-image"> -->
               <div class="name-event btm">
                 <span class="color-white uppercase">{{data.name}}</span>
                 <div class="pull-right btn-all">
-                  <button type="button" name="button" class="btn btn-small color-red" ui-sref="{{data.link}}">Enter</button>
+                  <button type="button" name="button" class="btn btn-small color-red" ui-sref="jpp">Enter</button>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-      <div class="bg-moviesdiaries">
+      <div class="bg-moviesdiaries" ng-if="sportdata.sportdiaries && sportdata.sportdiaries>0">
         <div class="row">
           <div class="col-md-12">
             <div class="text-center">
@@ -55,10 +55,10 @@
         </div>
         <div class="pd-side">
           <div class="row">
-            <div class="col-md-4 col-sm-4 col-xs-6" ng-repeat="data in weddings track by $index">
+            <div class="col-md-4 col-sm-4 col-xs-6" ng-repeat="data in sportdata.sportdiaries track by $index">
               <div class="wed-box border-red">
                 <div class="wed-img-list">
-                  <img ng-src="{{data.img}}" alt="" class="img-responsive">
+                  <img ng-src="{{data.image | uploadpath}}" alt="" class="img-responsive">
                   <div class="ribbon-red">
                     <img src="img/ribbon_red.png" alt="">
                     <span class="color-white uppercase">Sports</span>
@@ -68,8 +68,8 @@
                   <div class="wed-date">
                     <span>{{data.date}}</span>
                   </div>
-                  <div class="wed-desc-inside">
-                    <p class="bold">{{data.desc}}</p>
+                  <div class="wed-desc-inside" ng-bind-html="data.content">
+                    <!-- <p class="bold">{{data.desc}}</p> -->
                   </div>
                   <div class="read-more">
                     <a href="" class="color-black">Read More</a>
@@ -89,7 +89,7 @@
     </div>
   </div>
   <section class="container">
-    <div class="pd-side">
+    <div class="pd-side" ng-if="sportdata.services && sportdata.services.length>0">
       <div class="row">
         <div class="col-md-12">
           <div class="service mb30">
@@ -99,10 +99,10 @@
             </div>
             <div class="services-list">
               <uib-accordion close-others="oneAtATime" is-open="status.open">
-                <uib-accordion-group is-open="status.open1" is-disabled="status.isFirstDisabled" ng-repeat="data in services">
+                <uib-accordion-group is-open="status.open1" is-disabled="status.isFirstDisabled" ng-repeat="data in sportdata.services">
                   <uib-accordion-heading>
                     <h4>
-                     <span class="uppercase bold">{{data.title}}</span>
+                     <span class="uppercase bold">{{data.name}}</span>
                       <i class="pull-right fa" ng-class="{'fa-minus': status.open1, 'fa-plus': !status.open1}"></i>
                     </h4>
                   </uib-accordion-heading>
@@ -135,20 +135,21 @@
       </div>
     </div>
   </section>
-  <div class="section3">
+  <div class="section3" ng-if="sportdata.testimonial && sportdata.testimonial.length>0">
     <div class="bg3-sports">
       <div class="container">
         <div class="client-speak">
           <div class="name-cont color-white">
-            <img src="img/inverted.png" alt="">
-            <span>{{clientspeak.category}}</span>
+            <img ng-src="img/inverted.png" alt="">
+            <!-- <span>Player Speak</span> -->
+             <span>{{sportdata.testimonial[0].name}}</span>
           </div>
           <div class="img-holder">
-            <img ng-src="{{clientspeak.img}}" alt="" class="img-reponsive">
+            <img ng-src="{{sportdata.testimonial[0].image | uploadpath}}" alt="" class="img-reponsive">
           </div>
           <div class="img-review color-white">
-            <h4>"{{clientspeak.text}}"</h4>
-            <p>- {{clientspeak.name}}</p>
+            <h4>"{{sportdata.testimonial[0].quote}}"</h4>
+            <p>- {{sportdata.testimonial[0].author}}</p>
           </div>
         </div>
       </div>
