@@ -101,6 +101,9 @@ var navigationservice = angular.module('navigationservice', [])
     getSportInsidedataByid: function(id,callback) {
       $http.get(apiUrl + 'getSportInside?sportscategory=' + id).success(callback);
     },
+    getasfcSeasonData: function(id,callback) {
+      $http.get(apiUrl + 'getasfcSportsDetail?id=' + id).success(callback);
+    },
     getMediacorner: function(callback) {
       $http.get(apiUrl + 'getMediacorner').success(callback);
     },

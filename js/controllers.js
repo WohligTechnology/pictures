@@ -908,57 +908,67 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     $scope.menutitle = NavigationService.makeactive("Sports");
     TemplateService.title = $scope.menutitle;
     $scope.navigation = NavigationService.getnav();
-    $scope.asfcdetail = [{
-        img: "img/ASFC/w1.jpg",
-        team1: "AHFC",
-        team2: "AHFC",
-        date: "15 Sep 2015",
-        location: "Bangalore",
-        detail: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
-    }, {
-        img: "img/ASFC/w2.jpg",
-        team1: "AHFC",
-        team2: "AHFC",
-        date: "15 Sep 2015",
-        location: "Bangalore",
-        detail: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
-    }, {
-        img: "img/ASFC/w3.jpg",
-        team1: "AHFC",
-        team2: "AHFC",
-        date: "15 Sep 2015",
-        location: "Bangalore",
-        detail: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
-    }, {
-        img: "img/ASFC/w4.jpg",
-        team1: "AHFC",
-        team2: "AHFC",
-        date: "15 Sep 2015",
-        location: "Bangalore",
-        detail: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
-    }];
-    $scope.asfcplayer = [{
-        img: "img/ASFC/player1.jpg",
-        name: "Abhisek Bachchan",
-    }, {
-        img: "img/ASFC/player2.jpg",
-        name: "Ranbir Kapoor",
-    }, {
-        img: "img/ASFC/player3.jpg",
-        name: "Aditya Roy Kapoor",
-    }, {
-        img: "img/ASFC/player4.jpg",
-        name: "Arjun Kapoor",
-    }, {
-        img: "img/ASFC/player5.jpg",
-        name: "Dino Morea",
-    }];
-    $scope.clientspeak = {
-        category: "Players Speak",
-        text: "Awesome teamwork and planning",
-        name: "Sunil Joshi",
-        img: "img/movies/ranbir.jpg"
-    };
+    // $scope.asfcdetail = [{
+    //     img: "img/ASFC/w1.jpg",
+    //     team1: "AHFC",
+    //     team2: "AHFC",
+    //     date: "15 Sep 2015",
+    //     location: "Bangalore",
+    //     detail: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
+    // }, {
+    //     img: "img/ASFC/w2.jpg",
+    //     team1: "AHFC",
+    //     team2: "AHFC",
+    //     date: "15 Sep 2015",
+    //     location: "Bangalore",
+    //     detail: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
+    // }, {
+    //     img: "img/ASFC/w3.jpg",
+    //     team1: "AHFC",
+    //     team2: "AHFC",
+    //     date: "15 Sep 2015",
+    //     location: "Bangalore",
+    //     detail: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
+    // }, {
+    //     img: "img/ASFC/w4.jpg",
+    //     team1: "AHFC",
+    //     team2: "AHFC",
+    //     date: "15 Sep 2015",
+    //     location: "Bangalore",
+    //     detail: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
+    // }];
+    // $scope.asfcplayer = [{
+    //     img: "img/ASFC/player1.jpg",
+    //     name: "Abhisek Bachchan",
+    // }, {
+    //     img: "img/ASFC/player2.jpg",
+    //     name: "Ranbir Kapoor",
+    // }, {
+    //     img: "img/ASFC/player3.jpg",
+    //     name: "Aditya Roy Kapoor",
+    // }, {
+    //     img: "img/ASFC/player4.jpg",
+    //     name: "Arjun Kapoor",
+    // }, {
+    //     img: "img/ASFC/player5.jpg",
+    //     name: "Dino Morea",
+    // }];
+    // $scope.clientspeak = {
+    //     category: "Players Speak",
+    //     text: "Awesome teamwork and planning",
+    //     name: "Sunil Joshi",
+    //     img: "img/movies/ranbir.jpg"
+    // };
+    var id = '2';
+    NavigationService.getSportInsidedataByid(id, function(data) {
+        $scope.asfcInsidedatadetail = data.queryresult;
+        console.log($scope.asfcInsidedatadetail);
+    })
+    NavigationService.getasfcSeasonData(id, function(data) {
+        $scope.asfcInsidedata = data.data;
+        console.log("testt", $scope.asfcInsidedata);
+    })
+
 })
 
 .controller('JppCtrl', function($scope, TemplateService, NavigationService, $timeout, $stateParams) {

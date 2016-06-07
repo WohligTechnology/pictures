@@ -1,16 +1,16 @@
 <section>
   <div class="banner banner-asfc ab text-center">
-    <img src="img/ASFC/logo.png" class="" style="width:15%;">
+    <img src="{{asfcInsidedata.description.image | uploadpath}}" class="" style="width:15%;">
     <div class="container">
       <div class="row">
         <div class="col-md-8 col-md-offset-2">
-          <div class="content mt15">
-            <p class="text-justify">
+          <div class="content mt15" ng-bind-html="asfcInsidedata.description.content">
+            <!-- <p class="text-justify">
               All Star Football Club a team owned by Playing For Humanity and managed by GS Sports. The All Stars Football Club spearheaded by Bollywood icons Abhishek Bachchan (Captain), Ranbir Kapoor, Dino Morea, , Arjun Kapoor, Marc Robinson, Shabir Ahluwalia, Karan
               Wahi, Ameet Gaur, Aditya Roy Kapoor, Sachiin Joshi, Raj Kundra, Caesar Gonzales, Rohan Shreshtaother icons from the Entertainment and Sports industry. The main aim of the All Star Football Club is to collect money for charity while using
               the ever growing game of football in India as a platform to do so. This is in turn also helps promoting the sport Football in India. ASFC will bring Sports and entertainment together and demonstrate each other’s strengths by adding immense
               value to the business of brands.
-            </p>
+            </p> -->
           </div>
         </div>
       </div>
@@ -26,9 +26,9 @@
       </h3>
       </div>
       <div class="row-flex">
-        <div class="col-flex" ng-repeat="data in asfcplayer">
+        <div class="col-flex" ng-repeat="data in asfcInsidedata.playerlist">
           <figure class="player-img">
-            <img ng-src="{{data.img}}" alt="" class="img-responsive">
+            <img ng-src="{{data.image | uploadpath}}" alt="" class="img-responsive">
             <figcaption class="ab uppercase">
               {{data.name}}
             </figcaption>
@@ -50,17 +50,18 @@
           PREVIOUS GAMES HIGHLIGHTS
         </h3>
         </div>
-        <div class="row pd30" ng-repeat="data in asfcdetail">
+        <div class="row pd30" ng-repeat="data in asfcInsidedatadetail">
           <div class="col-sm-6">
             <div class="wedding-imgbox">
-              <img ng-src="{{data.img}}" class="img-responsive" alt="">
+              <img ng-src="{{data.image | uploadpath}}" class="img-responsive" alt="">
             </div>
           </div>
           <div class="col-sm-6">
             <div class="wedding-detail">
               <div class="asfc-title">
                 <h4 class="uppercase color-red bold">
-              {{data.team1}} VS {{data.team2}}
+              <!-- {{data.team1}} VS {{data.team2}} -->
+              {{data.name}}
                 </h4>
                 <div class="row">
                   <div class="col-sm-6">
@@ -71,13 +72,13 @@
                   </div>
                 </div>
               </div>
-              <div class="w-detail mt15 mb15">
-                <p>
+              <div class="w-detail mt15 mb15" ng-bind-html="data.content">
+                <!-- <p>
                   {{data.detail}}
-                </p>
+                </p> -->
               </div>
               <div class="w-button">
-                  <button class="btn btn-danger">Know More</button>
+                  <button class="btn btn-danger" ui-sref="asfcinside({id:data.id})">Know More</button>
               </div>
             </div>
           </div>
@@ -188,18 +189,19 @@
     <div class="section3">
       <div class="bg3">
         <div class="container">
-          <div class="client-speak">
+          <div class="client-speak" ng-repeat="data in asfcInsidedata.testimonial | limitTo : 1">
             <div class="name-cont color-white">
               <img src="img/inverted.png" alt="">
               <!-- {{clientspeak}} -->
-              <span>{{clientspeak.category}}</span>
+              <!-- <span>Players Speak</span> -->
+              <span>{{data.name}}</span>
             </div>
             <div class="img-holder">
-              <img src="{{clientspeak.img}}" alt="" class="img-reponsive">
+              <img src="{{data.image | uploadpath}}" alt="" class="img-reponsive">
             </div>
             <div class="img-review color-white">
-              <h4>"{{clientspeak.text}}"</h4>
-              <p>- {{clientspeak.name}}</p>
+              <h4>"{{data.quote}}"</h4>
+              <p>- {{data.author}}</p>
             </div>
           </div>
         </div>
