@@ -32,7 +32,7 @@
 <section>
   <div class="section2">
     <div class="bg2">
-      <div class="container">
+      <div class="container" ng-if="homedata.homediaries">
         <div class="text-center">
           <div class="wedding-diary">
             <div class="diary">
@@ -41,23 +41,23 @@
           </diV>
         </div>
         <div class="flex-slider">
-          <flex-slider flex-slide="data in diaries track by $index" animation="slide" animation-loop="false" item-width="350" item-margin="0" as-nav-for="#slider" slideshow="false">
+          <flex-slider flex-slide="data in homedata.homediaries track by $index" animation="slide" animation-loop="false" item-width="350" item-margin="0" as-nav-for="#slider" slideshow="false">
             <li>
               <div class="testimonials-slide">
                 <div class="wed-box color-white">
                   <div class="wed-img-list">
-                    <img ng-src="{{data.img}}" alt="" class="img-responsive">
+                    <img ng-src="{{data.image | uploadpath}}" alt="" class="img-responsive">
                     <div class="ribbon-red">
                       <img src="img/ribbon_blue.png" alt="">
-                      <span>{{data.title}}</span>
+                      <span>{{data.name}}</span>
                     </div>
                   </div>
                   <div class="wed-desc">
                     <div class="wed-date">
                       <span>{{data.date}}</span>
                     </div>
-                    <div class="wed-desc-inside">
-                      <p>{{data.desc}}</p>
+                    <div class="wed-desc-inside" ng-bind-html="data.content">
+                      <!-- <p>{{data.content}}</p> -->
                     </div>
                     <div class="read-more">
                       <a href="" class="color-white">Read More</a>
@@ -75,21 +75,21 @@
           </button>
         </div>
       </div>
-      <div class="section3">
+      <div class="section3" ng-if="homedata.testimonial">
         <div class="bg3">
           <div class="container">
             <div class="client-speak">
               <div class="name-cont color-white">
                 <img src="img/inverted.png" alt="">
                 <!-- {{clientspeak}} -->
-                <span>{{clientspeak.category}}</span>
+                <span>{{homedata.testimonial[0].name}}</span>
               </div>
               <div class="img-holder">
-                <img src="{{clientspeak.img}}" alt="" class="img-reponsive">
+                <img ng-src="{{homedata.testimonial[0].image | uploadpath}}" alt="" class="img-reponsive">
               </div>
               <div class="img-review color-white">
-                <h4>"{{clientspeak.text}}"</h4>
-                <p>- {{clientspeak.name}}</p>
+                <h4>"{{homedata.testimonial[0].quote}}"</h4>
+                <p>- {{homedata.testimonial[0].author}}</p>
               </div>
             </div>
           </div>
@@ -103,18 +103,19 @@
     <div class="subcribe bg-subcribe-home">
       <div class="container">
         <div class="row">
-          <div class="col-md-6 col-md-offset-3">
+          <div class="col-md-6 col-md-offset-3" ng-hide="subscribeEmail || checkEmail">
             <h4 class="text-center color-white">Sign up for the GS newsletter to receive latest updates.</h4>
             <form name="subForm" class="bs-example bs-example-form" role="form">
               <div class="input-group">
                 <input type="email" class="form-control" placeholder="Enter email address" ng-model="subscribe.email" required>
                 <span class="input-group-addon btn btn-danger" ng-click="subscribe(subscribe.email);">Subscribe</span>
                 <div ng-messages="subForm.email.$error" ng-messages-include="error-messages"></div>
-                <h4 ng-if="subscribeEmail">Thankyou For Subscribing</h4>
-                <h4 ng-if="checkEmail">This email already exists</h4>
+
               </div>
             </form>
           </div>
+          <h4 ng-if="subscribeEmail && !checkEmail"><center class="color-white">Thankyou For Subscribing</center></h4>
+          <h4 ng-if="checkEmail && !subscribeEmail"><center class="color-white">This email already exists</center></h4>
         </div>
       </div>
     </div>

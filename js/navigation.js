@@ -31,7 +31,7 @@ var navigationservice = angular.module('navigationservice', [])
     },
     subscribe: function(mail, callback) {
       // console.log(mail);
-      $http.get(apiUrl + 'getSubscribers?email=' + mail).success(callback);
+      $http.get(apiUrl + 'subscribeSubmit?email=' + mail).success(callback);
     },
     getInTouch: function(getin, callback) {
       $http({
@@ -91,6 +91,24 @@ var navigationservice = angular.module('navigationservice', [])
     },
     getSportdata: function(callback) {
       $http.get(apiUrl + 'getSport').success(callback);
+    },
+    getSportdataByid: function(id,callback) {
+      $http.get(apiUrl + 'getSportsDetail?id=' + id).success(callback);
+    },
+    getSeasonData: function(id,callback) {
+      $http.get(apiUrl + 'getSportsDetailInside?id=' + id).success(callback);
+    },
+    getSportInsidedataByid: function(id,callback) {
+      $http.get(apiUrl + 'getSportInside?sportscategory=' + id).success(callback);
+    },
+    getMediacorner: function(callback) {
+      $http.get(apiUrl + 'getMediacorner').success(callback);
+    },
+    getHome: function(callback) {
+      $http.get(apiUrl + 'getHome').success(callback);
+    },
+    getMediaByYear: function(obj, callback) {
+      $http.get(apiUrl + 'getWeddingInside?id=' + obj.year).success(callback);
     },
     gettourform:function(mydata,callback){
       $http({

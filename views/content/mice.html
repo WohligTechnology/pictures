@@ -266,8 +266,8 @@
                             </div>
                             <div class=row>
                                 <div class=col-md-12>
-                                    <textarea class=form-control ng-model=formData.say name=say rows=3 placeholder="Say Something" required=required></textarea>
-                                    <div class=error-msg ng-show="wed.say.$error.required && wed.say.$touched">Enter Something</div>
+                                    <textarea class=form-control ng-model="formData.comment" name="comment" rows=3 placeholder="Say Something" required=required></textarea>
+                                    <div class=error-msg ng-show="wed.comment.$error.required && wed.comment.$touched">Enter Something</div>
                                     <div class="submit-btn btn-all text-center mt15">
                                         <button class="btn btn-danger" type=button name=button ng-class="{'disabled' : !wed.$valid }" ng-click=miceSubmitForm(wed)>submit</button>
                                     </div>
