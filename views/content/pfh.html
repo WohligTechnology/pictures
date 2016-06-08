@@ -3,7 +3,7 @@
     <div class="row">
       <div class="col-xs-12">
         <div class="head-banner diaries-banner text-center">
-          <img src="img/PHF/banner.png" class="img-responsive" title="Dairies">
+          <img ng-src="{{pfhInsidedata.description.image | uploadpath}}" class="img-responsive">
         </div>
       </div>
     </div>
@@ -11,11 +11,11 @@
   <div class="wedding-fant-desc mt45">
     <div class="container">
       <div class="row">
-        <div class="col-md-offset-2 col-md-8">
-          <p>An initiative of GS Worldwide Entertainment, the All Stars Football Club – a property of charitable trust, Playing forHumanity – spearheaded by Bollywood icons Abhishek Bachchan, Ranbir Kapoor and several others .With the aim to raise funds
+        <div class="col-md-offset-2 col-md-8" ng-bind-html="pfhInsidedata.description.content">
+          <!-- <p>An initiative of GS Worldwide Entertainment, the All Stars Football Club – a property of charitable trust, Playing forHumanity – spearheaded by Bollywood icons Abhishek Bachchan, Ranbir Kapoor and several others .With the aim to raise funds
             for numerous non-profit organisation such as Magic Bus and others. Playing for Humanity along with its partners such as Magic Bus works towards creating a better future for over a million children living in poverty from childhood all the way
             through to gainful employment, “Playing for Humanity”, has used the ever growing game of football as a platform. This venture looks at bringing Sports and Entertainment together to demonstrate each other’s strengths by adding immense value
-            to the business of brands.</p>
+            to the business of brands.</p> -->
         </div>
       </div>
     </div>
@@ -31,26 +31,26 @@
           HIGHLIGHTS OF CHARITY SUPPORTS
         </h3>
           </div>
-          <div class="row pd30" ng-repeat="data in asfcdetail">
+          <div class="row pd30" ng-repeat="data in pfhInsidedatadetail">
             <div class="col-sm-6">
               <div class="wedding-imgbox">
-                <img ng-src="{{data.img}}" class="img-responsive" alt="">
+                <img ng-src="{{data.image | uploadpath}}" class="img-responsive" alt="">
               </div>
             </div>
             <div class="col-sm-6">
               <div class="wedding-detail">
                 <div class="asfc-title">
                   <h4 class="uppercase color-red bold">
-              {{data.title}}
+              {{data.name}}
                 </h4>
                 </div>
                 <div class="w-detail mt15 mb15">
                   <p>
-                    {{data.detail}}
+                    {{data.content}}
                   </p>
                 </div>
                 <div class="w-button">
-                  <button class="btn btn-danger">Know More</button>
+                  <button class="btn btn-danger" ui-sref="pfhdetail({id:data.id})">Know More</button>
                 </div>
               </div>
             </div>
@@ -168,17 +168,17 @@
   <div class="section3">
     <div class="bg3-sports">
       <div class="container">
-        <div class="client-speak">
+        <div class="client-speak" ng-repeat="data in pfhInsidedata.testimonial | limitTo:1">
           <div class="name-cont color-white">
             <img src="img/inverted.png" alt="">
-            <span>{{clientspeak.category}}</span>
+            <span>{{data.name}}</span>
           </div>
           <div class="img-holder">
-            <img ng-src="{{clientspeak.img}}" alt="" class="img-reponsive">
+            <img ng-src="{{data.image | uploadpath}}" alt="" class="img-reponsive">
           </div>
           <div class="img-review color-white">
-            <h4>"{{clientspeak.text}}"</h4>
-            <p>- {{clientspeak.name}}</p>
+            <h4>"{{data.quote}}"</h4>
+            <p>- {{data.author}}</p>
           </div>
         </div>
       </div>

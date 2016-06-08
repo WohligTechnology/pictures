@@ -1,0 +1,172 @@
+<section>
+  <div class="banner-movies ab">
+    <img ng-src="{{seasonData.sportdetail.banner | uploadpath}}" alt="" class="img-responsive">
+  </div>
+  <div class="banner banner-asfc text-center mt180">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+          <div class="content mt15" ng-bind-html="seasonData.sportdetail.content">
+            <!-- <p class="text-justify">
+              Jaipur Pink Panthers are the first champions of the Pro Kabaddi League 2014. The team is owned by the bollywood star Abhishek Bachchan. The team has played in various cities across India like Mumbai, Kolkata, Delhi, Patna, Pune, Vizag, Jaipur and Bengaluru.
+              Jaipur Pink Panthers team and the home matches is execlusively managed by GS Worldwide Entertainment.
+            </p> -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="jppseason">
+  <div class="jpp-gallery nav-tab-middle ">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-offset-1 col-md-10" ng-if="seasonData.imagegallery && seasonData.imagegallery.length>0">
+          <div class="title">
+            <h3 class="letter-spacing color-red uppercase">
+            Image Gallery
+            </h3>
+          </div>
+          <div class="mb15">
+            <div class="slider-client">
+              <flex-slider flex-slide="slide in seasonData.imagegallery track by $index" animation="slide" animation-loop="false" as-nav-for="#slider" slideshow="false" item-margin="20" prev-text="" next-text="">
+                <li class="">
+                  <div class="row" ng-repeat="row in slide track by $index">
+                    <div class="col-xs-4" ng-repeat="wall in row track by $index">
+                      <div class="mb15">
+                        <a fancybox-box ng-href="{{wall.image | uploadpath}}">
+                          <img ng-src="{{wall.image | uploadpath}}" alt="" class="img-responsive">
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+              </flex-slider>
+              <!-- <flex-slider flex-slide="slide in seasonData.imagegallery track by $index" animation="slide" animation-loop="false" as-nav-for="#slider" slideshow="false" item-margin="20" prev-text="" next-text="">
+                <li class="">
+                  <div class="row" ng-repeat="row in slide track by $index">
+                    <div class="col-xs-4" ng-repeat="wall in row track by $index">
+                      <div class="mb15">
+                        <img ng-src="{{wall.image | uploadpath}}" alt="" class="img-responsive">
+                      </div>
+                    </div>
+                  </div>
+                </li>
+              </flex-slider> -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<div class="bg-mehendi">
+<section class="jppseason" ng-if="seasonData.featuredvideos && seasonData.featuredvideos.length>0">
+  <div class="jpp-movie">
+    <div class="container">
+      <div class="row"
+        <div class="col-md-offset-1 col-md-10">
+          <div class="title">
+            <h3 class="letter-spacing color-white uppercase">
+              FEATURED VIDEOS
+            </h3>
+          </div>
+          <div class="slider-client">
+            <flex-slider slide="video in seasonData.featuredvideos track by $index" slider-id="slider" prev-text="" next-text="" sync="#carousel" slideshow="false" animation="slide">
+              <li>
+                <div class="video-main">
+                  <!-- <img ng-src="{{image.img}}" alt="" class="img-responsive"> -->
+                  <img ng-src="{{video.url | youtubethumb:false}}" alt="" class="img-responsive">
+                  <a fancybox-box href="http://www.youtube.com/embed/{{video.url | youtubethumb:true}}?autoplay=1&modestbranding=0&showinfo=0&rel=0&loop=1" rel="movies" data-fancybox-type="iframe">
+                    <i class="fa fa-play"></i>
+                  </a>
+                </div>
+              </li>
+            </flex-slider>
+
+          </div>
+          <!-- <div class="slider-client">
+            <flex-slider slide="image in seasonData.featuredvideos track by $index" slider-id="slider" prev-text="" next-text="" sync="#carousel" slideshow="false" animation="slide">
+              <li>
+                <div class="">
+                  <img ng-src="{{image.url | uploadpath}}" alt="" class="img-responsive">
+                </div>
+              </li>
+            </flex-slider>
+            <i class="fa fa-play"></i>
+          </div> -->
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-offset-1 col-md-10">
+        <div class="image-navigation">
+          <flex-slider slide="image in seasonData.featuredvideos track by $index" animation="slide" animation-loop="false" item-width="280" item-margin="40" as-nav-for="#slider" slideshow="false" control-nav="false" prev-text="" next-text="" slider-id="carousel"
+            animation-loop="false">
+            <li>
+              <div class="row">
+                <!-- <img ng-src="{{image.img}}" alt=""> -->
+                <img ng-src="{{image.url | youtubethumb:false}}" alt="">
+              </div>
+            </li>
+          </flex-slider>
+          <!-- <flex-slider slide="image in seasonData.featuredvideos track by $index" animation="slide" animation-loop="false" item-width="280" item-margin="40" as-nav-for="#slider" slideshow="false" control-nav="false" prev-text="" next-text="" slider-id="carousel" animation-loop="false">
+            <li>
+              <div class="row">
+                <img src="{{image.url | uploadpath}}" alt="">
+              </div>
+            </li>
+          </flex-slider> -->
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="container" ng-if="seasonData.relatedarticles">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="text-center">
+        <div class="wedding-diary">
+          <div class="diary-title mr30">
+            <h4 class="uppercase color-red">RELATED ARTICLES</h4>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="pd-side">
+    <div class="row">
+      <div class="col-md-4 col-sm-4 col-xs-6" ng-repeat="data in seasonData.relatedarticles track by $index">
+        <div class="wed-box border-red">
+          <div class="wed-img-list">
+            <img ng-src="{{data.image | uploadpath}}" alt="" class="img-responsive">
+            <div class="ribbon-red">
+              <img src="img/ribbon_red.png" alt="">
+              <span class="color-white uppercase">Sports</span>
+            </div>
+          </div>
+          <div class="wed-desc">
+            <div class="wed-date">
+              <span>{{data.date}}</span>
+            </div>
+            <div class="wed-desc-inside">
+              <p class="bold">{{data.content}}</p>
+            </div>
+            <div class="read-more">
+              <a class="color-black" ui-sref="pfhdetail({id:data.id})">Read More</a>
+            </div>
+          </div>
+          <div class="border-blue borders"></div>
+        </div>
+      </div>
+    </div>
+    <div class="btn-all mr30 text-center">
+      <button class="btn btn-danger btn-outline" ui-sref="pfh">
+        View All
+      </button>
+    </div>
+  </div>
+</section>
+</div>

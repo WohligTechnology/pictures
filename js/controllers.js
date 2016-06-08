@@ -973,7 +973,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
 .controller('AsfcDetailCtrl', function($scope, TemplateService, NavigationService, $timeout, $stateParams) {
   //Used to name the .html file
-  $scope.template = TemplateService.changecontent("jppseason");
+  $scope.template = TemplateService.changecontent("asfcdetail");
   $scope.menutitle = NavigationService.makeactive("Sports");
   TemplateService.title = $scope.menutitle;
   $scope.navigation = NavigationService.getnav();
@@ -1273,21 +1273,36 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     $scope.menutitle = NavigationService.makeactive("Sports");
     TemplateService.title = $scope.menutitle;
     $scope.navigation = NavigationService.getnav();
-    $scope.asfcdetail = [{
-      img: "img/ASFC/w1.jpg",
-      title: "MAGIC BUS",
-      detail: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
-    }, {
-      img: "img/ASFC/w2.jpg",
-      title: "MAGIC BUS",
-      detail: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
-    }];
-    $scope.clientspeak = {
-      category: "Partner Speak",
-      text: "Extra Efficient",
-      name: "Navneet Gautam",
-      img: "img/movies/ranbir.jpg"
-    };
+    var id = '3';
+    NavigationService.getSportInsidedataByid(id, function(data) {
+      $scope.pfhInsidedatadetail = data.queryresult;
+      console.log($scope.pfhInsidedatadetail);
+    })
+    NavigationService.getpfhSeasonData(id, function(data) {
+      $scope.pfhInsidedata = data.data;
+      console.log($scope.pfhInsidedata);
+    })
+  })
+  .controller('PfhDetailCtrl', function($scope, TemplateService, NavigationService, $timeout, $stateParams) {
+    //Used to name the .html file
+    $scope.template = TemplateService.changecontent("pfhdetail");
+    $scope.menutitle = NavigationService.makeactive("Sports");
+    TemplateService.title = $scope.menutitle;
+    $scope.navigation = NavigationService.getnav();
+    $scope.seasonData = "";
+    NavigationService.getSeasonData($stateParams.id, function(data) {
+      $scope.seasonData = data.data;
+      $scope.seasonData.imagegallery = _.chunk($scope.seasonData.imagegallery, 6);
+      for (var i = 0; i < $scope.seasonData.imagegallery.length; i++) {
+        $scope.seasonData.imagegallery[i] = _.chunk($scope.seasonData.imagegallery[i], 3);
+      }
+      console.log('$scope.seasonData', $scope.seasonData);
+    })
+    $scope.makeActive = function(video, index) {
+      $scope.seasonData.featuredvideos.splice(index, 1);
+      $scope.seasonData.featuredvideos.unshift(video);
+    }
+
   })
   .controller('MehendiCtrl', function($scope, TemplateService, NavigationService, $timeout) {
     //Used to name the .html file

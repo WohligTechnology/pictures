@@ -77,6 +77,11 @@ firstapp.config(function($stateProvider, $urlRouterProvider, $httpProvider, $loc
             templateUrl: "views/template.html",
             controller: 'PfhCtrl'
         })
+        .state('pfhdetail', {
+            url: "/pfhdetail/:id",
+            templateUrl: "views/template.html",
+            controller: 'PfhDetailCtrl'
+        })
         .state('sports', {
             url: "/sports",
             templateUrl: "views/template.html",
