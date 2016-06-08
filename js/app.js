@@ -57,6 +57,11 @@ firstapp.config(function($stateProvider, $urlRouterProvider, $httpProvider, $loc
             templateUrl: "views/template.html",
             controller: 'AsfcCtrl'
         })
+        .state('asfcdetail', {
+            url: "/asfcdetail/:id",
+            templateUrl: "views/template.html",
+            controller: 'AsfcDetailCtrl'
+        })
         .state('jpp', {
             url: "/jpp",
             templateUrl: "views/template.html",
