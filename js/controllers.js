@@ -900,47 +900,47 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
   $scope.menutitle = NavigationService.makeactive("Clients");
   TemplateService.title = $scope.menutitle;
   $scope.navigation = NavigationService.getnav();
-  $scope.clientimage = [{
-    img: "img/client/1.png",
-    alt: ""
-  }, {
-    img: "img/client/2.png",
-    alt: ""
-  }, {
-    img: "img/client/3.png",
-    alt: ""
-  }, {
-    img: "img/client/4.png",
-    alt: ""
-  }, {
-    img: "img/client/5.png",
-    alt: ""
-  }, {
-    img: "img/client/6.png",
-    alt: ""
-  }, {
-    img: "img/client/7.png",
-    alt: ""
-  }, {
-    img: "img/client/8.png",
-    alt: ""
-  }];
-
-  $scope.strip = [{
-      img: "img/client/jpp1.jpg",
-      name: "Jaipur Pink Panthers"
-    }, {
-      img: "img/client/jpp2.jpg",
-      name: "Kings XI Panjab"
-    }, {
-      img: "img/client/jpp3.jpg",
-      name: "CHENNAYIN F.C."
-    }, {
-      img: "img/client/jpp4.jpg",
-      name: "KOTAK"
-    },
-
-  ];
+  // $scope.clientimage = [{
+  //   img: "img/client/1.png",
+  //   alt: ""
+  // }, {
+  //   img: "img/client/2.png",
+  //   alt: ""
+  // }, {
+  //   img: "img/client/3.png",
+  //   alt: ""
+  // }, {
+  //   img: "img/client/4.png",
+  //   alt: ""
+  // }, {
+  //   img: "img/client/5.png",
+  //   alt: ""
+  // }, {
+  //   img: "img/client/6.png",
+  //   alt: ""
+  // }, {
+  //   img: "img/client/7.png",
+  //   alt: ""
+  // }, {
+  //   img: "img/client/8.png",
+  //   alt: ""
+  // }];
+  //
+  // $scope.strip = [{
+  //     img: "img/client/jpp1.jpg",
+  //     name: "Jaipur Pink Panthers"
+  //   }, {
+  //     img: "img/client/jpp2.jpg",
+  //     name: "Kings XI Panjab"
+  //   }, {
+  //     img: "img/client/jpp3.jpg",
+  //     name: "CHENNAYIN F.C."
+  //   }, {
+  //     img: "img/client/jpp4.jpg",
+  //     name: "KOTAK"
+  //   },
+  //
+  // ];
 
   NavigationService.getClient(function(data){
     $scope.getClientdata=data.data;
