@@ -9,22 +9,22 @@
     </div>
     <div class="row">
       <div class="col-sm-offset-2 col-sm-8">
-        <div class="wedding-fant-desc mt50">
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea cupiditate laboriosam qui laborum atque, impedit sapiente minima sequi non voluptas assumenda saepe id quo, eos, ducimus consequuntur excepturi doloribus, fuga. Lorem ipsum dolor sit
+        <div class="wedding-fant-desc mt50" ng-bind-html="getClientdata.description.content">
+          <!-- <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea cupiditate laboriosam qui laborum atque, impedit sapiente minima sequi non voluptas assumenda saepe id quo, eos, ducimus consequuntur excepturi doloribus, fuga. Lorem ipsum dolor sit
             amet, consectetur adipisicing elit. Ea cupiditate laboriosam qui laborum atque, impedit sapiente minima sequi non voluptas assumenda saepe id quo, eos, ducimus consequuntur excepturi doloribus, fuga. Lorem ipsum dolor sit amet, consectetur
-            adipisicing elit. Ea cupiditate laboriosam qui laborum atque, impedit sapiente minima sequi non voluptas assumenda saepe id quo, eos, ducimus consequuntur excepturi doloribus, fuga.</p>
+            adipisicing elit. Ea cupiditate laboriosam qui laborum atque, impedit sapiente minima sequi non voluptas assumenda saepe id quo, eos, ducimus consequuntur excepturi doloribus, fuga.</p> -->
         </div>
       </div>
     </div>
   </div>
   <div class="mt50 plr100">
     <div class="row">
-      <div class="col-md-3 col-sm-3 col-xs-6" ng-repeat="data in clientimage">
-        <img src="{{data.img}}" alt="{{data.alt}}" class="img-responsive">
+      <div class="col-md-3 col-sm-3 col-xs-6" ng-repeat="data in getClientdata.logos">
+        <img ng-src="{{data.image | uploadpath}}" alt="{{data.alt}}" class="img-responsive">
       </div>
-      <div class="col-md-3 col-sm-3 col-xs-6" ng-repeat="data in clientimage">
+      <!-- <div class="col-md-3 col-sm-3 col-xs-6" ng-repeat="data in clientimage">
         <img src="{{data.img}}" alt="{{data.alt}}" class="img-responsive">
-      </div>
+      </div> -->
     </div>
     <div class="btn-all mr30 text-center">
       <button class="btn btn-danger btn-outline">

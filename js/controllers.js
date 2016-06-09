@@ -567,6 +567,47 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     title: "Sports Management",
     content: "<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. </p>"
   }];
+
+  NavigationService.getTalent(function(data){
+    $scope.getTalentdata=data.data;
+    console.log($scope.getTalentdata);
+  })
+
+
+  $scope.formData = {};
+  $scope.formData.enquiryarr = [];
+  $scope.showThanks = false;
+
+  $scope.talentSubmitForm = function(formValid) {
+    $scope.formData.enquiry = "";
+    if (formValid.$valid && $scope.formData) {
+      if ($scope.formData.enquiryarr.length > 0) {
+        _.each($scope.formData.enquiryarr, function(n) {
+          $scope.formData.enquiry += n + ",";
+        })
+        $scope.formData.enquiry = $scope.formData.enquiry.substring(0, $scope.formData.enquiry.length - 1);
+      }
+      $scope.formData.category = 5;
+      NavigationService.getInTouch($scope.formData, function(data) {
+        console.log(data);
+        if (data.value != false) {
+          $scope.showThanks = true;
+        }
+      });
+    }
+  };
+
+  $scope.pushorpop = function(val) {
+    var foundIndex = $scope.formData.enquiryarr.indexOf(val);
+    if (foundIndex == -1) {
+      $scope.formData.enquiryarr.push(val);
+    } else {
+      $scope.formData.enquiryarr.splice(foundIndex, 1);
+    }
+  }
+
+
+
 })
 
 .controller('WeddingCtrl', function($scope, TemplateService, NavigationService, $timeout, $state) {
@@ -900,6 +941,11 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     },
 
   ];
+
+  NavigationService.getClient(function(data){
+    $scope.getClientdata=data.data;
+    console.log('$scope.getClientdata',$scope.getClientdata);
+  })
 })
 
 .controller('AsfcCtrl', function($scope, TemplateService, NavigationService, $timeout) {
@@ -2204,7 +2250,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     }
 
   })
-  .controller('TalentInsideCtrl', function($scope, TemplateService, NavigationService, $timeout) {
+  .controller('TalentInsideCtrl', function($scope, TemplateService, NavigationService, $timeout, $stateParams) {
     //Used to name the .html file
     $scope.template = TemplateService.changecontent("talentinside");
     $scope.menutitle = NavigationService.makeactive("Talents");
@@ -2226,8 +2272,17 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
       img: "img/talent/talentinside/w3.png",
       detail: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
     }];
+
+    NavigationService.getBanner($stateParams.id,function(data){
+      $scope.bannerData=data.data;
+      console.log('$scope.bannerData',$scope.bannerData);
+    })
+    NavigationService.getTalentInside($stateParams.id,function(data){
+      $scope.talentInsideData=data.queryresult;
+      console.log('$scope.talentInsideData',$scope.talentInsideData);
+    })
   })
-  .controller('TalentInsideDetailCtrl', function($scope, TemplateService, NavigationService, $timeout) {
+  .controller('TalentInsideDetailCtrl', function($scope, TemplateService, NavigationService, $timeout, $stateParams) {
     //Used to name the .html file
     $scope.template = TemplateService.changecontent("talentdetail");
     $scope.menutitle = NavigationService.makeactive("Talents");
@@ -2280,11 +2335,23 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
       date: "12 January 2016",
       desc: "Lorem Ipsum is simply dummy text of the printing industry"
     }];
+    //
+    // $scope.wallpaper = _.chunk($scope.wallpaper, 6);
+    // for (var i = 0; i < $scope.wallpaper.length; i++) {
+    //   $scope.wallpaper[i] = _.chunk($scope.wallpaper[i], 3);
+    // }
 
-    $scope.wallpaper = _.chunk($scope.wallpaper, 6);
-    for (var i = 0; i < $scope.wallpaper.length; i++) {
-      $scope.wallpaper[i] = _.chunk($scope.wallpaper[i], 3);
-    }
+    NavigationService.getTalentInsideDetail($stateParams.id,function(data){
+      $scope.talentInsideDetailData=data.data;
+      console.log('$scope.talentInsideDetailData',$scope.talentInsideDetailData);
+      if ($scope.talentInsideDetailData.imagegallery && $scope.talentInsideDetailData.imagegallery.length > 0) {
+        $scope.talentInsideDetailData.imagegallery = _.chunk($scope.talentInsideDetailData.imagegallery, 6);
+        for (var i = 0; i < $scope.talentInsideDetailData.imagegallery.length; i++) {
+          $scope.talentInsideDetailData.imagegallery[i] = _.chunk($scope.talentInsideDetailData.imagegallery[i], 3);
+        }
+        // $scope.weddetail.imagegallery = _.chunk($scope.weddetail.imagegallery, 3);
+      }
+    })
   })
   .controller('WorldTourCtrl', function($scope, TemplateService, NavigationService, $timeout, $state) {
     //Used to name the .html file

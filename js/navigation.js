@@ -113,8 +113,23 @@ var navigationservice = angular.module('navigationservice', [])
     getHome: function(callback) {
       $http.get(apiUrl + 'getHome').success(callback);
     },
+    getTalent: function(callback) {
+      $http.get(apiUrl + 'getTalent').success(callback);
+    },
+    getBanner: function(id,callback) {
+      $http.get(apiUrl + 'getTalentInsideBanner?id='+ id).success(callback);
+    },
+    getTalentInside: function(id,callback) {
+      $http.get(apiUrl + 'getTalentInside?talent='+ id).success(callback);
+    },
+    getTalentInsideDetail: function(id,callback) {
+      $http.get(apiUrl + 'getTalentDetailInside?id='+ id).success(callback);
+    },
     getMediaByYear: function(obj, callback) {
       $http.get(apiUrl + 'getWeddingInside?id=' + obj.year).success(callback);
+    },
+    getClient: function(callback) {
+      $http.get(apiUrl + 'getClients').success(callback);
     },
     gettourform:function(mydata,callback){
       $http({

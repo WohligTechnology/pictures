@@ -163,12 +163,12 @@ firstapp.config(function($stateProvider, $urlRouterProvider, $httpProvider, $loc
             controller: 'MiceInsideDetailCtrl'
         })
         .state('talentinside', {
-            url: "/talentinside",
+            url: "/talentinside/:id",
             templateUrl: "views/template.html",
             controller: 'TalentInsideCtrl'
         })
         .state('talentinsidedetail', {
-            url: "/talentinsidedetail",
+            url: "/talentinsidedetail/:id",
             templateUrl: "views/template.html",
             controller: 'TalentInsideDetailCtrl'
         })

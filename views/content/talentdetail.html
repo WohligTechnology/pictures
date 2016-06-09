@@ -1,6 +1,6 @@
 <section>
   <div class="banner-movies ab">
-    <img src="img/talent/talentinsidedetail/talent.png" alt="" class="img-responsive">
+    <img ng-src="{{talentInsideDetailData.talentdetail.image | uploadpath}}" alt="" class="img-responsive">
   </div>
   <div class="banner banner-asfc text-center mt180">
     <div class="container">
@@ -8,7 +8,7 @@
         <div class="col-md-8 col-md-offset-2">
           <div class="content mt15">
             <p class="text-justify">
-              Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with   including versions of Lorem Ipsum.
+            {{talentInsideDetailData.talentdetail.content}}
             </p>
           </div>
           <!-- <div class="content mt15">
@@ -25,7 +25,7 @@
   <div class="mehendi-gallery nav-tab-middle ">
     <div class="container">
       <div class="row">
-        <div class="col-md-offset-1 col-md-10">
+        <div class="col-md-offset-1 col-md-10" ng-if="talentInsideDetailData.imagegallery.length>0">
           <div class="title">
             <h3 class="letter-spacing color-red uppercase">
             Image Gallery
@@ -41,12 +41,12 @@
           </div> -->
           <div class="mb15">
             <div class="slider-client">
-              <flex-slider flex-slide="slide in wallpaper track by $index" animation="slide" animation-loop="false" as-nav-for="#slider" slideshow="false" item-margin="20" prev-text="" next-text="">
+              <flex-slider flex-slide="slide in talentInsideDetailData.imagegallery track by $index" animation="slide" animation-loop="false" as-nav-for="#slider" slideshow="false" item-margin="20" prev-text="" next-text="">
                 <li class="">
-                  <div class="row" ng-repeat="row in slide">
-                    <div class="col-xs-4" ng-repeat="wall in row">
+                  <div class="row" ng-repeat="row in slide track by $index">
+                    <div class="col-xs-4" ng-repeat="wall in row track by $index">
                       <div class="mb15">
-                        <img ng-src="{{wall.img}}" alt="" class="img-responsive">
+                        <img ng-src="{{wall.image | uploadpath}}" alt="" class="img-responsive">
                       </div>
                     </div>
                   </div>
@@ -74,21 +74,21 @@
 <section class="mehendi">
   <div class="mehendi-movie">
     <div class="container">
-      <div class="row">
+      <!-- <div class="row">
         <div class="col-md-offset-1 col-md-10">
           <div class="title">
             <h3 class="letter-spacing color-white uppercase">
               FEATURED VIDEOS
             </h3>
           </div>
-          <!-- <div class="title">
+          <div class="title">
             <h4 class="display-inline uppercase {{styleActive}}" ng-click="doActive(1);">
             Mehendi
           </h4>
             <h4 class="display-inline uppercase {{styleNoActive}}" ng-click="doActive(2);">
             Sangeet
           </h4>
-          </div> -->
+          </div>
           <div class="slider-client">
             <flex-slider slide="image in video track by $index" slider-id="slider" prev-text="" next-text="" sync="#carousel" slideshow="false" animation="slide">
               <li>
@@ -98,13 +98,37 @@
               </li>
             </flex-slider>
             <i class="fa fa-play"></i>
-            <!-- <flex-slider slide="image in vid track by $index" ng-if="styleNoActive == 'vactive'" slider-id="slider" prev-text="" next-text="" sync="#carousel" slideshow="false" animation="slide">
+            <flex-slider slide="image in vid track by $index" ng-if="styleNoActive == 'vactive'" slider-id="slider" prev-text="" next-text="" sync="#carousel" slideshow="false" animation="slide">
               <li>
                 <div class="">
                   <img src="{{image.img}}" alt="" class="img-responsive">
                 </div>
               </li>
-            </flex-slider> -->
+            </flex-slider>
+          </div>
+        </div>
+      </div> -->
+      <div class="row">
+        <div class="col-md-offset-1 col-md-10" ng-if="talentInsideDetailData.featuredvideos.length>0">
+          <div class="title">
+            <h3 class="letter-spacing color-white uppercase">
+            FEATURED VIDEOS
+          </h3>
+          </div>
+
+          <div class="slider-client">
+            <flex-slider slide="video in talentInsideDetailData.featuredvideos track by $index" slider-id="slider" prev-text="" next-text="" sync="#carousel" slideshow="false" animation="slide">
+              <li>
+                <div class="video-main">
+                  <!-- <img ng-src="{{image.img}}" alt="" class="img-responsive"> -->
+                  <img ng-src="{{video.url | youtubethumb:false}}" alt="" class="img-responsive">
+                  <a fancybox-box href="http://www.youtube.com/embed/{{video.url | youtubethumb:true}}?autoplay=1&modestbranding=0&showinfo=0&rel=0&loop=1" rel="movies" data-fancybox-type="iframe">
+                    <i class="fa fa-play"></i>
+                  </a>
+                </div>
+              </li>
+            </flex-slider>
+
           </div>
         </div>
       </div>
@@ -114,10 +138,10 @@
     <div class="row">
       <div class="col-md-offset-1 col-md-10">
         <div class="image-navigation">
-          <flex-slider slide="image in video track by $index" animation="slide" animation-loop="false" item-width="280" item-margin="40" as-nav-for="#slider" slideshow="false" control-nav="false" prev-text="" next-text="" slider-id="carousel" animation-loop="false">
+          <flex-slider slide="image in talentInsideDetailData.featuredvideos track by $index" animation="slide" animation-loop="false" item-width="280" item-margin="40" as-nav-for="#slider" slideshow="false" control-nav="false" prev-text="" next-text="" slider-id="carousel" animation-loop="false">
             <li>
               <div class="row">
-                <img src="{{image.img}}" alt="">
+                <img src="{{image.url | youtubethumb:false}}" alt="">
               </div>
             </li>
           </flex-slider>
@@ -133,7 +157,7 @@
     </div>
   </div>
 </section>
-<section class="container">
+<section class="container" ng-if="talentInsideDetailData.relatedarticles.length>0">
   <div class="row">
     <div class="col-md-12">
       <div class="text-center">
@@ -147,10 +171,10 @@
   </div>
   <div class="pd-side">
     <div class="row">
-      <div class="col-md-4 col-sm-4 col-xs-6" ng-repeat="data in weddings track by $index">
+      <div class="col-md-4 col-sm-4 col-xs-6" ng-repeat="data in talentInsideDetailData.relatedarticles track by $index">
         <div class="wed-box border-red">
           <div class="wed-img-list">
-            <img ng-src="{{data.img}}" alt="" class="img-responsive">
+            <img ng-src="{{data.image | uploadpath}}" alt="" class="img-responsive">
             <div class="ribbon-red">
               <img src="img/ribbon_red.png" alt="">
               <span class="color-white uppercase">Talent</span>
@@ -161,7 +185,7 @@
               <span>{{data.date}}</span>
             </div>
             <div class="wed-desc-inside">
-              <p class="bold">{{data.desc}}</p>
+              <p class="bold">{{data.content}}</p>
             </div>
             <div class="read-more">
               <a href="" class="color-black">Read More</a>
