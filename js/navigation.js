@@ -139,6 +139,12 @@ var navigationservice = angular.module('navigationservice', [])
         data: mydata
       }).success(callback);
     },
+
+
+//     getMediaByYear: function(obj, callback) {
+//       $http.get(adminurl + 'getMediaCornerDetails?year=' + obj.year + "&pageno=" + obj.pagenumber).success(callback);
+// },
+
     makeactive: function(menuname) {
       for (var i = 0; i < navigation.length; i++) {
         if (navigation[i].name == menuname) {

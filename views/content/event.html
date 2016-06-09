@@ -87,13 +87,13 @@
           <div class=bg3>
             <div class="container">
               <div class="client-speak" ng-repeat="data in eventData.testimonial | limitTo: 1">
-                <div class="name-cont color-white"><img src=img/inverted.png> <span>Client Speak</span></div>
+                <div class="name-cont color-white"><img src=img/inverted.png> <span>{{data.name}}</span></div>
                 <div class=img-holder>
                   <img ng-src="{{data.image | uploadpath}}" class="img-responsive">
                 </div>
                 <div class="img-review color-white">
                   <h4>"{{data.quote}}"</h4>
-                  <p>- {{data.name}}</p>
+                  <p>- {{data.author}}</p>
                 </div>
               </div>
               <div class="row">

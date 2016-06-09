@@ -1951,21 +1951,72 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     $scope.objfilter = {};
     $scope.objfilter.id = $stateParams.id;
     var year = 2016;
-    // $scope.getMediayear = function(year) {
-    //   NavigationService.getMediaByYear($stateParams.year, function(data) {
-    //
-    //     $scope.mediadata = data.data.queryresult;
-    //     $scope.mediadata.year = year;
-    //     console.log($scope.mediadata);
-    //   })
-    // }
-  // $scope.getMediayear(year);
   NavigationService.getMediaByYear(year, function(data) {
 
       $scope.mediadatadetail = data.queryresult;
       $scope.mediadatadetail.year = year;
       console.log($scope.mediadatadetail);
     })
+
+
+
+
+
+  // $scope.categoryid = $stateParams.id;
+  // $scope.pagenumber = 1;
+  // var lastpage = 1;
+  // $scope.objfilter = {};
+  // $scope.objfilter.year = $stateParams.year;
+  // $scope.objfilter.pagenumber = 1;
+  // $scope.mediadatadetail=[];
+  // // $scope.objfilter.subcat = '';
+  //
+  //
+  // $scope.getMediayear = function() {
+  //   NavigationService.getMediaByYear($scope.objfilter, function(data) {
+  //     NavigationService.getMediacorner(function(data) {
+  //       console.log("dsfasdfasdf");
+  //       $scope.mediadata = data.data.years;
+  //       $scope.mediadata[0].class="cat-active";
+  //       if ($scope.objfilter.year != 0) {
+  //         _.each($scope.mediadata, function(n) {
+  //           if (n.year ==  $scope.objfilter.year)
+  //             n.class = "cat-active";
+  //           else
+  //             n.class = "";
+  //         });
+  //       }
+  //
+  //     });
+  //
+  //     console.log(data);
+  //     lastpage = data.lastpage;
+  //     _.each(data.queryresult, function(n) {
+  //       $scope.mediadatadetail.push(n);
+  //     });
+  //
+  //   });
+  // };
+  //
+  //   $scope.loadMore = function() {
+  //     // console.log('$scope.images.length:',$scope.images.length);
+  //     // var last = $scope.images.length;
+  //     // for (var i = 0; i < 3; i++) {
+  //     //   if ($scope.images.length < $scope.products.length) {
+  //     //     $scope.images.push($scope.products[last + i]);
+  //     //   }
+  //     // }
+  //     // console.log('images length:',$scope.images.length);
+  //     // console.log('product 21:',$scope.products[21]);
+  //
+  //     if (lastpage > $scope.objfilter.pagenumber) {
+  //       ++$scope.objfilter.pagenumber;
+  //       $scope.getMediayear();
+  //     }
+  //   };
+
+
+
 
     $scope.weddings = [{
       img: "img/mediacorner/1.png",

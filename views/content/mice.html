@@ -102,13 +102,13 @@
         </div>
         <div class=section3>
             <div class=bg3>
-                <div class=container>
-                    <div class=client-speak>
-                        <div class="name-cont color-white"><img src=img/inverted.png> <span>Client Speak</span></div>
-                        <div class=img-holder><img src=img/mice/jay.jpg class=img-reponsive></div>
+                <div class="container" ng-if="micedata.testimonial.length>0">
+                    <div class="client-speak" ng-repeat="data in micedata.testimonial | limitTo: 1">
+                        <div class="name-cont color-white"><img src=img/inverted.png> <span>{{data.name}}</span></div>
+                        <div class=img-holder><img ng-src="{{data.image | uploadpath}}" class=img-reponsive></div>
                         <div class="img-review color-white">
-                            <h4>"Great teamwork and planning"</h4>
-                            <p>- Dr. Jay Prakash</p>
+                            <h4>"{{data.quote}}"</h4>
+                            <p>- {{data.author}}</p>
                         </div>
                     </div>
                     <div class="row">
