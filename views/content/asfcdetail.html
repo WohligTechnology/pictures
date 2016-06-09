@@ -17,7 +17,7 @@
     </div>
   </div>
 </section>
-<section class="jppseason">
+<section class="jppseason" ng-if="seasonData.imagegallery.length>0">
   <div class="jpp-gallery nav-tab-middle ">
     <div class="container">
       <div class="row">
@@ -61,7 +61,7 @@
   </div>
 </section>
 <div class="bg-mehendi">
-<section class="jppseason">
+<section class="jppseason" ng-if="seasonData.featuredvideos.length>0">
   <div class="jpp-movie">
     <div class="container">
       <div class="row" ng-if="seasonData.featuredvideos">
@@ -124,7 +124,7 @@
     </div>
   </div>
 </section>
-<section class="container" ng-if="seasonData.relatedarticles">
+<section class="container" ng-if="seasonData.relatedarticles.length>0">
   <div class="row">
     <div class="col-md-12">
       <div class="text-center">

@@ -21,7 +21,7 @@
   <div class="jpp-gallery nav-tab-middle ">
     <div class="container">
       <div class="row">
-        <div class="col-md-offset-1 col-md-10" ng-if="seasonData.imagegallery">
+        <div class="col-md-offset-1 col-md-10" ng-if="seasonData.imagegallery.length>0">
           <div class="title">
             <h3 class="letter-spacing color-red uppercase">
             Image Gallery
@@ -64,7 +64,7 @@
 <section class="jppseason">
   <div class="jpp-movie">
     <div class="container">
-      <div class="row" ng-if="seasonData.featuredvideos">
+      <div class="row" ng-if="seasonData.featuredvideos.length>0">
         <div class="col-md-offset-1 col-md-10">
           <div class="title">
             <h3 class="letter-spacing color-white uppercase">
@@ -124,7 +124,7 @@
     </div>
   </div>
 </section>
-<section class="container" ng-if="seasonData.relatedarticles">
+<section class="container" ng-if="seasonData.relatedarticles.length>0">
   <div class="row">
     <div class="col-md-12">
       <div class="text-center">

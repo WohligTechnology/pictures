@@ -244,14 +244,14 @@ including yours, right here!</h4>
               <div class="row">
                 <div class="col-md-6">
                   <div class="form-group">
-                    <input type="text" ng-model="formData.name" name="name" class="form-control" id="exampleInputEmail1" placeholder="First Name" required>
-                    <div class="error-msg" ng-show="movies.name.$error.required && movies.name.$touched">Please Enter Your First Name.</div>
+                    <input type="text" ng-model="formData.firstname" name="firstname" class="form-control" id="exampleInputEmail1" placeholder="First Name" required>
+                    <div class="error-msg" ng-show="movies.firstname.$error.required && movies.firstname.$touched">Please Enter Your First Name.</div>
                   </div>
                 </div>
                 <div class="col-md-6">
                   <div class="form-group">
-                    <input type="text" ng-model="formData.name1" name="name1" class="form-control" id="exampleInputEmail1" placeholder="Last Name" required>
-                    <div class="error-msg" ng-show="movies.name1.$error.required && movies.name1.$touched">Please Enter Your Last Name.</div>
+                    <input type="text" ng-model="formData.lastname" name="lastname" class="form-control" id="exampleInputEmail1" placeholder="Last Name" required>
+                    <div class="error-msg" ng-show="movies.lastname.$error.required && movies.lastname.$touched">Please Enter Your Last Name.</div>
                   </div>
                 </div>
               </div>
@@ -277,8 +277,8 @@ including yours, right here!</h4>
                         <span class="color-red">Enquiring for </span>
                       </label>
                       <label class="checkbox-inline">
-                        <input type="checkbox" id="production" value="">
-                        <label for="production"><span></span> Book the Playing for Humanity Team</label>
+                        <input type="checkbox" id="team" value="team" ng-click="pushorpop('team')">
+                        <label for="team"><span></span> Book the Playing for Humanity Team</label>
                       </label>
                     </div>
                   </div>
@@ -286,10 +286,10 @@ including yours, right here!</h4>
               </div>
               <div class="row">
                 <div class="col-md-12">
-                  <textarea class="form-control" ng-model="formData.say" name="say" rows="3" placeholder="Say Something" required="required"></textarea>
-                  <div class="error-msg" ng-show="movies.say.$error.required && movies.say.$touched">Enter Something</div>
+                  <textarea class="form-control" ng-model="formData.comment" name="comment" rows="3" placeholder="Say Something" required="required"></textarea>
+                  <div class="error-msg" ng-show="movies.comment.$error.required && movies.comment.$touched">Enter Something</div>
                   <div class="submit-btn btn-all text-center mt15">
-                    <button class="btn btn-danger" type="button" name="button" ng-class="{'disabled' : !movies.$valid }" ng-click="moviesSubmitForm(movies,formData)">submit</button>
+                    <button class="btn btn-danger" type="button" name="button" ng-class="{'disabled' : !movies.$valid }" ng-click="pfhSubmitForm(movies)">submit</button>
                   </div>
                 </div>
               </div>
