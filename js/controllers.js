@@ -1950,15 +1950,22 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     })
     $scope.objfilter = {};
     $scope.objfilter.id = $stateParams.id;
-    $scope.getMediayear = function(year) {
-      NavigationService.getMediaByYear(function(data) {
+    var year = 2016;
+    // $scope.getMediayear = function(year) {
+    //   NavigationService.getMediaByYear($stateParams.year, function(data) {
+    //
+    //     $scope.mediadata = data.data.queryresult;
+    //     $scope.mediadata.year = year;
+    //     console.log($scope.mediadata);
+    //   })
+    // }
+  // $scope.getMediayear(year);
+  NavigationService.getMediaByYear(year, function(data) {
 
-        $scope.mediadata = data.data;
-        $scope.mediadata.year = year;
-        console.log($scope.mediadata);
-      })
-    }
-
+      $scope.mediadatadetail = data.queryresult;
+      $scope.mediadatadetail.year = year;
+      console.log($scope.mediadatadetail);
+    })
 
     $scope.weddings = [{
       img: "img/mediacorner/1.png",

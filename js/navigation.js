@@ -125,8 +125,8 @@ var navigationservice = angular.module('navigationservice', [])
     getTalentInsideDetail: function(id,callback) {
       $http.get(apiUrl + 'getTalentDetailInside?id='+ id).success(callback);
     },
-    getMediaByYear: function(obj, callback) {
-      $http.get(apiUrl + 'getWeddingInside?id=' + obj.year).success(callback);
+    getMediaByYear: function(year, callback) {
+      $http.get(apiUrl + 'getMediaCornerDetails?year=' + year).success(callback);
     },
     getClient: function(callback) {
       $http.get(apiUrl + 'getClients').success(callback);

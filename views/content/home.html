@@ -32,7 +32,7 @@
 <section>
   <div class="section2">
     <div class="bg2">
-      <div class="container" ng-if="homedata.homediaries">
+      <div class="container" ng-if="homedata.homediaries && homedata.homediaries.length>0">
         <div class="text-center">
           <div class="wedding-diary">
             <div class="diary">
@@ -75,7 +75,7 @@
           </button>
         </div>
       </div>
-      <div class="section3" ng-if="homedata.testimonial">
+      <div class="section3" ng-if="homedata.testimonial && homedata.testimonial.length>0">
         <div class="bg3">
           <div class="container">
             <div class="client-speak">
