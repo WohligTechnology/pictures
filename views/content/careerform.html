@@ -10,161 +10,182 @@
     </div>
     <div class="jobform">
         <div class="container">
-            <div class="row">
+            <div class="user" ng-hide="showThanks">
                 <div class="col-md-offset-2 col-md-8">
-                    <form class="form-horizontal">
+                    <form class="form-horizontal" name="user">
                         <div class="form-group">
-                          <div class="col-md-12">
-                            <label for="job" class="text-uppercase jobcat control-label">Job categories</label>
-                            <!-- <div class="col-md-9"> -->
-                            <div class="custom-select">
-                              <select class="form-control" name="" id="job">
+                            <div class="col-md-12">
+                                <label for="job" class="text-uppercase jobcat control-label">Job categories</label>
+                                <!-- <div class="col-md-9"> -->
+                                <div class="custom-select">
+                                    <select class="form-control" name="" id="job" ng-model="formData.category">
+                                        <!-- <option value="'Select Job Category'" selected>Select Job Category</option> -->
+                                        <option ng-repeat="data in jobTitle">{{data}}</option>
+                                        <!-- <option value=""></option>
                                 <option value=""></option>
-                                <option value=""></option>
-                                <option value=""></option>
-                                <option value=""></option>
-                              </select>
+                                <option value=""></option> -->
+                                    </select>
+                                </div>
                             </div>
-                          </div>
                             <!-- </div> -->
                         </div>
                         <div class="form-group">
                             <h4 class="text-uppercase control-label">Personal Details</h4>
                         </div>
                         <div class="form-group">
-                            <label for="fullname" class="col-md-2 control-label">Resume/CV <span>*</span></label>
+                            <label for="fullname" class="col-md-2 control-label">Resume/CV<span>*</span></label>
                             <div class="col-md-10">
-                               <div class="attach">
-                                 <button class="btn btn-danger"type="button" name="button"><i class="fa fa-paperclip"></i>Attach Resume</button>
-                               </div>
+                              <!-- <img ng-src="{{formData.resume | uploadpath}}" class="doneLoading" ng-if="formData.resume"> -->
+                                <upload-image ng-model="formData.resume" ng-callback="changeit" no-view></upload-image>
+                                <div class="inlineblock pl10">
+                                    <p class="color-white">{{formData.resume}}</p>
+                                </div>
+                                <!-- <div class="attach">
+                                 <button class="btn btn-danger" type="button" name="button"><i class="fa fa-paperclip"></i>Attach Resume</button>
+                               </div> -->
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="fullname" class="col-md-2 control-label">Full Name <span>*</span></label>
                             <div class="col-md-10">
-                                <input type="text" name="name" class="form-control" id="fullname" required>
+                                <input type="text" name="name" class="form-control" id="name" ng-model="formData.name" required>
                             </div>
+                            <div class=error-msg ng-show="user.name.$error.required && user.name.$touched">Please Enter Your Name.</div>
                         </div>
+
                         <div class="form-group">
                             <label for="address" class="col-md-2 control-label">Address <span>*</span></label>
                             <div class="col-md-10">
-                                <input type="text" name="name" class="form-control" id="address" required>
+                                <input type="text" name="address" class="form-control" id="address" ng-model="formData.address" required>
                             </div>
+                            <div class="error-msg" ng-if="user.address.$error.required && user.address.$touched">Please Enter Your Address.</div>
                         </div>
                         <div class="form-group">
                             <label for="phone" class="col-md-2 control-label">Phone <span>*</span></label>
                             <div class="col-md-10">
-                                <input type="tel" name="name" class="form-control" id="phone" required>
+                                <input type="tel" name="phone" class="form-control" id="phone" ng-model="formData.phone" required>
                             </div>
+                            <div class="error-msg" ng-if="user.phone.$error.required && user.phone.$touched">Please Enter Your Phone No.</div>
+
                         </div>
                         <div class="form-group">
-                            <label for="suburban" class="col-md-2 control-label">Suburb <span>*</span></label>
+                            <label for="suburb" class="col-md-2 control-label">Suburb <span>*</span></label>
                             <div class="col-md-10">
-                                <input type="text" name="name" class="form-control" id="suburban" required>
+                                <input type="text" name="suburb" class="form-control" id="suburb" ng-model="formData.suburb" required>
                             </div>
+                            <div class="error-msg" ng-if="user.suburb.$error.required && user.suburb.$touched">Please Enter Your Suburb.</div>
                         </div>
                         <div class="form-group">
                             <label for="state" class="col-md-2 control-label">State <span>*</span></label>
                             <div class="col-md-10">
-                                <input type="text" name="name" class="form-control" id="state" required>
+                                <input type="text" name="state" class="form-control" id="state" ng-model="formData.state" required>
                             </div>
+                            <div class="error-msg" ng-if="user.state.$error.required && user.state.$touched">Please Enter Your State.</div>
                         </div>
                         <div class="form-group">
                             <label for="postalcode" class="col-md-2 control-label">Post Code <span>*</span></label>
                             <div class="col-md-10">
-                                <input type="text" name="name" class="form-control" id="postalcode" required>
+                                <input type="text" name="postcode" class="form-control" id="postalcode" ng-model="formData.postcode" required>
                             </div>
+                            <div class="error-msg" ng-if="user.postcode.$error.required && user.postcode.$touched">Please Enter Your Post Code.</div>
                         </div>
                         <div class="form-group">
                             <label for="dob" class="col-md-2 control-label">Date of birth <span>*</span></label>
                             <div class="col-md-10">
-                                <input type="text" name="name" class="form-control" id="dob" required>
+                                <input type="text" name="dob" class="form-control" id="dob" ng-model="formData.dob" required>
                             </div>
+                            <div class="error-msg" ng-if="user.dob.$error.required && user.dob.$touched">Please Enter Your Date of Birth.</div>
                         </div>
                         <div class="form-group">
                             <label for="mail" class="col-md-2 control-label">Email id <span>*</span></label>
                             <div class="col-md-10">
-                                <input type="email" name="name" class="form-control" id="mail" required>
+                                <input type="email" name="email" class="form-control" id="mail" ng-model="formData.email" required>
                             </div>
+                            <div class="error-msg" ng-if="user.email.$error.required && user.email.$touched">Please Enter Your Email.</div>
                         </div>
+
                         <div class="form-group">
                             <h4 class="text-uppercase control-label">Links</h4>
                         </div>
                         <div class="form-group">
                             <label for="linkedin" class="col-md-2 control-label">LinkedIn URL</label>
                             <div class="col-md-10">
-                                <input type="url" name="name" class="form-control" id="linkedin">
+                                <input type="url" name="linkedin" class="form-control" id="linkedin" ng-model="formData.linkedin">
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="twitter" class="col-md-2 control-label">Twitter URL</label>
                             <div class="col-md-10">
-                                <input type="url" name="name" class="form-control" id="twitter">
+                                <input type="url" name="twitter" class="form-control" id="twitter" ng-model="formData.twitter">
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="github" class="col-md-2 control-label">GitHub URL</label>
                             <div class="col-md-10">
-                                <input type="url" name="name" class="form-control" id="github">
+                                <input type="url" name="github" class="form-control" id="github" ng-model="formData.github">
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="portfolio" class="col-md-2 control-label">Portfolio URL</label>
                             <div class="col-md-10">
-                                <input type="url" name="name" class="form-control" id="portfolio">
+                                <input type="url" name="portfolio" class="form-control" id="portfolio" ng-model="formData.portfolio">
                             </div>
                         </div>
                         <div class="form-group">
-                          <label for="other" class="col-md-2 control-label">Other website</label>
-                          <div class="col-md-10">
-                            <input type="url" name="name" class="form-control" id="other">
-                          </div>
+                            <label for="other" class="col-md-2 control-label">Other website</label>
+                            <div class="col-md-10">
+                                <input type="url" name="otherwebsite" class="form-control" id="other" ng-model="formData.otherwebsite">
+                            </div>
                         </div>
                         <div class="form-group">
                             <h4 class="text-uppercase control-label">Availability</h4>
                         </div>
                         <div class="form-group">
-                          <div class="col-md-12">
-                            <label>
-                              What type of position are you seeking?
-                            </label>
-                            <div class="checkbox">
-                              <label class="checkbox-inline">
-                                <input type="checkbox" id="checkbox1" value="ambassador">
-                                <label for="checkbox1"><span></span>Part time</label>
-                              </label>
-                              <label class="checkbox-inline">
-                                <input type="checkbox" id="checkbox2" value="representation">
-                                <label for="checkbox2"><span></span>Full time</label>
-                              </label>
+                            <div class="col-md-12">
+                                <label>
+                                    What type of position are you seeking?
+                                </label>
+                                <div class="checkbox">
+                                    <label class="checkbox-inline">
+                                        <input type="checkbox" id="PartTime" value="PartTime" ng-click="pushorpop('PartTime')">
+                                        <label for="PartTime"><span></span>Part time</label>
+                                    </label>
+                                    <label class="checkbox-inline">
+                                        <input type="checkbox" id="FullTime" value="FullTime" ng-click="pushorpop('FullTime')">
+                                        <label for="FullTime"><span></span>Full time</label>
+                                    </label>
+                                </div>
                             </div>
-                          </div>
                         </div>
                         <div class="form-group">
-                          <label for="salary" class="col-md-2 control-label">Previous Salary</label>
-                          <div class="col-md-10">
-                            <input type="text" name="name" class="form-control" id="salary" required>
-                          </div>
+                            <label for="salary" class="col-md-2 control-label">Previous Salary</label>
+                            <div class="col-md-10">
+                                <input type="text" name="salary" class="form-control" id="salary" ng-model="formData.salary">
+                            </div>
                         </div>
                         <div class="form-group">
-                          <label for="ctc" class="col-md-2 control-label">Expected CTC</label>
-                          <div class="col-md-10">
-                            <input type="text" name="name" class="form-control" id="ctc" required>
-                          </div>
+                            <label for="ctc" class="col-md-2 control-label">Expected CTC</label>
+                            <div class="col-md-10">
+                                <input type="text" name="expectedctc" class="form-control" id="expectedctc" ng-model="formData.expectedctc">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-md-12">
+                                <p class="text-justify">I certify that this information is accurate and complete. Giving incomplete or false information in an application for employment is a serious matter and is grounds for dismissal. I hereby acknowledge notification that
+                                    GS entertainment may request information regarding my character, general reputation or mode for living. We assure you the information won’t be shared with a third party without your consent.</p>
+                            </div>
                         </div>
                         <div class="form-group">
-                          <div class="col-md-12">
-                            <p class="text-justify">I certify that this information is accurate and complete. Giving incomplete or false information in an application for employment is a serious matter and is grounds for dismissal. I hereby acknowledge notification that GS entertainment may request information regarding my character, general reputation or mode for living. We assure you the information won’t be shared with a third party without your consent.</p>
-                          </div>
+                            <div class="submit-btn btn-all text-center mt15">
+                                <button class="btn btn-danger" type="button" name="button" ng-click="carrierSubmit(user)">Submit Application</button>
+                            </div>
                         </div>
-                        <div class="form-group">
-                          <div class="submit-btn btn-all text-center mt15">
-                            <button class="btn btn-danger" type="button" name="button">Submit Application</button>
-                          </div>
-                        </div>
-                    </form>
                 </div>
+                </form>
             </div>
+            <div ng-show="showThanks">Successfully Submitted </div>
         </div>
+    </div>
     </div>
 </section>

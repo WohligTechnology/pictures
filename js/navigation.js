@@ -10,6 +10,7 @@ adminURL = "http://192.168.1.137/gsebackend/";
 // adminURL = "http://localhost/gsebackend/";
 var apiUrl = adminURL + "index.php/json/";
 var imgpath = adminURL + "uploads/";
+var uploadurl = "http://192.168.1.137/gsebackend/index.php/json/imageUpload";
 
 var navigationservice = angular.module('navigationservice', [])
 
@@ -125,9 +126,9 @@ var navigationservice = angular.module('navigationservice', [])
     getTalentInsideDetail: function(id,callback) {
       $http.get(apiUrl + 'getTalentDetailInside?id='+ id).success(callback);
     },
-    getMediaByYear: function(year, callback) {
-      $http.get(apiUrl + 'getMediaCornerDetails?year=' + year).success(callback);
-    },
+    // getMediaByYear: function(year, callback) {
+    //   $http.get(apiUrl + 'getMediaCornerDetails?year=' + year).success(callback);
+    // },
     getClient: function(callback) {
       $http.get(apiUrl + 'getClients').success(callback);
     },
@@ -139,11 +140,19 @@ var navigationservice = angular.module('navigationservice', [])
         data: mydata
       }).success(callback);
     },
+    getCareerForm: function(formData, callback) {
+      $http({
+        url: apiUrl + 'careersSubmit',
+        method: 'POST',
+        withCredentials: true,
+        data: formData
+      }).success(callback);
+    },
 
 
-//     getMediaByYear: function(obj, callback) {
-//       $http.get(adminurl + 'getMediaCornerDetails?year=' + obj.year + "&pageno=" + obj.pagenumber).success(callback);
-// },
+    getMediaByYear: function(obj, callback) {
+      $http.get(apiUrl + 'getMediaCornerDetails?year=' + obj.year).success(callback);
+},
 
     makeactive: function(menuname) {
       for (var i = 0; i < navigation.length; i++) {

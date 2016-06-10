@@ -1346,7 +1346,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     }];
 
   })
-  .controller('PfhCtrl', function($scope, TemplateService, NavigationService, $timeout) {
+  .controller('PfhCtrl', function($scope, TemplateService, NavigationService, $timeout, $state) {
     //Used to name the .html file
     $scope.template = TemplateService.changecontent("pfh");
     $scope.menutitle = NavigationService.makeactive("Sports");
@@ -1393,8 +1393,54 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
       }
     }
 
+
+      $scope.subscribe = {};
+      $scope.subscribe.email = "";
+      //
+      // $scope.checkemail=function(email){
+      //
+      // }
+
+      $scope.checkEmail = false;
+      $scope.subscribeEmail = false;
+      $scope.subscribe = function(email) {
+        // if(!email) {
+        //     alert("please enter your email");
+        // }
+        // console.log('Email subscribe: ', email);
+        NavigationService.subscribe(email, function(data) {
+
+          // console.log(data);
+          if (!data.value) {
+            if ($scope.subscribe.email) {
+              $scope.checkEmail = true;
+              $scope.subscribeEmail = false;
+              $timeout(function() {
+                $state.reload();
+                $timeout(function() {
+                  $scope.checkEmail = "";
+                  $scope.subscribeEmail = "";
+                }, 2000);
+              }, 3000);
+            }
+          } else {
+            $scope.subscribeEmail = true;
+            $scope.checkEmail = false;
+            $timeout(function() {
+              $state.reload();
+              $timeout(function() {
+                $scope.checkEmail = "";
+                $scope.subscribeEmail = "";
+              }, 2000);
+            }, 3000);
+          }
+          //console.log(email);
+          $scope.subscribe.email = "";
+        });
+      };
+
   })
-  .controller('PfhDetailCtrl', function($scope, TemplateService, NavigationService, $timeout, $stateParams) {
+  .controller('PfhDetailCtrl', function($scope, TemplateService, NavigationService, $timeout, $stateParams, $state) {
     //Used to name the .html file
     $scope.template = TemplateService.changecontent("pfhdetail");
     $scope.menutitle = NavigationService.makeactive("Sports");
@@ -1731,6 +1777,46 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     $scope.menutitle = NavigationService.makeactive("Job Application");
     TemplateService.title = $scope.menutitle;
     $scope.navigation = NavigationService.getnav();
+    $scope.jobTitle=['EXECUTIVE PRODUCER','PRODUCTION ADS','EVENTS MANAGERS','GRAPHIC DESIGN','ASSISTANT MANAGER - MICE TRAVEL','3D MODELER / VISUALISER'];
+    $scope.formData={};
+    $scope.formData.typearr=[];
+    $scope.carrierSubmit=function(formValid){
+      console.log(formValid);
+      console.log('in function');
+        $scope.formData.type = "";
+        if(formValid.$valid){
+          console.log('in valid');
+
+
+
+            if ($scope.formData.typearr.length > 0) {
+              _.each($scope.formData.typearr, function(n) {
+                $scope.formData.type += n + ",";
+              })
+              $scope.formData.type = $scope.formData.type.substring(0, $scope.formData.type.length - 1);
+            }
+          NavigationService.getCareerForm($scope.formData,function(data){
+            if (data.value != false) {
+              $scope.showThanks = true;
+              console.log('$scope.formData', $scope.formData);
+            }
+          })
+         }
+    };
+  //   $scope.changeit = function(data) {
+  //   console.log(data);
+  //   $scope.formData.resume = data.data[0];
+  // }
+    $scope.pushorpop = function(val) {
+      var foundIndex = $scope.formData.typearr.indexOf(val);
+      if (foundIndex == -1) {
+        $scope.formData.typearr.push(val);
+      } else {
+        $scope.formData.typearr.splice(foundIndex, 1);
+      }
+    }
+
+
   })
   .controller('MiceCtrl', function($scope, TemplateService, NavigationService, $timeout) {
     //Used to name the .html file
@@ -1948,55 +2034,55 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
       $scope.mediadata = data.data;
       console.log($scope.mediadata);
     })
-    $scope.objfilter = {};
-    $scope.objfilter.id = $stateParams.id;
-    var year = 2016;
-  NavigationService.getMediaByYear(year, function(data) {
-
-      $scope.mediadatadetail = data.queryresult;
-      $scope.mediadatadetail.year = year;
-      console.log($scope.mediadatadetail);
-    })
-
-
-
-
-
-  // $scope.categoryid = $stateParams.id;
-  // $scope.pagenumber = 1;
-  // var lastpage = 1;
-  // $scope.objfilter = {};
-  // $scope.objfilter.year = $stateParams.year;
-  // $scope.objfilter.pagenumber = 1;
-  // $scope.mediadatadetail=[];
-  // // $scope.objfilter.subcat = '';
+  //   $scope.objfilter = {};
+  //   $scope.objfilter.id = $stateParams.id;
+  //   var year = 2016;
+  // NavigationService.getMediaByYear(year, function(data) {
   //
-  //
-  // $scope.getMediayear = function() {
-  //   NavigationService.getMediaByYear($scope.objfilter, function(data) {
-  //     NavigationService.getMediacorner(function(data) {
-  //       console.log("dsfasdfasdf");
-  //       $scope.mediadata = data.data.years;
-  //       $scope.mediadata[0].class="cat-active";
-  //       if ($scope.objfilter.year != 0) {
-  //         _.each($scope.mediadata, function(n) {
-  //           if (n.year ==  $scope.objfilter.year)
-  //             n.class = "cat-active";
-  //           else
-  //             n.class = "";
-  //         });
-  //       }
-  //
-  //     });
-  //
-  //     console.log(data);
-  //     lastpage = data.lastpage;
-  //     _.each(data.queryresult, function(n) {
-  //       $scope.mediadatadetail.push(n);
-  //     });
-  //
-  //   });
-  // };
+  //     $scope.mediadatadetail = data.queryresult;
+  //     $scope.mediadatadetail.year = year;
+  //     console.log($scope.mediadatadetail);
+  //   })
+
+
+
+
+
+  $scope.categoryid = $stateParams.id;
+  $scope.pagenumber = 1;
+  var lastpage = 1;
+  $scope.objfilter = {};
+  $scope.objfilter.year = $stateParams.year;
+  $scope.objfilter.pagenumber = 1;
+  $scope.mediadatadetail=[];
+  // $scope.objfilter.subcat = '';
+
+
+  $scope.getMediayear = function() {
+    NavigationService.getMediaByYear($scope.objfilter, function(data) {
+      NavigationService.getMediacorner(function(data) {
+        console.log("dsfasdfasdf");
+        $scope.mediadata = data.data.years;
+        $scope.mediadata[0].class="cat-active";
+        if ($scope.objfilter.year != 0) {
+          _.each($scope.mediadata, function(n) {
+            if (n.year ==  $scope.objfilter.year)
+              n.class = "cat-active";
+            else
+              n.class = "";
+          });
+        }
+
+      });
+
+      console.log(data);
+      lastpage = data.lastpage;
+      _.each(data.queryresult, function(n) {
+        $scope.mediadatadetail.push(n);
+      });
+
+    });
+  };
   //
   //   $scope.loadMore = function() {
   //     // console.log('$scope.images.length:',$scope.images.length);
@@ -2014,6 +2100,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
   //       $scope.getMediayear();
   //     }
   //   };
+    $scope.getMediayear();
 
 
 

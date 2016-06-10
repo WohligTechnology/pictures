@@ -65,7 +65,7 @@
             <h4 class="uppercase color-red bold letter-spacing">View</h4>
         </div>
         <ul class="list-unstyled">
-            <li><a href="" class="uppercase" ng-repeat="data in mediadata.years" ng-click="getMediayear(data.year)"> {{data.year}}</a></li>
+            <li><a class="uppercase med" ng-repeat="data in mediadata" ui-sref="media_corner({year:data.year})"> {{data.year}}</a></li>
             <!-- <li><a href="" class="uppercase"> 2015</a></li>
             <li><a href="" class="uppercase"> 2014</a></li>
             <li><a href="" class="uppercase"> 2013</a></li>

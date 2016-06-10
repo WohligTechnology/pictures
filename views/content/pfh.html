@@ -147,7 +147,7 @@
 <section>
   <div class="bg-subcribe-phf subcribe">
     <div class="container">
-      <div class="row">
+      <div class="row" ng-hide="subscribeEmail || checkEmail">
         <h4 class="text-center color-white">Sign up to our GS newsletter and get the latest updates on PFH!</h4>
         <div class="col-md-6 col-md-offset-3">
           <form name="subForm" class="bs-example bs-example-form" role="form">
@@ -155,12 +155,15 @@
               <input type="email" class="form-control" placeholder="Enter email address" ng-model="subscribe.email" required>
               <span class="input-group-addon btn btn-danger" ng-click="subscribe(subscribe.email);">Subscribe</span>
               <div ng-messages="subForm.email.$error" ng-messages-include="error-messages"></div>
-              <h4 ng-if="subscribeEmail">Thankyou For Subscribing</h4>
-              <h4 ng-if="checkEmail">This email already exists</h4>
+              <!-- <h4 ng-if="subscribeEmail">Thankyou For Subscribing</h4>
+              <h4 ng-if="checkEmail">This email already exists</h4> -->
             </div>
           </form>
         </div>
+
       </div>
+      <h4 ng-if="subscribeEmail && !checkEmail"><center class="color-white">Thankyou For Subscribing</h4>
+      <h4 ng-if="checkEmail && !subscribeEmail"><center class="color-white">This email already exists</h4>
     </div>
   </div>
 </section>

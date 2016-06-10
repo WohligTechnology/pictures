@@ -133,7 +133,7 @@ firstapp.config(function($stateProvider, $urlRouterProvider, $httpProvider, $loc
             controller: 'MiceCtrl'
         })
         .state('media_corner', {
-            url: "/mediacorner",
+            url: "/mediacorner/:year",
             templateUrl: "views/template.html",
             controller: 'MediaCornerCtrl'
         })
@@ -186,26 +186,26 @@ firstapp.config(function($stateProvider, $urlRouterProvider, $httpProvider, $loc
     $locationProvider.html5Mode(isproduction);
 });
 
-
-firstapp.directive('img', function($compile, $parse) {
-    return {
-        restrict: 'E',
-        replace: false,
-        link: function($scope, element, attrs) {
-            var $element = $(element);
-            if (!attrs.noloading) {
-                $element.after("<img src='img/loading.gif' class='loading' />");
-                var $loading = $element.next(".loading");
-                $element.load(function() {
-                    $loading.remove();
-                    $(this).addClass("doneLoading");
-                });
-            } else {
-                $($element).addClass("doneLoading");
-            }
-        }
-    };
-});
+//
+// firstapp.directive('img', function($compile, $parse) {
+//     return {
+//         restrict: 'E',
+//         replace: false,
+//         link: function($scope, element, attrs) {
+//             var $element = $(element);
+//             if (!attrs.noloading) {
+//                 $element.after("<img src='img/loading.gif' class='loading' />");
+//                 var $loading = $element.next(".loading");
+//                 $element.load(function() {
+//                     $loading.remove();
+//                     $(this).addClass("doneLoading");
+//                 });
+//             } else {
+//                 $($element).addClass("doneLoading");
+//             }
+//         }
+//     };
+// });
 
 firstapp.directive('fancyboxBox', function($document) {
     return {
@@ -232,23 +232,25 @@ firstapp.directive('fancyboxBox', function($document) {
     };
 });
 
+
 firstapp.filter('uploadpath', function() {
-    return function(input, width, height, style) {
-        var other = "";
-        if (width && width != "") {
-            other += "&width=" + width;
-        }
-        if (height && height != "") {
-            other += "&height=" + height;
-        }
-        if (style && style != "") {
-            other += "&style=" + style;
-        }
-        if (input) {
-            return imgpath + input + other;
-        }
-    };
+  return function(input, width, height, style) {
+    var other = "";
+    if (width && width !== "") {
+      other += "&width=" + width;
+    }
+    if (height && height !== "") {
+      other += "&height=" + height;
+    }
+    if (style && style !== "") {
+      other += "&style=" + style;
+    }
+    if (input) {
+      return imgpath + "?file=" + input + other;
+    }
+  };
 });
+
 firstapp.filter('youtubethumb', function() {
     return function(input, onlyid) {
         if (input) {
@@ -267,6 +269,144 @@ firstapp.filter('youtubethumb', function() {
         }
     };
 });
+
+
+// firstapp.filter('uploadpath', function() {
+//     return function(input, width, height, style) {
+//         var other = "";
+//         if (width && width != "") {
+//             other += "&width=" + width;
+//         }
+//         if (height && height != "") {
+//             other += "&height=" + height;
+//         }
+//         if (style && style != "") {
+//             other += "&style=" + style;
+//         }
+//         if (input) {
+//             console.log(input);
+//             if (input.indexOf('https://') == -1) {
+//                 return imgpath + "?file=" + input + other;
+//             } else {
+//                 return input;
+//             }
+//         }
+//     };
+// });
+
+// firstapp.directive('imageonload', function() {
+//     return {
+//         restrict: 'A',
+//         link: function(scope, element, attrs) {
+//             element.bind('load', function() {
+//                 scope.$apply(attrs.imageonload);
+//             });
+//         }
+//     };
+// });
+
+
+firstapp.directive('imageonload', function() {
+  return {
+    restrict: 'A',
+    link: function(scope, element, attrs) {
+      console.log("Loading should start now", attrs.imageonload);
+      scope.attr = attrs;
+      scope.$watch(
+        "attr.change",
+        function handleFooChange(newValue, oldValue) {
+          setTimeout(function() {
+            scope.$apply(attrs.imageonload);
+          }, 500);
+
+        }
+      );
+
+
+    }
+  };
+});
+
+
+firstapp.directive('uploadImage', function($http) {
+  return {
+    templateUrl: 'views/directive/uploadFile.html',
+    scope: {
+      model: '=ngModel',
+      callback: "=ngCallback"
+    },
+    link: function($scope, element, attrs) {
+      $scope.isMultiple = false;
+      $scope.inObject = false;
+      if (attrs.multiple || attrs.multiple === "") {
+        $scope.isMultiple = true;
+        $("#inputImage").attr("multiple", "ADD");
+      }
+      if (attrs.noView || attrs.noView === "") {
+        $scope.noShow = true;
+      }
+      if (attrs.inobj || attrs.inobj === "") {
+        $scope.inObject = true;
+      }
+      $scope.clearOld = function() {
+        $scope.model = [];
+      };
+      $scope.upload = function(image) {
+        console.log(image);
+        console.log("File");
+        var Template = this;
+        image.hide = true;
+        var formData = new FormData();
+        formData.append('file', image.file, image.name);
+        $http.post(uploadurl, formData, {
+          headers: {
+            'Content-Type': undefined
+          },
+          transformRequest: angular.identity
+        }).success(function(data) {
+          if ($scope.callback) {
+            $scope.callback(data);
+          } else {
+            if ($scope.isMultiple) {
+              if ($scope.inObject) {
+                $scope.model.push({
+                  "image": data.data[0]
+                });
+              } else {
+                $scope.model.push(data.data[0]);
+              }
+            } else {
+              $scope.model = data.data[0];
+            }
+          }
+        });
+      };
+    }
+  };
+});
+
+firstapp.directive('img', function($compile, $parse) {
+  return {
+    restrict: 'E',
+    replace: false,
+    link: function($scope, element, attrs) {
+      var $element = $(element);
+      if (!attrs.noloading) {
+        $element.after("<img src='img/loading.gif' class='loading' />");
+        var $loading = $element.next(".loading");
+        $element.load(function() {
+          $loading.remove();
+          $(this).addClass("doneLoading");
+        });
+      } else {
+        $($element).addClass("doneLoading");
+      }
+    }
+  };
+});
+
+
+
 
 $(document).ready(function() {
 	$(".fancybox").fancybox({
