@@ -1046,7 +1046,11 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
       $scope.formData.enquiryarr.splice(foundIndex, 1);
     }
   }
-
+  $scope.matchData={};
+NavigationService.getMatch(function(data){
+  $scope.matchData=data.data;
+  console.log('$scope.matchData=',$scope.matchData);
+})
 
 })
 

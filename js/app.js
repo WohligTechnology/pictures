@@ -246,7 +246,7 @@ firstapp.filter('uploadpath', function() {
       other += "&style=" + style;
     }
     if (input) {
-      return imgpath + "?file=" + input + other;
+      return imgpath + input + other;
     }
   };
 });

@@ -103,6 +103,53 @@
           <div class="row">
             <div class="col-sm-4">
               <div class="team-logo text-center min-hgt">
+                <img ng-src="{{matchData.upcoming[0].logo1 | uploadpath}}" alt="" class="img-responsive">
+                <div class="date text-center color-white">
+                  <span>{{matchData.upcoming[0].date}}</span>
+                </div>
+                <div class="btn-all mt15 mb15 text-center">
+                  <a href="{{matchData.upcoming[0].link}}"><button class="btn btn-primary">Buy Tickets</button></a>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-4">
+              <div class="min-hgt color-white">
+                <div class="vs text-center">
+                  vs
+                </div>
+                <div class="stadium text-center color-white">
+                  <span>  {{matchData.upcoming[0].location}} </span>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-4">
+              <div class="team-logo text-center min-hgt">
+                <img ng-src="{{matchData.upcoming[0].logo2 | uploadpath}}" alt="" class="img-responsive">
+                <div class="date text-center color-white">
+                  <span>{{matchData.upcoming[0].time}}</span>
+                </div>
+                <div class="btn-all mt15 mb15 text-center">
+                  <button class="btn btn-primary">Add to Calender</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- <div class="upcoming-game">
+    <div class="title-asfc">
+      <h3 class="text-center bold uppercase">
+      UPCOMING  GAME
+    </h3>
+    </div>
+    <div class="bg-blue-asfc">
+      <div class="row">
+        <div class="col-md-offset-2 col-md-8">
+          <div class="row">
+            <div class="col-sm-4">
+              <div class="team-logo text-center min-hgt">
                 <img src="img/ASFC/asfc.png" alt="" class="img-responsive">
                 <div class="date text-center color-white">
                   <span>Jan 30</span>
@@ -137,8 +184,8 @@
         </div>
       </div>
     </div>
-  </div>
-  <div class="container bg-brown-asfc ">
+  </div> -->
+  <!-- <div class="container bg-brown-asfc ">
     <div class="asfc-rl">
       <div class="prv-asfc">
         <img src="img/bg-line.jpg" alt="" class="img-responsive" />
@@ -154,6 +201,33 @@
             <img src="img/ASFC/fc.png" alt="" class="team-img1">
             <span>2 : 1</span>
             <img src="img/ASFC/dfc.png" alt="" class="team-img2">
+          </div>
+        </div>
+        <div class="col-sm-4">
+          <div class="btn-all m40 mb15 text-center">
+            <a href="#">View Scorecard</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div> -->
+
+  <div class="container bg-brown-asfc ">
+    <div class="asfc-rl">
+      <div class="prv-asfc">
+        <img ng-src="img/bg-line.jpg" alt="" class="img-responsive" />
+      </div>
+      <div class="row prv-game">
+        <div class="col-sm-4">
+          <div class="title text-center bold m40">
+            PREVIOUS GAME
+          </div>
+        </div>
+        <div class="col-sm-4">
+          <div class="prv-team text-center">
+            <img ng-src="{{matchData.previous[0].logo1 | uploadpath}}" alt="" class="team-img1">
+            <span>{{matchData.previous[0].team1score}} : {{matchData.previous[0].team2score}}</span>
+            <img ng-src="{{matchData.previous[0].logo2 | uploadpath}}" alt="" class="team-img2">
           </div>
         </div>
         <div class="col-sm-4">

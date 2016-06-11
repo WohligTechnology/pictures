@@ -19,7 +19,7 @@
                                 <!-- <div class="col-md-9"> -->
                                 <div class="custom-select">
                                     <select class="form-control" name="" id="job" ng-model="formData.category">
-                                        <!-- <option value="'Select Job Category'" selected>Select Job Category</option> -->
+                                        <option ng-selected="true" value="">Select Job Category</option>
                                         <option ng-repeat="data in jobTitle">{{data}}</option>
                                         <!-- <option value=""></option>
                                 <option value=""></option>
@@ -178,13 +178,13 @@
                         </div>
                         <div class="form-group">
                             <div class="submit-btn btn-all text-center mt15">
-                                <button class="btn btn-danger" type="button" name="button" ng-click="carrierSubmit(user)">Submit Application</button>
+                                <button class="btn btn-danger" type="button" name="button" ng-class="{'disabled' : !user.$valid }" ng-click="carrierSubmit(user)">Submit Application</button>
                             </div>
                         </div>
                 </div>
                 </form>
             </div>
-            <div ng-show="showThanks">Successfully Submitted </div>
+            <div ng-show="showThanks"><center><b>Successfully Submitted </b></center></div>
         </div>
     </div>
     </div>

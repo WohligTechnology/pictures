@@ -132,6 +132,9 @@ var navigationservice = angular.module('navigationservice', [])
     getClient: function(callback) {
       $http.get(apiUrl + 'getClients').success(callback);
     },
+    getMatch: function(callback) {
+      $http.get(apiUrl + 'getMatch').success(callback);
+    },
     gettourform:function(mydata,callback){
       $http({
         url: apiUrl + 'getInTouch',
