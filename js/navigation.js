@@ -151,8 +151,11 @@ var navigationservice = angular.module('navigationservice', [])
 
 
     getMediaByYear: function(obj, callback) {
-      $http.get(apiUrl + 'getMediaCornerDetails?year=' + obj.year).success(callback);
+      $http.get(apiUrl + 'getMediaCornerDetails?year=' + obj.year + "&pageno=" + obj.pageno).success(callback);
 },
+//     getMediaByYear: function(obj, callback) {
+//       $http.get(apiUrl + 'getMediaCornerDetails?year=' + obj.year).success(callback);
+// },
 
     makeactive: function(menuname) {
       for (var i = 0; i < navigation.length; i++) {

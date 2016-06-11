@@ -2045,21 +2045,22 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
   //   })
 
 
-
-
-
   $scope.categoryid = $stateParams.id;
   $scope.pagenumber = 1;
   var lastpage = 1;
   $scope.objfilter = {};
   $scope.objfilter.year = $stateParams.year;
-  $scope.objfilter.pagenumber = 1;
+  $scope.objfilter.pageno = 1;
+    $scope.pages = [1]
   $scope.mediadatadetail=[];
   // $scope.objfilter.subcat = '';
 
 
   $scope.getMediayear = function() {
     NavigationService.getMediaByYear($scope.objfilter, function(data) {
+      $scope.mediadatadetail = data.queryresult;
+      console.log('medData: ', $scope.mediadatadetail);
+      console.log('total: ', data.totalvalues);
       NavigationService.getMediacorner(function(data) {
         console.log("dsfasdfasdf");
         $scope.mediadata = data.data.years;
@@ -2075,31 +2076,27 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
       });
 
-      console.log(data);
+      console.log('lastpage:',data.lastpage);
       lastpage = data.lastpage;
       _.each(data.queryresult, function(n) {
         $scope.mediadatadetail.push(n);
       });
 
     });
+
   };
-  //
-  //   $scope.loadMore = function() {
-  //     // console.log('$scope.images.length:',$scope.images.length);
-  //     // var last = $scope.images.length;
-  //     // for (var i = 0; i < 3; i++) {
-  //     //   if ($scope.images.length < $scope.products.length) {
-  //     //     $scope.images.push($scope.products[last + i]);
-  //     //   }
-  //     // }
-  //     // console.log('images length:',$scope.images.length);
-  //     // console.log('product 21:',$scope.products[21]);
-  //
-  //     if (lastpage > $scope.objfilter.pagenumber) {
-  //       ++$scope.objfilter.pagenumber;
-  //       $scope.getMediayear();
-  //     }
-  //   };
+
+  console.log('lastpage: ', lastpage);
+  $scope.loadMore = function() {
+  if (lastpage > $scope.objfilter.pageno) {
+     console.log('lastpageeee: ', lastpage)
+    ++$scope.objfilter.pageno;
+    $scope.pages.push($scope.objfilter.pageno);
+    console.log('pages:', $scope.pages);
+    $scope.getMediayear();
+  }
+  };
+
     $scope.getMediayear();
 
 
@@ -2738,7 +2735,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
       $scope.tourInside.featuredvideos.unshift(video);
     }
   })
-  .controller('headerctrl', function($scope, TemplateService) {
+  .controller('headerctrl', function($scope, TemplateService, NavigationService) {
     $scope.template = TemplateService;
     var get = false;
     $scope.getslide = "menu-out";
@@ -2757,4 +2754,8 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $scope.buttonpos = "buttonpos";
       }
     }
+    NavigationService.getMediacorner(function(data) {
+      console.log("dsfasdfasdf");
+      $scope.mediadata = data.data.years[0];
+      });
   });
