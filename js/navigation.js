@@ -135,6 +135,9 @@ var navigationservice = angular.module('navigationservice', [])
     getMatch: function(callback) {
       $http.get(apiUrl + 'getMatch').success(callback);
     },
+    getDiaries: function(callback) {
+      $http.get(apiUrl + 'getDiary').success(callback);
+    },
     gettourform:function(mydata,callback){
       $http({
         url: apiUrl + 'getInTouch',
@@ -156,6 +159,12 @@ var navigationservice = angular.module('navigationservice', [])
     getMediaByYear: function(obj, callback) {
       $http.get(apiUrl + 'getMediaCornerDetails?year=' + obj.year + "&pageno=" + obj.pageno).success(callback);
 },
+    getDiaryInsideByPage: function(page, callback) {
+      $http.get(apiUrl + 'getDiaryInside?page=' + page).success(callback);
+},
+//     getDiaryInsideByPagePlus: function(page, callback) {
+//       $http.get(apiUrl + 'getDiaryInside?page=' + page).success(callback);
+// },
 //     getMediaByYear: function(obj, callback) {
 //       $http.get(apiUrl + 'getMediaCornerDetails?year=' + obj.year).success(callback);
 // },
