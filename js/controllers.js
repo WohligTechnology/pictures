@@ -1128,145 +1128,183 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 })
 
 .controller('Jppseason1Ctrl', function($scope, TemplateService, NavigationService, $timeout, $stateParams) {
-        //Used to name the .html file
-        $scope.template = TemplateService.changecontent("jppseason");
-        $scope.menutitle = NavigationService.makeactive("Sports");
-        TemplateService.title = $scope.menutitle;
-        $scope.navigation = NavigationService.getnav();
-        $scope.wallpaper = [{
-            img: "img/jpp/w1.jpg",
-        }, {
-            img: "img/jpp/w2.jpg",
-        }, {
-            img: "img/jpp/w3.jpg",
-        }, {
-            img: "img/jpp/w4.jpg",
-        }, {
-            img: "img/jpp/w5.jpg",
-        }, {
-            img: "img/jpp/w6.jpg",
-        }, {
-            img: "img/jpp/w1.jpg",
-        }, {
-            img: "img/jpp/w2.jpg",
-        }, {
-            img: "img/jpp/w3.jpg",
-        }, {
-            img: "img/jpp/w4.jpg",
-        }, {
-            img: "img/jpp/w5.jpg",
-        }, {
-            img: "img/jpp/w6.jpg",
-        }];
-        $scope.weddings = [{
-            img: "img/jppseason1/1.png",
-            date: "12 January 2016",
-            desc: "Lorem Ipsum is simply dummy text of the printing industry"
-        }, {
-            img: "img/jppseason1/2.png",
-            date: "12 January 2016",
-            desc: "Lorem Ipsum is simply dummy text of the printing industry"
-        }, {
-            img: "img/jppseason1/3.png",
-            date: "12 January 2016",
-            desc: "Lorem Ipsum is simply dummy text of the printing industry"
-        }];
-        $scope.videos = [{
-            img: "img/blog/video/v.png",
-        }, {
-            img: "img/blog/video/v.png",
-        }, {
-            img: "img/blog/video/v.png",
-        }, {
-            img: "img/blog/video/v.png",
-        }, {
-            img: "img/blog/video/v.png",
-        }, {
-            img: "img/blog/video/v.png",
-        }];
-        $scope.wallpaper = _.chunk($scope.wallpaper, 6);
-        for (var i = 0; i < $scope.wallpaper.length; i++) {
-            $scope.wallpaper[i] = _.chunk($scope.wallpaper[i], 3);
-        }
+    //Used to name the .html file
+    $scope.template = TemplateService.changecontent("jppseason");
+    $scope.menutitle = NavigationService.makeactive("Sports");
+    TemplateService.title = $scope.menutitle;
+    $scope.navigation = NavigationService.getnav();
+    $scope.wallpaper = [{
+        img: "img/jpp/w1.jpg",
+    }, {
+        img: "img/jpp/w2.jpg",
+    }, {
+        img: "img/jpp/w3.jpg",
+    }, {
+        img: "img/jpp/w4.jpg",
+    }, {
+        img: "img/jpp/w5.jpg",
+    }, {
+        img: "img/jpp/w6.jpg",
+    }, {
+        img: "img/jpp/w1.jpg",
+    }, {
+        img: "img/jpp/w2.jpg",
+    }, {
+        img: "img/jpp/w3.jpg",
+    }, {
+        img: "img/jpp/w4.jpg",
+    }, {
+        img: "img/jpp/w5.jpg",
+    }, {
+        img: "img/jpp/w6.jpg",
+    }];
+    $scope.weddings = [{
+        img: "img/jppseason1/1.png",
+        date: "12 January 2016",
+        desc: "Lorem Ipsum is simply dummy text of the printing industry"
+    }, {
+        img: "img/jppseason1/2.png",
+        date: "12 January 2016",
+        desc: "Lorem Ipsum is simply dummy text of the printing industry"
+    }, {
+        img: "img/jppseason1/3.png",
+        date: "12 January 2016",
+        desc: "Lorem Ipsum is simply dummy text of the printing industry"
+    }];
+    $scope.videos = [{
+        img: "img/blog/video/v.png",
+    }, {
+        img: "img/blog/video/v.png",
+    }, {
+        img: "img/blog/video/v.png",
+    }, {
+        img: "img/blog/video/v.png",
+    }, {
+        img: "img/blog/video/v.png",
+    }, {
+        img: "img/blog/video/v.png",
+    }];
+    $scope.wallpaper = _.chunk($scope.wallpaper, 6);
+    for (var i = 0; i < $scope.wallpaper.length; i++) {
+        $scope.wallpaper[i] = _.chunk($scope.wallpaper[i], 3);
+    }
 
-        $scope.seasonData = "";
-        NavigationService.getSeasonData($stateParams.id, function(data) {
-            $scope.seasonData = data.data;
-            $scope.seasonData.imagegallery = _.chunk($scope.seasonData.imagegallery, 6);
-            for (var i = 0; i < $scope.seasonData.imagegallery.length; i++) {
-                $scope.seasonData.imagegallery[i] = _.chunk($scope.seasonData.imagegallery[i], 3);
-            }
-            console.log('$scope.seasonData', $scope.seasonData);
-        })
-        $scope.makeActive = function(video, index) {
-            $scope.seasonData.featuredvideos.splice(index, 1);
-            $scope.seasonData.featuredvideos.unshift(video);
+    $scope.seasonData = "";
+    NavigationService.getSeasonData($stateParams.id, function(data) {
+        $scope.seasonData = data.data;
+        $scope.seasonData.imagegallery = _.chunk($scope.seasonData.imagegallery, 6);
+        for (var i = 0; i < $scope.seasonData.imagegallery.length; i++) {
+            $scope.seasonData.imagegallery[i] = _.chunk($scope.seasonData.imagegallery[i], 3);
         }
-
+        console.log('$scope.seasonData', $scope.seasonData);
     })
-    .controller('DiariesCtrl', function($scope, TemplateService, NavigationService, $timeout, $stateParams, $state) {
-        //Used to name the .html file
-        $scope.template = TemplateService.changecontent("diaries");
-        $scope.menutitle = NavigationService.makeactive("Diaries");
-        TemplateService.title = $scope.menutitle;
-        $scope.navigation = NavigationService.getnav();
-        $scope.diariesfull2 = {
-            img: "img/dairies/events.png",
-            date: "12 January 2016",
-            desc: "Lorem Ipsum is simply dummy text of the printing industry simply dummy text of the printing industry printing industry simply dummy text of the printing industry.",
-            name: "Events"
-        };
-        $scope.diariesfull1 = {
-            img: "img/dairies/wedding.png",
-            date: "12 January 2016",
-            desc: "Lorem Ipsum is simply dummy text of the printing industry simply dummy text of the printing industry printing industry simply dummy text of the printing industry",
-            name: "WEDDINGS"
-        };
-        $scope.diaries = [{
-            img: "img/movies/movie_diaries/diary1.png",
-            date: "12 January 2016",
-            desc: "Lorem Ipsum is simply dummy text of the printing industry",
-            name: "Movies"
-        }, {
-            img: "img/jppseason1/2.png",
-            date: "12 January 2016",
-            desc: "Lorem Ipsum is simply dummy text of the printing industry",
-            name: "Sports"
-        }];
-        NavigationService.getDiaries(function(data) {
-                $scope.diaryData = data.data;
-                console.log('$scope.diaryData', $scope.diaryData);
-            })
-            // NavigationService.getDiaryInsideByPage($stateParams.page,function(data){
-            //   $scope.pageno=$stateParams.page;
-            //   console.log('$scope.pageno',$scope.pageno);
-            //   $scope.DiaryInsideData=data.data;
-            //   console.log('$scope.DiaryInsideData',$scope.DiaryInsideData);
-        $scope.pageno = 1;
-        $scope.next = function() {
-            console.log('$scope.pageno', $scope.pageno);
-            var i = $scope.pageno++;
-            // $state.go('diaries', {page: i});
+    $scope.makeActive = function(video, index) {
+        $scope.seasonData.featuredvideos.splice(index, 1);
+        $scope.seasonData.featuredvideos.unshift(video);
+    }
+
+})
+
+.controller('DiariesCtrl', function($scope, TemplateService, NavigationService, $timeout, $stateParams, $state) {
+    //Used to name the .html file
+    $scope.template = TemplateService.changecontent("diaries");
+    $scope.menutitle = NavigationService.makeactive("Diaries");
+    TemplateService.title = $scope.menutitle;
+    $scope.navigation = NavigationService.getnav();
+    $scope.diariesfull2 = {
+        img: "img/dairies/events.png",
+        date: "12 January 2016",
+        desc: "Lorem Ipsum is simply dummy text of the printing industry simply dummy text of the printing industry printing industry simply dummy text of the printing industry.",
+        name: "Events"
+    };
+    $scope.diariesfull1 = {
+        img: "img/dairies/wedding.png",
+        date: "12 January 2016",
+        desc: "Lorem Ipsum is simply dummy text of the printing industry simply dummy text of the printing industry printing industry simply dummy text of the printing industry",
+        name: "WEDDINGS"
+    };
+    $scope.diaries = [{
+        img: "img/movies/movie_diaries/diary1.png",
+        date: "12 January 2016",
+        desc: "Lorem Ipsum is simply dummy text of the printing industry",
+        name: "Movies"
+    }, {
+        img: "img/jppseason1/2.png",
+        date: "12 January 2016",
+        desc: "Lorem Ipsum is simply dummy text of the printing industry",
+        name: "Sports"
+    }];
+    NavigationService.getDiaries(function(data) {
+            $scope.diaryData = data.data;
+            console.log('$scope.diaryData', $scope.diaryData);
+        })
+        // NavigationService.getDiaryInsideByPage($stateParams.page,function(data){
+        //   $scope.pageno=$stateParams.page;
+        //   console.log('$scope.pageno',$scope.pageno);
+        //   $scope.DiaryInsideData=data.data;
+        //   console.log('$scope.DiaryInsideData',$scope.DiaryInsideData);
+
+    $scope.pageno = 1;
+
+    $scope.next = function() {
+        console.log('$scope.pageno', $scope.pageno);
+        var i = $scope.pageno++;
+        // $state.go('diaries', {page: i});
+        NavigationService.getDiaryInsideByPage(i, function(data) {
+            $scope.DiaryInsideData = data.data;
+            $scope.currentpg = i;
+        })
+    }
+
+    //
+    $scope.previous = function() {
+        console.log('$scope.currentpg of previous:', $scope.currentpg);
+        if ($scope.currentpg && $scope.currentpg >= 1) {
+            var i = --$scope.currentpg;
             NavigationService.getDiaryInsideByPage(i, function(data) {
                 $scope.DiaryInsideData = data.data;
-                $scope.currentpg = i;
+                console.log('iiiiiiiiiiiiiii', i);
             })
         }
-        //
-        $scope.previous = function() {
-            console.log('$scope.currentpg:', $scope.currentpg);
-            if ($scope.currentpg && $scope.currentpg >= 1) {
-                var i = --$scope.currentpg;
-                NavigationService.getDiaryInsideByPage(i, function(data) {
-                    $scope.DiaryInsideData = data.data;
-                    console.log('iiiiiiiiiiiiiii', i);
-                })
-            }
-        }
+    }
+    if (!$stateParams.category) {
         $scope.next();
-        // })
-    })
-    .controller('SportCtrl', function($scope, TemplateService, NavigationService, $timeout, $state) {
+    }
+    // })
+
+    $scope.filterdata = false;
+    if ($stateParams.category) {
+        $scope.filterObj = {};
+        $scope.filterObj.pageno = 1;
+        $scope.filterObj.maxrow = 4;
+        $scope.filterObj.category = $stateParams.category;
+        $scope.filterObj.year = '';
+        $scope.filterObj.month = '';
+        getFilterResults();
+    }
+
+    function getFilterResults() {
+        NavigationService.getFilterDiaries($scope.filterObj, function(data) {
+            $scope.filterdata = true;
+            $scope.filterDiaries = data;
+            console.log($scope.filterDiaries);
+        })
+    }
+
+    $scope.filteByYear = function(date) {
+        $scope.filterObj.year = date.year;
+        $scope.filterObj.month = date.month;
+        getFilterResults();
+    }
+
+    $scope.changePage = function(val) {
+        $scope.filterObj.pageno = $scope.filterObj.pageno + val;
+        getFilterResults();
+    }
+
+})
+
+.controller('SportCtrl', function($scope, TemplateService, NavigationService, $timeout, $state) {
         //Used to name the .html file
         $scope.template = TemplateService.changecontent("sport");
         $scope.menutitle = NavigationService.makeactive("Sports");
@@ -1638,53 +1676,178 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         TemplateService.title = $scope.menutitle;
         $scope.navigation = NavigationService.getnav();
     })
-    .controller('BlogTextCtrl', function($scope, TemplateService, NavigationService, $timeout) {
-        //Used to name the .html file
-        $scope.template = TemplateService.changecontent("blogtext");
-        $scope.menutitle = NavigationService.makeactive("Blog-Text");
-        TemplateService.title = $scope.menutitle;
-        $scope.navigation = NavigationService.getnav();
-        $scope.blogtext = [{
-            img: "img/blog/text/1.png",
-            date: "12 January 2016",
-            desc: "Lorem Ipsum is simply dummy text of the printing industry"
-        }, {
-            img: "img/blog/text/1.png",
-            date: "12 January 2016",
-            desc: "Lorem Ipsum is simply dummy text of the printing industry"
-        }, {
-            img: "img/blog/text/1.png",
-            date: "12 January 2016",
-            desc: "Lorem Ipsum is simply dummy text of the printing industry"
-        }];
-        $scope.bgtext = [{
-            img: "img/blog/text/t1.png",
-            desc: "Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro."
-        }, {
-            img: "img/blog/text/t2.png",
-            desc: "Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet."
-        }, {
-            img: "img/blog/text/t3.png",
-            desc: "Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro."
-        }];
-        $scope.commentlist = [{
-            img: "img/blog/text/p2.png",
-            name: "Sohan Honekari",
-            time: "27 minutes",
-            desc: "Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro."
-        }, {
-            img: "img/blog/text/p2.png",
-            name: "Raj Shah",
-            time: "2 hours",
-            desc: "Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet."
-        }, {
-            img: "img/blog/text/p2.png",
-            name: "pooja thakkare",
-            time: "20 seconds",
-            desc: "Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro."
-        }];
+
+.controller('BlogTextCtrl', function($scope, TemplateService, NavigationService, $timeout, $stateParams, $state) {
+    //Used to name the .html file
+    $scope.template = TemplateService.changecontent("blogtext");
+    $scope.menutitle = NavigationService.makeactive("Blog-Text");
+    TemplateService.title = $scope.menutitle;
+    $scope.navigation = NavigationService.getnav();
+    $scope.blogtext = [{
+        img: "img/blog/text/1.png",
+        date: "12 January 2016",
+        desc: "Lorem Ipsum is simply dummy text of the printing industry"
+    }, {
+        img: "img/blog/text/1.png",
+        date: "12 January 2016",
+        desc: "Lorem Ipsum is simply dummy text of the printing industry"
+    }, {
+        img: "img/blog/text/1.png",
+        date: "12 January 2016",
+        desc: "Lorem Ipsum is simply dummy text of the printing industry"
+    }];
+    $scope.bgtext = [{
+        img: "img/blog/text/t1.png",
+        desc: "Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro."
+    }, {
+        img: "img/blog/text/t2.png",
+        desc: "Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet."
+    }, {
+        img: "img/blog/text/t3.png",
+        desc: "Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro."
+    }];
+    $scope.commentlist = [{
+        img: "img/blog/text/p2.png",
+        name: "Sohan Honekari",
+        time: "27 minutes",
+        desc: "Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro."
+    }, {
+        img: "img/blog/text/p2.png",
+        name: "Raj Shah",
+        time: "2 hours",
+        desc: "Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet."
+    }, {
+        img: "img/blog/text/p2.png",
+        name: "pooja thakkare",
+        time: "20 seconds",
+        desc: "Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro."
+    }];
+
+    NavigationService.getblogText($stateParams.id, function(data) {
+        $scope.blogTextData = data.data;
+        $scope.mydate = new Date(data.data.description.timestamp);
+        console.log($scope.mydate);
+        console.log('$scope.blogTextData', $scope.blogTextData);
     })
-    .controller('BlogImageCtrl', function($scope, TemplateService, NavigationService, $timeout) {
+    NavigationService.getblogComment(function(data) {
+        console.log('hereeeeeeee');
+        $scope.blogCommentData = data;
+        console.log('$scope.blogCommentData', $scope.blogCommentData);
+    })
+
+    // --------------releted article read more-----------------
+    $scope.reletedArticleData = false;
+    $scope.readMore = function(article) {
+        console.log(article);
+        if (article.type == "1") {
+            $state.go("blogtext", {
+                "id": article.id
+            });
+        } else if (article.type == "2") {
+            $state.go("blogimage", {
+                "id": article.id
+            });
+        } else if (article.type == "3") {
+            $state.go("blogvideo", {
+                "id": article.id
+            });
+        }
+        // NavigationService.getblogText(article.id, function(data) {
+        //     $scope.reletedArticleData = true;
+        //     $scope.reletedArticle = data.data.relatedarticles;
+        //     console.log('$scope.reletedArticle', $scope.reletedArticle);
+        // })
+    }
+
+    // ---------------------end of releted article read more-----------
+
+
+
+
+
+
+
+
+
+    NavigationService.getDiaries(function(data) {
+        $scope.diaryData = data.data;
+        console.log('$scope.diaryData', $scope.diaryData);
+    })
+    $scope.pageno = 1;
+
+    $scope.next = function() {
+        console.log('$scope.pageno', $scope.pageno);
+        var i = $scope.pageno++;
+        // $state.go('diaries', {page: i});
+        NavigationService.getDiaryInsideByPage(i, function(data) {
+            $scope.DiaryInsideData = data.data;
+            $scope.currentpg = i;
+        })
+    }
+
+    //
+    $scope.previous = function() {
+        console.log('$scope.currentpg of previous:', $scope.currentpg);
+        if ($scope.currentpg && $scope.currentpg >= 1) {
+            var i = --$scope.currentpg;
+            NavigationService.getDiaryInsideByPage(i, function(data) {
+                $scope.DiaryInsideData = data.data;
+                console.log('iiiiiiiiiiiiiii', i);
+            })
+        }
+    }
+    if (!$stateParams.category) {
+        $scope.next();
+    }
+    // })
+
+    $scope.filterdata = false;
+    if ($stateParams.category) {
+        $scope.filterObj = {};
+        $scope.filterObj.pageno = 1;
+        $scope.filterObj.maxrow = 4;
+        $scope.filterObj.category = $stateParams.category;
+        $scope.filterObj.year = '';
+        $scope.filterObj.month = '';
+        getFilterResults();
+    }
+
+    function getFilterResults() {
+        NavigationService.getFilterDiaries($scope.filterObj, function(data) {
+            $scope.filterdata = true;
+            $scope.filterDiaries = data;
+            console.log($scope.filterDiaries);
+        })
+    }
+
+    $scope.filteByYear = function(date) {
+        $scope.filterObj.year = date.year;
+        $scope.filterObj.month = date.month;
+        getFilterResults();
+    }
+
+    $scope.changePage = function(val) {
+        $scope.filterObj.pageno = $scope.filterObj.pageno + val;
+        getFilterResults();
+    }
+
+    $scope.socialLogin = function(which) {
+        var ref = window.open(hauth + which);
+        var authinterval = setInterval(function() {
+            NavigationService.getblogComment(function(data) {
+                console.log(data);
+                if (data.value != false) {
+                    ref.close();
+                    clearInterval(authinterval);
+                }
+            })
+        }, 1000);
+    }
+
+})
+
+.controller('BlogImageCtrl', function($scope, TemplateService, NavigationService, $timeout) {
+
         //Used to name the .html file
         $scope.template = TemplateService.changecontent("blogimage");
         $scope.menutitle = NavigationService.makeactive("Blog-Image");

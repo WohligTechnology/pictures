@@ -6,7 +6,7 @@ var firstapp = angular.module('firstapp', [
     'navigationservice'
 ]);
 
-firstapp.config(function($stateProvider, $urlRouterProvider, $httpProvider, $locationProvider,cfpLoadingBarProvider) {
+firstapp.config(function($stateProvider, $urlRouterProvider, $httpProvider, $locationProvider, cfpLoadingBarProvider) {
     // for http request with session
     cfpLoadingBarProvider.includeSpinner = false;
     cfpLoadingBarProvider.includeBar = true;
@@ -88,7 +88,7 @@ firstapp.config(function($stateProvider, $urlRouterProvider, $httpProvider, $loc
             controller: 'SportCtrl'
         })
         .state('diaries', {
-            url: "/diaries",
+            url: "/diaries/:category",
             templateUrl: "views/template.html",
             controller: 'DiariesCtrl'
         })
@@ -103,17 +103,17 @@ firstapp.config(function($stateProvider, $urlRouterProvider, $httpProvider, $loc
             controller: 'ContactCtrl'
         })
         .state('blogtext', {
-            url: "/blogtext",
+            url: "/blogtext/:id",
             templateUrl: "views/template.html",
             controller: 'BlogTextCtrl'
         })
         .state('blogimage', {
-            url: "/blogimage",
+            url: "/blogimage/:id",
             templateUrl: "views/template.html",
             controller: 'BlogImageCtrl'
         })
         .state('blogvideo', {
-            url: "/blogvideo",
+            url: "/blogvideo/:id",
             templateUrl: "views/template.html",
             controller: 'BlogVideoCtrl'
         })
@@ -234,21 +234,21 @@ firstapp.directive('fancyboxBox', function($document) {
 
 
 firstapp.filter('uploadpath', function() {
-  return function(input, width, height, style) {
-    var other = "";
-    if (width && width !== "") {
-      other += "&width=" + width;
-    }
-    if (height && height !== "") {
-      other += "&height=" + height;
-    }
-    if (style && style !== "") {
-      other += "&style=" + style;
-    }
-    if (input) {
-      return imgpath + input + other;
-    }
-  };
+    return function(input, width, height, style) {
+        var other = "";
+        if (width && width !== "") {
+            other += "&width=" + width;
+        }
+        if (height && height !== "") {
+            other += "&height=" + height;
+        }
+        if (style && style !== "") {
+            other += "&style=" + style;
+        }
+        if (input) {
+            return imgpath + input + other;
+        }
+    };
 });
 
 firstapp.filter('youtubethumb', function() {
@@ -307,110 +307,179 @@ firstapp.filter('youtubethumb', function() {
 
 
 firstapp.directive('imageonload', function() {
-  return {
-    restrict: 'A',
-    link: function(scope, element, attrs) {
-      console.log("Loading should start now", attrs.imageonload);
-      scope.attr = attrs;
-      scope.$watch(
-        "attr.change",
-        function handleFooChange(newValue, oldValue) {
-          setTimeout(function() {
-            scope.$apply(attrs.imageonload);
-          }, 500);
+    return {
+        restrict: 'A',
+        link: function(scope, element, attrs) {
+            console.log("Loading should start now", attrs.imageonload);
+            scope.attr = attrs;
+            scope.$watch(
+                "attr.change",
+                function handleFooChange(newValue, oldValue) {
+                    setTimeout(function() {
+                        scope.$apply(attrs.imageonload);
+                    }, 500);
+
+                }
+            );
+
 
         }
-      );
-
-
-    }
-  };
+    };
 });
 
 
 firstapp.directive('uploadImage', function($http) {
-  return {
-    templateUrl: 'views/directive/uploadFile.html',
-    scope: {
-      model: '=ngModel',
-      callback: "=ngCallback"
-    },
-    link: function($scope, element, attrs) {
-      $scope.isMultiple = false;
-      $scope.inObject = false;
-      if (attrs.multiple || attrs.multiple === "") {
-        $scope.isMultiple = true;
-        $("#inputImage").attr("multiple", "ADD");
-      }
-      if (attrs.noView || attrs.noView === "") {
-        $scope.noShow = true;
-      }
-      if (attrs.inobj || attrs.inobj === "") {
-        $scope.inObject = true;
-      }
-      $scope.clearOld = function() {
-        $scope.model = [];
-      };
-      $scope.upload = function(image) {
-        console.log(image);
-        console.log("File");
-        var Template = this;
-        image.hide = true;
-        var formData = new FormData();
-        formData.append('file', image.file, image.name);
-        $http.post(uploadurl, formData, {
-          headers: {
-            'Content-Type': undefined
-          },
-          transformRequest: angular.identity
-        }).success(function(data) {
-          if ($scope.callback) {
-            $scope.callback(data);
-          } else {
-            if ($scope.isMultiple) {
-              if ($scope.inObject) {
-                $scope.model.push({
-                  "image": data.data[0]
-                });
-              } else {
-                $scope.model.push(data.data[0]);
-              }
-            } else {
-              $scope.model = data.data[0];
+    return {
+        templateUrl: 'views/directive/uploadFile.html',
+        scope: {
+            model: '=ngModel',
+            callback: "=ngCallback"
+        },
+        link: function($scope, element, attrs) {
+            $scope.isMultiple = false;
+            $scope.inObject = false;
+            if (attrs.multiple || attrs.multiple === "") {
+                $scope.isMultiple = true;
+                $("#inputImage").attr("multiple", "ADD");
             }
-          }
-        });
-      };
-    }
-  };
+            if (attrs.noView || attrs.noView === "") {
+                $scope.noShow = true;
+            }
+            if (attrs.inobj || attrs.inobj === "") {
+                $scope.inObject = true;
+            }
+            $scope.clearOld = function() {
+                $scope.model = [];
+            };
+            $scope.upload = function(image) {
+                console.log(image);
+                console.log("File");
+                var Template = this;
+                image.hide = true;
+                var formData = new FormData();
+                formData.append('file', image.file, image.name);
+                $http.post(uploadurl, formData, {
+                    headers: {
+                        'Content-Type': undefined
+                    },
+                    transformRequest: angular.identity
+                }).success(function(data) {
+                    if ($scope.callback) {
+                        $scope.callback(data);
+                    } else {
+                        if ($scope.isMultiple) {
+                            if ($scope.inObject) {
+                                $scope.model.push({
+                                    "image": data.data[0]
+                                });
+                            } else {
+                                $scope.model.push(data.data[0]);
+                            }
+                        } else {
+                            $scope.model = data.data[0];
+                        }
+                    }
+                });
+            };
+        }
+    };
 });
 
 firstapp.directive('img', function($compile, $parse) {
-  return {
-    restrict: 'E',
-    replace: false,
-    link: function($scope, element, attrs) {
-      var $element = $(element);
-      if (!attrs.noloading) {
-        $element.after("<img src='img/loading.gif' class='loading' />");
-        var $loading = $element.next(".loading");
-        $element.load(function() {
-          $loading.remove();
-          $(this).addClass("doneLoading");
-        });
-      } else {
-        $($element).addClass("doneLoading");
-      }
-    }
-  };
+    return {
+        restrict: 'E',
+        replace: false,
+        link: function($scope, element, attrs) {
+            var $element = $(element);
+            if (!attrs.noloading) {
+                $element.after("<img src='img/loading.gif' class='loading' />");
+                var $loading = $element.next(".loading");
+                $element.load(function() {
+                    $loading.remove();
+                    $(this).addClass("doneLoading");
+                });
+            } else {
+                $($element).addClass("doneLoading");
+            }
+        }
+    };
+});
+
+firstapp.filter('timeago', function() {
+    return function(input, p_allowFuture) {
+
+        var substitute = function(stringOrFunction, number, strings) {
+                var string = angular.isFunction(stringOrFunction) ? stringOrFunction(number, dateDifference) : stringOrFunction;
+                var value = (strings.numbers && strings.numbers[number]) || number;
+                return string.replace(/%d/i, value);
+            },
+            nowTime = (new Date()).getTime(),
+            date = (new Date(input)).getTime(),
+            //refreshMillis= 6e4, //A minute
+            allowFuture = p_allowFuture || false,
+            strings = {
+                prefixAgo: '',
+                prefixFromNow: '',
+                suffixAgo: "ago",
+                suffixFromNow: "from now",
+                seconds: "less than a minute",
+                minute: "about a minute",
+                minutes: "%d minutes",
+                hour: "about an hour",
+                hours: "about %d hours",
+                day: "a day",
+                days: "%d days",
+                month: "about a month",
+                months: "%d months",
+                year: "about a year",
+                years: "%d years"
+            },
+            dateDifference = nowTime - date,
+            words,
+            seconds = Math.abs(dateDifference) / 1000,
+            minutes = seconds / 60,
+            hours = minutes / 60,
+            days = hours / 24,
+            years = days / 365,
+            separator = strings.wordSeparator === undefined ? " " : strings.wordSeparator,
+
+
+            prefix = strings.prefixAgo,
+            suffix = strings.suffixAgo;
+
+        if (allowFuture) {
+            if (dateDifference < 0) {
+                prefix = strings.prefixFromNow;
+                suffix = strings.suffixFromNow;
+            }
+        }
+
+        words = seconds < 45 && substitute(strings.seconds, Math.round(seconds), strings) ||
+            seconds < 90 && substitute(strings.minute, 1, strings) ||
+            minutes < 45 && substitute(strings.minutes, Math.round(minutes), strings) ||
+            minutes < 90 && substitute(strings.hour, 1, strings) ||
+            hours < 24 && substitute(strings.hours, Math.round(hours), strings) ||
+            hours < 42 && substitute(strings.day, 1, strings) ||
+            days < 30 && substitute(strings.days, Math.round(days), strings) ||
+            days < 45 && substitute(strings.month, 1, strings) ||
+            days < 365 && substitute(strings.months, Math.round(days / 30), strings) ||
+            years < 1.5 && substitute(strings.year, 1, strings) ||
+            substitute(strings.years, Math.round(years), strings);
+        console.log(prefix + words + suffix + separator);
+        prefix.replace(/ /g, '')
+        words.replace(/ /g, '')
+        suffix.replace(/ /g, '')
+        return (prefix + ' ' + words + ' ' + suffix + ' ' + separator);
+
+    };
 });
 
 
 
 
 $(document).ready(function() {
-	$(".fancybox").fancybox({
-		openEffect	: 'none',
-		closeEffect	: 'none'
-	});
+    $(".fancybox").fancybox({
+        openEffect: 'none',
+        closeEffect: 'none'
+    });
 });
