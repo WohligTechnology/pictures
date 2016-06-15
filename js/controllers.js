@@ -1752,11 +1752,11 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
                 "id": article.id
             });
         }
-        // NavigationService.getblogText(article.id, function(data) {
-        //     $scope.reletedArticleData = true;
-        //     $scope.reletedArticle = data.data.relatedarticles;
-        //     console.log('$scope.reletedArticle', $scope.reletedArticle);
-        // })
+        NavigationService.getblogText(article.id, function(data) {
+            $scope.reletedArticleData = true;
+            $scope.reletedArticle = data.data.relatedarticles;
+            console.log('$scope.reletedArticle', $scope.reletedArticle);
+        })
     }
 
     // ---------------------end of releted article read more-----------
@@ -1846,7 +1846,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
 })
 
-.controller('BlogImageCtrl', function($scope, TemplateService, NavigationService, $timeout) {
+.controller('BlogImageCtrl', function($scope, TemplateService, NavigationService, $timeout, $stateParams, $state) {
 
         //Used to name the .html file
         $scope.template = TemplateService.changecontent("blogimage");
@@ -1904,8 +1904,57 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         }, {
             img: "img/blog/image/i1.png",
         }];
+
+        NavigationService.getblogText($stateParams.id, function(data) {
+            $scope.blogImageData = data.data;
+            $scope.mydate = new Date(data.data.description.timestamp);
+            console.log($scope.mydate);
+            console.log('$scope.blogTextData', $scope.blogTextData);
+        })
+        NavigationService.getblogComment(function(data) {
+            console.log('hereeeeeeee');
+            $scope.blogCommentData = data;
+            console.log('$scope.blogCommentData', $scope.blogCommentData);
+        })
+
+        // --------------releted article read more-----------------
+        $scope.reletedArticleData = false;
+        $scope.readMore = function(article) {
+            console.log(article);
+            if (article.type == "1") {
+                $state.go("blogtext", {
+                    "id": article.id
+                });
+            } else if (article.type == "2") {
+                $state.go("blogimage", {
+                    "id": article.id
+                });
+            } else if (article.type == "3") {
+                $state.go("blogvideo", {
+                    "id": article.id
+                });
+            }
+            NavigationService.getblogText(article.id, function(data) {
+                $scope.reletedArticleData = true;
+                $scope.reletedArticle = data.data.relatedarticles;
+                console.log('$scope.reletedArticle', $scope.reletedArticle);
+            })
+        }
+        // ---------------------end of releted article read more-----------
+
+        NavigationService.getDiaries(function(data) {
+            $scope.diaryData = data.data;
+            console.log('$scope.diaryData', $scope.diaryData);
+        })
+
+$scope.nextImage=function(){
+
+
+
+}
+
     })
-    .controller('BlogVideoCtrl', function($scope, TemplateService, NavigationService, $timeout) {
+    .controller('BlogVideoCtrl', function($scope, TemplateService, NavigationService, $timeout, $stateParams) {
         //Used to name the .html file
         $scope.template = TemplateService.changecontent("blogvideo");
         $scope.menutitle = NavigationService.makeactive("Blog-Video");
@@ -1962,6 +2011,54 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         }, {
             img: "img/blog/video/v1.png",
         }];
+        NavigationService.getblogText($stateParams.id, function(data) {
+            $scope.blogVideoData = data.data;
+            $scope.mydate = new Date(data.data.description.timestamp);
+            console.log($scope.mydate);
+            console.log('$scope.blogTextData', $scope.blogTextData);
+        })
+        NavigationService.getblogComment(function(data) {
+            console.log('hereeeeeeee');
+            $scope.blogCommentData = data;
+            console.log('$scope.blogCommentData', $scope.blogCommentData);
+        })
+
+        // --------------releted article read more-----------------
+        $scope.reletedArticleData = false;
+        $scope.readMore = function(article) {
+            console.log(article);
+            if (article.type == "1") {
+                $state.go("blogtext", {
+                    "id": article.id
+                });
+            } else if (article.type == "2") {
+                $state.go("blogimage", {
+                    "id": article.id
+                });
+            } else if (article.type == "3") {
+                $state.go("blogvideo", {
+                    "id": article.id
+                });
+            }
+            NavigationService.getblogText(article.id, function(data) {
+                $scope.reletedArticleData = true;
+                $scope.reletedArticle = data.data.relatedarticles;
+                console.log('$scope.reletedArticle', $scope.reletedArticle);
+            })
+        }
+        // ---------------------end of releted article read more-----------
+
+        NavigationService.getDiaries(function(data) {
+            $scope.diaryData = data.data;
+            console.log('$scope.diaryData', $scope.diaryData);
+        })
+
+$scope.nextImage=function(){
+
+
+
+}
+
     })
     .controller('CareerCtrl', function($scope, TemplateService, NavigationService, $timeout) {
         //Used to name the .html file

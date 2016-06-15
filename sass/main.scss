@@ -3279,9 +3279,12 @@ h4.title-movies {
         float: right;
         font-weight: 600;
     }
+    .imgvideo{
+      margin: 0 auto;
+      }
     .fa {
         position: absolute;
-        top: 15%;
+        top: 50%;
         font-size: 25px;
         border-radius: 50%;
         border: 5px solid #fff;
@@ -3289,8 +3292,8 @@ h4.title-movies {
         padding: 9px 13px 0;
         height: 50px;
         color: #fff;
-        left: 51%;
-        transform: translate(-15%,-51%);
+        left: 50%;
+        transform: translate(-50%,-50%);
     }
 }
 .videolink {
