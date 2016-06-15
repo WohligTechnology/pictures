@@ -36,11 +36,12 @@
                   <a href="" ng-click="socialLogin('Twitter')"><i class="fa fa-twitter"></i></a>
                   <a href="" ng-click="socialLogin('Google')"><i class="fa fa-envelope-o"></i></a>
                 </span>
+                <p ng-if="blogCommentData.value==false">Please login to comment</p>
                 </div>
-                <div class="bgcomment" ng-hide="blogCommentData.value==false">
+                <div class="bgcomment">
                     <div class="comment-box">
                         <p><span>{{blogTextData.comments.length}}<span> comments . </p>
-                    <div class="row">
+                          <div class="row" ng-hide="blogCommentData.value==false">
                       <form name="comment">
                       <div class="col-md-2">
 

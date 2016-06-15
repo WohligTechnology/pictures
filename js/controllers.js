@@ -1723,17 +1723,24 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
   //     desc: "Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro."
   // }];
 
+  $scope.getBlog=function () {
+
   NavigationService.getblogText($stateParams.id, function(data) {
     $scope.blogTextData = data.data;
     $scope.mydate = new Date(data.data.description.timestamp);
     console.log($scope.mydate);
     console.log('$scope.blogTextData', $scope.blogTextData);
   })
-  NavigationService.getblogComment(function(data) {
-    console.log('hereeeeeeee');
-    $scope.blogCommentData = data;
-    console.log('$scope.blogCommentData', $scope.blogCommentData);
-  })
+}
+
+    // body...
+    console.log("here");
+    NavigationService.getblogComment(function(data) {
+      console.log('hereeeeeeee');
+      $scope.blogCommentData = data;
+      console.log('$scope.blogCommentData', $scope.blogCommentData);
+    })
+  $scope.getBlog();
   $scope.blogCData={};
     $scope.commentSubmit = function(data) {
       $scope.blogCData.diaryarticle=  $scope.blogTextData.description.id;
@@ -1744,7 +1751,8 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
       NavigationService.getcommentSubmit($scope.blogCData, function(data) {
         $scope.blogCommentData = data;
         console.log('$scope.CommentDatasubmit', $scope.blogCData);
-        $state.reload();
+        // $state.reload();
+        $scope.getBlog();
       })
 
   }
