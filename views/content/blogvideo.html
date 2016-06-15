@@ -53,10 +53,10 @@
                 <div class="many-images">
                     <p class="text-uppercase">Other videos</p>
                     <div class="row">
-                      <div class="toomany" ng-repeat="data in blogVideoData.video track by $index" ng-if="$index>0" ng-click="makeActive(video,$index)">
+                      <div class="toomany" ng-repeat="data in blogVideoData.video track by $index" ng-if="$index>0" ng-click="makeActive(data,$index)">
                           <div class="col-md-3">
                             <div class="blog-image">
-                              <img ng-src="{{data.url | youtubethumb:false}}" alt="No Images" class="img-responsive" />
+                              <img ng-src="{{data.url | youtubethumb:false}}" alt="No Images" class="img-responsive"/>
                             </div>
                             <a href=""><i class="fa fa-play"></i></a>
                           </div>

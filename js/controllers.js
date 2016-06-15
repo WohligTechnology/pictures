@@ -1838,6 +1838,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
                 console.log(data);
                 if (data.value != false) {
                     ref.close();
+                    $state.reload();
                     clearInterval(authinterval);
                 }
             })
@@ -2015,7 +2016,7 @@ $scope.nextImage=function(){
             $scope.blogVideoData = data.data;
             $scope.mydate = new Date(data.data.description.timestamp);
             console.log($scope.mydate);
-            console.log('$scope.blogTextData', $scope.blogTextData);
+            console.log('$scope.blogTextData', $scope.blogVideoData.video);
         })
         NavigationService.getblogComment(function(data) {
             console.log('hereeeeeeee');
@@ -2053,11 +2054,20 @@ $scope.nextImage=function(){
             console.log('$scope.diaryData', $scope.diaryData);
         })
 
-$scope.nextImage=function(){
+        $scope.makeActive = function(video, index) {
+            $scope.blogVideoData.video.splice(index, 1);
+            $scope.blogVideoData.video.unshift(video);
+        }
 
-
-
-}
+// $scope.pushimage=function(index){
+//   console.log('index',index);
+//   NavigationService.getblogText($stateParams.id, function(data) {
+//       $scope.blogVideoData = data.data.video;
+//       console.log('$scope.blogVideoDatakkkkkkkkkkkk',$scope.blogVideoData);
+//       $scope.blogVideoData.splice(0, 1,index);
+//       console.log('$scope.blogVideoDataafterrrrrrrrrr',$scope.blogVideoData);
+//         })
+// }
 
     })
     .controller('CareerCtrl', function($scope, TemplateService, NavigationService, $timeout) {
