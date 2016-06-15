@@ -39,17 +39,22 @@
                 </div>
                 <div class="bgcomment" ng-hide="blogCommentData.value==false">
                     <div class="comment-box">
-                        <p>comments . <span>{{blogTextData.comments.length}}<span></p>
+                        <p><span>{{blogTextData.comments.length}}<span> comments . </p>
                     <div class="row">
                       <form name="comment">
                       <div class="col-md-2">
+
                         <div class="profilephoto">
                           <img style="height:75px" ng-src="{{blogCommentData.image}}" alt="No Profile Photo Found." class="img-responsive">
                         </div>
                       </div>
                       <div class="col-md-10">
-                        <textarea name="name" class="form-control"></textarea>
+                          <textarea name="name" ng-model="blogCommentData.comment"  class="form-control" required></textarea>
                       </div>
+                      <div class="col-md-12">
+                      <div class="submit-btn btn-all text-right mt15">
+                              <button class="btn btn-danger" type="button" name="button" ng-class="{'disabled' : !comment.$valid }" ng-click="commentSubmit(blogCommentData)" style="">submit</button>
+                           </div></div>
                     </form>
                     </div>
                     <hr>

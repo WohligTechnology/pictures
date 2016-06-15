@@ -142,6 +142,14 @@ var navigationservice = angular.module('navigationservice', [])
         getblogComment: function(callback) {
             $http.get("http://gsebackend.com/gsebackend/index.php/json/" + 'authenticate').success(callback);
         },
+        getcommentSubmit: function(mydata, callback) {
+          $http({
+              url: apiUrl + 'commentSubmit',
+              method: 'POST',
+              withCredentials: true,
+              data: mydata
+          }).success(callback);
+        },
         getblogText: function(id, callback) {
             $http.get(apiUrl + 'getDiaryInsideDetail?id=' + id).success(callback);
         },
