@@ -18,9 +18,9 @@
                     <h3 class="text-uppercase">{{blogImageData.description.name}}</h3>
                     <p class="date-time">{{mydate | date : " d'th' MMMM y '|' h:mm a"}}</p>
                 </div>
-                <div class="nimage" ng-repeat="data in blogImageData.image | limitTo:1">
+                <div class="nimage">
                     <div class="videolink">
-                        <img src="{{data.image | uploadpath}}" alt="No Image Found." class="img-responsive">
+                        <img ng-src="{{bigImage.image | uploadpath}}" alt="No Image Found." class="img-responsive">
                     </div>
                     <div class="row">
                         <div class="col-md-10" ng-bind-html="data.content">
@@ -28,15 +28,15 @@
                             Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p> -->
                         </div>
                         <div class="col-md-2">
-                            <span> 2 of {{blogImageData.image.length}}</span>
+                            <span> {{activeImage+1}} of {{blogImageData.image.length}}</span>
                         </div>
                     </div>
                 </div>
                 <div class="btn-alls mr12">
-                    <button class="btn btn-danger btn-outlines">
+                    <button class="btn btn-danger btn-outlines" ng-click="previousImage()" ng-disabled="activeImage==0">
                         Previous
                     </button>
-                    <button class="btn btn-danger btn-outlines pull-right">
+                    <button class="btn btn-danger btn-outlines pull-right" ng-click="nextImage()" ng-disabled="bigImage.id==lastrecord.id">
                         Next
                     </button>
                 </div>
@@ -55,23 +55,30 @@
                 <div class="share">
                     <h4 class="text-uppercase">share it on</h4>
                     <span class="social-share">
-                    <a href=""><i class="fa fa-facebook"></i></a>
-                    <a href=""><i class="fa fa-twitter"></i></a>
-                    <a href=""><i class="fa fa-envelope-o"></i></a>
+                    <a href="" ng-click="socialLogin('Facebook')"><i class="fa fa-facebook"></i></a>
+                    <a href="" ng-click="socialLogin('Twitter')"><i class="fa fa-twitter"></i></a>
+                    <a href="" ng-click="socialLogin('Google')"><i class="fa fa-envelope-o"></i></a>
                   </span>
+                  <p ng-if="blogCommentData.value==false">Please login to comment</p>
                 </div>
                 <div class="bgcomment">
                     <div class="comment-box">
-                        <p>comments . <span>{{blogImageData.comments.length}}<span></p>
-                      <div class="row">
+                        <p> <span>{{blogImageData.comments.length}} <span> comments .</p>
+                      <div class="row" ng-hide="blogCommentData.value==false">
+                        <form name="comment">
                         <div class="col-md-2">
                           <div class="profilephoto">
-                            <img src="img/blog/text/p1.png" alt="No Profile Photo Found." class="img-responsive">
+                            <img ng-src="{{blogCommentData.image}}" alt="No Profile Photo Found." class="img-responsive">
                           </div>
                         </div>
                         <div class="col-md-10">
-                          <textarea name="name" class="form-control"></textarea>
+                          <textarea name="name" ng-model="blogCommentData.comment" class="form-control" required></textarea>
                         </div>
+                        <div class="col-md-12">
+                        <div class="submit-btn btn-all text-right mt15">
+                                <button class="btn btn-danger" type="button" name="button" ng-class="{'disabled' : !comment.$valid }" ng-click="commentSubmit(blogCommentData)" style="">submit</button>
+                             </div></div>
+                      </form>
                       </div>
                       <hr>
                     </div>
@@ -79,7 +86,7 @@
                         <div class="row">
                           <div class="col-md-2">
                             <div class="profilephoto">
-                              <img ng-src="{{data.img}}" alt="" class="img-responsive">
+                              <img ng-src="{{data.image}}" alt="" class="img-responsive">
                             </div>
                           </div>
                           <div class="col-md-10">
@@ -150,7 +157,7 @@
                 </div>
                 <div class="blog-desc">
                     <div class="wed-desc-inside">
-                        <p class="bold">{{data.desc}}</p>
+                        <p class="bold" ng-bind-html="data.content"></p>
                     </div>
                     <div class="wed-date">
                         <span>{{data.date}}</span>
@@ -169,7 +176,7 @@
 
 
 
-
+<!--
 <section class="bg-blog" ng-if="reletedArticleData">
     <div class="container">
         <div class="row">
@@ -184,8 +191,7 @@
                     </div>
                     <div class="row">
                         <div class="col-md-10" ng-bind-html="data.content">
-                            <!-- <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                            Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p> -->
+
                         </div>
                         <div class="col-md-2">
                             <span> 2 of 10</span>
@@ -262,36 +268,11 @@
             </div>
             <ul class="list-unstyled">
                 <li><a href="" class="uppercase" ng-repeat="cat in diaryData.category" ui-sref="diaries({category:cat.id})">{{cat.name}}</a></li>
-                <!-- <li><a href="" class="uppercase">WEDDINGS</a></li>
-                <li><a href="" class="uppercase">SPORTS</a></li>
-                <li><a href="" class="uppercase">EVENTS</a></li>
-                <li><a href="" class="uppercase">TALENT</a></li>
-                <li><a href="" class="uppercase">MICE</a></li>
-                <li><a href="" class="uppercase">WORLD TOUR</a></li>
-                <li><a href="" class="uppercase">NEWS</a></li>
-                <li><a href="" class="uppercase">PHOTOS</a></li>
-                <li><a href="" class="uppercase">VIDEOS</a></li> -->
+
             </ul>
             <div class="border-blue bborders"></div>
         </div>
-        <!-- <div class="text-center wed-boxs border-red blog-side-diaries">
-            <div class="title-subtitle">
-                <h4 class="uppercase color-red bold letter-spacing">ARCHIVES</h4>
-            </div>
-            <ul class="list-unstyled">
-                <li><a href="" class="uppercase">March 2016</a></li>
-                <li><a href="" class="uppercase">February 2016</a></li>
-                <li><a href="" class="uppercase">January 2016</a></li>
-                <li><a href="" class="uppercase">DECEmber 2015</a></li>
-                <li><a href="" class="uppercase">november 2015</a></li>
-            </ul>
-            <div class="btn-all text-center mb15">
-                <button class="btn btn-danger btn-outline">
-                    View all
-                </button>
-            </div>
-            <div class="border-blue bborders"></div>
-        </div> -->
+
         <div class="text-center">
             <div class="article">
                 <div class="article-title">
@@ -325,4 +306,4 @@
     </div>
     </div>
     </div>
-</section>
+</section> -->

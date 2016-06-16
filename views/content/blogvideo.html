@@ -18,16 +18,16 @@
                     <h3 class="text-uppercase">{{blogVideoData.description.name}}</h3>
                     <p class="date-time">{{mydate | date : " d'th' MMMM y '|' h:mm a"}}</p>
                 </div>
-                <div class="nimage" ng-repeat="data in blogVideoData.video | limitTo:1">
-                  <div class="videolink">
-                      <img ng-src="{{data.url | youtubethumb:false}}" alt="" class="img-responsive imgvideo">
-                      <a fancybox-box href="http://www.youtube.com/embed/{{data.url | youtubethumb:true}}?autoplay=1&modestbranding=0&showinfo=0&rel=0&loop=1" rel="movies" data-fancybox-type="iframe">
-                          <i class="fa fa-play"></i>
-                      </a>
-                  </div>
+                <div class="nimage">
+                    <div class="videolink">
+                        <img ng-src="{{bigVideo.url | youtubethumb:false}}" alt="" class="img-responsive imgvideo">
+                        <a fancybox-box href="http://www.youtube.com/embed/{{data.url | youtubethumb:true}}?autoplay=1&modestbranding=0&showinfo=0&rel=0&loop=1" rel="movies" data-fancybox-type="iframe">
+                            <i class="fa fa-play"></i>
+                        </a>
+                    </div>
 
-                  <div class="row">
-                    <!-- <div class="videolink">
+                    <div class="row">
+                        <!-- <div class="videolink">
                         <img src="{{data.image | uploadpath}}" alt="No Image Found." class="img-responsive">
                     </div>
                     <a href=""><i class="fa fa-play"></i></a>
@@ -36,69 +36,76 @@
                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
                             Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
                       </div> -->
-                      <div class="col-md-10"></div>
-                      <div class="col-md-2">
-                          <span> 2 of {{blogVideoData.video.length}}</span>
-                      </div>
+                        <div class="col-md-10"></div>
+                        <div class="col-md-2">
+                            <span> {{activeVideo+1}} of {{blogVideoData.video.length}}</span>
+                        </div>
                     </div>
                 </div>
                 <div class="btn-alls mr12">
-                    <button class="btn btn-danger btn-outlines">
+                    <button class="btn btn-danger btn-outlines" ng-click="previousVideo()" ng-disabled="activeVideo==0">
                         Previous
                     </button>
-                    <button class="btn btn-danger btn-outlines pull-right">
+                    <button class="btn btn-danger btn-outlines pull-right" ng-click="nextVideo()" ng-disabled="bigVideo.id==lastrecord.id">
                         Next
                     </button>
                 </div>
                 <div class="many-images">
                     <p class="text-uppercase">Other videos</p>
                     <div class="row">
-                      <div class="toomany" ng-repeat="data in blogVideoData.video track by $index" ng-if="$index>0" ng-click="makeActive(data,$index)">
-                          <div class="col-md-3">
-                            <div class="blog-image">
-                              <img ng-src="{{data.url | youtubethumb:false}}" alt="No Images" class="img-responsive"/>
+                        <div class="toomany" ng-repeat="data in blogVideoData.video track by $index" ng-if="$index>0" ng-click="makeActive(data,$index)">
+                            <div class="col-md-3">
+                                <div class="blog-image">
+                                    <img ng-src="{{data.url | youtubethumb:false}}" alt="No Images" class="img-responsive" />
+                                </div>
+                                <a href=""><i class="fa fa-play"></i></a>
                             </div>
-                            <a href=""><i class="fa fa-play"></i></a>
-                          </div>
-                        </div>
                         </div>
                     </div>
+                </div>
                 <div class="share">
                     <h4 class="text-uppercase">share it on</h4>
                     <span class="social-share">
-                  <a href=""><i class="fa fa-facebook"></i></a>
-                  <a href=""><i class="fa fa-twitter"></i></a>
-                  <a href=""><i class="fa fa-envelope-o"></i></a>
+                  <a href="" ng-click="socialLogin('Facebook')"><i class="fa fa-facebook"></i></a>
+                  <a href="" ng-click="socialLogin('Twitter')"><i class="fa fa-twitter"></i></a>
+                  <a href="" ng-click="socialLogin('Google')"><i class="fa fa-envelope-o"></i></a>
                 </span>
+                    <p ng-if="blogCommentData.value==false">Please login to comment</p>
                 </div>
                 <div class="bgcomment">
                     <div class="comment-box">
-                        <p>comments . <span>12<span></p>
-                    <div class="row">
+                        <p><span>{{blogVideoData.comments.length}} <span> comments . </p>
+                    <div class="row" ng-hide="blogCommentData.value==false">
+                      <form name="comment">
                       <div class="col-md-2">
                         <div class="profilephoto">
-                          <img src="img/blog/text/p1.png" alt="No Profile Photo Found." class="img-responsive">
+                          <img ng-src="{{blogCommentData.image}}" alt="No Profile Photo Found." class="img-responsive">
                         </div>
                       </div>
                       <div class="col-md-10">
-                        <textarea name="name" class="form-control"></textarea>
+                        <textarea name="name" ng-model="blogCommentData.comment" class="form-control" required></textarea>
                       </div>
+                      <div class="col-md-12">
+                      <div class="submit-btn btn-all text-right mt15">
+                              <button class="btn btn-danger" type="button" name="button" ng-class="{'disabled' : !comment.$valid }" ng-click="commentSubmit(blogCommentData)" style="">submit</button>
+                           </div></div>
+                           </form>
                     </div>
                     <hr>
                   </div>
-                    <div class="comments" ng-repeat="data in commentlist track by $index">
+                    <div class="comments" ng-repeat="data in blogVideoData.comments track by $index">
                       <div class="row">
                         <div class="col-md-2">
                           <div class="profilephoto">
-                            <img ng-src="{{data.img}}" alt="" class="img-responsive">
+                            <img ng-src="{{data.image}}" alt="" class="img-responsive">
                           </div>
                         </div>
                         <div class="col-md-10">
                           <div class="commented">
                             <p>{{data.name}}</p>
-                            <span>{{data.time}}&nbsp;ago</span>
+                            <span>{{data.timestamp | timeago}}</span>
                             <div class="paras">
-                                <p>{{data.desc}}</p>
+                                <p>{{data.comment}}</p>
                             </div>
                     </div>
                 </div>
@@ -150,10 +157,10 @@
                 </div>
             </div>
         </div>
-        <div class="related" ng-repeat="data in blogvideo track by $index">
+        <div class="related" ng-repeat="data in blogVideoData.relatedarticles track by $index">
             <div class="wed-box border-red">
                 <div class="wed-img-list">
-                    <img ng-src="{{data.img}}" alt="" class="img-responsive">
+                    <img ng-src="{{data.image|uploadpath}}" alt="" class="img-responsive">
                     <div class="red-ribbon">
                         <img src="img/ribbon_red.png" alt="">
                         <span class="color-white uppercase">{{data.categoryname}}</span>
@@ -161,13 +168,13 @@
                 </div>
                 <div class="blog-desc">
                     <div class="wed-desc-inside">
-                        <p class="bold">{{data.desc}}</p>
+                        <p class="bold" ng-bind-html="data.content"></p>
                     </div>
                     <div class="wed-date">
                         <span>{{data.date}}</span>
                     </div>
                     <div class="read-more">
-                        <a href="" class="color-black">Read More</a>
+                        <a href="" class="color-black" ng-click="readMore(data);">Read More</a>
                     </div>
                 </div>
                 <div class="border-blue bborders"></div>
