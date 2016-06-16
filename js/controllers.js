@@ -1005,11 +1005,35 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     //     name: "Sunil Joshi",
     //     img: "img/movies/ranbir.jpg"
     // };
+
+    // var id = '2';
+    // NavigationService.getSportInsidedataByid(id, function(data) {
+    //     $scope.asfcInsidedatadetail = data.queryresult;
+    //     console.log($scope.asfcInsidedatadetail);
+    // })
+
+    $scope.objPagination = {};
+    $scope.objPagination.id = 2;
+    $scope.objPagination.maxrow = 2;
+    $scope.objPagination.pageno = 1;
+    $scope.pages = [1]
+    var lastpage = 1;
+    $scope.asfcInsidedatadetail = [];
+
+    $scope.asfcdata = function() {
+        // var id = '2';
+        NavigationService.getSportInsidedataByid($scope.objPagination, function(data) {
+            lastpage = data.lastpage;
+            console.log(lastpage);
+            // $scope.objPagination.maxrow = data.maxrow;
+            _.each(data.queryresult, function(n) {
+                $scope.asfcInsidedatadetail.push(n);
+            });
+            console.log($scope.asfcInsidedatadetail);
+        })
+    }
+    $scope.asfcdata();
     var id = '2';
-    NavigationService.getSportInsidedataByid(id, function(data) {
-        $scope.asfcInsidedatadetail = data.queryresult;
-        console.log($scope.asfcInsidedatadetail);
-    })
     NavigationService.getasfcSeasonData(id, function(data) {
         $scope.asfcInsidedata = data.data;
         console.log("testt", $scope.asfcInsidedata);
@@ -1052,6 +1076,17 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         console.log('$scope.matchData=', $scope.matchData);
     })
 
+    $scope.ViewAll = function() {
+            console.log('Innnnnnnnnnnnn');
+            if (lastpage > $scope.objPagination.pageno) {
+                console.log('lastpageeee: ', lastpage)
+                    ++$scope.objPagination.pageno;
+                $scope.pages.push($scope.objPagination.pageno);
+                console.log('pages:', $scope.pages);
+                $scope.asfcdata();
+            }
+        }
+        // $scope.ViewAll();
 })
 
 .controller('AsfcDetailCtrl', function($scope, TemplateService, NavigationService, $timeout, $stateParams) {

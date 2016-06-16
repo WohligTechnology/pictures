@@ -6,6 +6,7 @@ var adminURL = "";
 // }
 
 // adminURL = "http://wohlig.co.in/gsebackend/";
+// adminURL = "http://wohlig.co.in/gsebackend/";
 adminURL = "http://192.168.1.137/gsebackend/";
 // adminURL = "http://localhost/gsebackend/";
 var apiUrl = adminURL + "index.php/json/";
@@ -100,8 +101,8 @@ var navigationservice = angular.module('navigationservice', [])
         getSeasonData: function(id, callback) {
             $http.get(apiUrl + 'getSportsDetailInside?id=' + id).success(callback);
         },
-        getSportInsidedataByid: function(id, callback) {
-            $http.get(apiUrl + 'getSportInside?sportscategory=' + id).success(callback);
+        getSportInsidedataByid: function(obj, callback) {
+            $http.get(apiUrl + 'getSportInside?sportscategory=' + obj.id + "&pageno=" + obj.pageno + "&maxrow=" + obj.maxrow).success(callback);
         },
         getasfcSeasonData: function(id, callback) {
             $http.get(apiUrl + 'getasfcSportsDetail?id=' + id).success(callback);
