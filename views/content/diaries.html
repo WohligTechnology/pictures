@@ -11,12 +11,7 @@
     <div class="wedding-fant-desc">
         <div class="container">
             <div class="row">
-                <div class="col-md-offset-2 col-md-8" ng-bind-html="diaryData.description.content">
-                    <!-- <p>Lorem Ipsum proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan
-            ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non mauris vitae erat consequat auctor eu in elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Mauris in erat justo. Nullam
-            ac urna eu felis dapibus condimentum sit amet a augue. Sed non neque elit. Sed ut imperdiet nisi. Proin condimentum fermentum nunc. Etiam pharetra, erat sed fermentum feugiat, velit mauris egestas quam, ut aliquam massa nisl quis neque. Suspendisse
-            in orci enim.</p> -->
-                </div>
+                <div class="col-md-offset-2 col-md-8" ng-bind-html="diaryData.description.content"></div>
             </div>
         </div>
     </div>
@@ -63,17 +58,23 @@
                                     <div class="wed-desc-inside" ng-bind-html="wedData.content">
                                         <!-- <p class="bold">{{wedData.content}}</p> -->
                                     </div>
-                                    <div class="read-more pull-right mtb5" ng-if="wedData.type==1">
-                                        <a class="color-black bold" ui-sref="blogtext({id:wedData.id})">Read More</a>
-                                    </div>
-                                    <div class="read-more pull-right mtb5" ng-if="wedData.type==2">
-                                        <a class="color-black bold" ui-sref="blogimage({id:wedData.id})">Read More</a>
-                                    </div>
-                                    <div class="read-more pull-right mtb5" ng-if="wedData.type==3">
-                                        <a class="color-black bold" ui-sref="blogvideo({id:wedData.id})">Read More</a>
-                                    </div>
                                     <div class="wed-date">
-                                        <span>{{wedData.date}}</span>
+
+                                        <a ui-sref="diaries-author({id:wedData.authorid})"><span class="pr6">{{wedData.authorname}}</span></a>
+                                        <span class="pr6">|</span>
+                                        <span class="pr6">{{wedData.date}}</span>
+                                        <span class="pr6">|</span>
+                                        <span class="pr6">Views:</span>
+                                        <span class="pr6">{{wedData.views}}</span>
+                                        <div class="read-more pull-right" ng-if="wedData.type==1">
+                                            <a class="color-black bold" ui-sref="blogtext({id:wedData.id})">Read More</a>
+                                        </div>
+                                        <div class="read-more pull-right" ng-if="wedData.type==2">
+                                            <a class="color-black bold" ui-sref="blogimage({id:wedData.id})">Read More</a>
+                                        </div>
+                                        <div class="read-more pull-right" ng-if="wedData.type==3">
+                                            <a class="color-black bold" ui-sref="blogvideo({id:wedData.id})">Read More</a>
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="border-blue borders"></div>
@@ -119,6 +120,13 @@
                                     <div class="wed-desc-inside" ng-bind-html="movieData.content">
                                         <!-- <p class="bold">{{movieData.desc}}</p> -->
                                     </div>
+                                    <div class="wed-date clearfix">
+                                        <a ui-sref="diaries-author({id:movieData.authorid})"><span>{{movieData.authorname}}</span></a>
+                                        <div class="wed-date pull-right">
+                                            <span>Views:</span>
+                                            <span>{{movieData.views}}</span>
+                                        </div>
+                                    </div>
                                     <div class="read-more pull-right mtb5" ng-if="movieData.type==1">
                                         <a class="color-black bold" ui-sref="blogtext({id:movieData.id})">Read More</a>
                                     </div>
@@ -144,9 +152,17 @@
                                         <span class="color-white uppercase">{{sportsData.categoryname}}</span>
                                     </div>
                                 </div>
+
                                 <div class="wed-desc">
                                     <div class="wed-desc-inside" ng-bind-html="sportsData.content">
                                         <!-- <p class="bold">{{movieData.desc}}</p> -->
+                                    </div>
+                                    <div class="wed-date clearfix">
+                                        <a ui-sref="diaries-author({id:sportsData.authorid})"><span>{{sportsData.authorname}}</span></a>
+                                        <div class="wed-date pull-right">
+                                            <span>Views:</span>
+                                            <span>{{sportsData.views}}</span>
+                                        </div>
                                     </div>
                                     <div class="read-more pull-right mtb5" ng-if="sportsData.type==1">
                                         <a class="color-black bold" ui-sref="blogtext({id:sportsData.id})">Read More</a>
@@ -178,6 +194,13 @@
                                 <div class="wed-desc">
                                     <div class="wed-desc-inside" ng-bind-html="eventData.content">
                                         <!-- <p class="bold">{{eventData.desc}}</p> -->
+                                    </div>
+                                    <div class="wed-date clearfix">
+                                        <a ui-sref="diaries-author({id:eventData.authorid})"><span>{{eventData.authorname}}</span></a>
+                                        <div class="wed-date pull-right">
+                                            <span>Views:</span>
+                                            <span>{{eventData.views}}</span>
+                                        </div>
                                     </div>
                                     <div class="read-more pull-right mtb5" ng-if="eventData.type==1">
                                         <a class="color-black bold" ui-sref="blogtext({id:eventData.id})">Read More</a>
@@ -269,6 +292,13 @@
                                 </div>
                                 <div class="wed-desc">
                                     <div class="wed-desc-inside" ng-bind-html="data.content">
+                                    </div>
+                                    <div class="wed-date clearfix">
+                                        <a ui-sref="diaries-author({id:data.authorid})"><span>{{data.authorname}}</span></a>
+                                        <div class="wed-date pull-right">
+                                            <span>Views:</span>
+                                            <span>{{data.views}}</span>
+                                        </div>
                                     </div>
                                     <div class="read-more pull-right mtb5" ng-if="data.type==1">
                                         <a class="color-black bold" ui-sref="blogtext({id:data.id})">Read More</a>

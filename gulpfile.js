@@ -12,6 +12,7 @@ var jsArray = [
   './bower_components/angular-flexslider/angular-flexslider.js',
   './bower_components/ngInfiniteScroll/build/ng-infinite-scroll.js',
   './bower_components/angular-loading-bar/build/loading-bar.min.js',
+  './bower_components/angularjs-imageupload-directive/public/javascripts/imageupload.js',
   './bower_components/lodash/lodash.js',
   './js/app.js',
   './js/controllers.js',

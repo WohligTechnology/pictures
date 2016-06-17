@@ -153,7 +153,7 @@
           <form name="subForm" class="bs-example bs-example-form" role="form">
             <div class="input-group">
               <input type="email" class="form-control" placeholder="Enter email address" ng-model="subscribe.email" required>
-              <span class="input-group-addon btn btn-danger" ng-click="subscribe(subscribe.email);">Subscribe</span>
+              <span class="input-group-addon btn btn-danger" ng-click="subscribe(subscribe.email);" ng-disabled="subForm.$invalid">Subscribe</span>
               <div ng-messages="subForm.email.$error" ng-messages-include="error-messages"></div>
               <!-- <h4 ng-if="subscribeEmail">Thankyou For Subscribing</h4>
               <h4 ng-if="checkEmail">This email already exists</h4> -->

@@ -1,32 +1,44 @@
-angular.module('phonecatControllers', ['templateservicemod', 'navigationservice', 'ui.bootstrap', 'ngAnimate', 'ngSanitize', 'angular-flexslider', 'infinite-scroll', 'angular-loading-bar'])
+angular.module('phonecatControllers', ['templateservicemod', 'navigationservice', 'ui.bootstrap', 'ngAnimate', 'ngSanitize', 'angular-flexslider', 'infinite-scroll', 'angular-loading-bar', 'imageupload'])
 
 .controller('HomeCtrl', function($scope, TemplateService, NavigationService, $timeout, $state) {
-    //Used to name the .html file
-    $scope.template = TemplateService.changecontent("home");
-    $scope.menutitle = NavigationService.makeactive("Home");
-    TemplateService.title = $scope.menutitle;
-    $scope.navigation = NavigationService.getnav();
-    $scope.subscribe = {};
-    $scope.subscribe.email = "";
-    //
-    // $scope.checkemail=function(email){
-    //
-    // }
-
-    $scope.checkEmail = false;
-    $scope.subscribeEmail = false;
-    $scope.subscribe = function(email) {
-        // if(!email) {
-        //     alert("please enter your email");
+        //Used to name the .html file
+        $scope.template = TemplateService.changecontent("home");
+        $scope.menutitle = NavigationService.makeactive("Home");
+        TemplateService.title = $scope.menutitle;
+        $scope.navigation = NavigationService.getnav();
+        $scope.subscribe = {};
+        $scope.subscribe.email = "";
+        //
+        // $scope.checkemail=function(email){
+        //
         // }
-        // console.log('Email subscribe: ', email);
-        NavigationService.subscribe(email, function(data) {
 
-            console.log(data.value);
-            if (!data.value) {
-                if ($scope.subscribe.email) {
-                    $scope.checkEmail = true;
-                    $scope.subscribeEmail = false;
+        $scope.checkEmail = false;
+        $scope.subscribeEmail = false;
+        $scope.subscribe = function(email) {
+            // if(!email) {
+            //     alert("please enter your email");
+            // }
+            // console.log('Email subscribe: ', email);
+            NavigationService.subscribe(email, function(data) {
+
+                console.log(data.value);
+                if (!data.value) {
+                    if ($scope.subscribe.email) {
+                        $scope.checkEmail = true;
+                        $scope.subscribeEmail = false;
+                        $timeout(function() {
+                            $state.reload();
+                            $timeout(function() {
+                                $scope.checkEmail = "";
+                                $scope.subscribeEmail = "";
+                            }, 2000);
+                        }, 3000);
+
+                    }
+                } else {
+                    $scope.subscribeEmail = true;
+                    $scope.checkEmail = false;
                     $timeout(function() {
                         $state.reload();
                         $timeout(function() {
@@ -36,72 +48,25 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
                     }, 3000);
 
                 }
-            } else {
-                $scope.subscribeEmail = true;
-                $scope.checkEmail = false;
-                $timeout(function() {
-                    $state.reload();
-                    $timeout(function() {
-                        $scope.checkEmail = "";
-                        $scope.subscribeEmail = "";
-                    }, 2000);
-                }, 3000);
+                //console.log(email);
+                $scope.subscribe.email = "";
+            });
 
-            }
-            //console.log(email);
-            $scope.subscribe.email = "";
-        });
-
-        // $scope.subscribeEmail = data;
-    };
-    $scope.clientspeak = {
-        category: "Client Speak",
-        text: "Extra Efficient",
-        name: "Amitabh Bachchan",
-        img: "img/home/amitabh.jpg"
-    };
-    $scope.diaries = [{
-        title: "WEDDINGS",
-        img: "img/home/diaries/diary1.png",
-        date: "12 January 2016",
-        desc: "Lorem Ipsum is simply dummy text of the printing industry"
-    }, {
-        title: "SPORTS",
-        img: "img/home/diaries/diary2.png",
-        date: "12 January 2016",
-        desc: "Lorem Ipsum is simply dummy text of the printing industry"
-    }, {
-        title: "EVENTS",
-        img: "img/home/diaries/diary3.png",
-        date: "12 January 2016",
-        desc: "Lorem Ipsum is simply dummy text of the printing industry"
-    }, {
-        title: "WEDDINGS",
-        img: "img/home/diaries/diary2.png",
-        date: "12 January 2016",
-        desc: "Lorem Ipsum is simply dummy text of the printing industry"
-    }, {
-        title: "SPORTS",
-        img: "img/home/diaries/diary3.png",
-        date: "12 January 2016",
-        desc: "Lorem Ipsum is simply dummy text of the printing industry"
-    }, {
-        title: "EVENTS",
-        img: "img/home/diaries/diary2.png",
-        date: "12 January 2016",
-        desc: "Lorem Ipsum is simply dummy text of the printing industry"
-    }, {
-        title: "WEDDINGS",
-        img: "img/home/diaries/diary3.png",
-        date: "12 January 2016",
-        desc: "Lorem Ipsum is simply dummy text of the printing industry"
-    }];
-    $scope.homedata = "";
-    NavigationService.getHome(function(data) {
-        $scope.homedata = data.data;
-        console.log($scope.homedata);
+            // $scope.subscribeEmail = data;
+        };
     })
-})
+    .controller('DiariesAuthorCtrl', function($scope, TemplateService, NavigationService, $timeout, $state, $stateParams) {
+        //Used to name the .html file
+        $scope.template = TemplateService.changecontent("author");
+        $scope.menutitle = NavigationService.makeactive("Diaries-Author");
+        TemplateService.title = $scope.menutitle;
+        $scope.navigation = NavigationService.getnav();
+
+        NavigationService.getDiariesAuthor($stateParams.id, function(data) {
+            $scope.diariesAuthorData = data.data;
+            console.log('$scope.diariesAuthorData', $scope.diariesAuthorData);
+        });
+    })
 
 
 .controller('MoviesCtrl', function($scope, TemplateService, NavigationService, $timeout, $state) {
@@ -1017,14 +982,14 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     $scope.objPagination.maxrow = 2;
     $scope.objPagination.pageno = 1;
     $scope.pages = [1]
-    var lastpage = 1;
+    $scope.lastpage = 1;
     $scope.asfcInsidedatadetail = [];
 
     $scope.asfcdata = function() {
         // var id = '2';
         NavigationService.getSportInsidedataByid($scope.objPagination, function(data) {
-            lastpage = data.lastpage;
-            console.log(lastpage);
+            $scope.lastpage = data.lastpage;
+            console.log($scope.lastpage);
             // $scope.objPagination.maxrow = data.maxrow;
             _.each(data.queryresult, function(n) {
                 $scope.asfcInsidedatadetail.push(n);
@@ -1078,8 +1043,8 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
     $scope.ViewAll = function() {
             console.log('Innnnnnnnnnnnn');
-            if (lastpage > $scope.objPagination.pageno) {
-                console.log('lastpageeee: ', lastpage)
+            if ($scope.lastpage > $scope.objPagination.pageno) {
+                console.log('lastpageeee: ', $scope.lastpage)
                     ++$scope.objPagination.pageno;
                 $scope.pages.push($scope.objPagination.pageno);
                 console.log('pages:', $scope.pages);
@@ -1122,7 +1087,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     $scope.jppPagination.id = 1;
     $scope.jppPagination.pageno = 1;
     $scope.jppPagination.maxrow = 2;
-    var lastpage = 1;
+    $scope.lastpage = 1;
 
 
 
@@ -1130,12 +1095,12 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $scope.jppdata = data.data;
         console.log($scope.jppdata);
     })
-$scope.jppInsidedata=[];
+    $scope.jppInsidedata = [];
     $scope.jppfilter = function() {
         NavigationService.getSportInsidedataByid($scope.jppPagination, function(data) {
             // $scope.jppInsidedata = data.queryresult;
             // console.log($scope.jppInsidedata);
-            lastpage = data.lastpage;
+            $scope.lastpage = data.lastpage;
             _.each(data.queryresult, function(n) {
                 $scope.jppInsidedata.push(n);
             })
@@ -1145,7 +1110,7 @@ $scope.jppInsidedata=[];
 
     $scope.viewAllJpp = function() {
         console.log('Inside viewAllJpp');
-        if (lastpage > $scope.jppPagination.pageno) {
+        if ($scope.lastpage > $scope.jppPagination.pageno) {
             ++$scope.jppPagination.pageno;
             console.log('pageno', $scope.jppPagination.pageno);
             $scope.jppfilter();

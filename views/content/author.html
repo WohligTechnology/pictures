@@ -1,0 +1,101 @@
+<section class="author">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="head-banner diaries-banner text-center">
+                    <img src="img/dairies/banner.png" class="img-responsive" title="Dairies">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="img-author">
+                    <img ng-src="{{diariesAuthorData.description.image}}" alt="Author Image" class="img-responsive" />
+                </div>
+            </div>
+            <div class="col-md-8">
+                <h4 class="name-color">{{diariesAuthorData.description.name}}</h4>
+                <div class="btext" ng-bind-html="diariesAuthorData.description.description"> </div>
+                <div class="share">
+                    <h4 class="text-uppercase">Follow on</h4>
+                    <span class="social-share">
+            <a href="" ng-click="socialLogin('Facebook')"><i class="fa fa-facebook"></i></a>
+            <a href="" ng-click="socialLogin('Twitter')"><i class="fa fa-twitter"></i></a>
+            <a href="" ng-click="socialLogin('Google')"><i class="fa fa-envelope-o"></i></a>
+          </span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="gs-author">
+        <div class="container">
+            <div class="bg-moviesdiaries">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="text-center">
+                            <div class="wedding-diary">
+                                <div class="diary-title mr30 mt60">
+                                    <h4 class="uppercase color-red"><i class="fi flaticon-book"></i>Stories</h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="pd-side">
+                    <div class="row">
+                        <div class="col-md-4 col-sm-4 col-xs-6" ng-repeat="data in diariesAuthorData.articles track by $index">
+                            <div class="wed-box border-red">
+                                <div class="wed-img-list">
+                                    <img ng-src="{{data.image}}" alt="" class="img-responsive">
+                                    <div class="ribbon-red">
+                                        <img src="img/ribbon_red.png" alt="">
+                                        <span class="color-white uppercase">{{data.categoryname}}</span>
+                                    </div>
+                                </div>
+                                <div class="wed-desc">
+
+                                    <div class="wed-desc-inside" ng-bind-html="data.content">
+                                        <!-- <p class="bold">{{data.desc}}</p> -->
+                                    </div>
+                                    <div class="wed-date clearfix">
+                                        <span>{{data.author}}</span>
+                                        <div class="pull-right">
+                                            <span>Views:</span>
+                                            <span>{{data.views}}</span>
+                                        </div>
+                                    </div>
+                                    <div class="wed-date">
+                                        <span>{{data.date}}</span>
+                                        <div class="read-more pull-right" ng-if="data.type==1">
+                                            <a class="color-black bold" ui-sref="blogtext({id:data.id})">Read More</a>
+                                        </div>
+                                        <div class="read-more pull-right" ng-if="data.type==2">
+                                            <a class="color-black bold" ui-sref="blogimage({id:data.id})">Read More</a>
+                                        </div>
+                                        <div class="read-more pull-right" ng-if="data.type==3">
+                                            <a class="color-black bold" ui-sref="blogvideo({id:data.id})">Read More</a>
+                                        </div>
+                                        <!-- <div class="read-more pull-right">
+                                           <a href="" class="color-black" ui-sref="">Read More</a>
+                                       </div> -->
+                                    </div>
+                                </div>
+                                <div class="border-blue borders"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="btn-all mr30 text-center">
+                        <a ui-sref="diaries">
+                            <button class="btn btn-danger btn-outline">
+                                View All
+                            </button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
