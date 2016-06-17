@@ -1118,48 +1118,74 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     TemplateService.title = $scope.menutitle;
     $scope.navigation = NavigationService.getnav();
     var id = '1';
+    $scope.jppPagination = {};
+    $scope.jppPagination.id = 1;
+    $scope.jppPagination.pageno = 1;
+    $scope.jppPagination.maxrow = 2;
+    var lastpage = 1;
+
+
+
     NavigationService.getSportdataByid(id, function(data) {
         $scope.jppdata = data.data;
         console.log($scope.jppdata);
     })
-    NavigationService.getSportInsidedataByid(id, function(data) {
-        $scope.jppInsidedata = data.queryresult;
-        console.log($scope.jppInsidedata);
-    })
+$scope.jppInsidedata=[];
+    $scope.jppfilter = function() {
+        NavigationService.getSportInsidedataByid($scope.jppPagination, function(data) {
+            // $scope.jppInsidedata = data.queryresult;
+            // console.log($scope.jppInsidedata);
+            lastpage = data.lastpage;
+            _.each(data.queryresult, function(n) {
+                $scope.jppInsidedata.push(n);
+            })
+        })
+    }
+    $scope.jppfilter();
+
+    $scope.viewAllJpp = function() {
+        console.log('Inside viewAllJpp');
+        if (lastpage > $scope.jppPagination.pageno) {
+            ++$scope.jppPagination.pageno;
+            console.log('pageno', $scope.jppPagination.pageno);
+            $scope.jppfilter();
+        }
+    }
 
 
-    $scope.jppdetail = [{
-        content: "JPP Stadium Branding: (Season 1, 2 & 3)",
-        img: "img/ASFC/w2.jpg",
-        detail: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
-    }, {
-        content: "JPP Team Management: Season 1",
-        img: "img/ASFC/w2.jpg",
-        detail: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
-    }, {
-        content: "JPP Team Management: Season 2",
-        img: "img/ASFC/w2.jpg",
-        detail: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
-    }];
-    $scope.wallpaper = [{
-        img: "img/jpp/w1.jpg",
-    }, {
-        img: "img/jpp/w2.jpg",
-    }, {
-        img: "img/jpp/w3.jpg",
-    }, {
-        img: "img/jpp/w4.jpg",
-    }, {
-        img: "img/jpp/w5.jpg",
-    }, {
-        img: "img/jpp/w6.jpg",
-    }];
-    $scope.clientspeak = {
-        category: "Players Speak",
-        text: "Awesome teamwork and planning",
-        name: "Sunil Joshi",
-        img: "img/movies/ranbir.jpg"
-    };
+    //
+    // $scope.jppdetail = [{
+    //     content: "JPP Stadium Branding: (Season 1, 2 & 3)",
+    //     img: "img/ASFC/w2.jpg",
+    //     detail: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
+    // }, {
+    //     content: "JPP Team Management: Season 1",
+    //     img: "img/ASFC/w2.jpg",
+    //     detail: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
+    // }, {
+    //     content: "JPP Team Management: Season 2",
+    //     img: "img/ASFC/w2.jpg",
+    //     detail: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
+    // }];
+    // $scope.wallpaper = [{
+    //     img: "img/jpp/w1.jpg",
+    // }, {
+    //     img: "img/jpp/w2.jpg",
+    // }, {
+    //     img: "img/jpp/w3.jpg",
+    // }, {
+    //     img: "img/jpp/w4.jpg",
+    // }, {
+    //     img: "img/jpp/w5.jpg",
+    // }, {
+    //     img: "img/jpp/w6.jpg",
+    // }];
+    // $scope.clientspeak = {
+    //     category: "Players Speak",
+    //     text: "Awesome teamwork and planning",
+    //     name: "Sunil Joshi",
+    //     img: "img/movies/ranbir.jpg"
+    // };
 })
 
 .controller('Jppseason1Ctrl', function($scope, TemplateService, NavigationService, $timeout, $stateParams) {
