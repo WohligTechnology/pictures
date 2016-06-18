@@ -14,11 +14,12 @@
             </div>
         </div>
     </div>
-
-    <div class="btn-upload btn btn-outline btn-small create-btn">
-        <input id="inputImage" ng-show="!isMultiple" type="file" image="image" title="Choose Files" class="btn">
-        <input id="inputImage" ng-show="isMultiple" type="file" image="image" title="Choose Multiple Files" class="btn" onchange="angular.element(this).scope().clearOld()" multiple>
-        <span ng-show="!isMultiple">Upload Your Resume</span>
-        <span ng-show="isMultiple">Upload Files</span>
+    <div class="attach">
+      <div class="btn-upload btn btn-outline btn-small create-btn">
+          <input id="inputImage" ng-show="!isMultiple" type="file" image="image" title="Choose Files" class="btn">
+          <input id="inputImage" ng-show="isMultiple" type="file" image="image" title="Choose Multiple Files" class="btn" onchange="angular.element(this).scope().clearOld()" multiple>
+          <span ng-show="!isMultiple"><i class="fa fa-paperclip"></i>Attach Resume</span>
+          <span ng-show="isMultiple">Upload Files</span>
+      </div>
     </div>
-</div>
+  </div>

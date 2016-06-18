@@ -35,11 +35,15 @@
                         <div class="form-group">
                             <label for="fullname" class="col-md-2 control-label">Resume/CV<span>*</span></label>
                             <div class="col-md-10">
-                              <!-- <img ng-src="{{formData.resume | uploadpath}}" class="doneLoading" ng-if="formData.resume"> -->
+                              <div class="block">
+                                <div class="inlineblock">
                                 <upload-image ng-model="formData.resume" ng-callback="changeit" no-view></upload-image>
+                                </div>
                                 <div class="inlineblock pl10">
                                     <p class="color-white">{{formData.resume}}</p>
                                 </div>
+                              </div>
+                              <!-- <img ng-src="{{formData.resume | uploadpath}}" class="doneLoading" ng-if="formData.resume"> -->
                                 <!-- <div class="attach">
                                  <button class="btn btn-danger" type="button" name="button"><i class="fa fa-paperclip"></i>Attach Resume</button>
                                </div> -->
