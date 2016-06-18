@@ -12,8 +12,8 @@
         <div class="row">
             <div class="col-md-4">
                 <div class="img-author">
-                    <!-- <img ng-src="{{diariesAuthorData.description.image}}" alt="Author Image" class="img-responsive" /> -->
-                    <img ng-src="img/viraj.jpg" alt="Author Image" class="img-responsive" />
+                    <img ng-src="{{diariesAuthorData.description.image | uploadpath}}" alt="Author Image" class="img-responsive" />
+                    <!-- <img ng-src="img/viraj.jpg" alt="Author Image" class="img-responsive" /> -->
                 </div>
             </div>
             <div class="col-md-8">
@@ -49,7 +49,7 @@
                         <div class="col-md-4 col-sm-4 col-xs-6" ng-repeat="data in diariesAuthorData.articles track by $index">
                             <div class="wed-box border-red">
                                 <div class="wed-img-list">
-                                    <img ng-src="{{data.image}}" alt="" class="img-responsive">
+                                    <img ng-src="{{data.image | uploadpath}}" alt="" class="img-responsive">
                                     <div class="ribbon-red">
                                         <img src="img/ribbon_red.png" alt="">
                                         <span class="color-white uppercase">{{data.categoryname}}</span>
