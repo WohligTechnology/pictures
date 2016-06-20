@@ -55,10 +55,10 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             // $scope.subscribeEmail = data;
         };
         $scope.homedata = "";
-NavigationService.getHome(function(data) {
-  $scope.homedata = data.data;
-  console.log($scope.homedata);
-})
+        NavigationService.getHome(function(data) {
+            $scope.homedata = data.data;
+            console.log($scope.homedata);
+        })
     })
     .controller('DiariesAuthorCtrl', function($scope, TemplateService, NavigationService, $timeout, $state, $stateParams) {
         //Used to name the .html file
@@ -1047,16 +1047,35 @@ NavigationService.getHome(function(data) {
     })
 
     $scope.ViewAll = function() {
-            console.log('Innnnnnnnnnnnn');
-            if ($scope.lastpage > $scope.objPagination.pageno) {
-                console.log('lastpageeee: ', $scope.lastpage)
-                    ++$scope.objPagination.pageno;
-                $scope.pages.push($scope.objPagination.pageno);
-                console.log('pages:', $scope.pages);
-                $scope.asfcdata();
-            }
+        console.log('Innnnnnnnnnnnn');
+        if ($scope.lastpage > $scope.objPagination.pageno) {
+            console.log('lastpageeee: ', $scope.lastpage)
+                ++$scope.objPagination.pageno;
+            $scope.pages.push($scope.objPagination.pageno);
+            console.log('pages:', $scope.pages);
+            $scope.asfcdata();
         }
-        // $scope.ViewAll();
+    }
+    $scope.mycount = 0;
+    $scope.mycountdiv = [];
+
+    var id = '2';
+    NavigationService.getasfcSeasonData(id, function(data) {
+        $scope.mydata = data.data.playerlist;
+        console.log('$scope.asfcInsidedata1', $scope.asfcInsidedata1);
+        $scope.asfcInsidedataplayer = _.chunk($scope.mydata, 5);
+        $scope.mylen=$scope.asfcInsidedataplayer.length-1;
+        console.log('len',$scope.mylen);
+        console.log('$scope.asfcInsidedataplayer', $scope.asfcInsidedataplayer);
+
+    })
+    $scope.ViewAllPlayers = function() {
+        $scope.mycount = $scope.mycount+1;
+        // $scope.mycountdiv.push($scope.asfcInsidedataplayer);
+        // console.log('$scope.mycountdiv',$scope.mycountdiv);
+        // console.log('$scope.mycount',$scope.mycount);
+
+    }
 })
 
 .controller('AsfcDetailCtrl', function($scope, TemplateService, NavigationService, $timeout, $stateParams) {
