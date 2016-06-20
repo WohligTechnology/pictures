@@ -54,6 +54,11 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
             // $scope.subscribeEmail = data;
         };
+        $scope.homedata = "";
+NavigationService.getHome(function(data) {
+  $scope.homedata = data.data;
+  console.log($scope.homedata);
+})
     })
     .controller('DiariesAuthorCtrl', function($scope, TemplateService, NavigationService, $timeout, $state, $stateParams) {
         //Used to name the .html file
