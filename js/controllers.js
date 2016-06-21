@@ -1360,9 +1360,11 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     $scope.menutitle = NavigationService.makeactive("Sports");
     TemplateService.title = $scope.menutitle;
     $scope.navigation = NavigationService.getnav();
+    $scope.oneAtATime = true;
     $scope.formData = {};
     $scope.formData.enquiryarr = [];
     $scope.showThanks = false;
+
     // $scope.formData="";
 
     // $scope.talentSubmitForm = function(formValid, formData) {

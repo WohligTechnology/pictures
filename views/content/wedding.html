@@ -79,7 +79,7 @@
             </div>
          </div>
       </div>
-      <div class="pd-side">
+      <div class="pd-side" ng-if="weddingData.services && weddingData.services.length>0">
          <div class="row">
             <div class="col-md-12">
                <div class="service">
@@ -89,10 +89,10 @@
                   </div>
                   <div class="services-list">
                      <uib-accordion close-others="oneAtATime" is-open="status.open">
-                        <uib-accordion-group is-open="status.open1" is-disabled="status.isFirstDisabled" ng-repeat="data in services">
+                        <uib-accordion-group is-open="status.open1" is-disabled="status.isFirstDisabled" ng-repeat="data in weddingData.services">
                            <uib-accordion-heading>
                               <h4>
-                     <span class="uppercase bold">{{data.title}}</span>
+                     <span class="uppercase bold">{{data.name}}</span>
                       <i class="pull-right fa" ng-class="{'fa-minus': status.open1, 'fa-plus': !status.open1}"></i>
                     </h4>
                            </uib-accordion-heading>
