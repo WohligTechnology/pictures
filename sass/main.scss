@@ -200,7 +200,7 @@ a {
   @include transform(translateX(0));
   // @include transition(all 300ms linear);
   position: fixed;
-  width: 300px;
+  width: 320px;
   z-index: 99;
   left: 0;
   top: 0;
@@ -271,7 +271,7 @@ a {
     }
   }
    ::-webkit-scrollbar {
-    width: 8px;
+    width: 10px;
   }
   /* Track */
    ::-webkit-scrollbar-track {
@@ -290,7 +290,7 @@ a {
     background: rgba(255,255,255,0.4);
   }
    ::-webkit-scrollbar {
-    width: 8px;
+    width: 10px;
   }
   /* Track */
    ::-webkit-scrollbar-track {
