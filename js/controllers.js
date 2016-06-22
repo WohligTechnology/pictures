@@ -2561,16 +2561,6 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $scope.mediadata = data.data;
         console.log($scope.mediadata);
       })
-      //   $scope.objfilter = {};
-      //   $scope.objfilter.id = $stateParams.id;
-      //   var year = 2016;
-      // NavigationService.getMediaByYear(year, function(data) {
-      //
-      //     $scope.mediadatadetail = data.queryresult;
-      //     $scope.mediadatadetail.year = year;
-      //     console.log($scope.mediadatadetail);
-      //   })
-
 
     $scope.categoryid = $stateParams.id;
     $scope.pagenumber = 1;
@@ -2585,7 +2575,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
     $scope.getMediayear = function() {
       NavigationService.getMediaByYear($scope.objfilter, function(data) {
-        $scope.mediadatadetail = data.queryresult;
+        // $scope.mediadatadetail = data.queryresult;
         console.log('medData: ', $scope.mediadatadetail);
         console.log('total: ', data.totalvalues);
         NavigationService.getMediacorner(function(data) {
@@ -2600,7 +2590,6 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
                 n.class = "";
             });
           }
-
         });
 
         console.log('lastpage:', data.lastpage);
@@ -2608,9 +2597,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         _.each(data.queryresult, function(n) {
           $scope.mediadatadetail.push(n);
         });
-
       });
-
     };
 
     console.log('lastpage: ', lastpage);

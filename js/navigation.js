@@ -6,8 +6,8 @@ var adminURL = "";
 // }
 
 // adminURL = "http://wohlig.co.in/gsebackend/";
-// adminURL = "http://wohlig.co.in/gsebackend/";
-adminURL = "http://192.168.1.137/gsebackend/";
+adminURL = "http://wohlig.co.in/gsebackend/";
+// adminURL = "http://192.168.1.137/gsebackend/";
 // adminURL = "http://localhost/gsebackend/";
 var apiUrl = adminURL + "index.php/json/";
 var imgpath = adminURL + "uploads/";
@@ -128,9 +128,6 @@ var navigationservice = angular.module('navigationservice', [])
         getTalentInsideDetail: function(id, callback) {
             $http.get(apiUrl + 'getTalentDetailInside?id=' + id).success(callback);
         },
-        // getMediaByYear: function(year, callback) {
-        //   $http.get(apiUrl + 'getMediaCornerDetails?year=' + year).success(callback);
-        // },
         getClient: function(callback) {
             $http.get(apiUrl + 'getClients').success(callback);
         },
