@@ -35,24 +35,22 @@
   <div class="resources mt45">
     <div class="row-flex">
       <div class="col-flex">
-        <img src="img/client/jpp.jpg" alt="" class="img-responsive">
+        <img src="{{getClientDetaildata[0].banner | uploadpath}}" alt="" class="img-responsive">
       </div>
       <div class="col-flex">
         <div class="rl data-up">
           <div class="red-img">
-            <img src="img/client/red.jpg" alt="" class="img-responsive">
+          <img src="img/client/red.jpg" class="img-responsive doneLoading">
           </div>
           <div class="text-cont">
-            <h4>SEASON 1</h4>
+            <h4>{{getClientDetaildata[0].title}}</h4>
             <p>
-              Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has
-              survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with
-              desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+            {{getClientDetaildata[0].content}}
             </p>
             <div class="btn-all mb15 text-right">
-              <button class="btn btn-danger btn-ouline">
+            <a href="{{getClientDetaildata[0].url}}">  <button class="btn btn-danger btn-ouline">
                 View All
-              </button>
+              </button></a>
             </div>
           </div>
         </div>
@@ -61,13 +59,13 @@
   </div>
   <div class="flex-client">
     <div class="row-flex">
-      <div class="col-flex" ng-repeat="data in strip">
+      <div class="col-flex25" ng-repeat="data in getClientDetaildata track by $index" ng-if="$index>0" ng-click="makeActive(data,$index)">
         <div class="box-clients">
           <div class="box-clients-inside">
-            <img src="{{data.img}}" alt="{{data.name}}" class="img-responsive">
+            <img src="{{data.image | uploadpath}}" alt="{{data.title}}" class="img-responsive">
           </div>
           <div class="client-caption">
-            {{data.name}}
+            {{data.title}}
           </div>
         </div>
       </div>

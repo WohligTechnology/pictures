@@ -72,7 +72,9 @@
                                         <!-- <p class="bold">{{data.desc}}</p> -->
                                     </div>
                                     <div class="read-more">
-                                        <a href="" class="color-black">Read More</a>
+                                       <a href="" class="color-black" ng-if="data.type==1" ui-sref="blogtext({id:data.id})">Read More</a>
+                                       <a href="" class="color-black" ng-if="data.type==2" ui-sref="blogimage({id:data.id})">Read More</a>
+                                       <a href="" class="color-black" ng-if="data.type==3" ui-sref="blogvideo({id:data.id})">Read More</a>
                                     </div>
                                 </div>
                                 <div class="border-blue borders"></div>
@@ -80,7 +82,7 @@
                         </div>
                     </div>
                     <div class="btn-all mr30 text-center">
-                        <button class="btn btn-danger btn-outline">
+                        <button class="btn btn-danger btn-outline" ui-sref="diaries">
                             View All
                         </button>
                     </div>

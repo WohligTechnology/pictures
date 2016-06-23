@@ -53,7 +53,7 @@ firstapp.config(function($stateProvider, $urlRouterProvider, $httpProvider, $loc
             controller: 'WeddingInsideDetailCtrl'
         })
         .state('clients', {
-            url: "/clients",
+            url: "/clients/:id",
             templateUrl: "views/template.html",
             controller: 'ClientsCtrl'
         })

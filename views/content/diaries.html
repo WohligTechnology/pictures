@@ -249,24 +249,24 @@
                     </ul>
                     <div class="border-blue borders"></div>
                 </div>
-                <div class="text-center wed-box border-red box-side-diaries">
+                <!-- <div class="text-center wed-box border-red box-side-diaries" ng-init="viewAll=false;">
                     <div class="title-subtitle">
                         <h4 class="uppercase color-red bold letter-spacing">ARCHIVES</h4>
                     </div>
                     <ul class="list-unstyled">
-                        <li><a href="" class="uppercase" ng-repeat="date in diaryData.years">{{date.month}} {{date.year}}</a></li>
-                        <!-- <li><a href="" class="uppercase">February 2016</a></li>
-            <li><a href="" class="uppercase">January 2016</a></li>
-            <li><a href="" class="uppercase">DECEmber 2015</a></li>
-            <li><a href="" class="uppercase">november 2015</a></li> -->
+                        <li><a href="" class="uppercase" ng-repeat="date in diaryyear1[0]" ng-click="filteByYear(date);">{{date.month}} {{date.year}}</a></li>
+                    </ul>
+                    <ul class="list-unstyled" ng-repeat="data1 in diaryyear1" ng-if="$index>0 && viewAll==true">
+                        <li><a href="" class="uppercase" ng-repeat="date in data1" ng-click="filteByYear(date);">{{date.month}} {{date.year}}</a></li>
                     </ul>
                     <div class="btn-all text-center mb15">
-                        <button class="btn btn-danger btn-outline">
-                            View all
+                        <button class="btn btn-danger btn-outline" ng-click="viewAll=!viewAll">
+                          <span ng-if="!viewAll">View all</span>
+                          <span ng-if="viewAll">View Less</span>
                         </button>
                     </div>
                     <div class="border-blue borders"></div>
-                </div>
+                </div> -->
             </div>
         </div>
     </div>
@@ -340,16 +340,21 @@
                     </ul>
                     <div class="border-blue borders"></div>
                 </div>
-                <div class="text-center wed-box border-red box-side-diaries">
+                <div class="text-center wed-box border-red box-side-diaries"  ng-init="viewAll=false;">
                     <div class="title-subtitle">
                         <h4 class="uppercase color-red bold letter-spacing">ARCHIVES</h4>
                     </div>
                     <ul class="list-unstyled">
-                        <li><a href="" class="uppercase" ng-repeat="date in diaryData.years" ng-click="filteByYear(date);">{{date.month}} {{date.year}}</a></li>
+                        <li><a href="" class="uppercase" ng-repeat="date in diaryyear1[0]" ng-click="filteByYear(date);">{{date.month}} {{date.year}}</a></li>
+
+                    </ul>
+                    <ul class="list-unstyled" ng-repeat="data1 in diaryyear1" ng-if="$index>0 && viewAll==true">
+                        <li ng-repeat="date in data1"><a href="" class="uppercase" ng-click="filteByYear(date);">{{date.month}} {{date.year}}</a></li>
                     </ul>
                     <div class="btn-all text-center mb15">
-                        <button class="btn btn-danger btn-outline">
-                            View all
+                        <button class="btn btn-danger btn-outline" ng-click="viewAll=!viewAll">
+                          <span ng-if="!viewAll">View all</span>
+                          <span ng-if="viewAll">View Less</span>
                         </button>
                     </div>
                     <div class="border-blue borders"></div>
