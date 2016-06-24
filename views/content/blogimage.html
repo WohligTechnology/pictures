@@ -76,7 +76,7 @@
                         </div>
                         <div class="col-md-12">
                         <div class="submit-btn btn-all text-right mt15">
-                                <button class="btn btn-danger" type="button" name="button" ng-class="{'disabled' : !comment.$valid }" ng-click="commentSubmit(blogCommentData)" style="">submit</button>
+                                <button class="btn btn-danger" type="button" name="button" ng-class="{'disabled' : !comment.$valid }" ng-click="comment.$valid && commentSubmit(blogCommentData)" style="">submit</button>
                              </div></div>
                       </form>
                       </div>
