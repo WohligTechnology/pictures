@@ -32,7 +32,8 @@
                 <div class="share">
                     <h4 class="text-uppercase">share it on</h4>
                     <span class="social-share">
-                  <a href="" ng-click="socialLogin('Facebook')"><i class="fa fa-facebook"></i></a>
+
+                  <a href="" class='st_facebook_large'>  <span  displayText='Facebook'></span><i class="fa fa-facebook"></i></a>
                   <a href="" ng-click="socialLogin('Twitter')"><i class="fa fa-twitter"></i></a>
                   <a href="" ng-click="socialLogin('Google')"><i class="fa fa-envelope-o"></i></a>
                 </span>
@@ -60,11 +61,15 @@
                     </div>
                     <hr>
                   </div>
-                  <div class="cont-made">
+                  <!-- <div class="cont-made">
                     <button ng-click="socialLoginmodal()" class="btn btn-danger">
                       socialLoginmodal
                     </button>
-                  </div>
+                  </div> -->
+                  <span class='st_facebook_large' displayText='Facebook'></span>
+<span class='st_twitter_large' displayText='Tweet'></span>
+<span class='st_email_large' displayText='Email'></span>
+<span class='st_googleplus_large' displayText='Google +'></span>
                     <div class="comments" ng-repeat="data in blogTextData.comments track by $index">
                       <div class="row">
                         <div class="col-md-2">

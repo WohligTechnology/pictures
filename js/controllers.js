@@ -1751,8 +1751,9 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     $scope.menutitle = NavigationService.makeactive("Blog-Text");
     TemplateService.title = $scope.menutitle;
     $scope.navigation = NavigationService.getnav();
+      var modalInstance1 = '';
     $scope.socialLoginmodal = function() {
-            $uibModal.open({
+            modalInstance1 = $uibModal.open({
                 animation: $scope.animationsEnabled,
                 templateUrl: 'views/content/modal/sociallogin.html',
                 controller: 'BlogTextCtrl',
@@ -1763,6 +1764,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
                 //  }
             });
         }
+
         // $scope.blogtext = [{
         //     img: "img/blog/text/1.png",
         //     date: "12 January 2016",
@@ -1830,6 +1832,10 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     $scope.blogCData = {};
     $scope.commentSubmit = function(data) {
         if ($scope.notLogedin == true) {
+            $timeout(function() {
+                  modalInstance1.dismiss();
+                $state.reload();
+            }, 2500);
             $scope.socialLoginmodal();
         } else {
             $scope.blogCData.diaryarticle = $scope.blogTextData.description.id;
@@ -1959,18 +1965,18 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     }
 
 
-    $scope.socialLoginmodal = function() {
-        $uibModal.open({
-            animation: $scope.animationsEnabled,
-            templateUrl: 'views/content/modal/sociallogin.html',
-            controller: 'BlogTextCtrl',
-            //  resolve: {
-            //    items: function () {
-            //      return $scope.items;
-            //    }
-            //  }
-        });
-    }
+    // $scope.socialLoginmodal = function() {
+    //     $uibModal.open({
+    //         animation: $scope.animationsEnabled,
+    //         templateUrl: 'views/content/modal/sociallogin.html',
+    //         controller: 'BlogTextCtrl',
+    //         //  resolve: {
+    //         //    items: function () {
+    //         //      return $scope.items;
+    //         //    }
+    //         //  }
+    //     });
+    // }
     $scope.cancel = function() {
         $uibModalInstance.dismiss('cancel');
     };
@@ -2037,7 +2043,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         }];
         var modalInstance1 = '';
         $scope.socialLoginmodal = function() {
-          modalInstance1 =  $uibModal.open({
+            modalInstance1 = $uibModal.open({
                 animation: $scope.animationsEnabled,
                 templateUrl: 'views/content/modal/sociallogin.html',
                 controller: 'BlogTextCtrl',
@@ -2134,10 +2140,10 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $scope.blogCData = {};
         $scope.commentSubmit = function(data) {
             if ($scope.notLogedin == true) {
-              $timeout(function () {
-modalInstance1.dismiss();
-$state.reload();
-              }, 2500);
+                $timeout(function() {
+                    modalInstance1.dismiss();
+                    $state.reload();
+                }, 2500);
                 $scope.socialLoginmodal();
             } else {
                 $scope.blogCData.diaryarticle = $scope.blogImageData.description.id;
@@ -2179,7 +2185,7 @@ $state.reload();
         $scope.navigation = NavigationService.getnav();
         var modalInstance2 = '';
         $scope.socialLoginmodal = function() {
-          modalInstance2=  $uibModal.open({
+            modalInstance2 = $uibModal.open({
                 animation: $scope.animationsEnabled,
                 templateUrl: 'views/content/modal/sociallogin.html',
                 controller: 'BlogTextCtrl',
@@ -2330,10 +2336,10 @@ $state.reload();
         $scope.blogCData = {};
         $scope.commentSubmit = function(data) {
             if ($scope.notLogedin == true) {
-              $timeout(function () {
-modalInstance2.dismiss();
-$state.reload();
-              }, 2500);
+                $timeout(function() {
+                    modalInstance2.dismiss();
+                    $state.reload();
+                }, 2500);
                 $scope.socialLoginmodal();
             } else {
                 $scope.blogCData.diaryarticle = $scope.blogVideoData.description.id;
