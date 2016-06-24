@@ -1,11 +1,18 @@
 <section>
-   <div class="banner banner-movies ab">
+   <!-- <div class="banner banner-movies ab">
      <img ng-src="{{bannerData.banner | uploadpath}}" ng-if="bannerData.banner" class="img-responsive" style="width:100%;">
-      <!-- <div class="banner-title text-center">
+     <div class="banner-title text-center">
       <h4>
         360 Weddings
       </h4>
-    </div> -->
+    </div>
+   </div> -->
+   <div class="banner banner-movies ab">
+      <img ng-src="{{bannerData.banner | uploadpath}}" class="img-responsive" style="width:100%;">
+      <div class="banner-title ab text-center">
+      <h4 class="wed-box borcol">{{bannerName}}</h4>
+      <div class="border-banner bborders"></div>
+    </div>
    </div>
 </section>
 <section class="inside">

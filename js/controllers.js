@@ -824,6 +824,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         if (data.value != false) {
             if (data.data && data.data.banner)
                 $scope.weddingBanner = data.data.banner;
+                $scope.weddingName=data.data.name;
         }
     })
 
@@ -2585,6 +2586,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             console.log(data);
             if (data.value != false) {
                 $scope.miceBanner = data.data;
+                $scope.miceName = data.data.name;
                 console.log("banner", $scope.miceBanner);
             }
         });
@@ -2895,6 +2897,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             console.log(data);
             if (data.value != false) {
                 $scope.eventBanner = data.data;
+                $scope.eventName = data.data.name;
                 console.log("banner", $scope.eventBanner);
             }
         });
@@ -3030,6 +3033,8 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
         NavigationService.getBanner($stateParams.id, function(data) {
             $scope.bannerData = data.data;
+            $scope.bannerName = data.data.name;
+
             console.log('$scope.bannerData', $scope.bannerData);
         })
         NavigationService.getTalentInside($stateParams.id, function(data) {

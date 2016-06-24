@@ -1,6 +1,13 @@
 <section class="worlddetail" ng-if="tourInside.worldtourdetail">
-  <div class="banner-movies ab">
+  <!-- <div class="banner-movies ab">
     <img ng-src="{{tourInside.worldtourdetail.banner | uploadpath}}" alt="{{tourInside.worldtourdetail.banner}}" class="img-responsive">
+  </div> -->
+  <div class="banner banner-movies ab">
+     <img ng-src="{{tourInside.worldtourdetail.banner | uploadpath}}" alt="{{tourInside.worldtourdetail.banner}}" class="img-responsive" style="width:100%;">
+     <div class="banner-wt ab text-center">
+     <h4 class="wed-box borcol">{{tourInside.worldtourdetail.name}}</h4>
+     <div class="border-banner bborders"></div>
+   </div>
   </div>
   <div class="container">
     <div class="movie-abt">

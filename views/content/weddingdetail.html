@@ -1,6 +1,12 @@
 <section class="eventdetail">
-  <div class="banner-movies ab">
+  <!-- <div class="banner-movies ab">
     <img src="img/event/eventinsidedetail/event.png" alt="" class="img-responsive">
+  </div> -->
+  <div class="banner-movies ab">
+    <img ng-src="{{weddetail.weddingdetail.banner | uploadpath}}" alt="{{micedetail.micedetail.banner}}" class="img-responsive">
+    <div class="banner-name ab text-center">
+    <h4>{{weddetail.weddingdetail.name}}</h4>
+  </div>
   </div>
   <div class="banner banner-asfc text-center mt180">
     <div class="container">

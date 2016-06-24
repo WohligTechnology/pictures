@@ -1,12 +1,26 @@
 <section>
-   <div class="banner banner-movies ab">
+   <!-- <div class="banner banner-movies ab">
       <img ng-src="{{weddingBanner | uploadpath}}" class="img-responsive" style="width:100%;">
-      <!-- <div class="banner-title text-center">
+    <div class="banner-title text-center">
       <h4>
         360 Weddings
       </h4>
-    </div> -->
+    </div>
+   </div> -->
+   <div class="banner banner-movies ab">
+      <img ng-src="{{weddingBanner | uploadpath}}" class="img-responsive" style="width:100%;">
+      <div class="banner-title ab text-center">
+      <h4 class="wed-box borcol">{{weddingName}}</h4>
+      <div class="border-banner bborders"></div>
+    </div>
    </div>
+   <!-- <div class="banner banner-movies ab">
+      <img ng-src="{{weddingBanner | uploadpath}}" class="img-responsive" style="width:100%;">
+      <div class="banner-title ab text-center">
+      <h4 class="wed-box borcol">360 Weddings</h4>
+      <div class="border-banner bborders bb6"></div>
+    </div>
+   </div> -->
 </section>
 <section infinite-scroll='addMoreItems();' infinite-scroll-distance="0" infinite-scroll-disabled="shouldscroll">
    <div class="container">
