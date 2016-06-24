@@ -2392,6 +2392,10 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $scope.menutitle = NavigationService.makeactive("Careers");
         TemplateService.title = $scope.menutitle;
         $scope.navigation = NavigationService.getnav();
+        NavigationService.getCareer(function(data){
+          $scope.careerdata=data.data;
+          console.log('$scope.careerdata',$scope.careerdata);
+        })
     })
     .controller('CareerFormCtrl', function($scope, TemplateService, NavigationService, $timeout) {
         //Used to name the .html file

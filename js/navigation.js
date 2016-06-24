@@ -154,6 +154,9 @@ var navigationservice = angular.module('navigationservice', [])
         getblogText: function(id, callback) {
             $http.get(apiUrl + 'getDiaryInsideDetail?id=' + id).success(callback);
         },
+        getCareer: function(callback) {
+            $http.get(apiUrl + 'getCareer').success(callback);
+        },
         getDiariesAuthor: function(id, callback) {
             $http.get(apiUrl + 'getAuthor?id=' + id).success(callback);
         },

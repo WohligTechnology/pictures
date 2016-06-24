@@ -65,16 +65,16 @@
     <div class="jobvacancy">
       <div class="container">
         <div class="row">
-          <div class="col-md-4">
+          <div class="col-md-4" ng-repeat="data in careerdata">
             <div class="vacancy">
-              <h4>Executive Producer</h4>
+              <h4>{{data.name}}</h4>
               <div class="inl">
                 <span class="blue">Number of positions:</span>&nbsp;
-                <span> 3</span>
+                <span>{{data.position}}</span>
               </div>
               <div class="inl">
                 <span class="blue">Educational Qualification:</span>&nbsp;
-                <span> Graduate / Master / MBA</span>
+                <span> {{data.education}}</span>
               </div>
               <!-- <div class="inlblo">
                 <p>Number of positions:</p>
@@ -86,7 +86,7 @@
             </div> -->
           </div>
         </div>
-          <div class="col-md-4">
+          <!-- <div class="col-md-4">
             <div class="vacancy">
               <h4>Production AD's</h4>
               <div class="inl">
@@ -111,10 +111,10 @@
                 <span> A Bachelor / Master Degree / Diploma in Events Management.</span>
               </div>
             </div>
-          </div>
+          </div> -->
         <!-- </div> -->
         <!-- <div class="row"> -->
-          <div class="col-md-4">
+          <!-- <div class="col-md-4">
             <div class="vacancy">
               <h4>Graphic Design</h4>
               <div class="inl">
@@ -152,7 +152,7 @@
                 <span> Graduate Post Graduate / Diploma in Design.</span>
               </div>
             </div>
-          </div>
+          </div> -->
         </div>
       </div>
     </div>
