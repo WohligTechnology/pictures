@@ -2263,7 +2263,7 @@ h4.title-movies {
     }
     .wed-box {
         .wed-desc-inside {
-            height: 60px;
+            height: 52px;
             p {
                 margin: 10px 0;
             }
@@ -4044,7 +4044,7 @@ right: 0px;
 .wedd-img-list:after,.mice-img-list:after,.sport-img-list:after,.wt-img-list:after{
     border-bottom: 28px solid #fff;
 }
-.movie-img-list:before,.event-img-list:after{
+.movie-img-list:before,.event-img-list:before{
   border-bottom: 35px solid #f0f0f0;
 }
 .movie-img-list:after,.event-img-list:after{
@@ -4068,7 +4068,18 @@ border-left: 62px solid transparent;
 border-bottom: 18px solid #f0f0f0;
 border-right: 140px solid transparent;
 }
+.image-size{
+    height: 354px;
+}
+.diary-img-list:after{
+  border-bottom: 78px solid #f0f0f0;
+  border-right: 590px solid transparent;
+}
+
+.diary-img-list:before{
+border-bottom: 72px solid #f0f0f0;
+border-left: 162px solid transparent;
+}
 /* Start writing sass here */
 @import "fancybox-override";
 @import "mobile";
- 

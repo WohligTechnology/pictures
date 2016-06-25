@@ -47,8 +47,8 @@
             </div> -->
                         <div class="col-sm-12" ng-repeat="wedData in DiaryInsideData.Wedding">
                             <div class="wed-box box-big border-red pdnone mb30">
-                                <div class="wed-img-list">
-                                    <img ng-src="{{wedData.image | uploadpath}}" alt="" class="img-responsive">
+                                <div class="wed-img-list event-img-list diary-img-list">
+                                    <img ng-src="{{wedData.image | uploadpath}}" alt="" class="img-responsive image-size">
                                     <div class="ribbon-red">
                                         <img src="img/ribbon_red.png" alt="">
                                         <span class="color-white uppercase">{{wedData.categoryname}}</span>
@@ -109,7 +109,7 @@
                     <div class="row" ng-if="DiaryInsideData.Movie.length>0 || DiaryInsideData.Sports.length>0">
                         <div class="col-sm-6" ng-if="DiaryInsideData.Movie.length>0" ng-repeat="movieData in DiaryInsideData.Movie">
                             <div class="wed-box border-red pdnone mb15">
-                                <div class="wed-img-list">
+                                <div class="wed-img-list event-img-list">
                                     <img ng-src="{{movieData.image | uploadpath}}" alt="" class="img-responsive">
                                     <div class="ribbon-red">
                                         <img src="img/ribbon_red.png" alt="">
@@ -145,7 +145,7 @@
                         </div>
                         <div class="col-sm-6" ng-if="DiaryInsideData.Sports.length>0" ng-repeat="sportsData in DiaryInsideData.Sports">
                             <div class="wed-box border-red pdnone mb15">
-                                <div class="wed-img-list">
+                                <div class="wed-img-list event-img-list">
                                     <img ng-src="{{sportsData.image | uploadpath}}" alt="" class="img-responsive">
                                     <div class="ribbon-red">
                                         <img src="img/ribbon_red.png" alt="">
@@ -184,8 +184,8 @@
                     <div class="row" ng-if="DiaryInsideData.Event.length>0">
                         <div class="col-sm-12" ng-repeat="eventData in DiaryInsideData.Event">
                             <div class="wed-box border-red box-big mb15 pdnone">
-                                <div class="wed-img-list">
-                                    <img ng-src="{{eventData.image | uploadpath}}" alt="" class="img-responsive">
+                                <div class="wed-img-list event-img-list diary-img-list">
+                                    <img ng-src="{{eventData.image | uploadpath}}" alt="" class="img-responsive image-size">
                                     <div class="ribbon-red">
                                         <img src="img/ribbon_red.png" alt="">
                                         <span class="color-white uppercase">{{eventData.categoryname}}</span>
@@ -283,7 +283,7 @@
                     <div class="row">
                         <div class="col-sm-6" ng-repeat="data in filterDiaries.queryresult" ng-if="filterDiaries.queryresult.length>0">
                             <div class="wed-box border-red pdnone mb15">
-                                <div class="wed-img-list">
+                                <div class="wed-img-list event-img-list">
                                     <img ng-src="{{data.image | uploadpath}}" alt="" class="img-responsive">
                                     <div class="ribbon-red">
                                         <img src="img/ribbon_red.png" alt="">
