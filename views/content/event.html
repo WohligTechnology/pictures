@@ -43,8 +43,8 @@
                   <div class=row>
                     <div class="col-sm-4 col-xs-6" ng-repeat="data in eventData.eventdiaries track by $index">
                       <div class="wed-box border-red">
-                        <div class=wed-img-list><img ng-src="{{data.image | uploadpath}}" class=img-responsive>
-                          <div class=ribbon-red><img src=img/ribbon_red.png> <span class="color-white uppercase">Event</span></div>
+                        <div class="wed-img-list event-img-list"><img ng-src="{{data.image | uploadpath}}" class=img-responsive>
+                          <div class="ribbon-red"><img src=img/ribbon_red.png> <span class="color-white uppercase">Event</span></div>
                         </div>
                         <div class=wed-desc>
                           <div class=wed-date><span>{{data.date}}</span></div>

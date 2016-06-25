@@ -683,7 +683,7 @@ ul.nav-opt1 {
             -webkit-transition: all 0.2s ease;
             img {
                 height: 65px;
-                margin-top: 0px;
+                margin-top: 0;
                 opacity: 0;
                 @include transition(all ease 300ms);
             }
@@ -3927,8 +3927,8 @@ h4.title-movies {
         color: #f23748;
         text-transform: uppercase;
     }
-    .wed-box{
-      border-width: 8px;
+    .wed-box {
+        border-width: 8px;
     }
     .bborders {
         width: 150px;
@@ -3948,38 +3948,127 @@ h4.title-movies {
     @include transform(translate(-50%,-50%));
     h4 {
         margin: 0;
-        font-size: 66px;
+        font-size: 30px;
         font-weight: 900;
         color: #fff;
         text-transform: uppercase;
     }
 }
-.banner-wt{
-  top: 52%;
-  left: 52%;
-  @include transform(translate(-50%,-50%));
-  h4 {
-      margin: 0;
-      font-size: 60px;
-      font-weight: 900;
-      color: #f23748;
-      text-transform: uppercase;
-  }
-  .wed-box{
-    border-width: 8px;
-  }
-  .bborders {
-      width: 150px;
-      bottom: 0;
-      border-width: 4px;
-  }
-  .borcol {
-      border-color: #e4d4b6 !important;
-  }
-  .border-banner {
-      border-color: #fff;
-  }
+.banner-wt {
+    top: 52%;
+    left: 52%;
+    @include transform(translate(-50%,-50%));
+    h4 {
+        margin: 0;
+        font-size: 60px;
+        font-weight: 900;
+        color: #f23748;
+        text-transform: uppercase;
+    }
+    .wed-box {
+        border-width: 8px;
+    }
+    .bborders {
+        width: 150px;
+        bottom: 0;
+        border-width: 4px;
+    }
+    .borcol {
+        border-color: #e4d4b6 !important;
+    }
+    .border-banner {
+        border-color: #fff;
+    }
+}
+.wedding-imgbox:after {
+    content: "";
+    border-bottom: 68px solid #FFFEFE;
+    border-left: 68px solid transparent;
+    position: absolute;
+    bottom: 0;
+    right: 15px;
+}
+.wedding-imgbox:before {
+    content: "";
+    border-top: 68px solid #FFFEFE;
+    border-right: 68px solid transparent;
+    position: absolute;
+    top: 0;
+    left: 15px;
+}
+.wedding-imagebox:after {
+    content: "";
+    border-bottom: 68px solid #F0F0F0;
+    border-left: 68px solid transparent;
+    position: absolute;
+    bottom: 0;
+    right: 15px;
+}
+.wedding-imagebox:before {
+    content: "";
+    border-top: 68px solid #F0F0F0;
+    border-right: 68px solid transparent;
+    position: absolute;
+    top: 0;
+    left: 15px;
+}
+.pattern-overlay {
+    position: absolute;
+    left: 0;
+    top: 0;
+    // z-index: 9999;
+    // opacity: 1;
+    // background: cover;
+    width: 100%;
+    height: 100%;
+}
+.wed-img-list:before{
+  content: "";
+border-bottom: 35px solid #f5f5f5;
+border-left: 101px solid transparent;
+position: absolute;
+bottom: 0px;
+right: 0px;
+}
+.wed-img-list:after{
+  content: "";
+  border-bottom: 28px solid #f5f5f5;
+  border-right: 228px solid transparent;
+  position: absolute;
+  bottom: 0px;
+  left: 0;
+}
+.wedd-img-list:before,.mice-img-list:before,.sport-img-list:before,.wt-img-list:before{
+  border-bottom: 35px solid #fff;
+}
+.wedd-img-list:after,.mice-img-list:after,.sport-img-list:after,.wt-img-list:after{
+    border-bottom: 28px solid #fff;
+}
+.movie-img-list:before,.event-img-list:after{
+  border-bottom: 35px solid #f0f0f0;
+}
+.movie-img-list:after,.event-img-list:after{
+    border-bottom: 28px solid #f0f0f0;
+}
+.home-img-list:before{
+  border-bottom: 35px solid #e23c3c;
+}
+.home-img-list:after{
+    border-bottom: 28px solid #e23c3c;
+}
+.img-width{
+width: 100%;
+height: 100%;
+}
+.blog-img-list:before{
+border-bottom: 22px solid #f0f0f0;
+border-left: 62px solid transparent;
+}
+.blog-img-list:after{
+border-bottom: 18px solid #f0f0f0;
+border-right: 140px solid transparent;
 }
 /* Start writing sass here */
 @import "fancybox-override";
 @import "mobile";
+ 
