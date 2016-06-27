@@ -80,7 +80,7 @@
         line-height: 0.9;
         img {
             height: 50px;
-            margin-top: -10px;
+            margin-top: -2px;
         }
     }
     .navbar-default .navbar-brand {
@@ -88,14 +88,14 @@
             width: 60px;
         }
         img.logo {
-            width: 100px;
+            width: 140px;
         }
     }
     .nav-inline,
     .nav-list {
         ul li a {
-            font-size: 24px;
-            padding: 2px 10px;
+            // font-size: 24px;
+            // padding: 2px 10px;
         }
     }
     .service-bg .list-service ul.serviceul li {
@@ -246,12 +246,11 @@
                 width: 60px;
             }
             img.logo {
-                width: 90px;
+                width: 140px;
             }
         }
     }
     .nav-list ul li a {
-        font-size: 14px;
         &:before {
             content: url("../img/menuicons/movies.png");
             @include transform(scale(0.6));
@@ -280,7 +279,7 @@
         min-height: 150px;
     }
     ul.nav-opt1 {
-        left: 9%;
+        left: 27%;
         li {
             a {
                 font-size: 36px;
@@ -422,8 +421,8 @@
                 font-weight: 300;
                 line-height: 1;
                 img {
-                  width: 12px;
-                  vertical-align: baseline;
+                    width: 12px;
+                    vertical-align: baseline;
                 }
             }
         }
@@ -505,14 +504,22 @@
         }
     }
 }
+@media (max-width: 600px) {
+    ul.nav-opt1 {
+        left: 22%;
+    }
+}
 @media (max-width: 480px) {
     .navbar-default .navbar-brand {
         img.years {
-            width: 50px;
+            width: 44px;
         }
         img.logo {
-            width: 90px;
+            width: 102px;
         }
+    }
+    ul.nav-opt1 {
+        left: 20%;
     }
     .nav-inline ul li {
         display: block;
@@ -682,19 +689,28 @@
         }
     }
     ul li a {
-        padding: 2px 10px;
-        font-size: 12px;
+        // padding: 2px 10px;
+        // font-size: 12px;
     }
 }
 @media (max-width: 400px) {
     .bg2 .flex-slider {
         @include transform(scale(0.7) translateX(0));
     }
+    ul.nav-opt1 {
+        left: 16%;
+    }
 }
 @media (max-width: 360px) {
     .bg-award .awards .nav > li > a {
         padding: 2px 4px;
         font-size: 12px;
+    }
+    ul.nav-opt1 {
+        left: 13%;
+        li a {
+            padding: 2px 14px;
+        }
     }
     .playersasfc.mt180 {
         margin-top: 220px;
