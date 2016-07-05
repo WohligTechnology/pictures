@@ -6,13 +6,14 @@ var adminURL = "";
 // }
 
 // adminURL = "http://wohlig.co.in/gsebackend/";
-// adminURL = "http://wohlig.co.in/gsebackend/";
-adminURL = "http://192.168.1.137/gsebackend/";
+adminURL = "http://wohlig.co.in/gsebackend/";
+// adminURL = "http://192.168.1.137/gsebackend/";
 // adminURL = "http://localhost/gsebackend/";
 var apiUrl = adminURL + "index.php/json/";
 var imgpath = adminURL + "uploads/";
 var hauth = "http://gsebackend.com/gsebackend/index.php/hauth/login/";
-var uploadurl = "http://192.168.1.137/gsebackend/index.php/json/imageUpload";
+var uploadurl = "http://wohlig.co.in/gsebackend/index.php/json/imageUpload";
+// var uploadurl = "http://192.168.1.137/gsebackend/index.php/json/imageUpload";
 
 var navigationservice = angular.module('navigationservice', [])
 
