@@ -431,6 +431,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     $scope.menutitle = NavigationService.makeactive("Talents");
     TemplateService.title = $scope.menutitle;
     $scope.navigation = NavigationService.getnav();
+    $scope.oneAtATime = true;
     $scope.formData = {};
     $scope.talentSubmitForm = function(formValid, formData) {
         if (formValid.$valid && $scope.formData) {
@@ -2452,6 +2453,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         TemplateService.title = $scope.menutitle;
         $scope.navigation = NavigationService.getnav();
         $scope.formData = {};
+        $scope.oneAtATime = true;
         $scope.formData.enquiryarr = [];
         $scope.showThanks = false;
         $scope.eoptions = {};
@@ -2758,6 +2760,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $scope.menutitle = NavigationService.makeactive("Events");
         TemplateService.title = $scope.menutitle;
         $scope.navigation = NavigationService.getnav();
+        $scope.oneAtATime = true;
         NavigationService.getEventData(function(data) {
             console.log(data);
             if (data.value != false) {
