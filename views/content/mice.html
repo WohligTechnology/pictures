@@ -56,15 +56,18 @@
                                 </div>
                                 <div class="wed-desc">
                                     <div class="wed-date">
-                                        <span>{{data.date}}</span>
+                                        <span>{{data.date | date:'dd-MM-yyyy'}}</span>
                                     </div>
                                     <div class="wed-desc-inside" ng-bind-html="data.content">
                                         <!-- <p class="bold">{{data.desc}}</p> -->
                                     </div>
-                                    <div class="read-more">
+                                    <div class="read-more clearfix">
                                        <a href="" class="color-black" ng-if="data.type==1" ui-sref="blogtext({id:data.id})">Read More</a>
                                        <a href="" class="color-black" ng-if="data.type==2" ui-sref="blogimage({id:data.id})">Read More</a>
                                        <a href="" class="color-black" ng-if="data.type==3" ui-sref="blogvideo({id:data.id})">Read More</a>
+                                       <div class="wed-date pull-right authorcolor">
+                                             <a ui-sref="diaries-author({id:data.author})"><span>By {{data.authorname}}</span></a>
+                                       </div>
                                     </div>
                                 </div>
                                 <div class="border-blue borders"></div>

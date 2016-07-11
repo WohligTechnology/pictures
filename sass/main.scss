@@ -356,103 +356,105 @@ hr {
         color: $color-white;
     }
 }
-ul {
+.sidemenu{
+  ul {
     li {
-        a {
-            padding: 2px 28px;
-            letter-spacing: 1px;
-            display: block;
-            font-size: 15px;
-            // color: $color-white;
-            // @include transition(all ease 300ms);
-            &:before {
-                margin-right: 10px;
-                vertical-align: middle;
-                // @include transition(all ease 300ms);
-            }
-            &.movies:before {
-                content: url('../img/menuicons/movies.png');
-            }
-            &.talent:before {
-                content: url('../img/menuicons/talents.png');
-            }
-            &.wedding:before {
-                content: url('../img/menuicons/weddings.png');
-            }
-            &.events:before {
-                content: url('../img/menuicons/events.png');
-            }
-            &.sports:before {
-                content: url('../img/menuicons/sports.png');
-            }
-            &.worldtour:before {
-                content: url('../img/menuicons/worldtours.png');
-            }
-            &.home:before {
-                content: url('../img/menuicons/home.png');
-            }
-            &.career:before {
-                content: url('../img/menuicons/career.png');
-            }
-            &.client:before {
-                content: url('../img/menuicons/clients.png');
-            }
-            &.about:before {
-                content: url('../img/menuicons/about.png');
-            }
-            &.contact:before {
-                content: url('../img/menuicons/telephones.png');
-            }
-            &.media:before {
-                content: url('../img/menuicons/media.png');
-            }
-            &.picture:before {
-                content: url('../img/menuicons/picture.png');
-            }
-            &.video:before {
-                content: url('../img/menuicons/video.png');
-            }
-            &.mice:before {
-                content: url('../img/menuicons/mice.png');
-            }
-            &.jpp:before {
-                content: url('../img/menuicons/jpp.png');
-            }
-            &.asfc:before {
-                content: url('../img/menuicons/asfc.png');
-            }
-            &.gsdairies:before {
-                content: url('../img/menuicons/gsdairies.png');
-            }
-            &.king:before {
-                content: url('../img/menuicons/bat.png');
-            }
-            &:hover {
-                color: darken( #fff, 20%);
-            }
-            // &:hover {
-            //   color: $brand-danger;
-            //   &.movies:before {
-            //     content: url('../img/menuicons/movies-hover.png');
-            //   }
-            //   &.talent:before {
-            //     content: url('../img/menuicons/talent-hover.png');
-            //   }
-            //   &.wedding:before {
-            //     content: url('../img/menuicons/wedding-hover.png');
-            //   }
-            //   &.events:before {
-            //     content: url('../img/menuicons/events-hover.png');
-            //   }
-            //   &.sports:before {
-            //     content: url('../img/menuicons/sports-hover.png');
-            //   }
-            //   &.worldtour:before {
-            //     content: url('../img/menuicons/worldtour-hover.png');
-            //   }
-            // }
+      a {
+        padding: 2px 28px;
+        letter-spacing: 1px;
+        display: block;
+        font-size: 15px;
+        // color: $color-white;
+        // @include transition(all ease 300ms);
+        &:before {
+          margin-right: 10px;
+          vertical-align: middle;
+          // @include transition(all ease 300ms);
         }
+        &.movies:before {
+          content: url('../img/menuicons/movies.png');
+        }
+        &.talent:before {
+          content: url('../img/menuicons/talents.png');
+        }
+        &.wedding:before {
+          content: url('../img/menuicons/weddings.png');
+        }
+        &.events:before {
+          content: url('../img/menuicons/events.png');
+        }
+        &.sports:before {
+          content: url('../img/menuicons/sports.png');
+        }
+        &.worldtour:before {
+          content: url('../img/menuicons/worldtours.png');
+        }
+        &.home:before {
+          content: url('../img/menuicons/home.png');
+        }
+        &.career:before {
+          content: url('../img/menuicons/career.png');
+        }
+        &.client:before {
+          content: url('../img/menuicons/clients.png');
+        }
+        &.about:before {
+          content: url('../img/menuicons/about.png');
+        }
+        &.contact:before {
+          content: url('../img/menuicons/telephones.png');
+        }
+        &.media:before {
+          content: url('../img/menuicons/media.png');
+        }
+        &.picture:before {
+          content: url('../img/menuicons/picture.png');
+        }
+        &.video:before {
+          content: url('../img/menuicons/video.png');
+        }
+        &.mice:before {
+          content: url('../img/menuicons/mice.png');
+        }
+        &.jpp:before {
+          content: url('../img/menuicons/jpp.png');
+        }
+        &.asfc:before {
+          content: url('../img/menuicons/asfc.png');
+        }
+        &.gsdairies:before {
+          content: url('../img/menuicons/gsdairies.png');
+        }
+        &.king:before {
+          content: url('../img/menuicons/bat.png');
+        }
+        &:hover {
+          color: darken( #fff, 20%);
+        }
+        // &:hover {
+        //   color: $brand-danger;
+        //   &.movies:before {
+        //     content: url('../img/menuicons/movies-hover.png');
+        //   }
+        //   &.talent:before {
+        //     content: url('../img/menuicons/talent-hover.png');
+        //   }
+        //   &.wedding:before {
+        //     content: url('../img/menuicons/wedding-hover.png');
+        //   }
+        //   &.events:before {
+        //     content: url('../img/menuicons/events-hover.png');
+        //   }
+        //   &.sports:before {
+        //     content: url('../img/menuicons/sports-hover.png');
+        //   }
+        //   &.worldtour:before {
+        //     content: url('../img/menuicons/worldtour-hover.png');
+        //   }
+        // }
+      }
     }
+  }
 }
 .nav-inline {
     margin-left: 50px;
@@ -2260,6 +2262,11 @@ h4.title-movies {
     .wed-box.pdnone {
         padding-bottom: 0;
         margin-bottom: 40px;
+    }
+    .wed-date{
+      a{
+            color: #333333;
+      }
     }
     .wed-box {
         .wed-desc-inside {
@@ -4081,7 +4088,14 @@ border-bottom: 72px solid #f0f0f0;
 border-left: 162px solid transparent;
 }
 .padds0{
-  padding:0px;
+  padding:0;
+}
+.authorcolor{
+  margin: 0 !important;
+  a{
+    text-decoration: none !important;
+    color: white;
+  }
 }
 /* Start writing sass here */
 @import "fancybox-override";

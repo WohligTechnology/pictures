@@ -47,14 +47,17 @@
                           <div class="ribbon-red"><img src=img/ribbon_red.png> <span class="color-white uppercase">Event</span></div>
                         </div>
                         <div class=wed-desc>
-                          <div class=wed-date><span>{{data.date}}</span></div>
+                          <div class=wed-date><span>{{data.date | date:'dd-MM-yyyy'}}</span></div>
                           <div class="wed-desc-inside" ng-bind-html="data.content">
 
                           </div>
-                          <div class="read-more">
+                          <div class="read-more clearfix">
                              <a href="" class="color-black" ng-if="data.type==1" ui-sref="blogtext({id:data.id})">Read More</a>
                              <a href="" class="color-black" ng-if="data.type==2" ui-sref="blogimage({id:data.id})">Read More</a>
                              <a href="" class="color-black" ng-if="data.type==3" ui-sref="blogvideo({id:data.id})">Read More</a>
+                             <div class="wed-date pull-right authorcolor">
+                                   <a ui-sref="diaries-author({id:data.author})"><span>By {{data.authorname}}</span></a>
+                             </div>
                           </div>
                           <!-- <div class="read-more"><a class=color-black>Read More</a></div> -->
                         </div>
