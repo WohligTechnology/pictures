@@ -1319,10 +1319,13 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         var i = $scope.pageno++;
         // $state.go('diaries', {page: i});
         NavigationService.getDiaryInsideByPage(i, function(data) {
+          console.log(data);
             $scope.DiaryInsideData = data.data;
+            console.log('$scope.DiaryInsideData',$scope.DiaryInsideData);
             $scope.currentpg = i;
         })
     }
+
 
     //
     $scope.previous = function() {
