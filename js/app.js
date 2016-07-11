@@ -12,6 +12,11 @@ firstapp.config(function($stateProvider, $urlRouterProvider, $httpProvider, $loc
     cfpLoadingBarProvider.includeBar = true;
     $httpProvider.defaults.withCredentials = true;
     $stateProvider
+        .state('landing', {
+            url: "/landing",
+            templateUrl: "views/template.html",
+            controller: 'LandingCtrl'
+        })
         .state('home', {
             url: "/home",
             templateUrl: "views/template.html",
@@ -187,7 +192,7 @@ firstapp.config(function($stateProvider, $urlRouterProvider, $httpProvider, $loc
             templateUrl: "views/template.html",
             controller: 'WorldTourInsideCtrl'
         });
-    $urlRouterProvider.otherwise("/home");
+    $urlRouterProvider.otherwise("/landing");
     $locationProvider.html5Mode(isproduction);
 });
 
