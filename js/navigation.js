@@ -182,8 +182,8 @@ var navigationservice = angular.module('navigationservice', [])
         getMediaByYear: function(obj, callback) {
             $http.get(apiUrl + 'getMediaCornerDetails?year=' + obj.year + "&pageno=" + obj.pageno).success(callback);
         },
-        getDiaryInsideByPage: function(page, callback) {
-            $http.get(apiUrl + 'getDiaryInside?page=' + page).success(callback);
+        getDiaryInsideByPage: function(callback) {
+            $http.get(apiUrl + 'getDiaryInside').success(callback);
         },
         getFilterDiaries: function(obj, callback) {
             $http.get(apiUrl + 'getDiaryInsideFilter?category=' + obj.category + "&month=" + obj.month + "&year=" + obj.year + "&pageno=" + obj.pageno + "&maxrow=" + obj.maxrow).success(callback);

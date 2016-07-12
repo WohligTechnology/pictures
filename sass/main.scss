@@ -4090,12 +4090,50 @@ border-left: 162px solid transparent;
 .padds0{
   padding:0;
 }
+.mar0{
+  margin: 0 !important;
+}
 .authorcolor{
   margin: 0 !important;
   a{
     text-decoration: none !important;
     color: white;
   }
+}
+.wed{
+   margin: 0 0 10px;
+   p{
+     font-weight: 600;
+   }
+}
+.wedd{
+  margin: 8px 0 0 !important;
+}
+.read-more{
+a{
+  color:#414042;
+  font-weight: 600;
+}
+}
+.landing {
+ position: relative;
+ background: url("../img/main.jpg") no-repeat;
+ height: 100vh;
+ background-size: cover;
+ background-position: 50% 50%;
+ // .image-landing {
+ //   height: 100%;
+ //   width: auto;
+ // }
+ .cont-btn {
+   width: 200px;
+   position: absolute;
+   right: 0;
+   bottom: 20px;
+   &:hover {
+     opacity: 0.90;
+   }
+}
 }
 /* Start writing sass here */
 @import "fancybox-override";
