@@ -4097,7 +4097,7 @@ border-left: 162px solid transparent;
   margin: 0 !important;
   a{
     text-decoration: none !important;
-    color: white;
+    color: white !important;
   }
 }
 .wed{
@@ -4114,6 +4114,25 @@ a{
   color:#414042;
   font-weight: 600;
 }
+}
+.rmcol{
+  color:rgba(255, 255, 255, 0.5);
+  a{
+    color:rgba(255, 255, 255, 0.5);
+    &:hover{
+      color:rgba(255, 255, 255, 0.4);
+    }
+  }
+  .authorcolor{
+    margin: 0 !important;
+    a{
+      text-decoration: none !important;
+      color:rgba(255, 255, 255, 0.5) !important;
+      &:hover{
+        color:rgba(255, 255, 255, 0.4) !important;
+      }
+    }
+  }
 }
 .landing {
  position: relative;
