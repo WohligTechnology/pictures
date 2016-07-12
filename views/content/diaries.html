@@ -21,209 +21,49 @@
         <div class="row">
             <div class="col-sm-9">
                 <div class="dairies-box pd-side mb15">
-                    <div class="row" ng-if="DiaryInsideData.Wedding.length>0">
-                        <!-- <div class="col-sm-12" ng-repeat="wedData in DiaryInsideData.Wedding">
-              <div class="wed-box box-big border-red pdnone mb30">
-                <div class="wed-img-list">
-                  <img ng-src="{{diariesfull1.img}}" alt="" class="img-responsive">
-                  <div class="ribbon-red">
-                    <img src="img/ribbon_red.png" alt="">
-                    <span class="color-white uppercase">{{diariesfull1.name}}</span>
+                  <div class="row">
+                      <div class="col-sm-6" ng-repeat="wedData in DiaryInsideData.queryresult">
+                          <div class="wed-box box-big border-red pdnone mb30">
+                              <div class="wed-img-list event-img-list diary-img-list">
+                                  <img ng-src="{{wedData.image | uploadpath}}" alt="" class="img-responsive image-size">
+                                  <div class="ribbon-red">
+                                      <img src="img/ribbon_red.png" alt="">
+                                      <span class="color-white uppercase">{{wedData.categoryname}}</span>
+                                  </div>
+                              </div>
+                              <div class="wed-desc wed">
+                                  <div class="wed-desc-inside" ng-bind-html="wedData.content">
+                                      <!-- <p class="bold">{{movieData.desc}}</p> -->
+                                  </div>
+                                  <div class="wed-date mar0 clearfix wedd">
+                                      <a ui-sref="diaries-author({id:wedData.authorid})"><span>By {{wedData.authorname}}</span></a>
+                                      <div class="wed-date mar0 pull-right">
+                                          <span>Views:</span>
+                                          <span>{{wedData.views}}</span>
+                                      </div>
+                                  </div>
+                                  <div class="read-more pull-right" ng-if="wedData.type==1">
+                                      <a class="color-black" ui-sref="blogtext({id:wedData.id})">Read More</a>
+                                  </div>
+                                  <div class="read-more pull-right" ng-if="wedData.type==2">
+                                      <a class="color-black" ui-sref="blogimage({id:wedData.id})">Read More</a>
+                                  </div>
+                                  <div class="read-more pull-right" ng-if="wedData.type==3">
+                                      <a class="color-black" ui-sref="blogvideo({id:wedData.id})">Read More</a>
+                                  </div>
+                                  <div class="wed-date mar0">
+                                      <span>{{wedData.date |date:'d MMMM y'}}</span>
+                                  </div>
+                              </div>
+                              <div class="border-blue borders"></div>
+                          </div>
+                      </div>
                   </div>
-                </div>
-                <div class="wed-desc">
-                  <div class="wed-desc-inside">
-                    <p class="bold">{{diariesfull1.desc}}</p>
-                  </div>
-                  <div class="read-more pull-right mtb5">
-                    <a href="" class="color-black bold">Read More</a>
-                  </div>
-                  <div class="wed-date">
-                    <span>{{diariesfull1.date}}</span>
-                  </div>
-                </div>
-                <div class="border-blue borders"></div>
-              </div>
-            </div> -->
-                        <div class="col-sm-12" ng-repeat="wedData in DiaryInsideData.Wedding">
-                            <div class="wed-box box-big border-red pdnone mb30">
-                                <div class="wed-img-list event-img-list diary-img-list">
-                                    <img ng-src="{{wedData.image | uploadpath}}" alt="" class="img-responsive image-size">
-                                    <div class="ribbon-red">
-                                        <img src="img/ribbon_red.png" alt="">
-                                        <span class="color-white uppercase">{{wedData.categoryname}}</span>
-                                    </div>
-                                </div>
-                                <div class="wed-desc">
-                                    <div class="wed-desc-inside" ng-bind-html="wedData.content">
-                                        <!-- <p class="bold">{{wedData.content}}</p> -->
-                                    </div>
-                                    <div class="wed-date">
-
-                                        <a ui-sref="diaries-author({id:wedData.authorid})"><span class="pr6">{{wedData.authorname}}</span></a>
-                                        <span class="pr6">|</span>
-                                        <span class="pr6">{{wedData.date}}</span>
-                                        <span class="pr6">|</span>
-                                        <span class="pr6">Views:</span>
-                                        <span class="pr6">{{wedData.views}}</span>
-                                        <div class="read-more pull-right" ng-if="wedData.type==1">
-                                            <a class="color-black bold" ui-sref="blogtext({id:wedData.id})">Read More</a>
-                                        </div>
-                                        <div class="read-more pull-right" ng-if="wedData.type==2">
-                                            <a class="color-black bold" ui-sref="blogimage({id:wedData.id})">Read More</a>
-                                        </div>
-                                        <div class="read-more pull-right" ng-if="wedData.type==3">
-                                            <a class="color-black bold" ui-sref="blogvideo({id:wedData.id})">Read More</a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="border-blue borders"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- <div class="row" ng-if="DiaryInsideData.Wedding.length>0">
-            <div class="col-sm-6" ng-repeat="data in diaries track by $index">
-              <div class="wed-box border-red pdnone mb15">
-                <div class="wed-img-list">
-                  <img ng-src="{{data.img}}" alt="" class="img-responsive">
-                  <div class="ribbon-red">
-                    <img src="img/ribbon_red.png" alt="">
-                    <span class="color-white uppercase">{{data.name}}</span>
-                  </div>
-                </div>
-                <div class="wed-desc">
-                  <div class="wed-desc-inside">
-                    <p class="bold">{{data.desc}}</p>
-                  </div>
-                  <div class="read-more pull-right mtb5">
-                    <a href="" class="color-black bold">Read More</a>
-                  </div>
-                  <div class="wed-date">
-                    <span>{{diariesfull1.date}}</span>
-                  </div>
-                </div>
-                <div class="border-blue borders"></div>
-              </div>
-            </div>
-          </div> -->
-                    <div class="row" ng-if="DiaryInsideData.Movie.length>0 || DiaryInsideData.Sports.length>0">
-                        <div class="col-sm-6" ng-if="DiaryInsideData.Movie.length>0" ng-repeat="movieData in DiaryInsideData.Movie">
-                            <div class="wed-box border-red pdnone mb15">
-                                <div class="wed-img-list event-img-list">
-                                    <img ng-src="{{movieData.image | uploadpath}}" alt="" class="img-responsive">
-                                    <div class="ribbon-red">
-                                        <img src="img/ribbon_red.png" alt="">
-                                        <span class="color-white uppercase">{{movieData.categoryname}}</span>
-                                    </div>
-                                </div>
-                                <div class="wed-desc">
-                                    <div class="wed-desc-inside" ng-bind-html="movieData.content">
-                                        <!-- <p class="bold">{{movieData.desc}}</p> -->
-                                    </div>
-                                    <div class="wed-date clearfix">
-                                        <a ui-sref="diaries-author({id:movieData.authorid})"><span>{{movieData.authorname}}</span></a>
-                                        <div class="wed-date pull-right">
-                                            <span>Views:</span>
-                                            <span>{{movieData.views}}</span>
-                                        </div>
-                                    </div>
-                                    <div class="read-more pull-right mtb5" ng-if="movieData.type==1">
-                                        <a class="color-black bold" ui-sref="blogtext({id:movieData.id})">Read More</a>
-                                    </div>
-                                    <div class="read-more pull-right mtb5" ng-if="movieData.type==2">
-                                        <a class="color-black bold" ui-sref="blogimage({id:movieData.id})">Read More</a>
-                                    </div>
-                                    <div class="read-more pull-right mtb5" ng-if="movieData.type==3">
-                                        <a class="color-black bold" ui-sref="blogvideo({id:movieData.id})">Read More</a>
-                                    </div>
-                                    <div class="wed-date">
-                                        <span>{{movieData.date}}</span>
-                                    </div>
-                                </div>
-                                <div class="border-blue borders"></div>
-                            </div>
-                        </div>
-                        <div class="col-sm-6" ng-if="DiaryInsideData.Sports.length>0" ng-repeat="sportsData in DiaryInsideData.Sports">
-                            <div class="wed-box border-red pdnone mb15">
-                                <div class="wed-img-list event-img-list">
-                                    <img ng-src="{{sportsData.image | uploadpath}}" alt="" class="img-responsive">
-                                    <div class="ribbon-red">
-                                        <img src="img/ribbon_red.png" alt="">
-                                        <span class="color-white uppercase">{{sportsData.categoryname}}</span>
-                                    </div>
-                                </div>
-
-                                <div class="wed-desc">
-                                    <div class="wed-desc-inside" ng-bind-html="sportsData.content">
-                                        <!-- <p class="bold">{{movieData.desc}}</p> -->
-                                    </div>
-                                    <div class="wed-date clearfix">
-                                        <a ui-sref="diaries-author({id:sportsData.authorid})"><span>{{sportsData.authorname}}</span></a>
-                                        <div class="wed-date pull-right">
-                                            <span>Views:</span>
-                                            <span>{{sportsData.views}}</span>
-                                        </div>
-                                    </div>
-                                    <div class="read-more pull-right mtb5" ng-if="sportsData.type==1">
-                                        <a class="color-black bold" ui-sref="blogtext({id:sportsData.id})">Read More</a>
-                                    </div>
-                                    <div class="read-more pull-right mtb5" ng-if="sportsData.type==2">
-                                        <a class="color-black bold" ui-sref="blogimage({id:sportsData.id})">Read More</a>
-                                    </div>
-                                    <div class="read-more pull-right mtb5" ng-if="sportsData.type==3">
-                                        <a class="color-black bold" ui-sref="blogvideo({id:sportsData.id})">Read More</a>
-                                    </div>
-                                    <div class="wed-date">
-                                        <span>{{sportsData.date}}</span>
-                                    </div>
-                                </div>
-                                <div class="border-blue borders"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row" ng-if="DiaryInsideData.Event.length>0">
-                        <div class="col-sm-12" ng-repeat="eventData in DiaryInsideData.Event">
-                            <div class="wed-box border-red box-big mb15 pdnone">
-                                <div class="wed-img-list event-img-list diary-img-list">
-                                    <img ng-src="{{eventData.image | uploadpath}}" alt="" class="img-responsive image-size">
-                                    <div class="ribbon-red">
-                                        <img src="img/ribbon_red.png" alt="">
-                                        <span class="color-white uppercase">{{eventData.categoryname}}</span>
-                                    </div>
-                                </div>
-                                <div class="wed-desc">
-                                    <div class="wed-desc-inside" ng-bind-html="eventData.content">
-                                        <!-- <p class="bold">{{eventData.desc}}</p> -->
-                                    </div>
-                                    <div class="wed-date clearfix">
-                                        <a ui-sref="diaries-author({id:eventData.authorid})"><span>{{eventData.authorname}}</span></a>
-                                        <div class="wed-date pull-right">
-                                            <span>Views:</span>
-                                            <span>{{eventData.views}}</span>
-                                        </div>
-                                    </div>
-                                    <div class="read-more pull-right mtb5" ng-if="eventData.type==1">
-                                        <a class="color-black bold" ui-sref="blogtext({id:eventData.id})">Read More</a>
-                                    </div>
-                                    <div class="read-more pull-right mtb5" ng-if="eventData.type==2">
-                                        <a class="color-black bold" ui-sref="blogimage({id:eventData.id})">Read More</a>
-                                    </div>
-                                    <div class="read-more pull-right mtb5" ng-if="eventData.type==3">
-                                        <a class="color-black bold" ui-sref="blogvideo({id:eventData.id})">Read More</a>
-                                    </div>
-                                    <div class="wed-date">
-                                        <span>{{eventData.date}}</span>
-                                    </div>
-                                </div>
-                                <div class="border-blue borders"></div>
-                            </div>
-                        </div>
-                    </div>
                     <div class="btn-all mr30">
-                        <button class="btn btn-danger btn-outline" ng-click="previous();" ng-disabled="currentpg==1">
+                        <button class="btn btn-danger btn-outline" ng-click="changeDiary(-1);" ng-disabled="DiaryInsideData.pageno==1">
                             Prev
                         </button>
-                        <button class="btn btn-danger btn-outline pull-right" ng-click="next();">
+                        <button class="btn btn-danger btn-outline pull-right" ng-click="changeDiary(1);" ng-disabled="DiaryInsideData.pageno==DiaryInsideData.lastpage">
                             <!-- <button class="btn btn-danger btn-outline pull-right" ng-click="next();"> -->
                             Next
                         </button>
@@ -290,27 +130,27 @@
                                         <span class="color-white uppercase">{{data.categoryname}}</span>
                                     </div>
                                 </div>
-                                <div class="wed-desc">
+                                <div class="wed-desc wed">
                                     <div class="wed-desc-inside" ng-bind-html="data.content">
                                     </div>
-                                    <div class="wed-date clearfix">
+                                    <div class="wed-date mar0 clearfix wedd">
                                         <a ui-sref="diaries-author({id:data.authorid})"><span>{{data.authorname}}</span></a>
-                                        <div class="wed-date pull-right">
+                                        <div class="wed-date mar0 pull-right">
                                             <span>Views:</span>
                                             <span>{{data.views}}</span>
                                         </div>
                                     </div>
-                                    <div class="read-more pull-right mtb5" ng-if="data.type==1">
+                                    <div class="read-more pull-right" ng-if="data.type==1">
                                         <a class="color-black bold" ui-sref="blogtext({id:data.id})">Read More</a>
                                     </div>
-                                    <div class="read-more pull-right mtb5" ng-if="data.type==2">
+                                    <div class="read-more pull-right" ng-if="data.type==2">
                                         <a class="color-black bold" ui-sref="blogimage({id:data.id})">Read More</a>
                                     </div>
-                                    <div class="read-more pull-right mtb5" ng-if="data.type==3">
+                                    <div class="read-more pull-right" ng-if="data.type==3">
                                         <a class="color-black bold" ui-sref="blogvideo({id:data.id})">Read More</a>
                                     </div>
-                                    <div class="wed-date">
-                                        <span>{{data.date}}</span>
+                                    <div class="wed-date mar0">
+                                        <span>{{data.date |date:'d MMMM y'}}</span>
                                     </div>
                                 </div>
                                 <div class="border-blue borders"></div>

@@ -47,14 +47,17 @@
                           <div class="ribbon-red"><img src=img/ribbon_red.png> <span class="color-white uppercase">Event</span></div>
                         </div>
                         <div class=wed-desc>
-                          <div class=wed-date><span>{{data.date}}</span></div>
+                          <div class=wed-date><span>{{data.date | date:'d MMMM y'}}</span></div>
                           <div class="wed-desc-inside" ng-bind-html="data.content">
 
                           </div>
-                          <div class="read-more">
+                          <div class="read-more clearfix">
                              <a href="" class="color-black" ng-if="data.type==1" ui-sref="blogtext({id:data.id})">Read More</a>
                              <a href="" class="color-black" ng-if="data.type==2" ui-sref="blogimage({id:data.id})">Read More</a>
                              <a href="" class="color-black" ng-if="data.type==3" ui-sref="blogvideo({id:data.id})">Read More</a>
+                             <div class="wed-date pull-right authorcolor">
+                                   <a ui-sref="diaries-author({id:data.author})"><span>By {{data.authorname}}</span></a>
+                             </div>
                           </div>
                           <!-- <div class="read-more"><a class=color-black>Read More</a></div> -->
                         </div>
@@ -137,7 +140,7 @@
                 <div class="col-md-4 col-sm-4">
                   <div class="social-box text-center"><img src=img/socials/instagram.png class=doneLoading></div>
                   <div class="social-logo text-center">
-                    <iframe src=//lightwidget.com/widgets/2965b7333833557283d4029e025bd4e8.html id=lightwidget_2965b73338 name=lightwidget_2965b73338 scrolling=no allowtransparency=true class=lightwidget-widget style="width: 100%; border: 0; overflow: hidden;"></iframe>
+                    <iframe src=//lightwidget.com/widgets/2965b7333833557283d4029e025bd4e8.html id=lightwidget_2965b73338 name=lightwidget_2965b73338 scrolling=no allowtransparency=true class=lightwidget-widget style="width: 100%; border: 0; overflow: hidden; height:480px;"></iframe>
                   </div>
                 </div>
               </div>
