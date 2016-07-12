@@ -356,105 +356,105 @@ hr {
         color: $color-white;
     }
 }
-.sidemenu{
-  ul {
-    li {
-      a {
-        padding: 2px 28px;
-        letter-spacing: 1px;
-        display: block;
-        font-size: 15px;
-        // color: $color-white;
-        // @include transition(all ease 300ms);
-        &:before {
-          margin-right: 10px;
-          vertical-align: middle;
-          // @include transition(all ease 300ms);
+.sidemenu {
+    ul {
+        li {
+            a {
+                padding: 2px 28px;
+                letter-spacing: 1px;
+                display: block;
+                font-size: 15px;
+                // color: $color-white;
+                // @include transition(all ease 300ms);
+                &:before {
+                    margin-right: 10px;
+                    vertical-align: middle;
+                    // @include transition(all ease 300ms);
+                }
+                &.movies:before {
+                    content: url('../img/menuicons/movies.png');
+                }
+                &.talent:before {
+                    content: url('../img/menuicons/talents.png');
+                }
+                &.wedding:before {
+                    content: url('../img/menuicons/weddings.png');
+                }
+                &.events:before {
+                    content: url('../img/menuicons/events.png');
+                }
+                &.sports:before {
+                    content: url('../img/menuicons/sports.png');
+                }
+                &.worldtour:before {
+                    content: url('../img/menuicons/worldtours.png');
+                }
+                &.home:before {
+                    content: url('../img/menuicons/home.png');
+                }
+                &.career:before {
+                    content: url('../img/menuicons/career.png');
+                }
+                &.client:before {
+                    content: url('../img/menuicons/clients.png');
+                }
+                &.about:before {
+                    content: url('../img/menuicons/about.png');
+                }
+                &.contact:before {
+                    content: url('../img/menuicons/telephones.png');
+                }
+                &.media:before {
+                    content: url('../img/menuicons/media.png');
+                }
+                &.picture:before {
+                    content: url('../img/menuicons/picture.png');
+                }
+                &.video:before {
+                    content: url('../img/menuicons/video.png');
+                }
+                &.mice:before {
+                    content: url('../img/menuicons/mice.png');
+                }
+                &.jpp:before {
+                    content: url('../img/menuicons/jpp.png');
+                }
+                &.asfc:before {
+                    content: url('../img/menuicons/asfc.png');
+                }
+                &.gsdairies:before {
+                    content: url('../img/menuicons/gsdairies.png');
+                }
+                &.king:before {
+                    content: url('../img/menuicons/bat.png');
+                }
+                &:hover {
+                    color: darken( #fff, 20%);
+                }
+                // &:hover {
+                //   color: $brand-danger;
+                //   &.movies:before {
+                //     content: url('../img/menuicons/movies-hover.png');
+                //   }
+                //   &.talent:before {
+                //     content: url('../img/menuicons/talent-hover.png');
+                //   }
+                //   &.wedding:before {
+                //     content: url('../img/menuicons/wedding-hover.png');
+                //   }
+                //   &.events:before {
+                //     content: url('../img/menuicons/events-hover.png');
+                //   }
+                //   &.sports:before {
+                //     content: url('../img/menuicons/sports-hover.png');
+                //   }
+                //   &.worldtour:before {
+                //     content: url('../img/menuicons/worldtour-hover.png');
+                //   }
+                // }
+            }
         }
-        &.movies:before {
-          content: url('../img/menuicons/movies.png');
-        }
-        &.talent:before {
-          content: url('../img/menuicons/talents.png');
-        }
-        &.wedding:before {
-          content: url('../img/menuicons/weddings.png');
-        }
-        &.events:before {
-          content: url('../img/menuicons/events.png');
-        }
-        &.sports:before {
-          content: url('../img/menuicons/sports.png');
-        }
-        &.worldtour:before {
-          content: url('../img/menuicons/worldtours.png');
-        }
-        &.home:before {
-          content: url('../img/menuicons/home.png');
-        }
-        &.career:before {
-          content: url('../img/menuicons/career.png');
-        }
-        &.client:before {
-          content: url('../img/menuicons/clients.png');
-        }
-        &.about:before {
-          content: url('../img/menuicons/about.png');
-        }
-        &.contact:before {
-          content: url('../img/menuicons/telephones.png');
-        }
-        &.media:before {
-          content: url('../img/menuicons/media.png');
-        }
-        &.picture:before {
-          content: url('../img/menuicons/picture.png');
-        }
-        &.video:before {
-          content: url('../img/menuicons/video.png');
-        }
-        &.mice:before {
-          content: url('../img/menuicons/mice.png');
-        }
-        &.jpp:before {
-          content: url('../img/menuicons/jpp.png');
-        }
-        &.asfc:before {
-          content: url('../img/menuicons/asfc.png');
-        }
-        &.gsdairies:before {
-          content: url('../img/menuicons/gsdairies.png');
-        }
-        &.king:before {
-          content: url('../img/menuicons/bat.png');
-        }
-        &:hover {
-          color: darken( #fff, 20%);
-        }
-        // &:hover {
-        //   color: $brand-danger;
-        //   &.movies:before {
-        //     content: url('../img/menuicons/movies-hover.png');
-        //   }
-        //   &.talent:before {
-        //     content: url('../img/menuicons/talent-hover.png');
-        //   }
-        //   &.wedding:before {
-        //     content: url('../img/menuicons/wedding-hover.png');
-        //   }
-        //   &.events:before {
-        //     content: url('../img/menuicons/events-hover.png');
-        //   }
-        //   &.sports:before {
-        //     content: url('../img/menuicons/sports-hover.png');
-        //   }
-        //   &.worldtour:before {
-        //     content: url('../img/menuicons/worldtour-hover.png');
-        //   }
-        // }
-      }
     }
-  }
 }
 .nav-inline {
     margin-left: 50px;
@@ -2263,10 +2263,10 @@ h4.title-movies {
         padding-bottom: 0;
         margin-bottom: 40px;
     }
-    .wed-date{
-      a{
+    .wed-date {
+        a {
             color: #333333;
-      }
+        }
     }
     .wed-box {
         .wed-desc-inside {
@@ -2285,7 +2285,8 @@ h4.title-movies {
     }
     .btn-all {
         .btn-outline {
-            color: $brand-danger;
+            // color: $brand-danger;
+            color: darken($brand-danger,10%);
             background-color: transparent;
             :hover {
                 color: darken($brand-danger,30%);
@@ -3380,7 +3381,7 @@ h4.title-movies {
         @include transition(all ease 300ms);
     }
     .btn-outlines {
-        color: #404042;
+        color: rgba(65,64,66,1);
         border-style: solid;
         border-width: 1px;
         border-color: #f13748;
@@ -3608,7 +3609,7 @@ h4.title-movies {
             height: 246px;
             overflow: hidden;
             margin: 15px 0;
-            padding: 5px 10px;
+            padding: 14px 20px;
             font-family: "Lato";
             h4 {
                 text-transform: uppercase;
@@ -4029,130 +4030,140 @@ h4.title-movies {
     width: 100%;
     height: 100%;
 }
-.wed-img-list:before{
-  content: "";
-border-bottom: 35px solid #f5f5f5;
-border-left: 101px solid transparent;
-position: absolute;
-bottom: 0px;
-right: 0px;
+.wed-img-list:before {
+    content: "";
+    border-bottom: 35px solid #f5f5f5;
+    border-left: 101px solid transparent;
+    position: absolute;
+    bottom: 0;
+    right: 0;
 }
-.wed-img-list:after{
-  content: "";
-  border-bottom: 28px solid #f5f5f5;
-  border-right: 228px solid transparent;
-  position: absolute;
-  bottom: 0px;
-  left: 0;
+.wed-img-list:after {
+    content: "";
+    border-bottom: 28px solid #f5f5f5;
+    border-right: 228px solid transparent;
+    position: absolute;
+    bottom: 0;
+    left: 0;
 }
-.wedd-img-list:before,.mice-img-list:before,.sport-img-list:before,.wt-img-list:before{
-  border-bottom: 35px solid #fff;
+.mice-img-list:before,
+.sport-img-list:before,
+.wedd-img-list:before,
+.wt-img-list:before {
+    border-bottom: 35px solid #fff;
 }
-.wedd-img-list:after,.mice-img-list:after,.sport-img-list:after,.wt-img-list:after{
+.mice-img-list:after,
+.sport-img-list:after,
+.wedd-img-list:after,
+.wt-img-list:after {
     border-bottom: 28px solid #fff;
 }
-.movie-img-list:before,.event-img-list:before{
-  border-bottom: 35px solid #f0f0f0;
+.event-img-list:before,
+.movie-img-list:before {
+    border-bottom: 35px solid #f0f0f0;
 }
-.movie-img-list:after,.event-img-list:after{
+.event-img-list:after,
+.movie-img-list:after {
     border-bottom: 28px solid #f0f0f0;
 }
-.home-img-list:before{
-  border-bottom: 35px solid #e23c3c;
+.home-img-list:before {
+    border-bottom: 35px solid #e23c3c;
 }
-.home-img-list:after{
+.home-img-list:after {
     border-bottom: 28px solid #e23c3c;
 }
-.img-width{
-width: 100%;
-height: 100%;
+.img-width {
+    width: 100%;
+    height: 100%;
 }
-.blog-img-list:before{
-border-bottom: 22px solid #f0f0f0;
-border-left: 62px solid transparent;
+.blog-img-list:before {
+    border-bottom: 22px solid #f0f0f0;
+    border-left: 62px solid transparent;
 }
-.blog-img-list:after{
-border-bottom: 18px solid #f0f0f0;
-border-right: 140px solid transparent;
+.blog-img-list:after {
+    border-bottom: 18px solid #f0f0f0;
+    border-right: 140px solid transparent;
 }
-.image-size{
+.image-size {
     height: 354px;
 }
-.diary-img-list:after{
-  border-bottom: 78px solid #f0f0f0;
-  border-right: 590px solid transparent;
+.diary-img-list:after {
+    border-bottom: 78px solid #f0f0f0;
+    border-right: 590px solid transparent;
 }
-
-.diary-img-list:before{
-border-bottom: 72px solid #f0f0f0;
-border-left: 162px solid transparent;
+.diary-img-list:before {
+    border-bottom: 72px solid #f0f0f0;
+    border-left: 162px solid transparent;
 }
-.padds0{
-  padding:0;
+.padds0 {
+    padding: 0;
 }
-.mar0{
-  margin: 0 !important;
-}
-.authorcolor{
-  margin: 0 !important;
-  a{
-    text-decoration: none !important;
-    color: white !important;
-  }
-}
-.wed{
-   margin: 0 0 10px;
-   p{
-     font-weight: 600;
-   }
-}
-.wedd{
-  margin: 8px 0 0 !important;
-}
-.read-more{
-a{
-  color:#414042;
-  font-weight: 600;
-}
-}
-.rmcol{
-  color:rgba(255, 255, 255, 0.5);
-  a{
-    color:rgba(255, 255, 255, 0.5);
-    &:hover{
-      color:rgba(255, 255, 255, 0.4);
-    }
-  }
-  .authorcolor{
+.mar0 {
     margin: 0 !important;
-    a{
-      text-decoration: none !important;
-      color:rgba(255, 255, 255, 0.5) !important;
-      &:hover{
-        color:rgba(255, 255, 255, 0.4) !important;
-      }
+}
+.authorcolor {
+    margin: 0 !important;
+    a {
+        text-decoration: none !important;
+        color: white !important;
     }
-  }
+}
+.wed {
+    margin: 0 0 10px;
+    p {
+        font-weight: 600;
+    }
+}
+.wedd {
+    margin: 8px 0 0 !important;
+}
+.read-more {
+    a {
+        color: #414042;
+        font-weight: 600;
+    }
+}
+.rmcol {
+    color: rgba(255, 255, 255, 0.5);
+    a {
+        color: rgba(255, 255, 255, 0.5);
+        &:hover {
+            color: rgba(255, 255, 255, 0.4);
+        }
+    }
+    .authorcolor {
+        margin: 0 !important;
+        a {
+            text-decoration: none !important;
+            color: rgba(255, 255, 255, 0.5) !important;
+            &:hover {
+                color: rgba(255, 255, 255, 0.4) !important;
+            }
+        }
+    }
 }
 .landing {
- position: relative;
- background: url("../img/main.jpg") no-repeat;
- height: 100vh;
- background-size: cover;
- background-position: 50% 50%;
- // .image-landing {
- //   height: 100%;
- //   width: auto;
- // }
- .cont-btn {
-   width: 200px;
-   position: absolute;
-   right: 0;
-   bottom: 20px;
-   &:hover {
-     opacity: 0.90;
-   }
+    position: relative;
+    background: url("../img/main.jpg") no-repeat;
+    height: 100vh;
+    background-size: cover;
+    background-position: 50% 50%;
+    // .image-landing {
+    //   height: 100%;
+    //   width: auto;
+    // }
+    .cont-btn {
+        width: 200px;
+        position: absolute;
+        right: 0;
+        bottom: 20px;
+        &:hover {
+            opacity: 0.90;
+        }
+    }
 }
+.gsdairy {
+    padding-bottom: 10px !important;
 }
 /* Start writing sass here */
 @import "fancybox-override";
