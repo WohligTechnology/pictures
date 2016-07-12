@@ -478,7 +478,7 @@ hr {
 }
 .buttonpos {
     position: fixed !important;
-    left: 240px;
+    left: 270px;
     top: 3px;
     padding: 0;
     margin: 0;
@@ -496,7 +496,7 @@ hr {
 .firstbar {
     @include transform(rotate(-45deg));
     position: fixed;
-    left: 245px;
+    left: 274px;
     top: 41px;
     background-color: $brand-info !important;
     cursor: pointer;
@@ -504,13 +504,13 @@ hr {
 .secondbar {
     opacity: 0;
     position: fixed;
-    left: 245px;
+    left: 274px;
     top: 41px;
 }
 .thirdbar {
     @include transform(rotate(45deg));
     position: fixed;
-    left: 245px;
+    left: 274px;
     top: 37px;
     background-color: $brand-info !important;
     cursor: pointer;
