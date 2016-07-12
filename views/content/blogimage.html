@@ -151,9 +151,9 @@
         </div>
         <div class="related" ng-repeat="data in blogImageData.relatedarticles track by $index">
             <div class="wed-box border-red">
-                <div class="wed-img-list blog-img-list"> 
+                <div class="wed-img-list blog-img-list">
                     <img ng-src="{{data.image|uploadpath}}" alt="" class="img-responsive">
-                    <div class="red-ribbon">
+                    <div class="red-ribbon red-ribbon-dairies">
                         <img src="img/ribbon_red.png" alt="">
                         <span class="color-white uppercase">{{data.categoryname}}</span>
                     </div>
@@ -169,7 +169,7 @@
                         <a href="" class="color-black" ng-click="readMore(data);">Read More</a>
                     </div>
                 </div>
-                <div class="border-blue bborders"></div>
+                <div class="border-blue bborders bborders1"></div>
             </div>
         </div>
     </div>
