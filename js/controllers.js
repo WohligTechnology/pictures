@@ -1336,12 +1336,34 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $scope.diaryyear1 = _.chunk($scope.diaryyear, 5);
         console.log('$scope.diaryyear chunk', $scope.diaryyear1);
     })
-    NavigationService.getDiaryInsideByPage(function(data) {
-        // $scope.pageno=$stateParams.page;
-        // console.log('$scope.pageno',$scope.pageno);
-        $scope.DiaryInsideData = data.queryresult;
-        console.log('$scope.DiaryInsideData', $scope.DiaryInsideData);
-    })
+
+
+    $scope.diarydata = false;
+    $scope.diaryObj = {};
+    $scope.diaryObj.pageno = 1;
+    $scope.diaryObj.maxrow = 10;
+
+    getDiariesResults();
+
+
+    function getDiariesResults() {
+        NavigationService.getDiaryInsideByPage($scope.diaryObj, function(data) {
+            $scope.diarydata = true;
+            $scope.DiaryInsideData = data;
+            console.log($scope.DiaryInsideData);
+        })
+    }
+
+    $scope.changeDiary = function(val) {
+        $scope.diaryObj.pageno = $scope.diaryObj.pageno + val;
+        getDiariesResults();
+    }
+
+
+    // NavigationService.getDiaryInsideByPage(function(data) {
+    //     $scope.DiaryInsideData = data.queryresult;
+    //     console.log('$scope.DiaryInsideData', $scope.DiaryInsideData);
+    // })
 
     // $scope.pageno = 1;
 

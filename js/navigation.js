@@ -145,12 +145,12 @@ var navigationservice = angular.module('navigationservice', [])
             $http.get("http://gsebackend.com/gsebackend/index.php/json/" + 'authenticate').success(callback);
         },
         getcommentSubmit: function(mydata, callback) {
-          $http({
-              url: apiUrl + 'commentSubmit',
-              method: 'POST',
-              withCredentials: true,
-              data: mydata
-          }).success(callback);
+            $http({
+                url: apiUrl + 'commentSubmit',
+                method: 'POST',
+                withCredentials: true,
+                data: mydata
+            }).success(callback);
         },
         getblogText: function(id, callback) {
             $http.get(apiUrl + 'getDiaryInsideDetail?id=' + id).success(callback);
@@ -182,8 +182,8 @@ var navigationservice = angular.module('navigationservice', [])
         getMediaByYear: function(obj, callback) {
             $http.get(apiUrl + 'getMediaCornerDetails?year=' + obj.year + "&pageno=" + obj.pageno).success(callback);
         },
-        getDiaryInsideByPage: function(callback) {
-            $http.get(apiUrl + 'getDiaryInside').success(callback);
+        getDiaryInsideByPage: function(obj, callback) {
+            $http.get(apiUrl + 'getDiaryInside' + "?pageno=" + obj.pageno + "&maxrow=" + obj.maxrow).success(callback);
         },
         getFilterDiaries: function(obj, callback) {
             $http.get(apiUrl + 'getDiaryInsideFilter?category=' + obj.category + "&month=" + obj.month + "&year=" + obj.year + "&pageno=" + obj.pageno + "&maxrow=" + obj.maxrow).success(callback);
