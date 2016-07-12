@@ -1,17 +1,5 @@
 angular.module('phonecatControllers', ['templateservicemod', 'navigationservice', 'ui.bootstrap', 'ngAnimate', 'ngSanitize', 'angular-flexslider', 'infinite-scroll', 'angular-loading-bar', 'imageupload'])
 
-.controller('LandingCtrl', function($scope, TemplateService, NavigationService, $timeout, $state) {
-  //Used to name the .html file
-  $scope.template = TemplateService.changecontent("landing");
-  $scope.menutitle = NavigationService.makeactive("Landing");
-  TemplateService.title = $scope.menutitle;
-  $scope.navigation = NavigationService.getnav();
-  $scope.subscribe = {};
-  $scope.template.header = "";
-  $scope.template.footer = "";
-
-})
-
 .controller('HomeCtrl', function($scope, TemplateService, NavigationService, $timeout, $state) {
     //Used to name the .html file
     $scope.template = TemplateService.changecontent("home");
@@ -20,6 +8,36 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     $scope.navigation = NavigationService.getnav();
     $scope.subscribe = {};
     $scope.subscribe.email = "";
+
+
+
+    $scope.$on('$viewContentLoaded', function(event) {
+      $timeout(function() {
+
+        ! function(d, s, id) {
+          var js, fjs = d.getElementsByTagName(s)[0],
+            p = /^http:/.test(d.location) ? 'http' : 'https';
+          if (!d.getElementById(id)) {
+            js = d.createElement(s);
+            js.id = id;
+            js.src = p + "://platform.twitter.com/widgets.js";
+            fjs.parentNode.insertBefore(js, fjs);
+          }
+        }(document, "script", "twitter-wjs");
+
+        (function(d, s, id) {
+          var js, fjs = d.getElementsByTagName(s)[0];
+          if (d.getElementById(id)) return;
+          js = d.createElement(s);
+          js.id = id;
+          js.src = "//connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.5";
+          fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+
+
+      }, 0);
+    });
+
     //
     // $scope.checkemail=function(email){
     //
@@ -1309,46 +1327,72 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     name: "Sports"
   }];
   NavigationService.getDiaries(function(data) {
-      $scope.diaryData = data.data;
-      console.log('d data', $scope.diaryData);
-      $scope.diaryyear = data.data.years;
-      //   $scope.diaryyear=_.chunk($scope.diaryData.years,5);
-      // console.log('$scope.diaryyear chunk', $scope.diaryyear[0]);
-      // $scope.diaryyear=_.chunk($scope.diaryData.years,$scope.diaryData.years.length);
-      $scope.diaryyear1 = _.chunk($scope.diaryyear, 5);
-      console.log('$scope.diaryyear chunk', $scope.diaryyear1);
-    })
-    // NavigationService.getDiaryInsideByPage($stateParams.page,function(data){
-    //   $scope.pageno=$stateParams.page;
-    //   console.log('$scope.pageno',$scope.pageno);
-    //   $scope.DiaryInsideData=data.data;
-    //   console.log('$scope.DiaryInsideData',$scope.DiaryInsideData);
+    $scope.diaryData = data.data;
+    console.log('d data', $scope.diaryData);
+    $scope.diaryyear = data.data.years;
+    //   $scope.diaryyear=_.chunk($scope.diaryData.years,5);
+    // console.log('$scope.diaryyear chunk', $scope.diaryyear[0]);
+    // $scope.diaryyear=_.chunk($scope.diaryData.years,$scope.diaryData.years.length);
+    $scope.diaryyear1 = _.chunk($scope.diaryyear, 5);
+    console.log('$scope.diaryyear chunk', $scope.diaryyear1);
+  })
 
-  $scope.pageno = 1;
 
-  $scope.next = function() {
-    console.log('$scope.pageno', $scope.pageno);
-    var i = $scope.pageno++;
-    // $state.go('diaries', {page: i});
-    NavigationService.getDiaryInsideByPage(i, function(data) {
-      $scope.DiaryInsideData = data.data;
-      $scope.currentpg = i;
+  $scope.diarydata = false;
+  $scope.diaryObj = {};
+  $scope.diaryObj.pageno = 1;
+  $scope.diaryObj.maxrow = 10;
+
+  getDiariesResults();
+
+
+  function getDiariesResults() {
+    NavigationService.getDiaryInsideByPage($scope.diaryObj, function(data) {
+      $scope.diarydata = true;
+      $scope.DiaryInsideData = data;
+      console.log($scope.DiaryInsideData);
     })
   }
+
+  $scope.changeDiary = function(val) {
+    $scope.diaryObj.pageno = $scope.diaryObj.pageno + val;
+    getDiariesResults();
+  }
+
+
+  // NavigationService.getDiaryInsideByPage(function(data) {
+  //     $scope.DiaryInsideData = data.queryresult;
+  //     console.log('$scope.DiaryInsideData', $scope.DiaryInsideData);
+  // })
+
+  // $scope.pageno = 1;
+
+  // $scope.next = function() {
+  //     console.log('$scope.pageno', $scope.pageno);
+  //     var i = $scope.pageno++;
+  //     // $state.go('diaries', {page: i});
+  //     NavigationService.getDiaryInsideByPage(i, function(data) {
+  //       console.log(data);
+  //         $scope.DiaryInsideData = data.data;
+  //         console.log('$scope.DiaryInsideData',$scope.DiaryInsideData);
+  //         $scope.currentpg = i;
+  //     })
+  // }
+
 
   //
-  $scope.previous = function() {
-    console.log('$scope.currentpg of previous:', $scope.currentpg);
-    if ($scope.currentpg && $scope.currentpg >= 1) {
-      var i = --$scope.currentpg;
-      NavigationService.getDiaryInsideByPage(i, function(data) {
-        $scope.DiaryInsideData = data.data;
-        console.log('iiiiiiiiiiiiiii', i);
-      })
-    }
-  }
+  // $scope.previous = function() {
+  //     console.log('$scope.currentpg of previous:', $scope.currentpg);
+  //     if ($scope.currentpg && $scope.currentpg >= 1) {
+  //         var i = --$scope.currentpg;
+  //         NavigationService.getDiaryInsideByPage(i, function(data) {
+  //             $scope.DiaryInsideData = data.data;
+  //             console.log('iiiiiiiiiiiiiii', i);
+  //         })
+  //     }
+  // }
   if (!$stateParams.category) {
-    $scope.next();
+    // $scope.next();
   }
   // })
 
@@ -3367,6 +3411,17 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
       $scope.tourInside.featuredvideos.splice(index, 1);
       $scope.tourInside.featuredvideos.unshift(video);
     }
+  })
+  .controller('LandingCtrl', function($scope, TemplateService, NavigationService, $timeout, $state) {
+    //Used to name the .html file
+    $scope.template = TemplateService.changecontent("landing");
+    $scope.menutitle = NavigationService.makeactive("Landing");
+    TemplateService.title = $scope.menutitle;
+    $scope.navigation = NavigationService.getnav();
+    $scope.subscribe = {};
+    $scope.template.header = "";
+    $scope.template.footer = "";
+
   })
   .controller('headerctrl', function($scope, TemplateService, NavigationService) {
     $scope.template = TemplateService;
