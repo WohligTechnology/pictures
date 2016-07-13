@@ -34,7 +34,7 @@
                                     <h4>{{data.name}}</h4>
                                     <p>{{data.location}}</p>
                                     <!-- <p class="red">14<sup>th</sup> January 2011</p> -->
-                                    <p>{{data.date}}</p>
+                                    <p>{{data.date | date:"dd MMMM yyyy"}}</p>
                                 </div>
                             </div>
                         </li>
@@ -48,7 +48,7 @@
                                 <div class="wt-data">
                                     <h4>{{data.name}}</h4>
                                     <p>{{data.location}}</p>
-                                    <p class="red">{{data.date}}</p>
+                                    <p class="red">{{data.date | date:"dd MMMM yyyy"}}</p>
                                 </div>
                             </div>
                         </li>

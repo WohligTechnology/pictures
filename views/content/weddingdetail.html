@@ -133,7 +133,7 @@
             </div>
             <div class="wed-desc">
               <div class="wed-date">
-                <span>{{data.date}}</span>
+                <span>{{data.date | date:"dd MMMM yyyy"}}</span>
               </div>
               <div class="wed-desc-inside" ng-bind-html="data.content">
                 {{data.content}}

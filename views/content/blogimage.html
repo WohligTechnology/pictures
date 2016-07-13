@@ -163,7 +163,7 @@
                         <p class="bold" ng-bind-html="data.content"></p>
                     </div>
                     <div class="wed-date">
-                        <span>{{data.date}}</span>
+                        <span>{{data.date | date:"dd MMMM yyyy"}}</span>
                     </div>
                     <div class="read-more">
                         <a href="" class="color-black" ng-click="readMore(data);">Read More</a>

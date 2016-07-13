@@ -77,7 +77,7 @@
                 </h4>
                                 <div class="row">
                                     <div class="col-sm-6">
-                                        <span class="color-red">Date:</span> <span>{{data.date}}</span>
+                                        <span class="color-red">Date:</span> <span>{{data.date | date:"dd MMMM yyyy"}}</span>
                                     </div>
                                     <div class="col-sm-6">
                                         <span class="color-red">Location:</span> <span>{{data.location}}</span>
@@ -117,7 +117,7 @@
                             <div class="team-logo text-center min-hgt">
                                 <img ng-src="{{matchData.upcoming[0].logo1 | uploadpath}}" alt="" class="img-responsive">
                                 <div class="date text-center color-white">
-                                    <span>{{matchData.upcoming[0].date}}</span>
+                                    <span>{{matchData.upcoming[0].date | date:"dd MMMM yyyy"}}</span>
                                 </div>
                                 <div class="btn-all mt15 mb15 text-center">
                                     <a href="{{matchData.upcoming[0].link}}">

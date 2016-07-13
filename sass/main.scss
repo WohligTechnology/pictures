@@ -2583,6 +2583,13 @@ h4.title-movies {
   background: url('../img/contact/bg2.png') no-repeat;
   height: 70px;
   margin: 0 16px;
+  .bordright {
+    border-right: 1px solid #646464;
+    margin-top: 14px;
+  }
+  .col-md-4+.col-md-4+.col-md-4{
+    border-right: 0;
+  }
   .dates {
     p {
       text-align: center;
@@ -2594,10 +2601,7 @@ h4.title-movies {
     }
   }
 }
-.bordright {
-  border-right: 1px solid #646464;
-  margin-top: 14px;
-}
+
 .sign {
   h4 {
     color: #686868;
