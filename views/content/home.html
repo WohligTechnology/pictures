@@ -111,7 +111,7 @@
   <div class="section4">
     <div class="subcribe bg-subcribe-home">
       <div class="container">
-        <div class="row">
+        <div class="row" ng-controller="SubscribeCtrl">
           <div class="col-md-6 col-md-offset-3" ng-hide="subscribeEmail || checkEmail">
             <h4 class="text-center color-white">Sign up for the GS newsletter to receive latest updates.</h4>
             <form name="subForm" class="bs-example bs-example-form" role="form">
@@ -123,8 +123,8 @@
               </div>
             </form>
           </div>
-          <h4 ng-if="subscribeEmail && !checkEmail"><center class="color-white">Thankyou For Subscribing</center></h4>
-          <h4 ng-if="checkEmail && !subscribeEmail"><center class="color-white">This email already exists</center></h4>
+          <h4 ng-show="subscribeEmail && !checkEmail"><center class="color-white">Thank you for subscribing.</center></h4>
+          <h4 ng-show="checkEmail && !subscribeEmail"><center class="color-white">Email you provided already exists.</center></h4>
         </div>
       </div>
     </div>

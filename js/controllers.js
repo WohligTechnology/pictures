@@ -11,6 +11,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
 
 
+
         $scope.$on('$viewContentLoaded', function(event) {
             $timeout(function() {
 
@@ -88,7 +89,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         NavigationService.getHome(function(data) {
             $scope.homedata = data.data;
             console.log($scope.homedata);
-        })
+        });
     })
     .controller('DiariesAuthorCtrl', function($scope, TemplateService, NavigationService, $timeout, $state, $stateParams) {
         //Used to name the .html file
@@ -1795,12 +1796,36 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $scope.doActives(1);
 
     })
-    .controller('ContactCtrl', function($scope, TemplateService, NavigationService, $timeout) {
+    .controller('ContactCtrl', function($scope, TemplateService, NavigationService, $timeout, $interval) {
         //Used to name the .html file
         $scope.template = TemplateService.changecontent("contact");
         $scope.menutitle = NavigationService.makeactive("Contact US");
         TemplateService.title = $scope.menutitle;
         $scope.navigation = NavigationService.getnav();
+
+        $scope.Dates = [{}, {}, {}];
+
+
+
+        $interval(function() {
+
+
+            $scope.Dates[0] = {
+                top: moment().tz('Asia/Kolkata').format("MMMM D,dddd"),
+                bottom: moment().tz('Asia/Kolkata').format("hh:mm:ss a")
+            };
+            $scope.Dates[1] = {
+                top: moment().tz('America/New_York').format("MMMM D,dddd"),
+                bottom: moment().tz('America/New_York').format("hh:mm:ss a")
+            };
+            $scope.Dates[2] = {
+                top: moment().tz('Asia/Dubai').format("MMMM D,dddd"),
+                bottom: moment().tz('Asia/Dubai').format("hh:mm:ss a")
+            };
+        }, 1000);
+
+        $scope.currentDate = new Date();
+
     })
 
 .controller('BlogTextCtrl', function($scope, TemplateService, NavigationService, $timeout, $stateParams, $state, $uibModal, $log) {
@@ -3423,7 +3448,54 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $scope.template.footer = "";
 
     })
-    .controller('headerctrl', function($scope, TemplateService, NavigationService) {
+    .controller('SubscribeCtrl', function($scope, TemplateService, NavigationService, $timeout, $state) {
+        //Used to name the .html file
+
+        $scope.checkEmail = false;
+        $scope.subscribeEmail = false;
+        $scope.subscribe = function(email) {
+            // if(!email) {
+            //     alert("please enter your email");
+            // }
+            // console.log('Email subscribe: ', email);
+            NavigationService.subscribe(email, function(data) {
+
+                console.log(data.value);
+                if (!data.value) {
+                    if ($scope.subscribe.email) {
+                        $scope.checkEmail = true;
+                        $scope.subscribeEmail = false;
+                        $timeout(function() {
+                            // $state.reload();
+                            $timeout(function() {
+                                $scope.checkEmail = "";
+                                $scope.subscribeEmail = "";
+                            }, 2000);
+                        }, 3000);
+
+                    }
+                } else {
+                    $scope.subscribeEmail = true;
+                    $scope.checkEmail = false;
+                    $timeout(function() {
+                        // $state.reload();
+                        $timeout(function() {
+                            $scope.checkEmail = "";
+                            $scope.subscribeEmail = "";
+                        }, 2000);
+                    }, 3000);
+
+                }
+                //console.log(email);
+                $scope.subscribe.email = "";
+            });
+
+            // $scope.subscribeEmail = data;
+        };
+
+
+    })
+    .controller('headerctrl', function($scope, TemplateService, NavigationService, $state, $rootScope) {
         $scope.template = TemplateService;
         var get = false;
         $scope.getslide = "menu-out";
@@ -3442,6 +3514,12 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
                 $scope.buttonpos = "buttonpos";
             }
         }
+
+        $rootScope.$on('$stateChangeStart',
+            function(event, toState, toParams, fromState, fromParams, options) {
+                $(window).scrollTop(0);
+            });
+
         NavigationService.getMediacorner(function(data) {
             console.log("dsfasdfasdf");
             $scope.mediadata = data.data.years[0];

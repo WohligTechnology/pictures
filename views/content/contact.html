@@ -50,7 +50,7 @@
                 <form class="martop">
                     <div class="col-md-4">
                         <div class="form-group">
-                            <input class="form-control" type="text" placeholder="First Name">
+                            <input class="form-control" type="text" placeholder="First Name*">
                         </div>
                         <div class="form-group">
                             <input class="form-control" type="text" placeholder="Company Name">
@@ -67,7 +67,7 @@
                             <input class="form-control" type="text" placeholder="Middle Name">
                         </div>
                         <div class="form-group">
-                            <input class="form-control" type="email" placeholder="Email Address">
+                            <input class="form-control" type="email" placeholder="Email Address*">
                         </div>
                         <div class="form-group">
                             <input class="form-control" type="url" placeholder="Existing Web Address">
@@ -78,7 +78,7 @@
                             <input class="form-control" type="text" placeholder="Last Name">
                         </div>
                         <div class="form-group">
-                            <textarea class="form-control" placeholder="Message" style="height:84px;"></textarea>
+                            <textarea class="form-control" placeholder="Message*" style="height:84px;"></textarea>
                         </div>
                     </div>
                 </form>
@@ -98,7 +98,7 @@
                               <div class="form-group">
                                   <div class="col-md-10">
                                     <div class="contact-focus">
-                                      <input class="form-control" type="text" placeholder="Your Name" required>
+                                      <input class="form-control" type="text" placeholder="Your Name*" required>
                                       <div class="yoname">
                                         It makes the communication more personal!
                                       </div>
@@ -128,7 +128,7 @@
                               <div class="form-group">
                                   <div class="col-md-10">
                                     <div class="contact-focus">
-                                      <input class="form-control" type="text" placeholder="Country">
+                                      <input class="form-control" type="text" placeholder="Country*">
                                       <div class="yoname">
                                         What part of the world do you call home?
                                       </div>
@@ -148,7 +148,7 @@
                               <div class="form-group">
                                   <div class="col-md-10">
                                     <div class="contact-focus">
-                                      <input class="form-control" type="email" placeholder="Email Address" required>
+                                      <input class="form-control" type="email" placeholder="Email Address*" required>
                                       <div class="yoname">
                                         So that we can stay in touch!
                                       </div>
@@ -344,13 +344,13 @@
         </div>
         <div class="row">
             <div class="back">
-                <div class="col-md-4 bordright">
+                <div class="col-md-4 bordright" ng-repeat="date in Dates">
                     <div class="dates">
-                        <p>April 4, Monday</p>
-                        <p>05:24 pm</p>
+                        <p>{{date.top}}</p>
+                        <p>{{date.bottom}}</p>
                     </div>
                 </div>
-                <div class="col-md-4 bordright">
+                <!-- <div class="col-md-4 bordright">
                     <div class="dates">
                         <p>April 4, Monday</p>
                         <p>05:24 pm</p>
@@ -361,23 +361,23 @@
                         <p>April 4, Monday</p>
                         <p>05:24 pm</p>
                     </div>
-                </div>
+                </div> -->
             </div>
         </div>
         <div class="row">
             <div class="col-md-6">
                 <div class="sign">
                     <h4>Sign up to our GS newsletter</h4>
-                    <div class="">
-                        <form name="subForm" class="bs-example bs-example-form" role="form">
+                    <div ng-controller="SubscribeCtrl">
+                        <form name="subForm" class="bs-example bs-example-form" role="form"  ng-hide="subscribeEmail || checkEmail">
                             <div class="input-group">
-                                <input type="email" class="form-control" placeholder="Enter email address" ng-model="subscribe.email" required>
-                                <span class="input-group-addon btn btn-danger" ng-click="subscribe(subscribe.email);" ng-disabled="subForm.$invalid">Subscribe</span>
-                                <div ng-messages="subForm.email.$error" ng-messages-include="error-messages"></div>
-                                <h4 ng-if="subscribeEmail">Thankyou For Subscribing</h4>
-                                <h4 ng-if="checkEmail">This email already exists</h4>
+                              <input type="email" class="form-control" placeholder="Enter email address" ng-model="subscribe.email" required>
+                              <span class="input-group-addon btn btn-danger" ng-click="subscribe(subscribe.email);" ng-disabled="subForm.$invalid">Subscribe</span>
+
                             </div>
                         </form>
+                        <h4 ng-show="subscribeEmail && !checkEmail"><span >Thank you for subscribing.</span></h4>
+                        <h4 ng-show="checkEmail && !subscribeEmail"><span >Email you provided already exists.</span></h4>
                     </div>
                 </div>
             </div>

@@ -14,6 +14,8 @@ var jsArray = [
   './bower_components/angular-loading-bar/build/loading-bar.min.js',
   './bower_components/angularjs-imageupload-directive/public/javascripts/imageupload.js',
   './bower_components/lodash/lodash.js',
+  './bower_components/moment/moment.js',
+  './bower_components/moment-timezone/builds/moment-timezone-with-data.js',
   './js/app.js',
   './js/controllers.js',
   './js/templateservice.js',
