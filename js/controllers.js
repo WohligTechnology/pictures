@@ -1855,6 +1855,8 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         var directionsService = {};
         var directionsDisplay = {};
 
+
+
         $scope.$on('$viewContentLoaded', function(event) {
             $timeout(function() {
 
@@ -1897,12 +1899,6 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
                         calculateAndDisplayRoute();
                     };
                 }
-
-
-
-
-
-
             }, 0);
         });
 
@@ -1924,6 +1920,10 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         }
 
         $scope.place = {location:""};
+
+        $scope.sendToGoogle = function( value ) {
+          window.open("https://maps.google.com?saddr="+value+"&daddr=Bhagtani Krishang,Dattatray Road, Santacruz (W),Mumbai , India","_new");
+        };
 
         $scope.getDirFrom =  function(value) {
           calculateAndDisplayRoute(value);
