@@ -1803,13 +1803,16 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         TemplateService.title = $scope.menutitle;
         $scope.navigation = NavigationService.getnav();
 
+        $scope.active1 = true;
+        $scope.active2 = false;
+        $scope.showNext = false;
+        $scope.showThanks = false;
+
         $scope.Dates = [{}, {}, {}];
 
-        $scope.project = {
-            name: "chin",
-            "country": "In",
-            email: "chintan@wohlig.com"
-        };
+        $scope.project = {};
+
+        $scope.general = {};
 
         $scope.project1 = [
             [{
@@ -1869,18 +1872,22 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $scope.projectSubmit = function() {
             _.each($scope.project1, function(questions, key) {
                 if (key == 0) {
-                    $scope.project.question1ans = _.map(_.filter(questions, "state"),"answer").join(",");
+                    $scope.project.question1ans = _.map(_.filter(questions, "state"), "answer").join(",");
                 } else if (key == 1) {
-                    $scope.project.question2ans = _.map(_.filter(questions, "state"),"answer").join(",");
+                    $scope.project.question2ans = _.map(_.filter(questions, "state"), "answer").join(",");
                 } else if (key == 2) {
-                    $scope.project.question3ans = _.map(_.filter(questions, "state"),"answer").join(",");
+                    $scope.project.question3ans = _.map(_.filter(questions, "state"), "answer").join(",");
                 }
             });
-            showNext = false;
-            showThanks = true;
-            NavigationService.projectSubmit($scope.project,function(data) {
-              console.log(data);
+
+            NavigationService.projectSubmit($scope.project, function(data) {
+                console.log(data);
             });
+        };
+        $scope.generalSubmit = function() {
+          NavigationService.generalSubmit($scope.general, function(data) {
+              console.log(data);
+          });
         };
 
     })

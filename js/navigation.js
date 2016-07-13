@@ -6,7 +6,7 @@ var adminURL = "";
 // }
 
 // adminURL = "http://wohlig.co.in/gsebackend/";
-adminURL = "http://wohlig.co.in/gsebackend/";
+adminURL = "http://192.168.1.115/gsebackend/";
 // adminURL = "http://192.168.1.137/gsebackend/";
 // adminURL = "http://localhost/gsebackend/";
 var apiUrl = adminURL + "index.php/json/";
@@ -207,6 +207,9 @@ var navigationservice = angular.module('navigationservice', [])
         },
         projectSubmit: function(obj, callback) {
             $http.post(apiUrl + 'projectSubmit',obj).success(callback);
+        },
+        generalSubmit: function(obj, callback) {
+            $http.post(apiUrl + 'generalenquirySubmit',obj).success(callback);
         },
 
     };
