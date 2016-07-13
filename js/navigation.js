@@ -205,6 +205,9 @@ var navigationservice = angular.module('navigationservice', [])
             }
             return menuname;
         },
+        projectSubmit: function(obj, callback) {
+            $http.post(apiUrl + 'projectSubmit',obj).success(callback);
+        },
 
     };
 });

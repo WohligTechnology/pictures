@@ -1805,6 +1805,48 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
         $scope.Dates = [{}, {}, {}];
 
+        $scope.project = {
+            name: "chin",
+            "country": "In",
+            email: "chintan@wohlig.com"
+        };
+
+        $scope.project1 = [
+            [{
+                answer: "REDESIGN OF EXISTING WEB APPLICATION / WEBSITE",
+                state: false
+            }, {
+                answer: "NEW WEB APPLICATION / WEBSITE",
+                state: false
+            }, {
+                answer: "OTHER",
+                state: false
+            }],
+            [{
+                answer: "£20-50K",
+                state: false
+            }, {
+                answer: "£50-£100K",
+                state: false
+            }, {
+                answer: "£100K+",
+                state: false
+            }],
+            [{
+                answer: "LESS THAN 3 MONTHS",
+                state: false
+            }, {
+                answer: "LESS THAN 6 MONTHS",
+                state: false
+            }, {
+                answer: "PROJECT WOULD BE ONGOING",
+                state: false
+            }, {
+                answer: "TIMESCALES ARE NOT IMPORTANT TO ME, IT’S QUALITY THAT COUNTS",
+                state: false
+            }],
+        ];
+
 
 
         $interval(function() {
@@ -1824,7 +1866,22 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             };
         }, 1000);
 
-        $scope.currentDate = new Date();
+        $scope.projectSubmit = function() {
+            _.each($scope.project1, function(questions, key) {
+                if (key == 0) {
+                    $scope.project.question1ans = _.map(_.filter(questions, "state"),"answer").join(",");
+                } else if (key == 1) {
+                    $scope.project.question2ans = _.map(_.filter(questions, "state"),"answer").join(",");
+                } else if (key == 2) {
+                    $scope.project.question3ans = _.map(_.filter(questions, "state"),"answer").join(",");
+                }
+            });
+            showNext = false;
+            showThanks = true;
+            NavigationService.projectSubmit($scope.project,function(data) {
+              console.log(data);
+            });
+        };
 
     })
 

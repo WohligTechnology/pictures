@@ -98,7 +98,7 @@
                               <div class="form-group">
                                   <div class="col-md-10">
                                     <div class="contact-focus">
-                                      <input class="form-control" type="text" placeholder="Your Name*" required>
+                                      <input class="form-control" ng-model="project.name" type="text" placeholder="Your Name*" required>
                                       <div class="yoname">
                                         It makes the communication more personal!
                                       </div>
@@ -108,7 +108,7 @@
                               <div class="form-group">
                                   <div class="col-md-10">
                                     <div class="contact-focus">
-                                      <input class="form-control" type="text" placeholder="Company">
+                                      <input class="form-control" ng-model="project.company" type="text" placeholder="Company">
                                       <div class="yoname">
                                         You can keep this blank if you don't have one
                                       </div>
@@ -118,7 +118,7 @@
                               <div class="form-group">
                                   <div class="col-md-10">
                                     <div class="contact-focus">
-                                      <input class="form-control" type="url" placeholder="Existing Web Address">
+                                      <input class="form-control" type="text" ng-model="project.webaddress"  placeholder="Existing Web Address">
                                       <div class="yoname">
                                         To know more about your company
                                       </div>
@@ -128,7 +128,7 @@
                               <div class="form-group">
                                   <div class="col-md-10">
                                     <div class="contact-focus">
-                                      <input class="form-control" type="text" placeholder="Country*">
+                                      <input class="form-control" type="text" ng-model="project.country"  placeholder="Country*">
                                       <div class="yoname">
                                         What part of the world do you call home?
                                       </div>
@@ -138,7 +138,7 @@
                               <div class="form-group">
                                   <div class="col-md-10">
                                     <div class="contact-focus">
-                                      <input class="form-control" type="tel" placeholder="Telephone number">
+                                      <input class="form-control" type="tel" ng-model="project.phone"  placeholder="Telephone number">
                                       <div class="yoname">
                                         To hear your voice
                                       </div>
@@ -148,7 +148,7 @@
                               <div class="form-group">
                                   <div class="col-md-10">
                                     <div class="contact-focus">
-                                      <input class="form-control" type="email" placeholder="Email Address*" required>
+                                      <input class="form-control" type="email" ng-model="project.email"  placeholder="Email Address*" required>
                                       <div class="yoname">
                                         So that we can stay in touch!
                                       </div>
@@ -156,7 +156,7 @@
                                   </div>
                               </div>
                                 <div class="col-md-6">
-                                <button class="btn btn-danger" ng-click="active1=false;showNext=true;">Next</button>
+                                <button class="btn btn-danger" ng-disabled="!(project.email && project.country && project.name)" ng-click="active1=false;showNext=true;">Next</button>
                               </div>
                             </form>
                           </div>
@@ -182,19 +182,19 @@
                                     </label>
                                     <div class="checkbox">
                                       <label class="checkbox-inline">
-                                          <input type="checkbox" id="checkbox1" value="ambassador">
+                                          <input type="checkbox" id="checkbox1" value="ambassador" ng-model="project1[0][0].state">
                                         <label for="checkbox1"><span></span>REDESIGN OF EXISTING WEB APPLICATION / WEBSITE</label>
                                       </label>
                                     </div>
                                     <div class="checkbox">
                                       <label class="checkbox-inline">
-                                          <input type="checkbox" id="checkbox2" value="representation">
+                                          <input type="checkbox" id="checkbox2" value="representation" ng-model="project1[0][1].state">
                                           <label for="checkbox2"><span></span>NEW WEB APPLICATION / WEBSITE</label>
                                       </label>
                                     </div>
                                     <div class="checkbox">
                                       <label class="checkbox-inline">
-                                          <input type="checkbox" id="checkbox3" value="representation">
+                                          <input type="checkbox" id="checkbox3" value="representation" ng-model="project1[0][2].state">
                                           <label for="checkbox3"><span></span>OTHER</label>
                                       </label>
                                     </div>
@@ -211,19 +211,19 @@
                                     </label>
                                     <div class="checkbox">
                                       <label class="checkbox-inline">
-                                          <input type="checkbox" id="checkbox4" value="representation">
+                                          <input type="checkbox" id="checkbox4" value="representation" ng-model="project1[1][0].state">
                                           <label for="checkbox4"><span></span>£20-50K<h5> (If your budget is less than £20k the project may not reach our minimum criteria)</h5></label>
                                       </label>
                                     </div>
                                     <div class="checkbox">
                                       <label class="checkbox-inline">
-                                          <input type="checkbox" id="checkbox5" value="ambassador">
+                                          <input type="checkbox" id="checkbox5" value="ambassador" ng-model="project1[1][1].state">
                                           <label for="checkbox5"><span></span>£50-£100K</label>
                                       </label>
                                     </div>
                                     <div class="checkbox">
                                       <label class="checkbox-inline">
-                                          <input type="checkbox" id="checkbox6" value="representation">
+                                          <input type="checkbox" id="checkbox6" value="representation" ng-model="project1[1][2].state">
                                           <label for="checkbox6"><span></span>£100K+</label>
                                       </label>
                                     </div>
@@ -232,33 +232,35 @@
                         </div>
                     </div>
                     <div class="form-groups">
+
                         <div class="row">
                             <div class="col-md-8">
                                 <div class="enq-list">
+
                                     <label>
                                         <span>When would you like to take delivery of the project?</span>
                                     </label>
                                     <div class="checkbox">
                                       <label class="checkbox-inline">
-                                          <input type="checkbox" id="checkbox7" value="ambassador">
+                                          <input type="checkbox" id="checkbox7" value="ambassador" ng-model="project1[2][0].state">
                                           <label for="checkbox7"><span></span>LESS THAN 3 MONTHS<h5> (8–12 weeks is probably the minimum time required for a small project)</h5></label>
                                      </label>
                                     </div>
                                     <div class="checkbox">
                                       <label class="checkbox-inline">
-                                          <input type="checkbox" id="checkbox8" value="representation">
+                                          <input type="checkbox" id="checkbox8" value="representation" ng-model="project1[2][1].state">
                                           <label for="checkbox8"><span></span>LESS THAN 6 MONTHS</label>
                                       </label>
                                     </div>
                                     <div class="checkbox">
                                       <label class="checkbox-inline">
-                                          <input type="checkbox" id="checkbox9" value="representation">
+                                          <input type="checkbox" id="checkbox9" value="representation" ng-model="project1[2][2].state" >
                                           <label for="checkbox9"><span></span>PROJECT WOULD BE ONGOING</label>
                                       </label>
                                     </div>
                                     <div class="checkbox">
                                       <label class="checkbox-inline">
-                                          <input type="checkbox" id="checkbox10" value="tv">
+                                          <input type="checkbox" id="checkbox10" value="tv" ng-model="project1[2][3].state">
                                           <label for="checkbox10"><span></span>TIMESCALES ARE NOT IMPORTANT TO ME, IT’S QUALITY THAT COUNTS</label>
                                       </label>
                                     </div>
@@ -274,14 +276,14 @@
                                   <span>Please describe your proposed project in a single sentence</span>&nbsp;<span class="fsize">(Required)</span>
                                 </label>
                                 <div class="texttop">
-                                  <textarea rows="8" cols="56" style="background-color:#d8d8d8;border: 0;"></textarea>
+                                  <textarea ng-model="project.content" rows="8" cols="56" style="background-color:#d8d8d8;border: 0;"></textarea>
                                 </div>
                               </div>
                             </div>
                         </div>
                     </div>
                         <button class="btn marright ffamily" type="button" ng-click="active1=true;showNext=false;showThanks=false;">Back</button>
-                        <button class="btn btn-danger ffamily" type="button" ng-click="showNext=false;showThanks=true;">Send</button>
+                        <button class="btn btn-danger ffamily" type="button" ng-disabled="!project.content" ng-click="projectSubmit()">Send</button>
                   </form>
                 </div>
             </div>
