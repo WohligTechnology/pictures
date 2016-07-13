@@ -1,4 +1,6 @@
-angular.module('phonecatControllers', ['templateservicemod', 'navigationservice', 'ui.bootstrap', 'ngAnimate', 'ngSanitize', 'angular-flexslider', 'infinite-scroll', 'angular-loading-bar', 'imageupload'])
+var initMap = {};
+var calculateAndDisplayRoute = {};
+angular.module('phonecatControllers', ['templateservicemod', 'navigationservice', 'ui.bootstrap', 'ngAnimate', 'ngSanitize', 'angular-flexslider', 'infinite-scroll', 'angular-loading-bar', 'imageupload','count-to'])
 
 .controller('HomeCtrl', function($scope, TemplateService, NavigationService, $timeout, $state) {
         //Used to name the .html file
@@ -1850,7 +1852,82 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             }],
         ];
 
+        var directionsService = {};
+        var directionsDisplay = {};
 
+        $scope.$on('$viewContentLoaded', function(event) {
+            $timeout(function() {
+
+                ! function(d, s, id) {
+                    var js, fjs = d.getElementsByTagName(s)[0],
+                        p = /^http:/.test(d.location) ? 'http' : 'https';
+                    if (!d.getElementById(id)) {
+                        js = d.createElement(s);
+                        js.id = id;
+                        js.src = p + "://platform.twitter.com/widgets.js";
+                        fjs.parentNode.insertBefore(js, fjs);
+                    }
+                }(document, "script", "twitter-wjs");
+
+                (function(d, s, id) {
+                    var js, fjs = d.getElementsByTagName(s)[0];
+                    if (d.getElementById(id)) return;
+                    js = d.createElement(s);
+                    js.id = id;
+                    js.src = "//connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.5";
+                    fjs.parentNode.insertBefore(js, fjs);
+                }(document, 'script', 'facebook-jssdk'));
+
+                initMap = function() {
+                    directionsService = new google.maps.DirectionsService;
+                    directionsDisplay = new google.maps.DirectionsRenderer;
+                    var map = new google.maps.Map(document.getElementById('map'), {
+                        zoom: 20,
+                        center: {
+                            lat: 19.0854772,
+                            lng: 72.8365032
+                        },
+                        scrollwheel: false,
+
+
+                    });
+                    directionsDisplay.setMap(map);
+
+                    var onChangeHandler = function() {
+                        calculateAndDisplayRoute();
+                    };
+                }
+
+
+
+
+
+
+            }, 0);
+        });
+
+
+
+
+        calculateAndDisplayRoute = function(value) {
+            directionsService.route({
+                origin: value,
+                destination: "Bhagtani Krishang,Dattatray Road, Santacruz (W),Mumbai , India",
+                travelMode: google.maps.TravelMode.DRIVING
+            }, function(response, status) {
+                if (status === google.maps.DirectionsStatus.OK) {
+                    directionsDisplay.setDirections(response);
+                } else {
+                    window.alert('Directions request failed due to ' + status);
+                }
+            });
+        }
+
+        $scope.place = {location:""};
+
+        $scope.getDirFrom =  function(value) {
+          calculateAndDisplayRoute(value);
+        };
 
         $interval(function() {
 
@@ -1885,9 +1962,9 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             });
         };
         $scope.generalSubmit = function() {
-          NavigationService.generalSubmit($scope.general, function(data) {
-              console.log(data);
-          });
+            NavigationService.generalSubmit($scope.general, function(data) {
+                console.log(data);
+            });
         };
 
     })

@@ -393,9 +393,10 @@
             </div>
         </div>
         <div class="row">
-            <div class="map">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3504.1952969853155!2d77.24413071508106!3d28.563897682444882!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ce3b33e9c0d87%3A0x22b65b7ec52ab9b5!2sGS+Entertainment!5e0!3m2!1sen!2sin!4v1463225652891" width="100%" height="350" frameborder="0" style="border:0" allowfullscreen></iframe>
+          <div style="height:100%; width:100%;">
+            <div id="map" class="map" style="height:500px;">
             </div>
+          </div>
         </div>
         <div class="row">
             <div class="search">
@@ -408,8 +409,8 @@
                     <div class="searchgo">
                         <form class="bs-example bs-example-form" role="form">
                             <div class="form-group">
-                                <input type="text" class="form-control" placeholder="e.g. New Delhi">
-                                <button class="btn btn-danger">GO</button>
+                                <input type="text" class="form-control" ng-model="place.location" placeholder="e.g. New Delhi">
+                                <button class="btn btn-danger" ng-click="getDirFrom(place.location)">GO</button>
                                 <!-- ng-click="subscribe(subscribe.email);" <div ng-messages="subForm.email.$error" ng-messages-include="error-messages"></div>
                       <h4 ng-if="subscribeEmail">Thankyou For Subscribing</h4>
                       <h4 ng-if="checkEmail">This email already exists</h4> -->
@@ -495,7 +496,8 @@
                                 <div class="fb-page" data-href="https://www.facebook.com/GSWorldwideEnt/" data-tabs="timeline" data-width="360" data-height="480" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true">
                                     <div class="fb-xfbml-parse-ignore">
                                         <blockquote cite="https://www.facebook.com/GSWorldwideEnt/">
-                                            <a href="https://www.facebook.com/GSWorldwideEnt/">GS Worldwide Entertainment.</a></blockquote>
+                                            <a href="https://www.facebook.com/GSWorldwideEnt/">GS Worldwide Entertainment.</a>
+                                        </blockquote>
                                     </div>
                                 </div>
                             </div>
@@ -514,11 +516,22 @@
                             <img src="img/socials/instagram.png" class="doneLoading">
                         </div>
                         <div class="social-logo text-center ">
-                            <iframe src="//lightwidget.com/widgets/2965b7333833557283d4029e025bd4e8.html" id="lightwidget_2965b73338" name="lightwidget_2965b73338" scrolling="no" allowtransparency="true" class="lightwidget-widget" style="width: 100%; border: 0; overflow: hidden; height:480px;"></iframe>
+                            <iframe
+                                src="//lightwidget.com/widgets/2965b7333833557283d4029e025bd4e8.html"
+                                id="lightwidget_2965b73338"
+                                name="lightwidget_2965b73338"
+                                scrolling="no"
+                                allowtransparency="true"
+                                class="lightwidget-widget"
+                                style="width: 100%; border: 0; overflow: hidden; height:480px;"></iframe>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCn9ypqFNxdXt9Zu2YqLcdD1Xdt2wNul9s&callback=initMap">
+    </script>
 </div>

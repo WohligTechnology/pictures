@@ -16,6 +16,7 @@ var jsArray = [
   './bower_components/lodash/lodash.js',
   './bower_components/moment/moment.js',
   './bower_components/moment-timezone/builds/moment-timezone-with-data.js',
+  './bower_components/angular-count-to/build/angular-count-to.min.js',
   './js/app.js',
   './js/controllers.js',
   './js/templateservice.js',

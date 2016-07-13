@@ -4172,6 +4172,11 @@ h4.title-movies {
 .bborders1 {
   bottom: -6px;
 }
+
+.map img {
+  opacity: 1 !important;
+}
+
 /* Start writing sass here */
 @import "fancybox-override";
 @import "mobile";
