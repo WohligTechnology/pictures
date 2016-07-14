@@ -1,358 +1,363 @@
 <section class="section8">
   <img src="img/contact/hiring.png" class="img-responsive imgposition" alt="">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="head-banner text-center">
+          <img src="img/contact/contacts.png" class="img-responsive" title="Contact">
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="contact-fant-desc">
     <div class="container">
-        <div class="row">
-            <div class="col-xs-12">
-                <div class="head-banner text-center">
-                    <img src="img/contact/contacts.png" class="img-responsive" title="Contact">
-                </div>
-            </div>
+      <div class="row">
+        <div class="col-md-offset-2 col-md-8">
+          <p>Hello there...</p>
+          <p>We’re always up for a conversation!</p>
+          <p>Let’s start with the basics: </p>
         </div>
+      </div>
     </div>
-    <div class="contact-fant-desc">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-offset-2 col-md-8">
-                    <p>Hello there...</p>
-                    <p>We’re always up for a conversation!</p>
-                    <p>Let’s start with the basics: </p>
-                </div>
-            </div>
+  </div>
+  <div class="contact-tab">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-offset-1 col-md-3 col-sm-4 col-xs-5">
+          <div class="text-center triangle1" ng-class="{borbot:active1==true || showNext==true || showThanks==true}" ng-click="active1=true;active2=false;showNext=false;showThanks=false;">
+            <h3>Proposed Project</h3>
+            <p>I have a project in mind.</p>
+          </div>
         </div>
-    </div>
-    <div class="contact-tab">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-4">
-                    <div class="inlblo pull-right text-center triangle1" ng-class="{borbot:active1==true || showNext==true || showThanks==true}" ng-click="active1=true;active2=false;showNext=false;showThanks=false;">
-                        <h3>Proposed Project</h3>
-                        <p>I have a project in mind.</p>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="inlblo orcircle">
-                        or
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="inlblo pull-left text-center triangle2" ng-class="{borbot:active2==true}" ng-click="active1=false;active2=true;showNext=false;showThanks=false;">
-                        <h3>General Enquiry</h3>
-                        <p>I'd just like to say "Hi!"</p>
-                    </div>
-                </div>
-            </div>
+        <div class="col-sm-4 col-xs-2">
+          <div class="orcircle">
+            or
+          </div>
         </div>
+        <div class="col-md-3 col-sm-4 col-xs-5">
+          <div class="text-center triangle2" ng-class="{borbot:active2==true}" ng-click="active1=false;active2=true;showNext=false;showThanks=false;">
+            <h3>General Enquiry</h3>
+            <p>I'd just like to say "Hi!"</p>
+          </div>
+        </div>
+      </div>
     </div>
+  </div>
 
-    <div class="general" ng-show="active2">
-        <div class="container">
-            <div class="row">
-                <form class="martop">
-                    <div class="col-md-4">
-                        <div class="form-group">
-                            <input class="form-control" type="text" placeholder="First Name*" ng-model="general.firstname">
-                        </div>
-                        <div class="form-group">
-                            <input class="form-control" type="text" placeholder="Company Name" ng-model="general.companyname">
-                        </div>
-                        <div class="form-group">
-                            <input class="form-control" type="tel" placeholder="Telephone number" ng-model="general.phone">
-                        </div>
-                        <div class="" ng-disabled="!(general.firstname && general.email && general.message)" ng-click="generalSubmit();active2 = false; showThanks = true;">
-                            <button class="btn btn-danger">Send</button>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="form-group">
-                            <input class="form-control" type="text" placeholder="Middle Name" ng-model="general.middlename">
-                        </div>
-                        <div class="form-group">
-                            <input class="form-control" type="email" placeholder="Email Address*" ng-model="general.email">
-                        </div>
-                        <div class="form-group">
-                            <input class="form-control" type="text" placeholder="Existing Web Address" ng-model="general.webaddress">
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="form-group">
-                            <input class="form-control" type="text" placeholder="Last Name"  ng-model="general.lastname">
-                        </div>
-                        <div class="form-group">
-                            <textarea class="form-control" placeholder="Message*" style="height:84px;" ng-model="general.message"></textarea>
-                        </div>
-                    </div>
-                </form>
+  <div class="general" ng-show="active2">
+    <div class="container">
+      <div class="row">
+        <form class="martop">
+          <div class="col-sm-4">
+            <div class="form-group">
+              <input class="form-control" type="text" placeholder="First Name*" ng-model="general.firstname">
             </div>
-        </div>
-    </div>
-    <div class="propro" ng-show="active1">
-        <div class="container">
-            <div class="row">
-                <div class="proposed martop">
-                    <h3>First, tell us a bit about yourself.</h3>
-                    <h4>Please answer all of the following</h4>
-                    <hr>
-                        <div class="row">
-                            <div class="col-md-12">
-                              <form>
-                              <div class="form-group">
-                                  <div class="col-md-10">
-                                    <div class="contact-focus">
-                                      <input class="form-control" ng-model="project.name" type="text" placeholder="Your Name*" required>
-                                      <div class="yoname">
-                                        It makes the communication more personal!
-                                      </div>
-                                    </div>
-                                  </div>
-                              </div>
-                              <div class="form-group">
-                                  <div class="col-md-10">
-                                    <div class="contact-focus">
-                                      <input class="form-control" ng-model="project.company" type="text" placeholder="Company">
-                                      <div class="yoname">
-                                        You can keep this blank if you don't have one
-                                      </div>
-                                    </div>
-                                  </div>
-                              </div>
-                              <div class="form-group">
-                                  <div class="col-md-10">
-                                    <div class="contact-focus">
-                                      <input class="form-control" type="text" ng-model="project.webaddress"  placeholder="Existing Web Address">
-                                      <div class="yoname">
-                                        To know more about your company
-                                      </div>
-                                    </div>
-                                  </div>
-                              </div>
-                              <div class="form-group">
-                                  <div class="col-md-10">
-                                    <div class="contact-focus">
-                                      <input class="form-control" type="text" ng-model="project.country"  placeholder="Country*">
-                                      <div class="yoname">
-                                        What part of the world do you call home?
-                                      </div>
-                                    </div>
-                                  </div>
-                              </div>
-                              <div class="form-group">
-                                  <div class="col-md-10">
-                                    <div class="contact-focus">
-                                      <input class="form-control" type="tel" ng-model="project.phone"  placeholder="Telephone number">
-                                      <div class="yoname">
-                                        To hear your voice
-                                      </div>
-                                    </div>
-                                  </div>
-                              </div>
-                              <div class="form-group">
-                                  <div class="col-md-10">
-                                    <div class="contact-focus">
-                                      <input class="form-control" type="email" ng-model="project.email"  placeholder="Email Address*" required>
-                                      <div class="yoname">
-                                        So that we can stay in touch!
-                                      </div>
-                                    </div>
-                                  </div>
-                              </div>
-                                <div class="col-md-6">
-                                <button class="btn btn-danger" ng-disabled="!(project.email && project.country && project.name)" ng-click="active1=false;showNext=true;">Next</button>
-                              </div>
-                            </form>
-                          </div>
-                        </div>
-                </div>
+            <div class="form-group">
+              <input class="form-control" type="text" placeholder="Company Name" ng-model="general.companyname">
             </div>
-        </div>
-    </div>
-    <div class="projects" ng-show="showNext">
-        <div class="container">
-            <div class="row">
-                <div class="project martop">
-                    <h3>Great, thanks for that.</h3>
-                    <h4>Now, let’s talk a bit about your project.</h4>
-                    <hr>
-                    <form>
-                    <div class="form-groups">
-                        <div class="row">
-                            <div class="col-md-8">
-                                <div class="enq-list">
-                                    <label>
-                                        <span>Which of the following best describes your project?</span>
-                                    </label>
-                                    <div class="checkbox">
-                                      <label class="checkbox-inline">
-                                          <input type="checkbox" id="checkbox1" value="ambassador" ng-model="project1[0][0].state">
-                                        <label for="checkbox1"><span></span>REDESIGN OF EXISTING WEB APPLICATION / WEBSITE</label>
-                                      </label>
-                                    </div>
-                                    <div class="checkbox">
-                                      <label class="checkbox-inline">
-                                          <input type="checkbox" id="checkbox2" value="representation" ng-model="project1[0][1].state">
-                                          <label for="checkbox2"><span></span>NEW WEB APPLICATION / WEBSITE</label>
-                                      </label>
-                                    </div>
-                                    <div class="checkbox">
-                                      <label class="checkbox-inline">
-                                          <input type="checkbox" id="checkbox3" value="representation" ng-model="project1[0][2].state">
-                                          <label for="checkbox3"><span></span>OTHER</label>
-                                      </label>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="form-groups">
-                        <div class="row">
-                            <div class="col-md-8">
-                                <div class="enq-list">
-                                    <label>
-                                        <span>What is your budget for the proposed project?</span>
-                                    </label>
-                                    <div class="checkbox">
-                                      <label class="checkbox-inline">
-                                          <input type="checkbox" id="checkbox4" value="representation" ng-model="project1[1][0].state">
-                                          <label for="checkbox4"><span></span>£20-50K<h5> (If your budget is less than £20k the project may not reach our minimum criteria)</h5></label>
-                                      </label>
-                                    </div>
-                                    <div class="checkbox">
-                                      <label class="checkbox-inline">
-                                          <input type="checkbox" id="checkbox5" value="ambassador" ng-model="project1[1][1].state">
-                                          <label for="checkbox5"><span></span>£50-£100K</label>
-                                      </label>
-                                    </div>
-                                    <div class="checkbox">
-                                      <label class="checkbox-inline">
-                                          <input type="checkbox" id="checkbox6" value="representation" ng-model="project1[1][2].state">
-                                          <label for="checkbox6"><span></span>£100K+</label>
-                                      </label>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="form-groups">
+            <div class="form-group">
+              <input class="form-control" type="tel" placeholder="Telephone number" ng-model="general.phone">
+            </div>
+          </div>
+          <div class="col-sm-4">
+            <div class="form-group">
+              <input class="form-control" type="text" placeholder="Middle Name" ng-model="general.middlename">
+            </div>
+            <div class="form-group">
+              <input class="form-control" type="email" placeholder="Email Address*" ng-model="general.email">
+            </div>
+            <div class="form-group">
+              <input class="form-control" type="text" placeholder="Existing Web Address" ng-model="general.webaddress">
+            </div>
+          </div>
+          <div class="col-sm-4">
+            <div class="form-group">
+              <input class="form-control" type="text" placeholder="Last Name" ng-model="general.lastname">
+            </div>
+            <div class="form-group">
+              <textarea class="form-control" placeholder="Message*" style="height:84px;" ng-model="general.message"></textarea>
+            </div>
+          </div>
+          <div class="col-sm-4">
+            <div class="" ng-disabled="!(general.firstname && general.email && general.message)" ng-click="generalSubmit();active2 = false; showThanks = true;">
+              <button class="btn btn-danger">Send</button>
+            </div>
+          </div>
 
-                        <div class="row">
-                            <div class="col-md-8">
-                                <div class="enq-list">
-
-                                    <label>
-                                        <span>When would you like to take delivery of the project?</span>
-                                    </label>
-                                    <div class="checkbox">
-                                      <label class="checkbox-inline">
-                                          <input type="checkbox" id="checkbox7" value="ambassador" ng-model="project1[2][0].state">
-                                          <label for="checkbox7"><span></span>LESS THAN 3 MONTHS<h5> (8–12 weeks is probably the minimum time required for a small project)</h5></label>
-                                     </label>
-                                    </div>
-                                    <div class="checkbox">
-                                      <label class="checkbox-inline">
-                                          <input type="checkbox" id="checkbox8" value="representation" ng-model="project1[2][1].state">
-                                          <label for="checkbox8"><span></span>LESS THAN 6 MONTHS</label>
-                                      </label>
-                                    </div>
-                                    <div class="checkbox">
-                                      <label class="checkbox-inline">
-                                          <input type="checkbox" id="checkbox9" value="representation" ng-model="project1[2][2].state" >
-                                          <label for="checkbox9"><span></span>PROJECT WOULD BE ONGOING</label>
-                                      </label>
-                                    </div>
-                                    <div class="checkbox">
-                                      <label class="checkbox-inline">
-                                          <input type="checkbox" id="checkbox10" value="tv" ng-model="project1[2][3].state">
-                                          <label for="checkbox10"><span></span>TIMESCALES ARE NOT IMPORTANT TO ME, IT’S QUALITY THAT COUNTS</label>
-                                      </label>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="form-groups">
-                        <div class="row">
-                            <div class="col-md-8">
-                              <div class="enq-list">
-                                <label>
-                                  <span>Please describe your proposed project in a single sentence</span>&nbsp;<span class="fsize">(Required)</span>
-                                </label>
-                                <div class="texttop">
-                                  <textarea ng-model="project.content" rows="8" cols="56" style="background-color:#d8d8d8;border: 0;"></textarea>
-                                </div>
-                              </div>
-                            </div>
-                        </div>
-                    </div>
-                        <button class="btn marright ffamily" type="button" ng-click="active1=true;showNext=false;showThanks=false;">Back</button>
-                        <button class="btn btn-danger ffamily" type="button" ng-disabled="!project.content" ng-click="projectSubmit();showNext=false;showThanks=true;">Send</button>
-                  </form>
-                </div>
-            </div>
-        </div>
+        </form>
+      </div>
     </div>
-    <div class="thankyou" ng-show="showThanks">
-        <div class="container">
-            <div class="row">
-                    <div class="tyback">
-                      <div class="contents">
-                        <h2 class="text-uppercase">Thank you</h2>
-                        <img src="img/contact/framedeco.png" class="design" alt="Design">
-                        <p>Thanks for getting in touch, we’ll get back to you as soon as we can.</p>
+  </div>
+  <div class="propro" ng-show="active1">
+    <div class="container">
+      <div class="row">
+        <div class="proposed martop">
+          <h3>First, tell us a bit about yourself.</h3>
+          <h4>Please answer all of the following</h4>
+          <hr>
+          <div class="row">
+            <div class="col-md-12">
+              <form>
+                <div class="form-group">
+                  <div class="col-md-12">
+                    <div class="contact-focus">
+                      <input class="form-control" ng-model="project.name" type="text" placeholder="Your Name*" required>
+                      <div class="yoname">
+                        It makes the communication more personal!
                       </div>
                     </div>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="col-md-12">
+                    <div class="contact-focus">
+                      <input class="form-control" ng-model="project.company" type="text" placeholder="Company">
+                      <div class="yoname">
+                        You can keep this blank if you don't have one
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="col-md-12">
+                    <div class="contact-focus">
+                      <input class="form-control" type="text" ng-model="project.webaddress" placeholder="Existing Web Address">
+                      <div class="yoname">
+                        To know more about your company
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="col-md-12">
+                    <div class="contact-focus">
+                      <input class="form-control" type="text" ng-model="project.country" placeholder="Country*">
+                      <div class="yoname">
+                        What part of the world do you call home?
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="col-md-12">
+                    <div class="contact-focus">
+                      <input class="form-control" type="tel" ng-model="project.phone" placeholder="Telephone number">
+                      <div class="yoname">
+                        To hear your voice
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="col-md-12">
+                    <div class="contact-focus">
+                      <input class="form-control" type="email" ng-model="project.email" placeholder="Email Address*" required>
+                      <div class="yoname">
+                        So that we can stay in touch!
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <button class="btn btn-danger" ng-disabled="!(project.email && project.country && project.name)" ng-click="active1=false;showNext=true;">Next</button>
+                </div>
+              </form>
             </div>
+          </div>
         </div>
+      </div>
     </div>
+  </div>
+  <div class="projects" ng-show="showNext">
     <div class="container">
-        <div class="row mbottom">
-            <div class="col-md-4 borright">
-                <div class="location">
-                    <p>MUMBAI</p>
-                    <h4>GS Worldwide Entertainment</h4>
-                    <address>
+      <div class="row">
+        <div class="project martop">
+          <h3>Great, thanks for that.</h3>
+          <h4>Now, let’s talk a bit about your project.</h4>
+          <hr>
+          <form>
+            <div class="form-groups">
+              <div class="row">
+                <div class="col-md-8">
+                  <div class="enq-list">
+                    <label>
+                      <span>Which of the following best describes your project?</span>
+                    </label>
+                    <div class="checkbox">
+                      <label class="checkbox-inline">
+                        <input type="checkbox" id="checkbox1" value="ambassador" ng-model="project1[0][0].state">
+                        <label for="checkbox1"><span></span>REDESIGN OF EXISTING WEB APPLICATION / WEBSITE</label>
+                      </label>
+                    </div>
+                    <div class="checkbox">
+                      <label class="checkbox-inline">
+                        <input type="checkbox" id="checkbox2" value="representation" ng-model="project1[0][1].state">
+                        <label for="checkbox2"><span></span>NEW WEB APPLICATION / WEBSITE</label>
+                      </label>
+                    </div>
+                    <div class="checkbox">
+                      <label class="checkbox-inline">
+                        <input type="checkbox" id="checkbox3" value="representation" ng-model="project1[0][2].state">
+                        <label for="checkbox3"><span></span>OTHER</label>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="form-groups">
+              <div class="row">
+                <div class="col-md-8">
+                  <div class="enq-list">
+                    <label>
+                      <span>What is your budget for the proposed project?</span>
+                    </label>
+                    <div class="checkbox">
+                      <label class="checkbox-inline">
+                        <input type="checkbox" id="checkbox4" value="representation" ng-model="project1[1][0].state">
+                        <label for="checkbox4"><span></span>£20-50K
+                          <h5> (If your budget is less than £20k the project may not reach our minimum criteria)</h5></label>
+                      </label>
+                    </div>
+                    <div class="checkbox">
+                      <label class="checkbox-inline">
+                        <input type="checkbox" id="checkbox5" value="ambassador" ng-model="project1[1][1].state">
+                        <label for="checkbox5"><span></span>£50-£100K</label>
+                      </label>
+                    </div>
+                    <div class="checkbox">
+                      <label class="checkbox-inline">
+                        <input type="checkbox" id="checkbox6" value="representation" ng-model="project1[1][2].state">
+                        <label for="checkbox6"><span></span>£100K+</label>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="form-groups">
+
+              <div class="row">
+                <div class="col-md-8">
+                  <div class="enq-list">
+
+                    <label>
+                      <span>When would you like to take delivery of the project?</span>
+                    </label>
+                    <div class="checkbox">
+                      <label class="checkbox-inline">
+                        <input type="checkbox" id="checkbox7" value="ambassador" ng-model="project1[2][0].state">
+                        <label for="checkbox7"><span></span>LESS THAN 3 MONTHS
+                          <h5> (8–12 weeks is probably the minimum time required for a small project)</h5></label>
+                      </label>
+                    </div>
+                    <div class="checkbox">
+                      <label class="checkbox-inline">
+                        <input type="checkbox" id="checkbox8" value="representation" ng-model="project1[2][1].state">
+                        <label for="checkbox8"><span></span>LESS THAN 6 MONTHS</label>
+                      </label>
+                    </div>
+                    <div class="checkbox">
+                      <label class="checkbox-inline">
+                        <input type="checkbox" id="checkbox9" value="representation" ng-model="project1[2][2].state">
+                        <label for="checkbox9"><span></span>PROJECT WOULD BE ONGOING</label>
+                      </label>
+                    </div>
+                    <div class="checkbox">
+                      <label class="checkbox-inline">
+                        <input type="checkbox" id="checkbox10" value="tv" ng-model="project1[2][3].state">
+                        <label for="checkbox10"><span></span>TIMESCALES ARE NOT IMPORTANT TO ME, IT’S QUALITY THAT COUNTS</label>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="form-groups">
+              <div class="row">
+                <div class="col-md-8">
+                  <div class="enq-list">
+                    <label>
+                      <span>Please describe your proposed project in a single sentence</span>&nbsp;<span class="fsize">(Required)</span>
+                    </label>
+                    <div class="texttop">
+                      <textarea ng-model="project.content" rows="8" cols="56" style="background-color:#d8d8d8;border: 0;"></textarea>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <button class="btn marright ffamily" type="button" ng-click="active1=true;showNext=false;showThanks=false;">Back</button>
+            <button class="btn btn-danger ffamily" type="button" ng-disabled="!project.content" ng-click="projectSubmit();showNext=false;showThanks=true;">Send</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="thankyou" ng-show="showThanks">
+    <div class="container">
+      <div class="row">
+        <div class="tyback">
+          <div class="contents">
+            <h2 class="text-uppercase">Thank you</h2>
+            <img src="img/contact/framedeco.png" class="design" alt="Design">
+            <p>Thanks for getting in touch, we’ll get back to you as soon as we can.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row mbottom">
+      <div class="col-sm-4 borright">
+        <div class="location">
+          <p>MUMBAI</p>
+          <h4>GS Worldwide Entertainment</h4>
+          <address>
                   B-001/01, Bhagtani Krishang,<br>
                   Dattatray Road, Santacruz (W),<br>
                   Mumbai – 400 054. India.<br>
                   Contact No : 91 (22) 2661 4477<br>
                   Email: www.rakesh@gmail.com
                 </address>
-                </div>
-            </div>
-            <div class="col-md-4 borright">
-                <div class="location">
-                    <p>NEW YORK</p>
-                    <h4>GS Worldwide Entertainment</h4>
-                    <address>
+        </div>
+      </div>
+      <div class="col-sm-4 borright">
+        <div class="location">
+          <p>NEW YORK</p>
+          <h4>GS Worldwide Entertainment</h4>
+          <address>
                   18, Princeton Drive,<br>
                   Syosset, NY - 11791,<br>
                   USA<br>
                   Contact No : +19177203663<br>
                   Email: www.rakesh@gmail.com
                 </address>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="location">
-                    <p>DUBAI</p>
-                    <h4>GS Worldwide Entertainment</h4>
-                    <address>
+        </div>
+      </div>
+      <div class="col-sm-4">
+        <div class="location">
+          <p>DUBAI</p>
+          <h4>GS Worldwide Entertainment</h4>
+          <address>
                   409, City Tower 1,<br>
                   Sheikh Zayed Road,<br>
                   P. O. Box 118767. Dubai, UAE<br>
                   Contact No : +919967233337<br>
                   Email: www.rakesh@gmail.com
                 </address>
-                </div>
-            </div>
         </div>
-        <div class="row">
-            <div class="back">
-                <div class="col-md-4 bordright" ng-repeat="date in Dates">
-                    <div class="dates">
-                        <p>{{date.top}}</p>
-                        <p>{{date.bottom}}</p>
-                    </div>
-                </div>
-                <!-- <div class="col-md-4 bordright">
+      </div>
+    </div>
+    <div class="row">
+      <div class="back">
+        <div class="col-sm-4 bordright" ng-repeat="date in Dates">
+          <div class="dates">
+            <p>{{date.top}}</p>
+            <p>{{date.bottom}}</p>
+          </div>
+        </div>
+        <!-- <div class="col-md-4 bordright">
                     <div class="dates">
                         <p>April 4, Monday</p>
                         <p>05:24 pm</p>
@@ -364,171 +369,164 @@
                         <p>05:24 pm</p>
                     </div>
                 </div> -->
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-6">
-                <div class="sign">
-                    <h4>Sign up to our GS newsletter</h4>
-                    <div ng-controller="SubscribeCtrl">
-                        <form name="subForm" class="bs-example bs-example-form" role="form"  ng-hide="subscribeEmail || checkEmail">
-                            <div class="input-group">
-                              <input type="email" class="form-control" placeholder="Enter email address" ng-model="subscribe.email" required>
-                              <span class="input-group-addon btn btn-danger" ng-click="subscribe(subscribe.email);" ng-disabled="subForm.$invalid">Subscribe</span>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <div class="sign">
+          <h4>Sign up to our GS newsletter</h4>
+          <div ng-controller="SubscribeCtrl">
+            <form name="subForm" class="bs-example bs-example-form" role="form" ng-hide="subscribeEmail || checkEmail">
+              <div class="input-group">
+                <input type="email" class="form-control" placeholder="Enter email address" ng-model="subscribe.email" required>
+                <span class="input-group-addon btn btn-danger" ng-click="subscribe(subscribe.email);" ng-disabled="subForm.$invalid">Subscribe</span>
 
-                            </div>
-                        </form>
-                        <h4 ng-show="subscribeEmail && !checkEmail"><span >Thank you for subscribing.</span></h4>
-                        <h4 ng-show="checkEmail && !subscribeEmail"><span >Email you provided already exists.</span></h4>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="para">
-                    <p>
-                        For any general queries please get in touch on
-                        <a href="mailto:info@gsentertainment.com" target="_blank">info@gsentertainment.com</a>
-                    </p>
-                </div>
-            </div>
+              </div>
+            </form>
+            <h4 ng-show="subscribeEmail && !checkEmail"><span >Thank you for subscribing.</span></h4>
+            <h4 ng-show="checkEmail && !subscribeEmail"><span >Email you provided already exists.</span></h4>
+          </div>
         </div>
-        <div class="row">
-          <div style="height:100%; width:100%;">
-            <div id="map" class="map" style="height:500px;">
+      </div>
+      <div class="col-md-6">
+        <div class="para">
+          <p>
+            For any general queries please get in touch on
+            <a href="mailto:info@gsentertainment.com" target="_blank">info@gsentertainment.com</a>
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div style="height:100%; width:100%;">
+        <div id="map" class="map" style="height:500px;">
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="search">
+        <div class="col-md-4">
+          <div class="enterloc">
+            <h4>Enter a India location or postcode for driving directions to our office</h4>
+          </div>
+        </div>
+        <div class="col-md-5">
+          <div class="searchgo">
+            <form class="bs-example bs-example-form" role="form">
+              <div class="form-group">
+                <input type="text" class="form-control" ng-model="place.location" placeholder="e.g. New Delhi">
+                <button class="btn btn-danger" ng-click="getDirFrom(place.location)">GO</button>
+                <!-- ng-click="subscribe(subscribe.email);" <div ng-messages="subForm.email.$error" ng-messages-include="error-messages"></div>
+                      <h4 ng-if="subscribeEmail">Thankyou For Subscribing</h4>
+                      <h4 ng-if="checkEmail">This email already exists</h4> -->
+              </div>
+            </form>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="view">
+            <i class="fa fa-caret-right"></i>
+            <a ng-click="sendToGoogle(place.location)">View on Google Maps</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+  <div class="bgcount">
+    <div class="container">
+      <h3 class="text-uppercase text-center statement">We take everything we do, to the next level.</h3>
+      <div class="row-flex">
+        <div class="col-flex flex-center">
+          <div class="ccc-quality">
+            <p class="text-uppercase">Movie</p>
+            <span count-to="{{50}}" duration="1" count-from="{{0}}"></span>
+            <div class="inlblo">
+              <img src="img/contact/movie.png" class="img-responsive" alt="  ">
             </div>
           </div>
         </div>
-        <div class="row">
-            <div class="search">
-                <div class="col-md-4">
-                    <div class="enterloc">
-                        <h4>Enter a India location or postcode for driving directions to our office</h4>
-                    </div>
-                </div>
-                <div class="col-md-5">
-                    <div class="searchgo">
-                        <form class="bs-example bs-example-form" role="form">
-                            <div class="form-group">
-                                <input type="text" class="form-control" ng-model="place.location" placeholder="e.g. New Delhi">
-                                <button class="btn btn-danger" ng-click="getDirFrom(place.location)">GO</button>
-                                <!-- ng-click="subscribe(subscribe.email);" <div ng-messages="subForm.email.$error" ng-messages-include="error-messages"></div>
-                      <h4 ng-if="subscribeEmail">Thankyou For Subscribing</h4>
-                      <h4 ng-if="checkEmail">This email already exists</h4> -->
-                            </div>
-                        </form>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="view">
-                        <i class="fa fa-caret-right"></i>
-                        <a ng-click="sendToGoogle(place.location)">View on Google Maps</a>
-                    </div>
-                </div>
+        <div class="col-flex flex-center ship">
+          <div class="ccc-quality">
+            <p class="text-uppercase">Wedding</p>
+            <span count-to="{{30}}" duration="1" count-from="{{0}}"></span>
+            <div class="inlblo">
+              <img src="img/contact/wedd.png" class="img-responsive" alt="">
             </div>
+          </div>
         </div>
-    </div>
-    </div>
-    <div class="bgcount">
-        <div class="container">
-            <h3 class="text-uppercase text-center statement">We take everything we do, to the next level.</h3>
-            <div class="row-flex">
-                <div class="col-flex flex-center">
-                    <div class="ccc-quality">
-                        <p class="text-uppercase">Movie</p>
-                        <span count-to="{{50}}" duration="1" count-from="{{0}}"></span>
-                        <div class="inlblo">
-                            <img src="img/contact/movie.png" class="img-responsive" alt="  ">
-                        </div>
-                    </div>
-                </div>
-                <div class="col-flex flex-center ship">
-                    <div class="ccc-quality">
-                        <p class="text-uppercase">Wedding</p>
-                        <span count-to="{{30}}" duration="1" count-from="{{0}}"></span>
-                        <div class="inlblo">
-                            <img src="img/contact/wedd.png" class="img-responsive" alt="">
-                        </div>
-                    </div>
-                </div>
-                <div class="col-flex flex-center">
-                    <div class="ccc-quality ">
-                        <p class="text-uppercase">Sport Team Management</p>
-                        <span count-to="{{25}}" duration="1" count-from="{{0}}"></span>
-                        <div class="inlblo">
-                            <img src="img/contact/sport.png" class="img-responsive" alt="">
-                        </div>
-                    </div>
-                </div>
-                <div class="col-flex flex-center ship">
-                    <div class="ccc-quality">
-                        <p class="text-uppercase">Celebrity management</p>
-                        <span count-to="{{40}}" duration="1" count-from="{{0}}"></span>
-                        <div class="inlblo">
-                            <img src="img/contact/star.png" class="img-responsive" alt="">
-                        </div>
-                    </div>
-                </div>
-                <div class="col-flex flex-center">
-                    <div class="ccc-quality">
-                        <p class="text-uppercase">Sporting Events</p>
-                        <span count-to="{{30}}" duration="1" count-from="{{0}}"></span>
-                        <div class="inlblo">
-                            <img src="img/contact/people.png" class="img-responsive" alt="">
-                        </div>
-                    </div>
-                </div>
+        <div class="col-flex flex-center">
+          <div class="ccc-quality ">
+            <p class="text-uppercase">Sport Team Management</p>
+            <span count-to="{{25}}" duration="1" count-from="{{0}}"></span>
+            <div class="inlblo">
+              <img src="img/contact/sport.png" class="img-responsive" alt="">
             </div>
+          </div>
         </div>
+        <div class="col-flex flex-center ship">
+          <div class="ccc-quality">
+            <p class="text-uppercase">Celebrity management</p>
+            <span count-to="{{40}}" duration="1" count-from="{{0}}"></span>
+            <div class="inlblo">
+              <img src="img/contact/star.png" class="img-responsive" alt="">
+            </div>
+          </div>
+        </div>
+        <div class="col-flex flex-center">
+          <div class="ccc-quality">
+            <p class="text-uppercase">Sporting Events</p>
+            <span count-to="{{30}}" duration="1" count-from="{{0}}"></span>
+            <div class="inlblo">
+              <img src="img/contact/people.png" class="img-responsive" alt="">
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
+  </div>
 </section>
 <div class="social">
-    <!-- <div ng-include = "'/social.html'"></div> -->
-    <section class="marg-section">
-        <div class="social-back ">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-4 col-sm-4">
-                        <div class="social-box text-center">
-                            <img src="img/socials/facebook.png" class="doneLoading">
-                        </div>
-                        <div class="social-logo text-center">
-                            <div class="feed-social mt30">
-                                <div class="fb-page" data-href="https://www.facebook.com/GSWorldwideEnt/" data-tabs="timeline" data-width="360" data-height="480" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true">
-                                    <div class="fb-xfbml-parse-ignore">
-                                        <blockquote cite="https://www.facebook.com/GSWorldwideEnt/">
-                                            <a href="https://www.facebook.com/GSWorldwideEnt/">GS Worldwide Entertainment.</a>
-                                        </blockquote>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 col-sm-4">
-                        <div class="social-box text-center">
-                            <img src="img/socials/twitter.png" class="doneLoading">
-                        </div>
-                        <div class="social-logo text-center ">
-                            <a class="twitter-timeline" href="https://twitter.com/GSWorldwideEnt" data-widget-id="716880459599228928">Tweets by @GSWorldwideEnt</a>
-                        </div>
-                    </div>
-                    <div class="col-md-4 col-sm-4">
-                        <div class="social-box text-center">
-                            <img src="img/socials/instagram.png" class="doneLoading">
-                        </div>
-                        <div class="social-logo text-center ">
-                            <iframe
-                                src="//lightwidget.com/widgets/2965b7333833557283d4029e025bd4e8.html"
-                                id="lightwidget_2965b73338"
-                                name="lightwidget_2965b73338"
-                                scrolling="no"
-                                allowtransparency="true"
-                                class="lightwidget-widget"
-                                style="width: 100%; border: 0; overflow: hidden; height:480px;"></iframe>
-                        </div>
-                    </div>
-                </div>
+  <!-- <div ng-include = "'/social.html'"></div> -->
+  <section class="marg-section">
+    <div class="social-back ">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4 col-sm-4">
+            <div class="social-box text-center">
+              <img src="img/socials/facebook.png" class="doneLoading">
             </div>
+            <div class="social-logo text-center">
+              <div class="feed-social mt30">
+                <div class="fb-page" data-href="https://www.facebook.com/GSWorldwideEnt/" data-tabs="timeline" data-width="360" data-height="480" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true">
+                  <div class="fb-xfbml-parse-ignore">
+                    <blockquote cite="https://www.facebook.com/GSWorldwideEnt/">
+                      <a href="https://www.facebook.com/GSWorldwideEnt/">GS Worldwide Entertainment.</a>
+                    </blockquote>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 col-sm-4">
+            <div class="social-box text-center">
+              <img src="img/socials/twitter.png" class="doneLoading">
+            </div>
+            <div class="social-logo text-center ">
+              <a class="twitter-timeline" href="https://twitter.com/GSWorldwideEnt" data-widget-id="716880459599228928">Tweets by @GSWorldwideEnt</a>
+            </div>
+          </div>
+          <div class="col-md-4 col-sm-4">
+            <div class="social-box text-center">
+              <img src="img/socials/instagram.png" class="doneLoading">
+            </div>
+            <div class="social-logo text-center ">
+              <iframe src="//lightwidget.com/widgets/2965b7333833557283d4029e025bd4e8.html" id="lightwidget_2965b73338" name="lightwidget_2965b73338" scrolling="no" allowtransparency="true" class="lightwidget-widget" style="width: 100%; border: 0; overflow: hidden; height:480px;"></iframe>
+            </div>
+          </div>
         </div>
-    </section>
+      </div>
+    </div>
+  </section>
 
 </div>
