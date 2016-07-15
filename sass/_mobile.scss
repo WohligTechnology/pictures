@@ -3,6 +3,9 @@
     margin-bottom: 0;
     font-size: 14px;
   }
+  .career .cimage1 .parag p {
+    font-size: 15px;
+  }
   .bg2 {
     .flex-slider {
       width: 700px;
@@ -102,6 +105,21 @@
 @media (max-width: $screen-sm-max) {
   .propro .yoname {
     width: 45%;
+  }
+  .footer-right {
+    margin-top: 20px;
+  }
+  footer .btn-footer {
+    text-align: center;
+  }
+  .career .cimage1 .parag p span {
+    font-size: 20px;
+  }
+  .career .cimage1 .parag .pblue {
+    font-size: 20px;
+  }
+  .career .cimage1 .parag p {
+    font-size: 14px;
   }
   .search {
     background: #f0f0f0;
@@ -274,10 +292,68 @@
       margin: 20px auto;
     }
   }
+  .career .cimage1 .parag {
+    margin: 0 20%;
+    top: 46%;
+    left: 30%;
+  }
+  .career .cimage1 .parag .pblue {
+    font-size: 20px;
+  }
+  .career .cimage1 .parag p {
+    font-size: 10px;
+  }
 }
 @media (max-width: $screen-xs-max) {
   .bg-red-jpp {
     background: $brand-danger;
+  }
+  .website img {
+    width: 100%;
+  }
+  .ios-andriod img {
+    width: 100%;
+  }
+  .sharejpp .title-made {
+    font-size: 15px;
+    margin-top: 15px;
+    margin-bottom: 10px;
+  }
+  .sharejpp .ios-andriod ul li img {
+    width: 120px;
+  }
+  .sharejpp {
+    .btn-all .btn {
+      padding: 10px;
+      font-size: 12px;
+    }
+  }
+  .career .careervision .stats p {
+    margin: 0 30px 30px;
+  }
+  .career .contact-fant-desc span {
+    line-height: 20px;
+    font-size: 18px;
+  }
+  .career .apply h3 {
+    font-size: 14px;
+    line-height: 150%;
+    margin: 20px;
+  }
+  .career .contact-fant-desc p {
+    line-height: 20px;
+    font-size: 18px;
+  }
+  .career .contact-fant-desc h2 {
+    font-size: 24px;
+  }
+  .career .cimage1 .parag {
+    margin: 0 20%;
+    top: 46%;
+    left: 30%;
+    background: #fff;
+    width: 300px;
+    height: 110px;
   }
   .footer-right {
     margin-top: 10px;
@@ -626,6 +702,63 @@
   }
 }
 @media (max-width: 480px) {
+  .upcoming-game .title-asfc h3 {
+    width: auto;
+  }
+  .get-in-touch {
+    padding: 20px;
+  }
+  .banner-title h4 {
+      font-size: 18px;
+      padding-bottom: 3px;
+  }
+  .banner-title .bborders {
+    width: 124px;
+    border-width: 2px;
+}
+  .jobform .custom-select select {
+    width: 100%;
+  }
+  .attach {
+    margin-left: 15px;
+  }
+  .jobform .checkbox label {
+    padding-right: 15px;
+  }
+  .career .cimage1 .parag {
+    top: 50%;
+    left: 30%;
+    width: 300px;
+    height: 165px;
+  }
+  .career .cimage1 .parag {
+    top: 50%;
+    width: 300px;
+    height: 165px;
+    padding: 20px;
+  }
+  .download {
+    min-height: 75px;
+    margin: 15px 0 60px;
+  }
+  .download .imac img {
+    width: 60px;
+  }
+  .download .imac {
+    bottom: -35px;
+    left: 25px;
+  }
+  .download p {
+    font-size: 18px;
+    padding: 15px;
+    letter-spacing: 2px;
+  }
+  .download p a {
+    font-size: 20px;
+  }
+  .title-asfc h3 {
+    font-size: 22px;
+  }
   .bg2 .flex-slider .flexslider {
     overflow: hidden;
   }

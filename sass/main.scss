@@ -3662,7 +3662,7 @@ h4.title-movies {
       position: absolute;
       top: 45%;
       left: 29%;
-      transform: translate(-50%,-50%);
+      @include transform(translate(-50%,-50%));
       .pblue {
         color: #218ecd;
         font-size: 28px;
@@ -3789,7 +3789,7 @@ h4.title-movies {
       width: 78%;
       display: inline;
       position: relative;
-      z-index: 99;
+      z-index: 2;
       -webkit-appearance: none;
     }
     &:after {
@@ -3801,12 +3801,12 @@ h4.title-movies {
       color: white;
       background-color: #f13748;
       position: absolute;
-      top: -3px;
+      top: -5px;
       right: 0;
       text-align: center;
       font-size: 28px;
       pointer-events: none;
-      z-index: 999;
+      z-index: 22;
     }
   }
   p {
