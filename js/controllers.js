@@ -752,12 +752,13 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
                 $scope.myname = $scope.weddingData[i].name;
                 if ($scope.myname == 'Sangeet' && $scope.myname == 'Mehendi') {
                   console.log('ifff');
-                    $state.go('weddinginsidedetail', {
+                  $scope.mylocation=$state.go('weddinginsidedetail', {
                         id: $scope.weddingData[i]._id
                     });
+                    console.log('$scope.mylocation',$scope.mylocation);
                 } else {
                   console.log('else');
-                    $state.go('weddinginside', {
+                    $scope.mylocation=$state.go('weddinginside', {
                         id: $scope.weddingData[i]._id
                     });
                 }
@@ -1003,18 +1004,38 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     TemplateService.title = $scope.menutitle;
     $scope.navigation = NavigationService.getnav();
     $scope.weddetail = {};
-    NavigationService.getWeddingInsideDetails($stateParams.id, function(data) {
-        console.log(data);
-        $scope.weddetail = data.data;
-        console.log("$scope.weddetail", $scope.weddetail);
-        if ($scope.weddetail.imagegallery && $scope.weddetail.imagegallery.length > 0) {
-            $scope.weddetail.imagegallery = _.chunk($scope.weddetail.imagegallery, 6);
-            for (var i = 0; i < $scope.weddetail.imagegallery.length; i++) {
-                $scope.weddetail.imagegallery[i] = _.chunk($scope.weddetail.imagegallery[i], 3);
-            }
-            // $scope.weddetail.imagegallery = _.chunk($scope.weddetail.imagegallery, 3);
-        }
-    })
+    console.log($stateParams.id);
+    if($stateParams.id !=2 && $stateParams.id !=3)
+    {
+      NavigationService.getWeddingInsideDetails($stateParams.id, function(data) {
+
+          console.log("innn");
+          $scope.weddetail = data.data;
+          console.log("$scope.weddetail", $scope.weddetail);
+          if ($scope.weddetail.imagegallery && $scope.weddetail.imagegallery.length > 0) {
+              $scope.weddetail.imagegallery = _.chunk($scope.weddetail.imagegallery, 6);
+              for (var i = 0; i < $scope.weddetail.imagegallery.length; i++) {
+                  $scope.weddetail.imagegallery[i] = _.chunk($scope.weddetail.imagegallery[i], 3);
+              }
+              // $scope.weddetail.imagegallery = _.chunk($scope.weddetail.imagegallery, 3);
+          }
+      })
+    }
+    else {
+      NavigationService.getSangeetInsideDetails($stateParams.id, function(data) {
+          console.log("elsee");
+          $scope.weddetail = data.data;
+          console.log("$scope.weddetail", $scope.weddetail);
+          if ($scope.weddetail.imagegallery && $scope.weddetail.imagegallery.length > 0) {
+              $scope.weddetail.imagegallery = _.chunk($scope.weddetail.imagegallery, 6);
+              for (var i = 0; i < $scope.weddetail.imagegallery.length; i++) {
+                  $scope.weddetail.imagegallery[i] = _.chunk($scope.weddetail.imagegallery[i], 3);
+              }
+              // $scope.weddetail.imagegallery = _.chunk($scope.weddetail.imagegallery, 3);
+          }
+      })
+    }
+
     $scope.makeActive = function(video, index) {
         $scope.weddetail.featuredvideos.splice(index, 1);
         $scope.weddetail.featuredvideos.unshift(video);

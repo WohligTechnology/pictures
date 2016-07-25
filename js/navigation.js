@@ -6,9 +6,7 @@ var adminURL = "";
 // }
 
 adminURL = "http://wohlig.co.in/gsebackend/";
-// adminURL = "http://192.168.1.115/gsebackend/";
-// adminURL = "http://192.168.1.137/gsebackend/";
-// adminURL = "http://localhost/gsebackend/";
+// adminURL = "http://192.168.1.112/gsebackend/";
 var apiUrl = adminURL + "index.php/json/";
 var imgpath = adminURL + "uploads/";
 var hauth = "http://gsebackend.com/gsebackend/index.php/hauth/login/";
@@ -59,6 +57,9 @@ var navigationservice = angular.module('navigationservice', [])
         },
         getWeddingInsideDetails: function(id, callback) {
             $http.get(apiUrl + 'getWeddingInsideDetails?id=' + id).success(callback);
+        },
+        getSangeetInsideDetails: function(id, callback) {
+            $http.get(apiUrl + 'getSangeetInsideDetails?id=' + id).success(callback);
         },
         getWeddingInsideBanner: function(movieid, callback) {
             $http.get(apiUrl + 'getWeddingInsideBanner?id=' + movieid).success(callback);
