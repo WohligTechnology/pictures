@@ -5,8 +5,8 @@ var adminURL = "";
 //     adminURL = "http://localhost/demo/index.php";
 // }
 
-adminURL = "http://wohlig.co.in/gsebackend/";
-// adminURL = "http://192.168.1.112/gsebackend/";
+// adminURL = "http://wohlig.co.in/gsebackend/";
+adminURL = "http://192.168.1.112/gsebackend/";
 var apiUrl = adminURL + "index.php/json/";
 var imgpath = adminURL + "uploads/";
 var hauth = "http://gsebackend.com/gsebackend/index.php/hauth/login/";
