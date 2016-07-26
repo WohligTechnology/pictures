@@ -12,20 +12,26 @@
         <div class="row">
             <div class="col-md-4">
                 <div class="img-author">
-                    <img ng-src="{{diariesAuthorData.description.image | uploadpath}}" alt="Author Image" class="img-responsive" />
+                    <img ng-src="{{diariesAuthorData.description.image | uploadpath}}" alt="Author Image" class="img-responsive"/>
                     <!-- <img ng-src="img/viraj.jpg" alt="Author Image" class="img-responsive" /> -->
                 </div>
             </div>
             <div class="col-md-8">
                 <h4 class="name-color">{{diariesAuthorData.description.name}}</h4>
-                <div class="btext" ng-bind-html="diariesAuthorData.description.description"> </div>
+                <div class="btext" ng-bind-html="diariesAuthorData.description.description"></div>
                 <div class="share">
                     <h4 class="text-uppercase">Follow on</h4>
                     <span class="social-share">
-            <a href="" ng-click="socialLogin('Facebook')"><i class="fa fa-facebook"></i></a>
-            <a href="" ng-click="socialLogin('Twitter')"><i class="fa fa-twitter"></i></a>
-            <a href="" ng-click="socialLogin('Google')"><i class="fa fa-envelope-o"></i></a>
-          </span>
+                        <a href="" ng-click="socialLogin('Facebook')">
+                            <i class="fa fa-facebook"></i>
+                        </a>
+                        <a href="" ng-click="socialLogin('Twitter')">
+                            <i class="fa fa-twitter"></i>
+                        </a>
+                        <a href="" ng-click="socialLogin('Google')">
+                            <i class="fa fa-envelope-o"></i>
+                        </a>
+                    </span>
                 </div>
             </div>
         </div>
@@ -38,7 +44,8 @@
                         <div class="text-center">
                             <div class="wedding-diary">
                                 <div class="diary-title mr30 mt60">
-                                    <h4 class="uppercase color-red"><i class="fi flaticon-book"></i>Stories</h4>
+                                    <h4 class="uppercase color-red">
+                                        <i class="fi flaticon-book"></i>Stories</h4>
                                 </div>
                             </div>
                         </div>
@@ -97,6 +104,5 @@
                 </div>
             </div>
         </div>
-
     </div>
 </section>
