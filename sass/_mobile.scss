@@ -1,1018 +1,1036 @@
+@media screen and (min-width: 1500px){
+  .banner-movies {
+      top: 150px;
+      width: 100%;
+      height: 350px;
+      margin-bottom: 20px;
+      overflow: hidden;
+  }
+  .banner-movies img {
+      width: 100%;
+  }
+}
 @media screen and (max-width: 1200px) {
-  .search .enterloc h4 {
-    margin-bottom: 0;
-    font-size: 14px;
-  }
-  .career .cimage1 .parag p {
-    font-size: 15px;
-  }
-  .bg2 {
-    .flex-slider {
-      width: 700px;
-      @include transform(scale(0.8));
-      margin-top: -40px;
-      .flexslider {
-        margin-bottom: -40px;
-      }
+    .search .enterloc h4 {
+        margin-bottom: 0;
+        font-size: 14px;
+    }
+    .career .cimage1 .parag p {
+        font-size: 15px;
+    }
+    .bg2 {
+        .flex-slider {
+            width: 700px;
+            @include transform(scale(0.8));
+            margin-top: -40px;
+            .flexslider {
+                margin-bottom: -40px;
+            }
+        }
+        .location {
+            padding: 10px;
+            address {
+                margin-left: 0;
+            }
+        }
+        .diary {
+            margin-top: 200px;
+            margin-bottom: 10px;
+        }
+        .bg2 .btn-group-lg > button.btn.btn-danger,
+        button.btn.btn-danger.btn-lg {
+            padding: 6px 16px;
+            font-size: 14px;
+        }
+    }
+    .client-speak .img-holder {
+        width: 159px;
+        left: 32%;
+        top: 17px;
+    }
+    .prv-game .m40 {
+        margin-top: 34px;
+        text-align: center;
+    }
+    .playersasfc .player-img figcaption {
+        min-height: 55px;
+    }
+    .client-speak {
+        width: 730px;
+        height: 250px;
+        margin: -15px auto;
+        .name-cont {
+            top: 28%;
+        }
+        .img-review {
+            position: absolute;
+            right: 50px;
+            top: 26%;
+            width: 225px;
+        }
+    }
+    .movies-back-bg {
+        background: transparent;
+    }
+    .movie-category .flexslider {
+        margin-bottom: 30px;
+        width: 910px;
+        margin: 0 auto;
+    }
+    .bg3-sports {
+        background-position-y: -60px;
+        .client-speak {
+            margin: 20px auto;
+        }
+    }
+    .diary-img-list:after {
+        border-right: 280px solid transparent;
     }
     .location {
-      padding: 10px;
-      address {
-        margin-left: 0;
-      }
+        text-align: center;
+        address {
+            margin-left: 0;
+        }
     }
-    .diary {
-      margin-top: 200px;
-      margin-bottom: 10px;
-    }
-    .bg2 .btn-group-lg > button.btn.btn-danger,
-    button.btn.btn-danger.btn-lg {
-      padding: 6px 16px;
-      font-size: 14px;
-    }
-  }
-  .client-speak .img-holder {
-    width: 159px;
-    left: 32%;
-    top: 17px;
-  }
-  .prv-game .m40 {
-    margin-top: 34px;
-    text-align: center;
-  }
-  .playersasfc .player-img figcaption {
-    min-height: 55px;
-  }
-  .client-speak {
-    width: 730px;
-    height: 250px;
-    margin: -15px auto;
-    .name-cont {
-      top: 28%;
-    }
-    .img-review {
-      position: absolute;
-      right: 50px;
-      top: 26%;
-      width: 225px;
-    }
-  }
-  .movies-back-bg {
-    background: transparent;
-  }
-  .movie-category .flexslider {
-    margin-bottom: 30px;
-    width: 910px;
-    margin: 0 auto;
-  }
-  .bg3-sports {
-    background-position-y: -60px;
-    .client-speak {
-      margin: 20px auto;
-    }
-  }
-  .diary-img-list:after {
-    border-right: 280px solid transparent;
-  }
-  .location {
-    text-align: center;
-    address {
-      margin-left: 0;
-    }
-  }
 }
 @media (max-width: 1024px) {
-  .bg2 .diary {
-    margin-top: 160px;
-    margin-bottom: 10px;
-  }
-  .wedding-fant-desc {
-    padding-bottom: 50px;
-  }
-  ul.nav-opt1 {
-    left: 15%;
-  }
-  .client-speak .img-holder {
-    width: 160px;
-  }
-  .contact-tab h3 {
-    font-size: 20px;
-  }
-  .contact-tab p {
-    font-size: 20px;
-  }
+    .bg2 .diary {
+        margin-top: 160px;
+        margin-bottom: 10px;
+    }
+    .wedding-fant-desc {
+        padding-bottom: 50px;
+    }
+    ul.nav-opt1 {
+        left: 15%;
+    }
+    .client-speak .img-holder {
+        width: 160px;
+    }
+    .contact-tab h3 {
+        font-size: 20px;
+    }
+    .contact-tab p {
+        font-size: 20px;
+    }
 }
 @media (max-width: $screen-sm-max) {
-  .propro .yoname {
-    width: 45%;
-  }
-  .footer-right {
-    margin-top: 20px;
-  }
-  footer .btn-footer {
-    text-align: center;
-  }
-  .career .cimage1 .parag p span {
-    font-size: 20px;
-  }
-  .career .cimage1 .parag .pblue {
-    font-size: 20px;
-  }
-  .career .cimage1 .parag p {
-    font-size: 14px;
-  }
-  .search {
-    background: #f0f0f0;
-    height: auto;
-    padding: 10px 0;
-  }
-  ul.nav-opt1 li a {
-    font-size: 65px;
-    line-height: 0.9;
-    img {
-      height: 50px;
-      margin-top: -2px;
+    .propro .yoname {
+        width: 45%;
     }
-  }
-  .pd70 {
-    padding: 70px 0;
-  }
-  .dairies-box {
-    margin-bottom: 20px;
-  }
-  .diary-img-list:after {
-    border-right: 180px solid transparent;
-  }
-  .pd-side {
-    padding: 0 10px;
-  }
-  .navbar-default .navbar-brand {
-    img.years {
-      width: 60px;
+    .footer-right {
+        margin-top: 20px;
     }
-    img.logo {
-      width: 140px;
-    }
-  }
-  .nav-inline,
-  .nav-list {
-    ul li a {
-      // font-size: 24px;
-      // padding: 2px 10px;
-    }
-  }
-  .service-bg .list-service ul.serviceul li {
-    padding: 5px 0;
-  }
-  .banner-talent .banner-wrap .name-event {
-    span {
-      margin-top: 6px;
-      display: inline-block;
-      font-size: 12px;
-    }
-    .btn-all .btn {
-      padding: 4px 20px;
-    }
-  }
-  .bg2 {
-    .flex-slider {
-      width: 700px;
-      margin: 0 auto;
-      @include transform(scale(0.7) translateX(-7%));
-      margin-top: -65px;
-      .flexslider {
-        margin-bottom: -70px;
-      }
-    }
-    .diary {
-      margin-top: 100px;
-      margin-bottom: 0;
-      h4 {
-        font-size: 24px;
-        margin-bottom: 0;
-      }
-    }
-  }
-  .client-speak {
-    width: 630px;
-    height: 250px;
-    margin: -20px auto;
-    .img-review {
-      right: 30px;
-      top: 20%;
-      width: 225px;
-    }
-    .img-holder {
-      width: 136px;
-      top: 16px;
-    }
-    .name-cont {
-      left: 35px;
-      top: 22%;
-    }
-  }
-  .asfc-rl {
-    margin-top: -50px;
-    .prv-game {
-      min-height: 95px;
-      top: -1px;
-      left: 15px;
-      .team-img1 {
-        left: 3%;
-        top: 11%;
-      }
-      .team-img2 {
-        right: 3%;
-        top: 11%;
-      }
-    }
-  }
-  .prv-game .prv-team {
-    min-height: 95px;
-    img {
-      width: 80px;
-    }
-  }
-  .img-asfc img {
-    height: 75px;
-  }
-  footer {
-    section.footer-next {
-      padding: 10px 0;
-      .madein {
-        font-size: 12px;
-        // span {
-        //     font-size: 20px;
-        //     vertical-align: middle;
-        // }
-        img {
-          width: 15px;
-          vertical-align: baseline;
-        }
-      }
-      .btn-footer {
+    footer .btn-footer {
         text-align: center;
-      }
-      p {
-        font-size: 10px;
-      }
     }
-  }
-  .flex-direction-nav .flex-next {
-    right: -50px;
-  }
-  .flex-direction-nav .flex-prev {
-    left: -50px;
-  }
-  .social-logo img {
-    text-align: center;
-    margin: 0 auto;
-  }
-  .movie-category .flexslider {
-    width: 690px;
-    ul.flex-direction-nav {
-      display: none;
+    .career .cimage1 .parag p span {
+        font-size: 20px;
     }
-  }
-  .bg-moviesdiaries {
+    .career .cimage1 .parag .pblue {
+        font-size: 20px;
+    }
+    .career .cimage1 .parag p {
+        font-size: 14px;
+    }
+    .search {
+        background: #f0f0f0;
+        height: auto;
+        padding: 10px 0;
+    }
+    ul.nav-opt1 li a {
+        font-size: 65px;
+        line-height: 0.9;
+        img {
+            height: 50px;
+            margin-top: -2px;
+        }
+    }
+    .pd70 {
+        padding: 70px 0;
+    }
+    .dairies-box {
+        margin-bottom: 20px;
+    }
+    .diary-img-list:after {
+        border-right: 180px solid transparent;
+    }
     .pd-side {
-      padding: 0;
+        padding: 0 10px;
     }
-  }
-  .mt180 {
-    margin-top: 120px;
-  }
-  .rl.data-up .text-cont {
-    width: 100%;
-  }
-  .bg3-sports {
-    background-position-y: -88px;
+    .navbar-default .navbar-brand {
+        img.years {
+            width: 60px;
+        }
+        img.logo {
+            width: 140px;
+        }
+    }
+    .nav-inline,
+    .nav-list {
+        ul li a {
+            // font-size: 24px;
+            // padding: 2px 10px;
+        }
+    }
+    .service-bg .list-service ul.serviceul li {
+        padding: 5px 0;
+    }
+    .banner-talent .banner-wrap .name-event {
+        span {
+            margin-top: 6px;
+            display: inline-block;
+            font-size: 12px;
+        }
+        .btn-all .btn {
+            padding: 4px 20px;
+        }
+    }
+    .bg2 {
+        .flex-slider {
+            width: 700px;
+            margin: 0 auto;
+            @include transform(scale(0.7) translateX(-7%));
+            margin-top: -65px;
+            .flexslider {
+                margin-bottom: -70px;
+            }
+        }
+        .diary {
+            margin-top: 100px;
+            margin-bottom: 0;
+            h4 {
+                font-size: 24px;
+                margin-bottom: 0;
+            }
+        }
+    }
     .client-speak {
-      height: 250px;
-      margin: 20px auto;
+        width: 630px;
+        height: 250px;
+        margin: -20px auto;
+        .img-review {
+            right: 30px;
+            top: 20%;
+            width: 225px;
+        }
+        .img-holder {
+            width: 136px;
+            top: 16px;
+        }
+        .name-cont {
+            left: 35px;
+            top: 22%;
+        }
     }
-  }
-  .career .cimage1 .parag {
-    margin: 0 20%;
-    top: 46%;
-    left: 30%;
-  }
-  .career .cimage1 .parag .pblue {
-    font-size: 20px;
-  }
-  .career .cimage1 .parag p {
-    font-size: 10px;
-  }
+    .asfc-rl {
+        margin-top: -50px;
+        .prv-game {
+            min-height: 95px;
+            top: -1px;
+            left: 15px;
+            .team-img1 {
+                left: 3%;
+                top: 11%;
+            }
+            .team-img2 {
+                right: 3%;
+                top: 11%;
+            }
+        }
+    }
+    .prv-game .prv-team {
+        min-height: 95px;
+        img {
+            width: 80px;
+        }
+    }
+    .img-asfc img {
+        height: 75px;
+    }
+    footer {
+        section.footer-next {
+            padding: 10px 0;
+            .madein {
+                font-size: 12px;
+                // span {
+                //     font-size: 20px;
+                //     vertical-align: middle;
+                // }
+                img {
+                    width: 15px;
+                    vertical-align: baseline;
+                }
+            }
+            .btn-footer {
+                text-align: center;
+            }
+            p {
+                font-size: 10px;
+            }
+        }
+    }
+    .flex-direction-nav .flex-next {
+        right: -50px;
+    }
+    .flex-direction-nav .flex-prev {
+        left: -50px;
+    }
+    .social-logo img {
+        text-align: center;
+        margin: 0 auto;
+    }
+    .movie-category .flexslider {
+        width: 690px;
+        ul.flex-direction-nav {
+            display: none;
+        }
+    }
+    .bg-moviesdiaries {
+        .pd-side {
+            padding: 0;
+        }
+    }
+    .mt180 {
+        margin-top: 120px;
+    }
+    .rl.data-up .text-cont {
+        width: 100%;
+    }
+    .bg3-sports {
+        background-position-y: -88px;
+        .client-speak {
+            height: 250px;
+            margin: 20px auto;
+        }
+    }
+    .career .cimage1 .parag {
+        margin: 0 20%;
+        top: 46%;
+        left: 30%;
+    }
+    .career .cimage1 .parag .pblue {
+        font-size: 20px;
+    }
+    .career .cimage1 .parag p {
+        font-size: 10px;
+    }
 }
 @media (max-width: $screen-xs-max) {
-  .bg-red-jpp {
-    background: $brand-danger;
-  }
-  .website img {
-    width: 100%;
-  }
-  .ios-andriod img {
-    width: 100%;
-  }
-  .sharejpp .title-made {
-    font-size: 15px;
-    margin-top: 15px;
-    margin-bottom: 10px;
-  }
-  .sharejpp .ios-andriod ul li img {
-    width: 120px;
-  }
-  .sharejpp {
-    .btn-all .btn {
-      padding: 10px;
-      font-size: 12px;
+    .bg-red-jpp {
+        background: $brand-danger;
     }
-  }
-  .career .careervision .stats p {
-    margin: 0 30px 30px;
-  }
-  .career .contact-fant-desc span {
-    line-height: 20px;
-    font-size: 18px;
-  }
-  .career .apply h3 {
-    font-size: 14px;
-    line-height: 150%;
-    margin: 20px;
-  }
-  .career .contact-fant-desc p {
-    line-height: 20px;
-    font-size: 18px;
-  }
-  .career .contact-fant-desc h2 {
-    font-size: 24px;
-  }
-  .career .cimage1 .parag {
-    margin: 0 20%;
-    top: 46%;
-    left: 30%;
-    background: #fff;
-    width: 300px;
-    height: 110px;
-  }
-  .footer-right {
-    margin-top: 10px;
-    margin-bottom: 20px;
-  }
-  .bgcount {
-    background: #f0f0f0;
-    height: auto;
-    .row-flex {
-      display: block;
-      .col-flex {
+    .website img {
+        width: 100%;
+    }
+    .ios-andriod img {
+        width: 100%;
+    }
+    .sharejpp .title-made {
+        font-size: 15px;
+        margin-top: 15px;
         margin-bottom: 10px;
-      }
     }
-    .ship {
-      border-right: 0 dashed #3f3f3f;
-      border-left: 0 dashed #3f3f3f;
-      border-bottom: 1px dashed #3f3f3f;
-      border-top: 1px dashed #3f3f3f;
+    .sharejpp .ios-andriod ul li img {
+        width: 120px;
     }
-    .ccc-quality {
-      margin: 10px 0;
-    }
-  }
-  .propro .contact-focus input {
-    width: 100%;
-  }
-  .propro .yoname {
-    display: none;
-  }
-  .contact-fant-desc p {
-    line-height: 20px;
-    font-size: 18px;
-  }
-  .contact-tab h3 {
-    font-size: 14px;
-    margin: 0;
-  }
-  .contact-tab p {
-    font-size: 14px;
-  }
-  .borbot:after {
-    border-top: 20px solid #fff;
-    bottom: -38px;
-  }
-  .para {
-    margin: 20px;
-    text-align: center;
-  }
-  .back {
-    height: auto;
-    background: #d8d8d8;
-    padding: 5px;
-    .bordright {
-      margin: 10px 0;
-    }
-    .bordright + .bordright {
-      border-left: 0 solid #646464;
-    }
-  }
-  .mobile {
-    display: block;
-  }
-  .location {
-    text-align: center;
-    address {
-      margin-left: 0;
-    }
-  }
-  .general {
-    height: auto;
-  }
-  .propro .yoname {
-    padding: 8px 12px;
-    font-size: 12px;
-  }
-  .navbar-default {
-    .navbar-toggle {
-      position: absolute;
-      left: 15px;
-      margin-top: 16px;
-    }
-    .navbar-brand {
-      margin-left: 55px;
-      img.years {
-        width: 60px;
-      }
-      img.logo {
-        width: 140px;
-      }
-    }
-  }
-  .nav-list ul li a {
-    &:before {
-      height: 30px;
-      width: 25px;
-    }
-  }
-  .nav-inline ul li a {
-    padding: 2px 10px;
-    font-size: 14px;
-  }
-  .mobile-pt0 {
-    padding-left: 7% !important;
-    padding-bottom: 3% !important;
-  }
-  .mobile-pt1 {
-    padding-left: 18% !important;
-    padding-bottom: 3% !important;
-  }
-  .pl3 {
-    padding-bottom: 3% !important;
-  }
-  .min-height-section1 {
-    min-height: 150px;
-  }
-  ul.nav-opt1 {
-    left: 27%;
-    li {
-      a {
-        font-size: 36px;
-        img {
-          height: 32px;
+    .sharejpp {
+        .btn-all .btn {
+            padding: 10px;
+            font-size: 12px;
         }
-      }
     }
-  }
-  .bg2 {
-    background: $brand-danger;
-    .flex-slider {
-      width: 325px;
+    .career .careervision .stats p {
+        margin: 0 30px 30px;
     }
-    .diary {
-      margin-top: 70px;
+    .career .contact-fant-desc span {
+        line-height: 20px;
+        font-size: 18px;
     }
-  }
-  .client-speak {
-    width: 400px;
-    height: 150px;
-    margin: 0 auto;
-    .name-cont {
-      left: 25px;
-      top: 22%;
-      span {
-        font-size: 16px;
-      }
-      img {
-        margin-right: 5px;
-        display: inline-block;
-        width: 25px;
-      }
-    }
-    .img-holder {
-      width: 88px;
-      top: 8px;
-    }
-    .img-review {
-      right: 15px;
-      top: 22%;
-      width: 150px;
-      h4 {
-        font-size: 16px;
-        margin-top: 0;
-      }
-    }
-  }
-  .magic-bus {
-    padding-top: 75px;
-  }
-  .bg-grey-asfc,
-  .download {
-    background: #f0f0f0;
-  }
-  .bg-blue-asfc {
-    background: #098FD6;
-  }
-  .pd30 {
-    padding: 20px;
-  }
-  .wedding-detail {
-    padding: 20px 0;
-  }
-  .upcoming-game {
-    padding: 20px 0 170px;
-    .team-logo img {
-      width: 100px;
-      margin: 0 auto;
-    }
-    .min-hgt {
-      min-height: auto;
-      margin-bottom: 10px;
-    }
-    .vs {
-      margin: 10px 0;
-    }
-  }
-  .asfc-rl {
-    margin-top: -85px;
-    left: 15px;
-  }
-  .pdasfc {
-    padding-top: 20px;
-    padding-bottom: 20px;
-  }
-  .prv-asfc {
-    img {
-      display: none;
-    }
-  }
-  .prv-game {
-    background: #f0f0f0;
-    position: static!important;
-    .m40 {
-      margin-top: 0;
-    }
-    .prv-team {
-      min-height: auto;
-    }
-    .team-img1,
-    .team-img2,
-    span {
-      position: static;
-    }
-    .prv-team {
-      margin: 10px 0;
-    }
-  }
-  footer {
-    background: $brand-danger;
-    .followus {
-      height: auto;
-      .followus-inner {
-        position: static;
-        margin-bottom: 15px;
-        text-align: center;
-        a {
-          text-align: center;
-        }
-        p {
-          text-align: center;
-        }
-      }
-    }
-    .btn-footer {
-      text-align: center;
-    }
-    .music {
-      text-align: center;
-      margin-bottom: 10px;
-    }
-    section.footer-next {
-      p {
-        text-align: center;
-      }
-      .madein {
+    .career .apply h3 {
         font-size: 14px;
-        font-weight: 300;
-        line-height: 1;
-        img {
-          width: 12px;
-          vertical-align: baseline;
+        line-height: 150%;
+        margin: 20px;
+    }
+    .career .contact-fant-desc p {
+        line-height: 20px;
+        font-size: 18px;
+    }
+    .career .contact-fant-desc h2 {
+        font-size: 24px;
+    }
+    .career .cimage1 .parag {
+        margin: 0 20%;
+        top: 46%;
+        left: 30%;
+        background: #fff;
+        width: 300px;
+        height: 110px;
+    }
+    .footer-right {
+        margin-top: 10px;
+        margin-bottom: 20px;
+    }
+    .bgcount {
+        background: #f0f0f0;
+        height: auto;
+        .row-flex {
+            display: block;
+            .col-flex {
+                margin-bottom: 10px;
+            }
         }
-      }
+        .ship {
+            border-right: 0 dashed #3f3f3f;
+            border-left: 0 dashed #3f3f3f;
+            border-bottom: 1px dashed #3f3f3f;
+            border-top: 1px dashed #3f3f3f;
+        }
+        .ccc-quality {
+            margin: 10px 0;
+        }
     }
-  }
-  .movie-category .flexslider {
-    width: 460px;
-    .nav-tabs > li a {
-      font-size: 16px;
+    .propro .contact-focus input {
+        width: 100%;
     }
-  }
-  .movie-category {
-    .nav-tabs > li a {
-      font-size: 14px;
+    .propro .yoname {
+        display: none;
     }
-    &.bg-grey {
-      background: transparent;
+    .contact-fant-desc p {
+        line-height: 20px;
+        font-size: 18px;
     }
-  }
-  .service {
-    .services-list {
-      padding: 0 10px;
+    .contact-tab h3 {
+        font-size: 14px;
+        margin: 0;
     }
-    .title h3 {
-      letter-spacing: 2px;
-      font-size: 24px;
-      color: #f13748;
+    .contact-tab p {
+        font-size: 14px;
     }
-  }
-  .playersasfc.mt180 {
-    margin-top: 180px;
-    .row-flex {
-      @include display(block);
+    .borbot:after {
+        border-top: 20px solid #fff;
+        bottom: -38px;
     }
-    .player-img img {
-      width: 100%;
+    .para {
+        margin: 20px;
+        text-align: center;
     }
-  }
-  .mt15 {
-    margin-top: 5px;
-  }
-  .banner-asfc {
-    top: 100px;
-    width: 100%;
-    img {
-      width: 40% !important;
+    .back {
+        height: auto;
+        background: #d8d8d8;
+        padding: 5px;
+        .bordright {
+            margin: 10px 0;
+        }
+        .bordright + .bordright {
+            border-left: 0 solid #646464;
+        }
     }
-  }
-  .jpp-fixtures {
-    padding: 20px 0;
-    margin-top: 100px;
-    background: #E63E3E;
-    .title h4 {
-      font-size: 24px;
+    .mobile {
+        display: block;
     }
-    .pbt35 {
-      padding: 10px 0;
+    .location {
+        text-align: center;
+        address {
+            margin-left: 0;
+        }
     }
-  }
-  .head-banner img {
-    width: 90%;
-  }
-  .img-tilt img {
-    width: 200px;
-  }
-  .plr100 {
-    padding: 20px;
-  }
-  .resources .row-flex {
-    display: block;
-  }
-  .flex-client .row-flex {
-    display: block;
-  }
-  .bg3-sports {
-    background-position-y: -28px;
+    .general {
+        height: auto;
+    }
+    .propro .yoname {
+        padding: 8px 12px;
+        font-size: 12px;
+    }
+    .navbar-default {
+        .navbar-toggle {
+            position: absolute;
+            left: 15px;
+            margin-top: 16px;
+        }
+        .navbar-brand {
+            margin-left: 55px;
+            img.years {
+                width: 60px;
+            }
+            img.logo {
+                width: 140px;
+            }
+        }
+    }
+    .nav-list ul li a {
+        &:before {
+            height: 30px;
+            width: 25px;
+        }
+    }
+    .nav-inline ul li a {
+        padding: 2px 10px;
+        font-size: 14px;
+    }
+    .mobile-pt0 {
+        padding-left: 7% !important;
+        padding-bottom: 3% !important;
+    }
+    .mobile-pt1 {
+        padding-left: 18% !important;
+        padding-bottom: 3% !important;
+    }
+    .pl3 {
+        padding-bottom: 3% !important;
+    }
+    .min-height-section1 {
+        min-height: 150px;
+    }
+    ul.nav-opt1 {
+        left: 27%;
+        li {
+            a {
+                font-size: 36px;
+                img {
+                    height: 32px;
+                }
+            }
+        }
+    }
+    .bg2 {
+        background: $brand-danger;
+        .flex-slider {
+            width: 325px;
+        }
+        .diary {
+            margin-top: 70px;
+        }
+    }
     .client-speak {
-      height: 130px;
-      margin: 20px auto;
+        width: 400px;
+        height: 150px;
+        margin: 0 auto;
+        .name-cont {
+            left: 25px;
+            top: 22%;
+            span {
+                font-size: 16px;
+            }
+            img {
+                margin-right: 5px;
+                display: inline-block;
+                width: 25px;
+            }
+        }
+        .img-holder {
+            width: 88px;
+            top: 8px;
+        }
+        .img-review {
+            right: 15px;
+            top: 22%;
+            width: 150px;
+            h4 {
+                font-size: 16px;
+                margin-top: 0;
+            }
+        }
     }
-  }
+    .magic-bus {
+        padding-top: 75px;
+    }
+    .bg-grey-asfc,
+    .download {
+        background: #f0f0f0;
+    }
+    .bg-blue-asfc {
+        background: #098FD6;
+    }
+    .pd30 {
+        padding: 20px;
+    }
+    .wedding-detail {
+        padding: 20px 0;
+    }
+    .upcoming-game {
+        padding: 20px 0 170px;
+        .team-logo img {
+            width: 100px;
+            margin: 0 auto;
+        }
+        .min-hgt {
+            min-height: auto;
+            margin-bottom: 10px;
+        }
+        .vs {
+            margin: 10px 0;
+        }
+    }
+    .asfc-rl {
+        margin-top: -85px;
+        left: 15px;
+    }
+    .pdasfc {
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+    .prv-asfc {
+        img {
+            display: none;
+        }
+    }
+    .prv-game {
+        background: #f0f0f0;
+        position: static!important;
+        .m40 {
+            margin-top: 0;
+        }
+        .prv-team {
+            min-height: auto;
+        }
+        .team-img1,
+        .team-img2,
+        span {
+            position: static;
+        }
+        .prv-team {
+            margin: 10px 0;
+        }
+    }
+    footer {
+        background: $brand-danger;
+        .followus {
+            height: auto;
+            .followus-inner {
+                position: static;
+                margin-bottom: 15px;
+                text-align: center;
+                a {
+                    text-align: center;
+                }
+                p {
+                    text-align: center;
+                }
+            }
+        }
+        .btn-footer {
+            text-align: center;
+        }
+        .music {
+            text-align: center;
+            margin-bottom: 10px;
+        }
+        section.footer-next {
+            p {
+                text-align: center;
+            }
+            .madein {
+                font-size: 14px;
+                font-weight: 300;
+                line-height: 1;
+                img {
+                    width: 12px;
+                    vertical-align: baseline;
+                }
+            }
+        }
+    }
+    .movie-category .flexslider {
+        width: 460px;
+        .nav-tabs > li a {
+            font-size: 16px;
+        }
+    }
+    .movie-category {
+        .nav-tabs > li a {
+            font-size: 14px;
+        }
+        &.bg-grey {
+            background: transparent;
+        }
+    }
+    .service {
+        .services-list {
+            padding: 0 10px;
+        }
+        .title h3 {
+            letter-spacing: 2px;
+            font-size: 24px;
+            color: #f13748;
+        }
+    }
+    .playersasfc.mt180 {
+        margin-top: 180px;
+        .row-flex {
+            @include display(block);
+        }
+        .player-img img {
+            width: 100%;
+        }
+    }
+    .mt15 {
+        margin-top: 5px;
+    }
+    .banner-asfc {
+        top: 100px;
+        width: 100%;
+        img {
+            width: 40% !important;
+        }
+    }
+    .jpp-fixtures {
+        padding: 20px 0;
+        margin-top: 100px;
+        background: #E63E3E;
+        .title h4 {
+            font-size: 24px;
+        }
+        .pbt35 {
+            padding: 10px 0;
+        }
+    }
+    .head-banner img {
+        width: 90%;
+    }
+    .img-tilt img {
+        width: 200px;
+    }
+    .plr100 {
+        padding: 20px;
+    }
+    .resources .row-flex {
+        display: block;
+    }
+    .flex-client .row-flex {
+        display: block;
+    }
+    .bg3-sports {
+        background-position-y: -28px;
+        .client-speak {
+            height: 130px;
+            margin: 20px auto;
+        }
+    }
 }
 @media (max-width: 600px) {
-  ul.nav-opt1 {
-    left: 22%;
-  }
+    ul.nav-opt1 {
+        left: 22%;
+    }
 }
 @media (max-width: 480px) {
-  .upcoming-game .title-asfc h3 {
-    width: auto;
-  }
-  .get-in-touch {
-    padding: 20px;
-  }
-  .banner-title h4 {
+    .upcoming-game .title-asfc h3 {
+        width: auto;
+    }
+    .get-in-touch {
+        padding: 20px;
+    }
+    .banner-name h4{
       font-size: 18px;
-      padding-bottom: 3px;
-  }
-  .banner-title .bborders {
-    width: 124px;
-    border-width: 2px;
-}
-  .jobform .custom-select select {
-    width: 100%;
-  }
-  .attach {
-    margin-left: 15px;
-  }
-  .jobform .checkbox label {
-    padding-right: 15px;
-  }
-  .career .cimage1 .parag {
-    top: 50%;
-    left: 30%;
-    width: 300px;
-    height: 165px;
-  }
-  .career .cimage1 .parag {
-    top: 50%;
-    width: 300px;
-    height: 165px;
-    padding: 20px;
-  }
-  .download {
-    min-height: 75px;
-    margin: 15px 0 60px;
-  }
-  .download .imac img {
-    width: 60px;
-  }
-  .download .imac {
-    bottom: -35px;
-    left: 25px;
-  }
-  .download p {
-    font-size: 18px;
-    padding: 15px;
-    letter-spacing: 2px;
-  }
-  .download p a {
-    font-size: 20px;
-  }
-  .title-asfc h3 {
-    font-size: 22px;
-  }
-  .bg2 .flex-slider .flexslider {
-    overflow: hidden;
-  }
-  .propro .yoname {
-    padding: 10px 0;
-    font-size: 10px;
-  }
-  .dairies-box {
-    .col-xs-6 {
-      padding: 5px;
     }
-    .image-size {
-      height: 200px;
+    .banner-title h4 {
+        font-size: 14px;
+        padding-bottom: 3px;
     }
-    .wed-box.pdnone {
-      margin-bottom: 20px;
-      min-height: 265px;
+    .banner-title .bborders {
+        width: 90px;
+        border-width: 2px;
     }
-    .wed-box.box-big .wed-desc-inside p {
-      font-size: 12px;
-      line-height: 120%;
+    .banner-title .wed-box {
+        border-width: 4px;
     }
-    .wed-box .wed-desc-inside {
-      height: 40px;
+    .jobform .custom-select select {
+        width: 100%;
     }
-    .wed-box .wed-date {
-      font-size: 9px;
-      margin: 5px 0;
+    .attach {
+        margin-left: 15px;
     }
-    .wed-box .read-more a {
-      text-decoration: underline;
-      font-size: 9px;
+    .jobform .checkbox label {
+        padding-right: 15px;
     }
-    .wed-box.pdnone {
-      min-height: 300px;
+    .career .cimage1 .parag {
+        top: 50%;
+        left: 30%;
+        width: 300px;
+        height: 165px;
     }
-  }
-  .wed-img-list:after {
-    border-right: 120px solid transparent;
-  }
-  .navbar-default .navbar-brand {
-    img.years {
-      width: 44px;
+    .career .cimage1 .parag {
+        top: 50%;
+        width: 300px;
+        height: 165px;
+        padding: 20px;
     }
-    img.logo {
-      width: 102px;
+    .download {
+        min-height: 75px;
+        margin: 15px 0 60px;
     }
-  }
-  ul.nav-opt1 {
-    left: 20%;
-  }
-  .nav-inline ul li {
-    display: block;
-    border: 0!important;
-  }
-  .service-bg .list-service ul.serviceul li a {
-    display: block;
-    font-size: 12px;
-  }
-  .bg-red-mobile {
-    background: $brand-danger;
-  }
-  .magic-bus {
-    background: #f0f0f0;
-  }
-  .playersasfc .player-img {
-    width: 100%;
-  }
-  .client-speak {
-    width: 285px;
-    .img-holder {
-      width: 62px;
-      top: 7px;
+    .download .imac img {
+        width: 60px;
     }
-    .img-review {
-      right: 6px;
-      top: 12%;
-      width: 120px;
-      h4 {
-        font-size: 12px;
-      }
-      p {
+    .download .imac {
+        bottom: -35px;
+        left: 25px;
+    }
+    .download p {
+        font-size: 18px;
+        padding: 15px;
+        letter-spacing: 2px;
+    }
+    .download p a {
+        font-size: 20px;
+    }
+    .title-asfc h3 {
+        font-size: 22px;
+    }
+    .bg2 .flex-slider .flexslider {
+        overflow: hidden;
+    }
+    .propro .yoname {
+        padding: 10px 0;
         font-size: 10px;
-      }
     }
-    .name-cont {
-      left: 10px;
-      top: 15%;
-      span {
-        font-size: 14px;
-      }
-    }
-  }
-  .bg2 .flex-slider {
-    .flex-direction-nav a {
-      @include transform(scale(0.6));
-    }
-  }
-  .movie-category .flexslider {
-    width: 225px;
-  }
-  ul.nav-opt1 {
-    top: 115px;
-    li a {
-      font-size: 28px;
-      img {
-        height: 26px;
-      }
-    }
-  }
-  footer {
-    padding: 20px 0 0;
-  }
-  .enq-list {
-    .checkbox-inline + .checkbox-inline {
-      margin-left: 0;
-      padding-left: 0;
-      margin-right: 10px;
-    }
-    .text-label {
-      display: block;
-      margin-top: 0 !important;
-      width: 100%;
-      height: auto;
-    }
-  }
-  .diary-title h4 {
-    font-size: 22px;
-    letter-spacing: 1px;
-  }
-  .bg-award {
-    background: $brand-danger;
-    .awards {
-      margin-top: 30px;
-      margin-bottom: 30px;
-      .title {
-        margin-bottom: 20px;
-        h3 {
-          font-size: 24px;
+    .dairies-box {
+        .col-xs-6 {
+            padding: 5px;
         }
-      }
-      .nav > li > a {
-        padding: 2px 8px;
-      }
-      .nav-tabs li a {
-        font-size: 14px;
-      }
-      .awards-title {
-        padding-top: 10px;
-        ul {
-          display: inline-block;
-          padding: 10px 15px 0 0;
+        .image-size {
+            height: 200px;
         }
-      }
+        .wed-box.pdnone {
+            margin-bottom: 20px;
+            min-height: 265px;
+        }
+        .wed-box.box-big .wed-desc-inside p {
+            font-size: 12px;
+            line-height: 120%;
+        }
+        .wed-box .wed-desc-inside {
+            height: 40px;
+        }
+        .wed-box .wed-date {
+            font-size: 9px;
+            margin: 5px 0;
+        }
+        .wed-box .read-more a {
+            text-decoration: underline;
+            font-size: 9px;
+        }
+        .wed-box.pdnone {
+            min-height: 300px;
+        }
     }
-  }
-  .movie-abt {
-    .title-main h3 {
-      font-size: 24px;
-      letter-spacing: 2px;
+    .wed-img-list:after {
+        border-right: 120px solid transparent;
     }
-    .title-subtitle h4 {
-      letter-spacing: 2px;
+    .navbar-default .navbar-brand {
+        img.years {
+            width: 44px;
+        }
+        img.logo {
+            width: 102px;
+        }
     }
-  }
-  .videoslider {
-    margin-top: 50px;
-    margin-bottom: 10px;
-  }
-  h4.title-movies {
-    font-size: 24px;
-    margin-bottom: 20px;
-  }
-  .tab-insidemovies .nav-tabs li a {
-    font-size: 20px;
-  }
-  .mt180 {
-    margin-top: 0;
-  }
-  .banner-talent .banner-wrap .name-event span {
-    margin-top: 6px;
-    display: inline-block;
-    font-size: 12px;
-    letter-spacing: 0;
-  }
-  .wed-box .wed-img-list .ribbon-red {
-    top: -8px;
-    img {
-      width: 100px !important;
+    ul.nav-opt1 {
+        left: 20%;
     }
-    span {
-      margin: -28px 0 0 5px;
-      font-size: 8px;
+    .nav-inline ul li {
+        display: block;
+        border: 0!important;
     }
-  }
-  .service-bg .min-hght h3 {
-    font-size: 24px;
-    letter-spacing: 2px;
-    font-weight: 600;
-  }
-  .mt110 {
-    margin-top: 20px;
-    margin-bottom: 10px;
-  }
-  .service {
-    .panel-title {
-      font-size: 12px;
+    .service-bg .list-service ul.serviceul li a {
+        display: block;
+        font-size: 12px;
     }
-  }
-  .mt15 {
-    margin-top: 5px;
-  }
-  .bg3-sports {
+    .bg-red-mobile {
+        background: $brand-danger;
+    }
+    .magic-bus {
+        background: #f0f0f0;
+    }
+    .playersasfc .player-img {
+        width: 100%;
+    }
     .client-speak {
-      height: 100px;
-      margin: 15px auto;
+        width: 285px;
+        .img-holder {
+            width: 62px;
+            top: 7px;
+        }
+        .img-review {
+            right: 6px;
+            top: 12%;
+            width: 120px;
+            h4 {
+                font-size: 12px;
+            }
+            p {
+                font-size: 10px;
+            }
+        }
+        .name-cont {
+            left: 10px;
+            top: 15%;
+            span {
+                font-size: 14px;
+            }
+        }
     }
-  }
-  ul li a {
-    // padding: 2px 10px;
-    // font-size: 12px;
-  }
+    .bg2 .flex-slider {
+        .flex-direction-nav a {
+            @include transform(scale(0.6));
+        }
+    }
+    .movie-category .flexslider {
+        width: 225px;
+    }
+    ul.nav-opt1 {
+        top: 115px;
+        li a {
+            font-size: 28px;
+            img {
+                height: 26px;
+            }
+        }
+    }
+    footer {
+        padding: 20px 0 0;
+    }
+    .enq-list {
+        .checkbox-inline + .checkbox-inline {
+            margin-left: 0;
+            padding-left: 0;
+            margin-right: 10px;
+        }
+        .text-label {
+            display: block;
+            margin-top: 0 !important;
+            width: 100%;
+            height: auto;
+        }
+    }
+    .diary-title h4 {
+        font-size: 22px;
+        letter-spacing: 1px;
+    }
+    .bg-award {
+        background: $brand-danger;
+        .awards {
+            margin-top: 30px;
+            margin-bottom: 30px;
+            .title {
+                margin-bottom: 20px;
+                h3 {
+                    font-size: 24px;
+                }
+            }
+            .nav > li > a {
+                padding: 2px 8px;
+            }
+            .nav-tabs li a {
+                font-size: 14px;
+            }
+            .awards-title {
+                padding-top: 10px;
+                ul {
+                    display: inline-block;
+                    padding: 10px 15px 0 0;
+                }
+            }
+        }
+    }
+    .movie-abt {
+        .title-main h3 {
+            font-size: 24px;
+            letter-spacing: 2px;
+        }
+        .title-subtitle h4 {
+            letter-spacing: 2px;
+        }
+    }
+    .videoslider {
+        margin-top: 50px;
+        margin-bottom: 10px;
+    }
+    h4.title-movies {
+        font-size: 24px;
+        margin-bottom: 20px;
+    }
+    .tab-insidemovies .nav-tabs li a {
+        font-size: 20px;
+    }
+    .mt180 {
+        margin-top: 0;
+    }
+    .banner-talent .banner-wrap .name-event span {
+        margin-top: 6px;
+        display: inline-block;
+        font-size: 12px;
+        letter-spacing: 0;
+    }
+    .wed-box .wed-img-list .ribbon-red {
+        top: -8px;
+        img {
+            width: 100px !important;
+        }
+        span {
+            margin: -28px 0 0 5px;
+            font-size: 8px;
+        }
+    }
+    .service-bg .min-hght h3 {
+        font-size: 24px;
+        letter-spacing: 2px;
+        font-weight: 600;
+    }
+    .mt110 {
+        margin-top: 20px;
+        margin-bottom: 10px;
+    }
+    .service {
+        .panel-title {
+            font-size: 12px;
+        }
+    }
+    .mt15 {
+        margin-top: 5px;
+    }
+    .bg3-sports {
+        .client-speak {
+            height: 100px;
+            margin: 15px auto;
+        }
+    }
+    ul li a {
+        // padding: 2px 10px;
+        // font-size: 12px;
+    }
 }
 @media (max-width: 400px) {
-  // .bg2 .flex-slider {
-  //   @include transform(scale(0.7) translateX(0));
-  // }
-  ul.nav-opt1 {
-    left: 16%;
-  }
+    // .bg2 .flex-slider {
+    //   @include transform(scale(0.7) translateX(0));
+    // }
+    ul.nav-opt1 {
+        left: 16%;
+    }
 }
 @media (max-width: 360px) {
-  .bg-award .awards .nav > li > a {
-    padding: 2px 4px;
-    font-size: 12px;
-  }
-  ul.nav-opt1 {
-    left: 13%;
-    li a {
-      padding: 2px 14px;
+    .bg-award .awards .nav > li > a {
+        padding: 2px 4px;
+        font-size: 12px;
     }
-  }
-  .playersasfc.mt180 {
-    margin-top: 220px;
-  }
-  .tab-insidemovies {
-    .nav-tabs {
-      border: 0;
-      margin-bottom: 10px;
-      li {
-        a {
-          font-size: 14px;
+    ul.nav-opt1 {
+        left: 13%;
+        li a {
+            padding: 2px 14px;
         }
-      }
     }
-  }
+    .playersasfc.mt180 {
+        margin-top: 220px;
+    }
+    .tab-insidemovies {
+        .nav-tabs {
+            border: 0;
+            margin-bottom: 10px;
+            li {
+                a {
+                    font-size: 14px;
+                }
+            }
+        }
+    }
 }
