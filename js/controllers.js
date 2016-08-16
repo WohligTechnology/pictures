@@ -2180,9 +2180,9 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
                 /// MAX til here
                 $.getScript("https://maps.googleapis.com/maps/api/js?key=AIzaSyCn9ypqFNxdXt9Zu2YqLcdD1Xdt2wNul9s&callback=initMap", function(data, textStatus, jqxhr) {
-
+                    console.log(data); // Data returned
                     console.log(textStatus); // Success
-
+                    console.log(jqxhr.status); // 200
                     console.log("Load was performed.");
                 });
 
