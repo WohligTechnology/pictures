@@ -241,7 +241,7 @@
         <div class="row">
             <div class="col-md-offset-2 col-md-8">
                 <div class="text-center">
-                    <h4 class="uppercase color-blue bold">Use <a class="color-red" target="_blank">#PYAARKIYATODARNAKYA</a> and get to view live feed of everyone,<br>
+                    <h4 class="uppercase color-blue bold">Use <a class="color-red" href="{{movieInside.moviedetail.hashtag}}" target="_blank">#{{movieInside.moviedetail.name}}</a> and get to view live feed of everyone,<br>
 including yours, right here!</h4>
                 </div>
             </div>
@@ -251,15 +251,22 @@ including yours, right here!</h4>
                 <div class="social-back ">
                     <div class="container">
                         <div class="row">
-                            <div class="col-md-4 col-sm-4">
+                            <div class="col-md-4 col-sm-4" ng-if="movieInside.moviedetail.facebook">
                                 <div class="social-box text-center">
                                     <img src="img/socials/facebook.png" class="doneLoading">
                                 </div>
                                 <div class="social-logo text-center">
-                                    <img src="img/facebook.jpg" alt="" class="img-responsive">
+                                  <div class="feed-social mt30">
+                                    <div class="fb-page" data-href="{{movieInside.moviedetail.facebook}}" data-tabs="timeline" data-width="360" data-height="480" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true">
+                                      <div class="fb-xfbml-parse-ignore">
+                                        <blockquote cite="https://www.facebook.com/GSWorldwideEnt/">
+                                          <a href="{{movieInside.moviedetail.facebook}}">GS Worldwide Entertainment.</a></blockquote>
+                                      </div>
+                                    </div>
+                                  </div>
                                 </div>
                             </div>
-                            <div class="col-md-4 col-sm-4">
+                            <div class="col-md-4 col-sm-4" ng-if="movieInside.moviedetail.twitter">
                                 <div class="social-box text-center">
                                     <img src="img/socials/twitter.png" class="doneLoading">
                                 </div>
@@ -267,7 +274,7 @@ including yours, right here!</h4>
                                     <img src="img/twitter.jpg" alt="" class="img-responsive">
                                 </div>
                             </div>
-                            <div class="col-md-4 col-sm-4">
+                            <div class="col-md-4 col-sm-4" ng-if="movieInside.moviedetail.instagram">
                                 <div class="social-box text-center">
                                     <img src="img/socials/instagram.png" class="doneLoading">
                                 </div>
