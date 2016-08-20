@@ -506,67 +506,6 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
         // $scope.subscribeEmail = data;
     };
-    // $scope.wedding = [{
-    //     img: "img/talent/talents/talent1.jpg",
-    //     name: "BRAND AMBASSAORS"
-    // }, {
-    //     img: "img/talent/talents/talent2.jpg",
-    //     name: "Appearances"
-    // }, {
-    //     img: "img/talent/talents/talent3.jpg",
-    //     name: "TALENT REPRESENTATION"
-    // }, {
-    //     img: "img/talent/talents/talent4.jpg",
-    //     name: "CELEBRITY ENDORSEMENTS"
-    // }];
-    $scope.wedding = [{
-        img: "img/sports/asfc.jpg",
-        name: "BRAND AMBASSAORS"
-    }, {
-        img: "img/sports/jpp.jpg",
-        name: "BRAND AMBASSAORS"
-    }, {
-        img: "img/sports/pfh.jpg",
-        name: "BRAND AMBASSAORS"
-    }, {
-        img: "img/sports/sportintative.jpg",
-        name: "BRAND AMBASSAORS"
-    }];
-    $scope.weddings = [{
-        img: "img/weddings/diaries/diary1.png",
-        date: "12 January 2016",
-        desc: "Lorem Ipsum is simply dummy text of the printing industry"
-    }, {
-        img: "img/weddings/diaries/diary2.png",
-        date: "12 January 2016",
-        desc: "Lorem Ipsum is simply dummy text of the printing industry"
-    }, {
-        img: "img/weddings/diaries/diary3.png",
-        date: "12 January 2016",
-        desc: "Lorem Ipsum is simply dummy text of the printing industry"
-    }];
-    $scope.services = [{
-        title: "Brand Endorsements",
-        content: "<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. </p>"
-    }, {
-        title: "Event Appreances",
-        content: "<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. </p>"
-    }, {
-        title: "Live Performances",
-        content: "<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. </p>"
-    }, {
-        title: "Talent Representation",
-        content: "<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. </p>"
-    }, {
-        title: "Film Casting",
-        content: "<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. </p>"
-    }, {
-        title: "Fashion and modeling",
-        content: "<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. </p>"
-    }, {
-        title: "Sports Management",
-        content: "<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. </p>"
-    }];
 
     NavigationService.getTalent(function(data) {
         $scope.getTalentdata = data.data;
@@ -3582,23 +3521,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             }, 0);
         });
 
-        $scope.weddingSubtype = [{
-            content: "JPP Stadium Branding: (Season 1, 2 & 3)",
-            date: "May 18th, 2016",
-            img: "img/talent/talentinside/w1.png",
-            detail: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
-        }, {
-            content: "JPP Team Management: Season 1",
-            date: "May 18th, 2016",
-            img: "img/talent/talentinside/w2.png",
-            detail: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
-        }, {
-            content: "JPP Team Management: Season 2",
-            date: "May 18th, 2016",
-            img: "img/talent/talentinside/w3.png",
-            detail: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
-        }];
-
+      
         NavigationService.getBanner($stateParams.id, function(data) {
             $scope.bannerData = data.data;
             $scope.bannerName = data.data.name;

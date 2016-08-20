@@ -1,138 +1,138 @@
 <section>
-    <div class="banner-movies ab" ng-if="movieInside && movieInside.moviedetail && movieInside.moviedetail.banner">
-        <img ng-src="{{movieInside.moviedetail.banner | uploadpath}}" alt="" class="img-responsive">
-    </div>
-    <div class="container">
-        <div class="movie-abt">
-            <div class="row">
-                <div class="col-md-offset-1 col-md-10">
-                    <div class="row mt180" ng-if="movieInside && movieInside.moviedetail">
-                        <div class="col-md-12">
-                            <div class="color-red uppercase title-main">
-                                <h3 class="bold">ABOUT THE MOVIE</h3>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="title-subtitle color-blue uppercase">
-                                <h4 class="bold">Synopsis</h4>
-                            </div>
-                            <div class="cont-main">
-                                <p class="text-justify">
-                                    {{movieInside.moviedetail.synopsis}}
-                                </p>
-                                <div class="btn-all mt15 mb15">
-                                    <a class="btn btn-danger" href="{{movieInside.moviedetail.imdb}}" target="_blank" ng-if="movieInside.moviedetail.imdb">
+  <div class="banner-movies ab" ng-if="movieInside && movieInside.moviedetail && movieInside.moviedetail.banner">
+    <img ng-src="{{movieInside.moviedetail.banner | uploadpath}}" alt="" class="img-responsive">
+  </div>
+  <div class="container">
+    <div class="movie-abt">
+      <div class="row">
+        <div class="col-md-offset-1 col-md-10">
+          <div class="row mt180" ng-if="movieInside && movieInside.moviedetail">
+            <div class="col-md-12">
+              <div class="color-red uppercase title-main">
+                <h3 class="bold">ABOUT THE MOVIE</h3>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="title-subtitle color-blue uppercase">
+                <h4 class="bold">Synopsis</h4>
+              </div>
+              <div class="cont-main">
+                <p class="text-justify">
+                  {{movieInside.moviedetail.synopsis}}
+                </p>
+                <div class="btn-all mt15 mb15">
+                  <a class="btn btn-danger" href="{{movieInside.moviedetail.imdb}}" target="_blank" ng-if="movieInside.moviedetail.imdb">
                               Check this movie out on IMDb
                            </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="title-subtitle color-blue uppercase">
-                                <h4 class="bold">Cast &amp; Crew</h4>
-                            </div>
-                            <div class="cast-crew">
-                                <table>
-                                    <tr ng-if="movieInside.moviedetail.producer">
-                                        <td class="bold">Producer:</td>
-                                        <td>{{movieInside.moviedetail.producer}}</td>
-                                    </tr>
-                                    <tr ng-if="movieInside.moviedetail.director">
-                                        <td class="bold">Director:</td>
-                                        <td>{{movieInside.moviedetail.director}}</td>
-                                    </tr>
-                                    <tr ng-if="movieInside.moviedetail.cast">
-                                        <td class="bold">Casts:</td>
-                                        <td>{{movieInside.moviedetail.cast}}</td>
-                                    </tr>
-                                    <tr ng-if="movieInside.moviedetail.music">
-                                        <td class="bold">Music:</td>
-                                        <td>{{movieInside.moviedetail.music}}</td>
-                                    </tr>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
                 </div>
+              </div>
             </div>
+            <div class="col-md-6">
+              <div class="title-subtitle color-blue uppercase">
+                <h4 class="bold">Cast &amp; Crew</h4>
+              </div>
+              <div class="cast-crew">
+                <table>
+                  <tr ng-if="movieInside.moviedetail.producer">
+                    <td class="bold">Producer:</td>
+                    <td>{{movieInside.moviedetail.producer}}</td>
+                  </tr>
+                  <tr ng-if="movieInside.moviedetail.director">
+                    <td class="bold">Director:</td>
+                    <td>{{movieInside.moviedetail.director}}</td>
+                  </tr>
+                  <tr ng-if="movieInside.moviedetail.cast">
+                    <td class="bold">Casts:</td>
+                    <td>{{movieInside.moviedetail.cast}}</td>
+                  </tr>
+                  <tr ng-if="movieInside.moviedetail.music">
+                    <td class="bold">Music:</td>
+                    <td>{{movieInside.moviedetail.music}}</td>
+                  </tr>
+                </table>
+              </div>
+            </div>
+          </div>
         </div>
+      </div>
     </div>
-    <div class="bg-halfgrey">
-        <div class="bg-pattern">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-offset-1 col-md-10">
-                        <div class="videoslider" ng-if="movieInside && movieInside.featuredvideos && movieInside.featuredvideos.length>0">
-                            <div class="row">
-                                <div class="col-xs-12">
-                                    <h4 class="title-movies mb30">FEATURED VIDEOS</h4>
-                                </div>
-                                <div class="col-xs-9 plr5">
-                                    <!-- <a class="various fancybox.iframe" fancybox href="http://www.youtube.com/embed/{{gal.url}}?autoplay=1&modestbranding=0&showinfo=0&rel=0&loop=1"></a> -->
+  </div>
+  <div class="bg-halfgrey">
+    <div class="bg-pattern">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-offset-1 col-md-10">
+            <div class="videoslider" ng-if="movieInside && movieInside.featuredvideos && movieInside.featuredvideos.length>0">
+              <div class="row">
+                <div class="col-xs-12">
+                  <h4 class="title-movies mb30">FEATURED VIDEOS</h4>
+                </div>
+                <div class="col-xs-9 plr5">
+                  <!-- <a class="various fancybox.iframe" fancybox href="http://www.youtube.com/embed/{{gal.url}}?autoplay=1&modestbranding=0&showinfo=0&rel=0&loop=1"></a> -->
 
-                                    <div class="video-main">
-                                        <img ng-src="{{movieInside.featuredvideos[0].content | youtubethumb:false}}" alt="" class="img-responsive">
-                                        <a fancybox-box href="http://www.youtube.com/embed/{{movieInside.featuredvideos[0].content | youtubethumb:true}}?autoplay=1&modestbranding=0&showinfo=0&rel=0&loop=1" rel="movies" data-fancybox-type="iframe">
-                                            <i class="fa fa-play"></i>
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="col-xs-3 plr5">
-                                    <div class="thumbnail-movies">
-                                        <ul class="list-unstyled">
-                                            <li ng-repeat="video in movieInside.featuredvideos" ng-if="$index>0" ng-click="makeActive(video,$index)">
-                                                <img ng-src="{{video.content | youtubethumb:false}}" alt="" class="img-responsive">
-                                            </li>
-                                            <!-- <li> <img src="img/moviedetail/videos/video3.jpg" alt="" class="img-responsive"></li>
+                  <div class="video-main">
+                    <img ng-src="{{movieInside.featuredvideos[0].content | youtubethumb:false}}" alt="" class="img-responsive">
+                    <a fancybox-box href="http://www.youtube.com/embed/{{movieInside.featuredvideos[0].content | youtubethumb:true}}?autoplay=1&modestbranding=0&showinfo=0&rel=0&loop=1" rel="movies" data-fancybox-type="iframe">
+                      <i class="fa fa-play"></i>
+                    </a>
+                  </div>
+                </div>
+                <div class="col-xs-3 plr5">
+                  <div class="thumbnail-movies">
+                    <ul class="list-unstyled">
+                      <li ng-repeat="video in movieInside.featuredvideos" ng-if="$index>0" ng-click="makeActive(video,$index)">
+                        <img ng-src="{{video.content | youtubethumb:false}}" alt="" class="img-responsive">
+                      </li>
+                      <!-- <li> <img src="img/moviedetail/videos/video3.jpg" alt="" class="img-responsive"></li>
                                  <li> <img src="img/moviedetail/videos/video4.jpg" alt="" class="img-responsive"></li> -->
-                                        </ul>
-                                    </div>
-                                </div>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="tab-insidemovies nav-tab-middle mislider">
+              <div class="title">
+                <h4 class="display-inline uppercase {{styleActives}}" ng-click="doActives(1);" ng-if="movieInside && movieInside.imagegallery && movieInside.imagegallery.length>0">Image Gallery</h4>
+                <h4 class="display-inline uppercase {{styleNoActives}}" ng-click="doActives(2);" ng-if="movieInside && movieInside.wallpaper && movieInside.wallpaper.length>0">Wallpapers</h4>
+              </div>
+              <div class="flex-slider" ng-if="movieInside && movieInside.imagegallery && movieInside.imagegallery.length>0">
+                <flex-slider flex-slide="slide in movieInside.imagegallery track by $index" ng-if="styleActives == 'actives'" animation="slide" animation-loop="false" as-nav-for="#sliders" slideshow="false">
+                  <li class="">
+                    <div class="wallpaper">
+                      <div class="row mb30" ng-repeat="row in slide">
+                        <div class="col-xs-4 plr10" ng-repeat="images in row">
+                          <a fancybox-box class="padds0" ng-href="{{images.image | uploadpath}}">
+                            <div class="image-holder text-center">
+                              <img ng-src="{{images.image | uploadpath}}" class="img-responsive doneLoading" alt="">
                             </div>
+                          </a>
                         </div>
-                        <div class="tab-insidemovies nav-tab-middle mislider">
-                            <div class="title">
-                                <h4 class="display-inline uppercase {{styleActives}}" ng-click="doActives(1);" ng-if="movieInside && movieInside.imagegallery && movieInside.imagegallery.length>0">Image Gallery</h4>
-                                <h4 class="display-inline uppercase {{styleNoActives}}" ng-click="doActives(2);" ng-if="movieInside && movieInside.wallpaper && movieInside.wallpaper.length>0">Wallpapers</h4>
+                        <div class="clearfix"></div>
+                      </div>
+                    </div>
+                  </li>
+                </flex-slider>
+              </div>
+              <div class="flex-slider" ng-if="movieInside && movieInside.wallpaper && movieInside.wallpaper.length>0">
+                <flex-slider flex-slide="slide in movieInside.wallpaper track by $index" ng-if="styleNoActives == 'actives'" animation="slide" animation-loop="false" as-nav-for="#sliders" slideshow="false">
+                  <li class="">
+                    <div class="wallpaper">
+                      <div class="row mb30" ng-repeat="row in slide">
+                        <div class="col-xs-4 plr10" ng-repeat="images in row">
+                          <a fancybox-box class="padds0" ng-href="{{images.image | uploadpath}}">
+                            <div class="image-holder text-center">
+                              <img ng-src="{{images.image | uploadpath}}" class="img-responsive doneLoading" alt="">
                             </div>
-                            <div class="flex-slider" ng-if="movieInside && movieInside.imagegallery && movieInside.imagegallery.length>0">
-                                <flex-slider flex-slide="slide in movieInside.imagegallery track by $index" ng-if="styleActives == 'actives'" animation="slide" animation-loop="false" as-nav-for="#sliders" slideshow="false">
-                                    <li class="">
-                                        <div class="wallpaper">
-                                            <div class="row mb30" ng-repeat="row in slide">
-                                                <div class="col-xs-4 plr10" ng-repeat="images in row">
-                                                  <a fancybox-box class="padds0" ng-href="{{images.image | uploadpath}}">
-                                                    <div class="image-holder text-center">
-                                                      <img ng-src="{{images.image | uploadpath}}" class="img-responsive doneLoading" alt="">
-                                                    </div>
-                                                  </a>
-                                                </div>
-                                                <div class="clearfix"></div>
-                                            </div>
-                                        </div>
-                                    </li>
-                                </flex-slider>
-                            </div>
-                            <div class="flex-slider" ng-if="movieInside && movieInside.wallpaper && movieInside.wallpaper.length>0">
-                                <flex-slider flex-slide="slide in movieInside.wallpaper track by $index" ng-if="styleNoActives == 'actives'" animation="slide" animation-loop="false" as-nav-for="#sliders" slideshow="false">
-                                    <li class="">
-                                        <div class="wallpaper">
-                                            <div class="row mb30" ng-repeat="row in slide">
-                                                <div class="col-xs-4 plr10" ng-repeat="images in row">
-                                                  <a fancybox-box class="padds0" ng-href="{{images.image | uploadpath}}">
-                                                    <div class="image-holder text-center">
-                                                        <img ng-src="{{images.image | uploadpath}}" class="img-responsive doneLoading" alt="">
-                                                    </div>
-                                                  </a>
-                                                </div>
-                                                <div class="clearfix"></div>
-                                            </div>
-                                        </div>
-                                    </li>
-                                </flex-slider>
-                            </div>
+                          </a>
                         </div>
-                        <!-- <uib-tabset active="active">
+                        <div class="clearfix"></div>
+                      </div>
+                    </div>
+                  </li>
+                </flex-slider>
+              </div>
+            </div>
+            <!-- <uib-tabset active="active">
                 <uib-tab index="0" heading="IMAGE GALLERY">
                   <div class="flex-slider">
                     <flex-slider flex-slide="slide in wallpapers track by $index" animation="slide" animation-loop="false" as-nav-for="#sliders" slideshow="false">
@@ -170,31 +170,31 @@
                   </div>
                 </uib-tab>
               </uib-tabset> -->
-                    </div>
-                </div>
-            </div>
+          </div>
         </div>
+      </div>
     </div>
-    <div class="bg-award" ng-if="movieInside && movieInside.award && movieInside.award.length>0">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-offset-1 col-md-10">
-                    <div class="awards">
-                        <div class="title">
-                            <h3 class="uppercase bold color-white text-center">AWARDS</h3>
-                        </div>
-                        <div class="tabs-awards">
-                            <uib-tabset active="activeJustified" justified="true" type="">
-                                <uib-tab index="$index" heading="{{data.award}}" ng-repeat="data in movieInside.award">
-                                    <div class="awards-title">
-                                        <ul class="list-unstyled">
-                                            <li>{{data.awardname}}</li>
-                                            <li>{{data.winnername}}</li>
-                                            <li>{{data.awardreceiver}}</li>
-                                        </ul>
-                                    </div>
-                                </uib-tab>
-                                <!-- <uib-tab index="0" heading="Filmfare">
+  </div>
+  <div class="bg-award" ng-if="movieInside && movieInside.award && movieInside.award.length>0">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-offset-1 col-md-10">
+          <div class="awards">
+            <div class="title">
+              <h3 class="uppercase bold color-white text-center">AWARDS</h3>
+            </div>
+            <div class="tabs-awards">
+              <uib-tabset active="activeJustified" justified="true" type="">
+                <uib-tab index="$index" heading="{{data.award}}" ng-repeat="data in movieInside.award">
+                  <div class="awards-title">
+                    <ul class="list-unstyled">
+                      <li>{{data.awardname}}</li>
+                      <li>{{data.winnername}}</li>
+                      <li>{{data.awardreceiver}}</li>
+                    </ul>
+                  </div>
+                </uib-tab>
+                <!-- <uib-tab index="0" heading="Filmfare">
                            <div class="awards-title">
                               <ul class="list-unstyled" ng-repeat="data in awards">
                                  <li>{{data.name}}</li>
@@ -230,62 +230,62 @@
                               </ul>
                            </div>
                         </uib-tab> -->
-                            </uib-tabset>
-                        </div>
-                    </div>
-                </div>
+              </uib-tabset>
             </div>
+          </div>
         </div>
+      </div>
     </div>
-    <div class="container">
-        <div class="row">
-            <div class="col-md-offset-2 col-md-8">
-                <div class="text-center">
-                    <h4 class="uppercase color-blue bold">Use <a class="color-red" href="{{movieInside.moviedetail.hashtag}}" target="_blank">#{{movieInside.moviedetail.name}}</a> and get to view live feed of everyone,<br>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-offset-2 col-md-8">
+        <div class="text-center">
+          <h4 class="uppercase color-blue bold">Use <a class="color-red" href="{{movieInside.moviedetail.hashtag}}" target="_blank">#{{movieInside.moviedetail.name}}</a> and get to view live feed of everyone,<br>
 including yours, right here!</h4>
-                </div>
-            </div>
         </div>
-        <div class="social">
-            <section class="marg-section">
-                <div class="social-back ">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-md-4 col-sm-4" ng-if="movieInside.moviedetail.facebook">
-                                <div class="social-box text-center">
-                                    <img src="img/socials/facebook.png" class="doneLoading">
-                                </div>
-                                <div class="social-logo text-center">
-                                  <div class="feed-social mt30">
-                                    <div class="fb-page" data-href="{{movieInside.moviedetail.facebook}}" data-tabs="timeline" data-width="360" data-height="480" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true">
-                                      <div class="fb-xfbml-parse-ignore">
-                                        <blockquote cite="https://www.facebook.com/GSWorldwideEnt/">
-                                          <a href="{{movieInside.moviedetail.facebook}}">GS Worldwide Entertainment.</a></blockquote>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
-                            </div>
-                            <div class="col-md-4 col-sm-4" ng-if="movieInside.moviedetail.twitter">
-                                <div class="social-box text-center">
-                                    <img src="img/socials/twitter.png" class="doneLoading">
-                                </div>
-                                <div class="social-logo text-center ">
-                                    <img src="img/twitter.jpg" alt="" class="img-responsive">
-                                </div>
-                            </div>
-                            <div class="col-md-4 col-sm-4" ng-if="movieInside.moviedetail.instagram">
-                                <div class="social-box text-center">
-                                    <img src="img/socials/instagram.png" class="doneLoading">
-                                </div>
-                                <div class="social-logo text-center ">
-                                    <img src="img/instagram.jpg" alt="" class="img-responsive">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-        </div>
+      </div>
     </div>
+    <div class="social">
+      <section class="marg-section">
+        <div class="social-back ">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-4 col-sm-4" ng-if="movieInside.moviedetail.facebook">
+                <div class="social-box text-center">
+                  <img src="img/socials/facebook.png" class="doneLoading">
+                </div>
+                <div class="social-logo text-center">
+                  <div class="feed-social mt30">
+                    <div class="fb-page" data-href="{{movieInside.moviedetail.facebook}}" data-tabs="timeline" data-width="360" data-height="480" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true">
+                      <div class="fb-xfbml-parse-ignore">
+                        <blockquote cite="https://www.facebook.com/GSWorldwideEnt/">
+                          <a href="{{movieInside.moviedetail.facebook}}">GS Worldwide Entertainment.</a></blockquote>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4 col-sm-4" ng-if="movieInside.moviedetail.twitter">
+                <div class="social-box text-center">
+                  <img src="img/socials/twitter.png" class="doneLoading">
+                </div>
+                <div class="social-logo text-center ">
+                  <a class="twitter-timeline" href="{{movieInside.moviedetail.twitter}}" data-widget-id="">Tweets by @GSWorldwideEnt</a>
+                </div>
+              </div>
+              <div class="col-md-4 col-sm-4" ng-if="movieInside.moviedetail.instagram">
+                <div class="social-box text-center">
+                  <img src="img/socials/instagram.png" class="doneLoading">
+                </div>
+                <div class="social-logo text-center ">
+                  <img src="img/instagram.jpg" alt="" class="img-responsive">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
 </section>
