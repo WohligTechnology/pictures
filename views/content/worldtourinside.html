@@ -138,7 +138,7 @@
     <div class="row">
       <div class="col-md-offset-2 col-md-8">
         <div class="text-center">
-          <h4 class="uppercase color-blue bold">Use <a class="color-red" target="_blank">#PYAARKIYATODARNAKYA</a> and get to view live feed of everyone,<br>
+          <h4 class="uppercase color-blue bold">Use <a class="color-red" href="{{tourInside.worldtourdetail.hashtag}}" target="_blank">#{{tourInside.worldtourdetail.name}}</a> and get to view live feed of everyone,<br>
 including yours, right here!</h4>
         </div>
       </div>
@@ -150,31 +150,31 @@ including yours, right here!</h4>
   <section class="marg-section">
     <div class="social-back ">
       <div class="container">
-        <div class="row">{{tourInside}}
+        <div class="row">
           <div class="col-md-4 col-sm-4" ng-if="tourInside.worldtourdetail.facebook">
             <div class="social-box text-center">
               <img src="img/socials/facebook.png" class="doneLoading">
             </div>
             <div class="social-logo text-center">
               <div class="feed-social mt30">
-                <div class="fb-page" data-href="https://www.facebook.com/GSWorldwideEnt/" data-tabs="timeline" data-width="360" data-height="480" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true">
+                <div class="fb-page" data-href="{{tourInside.worldtourdetail.facebook}}" data-tabs="timeline" data-width="360" data-height="480" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true">
                   <div class="fb-xfbml-parse-ignore">
                     <blockquote cite="https://www.facebook.com/GSWorldwideEnt/">
-                      <a href="https://www.facebook.com/GSWorldwideEnt/">GS Worldwide Entertainment.</a></blockquote>
+                      <a href="{{tourInside.worldtourdetail.facebook}}">GS Worldwide Entertainment.</a></blockquote>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-          <div class="col-md-4 col-sm-4">
+          <div class="col-md-4 col-sm-4" ng-if="tourInside.worldtourdetail.twitter">
             <div class="social-box text-center">
               <img src="img/socials/twitter.png" class="doneLoading">
             </div>
             <div class="social-logo text-center ">
-              <a class="twitter-timeline" href="https://twitter.com/GSWorldwideEnt" data-widget-id="716880459599228928">Tweets by @GSWorldwideEnt</a>
+              <a class="twitter-timeline" href="{{tourInside.worldtourdetail.twitter}}" data-widget-id="716880459599228928">Tweets by @GSWorldwideEnt</a>
             </div>
           </div>
-          <div class="col-md-4 col-sm-4">
+          <div class="col-md-4 col-sm-4" ng-if="tourInside.worldtourdetail.instagram">
             <div class="social-box text-center">
               <img src="img/socials/instagram.png" class="doneLoading">
             </div>
