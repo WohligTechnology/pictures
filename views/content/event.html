@@ -55,8 +55,8 @@
                              <a href="" class="color-black" ng-if="data.type==1" ui-sref="blogtext({id:data.id})">Read More</a>
                              <a href="" class="color-black" ng-if="data.type==2" ui-sref="blogimage({id:data.id})">Read More</a>
                              <a href="" class="color-black" ng-if="data.type==3" ui-sref="blogvideo({id:data.id})">Read More</a>
-                             <div class="wed-date pull-right authorcolor">
-                                   <a ui-sref="diaries-author({id:data.author})"><span>By {{data.authorname}}</span></a>
+                             <div class="wed-date pull-right authorcolor" ng-if="data.author">
+                                   <a ui-sref="diaries-author({id:data.author})"><span class="color-black">By {{data.authorname}}</span></a>
                              </div>
                           </div>
                           <!-- <div class="read-more"><a class=color-black>Read More</a></div> -->
@@ -222,36 +222,38 @@
                   </div>
                 </div>
                 <div class="row">
-                   <div class="col-md-6">
-                      <div class="form-group has-feedback">
-                         <!-- <input type="date" class="form-control" required id="inputSuccess2" aria-describedby="Start Date" placeholder="Start Date">
+                  <div class="col-md-6">
+                    <div class="form-group has-feedback">
+                      <!-- <input type="date" class="form-control" required id="inputSuccess2" aria-describedby="Start Date" placeholder="Start Date">
                <span class="fa fa-calendar color-red form-control-feedback" aria-hidden="true"></span> -->
 
-                         <p class="input-group">
-                            <input type="text" placeholder="Start Date" class="form-control" uib-datepicker-popup="{{format}}" ng-model="formData.date" is-open="popup1.opened" datepicker-options="soptions" ng-required="true" close-text="Close" alt-input-formats="altInputFormats" ng-change="changeEOptions();" />
-                            <span class="input-group-btn">
+                      <p class="input-group">
+                        <input type="text" placeholder="Start Date" class="form-control" uib-datepicker-popup="{{format}}" ng-model="formData.date" is-open="popup1.opened" datepicker-options="soptions" ng-required="true" close-text="Close" alt-input-formats="altInputFormats"
+                            ng-change="changeEOptions();" />
+                        <span class="input-group-btn">
                                  <button type="button" class="btn btn-default" ng-click="open1()">
                                      <i class="fa fa-calendar color-red form-control-feedback"></i>
                                  </button>
                              </span>
-                         </p>
-                      </div>
-                   </div>
-                   <div class="col-md-6">
-                      <div class="form-group has-feedback">
-                         <!-- <input type="date" class="form-control" required id="inputSuccess2" aria-describedby="Start Date" placeholder="Start Date">
+                      </p>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group has-feedback">
+                      <!-- <input type="date" class="form-control" required id="inputSuccess2" aria-describedby="Start Date" placeholder="Start Date">
                <span class="fa fa-calendar color-red form-control-feedback" aria-hidden="true"></span> -->
 
-                         <p class="input-group">
-                            <input type="text" placeholder="End Date" class="form-control" uib-datepicker-popup="{{format}}" ng-model="formData.enddate" is-open="popup2.opened" datepicker-options="eoptions" ng-required="true" close-text="Close" alt-input-formats="altInputFormats" />
-                            <span class="input-group-btn">
+                      <p class="input-group">
+                        <input type="text" placeholder="End Date" class="form-control" uib-datepicker-popup="{{format}}" ng-model="formData.enddate" is-open="popup2.opened" datepicker-options="eoptions" ng-required="true" close-text="Close" alt-input-formats="altInputFormats"
+                        />
+                        <span class="input-group-btn">
                                <button type="button" class="btn btn-default" ng-click="open2()">
                                  <i class="fa fa-calendar color-red form-control-feedback"></i>
                                </button>
                              </span>
-                         </p>
-                      </div>
-                   </div>
+                      </p>
+                    </div>
+                  </div>
                 </div>
                 <!-- <div class=row>
                   <div class=col-md-6>
@@ -292,7 +294,7 @@
               </form>
             </div>
             <div class="get-in-touch text-center" ng-show="showThanks">
-               <h5 class="color-red uppercase bold">Thank You ! Your enquiry has been submitted. We will get back to you soon.</h5>
+              <h5 class="color-red uppercase bold">Thank You ! Your enquiry has been submitted. We will get back to you soon.</h5>
             </div>
           </div>
         </div>
