@@ -1,5 +1,7 @@
 var initMap = {};
 var calculateAndDisplayRoute = {};
+var globalObj = true;
+
 angular.module('phonecatControllers', ['templateservicemod', 'navigationservice', 'ui.bootstrap', 'ngAnimate', 'ngSanitize', 'angular-flexslider', 'infinite-scroll', 'angular-loading-bar', 'imageupload'])
 
 .controller('HomeCtrl', function($scope, TemplateService, NavigationService, $timeout, $state) {
@@ -555,6 +557,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     $scope.menutitle = NavigationService.makeactive("Wedding");
     TemplateService.title = $scope.menutitle;
     $scope.navigation = NavigationService.getnav();
+      // var globalObj =true;
     $scope.$on('$viewContentLoaded', function(event) {
         $timeout(function() {
 
@@ -608,6 +611,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
                 if ($scope.myname == 'Sangeet' && $scope.myname == 'Mehendi') {
                     console.log('ifff');
                     $scope.mylocation = $state.go('weddinginsidedetail', {
+                      flag:0,
                         id: $scope.weddingData[i]._id
                     });
                     console.log('$scope.mylocation', $scope.mylocation);
@@ -789,7 +793,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     };
 })
 
-.controller('WeddingInsideCtrl', function($scope, TemplateService, NavigationService, $timeout, $stateParams) {
+.controller('WeddingInsideCtrl', function($scope, TemplateService, NavigationService, $timeout, $stateParams, $state) {
     //Used to name the .html file
     $scope.template = TemplateService.changecontent("weddinginside");
     $scope.menutitle = NavigationService.makeactive("Wedding");
@@ -839,6 +843,18 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             $scope.weddingName = data.data.name;
         }
     })
+$scope.abc = '';
+    $scope.goInside =function(id,name){
+      console.log(name);
+    //   $.jStorage.set("mypage",name);
+    // $scope.abc = $.jStorage.get("mypage");
+    //   console.log($scope.abc);
+      // var globalObj =false;
+      // $state.go(weddinginsidedetail)
+      $state.go('weddinginsidedetail', {
+        flag:0,
+        id: id});
+    };
 
     // $scope.weddingdetail = [{
     //     img: "img/weddings/w1.png",
@@ -858,9 +874,10 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     $scope.menutitle = NavigationService.makeactive("Wedding");
     TemplateService.title = $scope.menutitle;
     $scope.navigation = NavigationService.getnav();
+    // var globalObj =false;
     $scope.weddetail = {};
-    console.log($stateParams.id);
-    if ($stateParams.id != 2 && $stateParams.id != 3) {
+    console.log("aaa",$stateParams);
+    if ($stateParams.flag==0) {
         NavigationService.getWeddingInsideDetails($stateParams.id, function(data) {
 
             console.log("innn");
@@ -3183,6 +3200,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $scope.menutitle = NavigationService.makeactive("Events");
         TemplateService.title = $scope.menutitle;
         $scope.navigation = NavigationService.getnav();
+
         $scope.$on('$viewContentLoaded', function(event) {
             $timeout(function() {
 
@@ -3521,7 +3539,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             }, 0);
         });
 
-      
+
         NavigationService.getBanner($stateParams.id, function(data) {
             $scope.bannerData = data.data;
             $scope.bannerName = data.data.name;

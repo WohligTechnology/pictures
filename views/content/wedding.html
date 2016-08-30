@@ -24,8 +24,8 @@
       <div class="row">
         <div class="col-md-4 col-sm-4 col-xs-6" ng-repeat="data in weddingData.weddingtype track by $index">
 
-          <div ng-if="data.id=='2'">
-            <a ui-sref="weddinginsidedetail({id:data.id})">
+          <div ng-if="data.id=='2' || data.id =='3'">
+            <a ui-sref="weddinginsidedetail({flag:1,id:data.id})">
               <div class="banner-wrap">
                 <img ng-src="{{data.image | uploadpath}}" class="img-responsive">
                 <img src="img/weddings/hover-banner.png" alt="" class="img-responsive hover-image">
@@ -36,7 +36,7 @@
               </div>
             </a>
           </div>
-          <div ng-if="data.id=='3'">
+          <!-- <div ng-if="data.id=='3'">
             <a ui-sref="weddinginsidedetail({id:data.id})">
               <div class="banner-wrap">
                 <img ng-src="{{data.image | uploadpath}}" class="img-responsive">
@@ -47,7 +47,7 @@
                 </div>
               </div>
             </a>
-          </div>
+          </div> -->
           <div ng-if="data.id!='2' && data.id!='3'">
             <a ui-sref="weddinginside({id:data.id})">
               <div class="banner-wrap">
