@@ -1,40 +1,40 @@
 <section class="event">
-  <div class=container>
-    <div class=row>
-      <div class=col-xs-12>
-        <div class="head-banner text-center"><img src=img/event/event.png class=img-responsive title=Events></div>
-      </div>
-    </div>
-    <div class=row ng-if="eventData && eventData.description && eventData.description.content">
-      <div class="col-md-offset-2 col-md-8">
-        <div class="wedding-fant-desc mt50" ng-bind-html="eventData.description.content">
-          <!-- <p>GS Entertainment is a full service event management company in Mumbai dedicated to quality and excellence. We as a team provides innovative thinking, expertise and dynamise that will make your event a truly and highly memorable experience. All our events are planned down to the minutest of details, from conceptualization to production, meticulous planning and precise execution are strictly adhered to, resulting in events that are nothing less than perfect.</p> -->
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="bg-event">
-    <div class="container">
-      <div class="wedding banner-talent" ng-if="eventData.events.length > 0">
+    <div class=container>
         <div class=row>
-          <div class="col-md-4 col-sm-4 col-xs-6" ng-repeat="data in eventData.events track by $index">
-            <div class="banner-wrap" ui-sref="eventinside({id:data.id})">
-              <img ng-src="{{data.image | uploadpath}}" class="img-responsive">
-              <img src=img/event/roller-hover.png class="img-responsive hover-image">
-              <div class="name-event extend-hover text-center center-make"><span class="color-white uppercase">{{data.name}}</span>
-                <hr class=wedding-border>
-              </div>
+            <div class=col-xs-12>
+                <div class="head-banner text-center"><img src=img/event/event.png class=img-responsive title=Events></div>
             </div>
-          </div>
         </div>
-      </div>
-      <div class="bg-moviesdiaries" ng-if="eventData.eventdiaries.length>0">
-        <div class=row>
-          <div class=col-md-12>
-            <div class=text-center>
-              <div class=wedding-diary>
-                <div class="diary-title mt60 mr30">
-                  <h4 class="uppercase color-red"><i class="fi flaticon-book"></i>event DIARIES</div>
+        <div class=row ng-if="eventData && eventData.description && eventData.description.content">
+            <div class="col-md-offset-2 col-md-8">
+                <div class="wedding-fant-desc mt50" ng-bind-html="eventData.description.content">
+                    <!-- <p>GS Entertainment is a full service event management company in Mumbai dedicated to quality and excellence. We as a team provides innovative thinking, expertise and dynamise that will make your event a truly and highly memorable experience. All our events are planned down to the minutest of details, from conceptualization to production, meticulous planning and precise execution are strictly adhered to, resulting in events that are nothing less than perfect.</p> -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="bg-event">
+        <div class="container">
+            <div class="wedding banner-talent" ng-if="eventData.events.length > 0">
+                <div class=row>
+                    <div class="col-md-4 col-sm-4 col-xs-6" ng-repeat="data in eventData.events track by $index">
+                        <div class="banner-wrap" ui-sref="eventinside({id:data.id})">
+                            <img ng-src="{{data.image | uploadpath}}" class="img-responsive">
+                            <img src=img/event/roller-hover.png class="img-responsive hover-image">
+                            <div class="name-event extend-hover text-center center-make"><span class="color-white uppercase">{{data.name}}</span>
+                                <hr class=wedding-border>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="bg-moviesdiaries" ng-if="eventData.eventdiaries.length>0">
+                <div class=row>
+                    <div class=col-md-12>
+                        <div class=text-center>
+                            <div class=wedding-diary>
+                                <div class="diary-title mt60 mr30">
+                                    <h4 class="uppercase color-red"><i class="fi flaticon-book"></i>event DIARIES</div>
                       </div>
                     </div>
                   </div>
@@ -83,179 +83,181 @@
                           <uib-accordion-group is-open=status.open1 is-disabled=status.isFirstDisabled ng-repeat="data in eventData.services">
                             <uib-accordion-heading>
                               <h4><span class="uppercase bold">{{data.name}}</span> <i class="pull-right fa" ng-class="{'fa-minus': status.open1, 'fa-plus': !status.open1}"></i></h4></uib-accordion-heading>
-                  <div ng-bind-html="data.content"></div>
-                  </uib-accordion-group>
-                  </uib-accordion>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="section3" ng-if="eventData.testimonial.length>0">
-          <div class=bg3>
-            <div class="container">
-              <div class="client-speak" ng-repeat="data in eventData.testimonial | limitTo: 1">
-                <div class="name-cont color-white"><img src=img/inverted.png> <span>{{data.name}}</span></div>
-                <div class=img-holder>
-                  <img ng-src="{{data.image | uploadpath}}" class="img-responsive">
-                </div>
-                <div class="img-review color-white">
-                  <h4>"{{data.quote}}"</h4>
-                  <p>- {{data.author}}</p>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-md-offset-2 col-md-8">
-                  <div class="text-center">
-                    <h4 class="uppercase color-blue bold">Use <a class="color-red" href="{{eventData.description.hashtag}}" target="_blank">#GSEvents</a> and get to view live feed of everyone,<br>
-                              including yours, right here!</h4>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class=social>
-        <section class=marg-section>
-          <div class=social-back>
-            <div class=container>
-              <div class=row>
-                <div class="col-md-4 col-sm-4" ng-if="eventData.description.facebook">
-                  <div class="social-box text-center"><img src=img/socials/facebook.png class=doneLoading></div>
-                  <div class="social-logo text-center">
-                    <div class="feed-social mt30">
-                      <div class=fb-page data-href="{{eventData.description.facebook}}" data-tabs=timeline data-width=360 data-height=480 data-small-header=false data-adapt-container-width=true data-hide-cover=false data-show-facepile=true>
-                        <div class=fb-xfbml-parse-ignore>
-                          <blockquote cite="https://www.facebook.com/GSWorldwideEnt/"><a href="{{eventData.description.facebook}}">GS Worldwide Entertainment.</a></blockquote>
+                                    <div ng-bind-html="data.content"></div>
+                                    </uib-accordion-group>
+                                    </uib-accordion>
+                                </div>
+                            </div>
                         </div>
-                      </div>
                     </div>
-                  </div>
                 </div>
-                <div class="col-md-4 col-sm-4" ng-if="eventData.description.twitter">
-                  <div class="social-box text-center">
-                    <img src="img/socials/twitter.png" class="doneLoading">
-                  </div>
-                  <div class="social-logo text-center ">
-                    <a class="twitter-timeline" href="{{eventData.description.twitter}}" data-widget-id="">Tweets by @GSWorldwideEnt</a>
-                  </div>
+                <div class="section3">
+                    <div class=bg3>
+                        <div class="container">
+                            <div class="" ng-if="eventData.testimonial.length>0">
+                                <div class="client-speak" ng-repeat="data in eventData.testimonial | limitTo: 1">
+                                    <div class="name-cont color-white"><img src=img/inverted.png> <span>{{data.name}}</span></div>
+                                    <div class=img-holder>
+                                        <img ng-src="{{data.image | uploadpath}}" class="img-responsive">
+                                    </div>
+                                    <div class="img-review color-white">
+                                        <h4>"{{data.quote}}"</h4>
+                                        <p>- {{data.author}}</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-offset-2 col-md-8">
+                                    <div class="text-center">
+                                        <h4 class="uppercase color-blue bold">Use <a class="color-red" href="{{eventData.description.hashtag}}" target="_blank">#GSEvents</a> and get to view live feed of everyone,<br>
+                              including yours, right here!</h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-md-4 col-sm-4" ng-if="eventData.description.instagram">
-                  <div class="social-box text-center"><img src=img/socials/instagram.png class=doneLoading></div>
-                  <div class="social-logo text-center">
-                    <iframe src=//lightwidget.com/widgets/2965b7333833557283d4029e025bd4e8.html id=lightwidget_2965b73338 name=lightwidget_2965b73338 scrolling=no allowtransparency=true class=lightwidget-widget style="width: 100%; border: 0; overflow: hidden; height:480px;"></iframe>
-                  </div>
-                </div>
-              </div>
             </div>
-          </div>
-        </section>
-      </div>
-      <div class="container">
-      </div>
-      <div class=mr30>
-        <div class=row>
-          <div class="col-md-offset-2 col-md-8">
-            <div class="get-in-touch" ng-hide="showThanks">
-              <h3 class="color-red uppercase bold">GET IN TOUCH</h3>
-              <form name=wed>
+            <div class=social>
+                <section class=marg-section>
+                    <div class=social-back>
+                        <div class=container>
+                            <div class=row>
+                                <div class="col-md-4 col-sm-4" ng-if="eventData.description.facebook">
+                                    <div class="social-box text-center"><img src=img/socials/facebook.png class=doneLoading></div>
+                                    <div class="social-logo text-center">
+                                        <div class="feed-social mt30">
+                                            <div class=fb-page data-href="{{eventData.description.facebook}}" data-tabs=timeline data-width=360 data-height=480 data-small-header=false data-adapt-container-width=true data-hide-cover=false data-show-facepile=true>
+                                                <div class=fb-xfbml-parse-ignore>
+                                                    <blockquote cite="https://www.facebook.com/GSWorldwideEnt/"><a href="{{eventData.description.facebook}}">GS Worldwide Entertainment.</a></blockquote>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 col-sm-4" ng-if="eventData.description.twitter">
+                                    <div class="social-box text-center">
+                                        <img src="img/socials/twitter.png" class="doneLoading">
+                                    </div>
+                                    <div class="social-logo text-center ">
+                                        <a class="twitter-timeline" href="{{eventData.description.twitter}}" data-widget-id="">Tweets by @GSWorldwideEnt</a>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 col-sm-4" ng-if="eventData.description.instagram">
+                                    <div class="social-box text-center"><img src=img/socials/instagram.png class=doneLoading></div>
+                                    <div class="social-logo text-center">
+                                        <iframe src=//lightwidget.com/widgets/2965b7333833557283d4029e025bd4e8.html id=lightwidget_2965b73338 name=lightwidget_2965b73338 scrolling=no allowtransparency=true class=lightwidget-widget style="width: 100%; border: 0; overflow: hidden; height:480px;"></iframe>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            <div class="container">
+            </div>
+            <div class=mr30>
                 <div class=row>
-                  <div class=col-md-6>
-                    <div class=form-group>
-                      <input type=text ng-model="formData.firstname" name="firstname" class=form-control id=exampleInputEmail1 placeholder="First Name" required="">
-                      <div class=error-msg ng-show="wed.firstname.$error.required && wed.firstname.$touched">Please Enter Your First Name.</div>
-                    </div>
-                  </div>
-                  <div class=col-md-6>
-                    <div class=form-group>
-                      <input type=text ng-model="formData.lastname" name="lastname" class=form-control id=exampleInputEmail1 placeholder="Last Name" required="">
-                      <div class=error-msg ng-show="wed.lastname.$error.required && wed.lastname.$touched">Please Enter Your Last Name.</div>
-                    </div>
-                  </div>
-                </div>
-                <div class=row>
-                  <div class=col-md-6>
-                    <div class=form-group>
-                      <input type=email ng-model="formData.email" name="email" class=form-control id=exampleInputEmail1 placeholder="Email" required="">
-                      <div class=error-msg ng-show="wed.email.$error.required && wed.email.$touched">Please Enter Your Email.</div>
-                    </div>
-                  </div>
-                  <div class=col-md-6>
-                    <div class=form-group>
-                      <input type=tel ng-model="formData.phone" name="phone" class=form-control id=exampleInputEmail1 maxlength=13 placeholder="Phone Number" required="">
-                      <div class=error-msg ng-show="wed.phone.$error.required && wed.phone.$touched">Please Enter Phone number.</div>
-                    </div>
-                  </div>
-                </div>
-                <div class=form-group>
-                  <div class=row>
-                    <div class=col-md-10>
-                      <div class=enq-list>
-                        <label class="checkbox-inline enquire text-label" style=padding-left:0;margin-top:0px;><span class=color-red>Enquiring for</span></label>
-                        <label class=checkbox-inline>
+                    <div class="col-md-offset-2 col-md-8">
+                        <div class="get-in-touch" ng-hide="showThanks">
+                            <h3 class="color-red uppercase bold">GET IN TOUCH</h3>
+                            <form name=wed>
+                                <div class=row>
+                                    <div class=col-md-6>
+                                        <div class=form-group>
+                                            <input type=text ng-model="formData.firstname" name="firstname" class=form-control id=exampleInputEmail1 placeholder="First Name" required="">
+                                            <div class=error-msg ng-show="wed.firstname.$error.required && wed.firstname.$touched">Please Enter Your First Name.</div>
+                                        </div>
+                                    </div>
+                                    <div class=col-md-6>
+                                        <div class=form-group>
+                                            <input type=text ng-model="formData.lastname" name="lastname" class=form-control id=exampleInputEmail1 placeholder="Last Name" required="">
+                                            <div class=error-msg ng-show="wed.lastname.$error.required && wed.lastname.$touched">Please Enter Your Last Name.</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class=row>
+                                    <div class=col-md-6>
+                                        <div class=form-group>
+                                            <input type=email ng-model="formData.email" name="email" class=form-control id=exampleInputEmail1 placeholder="Email" required="">
+                                            <div class=error-msg ng-show="wed.email.$error.required && wed.email.$touched">Please Enter Your Email.</div>
+                                        </div>
+                                    </div>
+                                    <div class=col-md-6>
+                                        <div class=form-group>
+                                            <input type=tel ng-model="formData.phone" name="phone" class=form-control id=exampleInputEmail1 maxlength=13 placeholder="Phone Number" required="">
+                                            <div class=error-msg ng-show="wed.phone.$error.required && wed.phone.$touched">Please Enter Phone number.</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class=form-group>
+                                    <div class=row>
+                                        <div class=col-md-10>
+                                            <div class=enq-list>
+                                                <label class="checkbox-inline enquire text-label" style=padding-left:0;margin-top:0px;><span class=color-red>Enquiring for</span></label>
+                                                <label class=checkbox-inline>
                           <input type=checkbox id=wedding value=wedding ng-click="pushorpop('Lunch')">
                           <label for=wedding><span></span>Product Launch &amp; Press Conference</label>
-                        </label>
-                        <label class=checkbox-inline>
+                                                </label>
+                                                <label class=checkbox-inline>
                           <input type=checkbox id=nite value=nite ng-click="pushorpop('Dinner')">
                           <label for=nite><span></span>Gala Dinner</label>
-                        </label>
-                        <label class=checkbox-inline>
+                                                </label>
+                                                <label class=checkbox-inline>
                           <input type=checkbox id=weddings value=weddings ng-click="pushorpop('Nite')">
                           <label for=weddings><span></span>Award Nite</label>
-                        </label>
-                        <label class=checkbox-inline>
+                                                </label>
+                                                <label class=checkbox-inline>
                           <input type=checkbox id=cocktail value=cocktail ng-click="pushorpop('Birthday')">
                           <label for=cocktail><span></span>Birthday</label>
-                        </label>
-                        <label class=checkbox-inline>
+                                                </label>
+                                                <label class=checkbox-inline>
                           <input type=checkbox id=sangeet value=sangeet ng-click="pushorpop('CorporateEvents')">
                           <label for=sangeet><span></span>Corporate Events</label>
-                        </label>
-                        <label class=checkbox-inline>
+                                                </label>
+                                                <label class=checkbox-inline>
                           <input type=checkbox id=reception value=reception ng-click="pushorpop('Concerts')">
                           <label for=reception><span></span>Concerts</label>
-                        </label>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col-md-6">
-                    <div class="form-group has-feedback">
-                      <!-- <input type="date" class="form-control" required id="inputSuccess2" aria-describedby="Start Date" placeholder="Start Date">
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group has-feedback">
+                                            <!-- <input type="date" class="form-control" required id="inputSuccess2" aria-describedby="Start Date" placeholder="Start Date">
                <span class="fa fa-calendar color-red form-control-feedback" aria-hidden="true"></span> -->
 
-                      <p class="input-group">
-                        <input type="text" placeholder="Start Date" class="form-control" uib-datepicker-popup="{{format}}" ng-model="formData.date" is-open="popup1.opened" datepicker-options="soptions" ng-required="true" close-text="Close" alt-input-formats="altInputFormats"
-                            ng-change="changeEOptions();" />
-                        <span class="input-group-btn">
+                                            <p class="input-group">
+                                                <input type="text" placeholder="Start Date" class="form-control" uib-datepicker-popup="{{format}}" ng-model="formData.date" is-open="popup1.opened" datepicker-options="soptions" ng-required="true" close-text="Close" alt-input-formats="altInputFormats"
+                                                    ng-change="changeEOptions();" />
+                                                <span class="input-group-btn">
                                  <button type="button" class="btn btn-default" ng-click="open1()">
                                      <i class="fa fa-calendar color-red form-control-feedback"></i>
                                  </button>
                              </span>
-                      </p>
-                    </div>
-                  </div>
-                  <div class="col-md-6">
-                    <div class="form-group has-feedback">
-                      <!-- <input type="date" class="form-control" required id="inputSuccess2" aria-describedby="Start Date" placeholder="Start Date">
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group has-feedback">
+                                            <!-- <input type="date" class="form-control" required id="inputSuccess2" aria-describedby="Start Date" placeholder="Start Date">
                <span class="fa fa-calendar color-red form-control-feedback" aria-hidden="true"></span> -->
 
-                      <p class="input-group">
-                        <input type="text" placeholder="End Date" class="form-control" uib-datepicker-popup="{{format}}" ng-model="formData.enddate" is-open="popup2.opened" datepicker-options="eoptions" ng-required="true" close-text="Close" alt-input-formats="altInputFormats"
-                        />
-                        <span class="input-group-btn">
+                                            <p class="input-group">
+                                                <input type="text" placeholder="End Date" class="form-control" uib-datepicker-popup="{{format}}" ng-model="formData.enddate" is-open="popup2.opened" datepicker-options="eoptions" ng-required="true" close-text="Close" alt-input-formats="altInputFormats"
+                                                />
+                                                <span class="input-group-btn">
                                <button type="button" class="btn btn-default" ng-click="open2()">
                                  <i class="fa fa-calendar color-red form-control-feedback"></i>
                                </button>
                              </span>
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                <!-- <div class=row>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- <div class=row>
                   <div class=col-md-6>
                     <div class="form-group has-feedback">
                       <p class=input-group>
@@ -269,35 +271,35 @@
                     </div>
                   </div>
                 </div> -->
-                <div class=row>
-                  <div class=col-md-6>
-                    <div class=form-group>
-                      <input type=text ng-model="formData.location" name="location" class=form-control id=exampleInputEmail1 placeholder=Location required=required>
-                      <div class=error-msg ng-show="wed.location.$error.required && wed.location.$touched">Enter Location</div>
+                                <div class=row>
+                                    <div class=col-md-6>
+                                        <div class=form-group>
+                                            <input type=text ng-model="formData.location" name="location" class=form-control id=exampleInputEmail1 placeholder=Location required=required>
+                                            <div class=error-msg ng-show="wed.location.$error.required && wed.location.$touched">Enter Location</div>
+                                        </div>
+                                    </div>
+                                    <div class=col-md-6>
+                                        <div class=form-group>
+                                            <input type=text class=form-control id=exampleInputEmail1 placeholder="Number of People Expected">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class=row>
+                                    <div class=col-md-12>
+                                        <textarea class=form-control ng-model="formData.comment" name="comment" rows=3 placeholder="Say Something" required=required></textarea>
+                                        <div class=error-msg ng-show="wed.comment.$error.required && wed.comment.$touched">Enter Something</div>
+                                        <div class="submit-btn btn-all text-center mt15">
+                                            <button class="btn btn-danger" type=button name=button ng-class="{'disabled' : !wed.$valid }" ng-click=eventSubmitForm(wed)>submit</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="get-in-touch text-center" ng-show="showThanks">
+                            <h5 class="color-red uppercase bold">Thank You ! Your enquiry has been submitted. We will get back to you soon.</h5>
+                        </div>
                     </div>
-                  </div>
-                  <div class=col-md-6>
-                    <div class=form-group>
-                      <input type=text class=form-control id=exampleInputEmail1 placeholder="Number of People Expected">
-                    </div>
-                  </div>
                 </div>
-                <div class=row>
-                  <div class=col-md-12>
-                    <textarea class=form-control ng-model="formData.comment" name="comment" rows=3 placeholder="Say Something" required=required></textarea>
-                    <div class=error-msg ng-show="wed.comment.$error.required && wed.comment.$touched">Enter Something</div>
-                    <div class="submit-btn btn-all text-center mt15">
-                      <button class="btn btn-danger" type=button name=button ng-class="{'disabled' : !wed.$valid }" ng-click=eventSubmitForm(wed)>submit</button>
-                    </div>
-                  </div>
-                </div>
-              </form>
             </div>
-            <div class="get-in-touch text-center" ng-show="showThanks">
-              <h5 class="color-red uppercase bold">Thank You ! Your enquiry has been submitted. We will get back to you soon.</h5>
-            </div>
-          </div>
         </div>
-      </div>
-    </div>
 </section>
