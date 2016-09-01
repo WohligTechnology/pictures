@@ -19,9 +19,12 @@
           <h3 class="text-uppercase">{{blogTextData.description.name}}</h3>
           <p class="date-time">{{mydate | date : " d'th' MMMM y '|' h:mm a"}}</p>
           <!-- <p class="date-time">12th January 2016&nbsp;<span>|</span>&nbsp;&nbsp;08.30pm</p> -->
+            <img ng-src="{{blogTextData.description.image | uploadpath}}" class="img-responsive">
+          <p ng-bind-html="blogTextData.description.content"></p>
         </div>
         <div class="wed-boxer border-red">
           <div class="btext" ng-repeat="data in blogTextData.text track by $index">
+
             <div class="videolink">
               <img ng-src="{{data.image | uploadpath}}" alt="Jpp season1 images are not supported." class="img-responsive">
             </div>

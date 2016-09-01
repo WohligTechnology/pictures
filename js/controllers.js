@@ -2153,46 +2153,6 @@ $scope.abc = '';
         });
     }
 
-    // $scope.blogtext = [{
-    //     img: "img/blog/text/1.png",
-    //     date: "12 January 2016",
-    //     desc: "Lorem Ipsum is simply dummy text of the printing industry"
-    // }, {
-    //     img: "img/blog/text/1.png",
-    //     date: "12 January 2016",
-    //     desc: "Lorem Ipsum is simply dummy text of the printing industry"
-    // }, {
-    //     img: "img/blog/text/1.png",
-    //     date: "12 January 2016",
-    //     desc: "Lorem Ipsum is simply dummy text of the printing industry"
-    // }];
-    // $scope.bgtext = [{
-    //     img: "img/blog/text/t1.png",
-    //     desc: "Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro."
-    // }, {
-    //     img: "img/blog/text/t2.png",
-    //     desc: "Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet."
-    // }, {
-    //     img: "img/blog/text/t3.png",
-    //     desc: "Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro."
-    // }];
-    // $scope.commentlist = [{
-    //     img: "img/blog/text/p2.png",
-    //     name: "Sohan Honekari",
-    //     time: "27 minutes",
-    //     desc: "Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro."
-    // }, {
-    //     img: "img/blog/text/p2.png",
-    //     name: "Raj Shah",
-    //     time: "2 hours",
-    //     desc: "Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet."
-    // }, {
-    //     img: "img/blog/text/p2.png",
-    //     name: "pooja thakkare",
-    //     time: "20 seconds",
-    //     desc: "Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro.Lorem ipsum dolor sit amet, no saepe argumentum pro."
-    // }];
-
     $scope.getBlog = function() {
 
         NavigationService.getblogText($stateParams.id, function(data) {
