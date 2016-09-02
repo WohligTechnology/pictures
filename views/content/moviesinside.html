@@ -20,6 +20,17 @@
                 <p class="text-justify">
                   {{movieInside.moviedetail.synopsis}}
                 </p>
+                <div class="title-subtitle">
+                  <div class="row">
+                    <div class="col-sm-5">
+                      <h4 class="bold color-blue uppercase">Release Date</h4>
+                    </div>
+                    <div class="col-sm-4">
+                      <h5>
+                        {{movieInside.moviedetail.releasedate | date : " d'th' MMMM y"}}</h5>
+                    </div>
+                  </div>
+                </div>
                 <div class="btn-all mt15 mb15">
                   <a class="btn btn-danger" href="{{movieInside.moviedetail.imdb}}" target="_blank" ng-if="movieInside.moviedetail.imdb">
                               Check this movie out on IMDb
