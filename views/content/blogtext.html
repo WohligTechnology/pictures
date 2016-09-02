@@ -38,7 +38,7 @@
           <div class="btext" ng-repeat="data in blogTextData.text track by $index">
 
             <div class="videolink">
-              <img ng-src="{{data.image | uploadpath}}" alt="Jpp season1 images are not supported." class="img-responsive">
+              <img ng-src="{{data.image | uploadpath}}" class="img-responsive">
             </div>
             <p class="text-justify" ng-bind-html="data.content"></p>
           </div>

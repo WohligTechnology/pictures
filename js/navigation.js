@@ -5,12 +5,12 @@ var adminURL = "";
 //     adminURL = "http://localhost/demo/index.php";
 // }
 
-adminURL = "http://wohlig.co.in/gsebackend/";
-// adminURL = "http://localhost/gsebackend/";
+adminURL = "http://www.gsentertainment.com/admin/";
+// adminURL = "http://gsebackend.com/gsebackend/";
 var apiUrl = adminURL + "index.php/json/";
 var imgpath = adminURL + "uploads/";
-var hauth = "http://gsebackend.com/gsebackend/index.php/hauth/login/";
-var uploadurl = "http://wohlig.co.in/gsebackend/index.php/json/imageUpload";
+var hauth = adminURL + "index.php/hauth/login/";
+// var uploadurl = "http://wohlig.co.in/gsebackend/index.php/json/imageUpload";
 // var uploadurl = "http://localhost/gsebackend/index.php/json/imageUpload";
 
 var navigationservice = angular.module('navigationservice', [])
