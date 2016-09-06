@@ -2051,7 +2051,7 @@ $scope.abc = '';
 
 
                 /// MAX til here
-                $.getScript("https://maps.googleapis.com/maps/api/js?key=AIzaSyCn9ypqFNxdXt9Zu2YqLcdD1Xdt2wNul9s&callback=initMap", function(data, textStatus, jqxhr) {
+                $.getScript("https://maps.googleapis.com/maps/api/js?key=AIzaSyAc75yahObocBDF_deZ7T6_rUkS8LS4t00&callback=initMap", function(data, textStatus, jqxhr) {
                     console.log(data); // Data returned
                     console.log(textStatus); // Success
                     console.log(jqxhr.status); // 200
