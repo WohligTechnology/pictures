@@ -1,9 +1,9 @@
 <section>
-  <div class="banner-movies ab">
+  <!-- <div class="banner-movies ab">
     <img ng-src="{{talentInsideDetailData.talentdetail.image | uploadpath}}" alt="" class="img-responsive">
-  </div>
+  </div> -->
   <div class="banner-movies ab">
-    <img ng-src="{{talentInsideDetailData.talentdetail.image | uploadpath}}" alt="" class="img-responsive">
+    <img ng-src="{{talentInsideDetailData.talentdetail.banner | uploadpath}}" alt="" class="img-responsive">
     <div class="banner-name ab text-center">
     <h4>{{talentInsideDetailData.talentdetail.name}}</h4>
   </div>
@@ -13,7 +13,7 @@
     <div class="container">
       <div class="row">
         <div class="col-md-8 col-md-offset-2">
-          <div class="content mt15">
+          <div class="content mt15 mt30">
             <p class="text-justify">
             {{talentInsideDetailData.talentdetail.content}}
             </p>
@@ -77,46 +77,12 @@
     </div>
   </div>
 </section>
-<div class="bg-mehendi">
+<div class="bg-mehendi" ng-if="talentInsideDetailData.featuredvideos.length>0">
 <section class="mehendi">
   <div class="mehendi-movie">
     <div class="container">
-      <!-- <div class="row">
-        <div class="col-md-offset-1 col-md-10">
-          <div class="title">
-            <h3 class="letter-spacing color-white uppercase">
-              FEATURED VIDEOS
-            </h3>
-          </div>
-          <div class="title">
-            <h4 class="display-inline uppercase {{styleActive}}" ng-click="doActive(1);">
-            Mehendi
-          </h4>
-            <h4 class="display-inline uppercase {{styleNoActive}}" ng-click="doActive(2);">
-            Sangeet
-          </h4>
-          </div>
-          <div class="slider-client">
-            <flex-slider slide="image in video track by $index" slider-id="slider" prev-text="" next-text="" sync="#carousel" slideshow="false" animation="slide">
-              <li>
-                <div class="">
-                  <img src="{{image.img}}" alt="" class="img-responsive">
-                </div>
-              </li>
-            </flex-slider>
-            <i class="fa fa-play"></i>
-            <flex-slider slide="image in vid track by $index" ng-if="styleNoActive == 'vactive'" slider-id="slider" prev-text="" next-text="" sync="#carousel" slideshow="false" animation="slide">
-              <li>
-                <div class="">
-                  <img src="{{image.img}}" alt="" class="img-responsive">
-                </div>
-              </li>
-            </flex-slider>
-          </div>
-        </div>
-      </div> -->
       <div class="row">
-        <div class="col-md-offset-1 col-md-10" ng-if="talentInsideDetailData.featuredvideos.length>0">
+        <div class="col-md-offset-1 col-md-10">
           <div class="title">
             <h3 class="letter-spacing color-white uppercase">
             FEATURED VIDEOS
@@ -145,7 +111,7 @@
     <div class="row">
       <div class="col-md-offset-1 col-md-10">
         <div class="image-navigation">
-          <flex-slider slide="image in talentInsideDetailData.featuredvideos track by $index" animation="slide" animation-loop="false" item-width="280" item-margin="40" as-nav-for="#slider" slideshow="false" control-nav="false" prev-text="" next-text="" slider-id="carousel" animation-loop="false">
+          <flex-slider slide="image in talentInsideDetailData.featuredvideos track by $index" animation="slide" animation-loop="false" item-width="265" item-margin="63" as-nav-for="#slider" slideshow="false" control-nav="false" prev-text="" next-text="" slider-id="carousel" animation-loop="false">
             <li>
               <div class="row">
                 <img src="{{image.url | youtubethumb:false}}" alt="">
