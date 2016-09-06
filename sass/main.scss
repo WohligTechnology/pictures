@@ -4821,6 +4821,23 @@ h4.title-movies {
     left: 0;
 }
 
+.bordr-color{
+  &:hover{
+    .overlay1{
+      display: block;
+    }
+  }
+  &:before{
+    border-bottom-color:#f0f0f0;
+    display: none;
+  }
+  &:after{
+    border-bottom-color:#f0f0f0;
+display: none;
+  }
+}
+
+
 .mice-img-list:before,
 .sport-img-list:before,
 .wedd-img-list:before,
@@ -4989,6 +5006,26 @@ h4.title-movies {
     top: 0;
     bottom: 0;
     right: 0;
+}
+.overlay1 {
+    background: rgba(0,0,0,0.5);
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    display: none;
+    cursor: pointer;
+    span{
+      color: white;
+      font-size:22px;
+      font-weight: 600;
+      text-transform: uppercase;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      @include transform (translate(-50%,-50%));
+    }
 }
 
 .releasedate {

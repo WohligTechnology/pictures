@@ -20,15 +20,18 @@
   <section class="bg-blog">
     <div class="container">
       <div class="row">
-        <div class="col-sm-9" ng-if="mediadatadetail.length>0">
+        <div class="col-md-12 col-sm-12" ng-if="mediadatadetail.length>0">
           <div class="bg-grey-similar bg-sports">
             <div class="bg-moviesdiaries">
               <div class="pd-side">
                 <div class="row">
-                  <div class="col-md-6" ng-repeat="data in mediadatadetail track by $index">
+                  <div class="col-md-4 col-sm-4" ng-repeat="data in mediadatadetail track by $index">
                     <div class="wed-box border-red">
-                      <div class="wed-img-list">
+                      <div class="wed-img-list bordr-color">
                         <img ng-src="{{data.image | uploadpath}}" alt="" class="img-responsive">
+                        <a href="{{data.url}}" target="_new"><div class="overlay1">
+                            <span> VIEW PRESS</span>
+                           </div></a>
                       </div>
                       <div class="wed-desc">
                         <div class="wed-desc-inside">
@@ -59,38 +62,7 @@
             </div>
           </div>
         </div>
-        <div class="col-md-3">
-          <div class="text-center wed-boxs border-red blog-side-diaries">
-            <div class="title-subtitle">
-              <h4 class="uppercase color-red bold letter-spacing">View</h4>
-            </div>
-            <ul class="list-unstyled">
-              <li><a class="uppercase med" ng-repeat="data in mediadata" ui-sref="media_corner({year:data.year})"> {{data.year}}</a></li>
-              <!-- <li><a href="" class="uppercase"> 2015</a></li>
-            <li><a href="" class="uppercase"> 2014</a></li>
-            <li><a href="" class="uppercase"> 2013</a></li>
-            <li><a href="" class="uppercase"> 2012</a></li>
-            <li><a href="" class="uppercase"> 2011</a></li>
-            <li><a href="" class="uppercase"> 2010</a></li>
-            <li><a href="" class="uppercase">ARCHIVES</a></li> -->
-            </ul>
-            <div class="border-blue bborders"></div>
-          </div>
-          <div class="text-center wed-boxs blog-side-diaries border-red">
-            <div class="title-subtitle">
-              <h4 class="uppercase color-red bold letter-spacing">CATEGORIES</h4>
-            </div>
-            <ul class="list-unstyled">
-              <li><a href="" class="uppercase" ui-sref="movies">MOVIES</a></li>
-              <li><a href="" class="uppercase" ui-sref="wedding">WEDDINGS</a></li>
-              <li><a href="" class="uppercase" ui-sref="sports">SPORTS</a></li>
-              <li><a href="" class="uppercase" ui-sref="event">EVENTS</a></li>
-              <li><a href="" class="uppercase" ui-sref="mice">MICE</a></li>
-              <li><a href="" class="uppercase" ui-sref="worldtour">WORLD TOUR</a></li>
-            </ul>
-            <div class="border-blue bborders"></div>
-          </div>
-        </div>
+
       </div>
     </div>
   </section>
