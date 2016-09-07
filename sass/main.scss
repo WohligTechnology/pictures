@@ -4853,8 +4853,30 @@ padding-top: 10px;
   background-size: cover;
 }
 .abt8{}
+.bus-ul{
+ul{
+  padding-left: 0;
+    list-style: none;
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+    li{
+      display: inline-block;
+    padding: 0px 25px;
+    text-align: center;
+    }
+}
 
+}
+.bus-hgt{
+  margin: 0 auto;
+  text-align: center;
+  img{
+    height: 130px;
+    text-align: center;
+  }
 
+}
 .banner-wt {
     top: 52%;
     left: 52%;
