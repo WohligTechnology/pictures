@@ -3290,6 +3290,21 @@ h4.title-movies {
     font-size: 21px;
 }
 
+.statement2 {
+    color: #f13748;
+    font-weight: 600;
+    font-size: 21px;
+}
+
+.icon-tag{
+  font-family: Lato;
+color:  #646464;
+font-size: 35.97px;
+font-weight: 700;
+line-height: 16.351px;
+text-align: center;
+}
+
 .ship {
     border-right: 1px dashed #3f3f3f;
     border-left: 1px dashed #3f3f3f;
@@ -4755,20 +4770,51 @@ h4.title-movies {
 .ps-absulate{
   position: absolute;
 }
-
-.icon-block{
-  display: block;
+.icon-padd{
+  padding-left: 40px;
+  padding-right: 40px;
+  //border-left: 1px solid rgba(100, 100, 100, 0.5);
+  border-right: 1px solid rgba(100, 100, 100, 0.5);
 }
 
-.icon-inline{
-  display: inline;
+.no-border{
+  border: none;
 }
-
 .abt2{
-  //background-image: ;
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+.icon-list{
+  text-align: center;
+  padding-top: 30px;
 }
 .abt4{
   background-color: #f3364a;
+  // text-align: center;
+  color: #ffffff;
+}
+.lead-name{
+  text-align: left;
+  font-family: Lato;
+  font-size: 30px;
+  font-weight: 700;
+  text-transform: capitalize;
+}
+.lead-text{
+  font-family: Lato;
+  font-size: 20px;
+}
+.banner-about{
+  h4{
+    text-align: center;
+  }
+}
+.man-name{
+  text-align: center;
+}
+
+.ldr-border{
+  border-bottom: 1px solid #ffffff;
 }
 .abt5{
   background-color: #f1f1f1;
