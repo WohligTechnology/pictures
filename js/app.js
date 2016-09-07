@@ -78,6 +78,11 @@ firstapp.config(function($stateProvider, $urlRouterProvider, $httpProvider, $loc
             templateUrl: "views/template.html",
             controller: 'JppCtrl'
         })
+        .state('aboutus', {
+            url: "/aboutus",
+            templateUrl: "views/template.html",
+            controller: 'AboutCtrl'
+        })
         .state('jppseason1', {
             url: "/jppseason1/:id",
             templateUrl: "views/template.html",

@@ -107,6 +107,18 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             console.log('$scope.diariesAuthorData', $scope.diariesAuthorData);
         });
     })
+    .controller('AboutCtrl', function($scope, TemplateService, NavigationService, $timeout, $state, $stateParams) {
+        //Used to name the .html file
+        $scope.template = TemplateService.changecontent("aboutus");
+        $scope.menutitle = NavigationService.makeactive("About Us");
+        TemplateService.title = $scope.menutitle;
+        $scope.navigation = NavigationService.getnav();
+
+        NavigationService.getDiariesAuthor($stateParams.id, function(data) {
+            $scope.diariesAuthorData = data.data;
+            console.log('$scope.diariesAuthorData', $scope.diariesAuthorData);
+        });
+    })
 
 
 .controller('MoviesCtrl', function($scope, TemplateService, NavigationService, $timeout, $state) {
