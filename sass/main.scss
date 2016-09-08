@@ -246,7 +246,7 @@ a {
 .menu-out {
     height: 310px;
     @include transform(translateX(-300px));
-    @include transition(all 300ms linear);
+    // @include transition(all 300ms linear);
     z-index: 999;
     position: absolute;
     width: 300px;
@@ -258,7 +258,7 @@ a {
     background: url('../img/menubg.png')no-repeat;
     background-size: cover;
     @include transform(translateX(0));
-    @include transition(all 300ms linear);
+    // @include transition(all 300ms linear);
     position: fixed;
     width: 320px;
     z-index: 999;
@@ -290,7 +290,8 @@ a {
     height: 80vh;
     overflow-y: scroll;
     overflow-x: hidden;
-    @include transition(all ease 300ms);
+    //
+    // @include transition(all ease 300ms);
 }
 
 .nav-list {
@@ -345,7 +346,7 @@ a {
     }
 
     ::-webkit-scrollbar {
-        width: 10px;
+        width: 0px;
     }
     /* Track */
     ::-webkit-scrollbar-track {
@@ -364,27 +365,9 @@ a {
     ::-webkit-scrollbar-thumb:window-inactive {
         background: rgba(255,255,255,0.4);
     }
-
-    ::-webkit-scrollbar {
-        width: 10px;
-    }
-    /* Track */
-    ::-webkit-scrollbar-track {
-        -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
-        -webkit-border-radius: 10px;
-        border-radius: 10px;
-    }
-    /* Handle */
-    ::-webkit-scrollbar-thumb {
-        -webkit-border-radius: 10px;
-        border-radius: 10px;
-        background: rgba(255,255,255,0.8);
-        -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5);
-    }
-
-    ::-webkit-scrollbar-thumb:window-inactive {
-        background: rgba(255,255,255,0.4);
-    }
+}
+.btn{
+  @include transition(all ease 300ms);
 }
 
 .btnsign {
@@ -862,7 +845,7 @@ ul.nav-opt1 {
     background-size: 100%;
 
     .diary {
-        margin-top: 230px;
+        margin-top: 170px;
         margin-bottom: 20px;
 
         h4 {
@@ -1194,14 +1177,15 @@ footer {
         }
 
         .madein {
-            font-size: 18px;
+            font-size: 12px;
             font-weight: 300;
             line-height: 0.8;
             font-family: "Oxygen";
 
             img {
-                width: 20px;
+                width: 12px;
                 vertical-align: middle;
+                margin: 0 2px;
             }
         }
     }
@@ -2594,7 +2578,7 @@ h4.title-movies {
 
     .btn.btn-danger.btn-ouline {
         border: 1px solid #fff;
-
+  @include transition(all ease 300ms);
         &:hover {
             color: #e23c3c;
             background-color: #fff;

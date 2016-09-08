@@ -15,8 +15,18 @@
         <div class="row">
             <div class="col-sm-9">
                 <div class="bthead">
-                    <h3 class="text-uppercase">{{blogVideoData.description.name}}</h3>
-                    <p class="date-time">{{mydate | date : " d'th' MMMM y '|' h:mm a"}}</p>
+                    <div class="pull-left">
+                      <h3 class="text-uppercase">{{blogVideoData.description.name}}</h3>
+                      <p class="date-time">{{mydate | date : " d'th' MMMM y '|' h:mm a"}}</p>
+                    </div>
+                    <div class="pull-right">
+                      <span class="social-share">
+                        <span class='st_facebook_large' displayText='Facebook'></span>
+                      <span class='st_twitter_large' displayText='Tweet'></span>
+                      <span class='st_email_large' displayText='Email'></span>
+                      </span>
+                    </div>
+                    <div class="clearfix"></div>
                 </div>
                 <div class="nimage">
                     <div class="videolink">
@@ -77,7 +87,7 @@
                 </div>
                 <div class="bgcomment">
                     <div class="comment-box">
-                        <p><span>{{blogVideoData.comments.length}} <span> comments . </p>
+                        <p>comments . <span>{{blogVideoData.comments.length}} </span></p>
                     <div class="row" ng-hide="blogCommentData.value==false">
                       <form name="comment">
                       <div class="col-md-2">
