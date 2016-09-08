@@ -3293,33 +3293,48 @@ h4.title-movies {
 .statement2 {
     color: #f13748;
     font-weight: 600;
-    font-size: 20px;
+    font-size: 30px;
     margin-top: -10px;
 }
 .statement4 {
     color: #f13748;
     font-weight: 900;
     font-size: 20px;
-    margin-top: -10px;
+    margin-top: 0px;
+    letter-spacing: 1px;
 }
 .statement3 {
     color: #f13748;
     font-weight: 600;
-    font-size: 20px;
+    font-size: 24px;
     margin-bottom: 40px;
-    margin-top: 40px;
+    margin-top: 20px;
+    letter-spacing: 3px;
 }
+
+.glbl-p{
+  margin-bottom: 30px;
+}
+
 .ldr-color{
   color: #ffffff;
 }
 .glbl-cont{
   font-size:14px;
+  padding: 0 0 5px;
+  p{
+    padding:0 0 5px;
+    margin: 0px;
+  }
+}
+.btn-spacn{
+  padding-right: 5px;
 }
 
 .icon-tag{
   font-family: Lato;
 color:  #646464;
-font-size: 16px;
+font-size: 18px;
 font-weight: 700;
 text-align: center;
 padding-top: 10px;
@@ -4799,9 +4814,28 @@ padding-top: 10px;
 .no-border{
   border: none;
 }
+.main-bn{
+  position: absolute;
+    top: 110px;
+}
+.abt1{
+  background-image: url('../img/abt-miss.png') !important;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 320px;
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
 .abt2{
   padding-top: 40px;
   padding-bottom: 40px;
+}
+.miss-txt{
+  color: #ffffff;
+  text-align: center;
+  font-size: 18px;
+//  text-transform: capitalize;
+  margin-bottom: 20px;
 }
 .icon-list{
   text-align: center;
@@ -4810,6 +4844,7 @@ padding-top: 10px;
 .abt4{
   background-color: #f3364a;
   color: #ffffff;
+  padding-top: 40px;
 }
 .lead-name{
   text-align: left;
@@ -4817,6 +4852,7 @@ padding-top: 10px;
   font-size: 18px;
   font-weight: 700;
   text-transform: capitalize;
+  line-height: 5px;
 }
 .lead-text{
   font-family: Lato;
@@ -4827,6 +4863,16 @@ padding-top: 10px;
     text-align: center;
   }
 }
+.abt-title{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  color:green;
+  font-family: Lato;
+}
+.top-align{
+  margin-top: 360px;
+}
 .man-name{
   font-family: Lato;
   color:  #646464;
@@ -4834,14 +4880,24 @@ padding-top: 10px;
   font-weight: 700;
   text-align: center;
   padding-top: 10px;
-  text-transform: uppercase;;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 .btn-padd{
   margin-right: 40px;
+  padding-left: 15px;
+  padding-right: 15px;
 }
+.btn-margin{
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+
+
 .ldr-border{
   border-bottom: 1px solid #ffffff;
-  padding-bottom: 15px;
+  padding-bottom: 20px;
 }
 .abt5{
   background-color: #f1f1f1;
@@ -4853,9 +4909,12 @@ padding-top: 10px;
   background-size: cover;
 }
 .abt8{}
+.man-cont{
+      margin-bottom: 20px;
+}
 .bus-ul{
 ul{
-  padding-left: 0;
+  padding: 0 12px;
     list-style: none;
     display: block;
     margin: 0 auto;
@@ -4877,6 +4936,13 @@ ul{
   }
 
 }
+.blk-mail{
+  color:#333333;
+  &:hover{
+    color: #333333;
+  }
+}
+
 .banner-wt {
     top: 52%;
     left: 52%;
