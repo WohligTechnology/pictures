@@ -2598,7 +2598,7 @@ h4.title-movies {
         color: #fff;
         text-transform: uppercase;
         @include transform(translate(-50%,-50%));
-        font-size: 22px;
+        font-size: 20px;
         font-weight: 600;
         width: 100%;
         padding: 8px 20px;
@@ -5252,9 +5252,14 @@ ul{
 
 .client-img {
     img {
-        width: 65%;
         margin: 0 auto 15px;
     }
+}
+.pb5{
+  padding-bottom: 5px;
+}
+.h30{
+  height: 30px !important;
 }
 /* Start writing sass here */
 @import "fancybox-override";

@@ -146,7 +146,7 @@
         <div class="pd-side">
             <div class="row">
                 <div class="col-md-4 col-sm-4 col-xs-6" ng-repeat="data in seasonData.relatedarticles track by $index">
-                    <div class="wed-box border-red">
+                    <div class="wed-box border-red pb5">
                         <div class="wed-img-list sport-img-list">
                             <img ng-src="{{data.image | uploadpath}}" alt="" class="img-responsive">
                             <div class="ribbon-red">
@@ -158,8 +158,8 @@
                             <div class="wed-date">
                                 <span>{{data.date | date:"dd MMMM yyyy"}}</span>
                             </div>
-                            <div class="wed-desc-inside">
-                                <p class="bold">{{data.content}}</p>
+                            <div class="wed-desc-inside h30">
+                                <p class="bold text-uppercase">{{data.name}}</p>
                             </div>
                             <div class="read-more">
                                 <a class="color-black" ui-sref="asfcdetail({id:data.id})">Read More</a>
