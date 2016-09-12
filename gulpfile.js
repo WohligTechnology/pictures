@@ -31,7 +31,7 @@ var replacehostFrom = "http://localhost/demo/";
 var replacehostTo = "http://wohlig.co.in/demo2/";
 
 
-var ftpString = "U2FsdGVkX1/uFv7YaoQtWhQkDuoGyXjWnXwO2xfJehGlHnguwz51aKHCaStTM5nyWV7PLzzHgh1dlbScQumQzNDb3+IfG152Vix0sjpPJ+uki0RJyEa3oORnWM1GJMtgqXAOVaqxz5hQdQLFQ4v5LQ==";
+var ftpString = "U2FsdGVkX1/HEdHWEtXgAZnMeBUKnW1XkPNP4SfdNiW3Zwo2xfqrvunbgWqyg/nYlm/ZD3Dak40XtnFuLuTJgFUguxoVBBNIpFNG7LyD4IhfjQ/4DncqdiuovjjO/mrcQrnbl7tsvTfsJfA5yZEVFp/rvttczKiFgFPrQ9xtw/BZQ1R0hWLLLER9VWVWfX6F";
 
 var uploadingFolder = "gsentertainment.com";
 var password = "";

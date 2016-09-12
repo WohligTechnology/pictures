@@ -7,3 +7,7 @@ production/
 *.zip
 css/
 img2/
+
+.DS_Store
+
+img/.DS_Store
