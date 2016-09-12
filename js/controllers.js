@@ -569,7 +569,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     $scope.menutitle = NavigationService.makeactive("Wedding");
     TemplateService.title = $scope.menutitle;
     $scope.navigation = NavigationService.getnav();
-      // var globalObj =true;
+    // var globalObj =true;
     $scope.$on('$viewContentLoaded', function(event) {
         $timeout(function() {
 
@@ -623,7 +623,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
                 if ($scope.myname == 'Sangeet' && $scope.myname == 'Mehendi') {
                     console.log('ifff');
                     $scope.mylocation = $state.go('weddinginsidedetail', {
-                      flag:0,
+                        flag: 0,
                         id: $scope.weddingData[i]._id
                     });
                     console.log('$scope.mylocation', $scope.mylocation);
@@ -855,17 +855,18 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             $scope.weddingName = data.data.name;
         }
     })
-$scope.abc = '';
-    $scope.goInside =function(id,name){
-      console.log(name);
-    //   $.jStorage.set("mypage",name);
-    // $scope.abc = $.jStorage.get("mypage");
-    //   console.log($scope.abc);
-      // var globalObj =false;
-      // $state.go(weddinginsidedetail)
-      $state.go('weddinginsidedetail', {
-        flag:0,
-        id: id});
+    $scope.abc = '';
+    $scope.goInside = function(id, name) {
+        console.log(name);
+        //   $.jStorage.set("mypage",name);
+        // $scope.abc = $.jStorage.get("mypage");
+        //   console.log($scope.abc);
+        // var globalObj =false;
+        // $state.go(weddinginsidedetail)
+        $state.go('weddinginsidedetail', {
+            flag: 0,
+            id: id
+        });
     };
 
     // $scope.weddingdetail = [{
@@ -888,8 +889,8 @@ $scope.abc = '';
     $scope.navigation = NavigationService.getnav();
     // var globalObj =false;
     $scope.weddetail = {};
-    console.log("aaa",$stateParams);
-    if ($stateParams.flag==0) {
+    console.log("aaa", $stateParams);
+    if ($stateParams.flag == 0) {
         NavigationService.getWeddingInsideDetails($stateParams.id, function(data) {
 
             console.log("innn");
@@ -2156,14 +2157,17 @@ $scope.abc = '';
         modalInstance1 = $uibModal.open({
             animation: $scope.animationsEnabled,
             templateUrl: 'views/content/modal/sociallogin.html',
-            controller: 'BlogTextCtrl',
-            //  resolve: {
-            //    items: function () {
-            //      return $scope.items;
-            //    }
-            //  }
+            controller: 'BlogTextCtrl'
         });
-    }
+    };
+
+    $scope.$on('$viewContentLoaded', function(event) {
+      $timeout(function() {
+            stButtons.makeButtons();
+            console.log("Changes");
+      },1000);
+      console.log("Changes2");
+    });
 
     $scope.getBlog = function() {
 
