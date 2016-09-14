@@ -7,3 +7,7 @@ production/
 *.zip
 css/
 img2/
+npm-debug.log
+.DS_Store
+npm-debug.log
+img/.DS_Store
