@@ -40,7 +40,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
                 }(document, 'script', 'facebook-jssdk'));
 
 
-            }, 0);
+            }, 1000);
         });
 
         //
@@ -151,7 +151,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             }(document, 'script', 'facebook-jssdk'));
 
 
-        }, 0);
+        }, 1000);
     });
 
     $scope.getin = {};
@@ -289,7 +289,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             }(document, 'script', 'facebook-jssdk'));
 
 
-        }, 0);
+        }, 1000);
     });
 
     NavigationService.getMovieInside($stateParams.id, function(data) {
@@ -471,7 +471,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             }(document, 'script', 'facebook-jssdk'));
 
 
-        }, 0);
+        }, 1000);
     });
 
     $scope.oneAtATime = true;
@@ -594,7 +594,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             }(document, 'script', 'facebook-jssdk'));
 
 
-        }, 0);
+        }, 1000);
     });
 
     $scope.oneAtATime = true;
@@ -955,7 +955,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             }(document, 'script', 'facebook-jssdk'));
 
 
-        }, 0);
+        }, 1000);
     });
 
     // $scope.clientimage = [{
@@ -1046,7 +1046,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             }(document, 'script', 'facebook-jssdk'));
 
 
-        }, 0);
+        }, 1000);
     });
 
     // $scope.asfcdetail = [{
@@ -1255,7 +1255,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             }(document, 'script', 'facebook-jssdk'));
 
 
-        }, 0);
+        }, 1000);
     });
 
     var id = '1';
@@ -1568,7 +1568,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
                 }(document, 'script', 'facebook-jssdk'));
 
 
-            }, 0);
+            }, 1000);
         });
 
         $scope.oneAtATime = true;
@@ -1713,7 +1713,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
                 }(document, 'script', 'facebook-jssdk'));
 
 
-            }, 0);
+            }, 1000);
         });
 
         var id = '3';
@@ -2072,7 +2072,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
                 });
 
 
-            }, 0);
+            }, 1000);
 
 
         });
@@ -2162,11 +2162,11 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     };
 
     $scope.$on('$viewContentLoaded', function(event) {
-      $timeout(function() {
+        $timeout(function() {
             stButtons.makeButtons();
             console.log("Changes");
-      },1000);
-      console.log("Changes2");
+        }, 1000);
+        console.log("Changes2");
     });
 
     $scope.getBlog = function() {
@@ -2838,7 +2838,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
                 }(document, 'script', 'facebook-jssdk'));
 
 
-            }, 0);
+            }, 1000);
         });
 
         $scope.formData = {};
@@ -2997,7 +2997,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
                 }(document, 'script', 'facebook-jssdk'));
 
 
-            }, 0);
+            }, 1000);
         });
 
         NavigationService.getMiceInsideBanner($stateParams.id, function(data) {
@@ -3201,7 +3201,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
                 }(document, 'script', 'facebook-jssdk'));
 
 
-            }, 0);
+            }, 1000);
         });
 
         $scope.oneAtATime = true;
@@ -3364,7 +3364,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
                 }(document, 'script', 'facebook-jssdk'));
 
 
-            }, 0);
+            }, 1000);
         });
 
         NavigationService.getEventInsideBanner($stateParams.id, function(data) {
@@ -3512,7 +3512,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
                 }(document, 'script', 'facebook-jssdk'));
 
 
-            }, 0);
+            }, 1000);
         });
 
 
@@ -3628,7 +3628,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
                 }(document, 'script', 'facebook-jssdk'));
 
 
-            }, 0);
+            }, 1000);
         });
 
         $scope.tourdata = {};
@@ -3864,7 +3864,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
                 }(document, 'script', 'facebook-jssdk'));
 
 
-            }, 0);
+            }, 1000);
         });
 
         NavigationService.getWorldtourInside($stateParams.id, function(data) {
