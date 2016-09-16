@@ -28,8 +28,8 @@
                 <div class="flex-slider" ng-if="tourdata.worldtourpast.length>0">
                     <flex-slider flex-slide="data in tourdata.worldtourpast track by $index" ng-if="styleActives == 'mactives'" animation="slide" animation-loop="false" item-width="218" item-margin="10">
                         <li>
-                            <div class="movie-box text-center">
-                                <img ui-sref="worldtourinside({id:data.id})" ng-src="{{data.image | uploadpath}}" alt="{{data.image}}" class="img-responsive">
+                            <div class="movie-box text-center" ng-if="data.image">
+                                <img ui-sref="worldtourinside({id:data.id})" ng-src="{{data.image | uploadpath}}" alt="{{data.image}}" class="img-responsive" >
                                 <div class="wt-data">
                                     <h4>{{data.name}}</h4>
                                     <p>{{data.location}}</p>
@@ -43,7 +43,7 @@
                 <div class="flex-slider" ng-if="tourdata.worldtourupcoming.length>0">
                     <flex-slider flex-slide="data in tourdata.worldtourupcoming track by $index" ng-if="styleNoActives == 'mactives'" animation="slide" animation-loop="false" item-width="218" item-margin="10">
                         <li>
-                            <div class="movie-box text-center">
+                            <div class="movie-box text-center" ng-if="data.image">
                                 <img ui-sref="worldtourinside({id:data.id})" ng-src="{{data.image | uploadpath}}" alt="" class="img-responsive">
                                 <div class="wt-data">
                                     <h4>{{data.name}}</h4>
@@ -53,6 +53,9 @@
                             </div>
                         </li>
                     </flex-slider>
+                </div>
+                <div class="movie-box text-center" ng-if="!data.image">
+                  <h4 class="text-center">No data found</h4>
                 </div>
             </div>
         </div>
@@ -187,7 +190,7 @@
                 <div class=img-holder><img ng-src="{{data.image | uploadpath}}" class=img-reponsive></div>
                 <div class="img-review color-white">
                     <h4>{{data.quote}}</h4>
-                    <p>{{data.name}}</p>
+                    <p>{{data.author}}</p>
                     <!-- <h4>"Awesome teamwork and planning"</h4>
                     <p>- Ranbir Kapoor</p> -->
                 </div>
