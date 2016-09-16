@@ -16,15 +16,15 @@
             <div class="col-sm-9">
                 <div class="bthead">
                     <div class="pull-left">
-                      <h3 class="text-uppercase">{{blogImageData.description.name}}</h3>
-                      <p class="date-time">{{mydate | date : " d'th' MMMM y '|' h:mm a"}}</p>
+                        <h3 class="text-uppercase">{{blogImageData.description.name}}</h3>
+                        <p class="date-time">By {{blogImageData.description.authorname}} | {{blogImageData.description.date | date : " d MMMM y"}}</p>
                     </div>
                     <div class="pull-right">
-                      <span class="social-share">
+                        <span class="social-share">
                         <span class='st_facebook_large' displayText='Facebook'></span>
-                      <span class='st_twitter_large' displayText='Tweet'></span>
-                      <span class='st_email_large' displayText='Email'></span>
-                      </span>
+                        <span class='st_twitter_large' displayText='Tweet'></span>
+                        <span class='st_email_large' displayText='Email'></span>
+                        </span>
                     </div>
                     <div class="clearfix"></div>
                 </div>
@@ -77,52 +77,53 @@
                 <div class="bgcomment">
                     <div class="comment-box">
                         <p>comments . <span>{{blogTextData.comments.length}}</span></p>
-                      <div class="row" ng-hide="blogCommentData.value==false">
-                        <form name="comment">
-                        <div class="col-md-2">
-                          <div class="profilephoto">
-                            <img ng-src="{{blogCommentData.image}}" alt="No Profile Photo Found." class="img-responsive">
-                          </div>
+                        <div class="row" ng-hide="blogCommentData.value==false">
+                            <form name="comment">
+                                <div class="col-md-2">
+                                    <div class="profilephoto">
+                                        <img ng-src="{{blogCommentData.image}}" alt="No Profile Photo Found." class="img-responsive">
+                                    </div>
+                                </div>
+                                <div class="col-md-10">
+                                    <textarea name="name" ng-model="blogCommentData.comment" class="form-control" required></textarea>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="submit-btn btn-all text-right mt15">
+                                        <button class="btn btn-danger" type="button" name="button" ng-class="{'disabled' : !comment.$valid }" ng-click="comment.$valid && commentSubmit(blogCommentData)" style="">submit</button>
+                                    </div>
+                                </div>
+                            </form>
                         </div>
-                        <div class="col-md-10">
-                          <textarea name="name" ng-model="blogCommentData.comment" class="form-control" required></textarea>
-                        </div>
-                        <div class="col-md-12">
-                        <div class="submit-btn btn-all text-right mt15">
-                                <button class="btn btn-danger" type="button" name="button" ng-class="{'disabled' : !comment.$valid }" ng-click="comment.$valid && commentSubmit(blogCommentData)" style="">submit</button>
-                             </div></div>
-                      </form>
-                      </div>
-                      <hr>
+                        <hr>
                     </div>
-                      <div class="comments" ng-repeat="data in blogImageData.comments track by $index">
+                    <div class="comments" ng-repeat="data in blogImageData.comments track by $index">
                         <div class="row">
-                          <div class="col-md-2">
-                            <div class="profilephoto">
-                              <img ng-src="{{data.image}}" alt="" class="img-responsive">
+                            <div class="col-md-2">
+                                <div class="profilephoto">
+                                    <img ng-src="{{data.image}}" alt="" class="img-responsive">
+                                </div>
                             </div>
-                          </div>
-                          <div class="col-md-10">
-                            <div class="commented">
-                              <p>{{data.name}}</p>
-                              <span>{{data.timestamp | timeago}}</span>
-                            <div class="paras">
-                                <p>{{data.comment}}</p>
+                            <div class="col-md-10">
+                                <div class="commented">
+                                    <p>{{data.name}}</p>
+                                    <span>{{data.timestamp | timeago}}</span>
+                                    <div class="paras">
+                                        <p>{{data.comment}}</p>
+                                    </div>
+                                </div>
                             </div>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
-    </div>
-    <div class="col-md-3">
-        <div class="text-center wed-boxs blog-side-diaries border-red">
-            <div class="title-subtitle">
-                <h4 class="uppercase color-red bold letter-spacing">CATEGORIES</h4>
-            </div>
-            <ul class="list-unstyled">
-                <li><a href="" class="uppercase" ng-repeat="cat in diaryData.category" ui-sref="diaries({category:cat.id})">{{cat.name}}</a></li>
-                <!-- <li><a href="" class="uppercase">WEDDINGS</a></li>
+            <div class="col-md-3">
+                <div class="text-center wed-boxs blog-side-diaries border-red">
+                    <div class="title-subtitle">
+                        <h4 class="uppercase color-red bold letter-spacing">CATEGORIES</h4>
+                    </div>
+                    <ul class="list-unstyled">
+                        <li><a href="" class="uppercase" ng-repeat="cat in diaryData.category" ui-sref="diaries({category:cat.id})">{{cat.name}}</a></li>
+                        <!-- <li><a href="" class="uppercase">WEDDINGS</a></li>
                 <li><a href="" class="uppercase">SPORTS</a></li>
                 <li><a href="" class="uppercase">EVENTS</a></li>
                 <li><a href="" class="uppercase">TALENT</a></li>
@@ -131,10 +132,10 @@
                 <li><a href="" class="uppercase">NEWS</a></li>
                 <li><a href="" class="uppercase">PHOTOS</a></li>
                 <li><a href="" class="uppercase">VIDEOS</a></li> -->
-            </ul>
-            <div class="border-blue bborders bb6"></div>
-        </div>
-        <!-- <div class="text-center wed-boxs border-red blog-side-diaries">
+                    </ul>
+                    <div class="border-blue bborders bb6"></div>
+                </div>
+                <!-- <div class="text-center wed-boxs border-red blog-side-diaries">
             <div class="title-subtitle">
                 <h4 class="uppercase color-red bold letter-spacing">ARCHIVES</h4>
             </div>
@@ -152,38 +153,38 @@
             </div>
             <div class="border-blue bborders"></div>
         </div> -->
-        <div class="text-center">
-            <div class="article">
-                <div class="article-title">
-                    <h4 class="uppercase color-red">RELATED ARTICLES</h4>
+                <div class="text-center">
+                    <div class="article">
+                        <div class="article-title">
+                            <h4 class="uppercase color-red">RELATED ARTICLES</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="related" ng-repeat="data in blogImageData.relatedarticles track by $index">
+                    <div class="wed-box border-red">
+                        <div class="wed-img-list blog-img-list">
+                            <img ng-src="{{data.image|uploadpath}}" alt="" class="img-responsive">
+                            <div class="red-ribbon red-ribbon-dairies">
+                                <img src="img/ribbon_red.png" alt="">
+                                <span class="color-white uppercase">{{data.categoryname}}</span>
+                            </div>
+                        </div>
+                        <div class="blog-desc">
+                            <div class="wed-desc-inside">
+                                <p class="bold text-uppercase">{{data.name}}</p>
+                            </div>
+                            <div class="wed-date">
+                                <span>{{data.date | date:"dd MMMM yyyy"}}</span>
+                            </div>
+                            <div class="read-more">
+                                <a href="" class="color-black" ng-click="readMore(data);">Read More</a>
+                            </div>
+                        </div>
+                        <div class="border-blue bborders bborders1"></div>
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="related" ng-repeat="data in blogImageData.relatedarticles track by $index">
-            <div class="wed-box border-red">
-                <div class="wed-img-list blog-img-list">
-                    <img ng-src="{{data.image|uploadpath}}" alt="" class="img-responsive">
-                    <div class="red-ribbon red-ribbon-dairies">
-                        <img src="img/ribbon_red.png" alt="">
-                        <span class="color-white uppercase">{{data.categoryname}}</span>
-                    </div>
-                </div>
-                <div class="blog-desc">
-                    <div class="wed-desc-inside">
-                        <p class="bold text-uppercase">{{data.name}}</p>
-                    </div>
-                    <div class="wed-date">
-                        <span>{{data.date | date:"dd MMMM yyyy"}}</span>
-                    </div>
-                    <div class="read-more">
-                        <a href="" class="color-black" ng-click="readMore(data);">Read More</a>
-                    </div>
-                </div>
-                <div class="border-blue bborders bborders1"></div>
-            </div>
-        </div>
-    </div>
-    </div>
     </div>
 </section>
 

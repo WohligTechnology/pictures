@@ -816,6 +816,10 @@ ul.nav-opt1 {
     }
 }
 
+li.flex-nav-next {
+    display: none;
+}
+
 .bg2 {
     background: url('../img/home/home-back2.png') no-repeat;
     background-size: 100%;
@@ -1765,6 +1769,7 @@ h4.title-movies {
     .thumbnail-movies li {
         padding-bottom: 10px;
         width: 87%;
+        cursor: pointer;
     }
     .plr5 {
         padding: 0 5px;
@@ -3722,8 +3727,11 @@ h4.title-movies {
     padding: 50px 0 0;
 }
 
-.video-main img {
-    width: 100%;
+.video-main {
+    cursor: pointer;
+    img {
+        width: 100%;
+    }
 }
 
 .thumbnail-movies {
