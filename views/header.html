@@ -67,11 +67,30 @@
                     </li>
                   </ul>
                 </div>
-                <button class="btnsign" type="button" name="button">SIGN UP FOR GS NEWSLETTER</button>
-                <div class="input-group" style="margin-bottom:10px;">
-                  <input type="text" class="form-control" placeholder="Enter email address">
-                  <span class="input-group-addon btn btn-danger">Go</span>
+                <button class="btnsign" type="button" name="button" data-toggle="collapse" data-target="#subscribe" ng-click="openSubscribe()" >SIGN UP FOR GS NEWSLETTER</button>
+                  <form name="subForm" class="bs-example bs-example-form collapse" role="form" id="subscribe">
+                <div class="input-group" style="margin-bottom:10px;"ng-hide="subscribeEmail || checkEmail" >
+                  <input type="email" class="form-control" placeholder="Enter email address" ng-model="subscribe.email" required>
+                  <span class="input-group-addon btn btn-danger" ng-click="subscribe(subscribe.email);" ng-disabled="subForm.$invalid">Go</span>
                 </div>
+                <!-- <button class="btnsign" type="button" name="button" ng-click="openSubscribe()" ng-hide="opensubscribe">SIGN UP FOR GS NEWSLETTER</button>
+                  <form name="subForm" class="bs-example bs-example-form" role="form">
+                <div class="input-group" style="margin-bottom:10px;" ng-show="opensubscribe" ng-controller="SubscribeCtrl">
+                  <input type="email" class="form-control" placeholder="Enter email address" ng-model="subscribe.email" required>
+                  <span class="input-group-addon btn btn-danger" ng-click="subscribe(subscribe.email);" ng-disabled="subForm.$invalid">Go</span>
+                </div> -->
+              </form>
+              <div ng-if="subscribeEmail && !checkEmail">
+                <p >
+                    <center class="color-white">Thank you for subscribing.</center>
+                </p>
+              </div>
+                <div ng-if="checkEmail && !subscribeEmail">
+                  <p >
+                      <center class="color-white">Email you provided already exists.</center>
+                  </p>
+                </div>
+
                 <h4 class="menu-title">SERVICES</h4>
                 <ul class="list-unstyled">
                   <li><a class="movies color-white" ui-sref="movies">MOVIES</a></li>

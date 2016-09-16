@@ -3641,6 +3641,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             console.log(data);
             if (data.value != false) {
                 $scope.tourdata = data.data;
+                console.log("tourdata", $scope.tourdata);
             }
             $scope.subscribe = {};
             $scope.subscribe.email = "";
@@ -3833,6 +3834,21 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         }
         $scope.doActives(1);
 
+
+        $scope.goToFunction = function(data) {
+            $scope.statusData = data;
+            if ($scope.statusData.status === '1') {
+                $state.go('worldtourinside', {
+                    id: $scope.statusData.id
+                });
+            } else {
+
+            }
+        }
+
+
+
+
     })
     .controller('WorldTourInsideCtrl', function($scope, TemplateService, NavigationService, $timeout, $stateParams) {
         //Used to name the .html file
@@ -3914,7 +3930,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             // }
             // console.log('Email subscribe: ', email);
             NavigationService.subscribe(email, function(data) {
-
+                console.log("im in", email);
                 console.log(data.value);
                 if (!data.value) {
                     if ($scope.subscribe.email) {
@@ -3950,26 +3966,29 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
 
     })
-    .controller('headerctrl', function($scope, TemplateService, NavigationService, $state, $rootScope) {
+    .controller('headerctrl', function($scope, TemplateService, NavigationService, $state, $timeout, $rootScope) {
         $scope.template = TemplateService;
         var get = false;
         $scope.getslide = "menu-out";
         $scope.getnav = function() {
-            if ($scope.getslide == "menu-in") {
-                $scope.getslide = "menu-out";
-                $scope.onebar = "";
-                $scope.secondbar = "";
-                $scope.thirdbar = "";
-                $scope.buttonpos = "";
-            } else {
-                $scope.getslide = "menu-in";
-                $scope.onebar = "firstbar";
-                $scope.secondbar = "secondbar";
-                $scope.thirdbar = "thirdbar";
-                $scope.buttonpos = "buttonpos";
+                if ($scope.getslide == "menu-in") {
+                    $scope.getslide = "menu-out";
+                    $scope.onebar = "";
+                    $scope.secondbar = "";
+                    $scope.thirdbar = "";
+                    $scope.buttonpos = "";
+                } else {
+                    $scope.getslide = "menu-in";
+                    $scope.onebar = "firstbar";
+                    $scope.secondbar = "secondbar";
+                    $scope.thirdbar = "thirdbar";
+                    $scope.buttonpos = "buttonpos";
+                }
             }
-        }
-
+            // $scope.opensubscribe = false;
+            // $scope.openSubscribe = function() {
+            //     $scope.opensubscribe = true;
+            // }
         $rootScope.$on('$stateChangeStart',
             function(event, toState, toParams, fromState, fromParams, options) {
                 $(window).scrollTop(0);
@@ -3979,4 +3998,44 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             console.log("dsfasdfasdf");
             $scope.mediadata = data.data.years[0];
         });
+
+        $scope.checkEmail = false;
+        $scope.subscribeEmail = false;
+        $scope.subscribe = function(email) {
+
+            NavigationService.subscribe(email, function(data) {
+                console.log("im in", email);
+                console.log(data.value);
+                if (!data.value) {
+                    if ($scope.subscribe.email) {
+                        $scope.checkEmail = true;
+                        $scope.subscribeEmail = false;
+                        $timeout(function() {
+
+                            $timeout(function() {
+                                $scope.checkEmail = "";
+                                $scope.subscribeEmail = "";
+                            }, 2000);
+                        }, 3000);
+
+                    }
+                } else {
+                    $scope.subscribeEmail = true;
+                    $scope.checkEmail = false;
+                    $timeout(function() {
+
+                        $timeout(function() {
+                            $scope.checkEmail = "";
+                            $scope.subscribeEmail = "";
+                        }, 2000);
+                    }, 3000);
+
+                }
+
+                $scope.subscribe.email = "";
+            });
+
+            // $scope.subscribeEmail = data;
+        };
+
     });
