@@ -5,8 +5,8 @@
   <div class="banner-movies ab">
     <img ng-src="{{seasonData.sportdetail.banner | uploadpath}}" alt="" class="img-responsive">
     <div class="banner-name ab text-center">
-    <h4>{{seasonData.sportdetail.name}}</h4>
-  </div>
+      <h4>{{seasonData.sportdetail.name}}</h4>
+    </div>
     <div class="overlay"></div>
   </div>
   <div class="banner banner-asfc text-center mt180">
@@ -31,7 +31,7 @@
         <div class="col-md-offset-1 col-md-10" ng-if="seasonData.imagegallery && seasonData.imagegallery.length>0">
           <div class="title">
             <h3 class="letter-spacing color-red uppercase">
-            Image Gallery
+              Image Gallery
             </h3>
           </div>
           <div class="mb15">
@@ -42,7 +42,7 @@
                     <div class="col-xs-4" ng-repeat="wall in row track by $index">
                       <div class="mb15">
                         <a fancybox-box ng-href="{{wall.image | uploadpath}}">
-                          <img ng-src="{{wall.image | uploadpath}}" alt="" class="img-responsive">
+                          <img ng-src="{{wall.image | uploadpath}}" alt="" class="img-responsive" rel="fancybox-button">
                         </a>
                       </div>
                     </div>
@@ -68,11 +68,10 @@
   </div>
 </section>
 <div class="bg-mehendi">
-<section class="jppseason" ng-if="seasonData.featuredvideos && seasonData.featuredvideos.length>0">
-  <div class="jpp-movie">
-    <div class="container">
-      <div class="row"
-        <div class="col-md-offset-1 col-md-10">
+  <section class="jppseason" ng-if="seasonData.featuredvideos && seasonData.featuredvideos.length>0">
+    <div class="jpp-movie">
+      <div class="container">
+        <div class="row" <div class="col-md-offset-1 col-md-10">
           <div class="title">
             <h3 class="letter-spacing color-white uppercase">
               FEATURED VIDEOS
@@ -84,7 +83,7 @@
                 <div class="video-main">
                   <!-- <img ng-src="{{image.img}}" alt="" class="img-responsive"> -->
                   <img ng-src="{{video.url | youtubethumb:false}}" alt="" class="img-responsive">
-                  <a fancybox-box href="http://www.youtube.com/embed/{{video.url | youtubethumb:true}}?autoplay=1&modestbranding=0&showinfo=0&rel=0&loop=1" rel="movies" data-fancybox-type="iframe">
+                  <a fancybox-box href="http://www.youtube.com/embed/{{video.url | youtubethumb:true}}?autoplay=1&modestbranding=0&showinfo=0&rel=0&loop=1" rel="movies" data-fancybox-type="iframe" rel="fancybox-button1">
                     <i class="fa fa-play"></i>
                   </a>
                 </div>
@@ -105,31 +104,31 @@
         </div>
       </div>
     </div>
-  </div>
-  <div class="container">
-    <div class="row">
-      <div class="col-md-offset-1 col-md-10">
-        <div class="image-navigation">
-          <flex-slider slide="image in seasonData.featuredvideos track by $index" animation="slide" animation-loop="false" item-width="265" item-margin="63" as-nav-for="#slider" slideshow="false" control-nav="false" prev-text="" next-text="" slider-id="carousel"
-            animation-loop="false">
-            <li>
-              <div class="row">
-                <!-- <img ng-src="{{image.img}}" alt=""> -->
-                <img ng-src="{{image.url | youtubethumb:false}}" alt="">
-              </div>
-            </li>
-          </flex-slider>
-          <!-- <flex-slider slide="image in seasonData.featuredvideos track by $index" animation="slide" animation-loop="false" item-width="280" item-margin="40" as-nav-for="#slider" slideshow="false" control-nav="false" prev-text="" next-text="" slider-id="carousel" animation-loop="false">
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-md-offset-1 col-md-10">
+      <div class="image-navigation">
+        <flex-slider slide="image in seasonData.featuredvideos track by $index" animation="slide" animation-loop="false" item-width="265" item-margin="63" as-nav-for="#slider" slideshow="false" control-nav="false" prev-text="" next-text="" slider-id="carousel"
+          animation-loop="false">
+          <li>
+            <div class="row">
+              <!-- <img ng-src="{{image.img}}" alt=""> -->
+              <img ng-src="{{image.url | youtubethumb:false}}" alt="">
+            </div>
+          </li>
+        </flex-slider>
+        <!-- <flex-slider slide="image in seasonData.featuredvideos track by $index" animation="slide" animation-loop="false" item-width="280" item-margin="40" as-nav-for="#slider" slideshow="false" control-nav="false" prev-text="" next-text="" slider-id="carousel" animation-loop="false">
             <li>
               <div class="row">
                 <img src="{{image.url | uploadpath}}" alt="">
               </div>
             </li>
           </flex-slider> -->
-        </div>
       </div>
     </div>
   </div>
+</div>
 </section>
 <section class="container" ng-if="seasonData.relatedarticles">
   <div class="row">
