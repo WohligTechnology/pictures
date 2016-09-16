@@ -41,7 +41,7 @@
                   <div class="row" ng-repeat="row in slide track by $index">
                     <div class="col-xs-4" ng-repeat="wall in row track by $index">
                       <div class="mb15">
-                        <a fancybox-box ng-href="{{wall.image | uploadpath}}">
+                        <a fancybox-box ng-href="{{wall.image | uploadpath}}" rel="fancybox-button">
                           <img ng-src="{{wall.image | uploadpath}}" alt="" class="img-responsive" rel="fancybox-button">
                         </a>
                       </div>
