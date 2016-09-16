@@ -5,9 +5,9 @@
   <div class="banner-movies ab">
     <img ng-src="{{talentInsideDetailData.talentdetail.banner | uploadpath}}" alt="" class="img-responsive">
     <div class="banner-name ab text-center">
-    <h4>{{talentInsideDetailData.talentdetail.name}}</h4>
-  </div>
-  <div class="overlay"></div>
+      <h4>{{talentInsideDetailData.talentdetail.name}}</h4>
+    </div>
+    <div class="overlay"></div>
   </div>
   <div class="banner banner-asfc text-center mt180">
     <div class="container">
@@ -15,7 +15,7 @@
         <div class="col-md-8 col-md-offset-2">
           <div class="content mt15 mt30">
             <p class="text-justify">
-            {{talentInsideDetailData.talentdetail.content}}
+              {{talentInsideDetailData.talentdetail.content}}
             </p>
           </div>
           <!-- <div class="content mt15">
@@ -35,7 +35,7 @@
         <div class="col-md-offset-1 col-md-10" ng-if="talentInsideDetailData.imagegallery.length>0">
           <div class="title">
             <h3 class="letter-spacing color-red uppercase">
-            Image Gallery
+              Image Gallery
             </h3>
           </div>
           <!-- <div class="title">
@@ -78,101 +78,102 @@
   </div>
 </section>
 <div class="bg-mehendi" ng-if="talentInsideDetailData.featuredvideos.length>0">
-<section class="mehendi">
-  <div class="mehendi-movie">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-offset-1 col-md-10">
-          <div class="title">
-            <h3 class="letter-spacing color-white uppercase">
-            FEATURED VIDEOS
-          </h3>
-          </div>
+  <section class="mehendi">
+    <div class="mehendi-movie">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-offset-1 col-md-10">
+            <div class="title">
+              <h3 class="letter-spacing color-white uppercase">
+                FEATURED VIDEOS
+              </h3>
+            </div>
 
-          <div class="slider-client">
-            <flex-slider slide="video in talentInsideDetailData.featuredvideos track by $index" slider-id="slider" prev-text="" next-text="" sync="#carousel" slideshow="false" animation="slide">
-              <li>
-                <div class="video-main">
-                  <!-- <img ng-src="{{image.img}}" alt="" class="img-responsive"> -->
-                  <img ng-src="{{video.url | youtubethumb:false}}" alt="" class="img-responsive">
-                  <a fancybox-box href="http://www.youtube.com/embed/{{video.url | youtubethumb:true}}?autoplay=1&modestbranding=0&showinfo=0&rel=0&loop=1" rel="movies" data-fancybox-type="iframe">
-                    <i class="fa fa-play"></i>
-                  </a>
-                </div>
-              </li>
-            </flex-slider>
+            <div class="slider-client">
+              <flex-slider slide="video in talentInsideDetailData.featuredvideos track by $index" slider-id="slider" prev-text="" next-text="" sync="#carousel" slideshow="false" animation="slide">
+                <li>
+                  <div class="video-main">
+                    <!-- <img ng-src="{{image.img}}" alt="" class="img-responsive"> -->
+                    <img ng-src="{{video.url | youtubethumb:false}}" alt="" class="img-responsive">
+                    <a fancybox-box href="http://www.youtube.com/embed/{{video.url | youtubethumb:true}}?autoplay=1&modestbranding=0&showinfo=0&rel=0&loop=1" rel="movies" data-fancybox-type="iframe" rel="fancybox-button">
+                      <i class="fa fa-play"></i>
+                    </a>
+                  </div>
+                </li>
+              </flex-slider>
 
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-  <div class="container">
-    <div class="row">
-      <div class="col-md-offset-1 col-md-10">
-        <div class="image-navigation">
-          <flex-slider slide="image in talentInsideDetailData.featuredvideos track by $index" animation="slide" animation-loop="false" item-width="265" item-margin="63" as-nav-for="#slider" slideshow="false" control-nav="false" prev-text="" next-text="" slider-id="carousel" animation-loop="false">
-            <li>
-              <div class="row">
-                <img src="{{image.url | youtubethumb:false}}" alt="">
-              </div>
-            </li>
-          </flex-slider>
-          <!-- <flex-slider slide="image in vid track by $index" ng-if="styleNoActive == 'vactive'" animation="slide" animation-loop="false" item-width="280" item-margin="40" as-nav-for="#slider" slideshow="false" control-nav="false" prev-text="" next-text="" slider-id="carousel" animation-loop="false">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-offset-1 col-md-10">
+          <div class="image-navigation">
+            <flex-slider slide="image in talentInsideDetailData.featuredvideos track by $index" animation="slide" animation-loop="false" item-width="265" item-margin="63" as-nav-for="#slider" slideshow="false" control-nav="false" prev-text="" next-text="" slider-id="carousel"
+              animation-loop="false">
+              <li>
+                <div class="row">
+                  <img src="{{image.url | youtubethumb:false}}" alt="">
+                </div>
+              </li>
+            </flex-slider>
+            <!-- <flex-slider slide="image in vid track by $index" ng-if="styleNoActive == 'vactive'" animation="slide" animation-loop="false" item-width="280" item-margin="40" as-nav-for="#slider" slideshow="false" control-nav="false" prev-text="" next-text="" slider-id="carousel" animation-loop="false">
             <li>
               <div class="row">
                 <img src="{{image.img}}" alt="">
               </div>
             </li>
           </flex-slider> -->
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-<section class="container" ng-if="talentInsideDetailData.relatedarticles.length>0">
-  <div class="row">
-    <div class="col-md-12">
-      <div class="text-center">
-        <div class="wedding-diary">
-          <div class="diary-title mr30">
-            <h4 class="uppercase color-red">RELATED ARTICLES</h4>
           </div>
         </div>
       </div>
     </div>
-  </div>
-  <div class="pd-side">
+  </section>
+  <section class="container" ng-if="talentInsideDetailData.relatedarticles.length>0">
     <div class="row">
-      <div class="col-md-4 col-sm-4 col-xs-6" ng-repeat="data in talentInsideDetailData.relatedarticles track by $index">
-        <div class="wed-box border-red pb5">
-          <div class="wed-img-list sport-img-list">
-            <img ng-src="{{data.image | uploadpath}}" alt="" class="img-responsive">
-            <div class="ribbon-red">
-              <img src="img/ribbon_red.png" alt="">
-              <span class="color-white uppercase">Talent</span>
+      <div class="col-md-12">
+        <div class="text-center">
+          <div class="wedding-diary">
+            <div class="diary-title mr30">
+              <h4 class="uppercase color-red">RELATED ARTICLES</h4>
             </div>
           </div>
-          <div class="wed-desc">
-            <div class="wed-date">
-              <span>{{data.date | date:"dd MMMM yyyy"}}</span>
-            </div>
-            <div class="wed-desc-inside h30">
-              <p class="bold text-uppercase">{{data.name}}</p>
-            </div>
-            <div class="read-more">
-              <a href="" class="color-black">Read More</a>
-            </div>
-          </div>
-          <div class="border-blue borders"></div>
         </div>
       </div>
     </div>
-    <div class="btn-all mr30 text-center">
-      <button class="btn btn-danger btn-outline">
+    <div class="pd-side">
+      <div class="row">
+        <div class="col-md-4 col-sm-4 col-xs-6" ng-repeat="data in talentInsideDetailData.relatedarticles track by $index">
+          <div class="wed-box border-red pb5">
+            <div class="wed-img-list sport-img-list">
+              <img ng-src="{{data.image | uploadpath}}" alt="" class="img-responsive">
+              <div class="ribbon-red">
+                <img src="img/ribbon_red.png" alt="">
+                <span class="color-white uppercase">Talent</span>
+              </div>
+            </div>
+            <div class="wed-desc">
+              <div class="wed-date">
+                <span>{{data.date | date:"dd MMMM yyyy"}}</span>
+              </div>
+              <div class="wed-desc-inside h30">
+                <p class="bold text-uppercase">{{data.name}}</p>
+              </div>
+              <div class="read-more">
+                <a href="" class="color-black">Read More</a>
+              </div>
+            </div>
+            <div class="border-blue borders"></div>
+          </div>
+        </div>
+      </div>
+      <div class="btn-all mr30 text-center">
+        <button class="btn btn-danger btn-outline">
         View All
       </button>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 </div>

@@ -72,6 +72,10 @@ $color-black: #000!default;
 body {
     font-family: "Lato";
     overflow-x: hidden;
+    font-size: 15px;
+    p {
+        font-size: 15px;
+    }
 }
 
 img.loading {
@@ -2139,6 +2143,7 @@ h4.title-movies {
             font-weight: 900;
             color: #000;
             font-size: 18px;
+            height: 70px;
         }
     }
     .stadium {

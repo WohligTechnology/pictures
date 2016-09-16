@@ -41,7 +41,7 @@
                                     <div class="row" ng-repeat="row in slide track by $index">
                                         <div class="col-xs-4" ng-repeat="wall in row track by $index">
                                             <div class="mb15">
-                                                <a fancybox-box ng-href="{{wall.image | uploadpath}}">
+                                                <a fancybox-box ng-href="{{wall.image | uploadpath}}" rel="fancybox-button">
                                                     <img ng-src="{{wall.image | uploadpath}}" alt="" class="img-responsive">
                                                 </a>
                                             </div>
@@ -75,8 +75,8 @@
                     <div class="col-md-offset-1 col-md-10">
                         <div class="title">
                             <h3 class="letter-spacing color-white uppercase">
-                            FEATURED VIDEOS
-                        </h3>
+                                FEATURED VIDEOS
+                            </h3>
                         </div>
                         <div class="slider-client">
                             <flex-slider slide="video in seasonData.featuredvideos track by $index" slider-id="slider" prev-text="" next-text="" sync="#carousel" slideshow="false" animation="slide">
@@ -84,7 +84,7 @@
                                     <div class="video-main">
                                         <!-- <img ng-src="{{image.img}}" alt="" class="img-responsive"> -->
                                         <img ng-src="{{video.url | youtubethumb:false}}" alt="" class="img-responsive">
-                                        <a fancybox-box href="http://www.youtube.com/embed/{{video.url | youtubethumb:true}}?autoplay=1&modestbranding=0&showinfo=0&rel=0&loop=1" rel="movies" data-fancybox-type="iframe">
+                                        <a fancybox-box href="http://www.youtube.com/embed/{{video.url | youtubethumb:true}}?autoplay=1&modestbranding=0&showinfo=0&rel=0&loop=1" rel="movies" data-fancybox-type="iframe" rel="fancybox-button1">
                                             <i class="fa fa-play"></i>
                                         </a>
                                     </div>

@@ -5,9 +5,9 @@
   <div class="banner-movies ab">
     <img ng-src="{{weddetail.weddingdetail.banner | uploadpath}}" alt="{{micedetail.micedetail.banner}}" class="img-responsive">
     <div class="banner-name ab text-center">
-    <h4>{{weddetail.weddingdetail.name}}</h4>
-  </div>
-  <div class="overlay"></div>
+      <h4>{{weddetail.weddingdetail.name}}</h4>
+    </div>
+    <div class="overlay"></div>
   </div>
   <div class="banner banner-asfc text-center mt180">
     <div class="container">
@@ -35,7 +35,7 @@
         <div class="col-md-offset-1 col-md-10">
           <div class="title">
             <h3 class="letter-spacing color-red uppercase">
-            Image Gallery
+              Image Gallery
             </h3>
           </div>
           <div class="mb15">
@@ -45,7 +45,7 @@
                   <div class="row" ng-repeat="row in slide">
                     <div class="col-xs-4" ng-repeat="wall in row">
                       <div class="mb15">
-                        <a fancybox-box href="{{wall.image | uploadpath}}">
+                        <a fancybox-box href="{{wall.image | uploadpath}}" rel="fancybox-button" rel="fancybox-button">
                           <img ng-src="{{wall.image | uploadpath}}" alt="" class="img-responsive">
                         </a>
                       </div>
@@ -68,8 +68,8 @@
           <div class="col-md-offset-1 col-md-10">
             <div class="title">
               <h3 class="letter-spacing color-white uppercase">
-              FEATURED VIDEOS
-            </h3>
+                FEATURED VIDEOS
+              </h3>
             </div>
 
             <div class="slider-client">
@@ -78,7 +78,7 @@
                   <div class="video-main">
                     <!-- <img ng-src="{{image.img}}" alt="" class="img-responsive"> -->
                     <img ng-src="{{video.name | youtubethumb:false}}" alt="" class="img-responsive">
-                    <a fancybox-box href="http://www.youtube.com/embed/{{video.name | youtubethumb:true}}?autoplay=1&modestbranding=0&showinfo=0&rel=0&loop=1" rel="movies" data-fancybox-type="iframe">
+                    <a fancybox-box href="http://www.youtube.com/embed/{{video.name | youtubethumb:true}}?autoplay=1&modestbranding=0&showinfo=0&rel=0&loop=1" rel="movies" data-fancybox-type="iframe" rel="fancybox-button1">
                       <i class="fa fa-play"></i>
                     </a>
                   </div>
