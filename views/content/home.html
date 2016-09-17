@@ -46,153 +46,150 @@
                     <div class="wedding-diary">
                         <div class="diary">
                             <h4>
-                                <i class="glyph-icon fi flaticon-book"></i>
-                                GS DIARIES</h4>
+                                <i class="glyph-icon fi flaticon-book"></i> GS DIARIES</h4>
                         </div>
                     </diV>
                 </div>
                 <div class="flex-slider">
-                    <flex-slider flex-slide="data in homedata.homediaries track by $index" animation="slide" animation-loop="false" item-width="350" item-margin="0" as-nav-for="#slider" slideshow="false">
-                    <li>
-                        <div class="testimonials-slide">
-                            <div class="wed-box color-white gsdairy">
-                                <div class="wed-img-list home-img-list">
-                                    <img ng-src="{{data.image | uploadpath}}" alt="" class="img-responsive">
-                                    <div class="ribbon-red">
-                                        <img src="img/ribbon_blue.png" alt="">
-                                        <span>{{data.name}}</span>
-                                    </div>
-                                </div>
-                                <div class="wed-desc">
-                                    <div class="wed-date rmcol">
-                                        <span>{{data.date | date:'d MMMM y'}}</span>
-                                    </div>
-                                    <div class="wed-desc-inside" ng-bind-html="data.content">
-                                        <!-- <p>{{data.content}}</p> -->
-                                    </div>
-                                    <div class="read-more clearfix rmcol">
-                                        <a href="" class="color-white" ng-if="data.type==1" ui-sref="blogtext({id:data.id})">Read More</a>
-                                        <a href="" class="color-white" ng-if="data.type==2" ui-sref="blogimage({id:data.id})">Read More</a>
-                                        <a href="" class="color-white" ng-if="data.type==3" ui-sref="blogvideo({id:data.id})">Read More</a>
-                                        <div class="wed-date pull-right authorcolor">
-                                            <a ui-sref="diaries-author({id:data.author})">
-                                                <span>By
-                                                    {{data.authorname}}</span>
-                                            </a>
+                    <flex-slider slider-id="slider" flex-slide="data in homedata.homediaries track by $index" animation="slide" animation-loop="false" item-width="350" item-margin="0" as-nav-for="#slider" slideshow="false">
+                        <li>
+                            <div class="testimonials-slide">
+                                <div class="wed-box color-white gsdairy">
+                                    <div class="wed-img-list home-img-list">
+                                        <img ng-src="{{data.image | uploadpath}}" alt="" class="img-responsive">
+                                        <div class="ribbon-red">
+                                            <img src="img/ribbon_blue.png" alt="">
+                                            <span>{{data.name}}</span>
                                         </div>
                                     </div>
+                                    <div class="wed-desc">
+                                        <div class="wed-date rmcol">
+                                            <span>{{data.date | date:'d MMMM y'}}</span>
+                                        </div>
+                                        <div class="wed-desc-inside" ng-bind-html="data.content">
+                                            <!-- <p>{{data.content}}</p> -->
+                                        </div>
+                                        <div class="read-more clearfix rmcol">
+                                            <a href="" class="color-white" ng-if="data.type==1" ui-sref="blogtext({id:data.id})">Read More</a>
+                                            <a href="" class="color-white" ng-if="data.type==2" ui-sref="blogimage({id:data.id})">Read More</a>
+                                            <a href="" class="color-white" ng-if="data.type==3" ui-sref="blogvideo({id:data.id})">Read More</a>
+                                            <!--<a href="" class="color-white" ng-if="data.type==1" ng-click="goBlogText('blogtext',data.id)" >Read More</a>
+                                            <a href="" class="color-white" ng-if="data.type==2" ng-click="goBlogText('blogimage',data.id)" ">Read More</a>
+                                            <a href="" class="color-white" ng-if="data.type==3" ng-click="goBlogText('blogvideo',data.id)" >Read More</a>
+                                            -->
+                                            <div class="wed-date pull-right authorcolor">
+                                                <a ui-sref="diaries-author({id:data.author})">
+                                                    <span>By
+                                                    {{data.authorname}}</span>
+                                                </a>
+                                            </div>
+                                        </div>
 
-                                    <!-- <div class="clearfix"></div> -->
+                                        <!-- <div class="clearfix"></div> -->
+                                    </div>
+                                    <div class="border-blue borders"></div>
                                 </div>
-                                <div class="border-blue borders"></div>
                             </div>
-                        </div>
-                    </li>
-                </flex-slider>
-            </div>
-            <div class="btn-all mb15 text-center">
-                <button class="btn btn-danger btn-lg" ui-sref="diaries">
+                        </li>
+                    </flex-slider>
+                </div>
+                <div class="btn-all mb15 text-center">
+                    <button class="btn btn-danger btn-lg" ui-sref="diaries">
                     View All
                 </button>
-            </div>
-        </div>
-        <div class="section3" ng-if="homedata.testimonial && homedata.testimonial.length>0">
-            <div class="bg3 testi">
-                <div class="container">
-                    <div class="client-speak">
-                        <div class="name-cont color-white">
-                            <img src="img/inverted.png" alt="">
-                            <!-- {{clientspeak}} -->
-                            <span>{{homedata.testimonial[0].name}}</span>
-                        </div>
-                        <div class="img-holder">
-                            <img ng-src="{{homedata.testimonial[0].image | uploadpath}}" alt="" class="img-reponsive">
-                        </div>
-                        <div class="img-review color-white">
-                            <h4>"{{homedata.testimonial[0].quote}}"</h4>
-                            <p>-
-                                {{homedata.testimonial[0].author}}</p>
-                        </div>
-                    </div>
                 </div>
             </div>
-        </div>
-    </div>
-</div>
-</section>
-<section>
-<div class="section4">
-    <div class="subcribe bg-subcribe-home">
-        <div class="container">
-            <div class="row" ng-controller="SubscribeCtrl">
-                <div class="col-md-6 col-md-offset-3" ng-hide="subscribeEmail || checkEmail">
-                    <h4 class="text-center color-white">Sign up for the GS newsletter to receive latest updates.</h4>
-                    <form name="subForm" class="bs-example bs-example-form" role="form">
-                        <div class="input-group">
-                            <input type="email" class="form-control" placeholder="Enter email address" ng-model="subscribe.email" required>
-                            <span class="input-group-addon btn btn-danger" ng-click="subscribe(subscribe.email);" ng-disabled="subForm.$invalid">Subscribe</span>
-                            <!-- <div ng-messages="subForm.email.$error" ng-messages-include="error-messages"></div> -->
-
-                        </div>
-                    </form>
-                </div>
-                <h4 ng-show="subscribeEmail && !checkEmail">
-                    <center class="color-white">Thank you for subscribing.</center>
-                </h4>
-                <h4 ng-show="checkEmail && !subscribeEmail">
-                    <center class="color-white">Email you provided already exists.</center>
-                </h4>
-            </div>
-        </div>
-    </div>
-</div>
-</section>
-<div class="social">
-<!-- <div ng-include = "'/social.html'"></div> --><section class="marg-section">
-    <div class="social-back ">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-4 col-sm-4">
-                    <div class="social-box text-center">
-                        <img src="img/socials/facebook.png" class="doneLoading">
-                    </div>
-                    <div class="social-logo text-center">
-                        <div class="feed-social mt30">
-                            <div class="fb-page" data-href="https://www.facebook.com/GSWorldwideEnt/" data-tabs="timeline" data-width="360" data-height="480" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true">
-                                <div class="fb-xfbml-parse-ignore">
-                                    <blockquote cite="https://www.facebook.com/GSWorldwideEnt/">
-                                        <a href="https://www.facebook.com/GSWorldwideEnt/">GS Worldwide Entertainment.</a>
-                                    </blockquote>
-                                </div>
+            <div class="section3" ng-if="homedata.testimonial && homedata.testimonial.length>0">
+                <div class="bg3 testi">
+                    <div class="container">
+                        <div class="client-speak">
+                            <div class="name-cont color-white">
+                                <img src="img/inverted.png" alt="">
+                                <!-- {{clientspeak}} -->
+                                <span>{{homedata.testimonial[0].name}}</span>
+                            </div>
+                            <div class="img-holder">
+                                <img ng-src="{{homedata.testimonial[0].image | uploadpath}}" alt="" class="img-reponsive">
+                            </div>
+                            <div class="img-review color-white">
+                                <h4>"{{homedata.testimonial[0].quote}}"</h4>
+                                <p>- {{homedata.testimonial[0].author}}
+                                </p>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4 col-sm-4">
-                    <div class="social-box text-center">
-                        <img src="img/socials/twitter.png" class="doneLoading">
+            </div>
+        </div>
+    </div>
+</section>
+<section>
+    <div class="section4">
+        <div class="subcribe bg-subcribe-home">
+            <div class="container">
+                <div class="row" ng-controller="SubscribeCtrl">
+                    <div class="col-md-6 col-md-offset-3" ng-hide="subscribeEmail || checkEmail">
+                        <h4 class="text-center color-white">Sign up for the GS newsletter to receive latest updates.</h4>
+                        <form name="subForm" class="bs-example bs-example-form" role="form">
+                            <div class="input-group">
+                                <input type="email" class="form-control" placeholder="Enter email address" ng-model="subscribe.email" required>
+                                <span class="input-group-addon btn btn-danger" ng-click="subscribe(subscribe.email);" ng-disabled="subForm.$invalid">Subscribe</span>
+                                <!-- <div ng-messages="subForm.email.$error" ng-messages-include="error-messages"></div> -->
+
+                            </div>
+                        </form>
                     </div>
-                    <div class="social-logo text-center ">
-                        <a class="twitter-timeline" href="https://twitter.com/GSWorldwideEnt" data-widget-id="716880459599228928">Tweets by @GSWorldwideEnt</a>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-4">
-                    <div class="social-box text-center">
-                        <img src="img/socials/instagram.png" class="doneLoading">
-                    </div>
-                    <div class="social-logo text-center ">
-                        <iframe
-                            src="//lightwidget.com/widgets/2965b7333833557283d4029e025bd4e8.html"
-                            id="lightwidget_2965b73338"
-                            name="lightwidget_2965b73338"
-                            scrolling="no"
-                            allowtransparency="true"
-                            class="lightwidget-widget"
-                            style="width: 100%; border: 0; overflow: hidden; height:480px;"></iframe>
-                    </div>
+                    <h4 ng-show="subscribeEmail && !checkEmail">
+                        <center class="color-white">Thank you for subscribing.</center>
+                    </h4>
+                    <h4 ng-show="checkEmail && !subscribeEmail">
+                        <center class="color-white">Email you provided already exists.</center>
+                    </h4>
                 </div>
             </div>
         </div>
     </div>
 </section>
+<div class="social">
+    <!-- <div ng-include = "'/social.html'"></div> -->
+    <section class="marg-section">
+        <div class="social-back ">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4 col-sm-4">
+                        <div class="social-box text-center">
+                            <img src="img/socials/facebook.png" class="doneLoading">
+                        </div>
+                        <div class="social-logo text-center">
+                            <div class="feed-social mt30">
+                                <div class="fb-page" data-href="https://www.facebook.com/GSWorldwideEnt/" data-tabs="timeline" data-width="360" data-height="480" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true">
+                                    <div class="fb-xfbml-parse-ignore">
+                                        <blockquote cite="https://www.facebook.com/GSWorldwideEnt/">
+                                            <a href="https://www.facebook.com/GSWorldwideEnt/">GS Worldwide Entertainment.</a>
+                                        </blockquote>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-4">
+                        <div class="social-box text-center">
+                            <img src="img/socials/twitter.png" class="doneLoading">
+                        </div>
+                        <div class="social-logo text-center ">
+                            <a class="twitter-timeline" href="https://twitter.com/GSWorldwideEnt" data-widget-id="716880459599228928">Tweets by @GSWorldwideEnt</a>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-4">
+                        <div class="social-box text-center">
+                            <img src="img/socials/instagram.png" class="doneLoading">
+                        </div>
+                        <div class="social-logo text-center ">
+                            <iframe src="//lightwidget.com/widgets/2965b7333833557283d4029e025bd4e8.html" id="lightwidget_2965b73338" name="lightwidget_2965b73338" scrolling="no" allowtransparency="true" class="lightwidget-widget" style="width: 100%; border: 0; overflow: hidden; height:480px;"></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 </div>

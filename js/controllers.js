@@ -14,7 +14,12 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $scope.subscribe.email = "";
 
 
-
+        // $scope.goBlogText = function(statename, param) {
+        //     console.log(statename, param);
+        //     $state.go(statename, {
+        //         id: param
+        //     });
+        // };
 
         $scope.$on('$viewContentLoaded', function(event) {
             $timeout(function() {

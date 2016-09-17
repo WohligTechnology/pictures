@@ -4175,9 +4175,12 @@ h4.title-movies {
         margin-bottom: 28px;
     }
     .mehendi .title h4:hover {
-        color: #088fd5;
-        cursor: pointer;
-        border-bottom: 4px solid #088fd5;
+        color: #043146 !important;
+        cursor: default;
+        // color: #088fd5;
+        // cursor: pointer;
+        // border-bottom: 4px solid #088fd5;
+        border: 0;
     }
     .wt-data {
         margin-top: 20px;
