@@ -37,10 +37,10 @@
                 {{data.name}}
               </h4>
             </div>
-            <div class="w-detail mt15 mb15">
-              <p>
+            <div class="w-detail mt15 mb15" ng-bind-html="data.content">
+              <!-- <p>
                 {{data.content}}
-              </p>
+              </p> -->
             </div>
             <div class="w-button">
               <button class="btn btn-danger" ui-sref="jppseason1({id:data.id})">Know More</button>
