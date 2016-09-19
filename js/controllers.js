@@ -1690,20 +1690,24 @@ $scope.seeMore = true;
         $scope.wedding = [{
             img: "img/sports/asfc.jpg",
             logo: "img/ASFC/asfc.png",
-            link: "asfc"
+            link: "asfc",
+            btn:"Enter"
         }, {
             img: "img/sports/jpp.jpg",
             logo: "img/jpp/jpp-logo.png",
-            link: "jpp"
+            link: "jpp",
+              btn:"Enter"
         }, {
             img: "img/sports/pfh.jpg",
             name: "Playing for Humanity",
-            link: "pfh"
+            link: "pfh",
+              btn:"Enter"
+
         }, {
             img: "img/sports/sportintative.jpg",
             name: "SPORTS INITIATIVES",
+              btn:"Coming Soon"
         }];
-
     })
     .controller('PfhCtrl', function($scope, TemplateService, NavigationService, $timeout, $state) {
         //Used to name the .html file
