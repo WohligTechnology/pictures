@@ -1032,6 +1032,7 @@ li.flex-nav-next {
 
 .bg-subcribe-sport {
     background: url('../img/sports/bg-subcribe.jpg') no-repeat;
+    background-size: cover;
 }
 
 .social-box {
@@ -1253,6 +1254,7 @@ footer {
     background-size: 100%;
     &.bg-sports {
         background-size: 100% 80%;
+            margin-top: 40px;
     }
 }
 
