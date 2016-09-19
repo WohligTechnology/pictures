@@ -125,8 +125,22 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         });
     })
 
+    .controller('footerctrl', function($scope, TemplateService, NavigationService, $state,$uibModal) {
+        $scope.template = TemplateService;
+        $scope.openModal = function() {
+            var modalInstance = $uibModal.open({
+                animation: $scope.animationsEnabled,
+                templateUrl: 'views/content/modal/get.html',
+                controller: 'footerctrl',
+                size: 'lg',
+                windowClass: 'get-modal',
+            });
+        };
 
-.controller('MoviesCtrl', function($scope, TemplateService, NavigationService, $timeout, $state) {
+
+        })
+
+.controller('MoviesCtrl', function($scope, TemplateService, NavigationService, $timeout, $state,$uibModal) {
     //Used to name the .html file
     $scope.template = TemplateService.changecontent("movies");
     $scope.menutitle = NavigationService.makeactive("Movies");
