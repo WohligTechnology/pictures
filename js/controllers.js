@@ -3103,8 +3103,8 @@ $scope.seeMore = true;
         $scope.navigation = NavigationService.getnav();
         $scope.mediadata = "";
         NavigationService.getMediacorner(function(data) {
-            $scope.mediadata = data.data;
-            console.log($scope.mediadata);
+            $scope.mediadataContent = data.data.description;
+            console.log($scope.mediadataContent);
         })
 
         $scope.categoryid = $stateParams.id;
@@ -3147,6 +3147,7 @@ $scope.seeMore = true;
 
         console.log('lastpage: ', lastpage);
         $scope.loadMore = function() {
+          console.log('///////');
             if (lastpage > $scope.objfilter.pageno) {
                 console.log('lastpageeee: ', lastpage)
                     ++$scope.objfilter.pageno;
@@ -3548,10 +3549,31 @@ $scope.seeMore = true;
 
             console.log('$scope.bannerData', $scope.bannerData);
         })
-        NavigationService.getTalentInside($stateParams.id, function(data) {
-            $scope.talentInsideData = data.queryresult;
-            console.log('$scope.talentInsideData', $scope.talentInsideData);
-        })
+        $scope.seeMore = false;
+        $scope.seeLess = false;
+        var talentInsideArray = [];
+        $scope.seeLessTalent = function(){
+          NavigationService.getTalentInside($stateParams.id, function(data) {
+              $scope.talentInsideData = data.queryresult;
+              talentInsideArray = _.cloneDeep($scope.talentInsideData);
+                $scope.seeMore = true;
+              $scope.talentInsideData = _.slice($scope.talentInsideData, [0], [3]);
+              if($scope.getClientdata.length<3){
+                  $scope.seeMore = false;
+              }
+              console.log('$scope.talentInsideData', $scope.talentInsideData);
+          })
+        }
+
+
+        $scope.seeLessTalent();
+        $scope.seeMoreTalent = function() {
+            $scope.seeMore = false;
+            $scope.seeLess = true;
+            // $scope.allMovieName = {}
+            $scope.talentInsideData = talentInsideArray;
+            // console.log('dfgyhujkdrftgh', $scope.allMovieName);
+        }
     })
     .controller('TalentInsideDetailCtrl', function($scope, TemplateService, NavigationService, $timeout, $stateParams) {
         //Used to name the .html file

@@ -51,9 +51,12 @@
          </div>
       </div>
       <div class="btn-all text-center">
-         <button class="btn btn-outline">
-            View all
-         </button>
+        <button class="btn btn-danger btn-outline" ng-click="seeMoreTalent();" ng-if="seeMore">
+          View All
+        </button>
+        <button class="btn btn-danger btn-outline" ng-click="seeLessTalent();" ng-if="seeLess && !seeMore">
+          View Less
+        </button>
       </div>
    </div>
 </section>
