@@ -19,16 +19,20 @@
   </div>
   <div class="mt50 plr100 client-img">
     <div class="row">
-      <div class="col-md-3 col-sm-3 col-xs-6" ng-repeat="data in getClientdata.logos">
+      <div class="col-md-3 col-sm-3 col-xs-6" ng-repeat="data in getClientdata">
         <img ng-src="{{data.image | uploadpath}}" alt="{{data.alt}}" class="img-responsive">
       </div>
       <!-- <div class="col-md-3 col-sm-3 col-xs-6" ng-repeat="data in clientimage">
         <img src="{{data.img}}" alt="{{data.alt}}" class="img-responsive">
       </div> -->
     </div>
+
     <div class="btn-all mr30 text-center">
-      <button class="btn btn-danger btn-outline">
+      <button class="btn btn-danger btn-outline" ng-click="seeMoreClients();" ng-if="seeMore">
         View All
+      </button>
+      <button class="btn btn-danger btn-outline" ng-click="seeLessClients();" ng-if="seeLess && !seeMore">
+        View Less
       </button>
     </div>
   </div>

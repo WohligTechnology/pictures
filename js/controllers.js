@@ -1004,11 +1004,28 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     //   },
     //
     // ];
-
+    $scope.seeMore = false;
+    $scope.seeLess = false;
+    var clientsArray = [];
+  $scope.seeLessClients = function() {
     NavigationService.getClient(function(data) {
-        $scope.getClientdata = data.data;
-        console.log('$scope.getClientdata', $scope.getClientdata);
+        $scope.getClientdata = data.data.logos;
+        clientsArray = _.cloneDeep($scope.getClientdata);
+$scope.seeMore = true;
+          $scope.getClientdata = _.slice($scope.getClientdata, [0], [12]);
+          if($scope.getClientdata.length<12){
+              $scope.seeMore = false;
+          }
     })
+  };
+  $scope.seeLessClients();
+  $scope.seeMoreClients = function() {
+      $scope.seeMore = false;
+      $scope.seeLess = true;
+      // $scope.allMovieName = {}
+      $scope.getClientdata = clientsArray;
+      // console.log('dfgyhujkdrftgh', $scope.allMovieName);
+  }
     NavigationService.getClientDetail(function(data) {
         $scope.getClientDetaildata = data.data;
         console.log('$scope.getClientDetaildata', $scope.getClientDetaildata);
@@ -1192,7 +1209,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     var id = '2';
     NavigationService.getasfcSeasonData(id, function(data) {
         $scope.mydata = data.data.playerlist;
-        console.log('$scope.asfcInsidedata1', $scope.asfcInsidedata1);
+        console.log('$scope.mydata', $scope.mydata);
         $scope.asfcInsidedataplayer = _.chunk($scope.mydata, 5);
         $scope.mylen = $scope.asfcInsidedataplayer.length - 1;
         console.log('len', $scope.mylen);
