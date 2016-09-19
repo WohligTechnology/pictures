@@ -388,6 +388,16 @@ a {
     background-color: #1aafff;
     border-radius: 8px;
     border: 1px solid #1aafff;
+
+    &:focus{
+      outline: 0;
+    }
+    &:active{
+        outline: 0;
+      &:focus{
+        outline: 0;
+      }
+    }
 }
 
 hr {
@@ -2423,7 +2433,16 @@ h4.title-movies {
 .br {
     border-right: 1px solid #000;
 }
+.btn-primarys {
+    background-color: $brand-primary;
+    border-color:$brand-primary;
+    color:#fff;
+    &:hover {
+        background-color: $brand-primary;
+        border-color: $brand-primary;
+    }
 
+}
 .fund-raised {
     background: url('../img/PHF/redbg.jpg');
     background-size: 100%;
@@ -4329,7 +4348,16 @@ h4.title-movies {
         text-transform: uppercase;
     }
 }
+.text-up{
+    text-transform: uppercase;
+}
+.text-l{
+  text-align: left;
 
+}
+.p-l{
+      padding-left: 10px;
+}
 .ps-relative {
     position: relative;
 }

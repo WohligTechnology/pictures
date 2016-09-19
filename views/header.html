@@ -71,7 +71,7 @@
                   <form name="subForm" class="bs-example bs-example-form collapse" role="form" id="subscribe">
                 <div class="input-group" style="margin-bottom:10px;"ng-hide="subscribeEmail || checkEmail" >
                   <input type="email" class="form-control" placeholder="Enter email address" ng-model="subscribe.email" required>
-                  <span class="input-group-addon btn btn-danger" ng-click="subscribe(subscribe.email);" ng-disabled="subForm.$invalid">Go</span>
+                  <span class="input-group-addon btn btn-primarys" ng-click="subscribe(subscribe.email);" ng-disabled="subForm.$invalid">Go</span>
                 </div>
                 <!-- <button class="btnsign" type="button" name="button" ng-click="openSubscribe()" ng-hide="opensubscribe">SIGN UP FOR GS NEWSLETTER</button>
                   <form name="subForm" class="bs-example bs-example-form" role="form">
@@ -81,8 +81,8 @@
                 </div> -->
               </form>
               <div ng-if="subscribeEmail && !checkEmail">
-                <p >
-                    <center class="color-white">Thank you for subscribing.</center>
+                <p class="color-white text-up text-l p-l">
+                  Thank you for subscribing.
                 </p>
               </div>
                 <div ng-if="checkEmail && !subscribeEmail">
@@ -103,7 +103,7 @@
                 </ul>
                 <h4 class="menu-title">ABOUT</h4>
                 <ul class="list-unstyled">
-                  <li><a class="about color-white" ui-sref="about">ABOUT US</a></li>
+                  <li><a class="about color-white" ui-sref="aboutus">ABOUT US</a></li>
                   <!-- <li><a class="picture color-white" ui-sref="home">PICTURES</a></li>
                   <li><a class="video color-white" ui-sref="home">VIDEOS</a></li> -->
                   <li><a class="media color-white" ui-sref="media_corner({year:mediadata.year})">MEDIA CORNER</a></li>
