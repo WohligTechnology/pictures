@@ -1145,7 +1145,7 @@ $scope.seeMore = true;
 
     $scope.objPagination = {};
     $scope.objPagination.id = 2;
-    $scope.objPagination.maxrow = 2;
+    $scope.objPagination.maxrow = 500;
     $scope.objPagination.pageno = 1;
     $scope.pages = [1]
     $scope.lastpage = 1;
@@ -1298,7 +1298,7 @@ $scope.seeMore = true;
     $scope.jppPagination = {};
     $scope.jppPagination.id = 1;
     $scope.jppPagination.pageno = 1;
-    $scope.jppPagination.maxrow = 2;
+    $scope.jppPagination.maxrow = 500;
     $scope.lastpage = 1;
 
 
@@ -1308,7 +1308,10 @@ $scope.seeMore = true;
         console.log($scope.jppdata);
     })
     $scope.jppInsidedata = [];
-    $scope.jppfilter = function() {
+    $scope.seeMore = false;
+    $scope.seeLess = false;
+    var jppInsideArray = [];
+    $scope.seeLessJpp = function() {
         NavigationService.getSportInsidedataByid($scope.jppPagination, function(data) {
             // $scope.jppInsidedata = data.queryresult;
             // console.log($scope.jppInsidedata);
@@ -1316,9 +1319,25 @@ $scope.seeMore = true;
             _.each(data.queryresult, function(n) {
                 $scope.jppInsidedata.push(n);
             })
+            jppInsideArray = _.cloneDeep($scope.jppInsidedata);
+              $scope.seeMore = true;
+            $scope.jppInsidedata = _.slice($scope.jppInsidedata, [0], [3]);
+            if($scope.jppInsidedata.length<3){
+                $scope.seeMore = false;
+            }
+            console.log('$scope.jppInsidedata', $scope.jppInsidedata);
         })
+
     }
-    $scope.jppfilter();
+    $scope.seeLessJpp();
+    $scope.seeMoreJpp = function() {
+        $scope.seeMore = false;
+        $scope.seeLess = true;
+        // $scope.allMovieName = {}
+        $scope.talentInsideData = talentInsideArray;
+        // console.log('dfgyhujkdrftgh', $scope.allMovieName);
+    }
+    // $scope.jppfilter();
 
     $scope.viewAllJpp = function() {
         console.log('Inside viewAllJpp');

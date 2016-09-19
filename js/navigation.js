@@ -10,7 +10,8 @@ adminURL = "http://www.gsentertainment.com/admin/";
 var apiUrl = adminURL + "index.php/json/";
 var imgpath = adminURL + "uploads/";
 var hauth = adminURL + "index.php/hauth/login/";
-var uploadurl = "http://www.gsentertainment.com/admin/index.php/json/imageUpload";
+var uploadurl = "http://wohlig.co.in/gsebackend/index.php/json/imageUpload";
+// var uploadurl = "http://www.gsentertainment.com/admin/index.php/json/imageUpload";
 // var uploadurl = "http://localhost/gsebackend/index.php/json/imageUpload";
 
 var navigationservice = angular.module('navigationservice', [])

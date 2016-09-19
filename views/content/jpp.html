@@ -51,8 +51,14 @@
     </div>
   </div>
   <div class="btn-all text-center">
-    <button class="btn btn-outline btn-grey" ng-click="viewAllJpp()" ng-disabled="lastpage==jppPagination.pageno">
+    <!-- <button class="btn btn-outline btn-grey" ng-click="viewAllJpp()" ng-disabled="lastpage==jppPagination.pageno">
       View all
+    </button> -->
+    <button class="btn btn-outline btn-grey" ng-click="seeMoreJpp();" ng-if="seeMore">
+      View All
+    </button>
+    <button class="btn btn-outline btn-grey" ng-click="seeLessJpp();" ng-if="seeLess && !seeMore">
+      View Less
     </button>
   </div>
   <div class="section3">
