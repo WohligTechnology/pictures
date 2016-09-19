@@ -1020,6 +1020,7 @@ li.flex-nav-next {
 
 .bg-subcribe-home {
     background: url('../img/home/bg-subcribe.jpg') no-repeat;
+        background-size: cover;
 }
 
 .bg-subcribe-phf {
@@ -1034,7 +1035,10 @@ li.flex-nav-next {
     background: url('../img/sports/bg-subcribe.jpg') no-repeat;
     background-size: cover;
 }
-
+.uib-datepicker-popup{
+  left:50% !important;
+  transform: translatex(-50%);
+}
 .social-box {
     margin: 30px 0;
 }
