@@ -117,7 +117,7 @@
             </div>
         </section> -->
     <div class="container">
-        <div class=bg-moviesdiaries>
+        <div class=bg-moviesdiaries ng-hide="tourdata.worldtourdiaries.length==0">
             <div class=row>
                 <div class=col-md-12>
                     <div class=text-center>
@@ -145,7 +145,7 @@
                                     <a href="" class="color-black" ng-if="data.type==2" ui-sref="blogimage({id:data.id})">Read More</a>
                                     <a href="" class="color-black" ng-if="data.type==3" ui-sref="blogvideo({id:data.id})">Read More</a>
                                     <div class="wed-date pull-right authorcolor">
-                                        <a  "><span>By {{data.authorname}}</span></a>
+                                        <a><span>By {{data.authorname}}</span></a>
                                     </div>
                                 </div>
                             </div>
@@ -194,8 +194,8 @@
                         <div class="name-cont color-white"><img src=img/inverted.png> <span>Client Speak</span></div>
                         <div class=img-holder><img ng-src="{{data.image | uploadpath}}" class=img-reponsive></div>
                         <div class="img-review color-white">
-                            <h4>{{data.quote}}</h4>
-                            <p>{{data.author}}</p>
+                            <h4>"{{data.quote}}"</h4>
+                            <p>- {{data.author}}</p>
                             <!-- <h4>"Awesome teamwork and planning"</h4>
                     <p>- Ranbir Kapoor</p> -->
                         </div>
