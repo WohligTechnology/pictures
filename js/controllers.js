@@ -1614,7 +1614,8 @@ $scope.seeMore = false;
     function getFilterResults() {
       console.log("fff",$scope.filterObj);
       if($scope.filterObj.category==7){
-        $scope.filterObj.category = '';
+        $state.go('diaries',{category:''});
+        // $scope.filterObj.category = '';
       }
         NavigationService.getFilterDiaries($scope.filterObj, function(data) {
             $scope.filterdata = true;
