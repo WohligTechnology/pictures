@@ -1529,17 +1529,7 @@ $scope.seeMore = false;
         desc: "Lorem Ipsum is simply dummy text of the printing industry simply dummy text of the printing industry printing industry simply dummy text of the printing industry",
         name: "WEDDINGS"
     };
-    $scope.diaries = [{
-        img: "img/movies/movie_diaries/diary1.png",
-        date: "12 January 2016",
-        desc: "Lorem Ipsum is simply dummy text of the printing industry",
-        name: "Movies"
-    }, {
-        img: "img/jppseason1/2.png",
-        date: "12 January 2016",
-        desc: "Lorem Ipsum is simply dummy text of the printing industry",
-        name: "Sports"
-    }];
+
     NavigationService.getDiaries(function(data) {
         $scope.diaryData = data.data;
         console.log('d data', $scope.diaryData);
@@ -1622,6 +1612,10 @@ $scope.seeMore = false;
     }
 
     function getFilterResults() {
+      console.log("fff",$scope.filterObj);
+      if($scope.filterObj.category==7){
+        $scope.filterObj.category = '';
+      }
         NavigationService.getFilterDiaries($scope.filterObj, function(data) {
             $scope.filterdata = true;
             $scope.filterDiaries = data;
