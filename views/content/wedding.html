@@ -25,7 +25,17 @@
         <div class="col-md-4 col-sm-4 col-xs-6" ng-repeat="data in weddingData.weddingtype track by $index">
 
           <div ng-if="data.id=='2' || data.id =='3'">
-            <a ui-sref="weddinginsidedetail({flag:1,id:data.id})">
+            <a ui-sref="weddinginsidedetail({flag:1,id:data.id})" ng-if="data.status=='1'">
+              <div class="banner-wrap">
+                <img ng-src="{{data.image | uploadpath}}" class="img-responsive">
+                <img src="img/weddings/hover-banner.png" alt="" class="img-responsive hover-image">
+                <div class="name-event extend-hover text-center center-make">
+                  <span class="color-white uppercase">{{data.name}}</span>
+                  <hr class="wedding-border">
+                </div>
+              </div>
+            </a>
+            <a ng-if="data.status=='2'">
               <div class="banner-wrap">
                 <img ng-src="{{data.image | uploadpath}}" class="img-responsive">
                 <img src="img/weddings/hover-banner.png" alt="" class="img-responsive hover-image">
@@ -49,7 +59,17 @@
             </a>
           </div> -->
           <div ng-if="data.id!='2' && data.id!='3'">
-            <a ui-sref="weddinginside({id:data.id})">
+            <a ui-sref="weddinginside({id:data.id})" ng-if="data.status=='1'">
+              <div class="banner-wrap">
+                <img ng-src="{{data.image | uploadpath}}" class="img-responsive">
+                <img src="img/weddings/hover-banner.png" alt="" class="img-responsive hover-image">
+                <div class="name-event extend-hover text-center center-make">
+                  <span class="color-white uppercase">{{data.name}}</span>
+                  <hr class="wedding-border">
+                </div>
+              </div>
+            </a>
+            <a ng-if="data.status=='2'">
               <div class="banner-wrap">
                 <img ng-src="{{data.image | uploadpath}}" class="img-responsive">
                 <img src="img/weddings/hover-banner.png" alt="" class="img-responsive hover-image">

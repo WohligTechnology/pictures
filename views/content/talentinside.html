@@ -43,14 +43,14 @@
                         </p>
                      </div>
                      <div class="w-button">
-                        <button class="btn btn-danger" ui-sref="talentinsidedetail({id:data.id})">Know More</button>
+                        <button class="btn btn-danger" ui-sref="talentinsidedetail({id:data.id})" ng-disabled="data.status=='2'">Know More</button>
                      </div>
                   </div>
                </div>
             </div>
          </div>
       </div>
-      <div class="btn-all text-center">
+      <div class="btn-all text-center" ng-if="talentInsideData.length>3">
         <button class="btn btn-danger btn-outline" ng-click="seeMoreTalent();" ng-if="seeMore">
           View All
         </button>

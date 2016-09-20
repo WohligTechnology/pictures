@@ -29,7 +29,16 @@
       </div>
       <div class="flex-slider" ng-if="movieData && movieData.isreleased && movieData.isreleased.length>0">
         <flex-slider flex-slide="data in movieData.isreleased track by $index" ng-if="styleActives == 'mactives'" animation="slide" animation-loop="false" item-width="218" item-margin="10">
-          <li ui-sref="moviesinside({id:data.id})">
+          <li ui-sref="moviesinside({id:data.id})" ng-if="data.status=='1'">
+            <div class="movie-box text-center">
+              <img ng-src="{{data.image | uploadpath}}" alt="" class="img-responsive">
+              <div class="movie-date">
+                <span>Release Date:</span>
+                <p class="color-red">{{data.releasedate | date:'dd MMMM yyyy'}}</p>
+              </div>
+            </div>
+          </li>
+          <li ng-if="data.status=='2'">
             <div class="movie-box text-center">
               <img ng-src="{{data.image | uploadpath}}" alt="" class="img-responsive">
               <div class="movie-date">

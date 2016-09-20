@@ -18,7 +18,14 @@
             <div class="wedding banner-talent" ng-if="eventData.events.length > 0">
                 <div class=row>
                     <div class="col-md-4 col-sm-4 col-xs-6" ng-repeat="data in eventData.events track by $index">
-                        <div class="banner-wrap" ui-sref="eventinside({id:data.id})">
+                        <div class="banner-wrap" ui-sref="eventinside({id:data.id})" ng-if="data.status=='1'">
+                            <img ng-src="{{data.image | uploadpath}}" class="img-responsive">
+                            <img src=img/event/roller-hover.png class="img-responsive hover-image">
+                            <div class="name-event extend-hover text-center center-make"><span class="color-white uppercase">{{data.name}}</span>
+                                <hr class=wedding-border>
+                            </div>
+                        </div>
+                        <div class="banner-wrap" ng-if="data.status=='2'">
                             <img ng-src="{{data.image | uploadpath}}" class="img-responsive">
                             <img src=img/event/roller-hover.png class="img-responsive hover-image">
                             <div class="name-event extend-hover text-center center-make"><span class="color-white uppercase">{{data.name}}</span>
@@ -204,7 +211,7 @@
                 </div>
             </section>
             </div>
-            
+
             <div class="container">
             </div>
             <div class=mr30>

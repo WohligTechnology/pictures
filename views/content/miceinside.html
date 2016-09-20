@@ -17,12 +17,12 @@
     <div class="overlay"></div>
    </div>
 </section>
-<section class="inside" infinite-scroll='addMoreItems();' infinite-scroll-distance="0" infinite-scroll-disabled="shouldscroll">
+<section class="inside">
 <!-- <section infinite-scroll='addMoreItems();' infinite-scroll-distance="0" infinite-scroll-disabled="shouldscroll"> -->
    <div class="container">
       <div class="row mt180">
          <div class="col-md-offset-1 col-md-10">
-            <div class="row pd30" ng-repeat="data in miceSubtype">
+            <div class="row pd30" ng-repeat="data in miceSubtype track by $index">
                <div class="col-sm-6">
                   <div class="wedding-imgbox">
                      <img src="{{data.image | uploadpath}}" class="img-responsive" alt="">
@@ -44,18 +44,24 @@
                         </p> -->
                      </div>
                      <div class="w-button">
-                        <button class="btn btn-danger" ui-sref="miceinsidedetail({id:data.id})">Know More</button>
+                        <button class="btn btn-danger" ui-sref="miceinsidedetail({id:data.id})" ng-disabled="data.status=='2'">Know More</button>
                      </div>
                   </div>
                </div>
             </div>
          </div>
       </div>
-      <!-- <div class="btn-all text-center">
-         <button class="btn btn-outline">
+      <div class="btn-all text-center">
+        <button class="btn btn-outline" ng-click="seeMoreMiceSubtype();" ng-if="seeMore">
+          View All
+        </button>
+        <button class="btn btn-outline" ng-click="seeLessMiceSubtype();" ng-if="seeLess && !seeMore">
+          View Less
+        </button>
+         <!-- <button class="btn btn-outline">
             View all
-         </button>
-      </div> -->
+         </button> -->
+      </div>
    </div>
 </section>
 <!-- <div class="social">

@@ -92,7 +92,7 @@
                 </p> -->
                             </div>
                             <div class="w-button">
-                                <button class="btn btn-danger" ui-sref="asfcdetail({id:data.id})">Know More</button>
+                                <button class="btn btn-danger" ui-sref="asfcdetail({id:data.id})" ng-disabled="data.status=='2'">Know More</button>
                             </div>
                         </div>
                     </div>
@@ -100,9 +100,15 @@
             </div>
         </div>
         <div class="btn-all text-center">
-            <button class="btn btn-outline btn-grey" ng-click="ViewAll()" ng-disabled="lastpage==objPagination.pageno">
+          <button class="btn btn-outline btn-grey" ng-click="seeMoreAsfcdata();" ng-if="seeMore">
+            View All
+          </button>
+          <button class="btn btn-outline btn-grey" ng-click="seeLessAsfcdata();" ng-if="seeLess && !seeMore">
+            View Less
+          </button>
+            <!-- <button class="btn btn-outline btn-grey" ng-click="ViewAll()" ng-disabled="lastpage==objPagination.pageno">
                 View all
-            </button>
+            </button> -->
         </div>
     </div>
     <div class="upcoming-game">

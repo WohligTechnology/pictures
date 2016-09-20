@@ -29,7 +29,10 @@
                     <div class="wed-box border-red">
                       <div class="wed-img-list bordr-color">
                         <img ng-src="{{data.image | uploadpath}}" alt="" class="img-responsive">
-                        <a href="{{data.url}}" target="_new"><div class="overlay1">
+                        <a ng-if="data.status=='1'" href="{{data.url}}" target="_new"><div class="overlay1">
+                            <span> VIEW PRESS</span>
+                           </div></a>
+                        <a ng-if="data.status=='2'"><div class="overlay1">
                             <span> VIEW PRESS</span>
                            </div></a>
                       </div>
@@ -54,9 +57,15 @@
                   </div>
                 </div>
                 <div class="btn-all mr30 text-center">
-                  <button class="btn btn-danger btn-outline" ng-click="loadMore()">
-                    Load More
+                  <button class="btn btn-danger btn-outline" ng-click="seeMoreMediayear();" ng-if="seeMore">
+                    View All
                   </button>
+                  <button class="btn btn-danger btn-outline" ng-click="seeLessMediayear();" ng-if="seeLess && !seeMore">
+                    View Less
+                  </button>
+                  <!-- <button class="btn btn-danger btn-outline" ng-click="loadMore()">
+                    Load More
+                  </button> -->
                 </div>
               </div>
             </div>

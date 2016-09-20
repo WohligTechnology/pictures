@@ -81,7 +81,7 @@ var navigationservice = angular.module('navigationservice', [])
       $http.get(apiUrl + 'getMiceInsideBanner?id=' + id).success(callback);
     },
     getMiceInside: function(obj, callback) {
-      $http.get(apiUrl + 'getMiceInside?id=' + obj.id + "&pageno=" + obj.pageno + "&maxrow=2").success(callback);
+      $http.get(apiUrl + 'getMiceInside?id=' + obj.id + "&pageno=" + obj.pageno + "&maxrow=500").success(callback);
     },
     getMiceInsideDetails: function(id, callback) {
       $http.get(apiUrl + 'getMiceInsideDetails?id=' + id).success(callback);

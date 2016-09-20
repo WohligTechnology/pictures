@@ -45,7 +45,7 @@
                         </p>
                      </div>
                      <div class="w-button">
-                        <button class="btn btn-danger" ng-click="goInside(data.id,data.name)">Know More</button>
+                        <button class="btn btn-danger" ng-click="goInside(data.id,data.name)" ng-disabled="data.status=='2'">Know More</button>
                         <!-- <button class="btn btn-danger" ui-sref="weddinginsidedetail({id:data.id})">Know More</button> -->
                      </div>
                   </div>

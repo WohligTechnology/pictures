@@ -125,22 +125,52 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         });
     })
 
-    .controller('footerctrl', function($scope, TemplateService, NavigationService, $state,$uibModal) {
-        $scope.template = TemplateService;
-        $scope.openModal = function() {
-            var modalInstance = $uibModal.open({
-                animation: $scope.animationsEnabled,
-                templateUrl: 'views/content/modal/get.html',
-                controller: 'footerctrl',
-                size: 'lg',
-                windowClass: 'get-modal',
-            });
+.controller('footerctrl', function($scope, TemplateService, NavigationService, $state, $uibModal) {
+    $scope.template = TemplateService;
+    $scope.openModal = function() {
+        var modalInstance = $uibModal.open({
+            animation: $scope.animationsEnabled,
+            templateUrl: 'views/content/modal/get.html',
+            controller: 'footerctrl',
+            size: 'lg',
+            windowClass: 'get-modal',
+        });
+    };
+    $scope.getin = {};
+    $scope.getin.enquiryarr = [];
+    $scope.showThanks = false;
+
+
+        $scope.moviesSubmitForm = function(formValid) {
+            $scope.getin.enquiry = "";
+            if (formValid.$valid && $scope.getin) {
+                if ($scope.getin.enquiryarr.length > 0) {
+                    _.each($scope.getin.enquiryarr, function(n) {
+                        $scope.getin.enquiry += n + ",";
+                    })
+                    $scope.getin.enquiry = $scope.getin.enquiry.substring(0, $scope.getin.enquiry.length - 1);
+                }
+                $scope.getin.category = 1;
+                NavigationService.getInTouch($scope.getin, function(data) {
+                    console.log(data);
+                    if (data.value != false) {
+                        $scope.showThanks = true;
+                    }
+                });
+            }
         };
 
+        $scope.pushorpop = function(val) {
+            var foundIndex = $scope.getin.enquiryarr.indexOf(val);
+            if (foundIndex == -1) {
+                $scope.getin.enquiryarr.push(val);
+            } else {
+                $scope.getin.enquiryarr.splice(foundIndex, 1);
+            }
+        }
+})
 
-        })
-
-.controller('MoviesCtrl', function($scope, TemplateService, NavigationService, $timeout, $state,$uibModal) {
+.controller('MoviesCtrl', function($scope, TemplateService, NavigationService, $timeout, $state, $uibModal) {
     //Used to name the .html file
     $scope.template = TemplateService.changecontent("movies");
     $scope.menutitle = NavigationService.makeactive("Movies");
@@ -1021,25 +1051,25 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     $scope.seeMore = false;
     $scope.seeLess = false;
     var clientsArray = [];
-  $scope.seeLessClients = function() {
-    NavigationService.getClient(function(data) {
-        $scope.getClientdata = data.data.logos;
-        clientsArray = _.cloneDeep($scope.getClientdata);
-$scope.seeMore = true;
-          $scope.getClientdata = _.slice($scope.getClientdata, [0], [12]);
-          if($scope.getClientdata.length<12){
-              $scope.seeMore = false;
-          }
-    })
-  };
-  $scope.seeLessClients();
-  $scope.seeMoreClients = function() {
-      $scope.seeMore = false;
-      $scope.seeLess = true;
-      // $scope.allMovieName = {}
-      $scope.getClientdata = clientsArray;
-      // console.log('dfgyhujkdrftgh', $scope.allMovieName);
-  }
+    $scope.seeLessClients = function() {
+        NavigationService.getClient(function(data) {
+            $scope.getClientdata = data.data.logos;
+            clientsArray = _.cloneDeep($scope.getClientdata);
+            $scope.seeMore = true;
+            $scope.getClientdata = _.slice($scope.getClientdata, [0], [12]);
+            if ($scope.getClientdata.length < 12) {
+                $scope.seeMore = false;
+            }
+        })
+    };
+    $scope.seeLessClients();
+    $scope.seeMoreClients = function() {
+        $scope.seeMore = false;
+        $scope.seeLess = true;
+        // $scope.allMovieName = {}
+        $scope.getClientdata = clientsArray;
+        // console.log('dfgyhujkdrftgh', $scope.allMovieName);
+    }
     NavigationService.getClientDetail(function(data) {
         $scope.getClientDetaildata = data.data;
         console.log('$scope.getClientDetaildata', $scope.getClientDetaildata);
@@ -1150,20 +1180,37 @@ $scope.seeMore = true;
     $scope.pages = [1]
     $scope.lastpage = 1;
     $scope.asfcInsidedatadetail = [];
-
-    $scope.asfcdata = function() {
+var asfcInsidedatadetailArray = [];
+$scope.seeLess = false;
+$scope.seeMore = false;
+    $scope.seeLessAsfcdata = function() {
         // var id = '2';
         NavigationService.getSportInsidedataByid($scope.objPagination, function(data) {
+          $scope.asfcInsidedatadetail=data.queryresult;
+          asfcInsidedatadetailArray = _.cloneDeep($scope.asfcInsidedatadetail);
             $scope.lastpage = data.lastpage;
             console.log($scope.lastpage);
             // $scope.objPagination.maxrow = data.maxrow;
             _.each(data.queryresult, function(n) {
                 $scope.asfcInsidedatadetail.push(n);
             });
-            console.log($scope.asfcInsidedatadetail);
+
+            $scope.seeMore = true;
+            $scope.asfcInsidedatadetail = _.slice($scope.asfcInsidedatadetail , [0] , [3]);
+            if($scope.asfcInsidedatadetail.length < 3){
+              $scope.seeMore = false;
+            }
+            console.log('$scope.asfcInsidedatadetail',$scope.asfcInsidedatadetail);
         })
+    };
+      $scope.seeLessAsfcdata();
+    $scope.seeMoreAsfcdata = function(){
+      $scope.seeLess = true;
+      $scope.seeMore = false;
+      $scope.asfcInsidedatadetail = asfcInsidedatadetailArray;
     }
-    $scope.asfcdata();
+
+
     var id = '2';
     NavigationService.getasfcSeasonData(id, function(data) {
         $scope.asfcInsidedata = data.data;
@@ -1313,16 +1360,18 @@ $scope.seeMore = true;
     var jppInsideArray = [];
     $scope.seeLessJpp = function() {
         NavigationService.getSportInsidedataByid($scope.jppPagination, function(data) {
-            // $scope.jppInsidedata = data.queryresult;
+            $scope.jppInsidedata = data.queryresult;
+            console.log('$scope.jppInsidedata',$scope.jppInsidedata);
+            jppInsideArray = _.cloneDeep($scope.jppInsidedata);
             // console.log($scope.jppInsidedata);
             $scope.lastpage = data.lastpage;
             _.each(data.queryresult, function(n) {
                 $scope.jppInsidedata.push(n);
             })
-            jppInsideArray = _.cloneDeep($scope.jppInsidedata);
-              $scope.seeMore = true;
+
+            $scope.seeMore = true;
             $scope.jppInsidedata = _.slice($scope.jppInsidedata, [0], [3]);
-            if($scope.jppInsidedata.length<3){
+            if ($scope.jppInsidedata.length < 3) {
                 $scope.seeMore = false;
             }
             console.log('$scope.jppInsidedata', $scope.jppInsidedata);
@@ -1331,13 +1380,13 @@ $scope.seeMore = true;
     }
     $scope.seeLessJpp();
     $scope.seeMoreJpp = function() {
-        $scope.seeMore = false;
-        $scope.seeLess = true;
-        // $scope.allMovieName = {}
-        $scope.talentInsideData = talentInsideArray;
-        // console.log('dfgyhujkdrftgh', $scope.allMovieName);
-    }
-    // $scope.jppfilter();
+            $scope.seeMore = false;
+            $scope.seeLess = true;
+            // $scope.allMovieName = {}
+            $scope.jppInsidedata = jppInsideArray;
+            // console.log('dfgyhujkdrftgh', $scope.allMovieName);
+        }
+        // $scope.jppfilter();
 
     $scope.viewAllJpp = function() {
         console.log('Inside viewAllJpp');
@@ -1724,22 +1773,22 @@ $scope.seeMore = true;
             img: "img/sports/asfc.jpg",
             logo: "img/ASFC/asfc.png",
             link: "asfc",
-            btn:"Enter"
+            btn: "Enter"
         }, {
             img: "img/sports/jpp.jpg",
             logo: "img/jpp/jpp-logo.png",
             link: "jpp",
-              btn:"Enter"
+            btn: "Enter"
         }, {
             img: "img/sports/pfh.jpg",
             name: "Playing for Humanity",
             link: "pfh",
-              btn:"Enter"
+            btn: "Enter"
 
         }, {
             img: "img/sports/sportintative.jpg",
             name: "SPORTS INITIATIVES",
-              btn:"Coming Soon"
+            btn: "Coming Soon"
         }];
     })
     .controller('PfhCtrl', function($scope, TemplateService, NavigationService, $timeout, $state) {
@@ -3068,39 +3117,62 @@ $scope.seeMore = true;
             }
         });
         $scope.pagedata = {};
-        $scope.pagedata.pageno = 0;
+        $scope.pagedata.pageno = 1;
+        $scope.pagedata.maxrow = 500;
+          $scope.lastpage = 1;
         $scope.pagedata.id = $stateParams.id;
         var lastpage = 1;
-
+var miceSubtypeArray = [];
         $scope.miceSubtype = [];
-
-        $scope.getMiceSubtype = function() {
+        $scope.seeMore = false;
+        $scope.seeLess = false;
+        $scope.seeLessMiceSubtype = function() {
             NavigationService.getMiceInside($scope.pagedata, function(data) {
+              $scope.miceSubtype = data.queryresult;
+              console.log('$scope.miceSubtype',$scope.miceSubtype);
+              if ($scope.miceSubtype.length < 3) {
+                  $scope.seeMore = false;
+              }else{
+                    $scope.seeMore = true;
+              }
+              console.log('$scope.miceSubtype',$scope.miceSubtype);
+              miceSubtypeArray = _.cloneDeep($scope.miceSubtype);
                 lastpage = data.lastpage;
-                if (data.queryresult.length > 0) {
+                // if (data.queryresult.length > 0) {
                     _.each(data.queryresult, function(n) {
                         $scope.miceSubtype.push(n);
                     })
-                    $scope.shouldscroll = false;
-                } else {
-                    $scope.shouldscroll = true;
-                }
-                console.log($scope.miceSubtype);
+                    // $scope.shouldscroll = false;
+                // } else {
+                //     $scope.shouldscroll = true;
+                // }
+
+                $scope.miceSubtype = _.slice($scope.miceSubtype, [0], [3]);
+
+
             })
-        }
-
-        $scope.addMoreItems = function() {
-            // console.log("addMoreItems");
-            if (lastpage > $scope.pagedata.pageno) {
-                $scope.pagedata.pageno++;
-                $scope.shouldscroll = true;
-                $scope.getMiceSubtype();
-            } else {
-                $scope.shouldscroll = true;
+        };
+        $scope.seeLessMiceSubtype();
+        $scope.seeMoreMiceSubtype = function() {
+                $scope.seeMore = false;
+                $scope.seeLess = true;
+                // $scope.allMovieName = {}
+                $scope.miceSubtype = miceSubtypeArray;
+                // console.log('dfgyhujkdrftgh', $scope.allMovieName);
             }
-        }
 
-        $scope.addMoreItems();
+        // $scope.addMoreItems = function() {
+        //     // console.log("addMoreItems");
+        //     if (lastpage > $scope.pagedata.pageno) {
+        //         $scope.pagedata.pageno++;
+        //         $scope.shouldscroll = true;
+        //         $scope.getMiceSubtype();
+        //     } else {
+        //         $scope.shouldscroll = true;
+        //     }
+        // }
+
+        // $scope.addMoreItems();
 
     })
     .controller('MiceInsideDetailCtrl', function($scope, TemplateService, NavigationService, $timeout, $stateParams) {
@@ -3146,12 +3218,15 @@ $scope.seeMore = true;
         $scope.objfilter = {};
         $scope.objfilter.year = $stateParams.year;
         $scope.objfilter.pageno = 1;
+        $scope.objfilter.maxrow = 500;
         $scope.pages = [1]
         $scope.mediadatadetail = [];
         // $scope.objfilter.subcat = '';
 
-
-        $scope.getMediayear = function() {
+        var mediaArray = [];
+        $scope.seeMore = false;
+        $scope.seeLess = false;
+        $scope.seeLessMediayear = function() {
             NavigationService.getMediaByYear($scope.objfilter, function(data) {
                 // $scope.mediadatadetail = data.queryresult;
                 console.log('medData: ', $scope.mediadatadetail);
@@ -3174,23 +3249,36 @@ $scope.seeMore = true;
                 lastpage = data.lastpage;
                 _.each(data.queryresult, function(n) {
                     $scope.mediadatadetail.push(n);
+
                 });
+                mediaArray = _.cloneDeep($scope.mediadatadetail);
+                $scope.seeMore = true;
+                $scope.mediadatadetail = _.slice($scope.mediadatadetail, [0], [3]);
+                if ($scope.mediadatadetail.length < 3) {
+                    $scope.seeMore = false;
+                }
             });
         };
+        $scope.seeLessMediayear();
+$scope.seeMoreMediayear = function(){
+  $scope.seeMore = false;
+  $scope.seeLess = true;
+  // $scope.allMovieName = {}
+  $scope.mediadatadetail = mediaArray;
+}
+        // console.log('lastpage: ', lastpage);
+        // $scope.loadMore = function() {
+        //     console.log('///////');
+        //     if (lastpage > $scope.objfilter.pageno) {
+        //         console.log('lastpageeee: ', lastpage)
+        //             ++$scope.objfilter.pageno;
+        //         $scope.pages.push($scope.objfilter.pageno);
+        //         console.log('pages:', $scope.pages);
+        //         $scope.getMediayear();
+        //     }
+        // };
 
-        console.log('lastpage: ', lastpage);
-        $scope.loadMore = function() {
-          console.log('///////');
-            if (lastpage > $scope.objfilter.pageno) {
-                console.log('lastpageeee: ', lastpage)
-                    ++$scope.objfilter.pageno;
-                $scope.pages.push($scope.objfilter.pageno);
-                console.log('pages:', $scope.pages);
-                $scope.getMediayear();
-            }
-        };
 
-        $scope.getMediayear();
 
 
 
@@ -3585,17 +3673,17 @@ $scope.seeMore = true;
         $scope.seeMore = false;
         $scope.seeLess = false;
         var talentInsideArray = [];
-        $scope.seeLessTalent = function(){
-          NavigationService.getTalentInside($stateParams.id, function(data) {
-              $scope.talentInsideData = data.queryresult;
-              talentInsideArray = _.cloneDeep($scope.talentInsideData);
+        $scope.seeLessTalent = function() {
+            NavigationService.getTalentInside($stateParams.id, function(data) {
+                $scope.talentInsideData = data.queryresult;
+                talentInsideArray = _.cloneDeep($scope.talentInsideData);
                 $scope.seeMore = true;
-              $scope.talentInsideData = _.slice($scope.talentInsideData, [0], [3]);
-              if($scope.getClientdata.length<3){
-                  $scope.seeMore = false;
-              }
-              console.log('$scope.talentInsideData', $scope.talentInsideData);
-          })
+                $scope.talentInsideData = _.slice($scope.talentInsideData, [0], [3]);
+                if ($scope.getClientdata.length < 3) {
+                    $scope.seeMore = false;
+                }
+                console.log('$scope.talentInsideData', $scope.talentInsideData);
+            })
         }
 
 
