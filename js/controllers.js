@@ -1613,10 +1613,6 @@ $scope.seeMore = false;
 
     function getFilterResults() {
       console.log("fff",$scope.filterObj);
-      if($scope.filterObj.category==7){
-        $state.go('diaries',{category:''});
-        // $scope.filterObj.category = '';
-      }
         NavigationService.getFilterDiaries($scope.filterObj, function(data) {
             $scope.filterdata = true;
             $scope.filterDiaries = data;
@@ -2870,7 +2866,12 @@ $scope.seeMore = false;
         $scope.menutitle = NavigationService.makeactive("Job Application");
         TemplateService.title = $scope.menutitle;
         $scope.navigation = NavigationService.getnav();
-        $scope.jobTitle = ['EXECUTIVE PRODUCER', 'PRODUCTION ADS', 'EVENTS MANAGERS', 'GRAPHIC DESIGN', 'ASSISTANT MANAGER - MICE TRAVEL', '3D MODELER / VISUALISER'];
+
+        NavigationService.getCareer(function(data) {
+            $scope.jobTitle = data.data;
+            console.log('$scope.careerdata', $scope.careerdata);
+        })
+        // $scope.jobTitle = ['EXECUTIVE PRODUCER', 'PRODUCTION ADS', 'EVENTS MANAGERS', 'GRAPHIC DESIGN', 'ASSISTANT MANAGER - MICE TRAVEL', '3D MODELER / VISUALISER'];
         $scope.formData = {};
         $scope.formData.typearr = [];
         $scope.carrierSubmit = function(formValid) {

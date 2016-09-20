@@ -76,6 +76,7 @@
             <h4 class="uppercase color-red bold letter-spacing">CATEGORIES</h4>
           </div>
           <ul class="list-unstyled">
+            <li><a class="uppercase" ui-sref="diaries({category:''})">Home</a></li>
             <li><a href="" class="uppercase" ng-repeat="cat in diaryData.category" ui-sref="diaries({category:cat.id})">{{cat.name}}</a></li>
             <!-- <li><a href="" class="uppercase">WEDDINGS</a></li>
             <li><a href="" class="uppercase">SPORTS</a></li>
@@ -176,6 +177,7 @@
             <h4 class="uppercase color-red bold letter-spacing">CATEGORIES</h4>
           </div>
           <ul class="list-unstyled">
+            <li><a class="uppercase" ui-sref="diaries({category:''})">Home</a></li>
             <li><a href="" class="uppercase" ng-repeat="cat in diaryData.category" ui-sref="diaries({category:cat.id})">{{cat.name}}</a></li>
           </ul>
           <div class="border-blue borders"></div>

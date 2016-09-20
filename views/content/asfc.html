@@ -129,7 +129,7 @@
                                 </div>
                                 <div class="btn-all mt15 mb15 text-center">
                                     <a href="{{matchData.upcoming[0].link}}">
-                                        <button class="btn btn-primary">Buy Tickets</button>
+                                        <button class="btn btn-primary" ng-disabled='!matchData.upcoming[0].link'>Buy Tickets</button>
                                     </a>
                                 </div>
                             </div>
@@ -141,7 +141,8 @@
                                 </div>
                                 <div class="stadium text-center color-white">
                                     <span>
-                                        {{matchData.upcoming[0].location}}
+
+                                          {{matchData.upcoming[0].stadium}}{{matchData.upcoming[0].location}}
                                     </span>
                                 </div>
                             </div>
@@ -153,7 +154,7 @@
                                     <span>{{matchData.upcoming[0].time}}</span>
                                 </div>
                                 <div class="btn-all mt15 mb15 text-center">
-                                    <button class="btn btn-primary">Add to Calendar</button>
+                                    <button class="btn btn-primary" ng-disabled='true'>Add to Calendar</button>
                                 </div>
                             </div>
                         </div>

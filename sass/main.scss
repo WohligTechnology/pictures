@@ -832,8 +832,8 @@ ul.nav-opt1 {
         margin: 5px 0;
     }
     .wed-desc-inside {
-        height: 40px;
-        overflow: hidden;
+        min-height: 105px;
+        // overflow: hidden;
         p {
             margin-bottom: 0;
         }
@@ -3698,6 +3698,7 @@ h4.title-movies {
         .stats {
             text-align: center;
             border: 2px solid #f13748;
+                min-height: 296px;
             .cimage {
                 margin: 20px;
                 img {
@@ -3894,13 +3895,13 @@ h4.title-movies {
         &:after {
             font: normal normal normal 14px/1 FontAwesome;
             content: "\f0d7";
-            height: 33px;
+            height: 35px;
             padding: 2px 12px;
             width: 40px;
             color: white;
             background-color: #f13748;
             position: absolute;
-            top: -5px;
+            top: -3px;
             right: 0;
             text-align: center;
             font-size: 28px;
