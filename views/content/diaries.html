@@ -164,7 +164,7 @@
             <button class="btn btn-danger btn-outline" ng-click="changePage(-1);" ng-disabled="filterDiaries.pageno==1">
               Prev
             </button>
-            <button class="btn btn-danger btn-outline pull-right" ng-click="changePage(1);" ng-disabled="filterDiaries.pageno==filterDiaries.lastpage">
+            <button class="btn btn-danger btn-outline pull-right" ng-click="changePage(1);" ng-disabled="filterDiaries.pageno==filterDiaries.lastpage || filterDiaries.lastpage==0">
               Next
             </button>
           </div>
