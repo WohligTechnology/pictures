@@ -198,7 +198,7 @@ firstapp.config(function($stateProvider, $urlRouterProvider, $httpProvider, $loc
             templateUrl: "views/template.html",
             controller: 'WorldTourInsideCtrl'
         });
-    $urlRouterProvider.otherwise("/home");
+    $urlRouterProvider.otherwise("/landing");
     $locationProvider.html5Mode(isproduction);
 });
 
