@@ -832,8 +832,8 @@ ul.nav-opt1 {
         margin: 5px 0;
     }
     .wed-desc-inside {
-        min-height: 105px;
-        // overflow: hidden;
+      height: 40px;
+  overflow: hidden;
         p {
             margin-bottom: 0;
         }
@@ -3598,7 +3598,7 @@ h4.title-movies {
 .mediacorner {
     .wed-box {
         .wed-desc-inside {
-            height: 28px;
+            height: 110px;
             p {
                 text-transform: uppercase;
                 color: #f13748;

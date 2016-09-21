@@ -49,8 +49,7 @@
           </div>
           <div class="text-cont">
             <h4>{{getClientDetaildata[0].title}}</h4>
-            <p>
-            {{getClientDetaildata[0].content}}
+            <p ng-bind-html="getClientDetaildata[0].content">
             </p>
             <div class="btn-all mb15 text-right">
             <a href="{{getClientDetaildata[0].url}}">  <button class="btn btn-danger btn-ouline">
