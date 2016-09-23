@@ -1,4 +1,4 @@
-<section>
+<section class="wedding-logospace">
   <div class="container">
     <div class="row">
       <div class="col-xs-12">
@@ -7,7 +7,7 @@
         </div>
       </div>
     </div>
-    <div class="row" ng-if="weddingData && weddingData.description && weddingData.description.content">
+    <div class="row mt30" ng-if="weddingData && weddingData.description && weddingData.description.content">
       <div class="col-md-offset-2 col-md-2 col-sm-4">
         <div class="img-tilt">
           <img src="img/weddings/wedding_fanta.png" class="img-responsive" alt="">
@@ -129,78 +129,78 @@
                   <!-- <p class="bold">{{data.content}}</p> -->
                 </div>
                 <div class="read-more clearfix">
-                  <a href="" class="color-black" ng-if="data.type==1" ui-sref="blogtext({id:data.id})">Read More</a>
-                  <a href="" class="color-black" ng-if="data.type==2" ui-sref="blogimage({id:data.id})">Read More</a>
-                  <a href="" class="color-black" ng-if="data.type==3" ui-sref="blogvideo({id:data.id})">Read More</a>
-                  <div class="wed-date pull-right authorcolor">
-                    <a  "><span>By {{data.authorname}}</span></a>
+                  <a href="" class="color-black pull-left" ng-if="data.type==1" ui-sref="blogtext({id:data.id})">Read More</a>
+                  <a href="" class="color-black pull-left" ng-if="data.type==3" ui-sref="blogvideo({id:data.id})">Read More</a>
+                  <a href="" class="color-black pull-left" ng-if="data.type==2" ui-sref="blogimage({id:data.id})">Read More</a>
+                  <div class="wed-date pull-right color-blacks authorcolor">
+                    <a "class="color-blacks "><span>By {{data.authorname}}</span></a>
                   </div>
                 </div>
               </div>
-              <div class="border-blue borders"></div>
+              <div class="border-blue borders "></div>
             </div>
           </div>
         </div>
-        <div class="btn-all mr30 text-center">
-          <button class="btn btn-danger btn-outline" ui-sref="diaries">
+        <div class="btn-all mr30 text-center ">
+          <button class="btn btn-danger btn-outline " ui-sref="diaries ">
             View All
           </button>
         </div>
       </div>
     </div>
-    <div class="pd-side" ng-if="weddingData.services && weddingData.services.length>0">
-      <div class="row">
-        <div class="col-md-12">
-          <div class="service">
-            <div class="title">
-              <h3 class="uppercase bold text-center">services</h3>
-              <div class="border-blue borders"></div>
-            </div>
-            <div class="services-list">
-              <uib-accordion close-others="oneAtATime" is-open="status.open">
-                <uib-accordion-group is-open="status.open1" is-disabled="status.isFirstDisabled" ng-repeat="data in weddingData.services">
-                  <uib-accordion-heading>
-                    <h4>
-                     <span class="uppercase bold">{{data.name}}</span>
-                      <i class="pull-right fa" ng-class="{'fa-minus': status.open1, 'fa-plus': !status.open1}"></i>
-                    </h4>
-                  </uib-accordion-heading>
-                  <div class="" ng-bind-html="data.content"></div>
-                </uib-accordion-group>
-              </uib-accordion>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="section3" ng-if="weddingData && weddingData.testimonial && weddingData.testimonial.length>0">
-      <div class="bg3">
-        <div class="container">
-          <div class="client-speak">
-            <div class="name-cont color-white">
-              <img src="img/inverted.png" alt="">
-              <span>{{weddingData.testimonial[0].name}}</span>
-            </div>
-            <div class="img-holder">
-              <img ng-src="{{weddingData.testimonial[0].image | uploadpath}}" alt="" class="img-reponsive">
-            </div>
-            <div class="img-review color-white">
-              <h4>"{{weddingData.testimonial[0].quote}}"</h4>
-              <p>- {{weddingData.testimonial[0].author}}</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="row">
+    <div class="pd-side " ng-if="weddingData.services && weddingData.services.length>0">
+                    <div class="row">
+                      <div class="col-md-12">
+                        <div class="service">
+                          <div class="title">
+                            <h3 class="uppercase bold text-center">services</h3>
+                            <div class="border-blue borders"></div>
+                          </div>
+                          <div class="services-list">
+                            <uib-accordion close-others="oneAtATime" is-open="status.open">
+                              <uib-accordion-group is-open="status.open1" is-disabled="status.isFirstDisabled" ng-repeat="data in weddingData.services">
+                                <uib-accordion-heading>
+                                  <h4>
+                                    <span class="uppercase bold">{{data.name}}</span>
+                                    <i class="pull-right fa" ng-class="{'fa-minus': status.open1, 'fa-plus': !status.open1}"></i>
+                                  </h4>
+                                </uib-accordion-heading>
+                                <div class="" ng-bind-html="data.content"></div>
+                              </uib-accordion-group>
+                            </uib-accordion>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="section3" ng-if="weddingData && weddingData.testimonial && weddingData.testimonial.length>0">
+                    <div class="bg3">
+                      <div class="container">
+                        <div class="client-speak">
+                          <div class="name-cont color-white">
+                            <img src="img/inverted.png" alt="">
+                            <span>{{weddingData.testimonial[0].name}}</span>
+                          </div>
+                          <div class="img-holder">
+                            <img ng-src="{{weddingData.testimonial[0].image | uploadpath}}" alt="" class="img-reponsive">
+                          </div>
+                          <div class="img-review color-white">
+                            <h4>"{{weddingData.testimonial[0].quote}}"</h4>
+                            <p>- {{weddingData.testimonial[0].author}}</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!--<div class="row">
       <div class="col-md-offset-2 col-md-8">
         <div class="text-center">
           <h4 class="uppercase color-blue bold">Use <a href="{{weddingData.description.hashtag}}" class="color-red" target="_blank">#GSWedding</a> and get to view live feed of everyone,<br>
 including yours, right here!</h4>
         </div>
       </div>
-    </div>
-    <!-- <div class="social">
+    </div>-->
+                  <!-- <div class="social">
 
       <section class="marg-section">
         <div class="social-back ">
@@ -243,187 +243,181 @@ including yours, right here!</h4>
       </section>
     </div> -->
 
-    <div class="social">
-    <!-- <div ng-include = "'/social.html'"></div> --><section class="marg-section">
-        <div class="social-back ">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-4 col-sm-4">
-                        <div class="social-box text-center">
-                            <img src="img/socials/facebook.png" class="doneLoading">
-                        </div>
-                        <div class="social-logo text-center">
-                            <div class="feed-social mt30">
-                                <div class="fb-page" data-href="https://www.facebook.com/GSWorldwideEnt/" data-tabs="timeline" data-width="360" data-height="480" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true">
+                  <div class="social">
+                    <!-- <div ng-include = "'/social.html'"></div> -->
+                    <section class="marg-section">
+                      <div class="social-back ">
+                        <div class="container">
+                          <div class="row">
+                            <div class="col-md-4 col-sm-4">
+                              <div class="social-box text-center">
+                                <img src="img/socials/facebook.png" class="doneLoading">
+                              </div>
+                              <div class="social-logo text-center">
+                                <div class="feed-social mt30">
+                                  <div class="fb-page" data-href="https://www.facebook.com/GSWorldwideEnt/" data-tabs="timeline" data-width="360" data-height="480" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true">
                                     <div class="fb-xfbml-parse-ignore">
-                                        <blockquote cite="https://www.facebook.com/GSWorldwideEnt/">
-                                            <a href="https://www.facebook.com/GSWorldwideEnt/">GS Worldwide Entertainment.</a>
-                                        </blockquote>
+                                      <blockquote cite="https://www.facebook.com/GSWorldwideEnt/">
+                                        <a href="https://www.facebook.com/GSWorldwideEnt/">GS Worldwide Entertainment.</a>
+                                      </blockquote>
                                     </div>
+                                  </div>
                                 </div>
+                              </div>
                             </div>
+                            <div class="col-md-4 col-sm-4">
+                              <div class="social-box text-center">
+                                <img src="img/socials/twitter.png" class="doneLoading">
+                              </div>
+                              <div class="social-logo text-center ">
+                                <a class="twitter-timeline" href="https://twitter.com/GSWorldwideEnt" data-widget-id="716880459599228928">Tweets by @GSWorldwideEnt</a>
+                              </div>
+                            </div>
+                            <div class="col-md-4 col-sm-4">
+                              <div class="social-box text-center">
+                                <img src="img/socials/instagram.png" class="doneLoading">
+                              </div>
+                              <div class="social-logo text-center ">
+                                <iframe src="//lightwidget.com/widgets/2965b7333833557283d4029e025bd4e8.html" id="lightwidget_2965b73338" name="lightwidget_2965b73338" scrolling="no" allowtransparency="true" class="lightwidget-widget" style="width: 100%; border: 0; overflow: hidden; height:480px;"></iframe>
+                              </div>
+                            </div>
+                          </div>
                         </div>
-                    </div>
-                    <div class="col-md-4 col-sm-4">
-                        <div class="social-box text-center">
-                            <img src="img/socials/twitter.png" class="doneLoading">
-                        </div>
-                        <div class="social-logo text-center ">
-                            <a class="twitter-timeline" href="https://twitter.com/GSWorldwideEnt" data-widget-id="716880459599228928">Tweets by @GSWorldwideEnt</a>
-                        </div>
-                    </div>
-                    <div class="col-md-4 col-sm-4">
-                        <div class="social-box text-center">
-                            <img src="img/socials/instagram.png" class="doneLoading">
-                        </div>
-                        <div class="social-logo text-center ">
-                            <iframe
-                                src="//lightwidget.com/widgets/2965b7333833557283d4029e025bd4e8.html"
-                                id="lightwidget_2965b73338"
-                                name="lightwidget_2965b73338"
-                                scrolling="no"
-                                allowtransparency="true"
-                                class="lightwidget-widget"
-                                style="width: 100%; border: 0; overflow: hidden; height:480px;"></iframe>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    </div>
+                      </div>
+                    </section>
+                  </div>
 
 
-    <div class="mr30">
-      <div class="row">
-        <div class="col-md-offset-2 col-md-8">
-          <div class="get-in-touch" ng-hide="showThanks">
-            <h3 class="color-red uppercase bold">GET IN TOUCH</h3>
-            <form name="wed">
-              <div class="row">
-                <div class="col-md-6">
-                  <div class="form-group">
-                    <input type="text" ng-model="getin.firstname" name="name" class="form-control" id="exampleInputEmail1" placeholder="First Name" required>
-                    <div class="error-msg" ng-show="wed.name.$error.required && wed.name.$touched">Please Enter Your First Name.</div>
-                  </div>
-                </div>
-                <div class="col-md-6">
-                  <div class="form-group">
-                    <input type="text" ng-model="getin.lastname" name="name1" class="form-control" id="exampleInputEmail1" placeholder="Last Name" required>
-                    <div class="error-msg" ng-show="wed.name1.$error.required && wed.name1.$touched">Please Enter Your Last Name.</div>
-                  </div>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-md-6">
-                  <div class="form-group">
-                    <input type="email" ng-model="getin.email" name="email" class="form-control" id="exampleInputEmail1" placeholder="Email" required>
-                    <div class="error-msg" ng-show="wed.email.$error.required && wed.email.$touched">Please Enter Your Email.</div>
-                  </div>
-                </div>
-                <div class="col-md-6">
-                  <div class="form-group">
-                    <input type="tel" ng-model="getin.phone" name="phone" class="form-control" id="exampleInputEmail1" maxlength="13" placeholder="Phone number" required>
-                    <div class="error-msg" ng-show="wed.phone.$error.required && wed.phone.$touched">Please Enter Phone number.</div>
-                  </div>
-                </div>
-              </div>
-              <div class="form-group">
-                <div class="row">
-                  <div class="col-md-10">
-                    <div class="enq-list">
-                      <label class="checkbox-inline enquire text-label" style="padding-left:0;margin-top:0px;">
+                  <div class="mr30">
+                    <div class="row">
+                      <div class="col-md-offset-2 col-md-8">
+                        <div class="get-in-touch" ng-hide="showThanks">
+                          <h3 class="color-red uppercase bold">GET IN TOUCH</h3>
+                          <form name="wed">
+                            <div class="row">
+                              <div class="col-md-6">
+                                <div class="form-group">
+                                  <input type="text" ng-model="getin.firstname" name="name" class="form-control" id="exampleInputEmail1" placeholder="First Name" required>
+                                  <div class="error-msg" ng-show="wed.name.$error.required && wed.name.$touched">Please Enter Your First Name.</div>
+                                </div>
+                              </div>
+                              <div class="col-md-6">
+                                <div class="form-group">
+                                  <input type="text" ng-model="getin.lastname" name="name1" class="form-control" id="exampleInputEmail1" placeholder="Last Name" required>
+                                  <div class="error-msg" ng-show="wed.name1.$error.required && wed.name1.$touched">Please Enter Your Last Name.</div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="row">
+                              <div class="col-md-6">
+                                <div class="form-group">
+                                  <input type="email" ng-model="getin.email" name="email" class="form-control" id="exampleInputEmail1" placeholder="Email" required>
+                                  <div class="error-msg" ng-show="wed.email.$error.required && wed.email.$touched">Please Enter Your Email.</div>
+                                </div>
+                              </div>
+                              <div class="col-md-6">
+                                <div class="form-group">
+                                  <input type="tel" ng-model="getin.phone" name="phone" class="form-control" id="exampleInputEmail1" maxlength="13" placeholder="Phone number" required>
+                                  <div class="error-msg" ng-show="wed.phone.$error.required && wed.phone.$touched">Please Enter Phone number.</div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="form-group">
+                              <div class="row">
+                                <div class="col-md-10">
+                                  <div class="enq-list">
+                                    <label class="checkbox-inline enquire text-label" style="padding-left:0;margin-top:0px;">
                         <span class="color-red">Enquiring for </span>
                       </label>
-                      <label class="checkbox-inline">
+                                    <label class="checkbox-inline">
                         <input type="checkbox" id="wedding" ng-click="pushorpop('360 Wedding')">
                         <label for="wedding"><span></span> 360 Wedding </label>
-                      </label>
-                      <label class="checkbox-inline">
+                                    </label>
+                                    <label class="checkbox-inline">
                         <input type="checkbox" id="nite" ng-click="pushorpop('Bollywood Nite')">
                         <label for="nite"><span></span> Bollywood Nite </label>
-                      </label>
-                      <label class="checkbox-inline">
+                                    </label>
+                                    <label class="checkbox-inline">
                         <input type="checkbox" id="weddings" ng-click="pushorpop('Destination Weddings')">
                         <label for="weddings"><span></span>Destination Weddings</label>
-                      </label>
-                      <label class="checkbox-inline">
+                                    </label>
+                                    <label class="checkbox-inline">
                         <input type="checkbox" id="cocktail" ng-click="pushorpop('Youngsters & Cocktail Party')">
                         <label for="cocktail"><span></span>Youngsters &amp; Cocktail Party </label>
-                      </label>
-                      <label class="checkbox-inline">
+                                    </label>
+                                    <label class="checkbox-inline">
                         <input type="checkbox" id="sangeet" ng-click="pushorpop('Mehendi & Sangeet')">
                         <label for="sangeet"><span></span>Mehendi &amp; Sangeet </label>
-                      </label>
-                      <label class="checkbox-inline">
+                                    </label>
+                                    <label class="checkbox-inline">
                         <input type="checkbox" id="reception" ng-click="pushorpop('Phera & Reception')">
                         <label for="reception"><span></span>Phera &amp; Reception</label>
-                      </label>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-md-6">
-                  <div class="form-group has-feedback">
-                    <!-- <input type="date" class="form-control" required id="inputSuccess2" aria-describedby="Start Date" placeholder="Start Date">
+                                    </label>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="row">
+                              <div class="col-md-6">
+                                <div class="form-group has-feedback">
+                                  <!-- <input type="date" class="form-control" required id="inputSuccess2" aria-describedby="Start Date" placeholder="Start Date">
                     <span class="fa fa-calendar color-red form-control-feedback" aria-hidden="true"></span> -->
 
-                    <p class="input-group">
-                      <input type="text" placeholder="Start Date" class="form-control" uib-datepicker-popup="{{format}}" ng-model="getin.date" is-open="popup1.opened" datepicker-options="soptions" ng-required="true" close-text="Close" alt-input-formats="altInputFormats" ng-change="changeEOptions();"
-                      />
-                      <span class="input-group-btn">
+                                  <p class="input-group">
+                                    <input type="text" placeholder="Start Date" class="form-control" uib-datepicker-popup="{{format}}" ng-model="getin.date" is-open="popup1.opened" datepicker-options="soptions" ng-required="true" close-text="Close" alt-input-formats="altInputFormats" ng-change="changeEOptions();"
+                                    />
+                                    <span class="input-group-btn">
                                       <button type="button" class="btn btn-default" ng-click="open1()">
                                           <i class="fa fa-calendar color-red form-control-feedback"></i>
                                       </button>
                                   </span>
-                    </p>
-                  </div>
-                </div>
-                <div class="col-md-6">
-                  <div class="form-group has-feedback">
-                    <!-- <input type="date" class="form-control" required id="inputSuccess2" aria-describedby="Start Date" placeholder="Start Date">
+                                  </p>
+                                </div>
+                              </div>
+                              <div class="col-md-6">
+                                <div class="form-group has-feedback">
+                                  <!-- <input type="date" class="form-control" required id="inputSuccess2" aria-describedby="Start Date" placeholder="Start Date">
                     <span class="fa fa-calendar color-red form-control-feedback" aria-hidden="true"></span> -->
 
-                    <p class="input-group">
-                      <input type="text" placeholder="End Date" class="form-control" uib-datepicker-popup="{{format}}" ng-model="getin.enddate" is-open="popup2.opened" datepicker-options="eoptions" ng-required="true" close-text="Close" alt-input-formats="altInputFormats" />
-                      <span class="input-group-btn">
+                                  <p class="input-group">
+                                    <input type="text" placeholder="End Date" class="form-control" uib-datepicker-popup="{{format}}" ng-model="getin.enddate" is-open="popup2.opened" datepicker-options="eoptions" ng-required="true" close-text="Close" alt-input-formats="altInputFormats" />
+                                    <span class="input-group-btn">
                                     <button type="button" class="btn btn-default" ng-click="open2()">
                                       <i class="fa fa-calendar color-red form-control-feedback"></i>
                                     </button>
                                   </span>
-                    </p>
+                                  </p>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="row">
+                              <div class="col-md-6">
+                                <div class="form-group">
+                                  <input type="text" ng-model="getin.location" name="loc" class="form-control" id="exampleInputEmail1" placeholder="Location" required="required">
+                                  <div class="error-msg" ng-show="wed.loc.$error.required && wed.loc.$touched">Enter Location</div>
+                                </div>
+                              </div>
+                              <div class="col-md-6">
+                                <div class="form-group">
+                                  <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Number of People Expected">
+                                </div>
+                              </div>
+                            </div>
+                            <div class="row">
+                              <div class="col-md-12">
+                                <textarea class="form-control" ng-model="getin.comment" name="say" rows="3" placeholder="Say Something" required="required"></textarea>
+                                <div class="error-msg" ng-show="wed.say.$error.required && wed.say.$touched">Enter Something</div>
+                                <div class="submit-btn btn-all text-center mt15">
+                                  <button class="btn btn-danger" type="button" name="button" ng-class="{'disabled' : !wed.$valid }" ng-click="weddingSubmitForm(wed)">submit</button>
+                                </div>
+                              </div>
+                            </div>
+                          </form>
+                        </div>
+                        <div class="get-in-touch text-center" ng-show="showThanks">
+                          <h5 class="color-red uppercase bold">Thank You ! Your enquiry has been submitted. We will get back to you soon.</h5>
+                        </div>
+                      </div>
+                    </div>
                   </div>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-md-6">
-                  <div class="form-group">
-                    <input type="text" ng-model="getin.location" name="loc" class="form-control" id="exampleInputEmail1" placeholder="Location" required="required">
-                    <div class="error-msg" ng-show="wed.loc.$error.required && wed.loc.$touched">Enter Location</div>
-                  </div>
-                </div>
-                <div class="col-md-6">
-                  <div class="form-group">
-                    <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Number of People Expected">
-                  </div>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-md-12">
-                  <textarea class="form-control" ng-model="getin.comment" name="say" rows="3" placeholder="Say Something" required="required"></textarea>
-                  <div class="error-msg" ng-show="wed.say.$error.required && wed.say.$touched">Enter Something</div>
-                  <div class="submit-btn btn-all text-center mt15">
-                    <button class="btn btn-danger" type="button" name="button" ng-class="{'disabled' : !wed.$valid }" ng-click="weddingSubmitForm(wed)">submit</button>
-                  </div>
-                </div>
-              </div>
-            </form>
-          </div>
-          <div class="get-in-touch text-center" ng-show="showThanks">
-            <h5 class="color-red uppercase bold">Thank You ! Your enquiry has been submitted. We will get back to you soon.</h5>
-          </div>
-        </div>
-      </div>
-    </div>
 </section>

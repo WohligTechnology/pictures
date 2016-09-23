@@ -10,6 +10,7 @@
         width: 100%;
     }
 }
+
 @media screen and (max-width: 1200px) {
     .search .enterloc h4 {
         margin-bottom: 0;
@@ -37,7 +38,7 @@
             margin-top: 200px;
             margin-bottom: 10px;
         }
-        .bg2 .btn-group-lg > button.btn.btn-danger,
+        .bg2 .btn-group-lg>button.btn.btn-danger,
         button.btn.btn-danger.btn-lg {
             padding: 6px 16px;
             font-size: 14px;
@@ -93,6 +94,7 @@
         }
     }
 }
+
 @media (max-width: 1024px) {
     .bg2 .diary {
         margin-top: 160px;
@@ -114,6 +116,7 @@
         font-size: 20px;
     }
 }
+
 @media (max-width: $screen-sm-max) {
     .propro .yoname {
         width: 45%;
@@ -158,6 +161,9 @@
     .pd-side {
         padding: 0 10px;
     }
+    .talent-services .talent-css .pd-side {
+        padding: 0 10px;
+    }
     .navbar-default .navbar-brand {
         img.years {
             width: 60px;
@@ -177,6 +183,7 @@
         padding: 5px 0;
     }
     .banner-talent .banner-wrap .name-event {
+        width: 98.1%;
         span {
             margin-top: 6px;
             display: inline-block;
@@ -185,6 +192,9 @@
         .btn-all .btn {
             padding: 4px 20px;
         }
+    }
+    .banner-talent .row .col-sm-6 {
+        padding: 1px;
     }
     .overlay1 {
         span {
@@ -287,9 +297,9 @@
     }
     .movie-category .flexslider {
         width: 690px;
-        ul.flex-direction-nav {
-            display: none;
-        }
+        // ul.flex-direction-nav {
+        //     display: none;
+        // }
     }
     .bg-moviesdiaries {
         .pd-side {
@@ -321,7 +331,18 @@
         font-size: 10px;
     }
 }
+
 @media (max-width: $screen-xs-max) {
+    .jpps {
+        .mt30 {
+            margin-top: -50px;
+        }
+    }
+    .wedding-logospace {
+        .mt30 {
+            margin-top: -30px;
+        }
+    }
     .bg-red-jpp {
         background: $brand-danger;
     }
@@ -474,11 +495,11 @@
         font-size: 14px;
     }
     .mobile-pt0 {
-        padding-left: 7% !important;
+        padding-left: 16% !important;
         padding-bottom: 3% !important;
     }
     .mobile-pt1 {
-        padding-left: 18% !important;
+        padding-left: 28% !important;
         padding-bottom: 3% !important;
     }
     .pl3 {
@@ -502,9 +523,11 @@
         background: $brand-danger;
         .flex-slider {
             width: 325px;
+            height: 416px;
         }
         .diary {
-            margin-top: 70px;
+            margin-top: 50px;
+            margin-bottom: 40px;
         }
     }
     .client-speak {
@@ -554,7 +577,7 @@
         padding: 20px 0;
     }
     .upcoming-game {
-        padding: 20px 0 170px;
+        padding: 20px 0 15px;
         .team-logo img {
             width: 100px;
             margin: 0 auto;
@@ -568,7 +591,7 @@
         }
     }
     .asfc-rl {
-        margin-top: -85px;
+        margin-top: 5px;
         left: 15px;
     }
     .pdasfc {
@@ -581,7 +604,7 @@
         }
     }
     .prv-game {
-        background: #f0f0f0;
+        background: #f13748;
         position: static!important;
         .m40 {
             margin-top: 0;
@@ -638,12 +661,12 @@
     }
     .movie-category .flexslider {
         width: 460px;
-        .nav-tabs > li a {
+        .nav-tabs>li a {
             font-size: 16px;
         }
     }
     .movie-category {
-        .nav-tabs > li a {
+        .nav-tabs>li a {
             font-size: 14px;
         }
         &.bg-grey {
@@ -660,8 +683,14 @@
             color: #f13748;
         }
     }
+    .br {
+        border-right: none;
+    }
+    .service .services-list .panel-group .panel-default .panel-heading h4 {
+        font-size: 13px;
+    }
     .playersasfc.mt180 {
-        margin-top: 180px;
+        margin-top: 250px;
         .row-flex {
             @include display(block);
         }
@@ -712,19 +741,63 @@
             margin: 20px auto;
         }
     }
+    .bg-moviesdiaries {
+        .pd-side {
+            .row {
+                overflow: hidden;
+                height: 262px;
+            }
+        }
+        .read-more {
+            a {
+                font-size: 14px;
+            }
+        }
+        .wed-box {
+            padding-bottom: 10px;
+        }
+        .wed-date {
+            font-size: 14px;
+        }
+        .authorcolor {
+            float: left !important;
+        }
+    }
+    .mediacorner {
+        .bg-moviesdiaries {
+            .pd-side {
+                .row {
+                    overflow: visible;
+                    height: auto;
+                }
+            }
+        }
+    }
+    .row-flex {
+        .col-flex25 {
+            flex: 0 0 50%;
+            float: left;
+            width: 50%;
+        }
+    }
+    box-clients .client-caption {
+        font-size: 16px;
+    }
 }
+
 @media (max-width: 600px) {
     ul.nav-opt1 {
         left: 22%;
     }
 }
+
 @media (max-width: 480px) {
     .nav-list {
         padding: 70px 20px 0;
     }
-    .min-height-section1 {
-        min-height: 100px;
-    }
+    // .min-height-section1 {
+    //     min-height: 100px;
+    // }
     footer .footer-menu ul li a {
         padding: 2px 0;
     }
@@ -752,8 +825,56 @@
     .releasedate {
         margin: 11px 0 10px;
     }
-    li.flex-nav-next {
-        display: none;
+    // li.flex-nav-next {
+    //     display: none;
+    // }
+    .bg2 .flex-slider .flex-direction-nav a {
+        height: 95px;
+    }
+    .bg2 .flex-slider .flexslider .flex-direction-nav .flex-prev {
+        left: -34px !important;
+    }
+    .bg2 .flex-slider .flexslider .flex-direction-nav .flex-next {
+        right: -12px !important;
+    }
+    .bg2 .flex-slider .flex-direction-nav a.flex-prev:before {
+        @include transform(scale(1, 1));
+    }
+    .bg2 .flex-slider .flex-direction-nav a.flex-next:before {
+        @include transform(scale(1, 1));
+    }
+    .mislider .flex-slider .flex-direction-nav .flex-next {
+        right: -49px !important;
+    }
+    .mislider .flex-slider .flex-direction-nav .flex-prev {
+        left: -65px !important;
+    }
+    .mislider .flex-slider .flex-direction-nav a {
+        margin: -45px 0 0;
+        transform: scale(0.5);
+    }
+    .mehendi .flexslider .flex-direction-nav .flex-next {
+        right: -45px !important;
+    }
+    .mehendi .flexslider .flex-direction-nav .flex-prev {
+        left: -65px !important;
+    }
+    .mehendi .flexslider .flex-direction-nav a {
+        margin: -45px 0 0;
+        transform: scale(0.5);
+    }
+    .jppseason .flexslider .flex-direction-nav .flex-next {
+        right: -45px !important;
+    }
+    .jppseason .flexslider .flex-direction-nav .flex-prev {
+        left: -65px !important;
+    }
+    .jppseason .flexslider .flex-direction-nav a {
+        margin: -45px 0 0;
+        transform: scale(0.5);
+    }
+    .mislider .title h4 {
+        margin: 0px 5px 10px;
     }
     .upcoming-game .title-asfc h3 {
         width: auto;
@@ -922,7 +1043,7 @@
     ul.nav-opt1 {
         top: 115px;
         li a {
-            font-size: 32px;
+            font-size: 40px;
             img {
                 height: 26px;
             }
@@ -959,7 +1080,7 @@
                     font-size: 24px;
                 }
             }
-            .nav > li > a {
+            .nav>li>a {
                 padding: 2px 8px;
             }
             .nav-tabs li a {
@@ -985,7 +1106,7 @@
     }
     .videoslider {
         margin-top: 50px;
-        margin-bottom: 10px;
+        margin-bottom: 5px;
     }
     h4.title-movies {
         font-size: 24px;
@@ -1040,7 +1161,14 @@
         // padding: 2px 10px;
         // font-size: 12px;
     }
+    .bg2 {
+        .flex-slider {
+            @include transform(scale(1) translateX(0%));
+            margin-top: -35px;
+        }
+    }
 }
+
 @media (max-width: 400px) {
     // .bg2 .flex-slider {
     //   @include transform(scale(0.7) translateX(0));
@@ -1048,7 +1176,7 @@
     ul.nav-opt1 {
         left: 50%;
         @include transform(translateX(-50%));
-        width: 275px;
+        width: 306px;
         margin: 0 auto;
         position: absolute;
         li a img {
@@ -1062,10 +1190,17 @@
     //     margin: 0 auto 60px;
     // }
 }
+
 @media (max-width: 360px) {
-    .bg-award .awards .nav > li > a {
+    .bg-award .awards .nav>li>a {
         padding: 2px 4px;
         font-size: 12px;
+    }
+    .bg2 {
+        .flex-slider {
+            @include transform(scale(0.7) translateX(-7%));
+            margin-top: -65px;
+        }
     }
     ul.nav-opt1 {
         li a {

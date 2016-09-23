@@ -1,5 +1,5 @@
 <section>
-   <!-- <div class="banner banner-movies ab">
+  <!-- <div class="banner banner-movies ab">
       <img ng-src="{{weddingBanner | uploadpath}}" class="img-responsive" style="width:100%;">
     <div class="banner-title text-center">
       <h4>
@@ -7,15 +7,15 @@
       </h4>
     </div>
    </div> -->
-   <div class="banner banner-movies ab">
-      <img ng-src="{{weddingBanner | uploadpath}}" class="img-responsive" style="width:100%;">
-      <div class="banner-title ab text-center">
+  <div class="banner banner-movies ab">
+    <img ng-src="{{weddingBanner | uploadpath}}" class="img-responsive" style="width:100%;">
+    <div class="banner-title ab text-center">
       <h4 class="wed-box borcol">{{weddingName}}</h4>
       <div class="border-banner bborders"></div>
     </div>
     <div class="overlay"></div>
-   </div>
-   <!-- <div class="banner banner-movies ab">
+  </div>
+  <!-- <div class="banner banner-movies ab">
       <img ng-src="{{weddingBanner | uploadpath}}" class="img-responsive" style="width:100%;">
       <div class="banner-title ab text-center">
       <h4 class="wed-box borcol">360 Weddings</h4>
@@ -24,39 +24,39 @@
    </div> -->
 </section>
 <section infinite-scroll='addMoreItems();' infinite-scroll-distance="0" infinite-scroll-disabled="shouldscroll">
-   <div class="container">
-      <div class="row mt180">
-         <div class="col-md-offset-1 col-md-10">
-            <div class="row pd30" ng-repeat="data in weddingSubtype">
-               <div class="col-sm-6">
-                  <div class="wedding-imgboxs">
-                     <img ng-src="{{data.image | uploadpath}}" class="img-responsive img-width" alt="">
-                     <img ng-src="img/masking.png" alt="" class="img-responsive pattern-overlay">
-                  </div>
-               </div>
-               <div class="col-sm-6">
-                  <div class="wedding-detail mt45">
-                     <div class="w-title">
-                        <h4 class="uppercase color-red bold">{{data.name}}</h4>
-                     </div>
-                     <div class="w-detail mt15 mb15">
-                        <p>
-                           {{data.content}}
-                        </p>
-                     </div>
-                     <div class="w-button">
-                        <button class="btn btn-danger" ng-click="goInside(data.id,data.name)" ng-disabled="data.status=='2'">Know More</button>
-                        <!-- <button class="btn btn-danger" ui-sref="weddinginsidedetail({id:data.id})">Know More</button> -->
-                     </div>
-                  </div>
-               </div>
+  <div class="container">
+    <div class="row mt180">
+      <div class="col-md-offset-1 col-md-10">
+        <div class="row pd30" ng-repeat="data in weddingSubtype">
+          <div class="col-sm-6">
+            <div class="wedding-imgboxs">
+              <img ng-src="{{data.image | uploadpath}}" class="img-responsive img-width" alt="">
+              <img ng-src="img/masking.png" alt="" class="img-responsive pattern-overlay">
             </div>
-         </div>
+          </div>
+          <div class="col-sm-6">
+            <div class="wedding-detail mt45">
+              <div class="w-title">
+                <h4 class="uppercase color-red bold">{{data.name}}</h4>
+              </div>
+              <div class="w-detail mt15 mb15" ng-if="data.content != ''">
+                <p>
+                  {{data.content}}
+                </p>
+              </div>
+              <div class="w-button">
+                <button class="btn btn-danger" ng-click="goInside(data.id,data.name)" ng-disabled="data.status=='2'" style="margin-top:5px;">Know More</button>
+                <!-- <button class="btn btn-danger" ui-sref="weddinginsidedetail({id:data.id})">Know More</button> -->
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-      <!-- <div class="btn-all text-center">
+    </div>
+    <!-- <div class="btn-all text-center">
          <button class="btn btn-outline">
             View all
          </button>
       </div> -->
-   </div>
+  </div>
 </section>

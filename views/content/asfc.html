@@ -86,13 +86,13 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="w-detail mt15 mb15" ng-bind-html="data.content">
+                            <div class="w-detail mt15 mb15" ng-if="data.content != ''" ng-bind-html="data.content">
                                 <!-- <p>
                   {{data.detail}}
                 </p> -->
                             </div>
                             <div class="w-button">
-                                <button class="btn btn-danger" ui-sref="asfcdetail({id:data.id})" ng-disabled="data.status=='2'">Know More</button>
+                                <button class="btn btn-danger" ui-sref="asfcdetail({id:data.id})" ng-disabled="data.status=='2'" style="margin-top:5px;">Know More</button>
                             </div>
                         </div>
                     </div>
@@ -100,10 +100,10 @@
             </div>
         </div>
         <div class="btn-all text-center">
-          <button class="btn btn-outline btn-grey" ng-click="seeMoreAsfcdata();" ng-if="seeMore">
+            <button class="btn btn-outline btn-grey" ng-click="seeMoreAsfcdata();" ng-if="seeMore">
             View All
           </button>
-          <button class="btn btn-outline btn-grey" ng-click="seeLessAsfcdata();" ng-if="seeLess && !seeMore">
+            <button class="btn btn-outline btn-grey" ng-click="seeLessAsfcdata();" ng-if="seeLess && !seeMore">
             View Less
           </button>
             <!-- <button class="btn btn-outline btn-grey" ng-click="ViewAll()" ng-disabled="lastpage==objPagination.pageno">
@@ -111,7 +111,7 @@
             </button> -->
         </div>
     </div>
-    <div class="upcoming-game">
+    <div class="upcoming-game" ng-if="matchData != ''">
         <div class="title-asfc">
             <h3 class="text-center bold uppercase">
                 UPCOMING GAME
@@ -311,14 +311,14 @@
             </div>
         </div>
         <div class="container">
-            <div class="row">
+            <!--<div class="row">
                 <div class="col-md-offset-2 col-md-8">
                     <div class="text-center">
                         <h4 class="uppercase color-blue bold">Use
                             <a href="{{asfcInsidedata.description.hashtag}}" class="color-red" target="_blank">#ASFC</a> and get to view live feed of everyone,<br> including yours, right here!</h4>
                     </div>
                 </div>
-            </div>
+            </div>-->
             <!-- <div class="social">
                 <section class="marg-section">
                     <div class="social-back ">

@@ -1,4 +1,4 @@
-<section>
+<section class="talent-services">
   <div class="container">
     <div class="row">
       <div class="col-xs-12">
@@ -18,16 +18,16 @@
   </div>
   <div class="bg-all-talent bg-grey-similar">
     <div class="container">
-      <div class="banner-talents">
+      <div class="banner-talent">
         <div class="row">
           <div class="col-sm-6" ng-repeat="data in getTalentdata.talent track by $index">
-            <div class="banner-wrap" style="padding:0 5px 5px 0;">
+            <div class="banner-wrap" ui-sref="talentinside({id:data.id})" ng-disabled="data.status=='2'" style="cursor:pointer;padding:0 5px 5px 0;">
               <img ng-src="{{data.image | uploadpath}}" class="img-responsive">
               <!-- <img src="img/talent/hover-banner.png" alt="" class="img-responsive hover-image"> -->
               <div class="name-event btm">
                 <span class="color-white uppercase">{{data.name}}</span>
                 <div class="pull-right btn-all">
-                  <button type="button" name="button" class="btn btn-small color-red" ui-sref="talentinside({id:data.id})" ng-disabled="data.status=='2'">Enter</button>
+                  <button type="button" name="button" class="btn btn-small color-red">Enter</button>
                 </div>
               </div>
               <!-- <div class="name-event extend-hover text-center">
@@ -68,64 +68,64 @@
                     <!-- <p class="bold">{{data.desc}}</p> -->
                   </div>
                   <div class="read-more clearfix">
-                     <a href="" class="color-black" ng-if="data.type==1" ui-sref="blogtext({id:data.id})">Read More</a>
-                     <a href="" class="color-black" ng-if="data.type==2" ui-sref="blogimage({id:data.id})">Read More</a>
-                     <a href="" class="color-black" ng-if="data.type==3" ui-sref="blogvideo({id:data.id})">Read More</a>
-                     <div class="wed-date pull-right authorcolor">
-                           <a  "><span>By {{data.authorname}}</span></a>
+                    <a href="" class="color-black pull-left" ng-if="data.type==1" ui-sref="blogtext({id:data.id})">Read More</a>
+                    <a href="" class="color-black pull-left" ng-if="data.type==2" ui-sref="blogimage({id:data.id})">Read More</a>
+                    <a href="" class="color-black pull-left" ng-if="data.type==3" ui-sref="blogvideo({id:data.id})">Read More</a>
+                    <div class="wed-date pull-right color-blacks authorcolor">
+                      <a "class="color-blacks "><span>By {{data.authorname}}</span></a>
                      </div>
                   </div>
                 </div>
-                <div class="border-blue borders"></div>
+                <div class="border-blue borders "></div>
               </div>
             </div>
           </div>
-          <div class="btn-all mr30 text-center">
-            <button class="btn btn-danger btn-outline" ui-sref="diaries">
+          <div class="btn-all mr30 text-center ">
+            <button class="btn btn-danger btn-outline " ui-sref="diaries ">
               View All
             </button>
           </div>
         </div>
       </div>
 
-      <!-- <div class="service-bg bg-red-mobile">
-        <div class="row">
-          <div class="col-xs-6">
-            <div class="serv-title min-hght">
-              <h3 class="uppercase bold make-center">SERVICES</h3>
+      <!-- <div class="service-bg bg-red-mobile ">
+        <div class="row ">
+          <div class="col-xs-6 ">
+            <div class="serv-title min-hght ">
+              <h3 class="uppercase bold make-center ">SERVICES</h3>
             </div>
           </div>
-          <div class="col-xs-6 mt110">
-            <div class="row">
-              <div class="col-md-6">
-                <div class="list-service">
-                  <ul class="list-unstyled serviceul">
+          <div class="col-xs-6 mt110 ">
+            <div class="row ">
+              <div class="col-md-6 ">
+                <div class="list-service ">
+                  <ul class="list-unstyled serviceul ">
                     <li>
-                      <a class="color-white uppercase" ui-sref="home">Brand Endorsements</a>
+                      <a class="color-white uppercase " ui-sref="home ">Brand Endorsements</a>
                     </li>
                     <li>
-                      <a class="color-white uppercase" ui-sref="home">Event Appreances</a>
+                      <a class="color-white uppercase " ui-sref="home ">Event Appreances</a>
                     </li>
                     <li>
-                      <a class="color-white uppercase" ui-sref="home">Live Performances</a>
+                      <a class="color-white uppercase " ui-sref="home ">Live Performances</a>
                     </li>
                     <li>
-                      <a class="color-white uppercase" ui-sref="home">Talent Representation</a>
+                      <a class="color-white uppercase " ui-sref="home ">Talent Representation</a>
                     </li>
                   </ul>
                 </div>
               </div>
-              <div class="col-md-6">
-                <div class="list-service">
-                  <ul class="list-unstyled serviceul">
+              <div class="col-md-6 ">
+                <div class="list-service ">
+                  <ul class="list-unstyled serviceul ">
                     <li>
-                      <a class="color-white uppercase" ui-sref="home">Film Casting</a>
+                      <a class="color-white uppercase " ui-sref="home ">Film Casting</a>
                     </li>
                     <li>
-                      <a class="color-white uppercase" ui-sref="home">Fashion &amp; Modeling</a>
+                      <a class="color-white uppercase " ui-sref="home ">Fashion &amp; Modeling</a>
                     </li>
                     <li>
-                      <a class="color-white uppercase" ui-sref="home">Sports Management</a>
+                      <a class="color-white uppercase " ui-sref="home ">Sports Management</a>
                     </li>
                   </ul>
                 </div>
@@ -135,223 +135,220 @@
         </div>
       </div> -->
     </div>
-    <section class="container" ng-if="getTalentdata.services.length>0">
-      <div class="pd-sides">
-        <div class="row">
-          <div class="col-md-12">
-            <div class="tservice mb30">
-              <div class="title">
-                <h3 class="uppercase text-center">services</h3>
-                <div class="border-blue borders"></div>
-              </div>
-              <div class="tservices-list">
-                <uib-accordion close-others="oneAtATime" is-open="status.open">
-                  <uib-accordion-group is-open="status.open1" is-disabled="status.isFirstDisabled" ng-repeat="data in getTalentdata.services">
-                    <uib-accordion-heading>
-                      <h4>
-                       <span class="uppercase bold">{{data.name}}</span>
-                        <i class="pull-right fa" ng-class="{'fa-minus': status.open1, 'fa-plus': !status.open1}"></i>
-                      </h4>
-                    </uib-accordion-heading>
-                    <div class="" ng-bind-html="data.content" style="background-color:whitesmoke;"></div>
-                  </uib-accordion-group>
-                </uib-accordion>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section>
-      <div class="bg-subcribe-talents subcribe">
-        <div class="container">
-          <div class="row" ng-hide="subscribeEmail || checkEmail">
-            <h4 class="text-center color-white">Sign up to get autographed merchandise from GS superstars!</h4>
-            <div class="col-md-6 col-md-offset-3">
-              <form name="subForm" class="bs-example bs-example-form" role="form">
-                <div class="input-group">
-                  <input type="email" class="form-control" placeholder="Enter email address" ng-model="subscribe.email" required>
-                  <span class="input-group-addon btn btn-danger" ng-click="subscribe(subscribe.email);" ng-disabled="subForm.$invalid">Subscribe</span>
-                  <div ng-messages="subForm.email.$error" ng-messages-include="error-messages"></div>
-                  <!-- <h4 ng-if="subscribeEmail && !checkEmail">Thankyou For Subscribing</h4>
+    <section class="container talent-css " ng-if="getTalentdata.services.length>0">
+                      <div class="pd-side">
+                        <div class="row">
+                          <div class="col-md-12">
+                            <div class="service mb30">
+                              <div class="title">
+                                <h3 class="uppercase text-center">services</h3>
+                                <div class="border-blue borders"></div>
+                              </div>
+                              <div class="services-list">
+                                <uib-accordion close-others="oneAtATime" is-open="status.open">
+                                  <uib-accordion-group is-open="status.open1" is-disabled="status.isFirstDisabled" ng-repeat="data in getTalentdata.services">
+                                    <uib-accordion-heading>
+                                      <h4>
+                                        <span class="uppercase bold">{{data.name}}</span>
+                                        <i class="pull-right fa" ng-class="{'fa-minus': status.open1, 'fa-plus': !status.open1}"></i>
+                                      </h4>
+                                    </uib-accordion-heading>
+                                    <div class="" ng-bind-html="data.content" style="background-color:whitesmoke;"></div>
+                                  </uib-accordion-group>
+                                </uib-accordion>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+</section>
+<section>
+  <div class="bg-subcribe-talents subcribe">
+    <div class="container">
+      <div class="row" ng-hide="subscribeEmail || checkEmail">
+        <h4 class="text-center color-white">Sign up to get autographed merchandise from GS superstars!</h4>
+        <div class="col-md-6 col-md-offset-3">
+          <form name="subForm" class="bs-example bs-example-form" role="form">
+            <div class="input-group">
+              <input type="email" class="form-control" placeholder="Enter email address" ng-model="subscribe.email" required>
+              <span class="input-group-addon btn btn-danger" ng-click="subscribe(subscribe.email);" ng-disabled="subForm.$invalid">Subscribe</span>
+              <div ng-messages="subForm.email.$error" ng-messages-include="error-messages"></div>
+              <!-- <h4 ng-if="subscribeEmail && !checkEmail">Thankyou For Subscribing</h4>
                   <h4 ng-if="checkEmail && !subscribeEmail">This email already exists</h4> -->
-                </div>
-              </form>
             </div>
-          </div>
-          <h4 ng-if="subscribeEmail && !checkEmail"><center class="color-white">Thankyou For Subscribing</center></h4>
-          <h4 ng-if="checkEmail && !subscribeEmail"><center class="color-white">This email already exists</center></h4>
+          </form>
         </div>
       </div>
-    </section>
-    <div class="section3" ng-if="getTalentdata.testimonial.length>0">
-      <div class="bg3">
-        <div class="container">
-          <div class="client-speak">
-            <div class="name-cont color-white">
-              <img src="img/inverted.png" alt="">
-              <span>{{getTalentdata.testimonial[0].name}}</span>
-            </div>
-            <div class="img-holder">
-              <img ng-src="{{getTalentdata.testimonial[0].image | uploadpath}}" alt="" class="img-reponsive">
-            </div>
-            <div class="img-review color-white">
-              <h4>"{{getTalentdata.testimonial[0].quote}}"</h4>
-              <p>- {{getTalentdata.testimonial[0].author}}</p>
-            </div>
-          </div>
+      <h4 ng-if="subscribeEmail && !checkEmail">
+        <center class="color-white">Thankyou For Subscribing</center>
+      </h4>
+      <h4 ng-if="checkEmail && !subscribeEmail">
+        <center class="color-white">This email already exists</center>
+      </h4>
+    </div>
+  </div>
+</section>
+<div class="section3" ng-if="getTalentdata.testimonial.length>0">
+  <div class="bg3">
+    <div class="container">
+      <div class="client-speak">
+        <div class="name-cont color-white">
+          <img src="img/inverted.png" alt="">
+          <span>{{getTalentdata.testimonial[0].name}}</span>
+        </div>
+        <div class="img-holder">
+          <img ng-src="{{getTalentdata.testimonial[0].image | uploadpath}}" alt="" class="img-reponsive">
+        </div>
+        <div class="img-review color-white">
+          <h4>"{{getTalentdata.testimonial[0].quote}}"</h4>
+          <p>- {{getTalentdata.testimonial[0].author}}</p>
         </div>
       </div>
     </div>
   </div>
-  <div class="container">
-    <div class="row">
+</div>
+</div>
+<div class="container">
+  <!--<div class="row">
       <div class="col-md-offset-2 col-md-8">
         <div class="text-center">
           <h4 class="uppercase color-blue bold">Use <span class="color-red">#GSTalent</span> and get to view live feed of everyone,<br>
   including yours, right here!</h4>
         </div>
       </div>
-    </div>
-    <div class="social">
-      <section class="marg-section">
-        <div class="social-back ">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-4 col-sm-4">
-                        <div class="social-box text-center">
-                            <img src="img/socials/facebook.png" class="doneLoading">
-                        </div>
-                        <div class="social-logo text-center">
-                            <div class="feed-social mt30">
-                                <div class="fb-page" data-href="https://www.facebook.com/GSWorldwideEnt/" data-tabs="timeline" data-width="360" data-height="480" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true">
-                                    <div class="fb-xfbml-parse-ignore">
-                                        <blockquote cite="https://www.facebook.com/GSWorldwideEnt/">
-                                            <a href="https://www.facebook.com/GSWorldwideEnt/">GS Worldwide Entertainment.</a>
-                                        </blockquote>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+    </div>-->
+  <div class="social">
+    <section class="marg-section">
+      <div class="social-back ">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-4 col-sm-4">
+              <div class="social-box text-center">
+                <img src="img/socials/facebook.png" class="doneLoading">
+              </div>
+              <div class="social-logo text-center">
+                <div class="feed-social mt30">
+                  <div class="fb-page" data-href="https://www.facebook.com/GSWorldwideEnt/" data-tabs="timeline" data-width="360" data-height="480" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true">
+                    <div class="fb-xfbml-parse-ignore">
+                      <blockquote cite="https://www.facebook.com/GSWorldwideEnt/">
+                        <a href="https://www.facebook.com/GSWorldwideEnt/">GS Worldwide Entertainment.</a>
+                      </blockquote>
                     </div>
-                    <div class="col-md-4 col-sm-4">
-                        <div class="social-box text-center">
-                            <img src="img/socials/twitter.png" class="doneLoading">
-                        </div>
-                        <div class="social-logo text-center ">
-                            <a class="twitter-timeline" href="https://twitter.com/GSWorldwideEnt" data-widget-id="716880459599228928">Tweets by @GSWorldwideEnt</a>
-                        </div>
-                    </div>
-                    <div class="col-md-4 col-sm-4">
-                        <div class="social-box text-center">
-                            <img src="img/socials/instagram.png" class="doneLoading">
-                        </div>
-                        <div class="social-logo text-center ">
-                            <iframe
-                                src="//lightwidget.com/widgets/2965b7333833557283d4029e025bd4e8.html"
-                                id="lightwidget_2965b73338"
-                                name="lightwidget_2965b73338"
-                                scrolling="no"
-                                allowtransparency="true"
-                                class="lightwidget-widget"
-                                style="width: 100%; border: 0; overflow: hidden; height:480px;"></iframe>
-                        </div>
-                    </div>
+                  </div>
                 </div>
+              </div>
             </div>
+            <div class="col-md-4 col-sm-4">
+              <div class="social-box text-center">
+                <img src="img/socials/twitter.png" class="doneLoading">
+              </div>
+              <div class="social-logo text-center ">
+                <a class="twitter-timeline" href="https://twitter.com/GSWorldwideEnt" data-widget-id="716880459599228928">Tweets by @GSWorldwideEnt</a>
+              </div>
+            </div>
+            <div class="col-md-4 col-sm-4">
+              <div class="social-box text-center">
+                <img src="img/socials/instagram.png" class="doneLoading">
+              </div>
+              <div class="social-logo text-center ">
+                <iframe src="//lightwidget.com/widgets/2965b7333833557283d4029e025bd4e8.html" id="lightwidget_2965b73338" name="lightwidget_2965b73338" scrolling="no" allowtransparency="true" class="lightwidget-widget" style="width: 100%; border: 0; overflow: hidden; height:480px;"></iframe>
+              </div>
+            </div>
+          </div>
         </div>
+      </div>
     </section>
-    </div>
+  </div>
 
-    <div class="mr30">
-      <div class="row">
-        <div class="col-md-offset-2 col-md-8">
-          <div class="get-in-touch" ng-hide="showThanks">
-            <h3 class="color-red uppercase bold">GET IN TOUCH</h3>
-            <form name="talent">
-              <div class="row">
-                <div class="col-md-6">
-                  <div class="form-group">
-                    <input type="text" ng-model="formData.firstname" name="firstname" class="form-control" id="exampleInputEmail1" placeholder="First Name" required>
-                    <div class="error-msg" ng-show="talent.firstname.$error.required && talent.firstname.$touched">Please Enter Your First Name.</div>
-                  </div>
-                </div>
-                <div class="col-md-6">
-                  <div class="form-group">
-                    <input type="text" ng-model="formData.lastname" name="lastname" class="form-control" id="exampleInputEmail1" placeholder="Last Name" required>
-                    <div class="error-msg" ng-show="talent.lastname.$error.required && talent.lastname.$touched">Please Enter Your Last Name.</div>
-                  </div>
+  <div class="mr30">
+    <div class="row">
+      <div class="col-md-offset-2 col-md-8">
+        <div class="get-in-touch" ng-hide="showThanks">
+          <h3 class="color-red uppercase bold">GET IN TOUCH</h3>
+          <form name="talent">
+            <div class="row">
+              <div class="col-md-6">
+                <div class="form-group">
+                  <input type="text" ng-model="formData.firstname" name="firstname" class="form-control" id="exampleInputEmail1" placeholder="First Name" required>
+                  <div class="error-msg" ng-show="talent.firstname.$error.required && talent.firstname.$touched">Please Enter Your First Name.</div>
                 </div>
               </div>
-              <div class="row">
-                <div class="col-md-6">
-                  <div class="form-group">
-                    <input type="email" ng-model="formData.email" name="email" class="form-control" id="exampleInputEmail1" placeholder="Email" required>
-                    <div class="error-msg" ng-show="talent.email.$error.required && talent.email.$touched">Please Enter Your Email.</div>
-                  </div>
-                </div>
-                <div class="col-md-6">
-                  <div class="form-group">
-                    <input type="tel" ng-model="formData.phone" name="phone" class="form-control" id="exampleInputEmail1" maxlength="13" placeholder="Phone number" required>
-                    <div class="error-msg" ng-show="talent.phone.$error.required && talent.phone.$touched">Please Enter Phone number.</div>
-                  </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <input type="text" ng-model="formData.lastname" name="lastname" class="form-control" id="exampleInputEmail1" placeholder="Last Name" required>
+                  <div class="error-msg" ng-show="talent.lastname.$error.required && talent.lastname.$touched">Please Enter Your Last Name.</div>
                 </div>
               </div>
-              <div class="form-group">
-                <div class="row">
-                  <div class="col-md-12">
-                    <div class="enq-list">
-                      <label class="checkbox-inline enquire text-label" style="padding-left:0;margin-top:0px;">
-                        <span class="color-red">Enquiring for </span>
-                      </label>
-                      <label class="checkbox-inline">
-                        <input type="checkbox" id="ambassador" ng-click="pushorpop('ambassador')">
-                        <label for="ambassador"><span></span>Brand Endorsements</label>
-                      </label>
-                      <label class="checkbox-inline">
-                        <input type="checkbox" id="representation" ng-click="pushorpop('representation')">
-                        <label for="representation"><span></span>Event Appreances</label>
-                      </label>
-                      <label class="checkbox-inline">
-                        <input type="checkbox" id="performances" ng-click="pushorpop('representation')">
-                        <label for="performances"><span></span>Live Performances</label>
-                      </label>
-                      <label class="checkbox-inline">
-                        <input type="checkbox" id="endorsements" ng-click="pushorpop('endorsements')">
-                        <label for="endorsements"><span></span>Talent Representation</label>
-                      </label>
-                      <label class="checkbox-inline">
-                        <input type="checkbox" id="tv" ng-click="pushorpop('tv')">
-                        <label for="tv"><span></span>Film Casting</label>
-                      </label>
-                      <label class="checkbox-inline">
-                        <input type="checkbox" id="events" ng-click="pushorpop('events')">
-                        <label for="events"><span></span> Fashion &amp; Modeling</label>
-                      </label>
-                      <label class="checkbox-inline">
-                        <input type="checkbox" id="sports" ng-click="pushorpop('sports')">
-                        <label for="sports"><span></span> Sports Management</label>
-                      </label>
-                    </div>
-                  </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6">
+                <div class="form-group">
+                  <input type="email" ng-model="formData.email" name="email" class="form-control" id="exampleInputEmail1" placeholder="Email" required>
+                  <div class="error-msg" ng-show="talent.email.$error.required && talent.email.$touched">Please Enter Your Email.</div>
                 </div>
               </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <input type="tel" ng-model="formData.phone" name="phone" class="form-control" id="exampleInputEmail1" maxlength="13" placeholder="Phone number" required>
+                  <div class="error-msg" ng-show="talent.phone.$error.required && talent.phone.$touched">Please Enter Phone number.</div>
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
               <div class="row">
                 <div class="col-md-12">
-                  <textarea class="form-control" ng-model="formData.comment" name="say" rows="3" placeholder="Say Something" required="required"></textarea>
-                  <div class="error-msg" ng-show="talent.say.$error.required && talent.say.$touched">Enter Something</div>
-                  <div class="submit-btn btn-all text-center mt15">
-                    <button class="btn btn-danger" type="button" name="button" ng-class="{'disabled' : !talent.$valid }" ng-click="talentSubmitForm(talent)">submit</button>
+                  <div class="enq-list">
+                    <label class="checkbox-inline enquire text-label" style="padding-left:0;margin-top:0px;">
+                        <span class="color-red">Enquiring for </span>
+                      </label>
+                    <label class="checkbox-inline">
+                        <input type="checkbox" id="ambassador" ng-click="pushorpop('ambassador')">
+                        <label for="ambassador"><span></span>Brand Endorsements</label>
+                    </label>
+                    <label class="checkbox-inline">
+                        <input type="checkbox" id="representation" ng-click="pushorpop('representation')">
+                        <label for="representation"><span></span>Event Appreances</label>
+                    </label>
+                    <label class="checkbox-inline">
+                        <input type="checkbox" id="performances" ng-click="pushorpop('representation')">
+                        <label for="performances"><span></span>Live Performances</label>
+                    </label>
+                    <label class="checkbox-inline">
+                        <input type="checkbox" id="endorsements" ng-click="pushorpop('endorsements')">
+                        <label for="endorsements"><span></span>Talent Representation</label>
+                    </label>
+                    <label class="checkbox-inline">
+                        <input type="checkbox" id="tv" ng-click="pushorpop('tv')">
+                        <label for="tv"><span></span>Film Casting</label>
+                    </label>
+                    <label class="checkbox-inline">
+                        <input type="checkbox" id="events" ng-click="pushorpop('events')">
+                        <label for="events"><span></span> Fashion &amp; Modeling</label>
+                    </label>
+                    <label class="checkbox-inline">
+                        <input type="checkbox" id="sports" ng-click="pushorpop('sports')">
+                        <label for="sports"><span></span> Sports Management</label>
+                    </label>
                   </div>
                 </div>
               </div>
-            </form>
-          </div>
-          <div class="get-in-touch text-center" ng-show="showThanks">
-             <h5 class="color-red uppercase bold">Thank You ! Your enquiry has been submitted. We will get back to you soon.</h5>
-          </div>
+            </div>
+            <div class="row">
+              <div class="col-md-12">
+                <textarea class="form-control" ng-model="formData.comment" name="say" rows="3" placeholder="Say Something" required="required"></textarea>
+                <div class="error-msg" ng-show="talent.say.$error.required && talent.say.$touched">Enter Something</div>
+                <div class="submit-btn btn-all text-center mt15">
+                  <button class="btn btn-danger" type="button" name="button" ng-class="{'disabled' : !talent.$valid }" ng-click="talentSubmitForm(talent)">submit</button>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+        <div class="get-in-touch text-center" ng-show="showThanks">
+          <h5 class="color-red uppercase bold">Thank You ! Your enquiry has been submitted. We will get back to you soon.</h5>
         </div>
       </div>
     </div>
   </div>
+</div>
 </section>

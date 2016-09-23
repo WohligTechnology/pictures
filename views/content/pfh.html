@@ -44,13 +44,13 @@
                     {{data.name}}
                   </h4>
                 </div>
-                <div class="w-detail mt15 mb15">
+                <div class="w-detail mt15 mb15" ng-if="data.content != ''">
                   <p>
                     {{data.content}}
                   </p>
                 </div>
                 <div class="w-button">
-                  <button class="btn btn-danger" ui-sref="pfhdetail({id:data.id})">Know More</button>
+                  <button class="btn btn-danger" ui-sref="pfhdetail({id:data.id})" style="margin-top:5px;">Know More</button>
                 </div>
               </div>
             </div>
@@ -192,13 +192,13 @@
     </div>
   </div>
   <div class="container">
-    <div class="row">
+    <!--<div class="row">
       <div class="col-md-offset-2 col-md-8">
         <div class="text-center">
           <h4 class="uppercase color-blue bold">Use <a class="color-red" href="{{pfhInsidedata.description.hashtag}}" target="_blank">#PFH</a> and get to view live feed of everyone,<br> including yours, right here!</h4>
         </div>
       </div>
-    </div>
+    </div>-->
     <!-- <div class="social">
       <section class="marg-section">
         <div class="social-back ">

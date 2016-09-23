@@ -28,7 +28,7 @@
                 </div>
                 <div class="flex-slider" ng-if="tourdata.worldtourpast.length>0">
                     <flex-slider flex-slide="data in tourdata.worldtourpast track by $index" ng-if="styleActives == 'mactives'" animation="slide" animation-loop="false" item-width="218" item-margin="10">
-                        <li>
+                        <li ui-sref="worldtourinside({id:data.id})">
                             <div class="movie-box text-center" ng-if="data.image">
                                 <img ng-src="{{data.image | uploadpath}}" alt="{{data.image}}" class="img-responsive" ng-click="goToFunction(data)">
                                 <!-- <img ui-sref="worldtourinside({id:data.id})" ng-src="{{data.image | uploadpath}}" alt="{{data.image}}" class="img-responsive" > -->
@@ -141,11 +141,11 @@
                                     <!-- <p class=bold>{{data.desc}}</p> -->
                                 </div>
                                 <div class="read-more clearfix">
-                                    <a href="" class="color-black" ng-if="data.type==1" ui-sref="blogtext({id:data.id})">Read More</a>
-                                    <a href="" class="color-black" ng-if="data.type==2" ui-sref="blogimage({id:data.id})">Read More</a>
-                                    <a href="" class="color-black" ng-if="data.type==3" ui-sref="blogvideo({id:data.id})">Read More</a>
-                                    <div class="wed-date pull-right authorcolor">
-                                        <a><span>By {{data.authorname}}</span></a>
+                                    <a href="" class="color-black pull-left" ng-if="data.type==1" ui-sref="blogtext({id:data.id})">Read More</a>
+                                    <a href="" class="color-black pull-left" ng-if="data.type==2" ui-sref="blogimage({id:data.id})">Read More</a>
+                                    <a href="" class="color-black pull-left" ng-if="data.type==3" ui-sref="blogvideo({id:data.id})">Read More</a>
+                                    <div class="wed-date pull-right color-blacks authorcolor">
+                                        <a class="color-blacks"><span>By {{data.authorname}}</span></a>
                                     </div>
                                 </div>
                             </div>
@@ -200,13 +200,13 @@
                     <p>- Ranbir Kapoor</p> -->
                         </div>
                     </div>
-                    <div class="row">
+                    <!--<div class="row">
                         <div class="col-md-offset-2 col-md-8">
                             <div class="text-center">
                                 <h4 class="uppercase color-blue bold">Use <a href="{{tourdata.description.hashtag}}" class="color-red" target="_blank">#GSworldtour</a> and get to view live feed of everyone,<br> including yours, right here!</h4>
                             </div>
                         </div>
-                    </div>
+                    </div>-->
                 </div>
             </div>
         </div>

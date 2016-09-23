@@ -73,7 +73,7 @@
       <div class="container">
         <div class="row">
           <div class="col-md-offset-1 col-md-10">
-            <div class="videoslider" ng-if="movieInside && movieInside.featuredvideos && movieInside.featuredvideos.length>0">
+            <div class="videoslider hidden-xs" ng-if="movieInside && movieInside.featuredvideos && movieInside.featuredvideos.length>0">
               <div class="row">
                 <div class="col-xs-12">
                   <h4 class="title-movies mb30">FEATURED VIDEOS</h4>
@@ -101,6 +101,60 @@
                 </div>
               </div>
             </div>
+            <div class="videoslider visible-xs" ng-if="movieInside && movieInside.featuredvideos && movieInside.featuredvideos.length>0">
+              <div class="container">
+                <div class="row">
+                  <div class="col-md-offset-1 col-md-10">
+                    <div class="title">
+                      <h3 class="letter-spacing color-white uppercase">
+                        FEATURED VIDEOS
+                      </h3>
+                    </div>
+
+                    <div class="slider-client">
+                      <div class="flex-slider">
+                        <flex-slider slide="video in movieInside.featuredvideos track by $index" animation="slide" animation-loop="false" as-nav-for="#sliders2" slideshow="false">
+                          <li class="">
+                            <div class="video-main">
+                              <!-- <img ng-src="{{image.img}}" alt="" class="img-responsive"> -->
+                              <img ng-src="{{video.content | youtubethumb:false}}" alt="" class="img-responsive">
+                              <a fancybox-box href="http://www.youtube.com/embed/{{video.content | youtubethumb:true}}?autoplay=1&modestbranding=0&showinfo=0&rel=0&loop=1" rel="movies" data-fancybox-type="iframe" rel="fancybox-button1">
+                                <i class="fa fa-play"></i>
+                              </a>
+                            </div>
+                          </li>
+                        </flex-slider>
+                      </div>
+                      <!--<div class="flex-slider">
+                        <flex-slider slide="video in movieInside.featuredvideos track by $index" prev-text="" next-text="" slideshow="false" animation="slide">
+                          <li>
+                            <div class="video-main">
+                              <img ng-src="{{video.content | youtubethumb:false}}" alt="" class="img-responsive">
+                              <a fancybox-box href="http://www.youtube.com/embed/{{video.content | youtubethumb:true}}?autoplay=1&modestbranding=0&showinfo=0&rel=0&loop=1" rel="movies" data-fancybox-type="iframe" rel="fancybox-button1">
+                                <i class="fa fa-play"></i>
+                              </a>
+                            </div>
+                          </li>
+                        </flex-slider>
+                      </div>-->
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!--<div class="row">
+                <div class="col-xs-12">
+                  <h4 class="title-movies mb30">FEATURED VIDEOS</h4>
+                </div>
+                <div class="col-xs-12">
+              <div class="video-main mb30">
+                <img ng-src="{{movieInside.featuredvideos[0].content | youtubethumb:false}}" alt="" class="img-responsive">
+                <a fancybox-box href="http://www.youtube.com/embed/{{movieInside.featuredvideos[0].content | youtubethumb:true}}?autoplay=1&modestbranding=0&showinfo=0&rel=0&loop=1" rel="movies" data-fancybox-type="iframe" rel="fancybox-button">
+                  <i class="fa fa-play"></i>
+                </a>
+              </div>
+            </div>
+          </div>-->
+            </div>
             <div class="tab-insidemovies nav-tab-middle mislider">
               <div class="title">
                 <h4 class="display-inline uppercase {{styleActives}}" ng-click="doActives(1);" ng-if="movieInside && movieInside.imagegallery && movieInside.imagegallery.length>0">Image Gallery</h4>
@@ -110,8 +164,8 @@
                 <flex-slider flex-slide="slide in movieInside.imagegallery track by $index" ng-if="styleActives == 'actives'" animation="slide" animation-loop="false" as-nav-for="#sliders" slideshow="false">
                   <li class="">
                     <div class="wallpaper">
-                      <div class="row mb30" ng-repeat="row in slide">
-                        <div class="col-xs-4 plr10" ng-repeat="images in row">
+                      <div class="row mb30" ng-repeat="row in slide track by $index">
+                        <div class="col-xs-4 plr10" ng-repeat="images in row track by $index">
                           <a fancybox-box class="padds0" ng-href="{{images.image | uploadpath}}" rel="fancybox-button1">
                             <div class="image-holder text-center">
                               <img ng-src="{{images.image | uploadpath}}" class="img-responsive doneLoading" alt="">
@@ -128,8 +182,8 @@
                 <flex-slider flex-slide="slide in movieInside.wallpaper track by $index" ng-if="styleNoActives == 'actives'" animation="slide" animation-loop="false" as-nav-for="#sliders" slideshow="false">
                   <li class="">
                     <div class="wallpaper">
-                      <div class="row mb30" ng-repeat="row in slide">
-                        <div class="col-xs-4 plr10" ng-repeat="images in row">
+                      <div class="row mb30" ng-repeat="row in slide track by $index">
+                        <div class="col-xs-4 plr10" ng-repeat="images in row track by $index">
                           <a fancybox-box class="padds0" ng-href="{{images.image | uploadpath}}" rel="fancybox-button2">
                             <div class="image-holder text-center">
                               <img ng-src="{{images.image | uploadpath}}" class="img-responsive doneLoading" alt="">
@@ -143,6 +197,38 @@
                 </flex-slider>
               </div>
             </div>
+            <!--<div class="tab-insidemovies nav-tab-middle mislider visible-xs">
+              <div class="title">
+                <h4 class="display-inline uppercase {{styleActives}}" ng-click="doActives(1);" ng-if="movieMobile.imagegallery.length>0">Image Gallery</h4>
+                <h4 class="display-inline uppercase {{styleNoActives}}" ng-click="doActives(2);" ng-if="movieMobile.wallpaper.length>0">Wallpapers</h4>
+              </div>
+              <div class="flex-slider" ng-if="movieMobile.imagegallery.length > 0">
+                <flex-slider flex-slide="slide in movieMobile.imagegallery track by $index" ng-if="styleActives == 'actives'" animation="slide" animation-loop="false" as-nav-for="#sliders" slideshow="false">
+                  <li class="">
+                    <div class="wallpaper">
+                      <a fancybox-box class="padds0" ng-href="{{slide.image | uploadpath}}" rel="fancybox-button1">
+                        <div class="image-holder text-center">
+                          <img ng-src="{{slide.image | uploadpath}}" class="img-responsive doneLoading" alt="">
+                        </div>
+                      </a>
+                    </div>
+                  </li>
+                </flex-slider>
+              </div>
+              <div class="flex-slider" ng-if="movieMobile.wallpaper.length > 0">
+                <flex-slider flex-slide="slide in movieMobile.wallpaper track by $index" ng-if="styleNoActives == 'actives'" animation="slide" animation-loop="false" as-nav-for="#sliders" slideshow="false">
+                  <li class="">
+                    <div class="wallpaper">
+                      <a fancybox-box class="padds0" ng-href="{{slide.image | uploadpath}}" rel="fancybox-button2">
+                        <div class="image-holder text-center">
+                          <img ng-src="{{slide.image | uploadpath}}" class="img-responsive doneLoading" alt="">
+                        </div>
+                      </a>
+                    </div>
+                  </li>
+                </flex-slider>
+              </div>
+            </div>-->
             <!-- <uib-tabset active="active">
                 <uib-tab index="0" heading="IMAGE GALLERY">
                   <div class="flex-slider">
@@ -249,13 +335,13 @@
     </div>
   </div>
   <div class="container">
-    <div class="row">
+    <!--<div class="row">
       <div class="col-md-offset-2 col-md-8">
         <div class="text-center">
           <h4 class="uppercase color-blue bold">Use <a class="color-red" href="{{movieInside.moviedetail.hashtag}}" target="_blank">#{{movieInside.moviedetail.name}}</a> and get to view live feed of everyone,<br> including yours, right here!</h4>
         </div>
       </div>
-    </div>
+    </div>-->
     <div class="social">
       <!-- <div ng-include = "'/social.html'"></div> -->
       <section class="marg-section">
