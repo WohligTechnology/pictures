@@ -161,7 +161,7 @@
                 <h4 class="display-inline uppercase {{styleNoActives}}" ng-click="doActives(2);" ng-if="movieInside && movieInside.wallpaper && movieInside.wallpaper.length>0">Wallpapers</h4>
               </div>
               <div class="flex-slider" ng-if="movieInside && movieInside.imagegallery && movieInside.imagegallery.length>0">
-                <flex-slider flex-slide="slide in movieInside.imagegallery track by $index" ng-if="styleActives == 'actives'" animation="slide" animation-loop="false" slider-id="slider1"  slideshow="false">
+                <flex-slider flex-slide="slide in movieInside.imagegallery track by $index" ng-if="styleActives == 'actives'" animation="slide" animation-loop="false" slider-id="slider"  slideshow="false">
                   <li class="">
                     <div class="wallpaper">
                       <div class="row mb30" ng-repeat="row in slide track by $index">
