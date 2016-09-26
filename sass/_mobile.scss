@@ -12,6 +12,15 @@
 }
 
 @media screen and (max-width: 1200px) {
+    .blog-desc{ .read-more {
+       float: none!important;
+    display: block;
+    }
+    .wed-date {
+    float: none!important;
+    display: block;
+}
+    }
     .search .enterloc h4 {
         margin-bottom: 0;
         font-size: 14px;
@@ -118,6 +127,9 @@
 }
 
 @media (max-width: $screen-sm-max) {
+    .article-title h4 {
+    font-size: 18px;
+}
     .propro .yoname {
         width: 45%;
     }
@@ -333,6 +345,22 @@
 }
 
 @media (max-width: $screen-xs-max) {
+    .ship  {
+height: auto;
+}
+.ccc-quality p {
+    height: auto;
+}
+    .slider-client{
+        .flex-prev {
+    left: -65px !important;
+     margin: -45px 0 0;
+    @include transform(scale(0.5));
+}
+.flex-slider .flex-direction-nav a.flex-prev:before {
+    content: url(../img/moviedetail/prev.png);
+}
+    }
     .jpps {
         .mt30 {
             margin-top: -50px;
@@ -403,7 +431,7 @@
         .row-flex {
             display: block;
             .col-flex {
-                margin-bottom: 10px;
+                margin-bottom: 0px;
             }
         }
         .ship {
@@ -495,24 +523,28 @@
         font-size: 14px;
     }
     .mobile-pt0 {
-        padding-left: 16% !important;
-        padding-bottom: 3% !important;
+ padding-left: 0% !important;
+    margin-left: -80px;
+    padding-bottom: 3% !important;
     }
-    .mobile-pt1 {
-        padding-left: 28% !important;
-        padding-bottom: 3% !important;
-    }
+.mobile-pt1 {
+    padding-left: 20% !important;
+    padding-bottom: 3% !important;
+}
+
+
     .pl3 {
         padding-bottom: 3% !important;
     }
     .min-height-section1 {
-        min-height: 150px;
+        min-height: auto;
     }
     ul.nav-opt1 {
-        left: 27%;
+        position: static;
+    @include transform(translateX(0%));
         li {
             a {
-                font-size: 36px;
+                font-size: 40px;
                 img {
                     height: 32px;
                 }
@@ -719,8 +751,32 @@
             padding: 10px 0;
         }
     }
-    .head-banner img {
+    .header {
+ height: auto;
+ background: #fff;
+}
+header {
+    min-height: auto;
+    background: #fff;
+}
+.mice .mt50 {
+    margin-top: 0px;
+}
+
+.worldtour .mehendi {
+background: #f0f0f0;
+}
+.banner-movies {
+    position: relative;
+    top: 0;
+}
+    .head-banner{ img {
         width: 90%;
+            margin: 0 auto;
+    margin-top: 20px;
+    position: static;
+        @include transform(translate(0));
+    }
     }
     .img-tilt img {
         width: 200px;
@@ -741,12 +797,26 @@
             margin: 20px auto;
         }
     }
+            .bg-mehendi {
+        .pd-side {
+            .row {
+                overflow: hidden;
+                height: 200px;
+            }
+            .wed-box {
+       min-height: 190px;
+}
+        }
+           }
     .bg-moviesdiaries {
         .pd-side {
             .row {
                 overflow: hidden;
                 height: 262px;
             }
+            .wed-box {
+    min-height: 250px;
+}
         }
         .read-more {
             a {
@@ -783,17 +853,92 @@
     box-clients .client-caption {
         font-size: 16px;
     }
+        .social-box-bg {
+    background: #f0f0f0;
+}
+    .pdjpp {
+    padding-top: 20px;
+    padding-bottom: 30px;
+}
+.website {
+    margin-bottom: 20px;
+}
+.sharejpp{
+.title-made,.ios-andriod{
+    text-align: center;
+}
+}
+.playersasfc .player-img figcaption {
+    min-height: 45px;
+}
+.banner-asfc {
+position: static;
+}
+.playersasfc.mt180 {
+    margin-top: 30px;
+}
 }
 
-@media (max-width: 600px) {
-    ul.nav-opt1 {
-        left: 22%;
-    }
-}
+// @media (max-width: 600px) {
+//     ul.nav-opt1 {
+//         left: 22%;
+//     }
+// }
 
 @media (max-width: 480px) {
+    .client-social {
+    margin-top: 0px;
+}
+.banner-talent .banner-wrap .name-event.center-make {
+    width: 80%;
+}
+.rl.data-up .text-cont p {
+    text-align: justify;
+    height: 160px;
+    margin-bottom: 20px;
+    font-size: 14px;
+    line-height: 120%;
+}
+.box-clients .client-caption {
+    font-size: 16px;
+    font-weight: 600;
+}
+    .bg2 .diary {
+    margin-top: 30px;
+}
     .nav-list {
         padding: 70px 20px 0;
+    }
+    .bthead{ 
+        .pull-right,.pull-left {
+    float: none!important;
+}   
+        p {
+    line-height: 120%;
+    font-size: 14px;
+    text-align: justify;
+    padding: 0 10px;
+}
+    }
+    .read-more {.pull-left ,.pull-right {
+    display: block;
+    float: none !important;
+}
+    }
+    .wed-box{ 
+        .wed-date {
+    font-size: 10px;
+}
+        .wed-desc-inside {
+        
+        p {
+    font-size: 10px;
+    line-height: 100%;
+}
+    }
+    .read-more a {
+    font-size: 10px;
+}
     }
     // .min-height-section1 {
     //     min-height: 100px;
@@ -851,17 +996,17 @@
     }
     .mislider .flex-slider .flex-direction-nav a {
         margin: -45px 0 0;
-        transform: scale(0.5);
+        @include transform(scale(0.5));
     }
     .mehendi .flexslider .flex-direction-nav .flex-next {
-        right: -45px !important;
+        right: -42px !important;
     }
     .mehendi .flexslider .flex-direction-nav .flex-prev {
-        left: -65px !important;
+        left: -56px !important;
     }
     .mehendi .flexslider .flex-direction-nav a {
         margin: -45px 0 0;
-        transform: scale(0.5);
+        @include transform(scale(0.5));
     }
     .jppseason .flexslider .flex-direction-nav .flex-next {
         right: -45px !important;
@@ -871,7 +1016,7 @@
     }
     .jppseason .flexslider .flex-direction-nav a {
         margin: -45px 0 0;
-        transform: scale(0.5);
+        @include transform(scale(0.5));
     }
     .mislider .title h4 {
         margin: 0px 5px 10px;
@@ -883,7 +1028,7 @@
         padding: 20px;
     }
     .banner-name h4 {
-        font-size: 18px;
+        font-size: 16px;
     }
     .banner-title h4 {
         font-size: 14px;
@@ -962,7 +1107,7 @@
             line-height: 120%;
         }
         .wed-box .wed-desc-inside {
-            height: 40px;
+            height: 39px;
         }
         .wed-box .wed-date {
             font-size: 9px;
@@ -1034,20 +1179,14 @@
     }
     .bg2 .flex-slider {
         .flex-direction-nav a {
-            @include transform(scale(0.6));
+            @include transform(translateY(-50%) scale(0.45));    
         }
     }
     .movie-category .flexslider {
         width: 225px;
     }
     ul.nav-opt1 {
-        top: 115px;
-        li a {
-            font-size: 40px;
-            img {
-                height: 26px;
-            }
-        }
+text-align: center;
     }
     footer {
         padding: 20px 0 0;
@@ -1174,11 +1313,11 @@
     //   @include transform(scale(0.7) translateX(0));
     // }
     ul.nav-opt1 {
-        left: 50%;
-        @include transform(translateX(-50%));
-        width: 306px;
-        margin: 0 auto;
-        position: absolute;
+        // left: 50%;
+        // @include transform(translateX(-50%));
+        // width: 306px;
+        // margin: 0 auto;
+        // position: absolute;
         li a img {
             display: none;
         }

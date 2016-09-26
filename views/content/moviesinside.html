@@ -82,8 +82,8 @@
                   <!-- <a class="various fancybox.iframe" fancybox href="http://www.youtube.com/embed/{{gal.url}}?autoplay=1&modestbranding=0&showinfo=0&rel=0&loop=1"></a> -->
 
                   <div class="video-main">
-                    <img ng-src="{{movieInside.featuredvideos[0].content | youtubethumb:false}}" alt="" class="img-responsive">
                     <a fancybox-box href="http://www.youtube.com/embed/{{movieInside.featuredvideos[0].content | youtubethumb:true}}?autoplay=1&modestbranding=0&showinfo=0&rel=0&loop=1" rel="movies" data-fancybox-type="iframe" rel="fancybox-button">
+                    <img ng-src="{{movieInside.featuredvideos[0].content | youtubethumb:false}}" alt="" class="img-responsive">
                       <i class="fa fa-play"></i>
                     </a>
                   </div>
@@ -101,7 +101,7 @@
                 </div>
               </div>
             </div>
-            <div class="videoslider visible-xs" ng-if="movieInside && movieInside.featuredvideos && movieInside.featuredvideos.length>0">
+            <div class="videoslider mehendi visible-xs" ng-if="movieInside && movieInside.featuredvideos && movieInside.featuredvideos.length>0">
               <div class="container">
                 <div class="row">
                   <div class="col-md-offset-1 col-md-10">
@@ -113,7 +113,7 @@
 
                     <div class="slider-client">
                       <div class="flex-slider">
-                        <flex-slider slide="video in movieInside.featuredvideos track by $index" animation="slide" animation-loop="false" as-nav-for="#sliders2" slideshow="false">
+                        <flex-slider slide="video in movieInside.featuredvideos track by $index" animation="slide" animation-loop="false" slider-id="slider"  slideshow="false" prev-text="" next-text="">
                           <li class="">
                             <div class="video-main">
                               <!-- <img ng-src="{{image.img}}" alt="" class="img-responsive"> -->
@@ -161,7 +161,7 @@
                 <h4 class="display-inline uppercase {{styleNoActives}}" ng-click="doActives(2);" ng-if="movieInside && movieInside.wallpaper && movieInside.wallpaper.length>0">Wallpapers</h4>
               </div>
               <div class="flex-slider" ng-if="movieInside && movieInside.imagegallery && movieInside.imagegallery.length>0">
-                <flex-slider flex-slide="slide in movieInside.imagegallery track by $index" ng-if="styleActives == 'actives'" animation="slide" animation-loop="false" as-nav-for="#sliders" slideshow="false">
+                <flex-slider flex-slide="slide in movieInside.imagegallery track by $index" ng-if="styleActives == 'actives'" animation="slide" animation-loop="false" slider-id="slider1"  slideshow="false">
                   <li class="">
                     <div class="wallpaper">
                       <div class="row mb30" ng-repeat="row in slide track by $index">
@@ -179,7 +179,7 @@
                 </flex-slider>
               </div>
               <div class="flex-slider" ng-if="movieInside && movieInside.wallpaper && movieInside.wallpaper.length>0">
-                <flex-slider flex-slide="slide in movieInside.wallpaper track by $index" ng-if="styleNoActives == 'actives'" animation="slide" animation-loop="false" as-nav-for="#sliders" slideshow="false">
+                <flex-slider flex-slide="slide in movieInside.wallpaper track by $index" ng-if="styleNoActives == 'actives'" animation="slide" animation-loop="false" slider-id="slider"  slideshow="false">
                   <li class="">
                     <div class="wallpaper">
                       <div class="row mb30" ng-repeat="row in slide track by $index">

@@ -48,13 +48,15 @@
           </div> -->
           <div class="mb15">
             <div class="slider-client">
-              <flex-slider flex-slide="slide in talentInsideDetailData.imagegallery track by $index" animation="slide" animation-loop="false" as-nav-for="#slider" slideshow="false" item-margin="20" prev-text="" next-text="">
+              <flex-slider flex-slide="slide in talentInsideDetailData.imagegallery track by $index" animation="slide" animation-loop="false"  slideshow="false" item-margin="20" prev-text="" next-text="">
                 <li class="">
                   <div class="row" ng-repeat="row in slide track by $index">
                     <div class="col-xs-4" ng-repeat="wall in row track by $index">
+                                          <a fancybox-box href="{{wall.image | uploadpath}}" rel="talentimage" rel="fancybox-button">
                       <div class="mb15">
                         <img ng-src="{{wall.image | uploadpath}}" alt="" class="img-responsive">
                       </div>
+                      </a>
                     </div>
                   </div>
                 </li>
@@ -94,9 +96,9 @@
                 <li>
                   <div class="video-main">
                     <!-- <img ng-src="{{image.img}}" alt="" class="img-responsive"> -->
+                                        <a fancybox-box href="http://www.youtube.com/embed/{{video.url | youtubethumb:true}}?autoplay=1&modestbranding=0&showinfo=0&rel=0&loop=1" rel="movies" data-fancybox-type="iframe" rel="fancybox-button">
                     <img ng-src="{{video.url | youtubethumb:false}}" alt="" class="img-responsive">
-                    <a fancybox-box href="http://www.youtube.com/embed/{{video.url | youtubethumb:true}}?autoplay=1&modestbranding=0&showinfo=0&rel=0&loop=1" rel="movies" data-fancybox-type="iframe" rel="fancybox-button">
-                      <i class="fa fa-play"></i>
+       <i class="fa fa-play"></i>
                     </a>
                   </div>
                 </li>

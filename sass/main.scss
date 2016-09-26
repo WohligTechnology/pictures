@@ -1589,7 +1589,7 @@ footer {
         .name-event {
             position: absolute;
             z-index: 10;
-            width: 100%;
+            // width: 50%;
             padding: 10px;
             letter-spacing: 2px;
             font-weight: 600;
@@ -1609,6 +1609,7 @@ footer {
                 left: 50%;
                 @include transform(translate(-50%,
                 -50%));
+                width: 50%;
             }
             span {
                 margin-top: 6px;
@@ -1874,9 +1875,9 @@ h4.title-movies {
             }
             a {
                 opacity: 1;
-                width: 50px;
+                width: 30px;
                 height: 65px;
-                padding: 2px 46px !important;
+                padding: 2px 0px !important;
                 &.flex-next:before {
                     content: url("../img/moviedetail/next.png");
                 }
@@ -2675,9 +2676,11 @@ h4.title-movies {
         .flex-direction-nav {
             .flex-prev {
                 left: -160px !important;
+                opacity: 1;
             }
             .flex-next {
                 right: -110px !important;
+                   opacity: 1;
             }
         }
         &:hover {
@@ -4583,8 +4586,8 @@ h4.title-movies {
     border-bottom: 68px solid #FFFEFE;
     border-left: 68px solid transparent;
     position: absolute;
-    bottom: 0;
-    right: 15px;
+    bottom: -1px;
+    right: 14px;
 }
 
 .wedding-imgbox:before {
@@ -4592,8 +4595,8 @@ h4.title-movies {
     border-top: 68px solid #FFFEFE;
     border-right: 68px solid transparent;
     position: absolute;
-    top: 0;
-    left: 15px;
+    top: -1px;
+    left: 14px;
 }
 
 .wedding-imagebox:after {
@@ -4601,8 +4604,8 @@ h4.title-movies {
     border-bottom: 68px solid #F0F0F0;
     border-left: 68px solid transparent;
     position: absolute;
-    bottom: 0;
-    right: 15px;
+    bottom: -1px;
+    right: 14px;
 }
 
 .wedding-imagebox:before {
@@ -4610,8 +4613,8 @@ h4.title-movies {
     border-top: 68px solid #F0F0F0;
     border-right: 68px solid transparent;
     position: absolute;
-    top: 0;
-    left: 15px;
+    top:-1px;
+    left: 14px;
 }
 
 .pattern-overlay {

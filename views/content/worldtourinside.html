@@ -69,9 +69,9 @@
                   <!-- <a class="various fancybox.iframe" fancybox href="http://www.youtube.com/embed/{{gal.url}}?autoplay=1&modestbranding=0&showinfo=0&rel=0&loop=1"></a> -->
 
                   <div class="video-main">
-                    <img ng-src="{{tourInside.featuredvideos[0].url | youtubethumb:false}}" alt="" class="img-responsive">
                     <a fancybox-box href="http://www.youtube.com/embed/{{tourInside.featuredvideos[0].url | youtubethumb:true}}?autoplay=1&modestbranding=0&showinfo=0&rel=0&loop=1" rel="tours" data-fancybox-type="iframe" rel="fancybox-button">
-                      <i class="fa fa-play"></i>
+                                     <img ng-src="{{tourInside.featuredvideos[0].url | youtubethumb:false}}" alt="" class="img-responsive">
+     <i class="fa fa-play"></i>
                     </a>
                   </div>
                 </div>
@@ -95,9 +95,10 @@
                   <!-- <a class="various fancybox.iframe" fancybox href="http://www.youtube.com/embed/{{gal.url}}?autoplay=1&modestbranding=0&showinfo=0&rel=0&loop=1"></a> -->
 
                   <div class="video-main">
-                    <img ng-src="{{tourInside.featuredvideos[0].url | youtubethumb:false}}" alt="" class="img-responsive">
                     <a fancybox-box href="http://www.youtube.com/embed/{{tourInside.featuredvideos[0].url | youtubethumb:true}}?autoplay=1&modestbranding=0&showinfo=0&rel=0&loop=1" rel="tours" data-fancybox-type="iframe" rel="fancybox-button">
-                      <i class="fa fa-play"></i>
+                   
+                    <img ng-src="{{tourInside.featuredvideos[0].url | youtubethumb:false}}" alt="" class="img-responsive">
+   <i class="fa fa-play"></i>
                     </a>
                   </div>
                 </div>
@@ -110,7 +111,7 @@
               </div>
               <div class="flex-slider" ng-if="tourInside && tourInside.imagegallery && tourInside.imagegallery.length>0">
 
-                <flex-slider flex-slide="slide in tourInside.imagegallery track by $index" ng-if="styleActives == 'mactives'" animation="slide" animation-loop="false" as-nav-for="#sliders" slideshow="false">
+                <flex-slider flex-slide="slide in tourInside.imagegallery track by $index" ng-if="styleActives == 'mactives'" animation="slide" animation-loop="false" slideshow="false">
                   <li class="">
                     <div class="wallpaper">
                       <div class="row mb30" ng-repeat="row in slide">
@@ -128,7 +129,7 @@
                 </flex-slider>
               </div>
               <div class="flex-slider" ng-if="tourInside && tourInside.wallpaper && tourInside.wallpaper.length>0">
-                <flex-slider flex-slide="slide in tourInside.wallpaper track by $index" ng-if="styleNoActives == 'mactives'" animation="slide" animation-loop="false" as-nav-for="#sliders" slideshow="false">
+                <flex-slider flex-slide="slide in tourInside.wallpaper track by $index" ng-if="styleNoActives == 'mactives'" animation="slide" animation-loop="false" slideshow="false">
                   <li class="">
                     <div class="wallpaper">
                       <div class="row mb30" ng-repeat="row in slide">

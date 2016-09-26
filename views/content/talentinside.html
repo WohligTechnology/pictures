@@ -33,7 +33,7 @@
                                 <h4 class="uppercase color-red bold">{{data.name}}</h4>
                                 <div class="wed-date">
                                     <span>{{data.date | date:"dd MMMM yyyy"}}</span>
-                                    <span>|</span>
+                                    <span ng-if="data.date && data.location">|</span>
                                     <span>{{data.location}}</span>
                                 </div>
                             </div>
