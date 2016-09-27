@@ -28,7 +28,7 @@
                 </div>
                 <div class="flex-slider" ng-if="tourdata.worldtourpast.length>0">
                     <flex-slider flex-slide="data in tourdata.worldtourpast track by $index" ng-if="styleActives == 'mactives'" animation="slide" animation-loop="false" item-width="218" item-margin="10">
-                        <li ui-sref="worldtourinside({id:data.id})">
+                        <li ng-if="data.status=='1'" ui-sref="worldtourinside({id:data.id})">
                             <div class="movie-box text-center" ng-if="data.image">
                                 <img ng-src="{{data.image | uploadpath}}" alt="{{data.image}}" class="img-responsive" ng-click="goToFunction(data)">
                                 <!-- <img ui-sref="worldtourinside({id:data.id})" ng-src="{{data.image | uploadpath}}" alt="{{data.image}}" class="img-responsive" > -->
@@ -37,9 +37,24 @@
                                     <p>{{data.location}}</p>
                                     <!-- <p class="red">14<sup>th</sup> January 2011</p> -->
                                     <p>{{data.date | date:"dd MMMM yyyy"}}</p>
+                                    
                                 </div>
                             </div>
                         </li>
+                          <li ng-if="data.status=='2'">
+                            <div class="movie-box text-center" ng-if="data.image">
+                                <img ng-src="{{data.image | uploadpath}}" alt="{{data.image}}" class="img-responsive" ng-click="goToFunction(data)">
+                                <!-- <img ui-sref="worldtourinside({id:data.id})" ng-src="{{data.image | uploadpath}}" alt="{{data.image}}" class="img-responsive" > -->
+                                <div class="wt-data">
+                                    <h4>{{data.name}}</h4>
+                                    <p>{{data.location}}</p>
+                                    <!-- <p class="red">14<sup>th</sup> January 2011</p> -->
+                                    <p>{{data.date | date:"dd MMMM yyyy"}}</p>
+                                    
+                                </div>
+                            </div>
+                        </li>
+                         
                     </flex-slider>
                 </div>
                 <div class="flex-slider" ng-if="tourdata.worldtourupcoming.length>0">
