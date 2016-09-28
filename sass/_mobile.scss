@@ -12,6 +12,12 @@
 }
 
 @media screen and (max-width: 1200px) {
+    .upcoming-game .stadium span {
+    padding: 5px 10px;
+    &:after {
+    right: -29px;
+}
+}
     .blog-desc{ .read-more {
        float: none!important;
     display: block;
