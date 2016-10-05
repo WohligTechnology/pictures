@@ -579,6 +579,8 @@ height: auto;
         .flex-slider {
             width: 325px;
             height: 416px;
+            @include transform(scale(1) translateX(0%));
+            margin-top: -40px;
         }
         .diary {
             margin-top: 50px;
@@ -900,6 +902,20 @@ position: static;
 .playersasfc.mt180 {
     margin-top: 30px;
 }
+.talent-services{ .talent-css .pd-side {
+    padding: 0 0px;
+}
+.service .services-list {
+    padding: 0 0px;
+}
+.services-list .panel-group .panel-default .panel-heading{
+    background-color: #fff !important;
+}
+}
+    ul.nav-opt1 {
+        left: 20%;
+        text-align: center;
+    }
 }
 
 // @media (max-width: 600px) {
@@ -911,6 +927,10 @@ position: static;
 @media (max-width: 480px) {
     .client-social {
     margin-top: 0px;
+}
+.playersasfc .player-img figcaption {
+    min-height: 35px;
+    padding: 10px;
 }
 .banner-talent .banner-wrap .name-event.center-make {
     width: 80%;
