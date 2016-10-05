@@ -38,10 +38,10 @@
                                     <span>{{data.location}}</span>
                                 </div>
                             </div>
-                            <div class="w-detail mt15 mb15" ng-if="data.content != ''">
-                                <p>
+                            <div class="w-detail mt15 mb15" ng-if="data.content != ''" ng-bind-html="data.content">
+                                <!-- <p>
                                     {{data.content}}
-                                </p>
+                                </p> -->
                             </div>
                             <div class="w-button">
                                 <button class="btn btn-danger" ui-sref="eventinsidedetail({id:data.id})" ng-disabled="data.status=='2'" style="margin-top:5px;">Know More</button>
