@@ -39,10 +39,10 @@
               <div class="w-title">
                 <h4 class="uppercase color-red bold">{{data.name}}</h4>
               </div>
-              <div class="w-detail mt15 mb15" ng-if="data.content != ''">
-                <p>
+              <div class="w-detail mt15 mb15" ng-if="data.content != ''" ng-bind-html="data.content">
+                <!-- <p>
                   {{data.content}}
-                </p>
+                </p> -->
               </div>
               <div class="w-button">
                 <button class="btn btn-danger" ng-click="goInside(data.id,data.name)" ng-disabled="data.status=='2'" style="margin-top:5px;">Know More</button>
