@@ -12,20 +12,37 @@
 }
 
 @media screen and (max-width: 1200px) {
-    .upcoming-game .stadium span {
-    padding: 5px 10px;
-    &:after {
-    right: -29px;
-}
-}
-    .blog-desc{ .read-more {
-       float: none!important;
-    display: block;
+    .icon-padd {
+        padding-left: 36px;
     }
-    .wed-date {
-    float: none!important;
-    display: block;
-}
+    .man-team:before {
+        bottom: 30px;
+        right: -1px;
+    }
+    .man-team:after {
+        bottom: 30px;
+        left: -2px;
+    }
+    .upcoming-game .stadium span {
+        padding: 5px 10px;
+        &:after {
+            right: -29px;
+        }
+    }
+    .bus-ul ul li {
+        display: inline-block;
+        padding: 0 16px;
+        text-align: center;
+    }
+    .blog-desc {
+        .read-more {
+            float: none!important;
+            display: block;
+        }
+        .wed-date {
+            float: none!important;
+            display: block;
+        }
     }
     .search .enterloc h4 {
         margin-bottom: 0;
@@ -111,6 +128,9 @@
 }
 
 @media (max-width: 1024px) {
+    .top-align {
+        margin-top: 240px;
+    }
     .bg2 .diary {
         margin-top: 160px;
         margin-bottom: 10px;
@@ -133,26 +153,35 @@
 }
 
 @media (max-width: $screen-sm-max) {
+    .top-align {
+        margin-top: 180px;
+    }
+    .bus-ul ul li {
+        padding: 0 6px;
+    }
+    .icon-padd {
+        padding: 0 16px 0;
+    }
     .article-title h4 {
-    font-size: 18px;
-}
-.career {
-    .apply h3 {
-    font-size: 20px;
-}
-    .careervision .stats {
-    margin-bottom: 10px;
-}
-}
-.upcoming-game .team-logo img {
-    width: 135px;
-}
-.playersasfc .player-img figcaption {
-    min-height: 30px;
-    font-size: 12px;
-    line-height: 100%;
-    padding: 5px;
-}
+        font-size: 18px;
+    }
+    .career {
+        .apply h3 {
+            font-size: 20px;
+        }
+        .careervision .stats {
+            margin-bottom: 10px;
+        }
+    }
+    .upcoming-game .team-logo img {
+        width: 135px;
+    }
+    .playersasfc .player-img figcaption {
+        min-height: 30px;
+        font-size: 12px;
+        line-height: 100%;
+        padding: 5px;
+    }
     .propro .yoname {
         width: 45%;
     }
@@ -342,7 +371,7 @@
         }
     }
     .mt180 {
-        margin-top: 120px;
+        margin-top: 30px;
     }
     .rl.data-up .text-cont {
         width: 100%;
@@ -368,21 +397,24 @@
 }
 
 @media (max-width: $screen-xs-max) {
-    .ship  {
-height: auto;
-}
-.ccc-quality p {
-    height: auto;
-}
-    .slider-client{
+    .top-align {
+        margin-top: 200px;
+    }
+    .ship {
+        height: auto;
+    }
+    .ccc-quality p {
+        height: auto;
+    }
+    .slider-client {
         .flex-prev {
-    left: -65px !important;
-     margin: -45px 0 0;
-    @include transform(scale(0.5));
-}
-.flex-slider .flex-direction-nav a.flex-prev:before {
-    content: url(../img/moviedetail/prev.png);
-}
+            left: -65px !important;
+            margin: -45px 0 0;
+            @include transform(scale(0.5));
+        }
+        .flex-slider .flex-direction-nav a.flex-prev:before {
+            content: url(../img/moviedetail/prev.png);
+        }
     }
     .jpps {
         .mt30 {
@@ -546,16 +578,14 @@ height: auto;
         font-size: 14px;
     }
     .mobile-pt0 {
- padding-left: 0% !important;
-    margin-left: -80px;
-    padding-bottom: 3% !important;
+        padding-left: 0% !important;
+        margin-left: -80px;
+        padding-bottom: 3% !important;
     }
-.mobile-pt1 {
-    padding-left: 20% !important;
-    padding-bottom: 3% !important;
-}
-
-
+    .mobile-pt1 {
+        padding-left: 20% !important;
+        padding-bottom: 3% !important;
+    }
     .pl3 {
         padding-bottom: 3% !important;
     }
@@ -564,7 +594,7 @@ height: auto;
     }
     ul.nav-opt1 {
         position: static;
-    @include transform(translateX(0%));
+        @include transform(translateX(0%));
         li {
             a {
                 font-size: 40px;
@@ -777,31 +807,31 @@ height: auto;
         }
     }
     .header {
- height: auto;
- background: #fff;
-}
-header {
-    min-height: auto;
-    background: #fff;
-}
-.mice .mt50 {
-    margin-top: 0px;
-}
-
-.worldtour .mehendi {
-background: #f0f0f0;
-}
-.banner-movies {
-    position: relative;
-    top: 0;
-}
-    .head-banner{ img {
-        width: 90%;
-            margin: 0 auto;
-    margin-top: 20px;
-    position: static;
-        @include transform(translate(0));
+        height: auto;
+        background: #fff;
     }
+    header {
+        min-height: auto;
+        background: #fff;
+    }
+    .mice .mt50 {
+        margin-top: 0px;
+    }
+    .worldtour .mehendi {
+        background: #f0f0f0;
+    }
+    .banner-movies {
+        position: relative;
+        top: 0;
+    }
+    .head-banner {
+        img {
+            width: 90%;
+            margin: 0 auto;
+            margin-top: 20px;
+            position: static;
+            @include transform(translate(0));
+        }
     }
     .img-tilt img {
         width: 200px;
@@ -822,17 +852,17 @@ background: #f0f0f0;
             margin: 20px auto;
         }
     }
-            .bg-mehendi {
+    .bg-mehendi {
         .pd-side {
             .row {
                 overflow: hidden;
                 height: 200px;
             }
             .wed-box {
-       min-height: 190px;
-}
+                min-height: 190px;
+            }
         }
-           }
+    }
     .bg-moviesdiaries {
         .pd-side {
             .row {
@@ -840,8 +870,8 @@ background: #f0f0f0;
                 height: 262px;
             }
             .wed-box {
-    min-height: 250px;
-}
+                min-height: 250px;
+            }
         }
         .read-more {
             a {
@@ -878,40 +908,42 @@ background: #f0f0f0;
     box-clients .client-caption {
         font-size: 16px;
     }
-        .social-box-bg {
-    background: #f0f0f0;
-}
+    .social-box-bg {
+        background: #f0f0f0;
+    }
     .pdjpp {
-    padding-top: 20px;
-    padding-bottom: 30px;
-}
-.website {
-    margin-bottom: 20px;
-}
-.sharejpp{
-.title-made,.ios-andriod{
-    text-align: center;
-}
-}
-.playersasfc .player-img figcaption {
-    min-height: 45px;
-}
-.banner-asfc {
-position: static;
-}
-.playersasfc.mt180 {
-    margin-top: 30px;
-}
-.talent-services{ .talent-css .pd-side {
-    padding: 0 0px;
-}
-.service .services-list {
-    padding: 0 0px;
-}
-.services-list .panel-group .panel-default .panel-heading{
-    background-color: #fff !important;
-}
-}
+        padding-top: 20px;
+        padding-bottom: 30px;
+    }
+    .website {
+        margin-bottom: 20px;
+    }
+    .sharejpp {
+        .title-made,
+        .ios-andriod {
+            text-align: center;
+        }
+    }
+    .playersasfc .player-img figcaption {
+        min-height: 45px;
+    }
+    .banner-asfc {
+        position: static;
+    }
+    .playersasfc.mt180 {
+        margin-top: 30px;
+    }
+    .talent-services {
+        .talent-css .pd-side {
+            padding: 0 0px;
+        }
+        .service .services-list {
+            padding: 0 0px;
+        }
+        .services-list .panel-group .panel-default .panel-heading {
+            background-color: #fff !important;
+        }
+    }
     ul.nav-opt1 {
         left: 20%;
         text-align: center;
@@ -923,65 +955,88 @@ position: static;
 //         left: 22%;
 //     }
 // }
-
 @media (max-width: 480px) {
+    .man-team {
+        img {
+            width: 100%;
+        }
+    }
+    .btn-padd {
+        margin-right: 0;
+        margin-bottom: 6px;
+    }
+    .abt7 {
+        background: #dddddd;
+        background-image: none !important;
+    }
+    .txt {
+        margin-top: 12px;
+    }
+    .bus-ul ul li {
+        padding: 5px 10px;
+    }
+    .abt1 {
+        padding-top: 0px;
+    }
     .client-social {
-    margin-top: 0px;
-}
-.playersasfc .player-img figcaption {
-    min-height: 35px;
-    padding: 10px;
-}
-.banner-talent .banner-wrap .name-event.center-make {
-    width: 80%;
-}
-.rl.data-up .text-cont p {
-    text-align: justify;
-    height: 160px;
-    margin-bottom: 20px;
-    font-size: 14px;
-    line-height: 120%;
-}
-.box-clients .client-caption {
-    font-size: 16px;
-    font-weight: 600;
-}
+        margin-top: 0px;
+    }
+    .playersasfc .player-img figcaption {
+        min-height: 35px;
+        padding: 10px;
+    }
+    .banner-talent .banner-wrap .name-event.center-make {
+        width: 80%;
+    }
+    .rl.data-up .text-cont p {
+        text-align: justify;
+        height: 160px;
+        margin-bottom: 20px;
+        font-size: 14px;
+        line-height: 120%;
+    }
+    .box-clients .client-caption {
+        font-size: 16px;
+        font-weight: 600;
+    }
     .bg2 .diary {
-    margin-top: 30px;
-}
+        margin-top: 30px;
+    }
     .nav-list {
         padding: 70px 20px 0;
     }
-    .bthead{ 
-        .pull-right,.pull-left {
-    float: none!important;
-}   
+    .bthead {
+        .pull-right,
+        .pull-left {
+            float: none!important;
+        }
         p {
-    line-height: 120%;
-    font-size: 14px;
-    text-align: justify;
-    padding: 0 10px;
-}
+            line-height: 120%;
+            font-size: 14px;
+            text-align: justify;
+            padding: 0 10px;
+        }
     }
-    .read-more {.pull-left ,.pull-right {
-    display: block;
-    float: none !important;
-}
+    .read-more {
+        .pull-left,
+        .pull-right {
+            display: block;
+            float: none !important;
+        }
     }
-    .wed-box{ 
+    .wed-box {
         .wed-date {
-    font-size: 10px;
-}
+            font-size: 10px;
+        }
         .wed-desc-inside {
-        
-        p {
-    font-size: 10px;
-    line-height: 100%;
-}
-    }
-    .read-more a {
-    font-size: 10px;
-}
+            p {
+                font-size: 10px;
+                line-height: 100%;
+            }
+        }
+        .read-more a {
+            font-size: 10px;
+        }
     }
     // .min-height-section1 {
     //     min-height: 100px;
@@ -1222,14 +1277,14 @@ position: static;
     }
     .bg2 .flex-slider {
         .flex-direction-nav a {
-            @include transform(translateY(-50%) scale(0.45));    
+            @include transform(translateY(-50%) scale(0.45));
         }
     }
     .movie-category .flexslider {
         width: 225px;
     }
     ul.nav-opt1 {
-text-align: center;
+        text-align: center;
     }
     footer {
         padding: 20px 0 0;
@@ -1348,6 +1403,9 @@ text-align: center;
             @include transform(scale(1) translateX(0%));
             margin-top: -35px;
         }
+    }
+    .icon-padd {
+        border: none;
     }
 }
 
