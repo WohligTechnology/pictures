@@ -394,9 +394,17 @@
     .career .cimage1 .parag p {
         font-size: 10px;
     }
+    .txt {
+        margin: 10px 0 0;
+    }
 }
 
 @media (max-width: $screen-xs-max) {
+    .man-team {
+        img {
+            margin: 0 auto;
+        }
+    }
     .top-align {
         margin-top: 200px;
     }
