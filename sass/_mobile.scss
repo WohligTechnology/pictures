@@ -400,14 +400,17 @@
 }
 
 @media (max-width: $screen-xs-max) {
+  .top-align{
+        margin-top: 360px;
+    }  
     .man-team {
         img {
             margin: 0 auto;
         }
     }
-    .top-align {
-        margin-top: 200px;
-    }
+    // .top-align {
+    //     margin-top: 200px;
+    // }
     .ship {
         height: auto;
     }
@@ -964,6 +967,9 @@
 //     }
 // }
 @media (max-width: 480px) {
+    .top-align {
+       margin-top: 240px;
+     }
     .man-team {
         img {
             width: 100%;
