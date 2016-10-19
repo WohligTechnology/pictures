@@ -400,9 +400,9 @@
 }
 
 @media (max-width: $screen-xs-max) {
-  .top-align{
+    .top-align {
         margin-top: 360px;
-    }  
+    }
     .man-team {
         img {
             margin: 0 auto;
@@ -967,9 +967,12 @@
 //     }
 // }
 @media (max-width: 480px) {
+    .banner-talent .banner-wrap .name-event {
+        width: 97.6%;
+    }
     .top-align {
-       margin-top: 240px;
-     }
+        margin-top: 240px;
+    }
     .man-team {
         img {
             width: 100%;

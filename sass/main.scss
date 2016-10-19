@@ -1595,6 +1595,7 @@ footer {
             font-weight: 600;
             @include transition(all ease 300ms);
             cursor: pointer;
+            width: 99.2%;
             hr {
                 width: 47px;
                 margin: 8px auto;
