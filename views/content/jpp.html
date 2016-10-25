@@ -1,333 +1,187 @@
-<section class="jpps">
-  <div class="banner banner-asfc ab text-center">
-    <img ng-src="{{jppdata.description.image | uploadpath}}" class="" style="width:25%;">
-  </div>
-  <div class="container mt30">
-    <div class="row">
-      <div class="col-md-8 col-md-offset-2">
-
-        <div class="content mt15" ng-bind-html="jppdata.description.content">
-          <!-- <p class="text-justify">
-              Jaipur Pink Panthers are the first champions of the Pro Kabaddi League 2014. The team is owned by the bollywood star Abhishek Bachchan. The team has played in various cities across India like Mumbai, Kolkata, Delhi, Patna, Pune, Vizag, Jaipur and Bengaluru.
-              Jaipur Pink Panthers team and the home matches is execlusively managed by GS Worldwide Entertainment.
-            </p> -->
+<!-- <section class="jpps">
+    <div class="banner banner-asfc ab text-center">
+        <img ng-src="{{jppdata.description.image | uploadpath}}" class="" style="width:25%;">
+        <div class="mt30">
+            <div class="row">
+                <div class="col-md-8 col-md-offset-2">
+                    <div class="content mt15" ng-bind-html="jppdata.description.content">
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
     </div>
-  </div>
 
+</section> -->
+<section class="jpps">
+    <div class="banner banner-asfc ab text-center">
+        <img src="{{jppdata.description.image | uploadpath}}" class="" style="width:20%;">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-md-offset-3">
+                    <div class="content mt15 text-l" ng-bind-html="jppdata.description.content">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </section>
 <div class="social-box-bg mt180 pdjpp">
-  <div class="row">
-    <div class="col-md-offset-1 col-md-10">
-      <div class="title-asfc mt15">
-        <h3 class="text-center color-red bold uppercase">
-          PREVIOUS GAMES HIGHLIGHTS
-        </h3>
-      </div>
-      <div class="row pd30" ng-repeat="data in jppInsidedata track by $index">
-        <div class="col-sm-6">
-          <div class="wedding-imagebox">
-            <img ng-src="{{data.image | uploadpath}}" class="img-responsive" alt="">
-          </div>
-        </div>
-        <div class="col-sm-6">
-          <div class="wedding-detail">
-            <div class="asfc-title">
-              <h4 class="uppercase color-red bold">
-                {{data.name}}
-              </h4>
-              <div class="row" ng-if="data.date != '' || data.location != ''">
-                <div class="col-sm-6" ng-if="data.date != ''">
-                  <span class="color-red">Date:</span>
-                  <span>{{data.date | date:"dd MMMM yyyy"}}</span>
+    <div class="row">
+        <div class="col-md-offset-1 col-md-10">
+            <div class="title-asfc mt15">
+                <h3 class="text-center color-red bold uppercase">
+                    PREVIOUS GAMES HIGHLIGHTS
+                </h3>
+            </div>
+            <div class="row pd30" ng-repeat="data in jppInsidedata track by $index">
+                <div class="col-sm-6">
+                    <div class="wedding-imagebox">
+                        <img ng-src="{{data.image | uploadpath}}" class="img-responsive" alt="">
+                    </div>
                 </div>
-                <div class="col-sm-6" ng-if="data.location != ''">
-                  <span class="color-red">Location:</span>
-                  <span>{{data.location}}</span>
+                <div class="col-sm-6">
+                    <div class="wedding-detail">
+                        <div class="asfc-title">
+                            <h4 class="uppercase color-red bold">
+                                {{data.name}}
+                            </h4>
+                            <div class="row" ng-if="data.date != '' || data.location != ''">
+                                <div class="col-sm-6" ng-if="data.date != ''">
+                                    <span class="color-red">Date:</span>
+                                    <span>{{data.date | date:"dd MMMM yyyy"}}</span>
+                                </div>
+                                <div class="col-sm-6" ng-if="data.location != ''">
+                                    <span class="color-red">Location:</span>
+                                    <span>{{data.location}}</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="w-detail mt15 mb15" ng-if="data.content != ''" ng-bind-html="data.content">
+                        </div>
+                        <div class="w-button">
+                            <button class="btn btn-danger" ui-sref="jppseason1({id:data.id})" ng-disabled="data.status=='2'" style="margin-top:5px;">Know More</button>
+                        </div>
+                    </div>
                 </div>
-              </div>
             </div>
-            <div class="w-detail mt15 mb15" ng-if="data.content != ''" ng-bind-html="data.content">
-              <!-- <p>
-                {{data.content}}
-              </p> -->
-            </div>
-            <div class="w-button">
-              <button class="btn btn-danger" ui-sref="jppseason1({id:data.id})" ng-disabled="data.status=='2'" style="margin-top:5px;">Know More</button>
-            </div>
-          </div>
         </div>
-      </div>
     </div>
-  </div>
-  <div class="btn-all text-center">
-    <!-- <button class="btn btn-outline btn-grey" ng-click="viewAllJpp()" ng-disabled="lastpage==jppPagination.pageno">
+    <div class="btn-all text-center">
+        <!-- <button class="btn btn-outline btn-grey" ng-click="viewAllJpp()" ng-disabled="lastpage==jppPagination.pageno">
       View all
     </button> -->
-    <button class="btn btn-outline btn-grey" ng-click="seeMoreJpp();" ng-if="seeMore">
-      View All
-    </button>
-    <button class="btn btn-outline btn-grey" ng-click="seeLessJpp();" ng-if="seeLess && !seeMore">
-      View Less
-    </button>
-  </div>
-  <div class="section3">
-    <div class="bg3">
-      <div class="container">
-        <div class="client-speak">
-          <div class="name-cont color-white">
-            <img src="img/inverted.png" alt="">
-            <!-- {{clientspeak}} -->
-            <span>{{jppdata.testimonial[0].name}}</span>
-          </div>
-          <div class="img-holder">
-            <img src="{{jppdata.testimonial[0].image | uploadpath}}" alt="" class="img-reponsive">
-          </div>
-          <div class="img-review color-white">
-            <h4>"{{jppdata.testimonial[0].quote}}"</h4>
-            <p>- {{jppdata.testimonial[0].author}}</p>
-          </div>
-        </div>
-      </div>
+        <button class="btn btn-outline btn-grey" ng-click="seeMoreJpp();" ng-if="seeMore">
+            View All
+        </button>
+        <button class="btn btn-outline btn-grey" ng-click="seeLessJpp();" ng-if="seeLess && !seeMore">
+            View Less
+        </button>
     </div>
-  </div>
+    <div class="section3">
+        <div class="bg3">
+            <div class="container">
+                <div class="client-speak">
+                    <div class="name-cont color-white">
+                        <img src="img/inverted.png" alt="">
+                        <!-- {{clientspeak}} -->
+                        <span>{{jppdata.testimonial[0].name}}</span>
+                    </div>
+                    <div class="img-holder">
+                        <img src="{{jppdata.testimonial[0].image | uploadpath}}" alt="" class="img-reponsive">
+                    </div>
+                    <div class="img-review color-white">
+                        <h4>"{{jppdata.testimonial[0].quote}}"</h4>
+                        <p>- {{jppdata.testimonial[0].author}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
-<!-- <section class="mt180">
-  <div class="jpp-fixtures bg-red-jpp">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-offset-1 col-md-10">
-          <div class="head">
-            <div class="title">
-              <h4 class="color-white">
-              2016 FIXTURES
-            </h4>
-            </div>
-            <div class="list" ng-repeat="data in jppdetail">
-              <div class="row">
-                <div class="col-sm-9">
-                  <div class="row bg-light">
-                    <div class="col-sm-6">
-                      <div class="list-img">
-                        <ul class="list-unstyled">
-                          <li>
-                            <img src="{{data.team1}}" alt="" class="img-responsive">
-                          </li>
-                          <li class="color-primary text-center">
-                            <div class="circle bold">vs</div>
-                          </li>
-                          <li>
-                            <img src="{{data.team2}}" alt="" class="img-responsive">
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
-                    <div class="col-sm-6">
-                      <div class="list-make">
-                        <ul class="list-unstyled">
-                          <li>{{data.date}}</li>
-                          <li class="venue">
-                            <label for="">Venue:</label> {{data.venu}}</li>
-                          <li>
-                            <label for="">Time: </label> {{data.time}}</li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-sm-3">
-                  <div class="btn-all pbt35">
-                    <a href="#" class="btn color-red btn-info" target="_blank">Book Tickets</a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-<section> -->
-<!-- <div class="jpp-category nav-tab-middle ">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-offset-1 col-md-10">
-        <div class="title">
-          <h3 class="letter-spacing color-red text-center bold">
-              GALLERY
-            </h3>
-        </div>
-        <div class="mb15">
-          <uib-tabset active="active">
-            <uib-tab index="0" heading="WALLPAPERS" vertical="true" type="pills">
-              <div class="bg-grey pd20">
-                <div class="row">
-                  <div class="col-xs-4" ng-repeat="data in wallpaper">
-                    <div class="mb15">
-                      <img ng-src="{{data.img}}" alt="" class="img-responsive">
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </uib-tab>
-            <uib-tab index="1" heading="VIDEOS" vertical="true" type="pills" class="bg-grey">
-              <div class="bg-grey pd20">
-                <div class="row">
-                  <div class="col-xs-4" ng-repeat="data in wallpaper">
-                    <div class="mb15">
-                      <img ng-src="{{data.img}}" alt="" class="img-responsive">
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </uib-tab>
-          </uib-tabset>
-        </div>
-        <div class="vist-web">
-          <h4 class="text-center bold">
-              FOR MORE INFORMATION VISIT
-            </h4>
-          <div class="btn-all text-center">
-            <a href="http://jaipurpinkpanthers.com/home" target="_blank" class="btn btn-primary btn-lg">
-                www.jpp.com
-              </a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div> -->
-<!-- </section> -->
-<!-- <div class="social mb30">
-  <section class="marg-section">
-    <div class="social-back ">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-4 col-sm-4" ng-if="jppdata.description.facebook">
-            <div class="social-box text-center">
-              <img src="img/socials/facebook.png" class="doneLoading">
-            </div>
-            <div class="social-logo text-center">
-              <div class="feed-social mt30">
-                <div class="fb-page" data-href="{{jppdata.description.facebook}}" data-tabs="timeline" data-width="360" data-height="480" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true">
-                  <div class="fb-xfbml-parse-ignore">
-                    <blockquote cite="https://www.facebook.com/GSWorldwideEnt/">
-                      <a href="{{jppdata.description.facebook}}">GS Worldwide Entertainment.</a></blockquote>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4 col-sm-4" ng-if="jppdata.description.twitter">
-            <div class="social-box text-center">
-              <img src="img/socials/twitter.png" class="doneLoading">
-            </div>
-            <div class="social-logo text-center ">
-              <a class="twitter-timeline" href="{{jppdata.description.twitter}}" data-widget-id="716880459599228928">Tweets by @GSWorldwideEnt</a>
-            </div>
-          </div>
-          <div class="col-md-4 col-sm-4"  ng-if="jppdata.description.instagram">
-            <div class="social-box text-center">
-              <img src="img/socials/instagram.png" class="doneLoading">
-            </div>
-            <div class="social-logo text-center ">
-              <img src="img/instagram.jpg" alt="" class="img-responsive">
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-</div> -->
 <div class="social">
-  <!-- <div ng-include = "'/social.html'"></div> -->
-  <section class="marg-section">
-    <div class="social-back ">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-4 col-sm-4">
-            <div class="social-box text-center">
-              <img src="img/socials/facebook.png" class="doneLoading">
-            </div>
-            <div class="social-logo text-center">
-              <div class="feed-social mt30">
-                <div class="fb-page" data-href="https://www.facebook.com/GSWorldwideEnt/" data-tabs="timeline" data-width="360" data-height="480"
-                  data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true">
-                  <div class="fb-xfbml-parse-ignore">
-                    <blockquote cite="https://www.facebook.com/GSWorldwideEnt/">
-                      <a href="https://www.facebook.com/GSWorldwideEnt/">GS Worldwide Entertainment.</a>
-                    </blockquote>
-                  </div>
+    <section class="marg-section">
+        <div class="social-back ">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4 col-sm-4">
+                        <div class="social-box text-center">
+                            <img src="img/socials/facebook.png" class="doneLoading">
+                        </div>
+                        <div class="social-logo text-center">
+                            <div class="feed-social mt30">
+                                <div class="fb-page" data-href="https://www.facebook.com/GSWorldwideEnt/" data-tabs="timeline" data-width="360" data-height="480" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true">
+                                    <div class="fb-xfbml-parse-ignore">
+                                        <blockquote cite="https://www.facebook.com/GSWorldwideEnt/">
+                                            <a href="https://www.facebook.com/GSWorldwideEnt/">GS Worldwide Entertainment.</a>
+                                        </blockquote>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-4">
+                        <div class="social-box text-center">
+                            <img src="img/socials/twitter.png" class="doneLoading">
+                        </div>
+                        <div class="social-logo text-center ">
+                            <a class="twitter-timeline" href="https://twitter.com/GSWorldwideEnt" data-widget-id="716880459599228928">Tweets by @GSWorldwideEnt</a>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-4">
+                        <div class="social-box text-center">
+                            <img src="img/socials/instagram.png" class="doneLoading">
+                        </div>
+                        <div class="social-logo text-center ">
+                            <iframe src="//lightwidget.com/widgets/2965b7333833557283d4029e025bd4e8.html" id="lightwidget_2965b73338" name="lightwidget_2965b73338" scrolling="no" allowtransparency="true" class="lightwidget-widget" style="width: 100%; border: 0; overflow: hidden; height:480px;"></iframe>
+                        </div>
+                    </div>
                 </div>
-              </div>
             </div>
-          </div>
-          <div class="col-md-4 col-sm-4">
-            <div class="social-box text-center">
-              <img src="img/socials/twitter.png" class="doneLoading">
-            </div>
-            <div class="social-logo text-center ">
-              <a class="twitter-timeline" href="https://twitter.com/GSWorldwideEnt" data-widget-id="716880459599228928">Tweets by @GSWorldwideEnt</a>
-            </div>
-          </div>
-          <div class="col-md-4 col-sm-4">
-            <div class="social-box text-center">
-              <img src="img/socials/instagram.png" class="doneLoading">
-            </div>
-            <div class="social-logo text-center ">
-              <iframe src="//lightwidget.com/widgets/2965b7333833557283d4029e025bd4e8.html" id="lightwidget_2965b73338" name="lightwidget_2965b73338"
-                scrolling="no" allowtransparency="true" class="lightwidget-widget" style="width: 100%; border: 0; overflow: hidden; height:480px;"></iframe>
-            </div>
-          </div>
         </div>
-      </div>
-    </div>
-  </section>
+    </section>
 </div>
 
 <div class="sharejpp pd20">
-  <div class="container">
-    <div class="row">
-      <div class="col-sm-3 col-xs-12">
-        <div class="website">
-          <img src="img/jpp/imacjpp.png" alt="">
-          <div class="btn-all text-center">
-            <a class="btn btn-primary" href="http://jaipurpinkpanthers.com/" target="_blank">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-3 col-xs-12">
+                <div class="website">
+                    <img src="img/jpp/imacjpp.png" alt="">
+                    <div class="btn-all text-center">
+                        <a class="btn btn-primary" href="http://jaipurpinkpanthers.com/" target="_blank">
               View site
             </a>
-          </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-9 col-xs-12">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="ios-andriod text-center">
+                            <img src="img/jpp/android-ios.png" alt="">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="title-made uppercase">
+                            Download the JPP App
+                        </div>
+                        <div class="ios-andriod">
+                            <ul class="list-unstyled">
+                                <li>
+                                    <a href="https://play.google.com/store/apps/details?id=com.jaipurpinkpanthers.android" target="_blank">
+                                        <img src="img/jpp/android.png" alt="">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://itunes.apple.com/in/app/id1084678272?mt=8" target="_blank">
+                                        <img src="img/jpp/apple.png" alt="">
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
-      <div class="col-sm-9 col-xs-12">
-        <div class="row">
-          <div class="col-md-6">
-            <div class="ios-andriod text-center">
-              <img src="img/jpp/android-ios.png" alt="">
-            </div>
-          </div>
-          <div class="col-md-6">
-            <div class="title-made uppercase">
-              Download the JPP App
-            </div>
-            <div class="ios-andriod">
-              <ul class="list-unstyled">
-                <li>
-                  <a href="https://play.google.com/store/apps/details?id=com.jaipurpinkpanthers.android" target="_blank">
-                    <img src="img/jpp/android.png" alt="">
-                  </a>
-                </li>
-                <li>
-                  <a href="https://itunes.apple.com/in/app/id1084678272?mt=8" target="_blank">
-                    <img src="img/jpp/apple.png" alt="">
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
     </div>
-  </div>
 </div>
