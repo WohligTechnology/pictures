@@ -3024,7 +3024,15 @@ h4.title-movies {
 .statement3 {
     color: #f13748;
     font-weight: 600;
-    font-size: 24px;
+    font-size: 30px;
+    margin-bottom: 40px;
+    margin-top: 20px;
+    letter-spacing: 3px;
+}
+.statement5 {
+    color: #fff;
+    font-weight: 600;
+    font-size: 30px;
     margin-bottom: 40px;
     margin-top: 20px;
     letter-spacing: 3px;
@@ -4394,12 +4402,51 @@ h4.title-movies {
 }
 
 .icon-padd {
-    padding-left: 40px;
-    padding-right: 40px;
+    padding-left: 20px;
+    padding-right: 20px;
     //border-left: 1px solid rgba(100, 100, 100, 0.5);
-    border-right: 1px solid rgba(100, 100, 100, 0.5);
+    // border-right: 1px solid rgba(100, 100, 100, 0.5);
+    width: 160px;
+    img{
+      width: 50px;
+    }
+}
+.content{
+  p::before {
+    content: "";
+}
 }
 
+.bdr-right{
+  border-right: 2px solid lightgrey;
+    padding-bottom: 50px;
+}
+.top-left{
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.top-right{
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.mid-center{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  @include transform(translate(-50%,-50%));
+}
+.bottom-left{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+.bottom-right{
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
 .no-border {
     border: none;
 }
@@ -4413,14 +4460,61 @@ h4.title-movies {
 }
 
 .abt1 {
-    background-image: url('../img/abt-miss.png') !important;
+    background-image: url('../img/ourmission.jpg') !important;
     background-repeat: no-repeat;
     background-size: cover;
     height: 320px;
     padding-top: 40px;
     padding-bottom: 40px;
 }
+.history {
+  background-image: url("../img/historyban.jpg") !important;
+background-repeat: no-repeat;
+background-size: cover;
+background-position: center center;
+margin-bottom: -44px;
+padding-bottom: 110px;
+padding-top: 10px;
+}
+.mgt-50{
+  margin-top: 50px!important;
+  margin-bottom: 0;
+}
+.history-note{
+  position: relative;
+  p{
+    color: #fff;
+  }
+  .note{
+    position: absolute;
+    width: 80%;
+    top: 50%;
+    margin-top: 40px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+.man-position{
+  p{
+    font-weight: 400;
+    font-size: 16px;
+    color: #646464;
+  }
+}
+.profile-holder{
+  width: 80%;
+  text-align: center;
 
+}
+.profile-pic{
+    display: inline-block;
+  img{
+    border-radius: 50%;
+  }
+}
+.mgt10{
+  margin-top: 10%;
+}
 .abt2 {
     padding-top: 40px;
     padding-bottom: 40px;
@@ -4433,18 +4527,46 @@ h4.title-movies {
     //  text-transform: capitalize;
     margin-bottom: 20px;
 }
-
+.mission1{
+  position: relative;
+}
+.double-comma1{
+  &:before {
+      content: ' " ';
+      font-size: 30px;
+      position: absolute;
+left: 0;
+  }
+}
+.double-comma2{
+  &:before {
+      content: ' " ';
+      font-size: 30px;
+      position: absolute;
+left: 0;
+  }
+}
 .icon-list {
     text-align: center;
     padding-top: 30px;
+    height: 300px;
 }
 
 .abt4 {
-    background-color: #f3364a;
-    color: #ffffff;
+    // background-color: #f3364a;
+    // color: #000;
     padding-top: 40px;
 }
-
+.ldr1-color {
+    color: #ffffff;
+    background: linear-gradient(to right,#fff,#15acff,#fff);
+    padding: 20px;
+    font-size: 30px;
+}
+.ldr-border1{
+  border-bottom: 2px solid #000;
+padding-bottom: 20px;
+}
 .lead-name {
     text-align: left;
     font-family: Lato;
@@ -4486,6 +4608,9 @@ h4.title-movies {
     padding-top: 10px;
     text-transform: uppercase;
     letter-spacing: 1px;
+    p{
+      text-transform: uppercase;
+    }
 }
 
 .btn-padd {
@@ -4527,7 +4652,7 @@ h4.title-movies {
         text-align: center;
         li {
             display: inline-block;
-            padding: 0 25px;
+            padding: 0 37px;
             text-align: center;
         }
     }
@@ -4918,6 +5043,22 @@ h4.title-movies {
     position: absolute;
     bottom: 31px;
     left: 0;
+}
+
+
+///about us changes
+.banner-text{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  @include transform(translate(-50%,
+  -50%));
+  width: 100%;
+  h1{
+font-size: 70px;
+    color: $color-white;
+    font-weight: bold;
+  }
 }
 
 // .flex-direction-nav .flex-disabled {
