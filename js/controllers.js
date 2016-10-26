@@ -1434,6 +1434,248 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
 })
 
+.controller('GsDiariesCtrl', function($scope, TemplateService, NavigationService, $timeout, $stateParams, $state) {
+    //Used to name the .html file
+    $scope.template = TemplateService.changecontent("gsdiaries");
+    $scope.menutitle = NavigationService.makeactive("Gs Diaries");
+    TemplateService.title = $scope.menutitle;
+    $scope.navigation = NavigationService.getnav();
+    $scope.diariesfull2 = {
+        img: "img/dairies/events.png",
+        date: "12 January 2016",
+        desc: "Lorem Ipsum is simply dummy text of the printing industry simply dummy text of the printing industry printing industry simply dummy text of the printing industry.",
+        name: "Events"
+    };
+    $scope.diariesfull1 = {
+        img: "img/dairies/wedding.png",
+        date: "12 January 2016",
+        desc: "Lorem Ipsum is simply dummy text of the printing industry simply dummy text of the printing industry printing industry simply dummy text of the printing industry",
+        name: "WEDDINGS"
+    };
+    // NavigationService.getDiaries(function(data) {
+    //     $scope.diaryData = data.data;
+    //     console.log('d data', $scope.diaryData);
+    //     $scope.diaryyear = data.data.years;
+    //     //   $scope.diaryyear=_.chunk($scope.diaryData.years,5);
+    //     // console.log('$scope.diaryyear chunk', $scope.diaryyear[0]);
+    //     // $scope.diaryyear=_.chunk($scope.diaryData.years,$scope.diaryData.years.length);
+    //     $scope.diaryyear1 = _.chunk($scope.diaryyear, 5);
+    //     console.log('$scope.diaryyear chunk', $scope.diaryyear1);
+    // })
+
+    //
+    // $scope.diarydata = false;
+    // $scope.diaryObj = {};
+    // $scope.diaryObj.pageno = 1;
+    // $scope.diaryObj.maxrow = 10;
+    //
+    // getDiariesResults();
+    //
+    //
+    // function getDiariesResults() {
+    //     NavigationService.getDiaryInsideByPage($scope.diaryObj, function(data) {
+    //         $scope.diarydata = true;
+    //         $scope.DiaryInsideData = data;
+    //         console.log($scope.DiaryInsideData);
+    //     })
+    // }
+    //
+    // $scope.changeDiary = function(val) {
+    //     $scope.diaryObj.pageno = $scope.diaryObj.pageno + val;
+    //     getDiariesResults();
+    // }
+
+
+    // NavigationService.getDiaryInsideByPage(function(data) {
+    //     $scope.DiaryInsideData = data.queryresult;
+    //     console.log('$scope.DiaryInsideData', $scope.DiaryInsideData);
+    // })
+
+    // $scope.pageno = 1;
+
+    // $scope.next = function() {
+    //     console.log('$scope.pageno', $scope.pageno);
+    //     var i = $scope.pageno++;
+    //     // $state.go('diaries', {page: i});
+    //     NavigationService.getDiaryInsideByPage(i, function(data) {
+    //       console.log(data);
+    //         $scope.DiaryInsideData = data.data;
+    //         console.log('$scope.DiaryInsideData',$scope.DiaryInsideData);
+    //         $scope.currentpg = i;
+    //     })
+    // }
+
+
+    //
+    // $scope.previous = function() {
+    //     console.log('$scope.currentpg of previous:', $scope.currentpg);
+    //     if ($scope.currentpg && $scope.currentpg >= 1) {
+    //         var i = --$scope.currentpg;
+    //         NavigationServic.controller('GsDiariesCtrl', function($scope, TemplateService, NavigationService, $timeout, $stateParams, $state) {
+    //Used to name the .html file
+    $scope.template = TemplateService.changecontent("gsdiaries");
+    $scope.menutitle = NavigationService.makeactive("Gs Diaries");
+    TemplateService.title = $scope.menutitle;
+    $scope.navigation = NavigationService.getnav();
+    $scope.diariesfull2 = {
+        img: "img/dairies/events.png",
+        date: "12 January 2016",
+        desc: "Lorem Ipsum is simply dummy text of the printing industry simply dummy text of the printing industry printing industry simply dummy text of the printing industry.",
+        name: "Events"
+    };
+    $scope.diariesfull1 = {
+        img: "img/dairies/wedding.png",
+        date: "12 January 2016",
+        desc: "Lorem Ipsum is simply dummy text of the printing industry simply dummy text of the printing industry printing industry simply dummy text of the printing industry",
+        name: "WEDDINGS"
+    };
+    // NavigationService.getDiaries(function(data) {
+    //     $scope.diaryData = data.data;
+    //     console.log('d data', $scope.diaryData);
+    //     $scope.diaryyear = data.data.years;
+    //     //   $scope.diaryyear=_.chunk($scope.diaryData.years,5);
+    //     // console.log('$scope.diaryyear chunk', $scope.diaryyear[0]);
+    //     // $scope.diaryyear=_.chunk($scope.diaryData.years,$scope.diaryData.years.length);
+    //     $scope.diaryyear1 = _.chunk($scope.diaryyear, 5);
+    //     console.log('$scope.diaryyear chunk', $scope.diaryyear1);
+    // })
+
+    //
+    // $scope.diarydata = false;
+    // $scope.diaryObj = {};
+    // $scope.diaryObj.pageno = 1;
+    // $scope.diaryObj.maxrow = 10;
+    //
+    // getDiariesResults();
+    //
+    //
+    // function getDiariesResults() {
+    //     NavigationService.getDiaryInsideByPage($scope.diaryObj, function(data) {
+    //         $scope.diarydata = true;
+    //         $scope.DiaryInsideData = data;
+    //         console.log($scope.DiaryInsideData);
+    //     })
+    // }
+    //
+    // $scope.changeDiary = function(val) {
+    //     $scope.diaryObj.pageno = $scope.diaryObj.pageno + val;
+    //     getDiariesResults();
+    // }
+
+
+    // NavigationService.getDiaryInsideByPage(function(data) {
+    //     $scope.DiaryInsideData = data.queryresult;
+    //     console.log('$scope.DiaryInsideData', $scope.DiaryInsideData);
+    // })
+
+    // $scope.pageno = 1;
+
+    // $scope.next = function() {
+    //     console.log('$scope.pageno', $scope.pageno);
+    //     var i = $scope.pageno++;
+    //     // $state.go('diaries', {page: i});
+    //     NavigationService.getDiaryInsideByPage(i, function(data) {
+    //       console.log(data);
+    //         $scope.DiaryInsideData = data.data;
+    //         console.log('$scope.DiaryInsideData',$scope.DiaryInsideData);
+    //         $scope.currentpg = i;
+    //     })
+    // }
+
+
+    //
+    // $scope.previous = function() {
+    //     console.log('$scope.currentpg of previous:', $scope.currentpg);
+    //     if ($scope.currentpg && $scope.currentpg >= 1) {
+    //         var i = --$scope.currentpg;
+    //         NavigationService.getDiaryInsideByPage(i, function(data) {
+    //             $scope.DiaryInsideData = data.data;
+    //             console.log('iiiiiiiiiiiiiii', i);
+    //         })
+    //     }
+    // }
+    // if (!$stateParams.category) {
+    //     // $scope.next();
+    // }
+    // })
+
+    // $scope.filterdata = false;
+    // if ($stateParams.category) {
+    //     $scope.filterObj = {};
+    //     $scope.filterObj.pageno = 1;
+    //     $scope.filterObj.maxrow = 4;
+    //     $scope.filterObj.category = $stateParams.category;
+    //     $scope.filterObj.year = '';
+    //     $scope.filterObj.month = '';
+    //     getFilterResults();
+    // }
+    //
+    // function getFilterResults() {
+    //     console.log("fff", $scope.filterObj);
+    //     NavigationService.getFilterDiaries($scope.filterObj, function(data) {
+    //         $scope.filterdata = true;
+    //         $scope.filterDiaries = data;
+    //         console.log($scope.filterDiaries);
+    //     })
+    // }
+    //
+    // $scope.filteByYear = function(date) {
+    //     $scope.filterObj.year = date.year;
+    //     $scope.filterObj.month = date.month;
+    //     getFilterResults();
+    // }
+    //
+    // $scope.changePage = function(val) {
+    //     $scope.filterObj.pageno = $scope.filterObj.pageno + val;
+    //     getFilterResults();
+    // }
+
+// })
+//gs diaries ende.getDiaryInsideByPage(i, function(data) {
+    //             $scope.DiaryInsideData = data.data;
+    //             console.log('iiiiiiiiiiiiiii', i);
+    //         })
+    //     }
+    // }
+    // if (!$stateParams.category) {
+    //     // $scope.next();
+    // }
+    // })
+
+    // $scope.filterdata = false;
+    // if ($stateParams.category) {
+    //     $scope.filterObj = {};
+    //     $scope.filterObj.pageno = 1;
+    //     $scope.filterObj.maxrow = 4;
+    //     $scope.filterObj.category = $stateParams.category;
+    //     $scope.filterObj.year = '';
+    //     $scope.filterObj.month = '';
+    //     getFilterResults();
+    // }
+    //
+    // function getFilterResults() {
+    //     console.log("fff", $scope.filterObj);
+    //     NavigationService.getFilterDiaries($scope.filterObj, function(data) {
+    //         $scope.filterdata = true;
+    //         $scope.filterDiaries = data;
+    //         console.log($scope.filterDiaries);
+    //     })
+    // }
+    //
+    // $scope.filteByYear = function(date) {
+    //     $scope.filterObj.year = date.year;
+    //     $scope.filterObj.month = date.month;
+    //     getFilterResults();
+    // }
+    //
+    // $scope.changePage = function(val) {
+    //     $scope.filterObj.pageno = $scope.filterObj.pageno + val;
+    //     getFilterResults();
+    // }
+
+})
+//gs diaries end
+
 .controller('DiariesCtrl', function($scope, TemplateService, NavigationService, $timeout, $stateParams, $state) {
     //Used to name the .html file
     $scope.template = TemplateService.changecontent("diaries");
@@ -1694,8 +1936,8 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             link: "jpp",
             btn: "Enter"
         }, {
-            img: "img/sports/pfh.jpg",
-            name: "Playing for Humanity",
+            img: "img/sports/1.jpg",
+            name: "Chennaiyin FC",
             link: "pfh",
             btn: "Enter"
 

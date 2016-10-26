@@ -5104,8 +5104,15 @@ font-size: 70px;
 //gsdiaries
 .author-img{
   background: url('../img/dairies/author.png') no-repeat;
+  height: 369px;
+  background-size: cover;
 }
-
+.author-pic{
+  position: absolute;
+  img{
+    width: 350px;
+  }
+}
 
 // .flex-direction-nav .flex-disabled {
 //     @include opacity(1)!important;
