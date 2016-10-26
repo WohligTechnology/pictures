@@ -5106,14 +5106,33 @@ font-size: 70px;
   background: url('../img/dairies/author.png') no-repeat;
   height: 369px;
   background-size: cover;
+  position: relative;
 }
 .author-pic{
-  position: absolute;
+position: absolute;
+bottom: 0;
+left: 50%;
+transform: translate(-50%,0);
   img{
-    width: 350px;
+    width: 200px;
   }
 }
-
+.author-name{
+  span{
+    color: $brand-primary;
+    font-size: 25px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+  }
+}
+.auth-position{
+  span{
+    color: #696060;
+    font-size: 25px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+  }
+}
 // .flex-direction-nav .flex-disabled {
 //     @include opacity(1)!important;
 //     z-index: 1;
