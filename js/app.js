@@ -89,12 +89,12 @@ firstapp.config(function($stateProvider, $urlRouterProvider, $httpProvider, $loc
             controller: 'Jppseason1Ctrl'
         })
         .state('pfh', {
-            url: "/pfh",
+            url: "/chennaiyinFc",
             templateUrl: "views/template.html",
             controller: 'PfhCtrl'
         })
         .state('pfhdetail', {
-            url: "/pfhdetail/:id",
+            url: "/chennaiyinFcdetail/:id",
             templateUrl: "views/template.html",
             controller: 'PfhDetailCtrl'
         })

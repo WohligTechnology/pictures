@@ -1737,13 +1737,42 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
             }, 1000);
         });
-
-        var id = '3';
-        NavigationService.getSportInsidedataByid(id, function(data) {
+        $scope.pfhInsidedatadetail = [];
+        $scope.seeMore = false;
+        $scope.seeLess = false;
+        var pfhInsideArray = [];
+        $scope.pfhPagination = {};
+        $scope.pfhPagination.id = 3;
+        $scope.pfhPagination.pageno = 1;
+        $scope.pfhPagination.maxrow = 500;
+        $scope.seeLessPfh = function(){
+        NavigationService.getSportInsidedataByid($scope.pfhPagination, function(data) {
             $scope.pfhInsidedatadetail = data.queryresult;
-            console.log($scope.pfhInsidedatadetail);
+            console.log('rdtfghjkrtfghnjm',$scope.pfhInsidedatadetail);
+            pfhInsideArray = _.cloneDeep($scope.pfhInsidedatadetail);
+            // console.log($scope.pfhInsidedatadetail);
+            $scope.lastpage = data.lastpage;
+            // _.each(data.queryresult, function(n) {
+            //     $scope.pfhInsidedatadetail.push(n);
+            // })
+
+            $scope.seeMore = true;
+            $scope.pfhInsidedatadetail = _.slice($scope.pfhInsidedatadetail, [0], [3]);
+            if ($scope.pfhInsidedatadetail.length < 3) {
+                $scope.seeMore = false;
+            }
+            console.log(' in less $scope.pfhInsidedatadetail', $scope.pfhInsidedatadetail);
         })
-        NavigationService.getpfhSeasonData(id, function(data) {
+      };
+      $scope.seeLessPfh();
+      $scope.seeMoerPfh = function(){
+        $scope.seeMore = false;
+        $scope.seeLess = true;
+        // $scope.allMovieName = {}
+        $scope.pfhInsidedatadetail = pfhInsideArray;
+        console.log('in more ',  $scope.pfhInsidedatadetail);
+      }
+        NavigationService.getpfhSeasonData($scope.pfhPagination.id, function(data) {
             $scope.pfhInsidedata = data.data;
             console.log("pfh",$scope.pfhInsidedata);
         })

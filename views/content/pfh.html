@@ -25,13 +25,13 @@
   <div class="bg-blue bg-grey-asfc pdasfc">
     <div class="mb30">
       <div class="row">
-        <div class="col-md-offset-1 col-md-10">
+        <div class="col-md-offset-1 col-md-10" ng-if="pfhInsidedatadetail.length!=0">
           <div class="title-asfc">
             <h3 class="text-center color-red bold uppercase">
               Previous Games HIGHLIGHTS
             </h3>
           </div>
-          <div class="row pd30" ng-repeat="data in pfhInsidedatadetail">
+          <div class="row pd30" ng-repeat="data in pfhInsidedatadetail track by $index">
             <div class="col-sm-6">
               <div class="wedding-imagebox">
                 <img ng-src="{{data.image | uploadpath}}" class="img-responsive" alt="">
@@ -58,9 +58,15 @@
         </div>
       </div>
       <div class="btn-all text-center">
-        <button class="btn btn-outline btn-grey">
-          View all
+        <button class="btn btn-outline btn-grey" ng-click="seeMoerPfh();" ng-if="seeMore">
+            View All
         </button>
+        <button class="btn btn-outline btn-grey" ng-click="seeLessPfh();" ng-if="seeLess && !seeMore">
+            View Less
+        </button>
+        <!-- <button class="btn btn-outline btn-grey">
+          View all
+        </button> -->
       </div>
     </div>
   </div>
