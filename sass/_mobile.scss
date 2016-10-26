@@ -156,6 +156,10 @@
     .top-align {
         margin-top: 180px;
     }
+
+.bg2.minus-m90 {
+    margin-top: -190px;
+}
     .bus-ul ul li {
         padding: 0 6px;
     }
@@ -615,6 +619,9 @@
             }
         }
     }
+    .bg2.minus-m90 {
+    margin-top: 0px;
+}
     .bg2 {
         background: $brand-danger;
         .flex-slider {

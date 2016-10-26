@@ -28,6 +28,14 @@ $color-black: #000!default;
     font-family: "OxygenReg";
     src: url("../fonts/Oxygen_Regular.otf");
 }
+@font-face {
+    font-family: "shruti";
+    src: url("../fonts/SHRUTIB_0.ttf");
+}
+@font-face {
+    font-family: "shruti";
+    src: url("../fonts/SHRUTI_0.ttf");
+}
 
 @font-face {
     font-family: "Folklore";
@@ -828,6 +836,9 @@ ul.nav-opt1 {
 .bg2 {
     background: url('../img/home/home-back2.png') no-repeat;
     background-size: 100%;
+    &.minus-m90{
+      margin-top:-90px;
+    }
     .diary {
         margin-top: 200px;
         margin-bottom: 20px;
@@ -4497,8 +4508,9 @@ padding-top: 10px;
 .man-position{
   p{
     font-weight: 400;
-    font-size: 16px;
+    font-size: 13px;
     color: #646464;
+    text-transform: uppercase;
   }
 }
 .profile-holder{
@@ -4506,7 +4518,27 @@ padding-top: 10px;
   text-align: center;
 
 }
+.profile-holder1{
+  width: 50%;
+  text-align: center;
+float: right;
+}
+.profile-holder2{
+  width: 50%;
+  text-align: center;
+float: left;
+}
+
 .profile-pic{
+
+    display: inline-block;
+  img{
+    border-radius: 50%;
+  }
+}
+.profile-pic1{
+  width: 182.39px;
+  height: 179.48px;
     display: inline-block;
   img{
     border-radius: 50%;
@@ -4521,29 +4553,35 @@ padding-top: 10px;
 }
 
 .miss-txt {
-    color: #ffffff;
+  color: #ffffff;
     text-align: center;
-    font-size: 18px;
-    //  text-transform: capitalize;
+    font-size: 22px;
     margin-bottom: 20px;
 }
 .mission1{
   position: relative;
+  width: 76%;
+}
+.mission2{
+  position: relative;
+width: 110%;
 }
 .double-comma1{
   &:before {
-      content: ' " ';
-      font-size: 30px;
-      position: absolute;
-left: 0;
+    content: url("../img/comma.png");
+        left: 0;
+        position: absolute;
+        color: #fff;
+        top: -15px;
   }
 }
 .double-comma2{
   &:before {
-      content: ' " ';
-      font-size: 30px;
-      position: absolute;
-left: 0;
+    content: url("../img/comma.png");
+        left: 0;
+        position: absolute;
+        color: #fff;
+        top: -15px;
   }
 }
 .icon-list {
@@ -4904,7 +4942,8 @@ padding-bottom: 20px;
 
 .landing {
     position: relative;
-    background: url("../img/main-2.jpg") no-repeat;
+    // background: url("../img/main-2.jpg") no-repeat;
+    background: url("../img/Landing-Page.jpg") no-repeat;
     height: 100vh;
     background-size: cover;
     background-position: top center;
@@ -5048,6 +5087,7 @@ padding-bottom: 20px;
 
 ///about us changes
 .banner-text{
+  font-family: "Folklore";
   position: absolute;
   top: 50%;
   left: 50%;
@@ -5057,7 +5097,7 @@ padding-bottom: 20px;
   h1{
 font-size: 70px;
     color: $color-white;
-    font-weight: bold;
+    font-weight: 400;
   }
 }
 

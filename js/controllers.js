@@ -1745,7 +1745,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         })
         NavigationService.getpfhSeasonData(id, function(data) {
             $scope.pfhInsidedata = data.data;
-            console.log($scope.pfhInsidedata);
+            console.log("pfh",$scope.pfhInsidedata);
         })
 
         $scope.formData = {};
