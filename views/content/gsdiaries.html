@@ -1,222 +1,515 @@
 <section>
-  <div class="container">
-    <div class="row">
-      <div class="col-xs-12">
-        <div class="head-banner diaries-banner text-center">
-          <img src="img/dairies/banner.png" class="img-responsive" title="Dairies">
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="wedding-fant-desc">
     <div class="container">
-      <div class="author-info text-center">
-        <div class="author-img">
-          <div class="author-pic">
-            <img src="img/dairies/authorimg.png" class="img-responsive" alt="" />
-          </div>
-      </div>
-      <div class="author-name">
-  <span>Viraj Kale</span>
-  </div>
-  <div class="auth-position">
-    <span>Features Writer</span>
-  </div>
-      </div>
-    <div class="row">
-        <div class="col-md-offset-2 col-md-8" ng-bind-html="diaryData.description.content"></div>
-      </div>
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="head-banner diaries-banner text-center">
+                    <img src="img/dairies/banner.png" class="img-responsive" title="Dairies">
+                </div>
+            </div>
+        </div>
     </div>
-  </div>
+    <div class="wedding-fant-desc">
+        <div class="container">
+            <div class="author-info text-center">
+                <div class="author-img">
+                    <div class="author-pic">
+                        <img src="img/dairies/authorimg.png" class="img-responsive" alt="" />
+                    </div>
+                </div>
+                <div class="author-name">
+                    <span>Viraj Kale</span>
+                </div>
+                <div class="auth-position">
+                    <span>Features Writer</span>
+                </div>
+                <div class="topic-info">
+                    <div class="topic">
+                        <span>STORIES: </span>
+                    </div>
+                    <div class="topic-count">
+                        <span>1582</span>
+                    </div>
+                </div>
+                <div class="topic-info1">
+                    <div class="topic">
+                        <span>SINCE: </span>
+                    </div>
+                    <div class="topic-count">
+                        <span>11/2011</span>
+                    </div>
+                </div>
+            </div>
+            <!-- <div class="row">
+                <div class="col-md-offset-2 col-md-8" ng-bind-html="diaryData.description.content"></div>
+            </div> -->
+            <div class="row">
+                <div class="col-md-8 col-md-offset-2">
+                    <p class="topic-desc">
+                        Lorem Ipsum Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit.
+                        Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non mauris vitae erat consequat auctor eu in elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Mauris in erat justo. Nullam
+                        ac urna eu felis dapibus condimentum sit amet a augue. Sed non neque elit. Sed ut imperdiet nisi. Proin condimentum fermentum nunc.
+                    </p>
+                    <div class="follow-sec text-center">
+                        <p>FOLLOW ON</p>
+                        <a href="https://www.facebook.com/GSWorldwideEnt/" target="_blank"><i class="fa fa-facebook"></i></a>
+                        <a href="https://twitter.com/GSWorldwideEnt" target="_blank"><i class="fa fa-twitter"></i></a>
+                        <a href="https://www.instagram.com/gsworldwideent/" target="_blank"><i class="fa fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </section>
 <section class="bg-grey-diaries pd70" ng-hide="filterdata">
-  <div class="container">
-    <div class="row">
-      <div class="col-sm-9">
-        <div class="dairies-box pd-side mb15">
-          <div class="row">
-            <div class="col-xs-6 col-sm-6" ng-repeat="wedData in DiaryInsideData.queryresult">
-              <div class="wed-box box-big border-red pdnone mb30">
-                <div class="wed-img-list event-img-list diary-img-list">
-                  <img ng-src="{{wedData.image | uploadpath}}" alt="" class="img-responsive image-size">
-                  <div class="ribbon-red">
-                    <img src="img/ribbon_red.png" alt="">
-                    <span class="color-white uppercase">{{wedData.categoryname}}</span>
-                  </div>
-                </div>
-                <div class="wed-desc wed">
-                  <div class="wed-desc-inside" ng-bind-html="wedData.content">
-                    <!-- <p class="bold">{{wedData.content}}</p> -->
-                  </div>
-                  <div class="wed-date mar0 clearfix wedd">
-                    <a ><span>By {{wedData.authorname}}</span></a>
-                    <div class="wed-date mar0 pull-right">
-                      <span>Views:</span>
-                      <span>{{wedData.views}}</span>
-                    </div>
-                  </div>
-                  <div class="read-more pull-right" ng-if="wedData.type==1">
-                    <a class="color-black" ui-sref="blogtext({id:wedData.id})">Read More</a>
-                  </div>
-                  <div class="read-more pull-right" ng-if="wedData.type==2">
-                    <a class="color-black" ui-sref="blogimage({id:wedData.id})">Read More</a>
-                  </div>
-                  <div class="read-more pull-right" ng-if="wedData.type==3">
-                    <a class="color-black" ui-sref="blogvideo({id:wedData.id})">Read More</a>
-                  </div>
-                  <div class="wed-date mar0">
-                    <span>{{wedData.date |date:'d MMMM y'}}</span>
-                  </div>
-                </div>
-                <div class="border-blue borders"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="dairies-box pd-side mb15">
+              <!-- <div class="story-head text-center">
+                    <img src="img/diary_red.png" alt="" class="img-responsive">
+                    <span>STORIES</span>
+              </div> -->
+              <div class="diary text-center story-head">
+                  <h4>
+                      <i class="glyph-icon fi flaticon-book"></i>STORIES</h4>
               </div>
-            </div>
-          </div>
-          <div class="btn-all mr30">
-            <button class="btn btn-danger btn-outline" ng-click="changeDiary(-1);" ng-disabled="DiaryInsideData.pageno==1">
+                    <div class="row">
+                        <div class="col-xs-6 col-sm-4">
+                            <div class="wed-box box-big border-red pdnone mb30">
+                                <div class="wed-img-list event-img-list diary-img-list">
+                                    <img src="img/movies/movie_diaries/diary1.png" alt="" class="img-responsive image-size">
+                                    <div class="ribbon-red">
+                                        <img src="img/ribbon_red.png" alt="">
+                                        <span class="color-white uppercase">movies</span>
+                                    </div>
+                                </div>
+                                <div class="wed-desc wed">
+                                    <div class="wed-desc-inside">
+                                        <!-- <p class="bold">{{wedData.content}}</p> -->
+                                        <p class="bold">Lorem ipsum proin gravida nibh vel velit auctor aliquet</p>
+                                    </div>
+                                    <div class="wed-date mar0 clearfix wedd">
+                                        <a><span>By Editor</span></a>
+                                        <div class="wed-date mar0 pull-right">
+                                            <!-- <span>Views:</span>
+                                            <span>{{wedData.views}}</span> -->
+                                            <div class="follow-sec1 text-right">
+                                              <a href="https://www.facebook.com/GSWorldwideEnt/" target="_blank"><i class="fa fa-facebook"></i></a>
+                                                <a href="https://twitter.com/GSWorldwideEnt" target="_blank"><i class="fa fa-twitter"></i></a>
+                                                <a href="https://www.instagram.com/gsworldwideent/" target="_blank"><i class="fa fa-instagram"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="read-more pull-right">
+                                        <a class="color-black">Read More</a>
+                                    </div>
+                                    <div class="wed-date mar0">
+                                        <span>12 January 2016</span>
+                                    </div>
+                                </div>
+                                <div class="border-blue borders"></div>
+                            </div>
+                        </div>
+                        <div class="col-xs-6 col-sm-4">
+                            <div class="wed-box box-big border-red pdnone mb30">
+                                <div class="wed-img-list event-img-list diary-img-list">
+                                    <img src="img/movies/movie_diaries/diary1.png" alt="" class="img-responsive image-size">
+                                    <div class="ribbon-red">
+                                        <img src="img/ribbon_red.png" alt="">
+                                        <span class="color-white uppercase">movies</span>
+                                    </div>
+                                </div>
+                                <div class="wed-desc wed">
+                                    <div class="wed-desc-inside">
+                                        <!-- <p class="bold">{{wedData.content}}</p> -->
+                                        <p class="bold">Lorem ipsum proin gravida nibh vel velit auctor aliquet</p>
+                                    </div>
+                                    <div class="wed-date mar0 clearfix wedd">
+                                        <a><span>By Editor</span></a>
+                                        <div class="wed-date mar0 pull-right">
+                                            <!-- <span>Views:</span>
+                                            <span>{{wedData.views}}</span> -->
+                                            <div class="follow-sec1 text-right">
+                                              <a href="https://www.facebook.com/GSWorldwideEnt/" target="_blank"><i class="fa fa-facebook"></i></a>
+                                                <a href="https://twitter.com/GSWorldwideEnt" target="_blank"><i class="fa fa-twitter"></i></a>
+                                                <a href="https://www.instagram.com/gsworldwideent/" target="_blank"><i class="fa fa-instagram"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="read-more pull-right">
+                                        <a class="color-black">Read More</a>
+                                    </div>
+                                    <div class="wed-date mar0">
+                                        <span>12 January 2016</span>
+                                    </div>
+                                </div>
+                                <div class="border-blue borders"></div>
+                            </div>
+                        </div>
+                        <div class="col-xs-6 col-sm-4">
+                            <div class="wed-box box-big border-red pdnone mb30">
+                                <div class="wed-img-list event-img-list diary-img-list">
+                                    <img src="img/movies/movie_diaries/diary1.png" alt="" class="img-responsive image-size">
+                                    <div class="ribbon-red">
+                                        <img src="img/ribbon_red.png" alt="">
+                                        <span class="color-white uppercase">movies</span>
+                                    </div>
+                                </div>
+                                <div class="wed-desc wed">
+                                    <div class="wed-desc-inside">
+                                        <!-- <p class="bold">{{wedData.content}}</p> -->
+                                        <p class="bold">Lorem ipsum proin gravida nibh vel velit auctor aliquet</p>
+                                    </div>
+                                    <div class="wed-date mar0 clearfix wedd">
+                                        <a><span>By Editor</span></a>
+                                        <div class="wed-date mar0 pull-right">
+                                            <!-- <span>Views:</span>
+                                            <span>{{wedData.views}}</span> -->
+                                            <div class="follow-sec1 text-right">
+                                              <a href="https://www.facebook.com/GSWorldwideEnt/" target="_blank"><i class="fa fa-facebook"></i></a>
+                                                <a href="https://twitter.com/GSWorldwideEnt" target="_blank"><i class="fa fa-twitter"></i></a>
+                                                <a href="https://www.instagram.com/gsworldwideent/" target="_blank"><i class="fa fa-instagram"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="read-more pull-right">
+                                        <a class="color-black">Read More</a>
+                                    </div>
+                                    <div class="wed-date mar0">
+                                        <span>12 January 2016</span>
+                                    </div>
+                                </div>
+                                <div class="border-blue borders"></div>
+                            </div>
+                        </div>
+                        <div class="col-xs-6 col-sm-4">
+                            <div class="wed-box box-big border-red pdnone mb30">
+                                <div class="wed-img-list event-img-list diary-img-list">
+                                    <img src="img/movies/movie_diaries/diary1.png" alt="" class="img-responsive image-size">
+                                    <div class="ribbon-red">
+                                        <img src="img/ribbon_red.png" alt="">
+                                        <span class="color-white uppercase">movies</span>
+                                    </div>
+                                </div>
+                                <div class="wed-desc wed">
+                                    <div class="wed-desc-inside">
+                                        <!-- <p class="bold">{{wedData.content}}</p> -->
+                                        <p class="bold">Lorem ipsum proin gravida nibh vel velit auctor aliquet</p>
+                                    </div>
+                                    <div class="wed-date mar0 clearfix wedd">
+                                        <a><span>By Editor</span></a>
+                                        <div class="wed-date mar0 pull-right">
+                                            <!-- <span>Views:</span>
+                                            <span>{{wedData.views}}</span> -->
+                                            <div class="follow-sec1 text-right">
+                                              <a href="https://www.facebook.com/GSWorldwideEnt/" target="_blank"><i class="fa fa-facebook"></i></a>
+                                                <a href="https://twitter.com/GSWorldwideEnt" target="_blank"><i class="fa fa-twitter"></i></a>
+                                                <a href="https://www.instagram.com/gsworldwideent/" target="_blank"><i class="fa fa-instagram"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="read-more pull-right">
+                                        <a class="color-black">Read More</a>
+                                    </div>
+                                    <div class="wed-date mar0">
+                                        <span>12 January 2016</span>
+                                    </div>
+                                </div>
+                                <div class="border-blue borders"></div>
+                            </div>
+                        </div>
+                        <div class="col-xs-6 col-sm-4">
+                            <div class="wed-box box-big border-red pdnone mb30">
+                                <div class="wed-img-list event-img-list diary-img-list">
+                                    <img src="img/movies/movie_diaries/diary1.png" alt="" class="img-responsive image-size">
+                                    <div class="ribbon-red">
+                                        <img src="img/ribbon_red.png" alt="">
+                                        <span class="color-white uppercase">movies</span>
+                                    </div>
+                                </div>
+                                <div class="wed-desc wed">
+                                    <div class="wed-desc-inside">
+                                        <!-- <p class="bold">{{wedData.content}}</p> -->
+                                        <p class="bold">Lorem ipsum proin gravida nibh vel velit auctor aliquet</p>
+                                    </div>
+                                    <div class="wed-date mar0 clearfix wedd">
+                                        <a><span>By Editor</span></a>
+                                        <div class="wed-date mar0 pull-right">
+                                            <!-- <span>Views:</span>
+                                            <span>{{wedData.views}}</span> -->
+                                            <div class="follow-sec1 text-right">
+                                              <a href="https://www.facebook.com/GSWorldwideEnt/" target="_blank"><i class="fa fa-facebook"></i></a>
+                                                <a href="https://twitter.com/GSWorldwideEnt" target="_blank"><i class="fa fa-twitter"></i></a>
+                                                <a href="https://www.instagram.com/gsworldwideent/" target="_blank"><i class="fa fa-instagram"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="read-more pull-right">
+                                        <a class="color-black">Read More</a>
+                                    </div>
+                                    <div class="wed-date mar0">
+                                        <span>12 January 2016</span>
+                                    </div>
+                                </div>
+                                <div class="border-blue borders"></div>
+                            </div>
+                        </div>
+                        <div class="col-xs-6 col-sm-4">
+                            <div class="wed-box box-big border-red pdnone mb30">
+                                <div class="wed-img-list event-img-list diary-img-list">
+                                    <img src="img/movies/movie_diaries/diary1.png" alt="" class="img-responsive image-size">
+                                    <div class="ribbon-red">
+                                        <img src="img/ribbon_red.png" alt="">
+                                        <span class="color-white uppercase">movies</span>
+                                    </div>
+                                </div>
+                                <div class="wed-desc wed">
+                                    <div class="wed-desc-inside">
+                                        <!-- <p class="bold">{{wedData.content}}</p> -->
+                                        <p class="bold">Lorem ipsum proin gravida nibh vel velit auctor aliquet</p>
+                                    </div>
+                                    <div class="wed-date mar0 clearfix wedd">
+                                        <a><span>By Editor</span></a>
+                                        <div class="wed-date mar0 pull-right">
+                                            <!-- <span>Views:</span>
+                                            <span>{{wedData.views}}</span> -->
+                                            <div class="follow-sec1 text-right">
+                                              <a href="https://www.facebook.com/GSWorldwideEnt/" target="_blank"><i class="fa fa-facebook"></i></a>
+                                                <a href="https://twitter.com/GSWorldwideEnt" target="_blank"><i class="fa fa-twitter"></i></a>
+                                                <a href="https://www.instagram.com/gsworldwideent/" target="_blank"><i class="fa fa-instagram"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="read-more pull-right">
+                                        <a class="color-black">Read More</a>
+                                    </div>
+                                    <div class="wed-date mar0">
+                                        <span>12 January 2016</span>
+                                    </div>
+                                </div>
+                                <div class="border-blue borders"></div>
+                            </div>
+                        </div>
+                        <div class="col-xs-6 col-sm-4">
+                            <div class="wed-box box-big border-red pdnone mb30">
+                                <div class="wed-img-list event-img-list diary-img-list">
+                                    <img src="img/movies/movie_diaries/diary1.png" alt="" class="img-responsive image-size">
+                                    <div class="ribbon-red">
+                                        <img src="img/ribbon_red.png" alt="">
+                                        <span class="color-white uppercase">movies</span>
+                                    </div>
+                                </div>
+                                <div class="wed-desc wed">
+                                    <div class="wed-desc-inside">
+                                        <!-- <p class="bold">{{wedData.content}}</p> -->
+                                        <p class="bold">Lorem ipsum proin gravida nibh vel velit auctor aliquet</p>
+                                    </div>
+                                    <div class="wed-date mar0 clearfix wedd">
+                                        <a><span>By Editor</span></a>
+                                        <div class="wed-date mar0 pull-right">
+                                            <!-- <span>Views:</span>
+                                            <span>{{wedData.views}}</span> -->
+                                            <div class="follow-sec1 text-right">
+                                              <a href="https://www.facebook.com/GSWorldwideEnt/" target="_blank"><i class="fa fa-facebook"></i></a>
+                                                <a href="https://twitter.com/GSWorldwideEnt" target="_blank"><i class="fa fa-twitter"></i></a>
+                                                <a href="https://www.instagram.com/gsworldwideent/" target="_blank"><i class="fa fa-instagram"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="read-more pull-right">
+                                        <a class="color-black">Read More</a>
+                                    </div>
+                                    <div class="wed-date mar0">
+                                        <span>12 January 2016</span>
+                                    </div>
+                                </div>
+                                <div class="border-blue borders"></div>
+                            </div>
+                        </div>
+                        <div class="col-xs-6 col-sm-4">
+                            <div class="wed-box box-big border-red pdnone mb30">
+                                <div class="wed-img-list event-img-list diary-img-list">
+                                    <img src="img/movies/movie_diaries/diary1.png" alt="" class="img-responsive image-size">
+                                    <div class="ribbon-red">
+                                        <img src="img/ribbon_red.png" alt="">
+                                        <span class="color-white uppercase">movies</span>
+                                    </div>
+                                </div>
+                                <div class="wed-desc wed">
+                                    <div class="wed-desc-inside">
+                                        <!-- <p class="bold">{{wedData.content}}</p> -->
+                                        <p class="bold">Lorem ipsum proin gravida nibh vel velit auctor aliquet</p>
+                                    </div>
+                                    <div class="wed-date mar0 clearfix wedd">
+                                        <a><span>By Editor</span></a>
+                                        <div class="wed-date mar0 pull-right">
+                                            <!-- <span>Views:</span>
+                                            <span>{{wedData.views}}</span> -->
+                                            <div class="follow-sec1 text-right">
+                                              <a href="https://www.facebook.com/GSWorldwideEnt/" target="_blank"><i class="fa fa-facebook"></i></a>
+                                                <a href="https://twitter.com/GSWorldwideEnt" target="_blank"><i class="fa fa-twitter"></i></a>
+                                                <a href="https://www.instagram.com/gsworldwideent/" target="_blank"><i class="fa fa-instagram"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="read-more pull-right">
+                                        <a class="color-black">Read More</a>
+                                    </div>
+                                    <div class="wed-date mar0">
+                                        <span>12 January 2016</span>
+                                    </div>
+                                </div>
+                                <div class="border-blue borders"></div>
+                            </div>
+                        </div>
+                        <div class="col-xs-6 col-sm-4">
+                            <div class="wed-box box-big border-red pdnone mb30">
+                                <div class="wed-img-list event-img-list diary-img-list">
+                                    <img src="img/movies/movie_diaries/diary1.png" alt="" class="img-responsive image-size">
+                                    <div class="ribbon-red">
+                                        <img src="img/ribbon_red.png" alt="">
+                                        <span class="color-white uppercase">movies</span>
+                                    </div>
+                                </div>
+                                <div class="wed-desc wed">
+                                    <div class="wed-desc-inside">
+                                        <!-- <p class="bold">{{wedData.content}}</p> -->
+                                        <p class="bold">Lorem ipsum proin gravida nibh vel velit auctor aliquet</p>
+                                    </div>
+                                    <div class="wed-date mar0 clearfix wedd">
+                                        <a><span>By Editor</span></a>
+                                        <div class="wed-date mar0 pull-right">
+                                            <!-- <span>Views:</span>
+                                            <span>{{wedData.views}}</span> -->
+                                            <div class="follow-sec1 text-right">
+                                              <a href="https://www.facebook.com/GSWorldwideEnt/" target="_blank"><i class="fa fa-facebook"></i></a>
+                                                <a href="https://twitter.com/GSWorldwideEnt" target="_blank"><i class="fa fa-twitter"></i></a>
+                                                <a href="https://www.instagram.com/gsworldwideent/" target="_blank"><i class="fa fa-instagram"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="read-more pull-right">
+                                        <a class="color-black">Read More</a>
+                                    </div>
+                                    <div class="wed-date mar0">
+                                        <span>12 January 2016</span>
+                                    </div>
+                                </div>
+                                <div class="border-blue borders"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="btn-all mr30 text-center">
+                        <button class="btn btn-danger btn-outline" ng-click="changeDiary(-1);" ng-disabled="DiaryInsideData.pageno==1">
+              VIEW MORE
+            </button>
+              </div>
+                    <!-- <div class="btn-all mr30">
+                        <button class="btn btn-danger btn-outline" ng-click="changeDiary(-1);" ng-disabled="DiaryInsideData.pageno==1">
               Prev
             </button>
-            <button class="btn btn-danger btn-outline pull-right" ng-click="changeDiary(1);" ng-disabled="DiaryInsideData.pageno==DiaryInsideData.lastpage">
-              <!-- <button class="btn btn-danger btn-outline pull-right" ng-click="next();"> -->
-              Next
+                        <button class="btn btn-danger btn-outline pull-right" ng-click="changeDiary(1);" ng-disabled="DiaryInsideData.pageno==DiaryInsideData.lastpage">
+              <! <button class="btn btn-danger btn-outline pull-right" ng-click="next();"> -->
+<!--
             </button>
-          </div>
+                    </div> -->
+                </div>
+            </div>
         </div>
-      </div>
-      <div class="col-sm-3">
-        <div class="text-center wed-box box-side-diaries border-red">
-          <div class="title-subtitle">
-            <h4 class="uppercase color-red bold letter-spacing">CATEGORIES</h4>
-          </div>
-          <ul class="list-unstyled">
-            <li><a class="uppercase" ui-sref="diaries({category:''})">Home</a></li>
-            <li><a href="" class="uppercase" ng-repeat="cat in diaryData.category" ui-sref="diaries({category:cat.id})">{{cat.name}}</a></li>
-            <!-- <li><a href="" class="uppercase">WEDDINGS</a></li>
-            <li><a href="" class="uppercase">SPORTS</a></li>
-            <li><a href="" class="uppercase">EVENTS</a></li>
-            <li><a href="" class="uppercase">TALENT</a></li>
-            <li><a href="" class="uppercase">MICE</a></li>
-            <li><a href="" class="uppercase">WORLD TOUR</a></li>
-            <li><a href="" class="uppercase">NEWS</a></li>
-            <li><a href="" class="uppercase">PHOTOS</a></li>
-            <li><a href="" class="uppercase">VIDEOS</a></li> -->
-          </ul>
-          <div class="border-blue borders"></div>
-        </div>
-        <!-- <div class="text-center wed-box border-red box-side-diaries" ng-init="viewAll=false;">
-                    <div class="title-subtitle">
-                        <h4 class="uppercase color-red bold letter-spacing">ARCHIVES</h4>
-                    </div>
-                    <ul class="list-unstyled">
-                        <li><a href="" class="uppercase" ng-repeat="date in diaryyear1[0]" ng-click="filteByYear(date);">{{date.month}} {{date.year}}</a></li>
-                    </ul>
-                    <ul class="list-unstyled" ng-repeat="data1 in diaryyear1" ng-if="$index>0 && viewAll==true">
-                        <li><a href="" class="uppercase" ng-repeat="date in data1" ng-click="filteByYear(date);">{{date.month}} {{date.year}}</a></li>
-                    </ul>
-                    <div class="btn-all text-center mb15">
-                        <button class="btn btn-danger btn-outline" ng-click="viewAll=!viewAll">
-                          <span ng-if="!viewAll">View all</span>
-                          <span ng-if="viewAll">View Less</span>
-                        </button>
-                    </div>
-                    <div class="border-blue borders"></div>
-                </div> -->
-      </div>
     </div>
-  </div>
 </section>
 
 
 <!-- ------------------------category filter---------------------------------------------- -->
 
-<section class="bg-grey-diaries pd70" ng-if="filterdata">
-  <div class="container">
-    <div class="row">
-      <div class="col-sm-9">
-        <div class="dairies-box pd-side mb15">
-          <div class="row">
-            <div class="col-sm-6" ng-repeat="data in filterDiaries.queryresult" ng-if="filterDiaries.queryresult.length>0">
-              <div class="wed-box border-red pdnone mb15">
-                <div class="wed-img-list event-img-list">
-                  <img ng-src="{{data.image | uploadpath}}" alt="" class="img-responsive">
-                  <div class="ribbon-red">
-                    <img src="img/ribbon_red.png" alt="">
-                    <span class="color-white uppercase">{{data.categoryname}}</span>
-                  </div>
-                </div>
-                <div class="wed-desc wed">
-                  <div class="wed-desc-inside" ng-bind-html="data.content">
-                  </div>
-                  <div class="wed-date mar0 clearfix wedd">
-                    <a ui-sref="diaries-author({id:data.authorid})"><span>{{data.authorname}}</span></a>
-                    <div class="wed-date mar0 pull-right">
-                      <span>Views:</span>
-                      <span>{{data.views}}</span>
+<!-- <section class="bg-grey-diaries pd70" ng-if="filterdata">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-9">
+                <div class="dairies-box pd-side mb15">
+                    <div class="row">
+                        <div class="col-sm-6" ng-repeat="data in filterDiaries.queryresult" ng-if="filterDiaries.queryresult.length>0">
+                            <div class="wed-box border-red pdnone mb15">
+                                <div class="wed-img-list event-img-list">
+                                    <img ng-src="{{data.image | uploadpath}}" alt="" class="img-responsive">
+                                    <div class="ribbon-red">
+                                        <img src="img/ribbon_red.png" alt="">
+                                        <span class="color-white uppercase">{{data.categoryname}}</span>
+                                    </div>
+                                </div>
+                                <div class="wed-desc wed">
+                                    <div class="wed-desc-inside" ng-bind-html="data.content">
+                                    </div>
+                                    <div class="wed-date mar0 clearfix wedd">
+                                        <a ui-sref="diaries-author({id:data.authorid})"><span>{{data.authorname}}</span></a>
+                                        <div class="wed-date mar0 pull-right">
+                                            <span>Views:</span>
+                                            <span>{{data.views}}</span>
+                                        </div>
+                                    </div>
+                                    <div class="read-more pull-right" ng-if="data.type==1">
+                                        <a class="color-black bold" ui-sref="blogtext({id:data.id})">Read More</a>
+                                    </div>
+                                    <div class="read-more pull-right" ng-if="data.type==2">
+                                        <a class="color-black bold" ui-sref="blogimage({id:data.id})">Read More</a>
+                                    </div>
+                                    <div class="read-more pull-right" ng-if="data.type==3">
+                                        <a class="color-black bold" ui-sref="blogvideo({id:data.id})">Read More</a>
+                                    </div>
+                                    <div class="wed-date mar0">
+                                        <span>{{data.date |date:'d MMMM y'}}</span>
+                                    </div>
+                                </div>
+                                <div class="border-blue borders"></div>
+                            </div>
+                        </div>
+                        <div ng-if="filterDiaries.queryresult.length==0">
+                            <h1><center><b>Sorry, No Result Found.</b></center></h1>
+                        </div>
                     </div>
-                  </div>
-                  <div class="read-more pull-right" ng-if="data.type==1">
-                    <a class="color-black bold" ui-sref="blogtext({id:data.id})">Read More</a>
-                  </div>
-                  <div class="read-more pull-right" ng-if="data.type==2">
-                    <a class="color-black bold" ui-sref="blogimage({id:data.id})">Read More</a>
-                  </div>
-                  <div class="read-more pull-right" ng-if="data.type==3">
-                    <a class="color-black bold" ui-sref="blogvideo({id:data.id})">Read More</a>
-                  </div>
-                  <div class="wed-date mar0">
-                    <span>{{data.date |date:'d MMMM y'}}</span>
-                  </div>
-                </div>
-                <div class="border-blue borders"></div>
-              </div>
-            </div>
-            <div ng-if="filterDiaries.queryresult.length==0">
-              <h1><center><b>Sorry, No Result Found.</b></center></h1>
-            </div>
-          </div>
-          <div class="btn-all mr30">
-            <button class="btn btn-danger btn-outline" ng-click="changePage(-1);" ng-disabled="filterDiaries.pageno==1">
+                    <div class="btn-all mr30">
+                        <button class="btn btn-danger btn-outline" ng-click="changePage(-1);" ng-disabled="filterDiaries.pageno==1">
               Prev
             </button>
-            <button class="btn btn-danger btn-outline pull-right" ng-click="changePage(1);" ng-disabled="filterDiaries.pageno==filterDiaries.lastpage || filterDiaries.lastpage==0">
+                        <button class="btn btn-danger btn-outline pull-right" ng-click="changePage(1);" ng-disabled="filterDiaries.pageno==filterDiaries.lastpage || filterDiaries.lastpage==0">
               Next
             </button>
-          </div>
-        </div>
-      </div>
-      <div class="col-sm-3">
-        <div class="text-center wed-box box-side-diaries border-red">
-          <div class="title-subtitle">
-            <h4 class="uppercase color-red bold letter-spacing">CATEGORIES</h4>
-          </div>
-          <ul class="list-unstyled">
-            <li><a class="uppercase" ui-sref="diaries({category:''})">Home</a></li>
-            <li><a href="" class="uppercase" ng-repeat="cat in diaryData.category" ui-sref="diaries({category:cat.id})">{{cat.name}}</a></li>
-          </ul>
-          <div class="border-blue borders"></div>
-        </div>
-        <div class="text-center wed-box border-red box-side-diaries" ng-init="viewAll=false;">
-          <div class="title-subtitle">
-            <h4 class="uppercase color-red bold letter-spacing">ARCHIVES</h4>
-          </div>
-          <ul class="list-unstyled">
-            <li><a href="" class="uppercase" ng-repeat="date in diaryyear1[0]" ng-click="filteByYear(date);">{{date.month}} {{date.year}}</a></li>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="text-center wed-box box-side-diaries border-red">
+                    <div class="title-subtitle">
+                        <h4 class="uppercase color-red bold letter-spacing">CATEGORIES</h4>
+                    </div>
+                    <ul class="list-unstyled">
+                        <li><a class="uppercase" ui-sref="diaries({category:''})">Home</a></li>
+                        <li><a href="" class="uppercase" ng-repeat="cat in diaryData.category" ui-sref="diaries({category:cat.id})">{{cat.name}}</a></li>
+                    </ul>
+                    <div class="border-blue borders"></div>
+                </div>
+                <div class="text-center wed-box border-red box-side-diaries" ng-init="viewAll=false;">
+                    <div class="title-subtitle">
+                        <h4 class="uppercase color-red bold letter-spacing">ARCHIVES</h4>
+                    </div>
+                    <ul class="list-unstyled">
+                        <li><a href="" class="uppercase" ng-repeat="date in diaryyear1[0]" ng-click="filteByYear(date);">{{date.month}} {{date.year}}</a></li>
 
-          </ul>
-          <ul class="list-unstyled" ng-repeat="data1 in diaryyear1" ng-if="$index>0 && viewAll==true">
-            <li ng-repeat="date in data1"><a href="" class="uppercase" ng-click="filteByYear(date);">{{date.month}} {{date.year}}</a></li>
-          </ul>
-          <div class="btn-all text-center mb15">
-            <button class="btn btn-danger btn-outline" ng-click="viewAll=!viewAll">
+                    </ul>
+                    <ul class="list-unstyled" ng-repeat="data1 in diaryyear1" ng-if="$index>0 && viewAll==true">
+                        <li ng-repeat="date in data1"><a href="" class="uppercase" ng-click="filteByYear(date);">{{date.month}} {{date.year}}</a></li>
+                    </ul>
+                    <div class="btn-all text-center mb15">
+                        <button class="btn btn-danger btn-outline" ng-click="viewAll=!viewAll">
               <span ng-if="!viewAll">View all</span>
               <span ng-if="viewAll">View Less</span>
             </button>
-          </div>
-          <div class="border-blue borders"></div>
+                    </div>
+                    <div class="border-blue borders"></div>
+                </div>
+            </div>
         </div>
-      </div>
     </div>
-  </div>
-</section>
+</section> -->
 
 <!-- ---------------------------------End of category filter----------------------------------- -->
