@@ -15,23 +15,30 @@
     .icon-padd {
         padding-left: 36px;
     }
-.banner-text h1{
-  font-size: 50px;
+.double-comma2:before {
+  left: 5px;
 }
-.mission1 {
-  width: 90%;
-}
-.pdl-20{
-  padding-left: 20px;
-}
-.pdl-40{
-  padding-left: 26px;
-}
-.profile-pic1{
-  width: 150.39px;
-height: 148px;
-display: inline-block;
-}
+    .banner-text h1 {
+        font-size: 50px;
+    }
+
+    .mission1 {
+        width: 90%;
+    }
+
+    .pdl-20 {
+        padding-left: 20px;
+    }
+
+    .pdl-40 {
+        padding-left: 26px;
+    }
+
+    .profile-pic1 {
+        width: 150.39px;
+        height: 148px;
+        display: inline-block;
+    }
 
     .man-team:before {
         bottom: 30px;
@@ -205,26 +212,55 @@ display: inline-block;
     .top-align {
         margin-top: 180px;
     }
-.pdl-20{
-  padding-left: 38px;
+    .profile-holder {
+        width: 100%;
+        padding: 10px;
+    }
+    .banner-text{
+      top: 30%;
+    }
+.banner-text h1 {
+  font-size: 45px;
 }
-.double-comma2:before{
-  left: 20px;
+.bdr-right{
+  margin-top: -20px;
 }
-.double-comma1:before{
-  left: 20px;
-}
-.profile-pic1{
-  width: 115.19px;
-    height: 113.34px;
-    display: inline-block;
-}
-.history-note .note {
-  padding-bottom: 25px;
-}
-.pdl-40{
-  padding-left: 38px;
-}
+    .profile-holder {
+        width: 100%;
+    }
+
+    .man-name {
+        p {
+            font-size: 14px;
+        }
+    }
+
+    .pdl-20 {
+        padding-left: 38px;
+    }
+
+    .double-comma2:before {
+        left: 20px;
+    }
+
+    .double-comma1:before {
+        left: 20px;
+    }
+
+    .profile-pic1 {
+        width: 115.19px;
+        height: 113.34px;
+        display: inline-block;
+    }
+
+    .history-note .note {
+        padding-bottom: 25px;
+    }
+
+    .pdl-40 {
+        padding-left: 38px;
+    }
+
     .bg2.minus-m90 {
         margin-top: -190px;
     }
@@ -536,32 +572,49 @@ display: inline-block;
     .top-align {
         margin-top: 360px;
     }
+    .history-note .note{
+      margin-top: 15px;
+      width: 100%;
+    }
+.profile-holder2,.profile-holder1 {
+    width: 100%;
+  }
+  .db-block{
+    display: block;
+  }
+  .profile-pic1 {
+    width: 252px;
+    height: 248px;
+  }
     // .db-block{
     //   display: block;
     // }
+    .mission1 {
+        width: 77%;
+    }
 
-  .mission1 {
-    width: 77%;
-  }
+    .mission2 {
+        width: 90%;
+    }
 
-  .mission2 {
-    width: 90%;
-  }
-  .bdr-right {
-    margin-top: -10px;
-  }
-  .double-comma1:before{
-    left: 15;
-    width: 30px;
-    height: 25px;
-  }
-  .double-comma2:before{
-    left: 15;
-    width: 30px;
-    height: 25px;
-  }
-    .abt1{
-      height: auto;
+    .bdr-right {
+        margin-top: -120px;
+    }
+
+    .double-comma1:before {
+        left: 15;
+        width: 30px;
+        height: 25px;
+    }
+
+    .double-comma2:before {
+        left: 15;
+        width: 30px;
+        height: 25px;
+    }
+
+    .abt1 {
+        height: auto;
     }
     // .button-gs{
     //   margin-top: 88px;
@@ -573,8 +626,10 @@ display: inline-block;
     }
 
     .banner-text {
+      top: 24%;
+      width: 80%;
         h1 {
-            font-size: 14px;
+            font-size: 22px;
         }
     }
     // .top-align {
@@ -1280,92 +1335,118 @@ display: inline-block;
     .banner-talent .banner-wrap .name-event {
         width: 97.6%;
     }
-    .mgb-30{
-      margin-bottom: 30px;
-    }
-    .miss-txt{
-      font-size: 16px;
-    }
-.mission1{
-  width: 100%;
-  position: relative;
-}
-.mission2{
-  width: 100%;
-}
-.double-comma1{
-  &:before {
-    display: inline-block;
-  width: 11px;
-  top: 0;
-  left: -10px;
-  position: absolute;
-  height: 16px;
-  margin-right: 5px;
-  content: "";
-  background: url(../img/comma.png) no-repeat 0 0;
-  background-size: 100%;
-}
-}
-.double-comma2{
-  &:before {
-    display: inline-block;
-  width: 11px;
-  top: 0;
-  left: -5px;
-  position: absolute;
-  height: 16px;
-  margin-right: 5px;
-  content: "";
-  background: url(../img/comma.png) no-repeat 0 0;
-  background-size: 100%;
-}
-}
-.pdl-40{
-  padding: 0;
-}
-.db-block{
-  display: block;
-}
-.icon-padd img{
-  width: 40px;
-}
-.banner-text{
-  top: 55px;
-    width: 80%;
-    h1{
-      font-size: 18px;
-    }
-}
-.bdr-right{
-  margin-top: -70px;
-}
-.profile-holder1,.profile-holder2 {
+    .history-note .note {
+    margin-top: 50px;
     width: 100%;
-    text-align: center;
-    float: none;
-}
-.profile-holder {
-  width: 100%;
-}
-.profile-pic{
-  img{
-    width: 182.39px;
-    height: 179.48px;
-    display: inline-block;
   }
+.ldr1-color{
+  font-size: 25px;
 }
-.profile-pic1 {
-    width: 182.38px;
-    height: 179px;
-    display: inline-block;
-}
-.pdl-20{
-  padding: 0;
-}
-.abt1{
-  height: auto;
-}
+    .mgb-30 {
+        margin-bottom: 30px;
+    }
+
+    .miss-txt {
+        font-size: 16px;
+    }
+
+    .mission1 {
+        width: 100%;
+        position: relative;
+    }
+
+    .mission2 {
+        width: 100%;
+    }
+
+    .double-comma1 {
+        &:before {
+            display: inline-block;
+            width: 11px;
+            top: 0;
+            left: -10px;
+            position: absolute;
+            height: 16px;
+            margin-right: 5px;
+            content: "";
+            background: url("../img/comma.png") no-repeat 0 0;
+            background-size: 100%;
+        }
+    }
+
+    .double-comma2 {
+        &:before {
+            display: inline-block;
+            width: 11px;
+            top: 0;
+            left: -5px;
+            position: absolute;
+            height: 16px;
+            margin-right: 5px;
+            content: "";
+            background: url("../img/comma.png") no-repeat 0 0;
+            background-size: 100%;
+        }
+    }
+
+    .pdl-40 {
+        padding: 0;
+    }
+
+    .db-block {
+        display: block;
+    }
+
+    .icon-padd img {
+        width: 40px;
+    }
+
+    .banner-text {
+        top: 55px;
+        width: 80%;
+
+        h1 {
+            font-size: 18px;
+        }
+    }
+
+    .bdr-right {
+        margin-top: -70px;
+    }
+
+    .profile-holder1,
+    .profile-holder2 {
+        width: 100%;
+        text-align: center;
+        float: none;
+    }
+
+    .profile-holder {
+        width: 100%;
+    }
+
+    .profile-pic {
+        img {
+            width: 182.39px;
+            height: 179.48px;
+            display: inline-block;
+        }
+    }
+
+    .profile-pic1 {
+        width: 182.38px;
+        height: 179px;
+        display: inline-block;
+    }
+
+    .pdl-20 {
+        padding: 0;
+    }
+
+    .abt1 {
+        height: auto;
+    }
+
     .button-gs {
         margin-top: 120px;
 
