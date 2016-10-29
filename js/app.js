@@ -109,7 +109,7 @@ firstapp.config(function($stateProvider, $urlRouterProvider, $httpProvider, $loc
             controller: 'DiariesCtrl'
         })
         .state('gsdiaries', {
-            url: "/gsdiaries",
+            url: "/gsdiaries/:id",
             templateUrl: "views/template.html",
             controller: 'GsDiariesCtrl'
         })

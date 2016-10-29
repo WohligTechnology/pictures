@@ -116,7 +116,7 @@
             <div class="text-center">
               <div class="wedding-diary">
                 <div class="diary-title mr30">
-                  <h4 class="uppercase color-red"><i class="fi flaticon-book"></i>Movie DIARIES<i class="fi flaticon-tool"></i></h4>
+                  <h4 class="uppercase color-red"><i class="fi flaticon-book"></i>Movie DIARIES <i class="fi flaticon-tool"></i></h4>
                 </div>
               </div>
             </div>
@@ -140,12 +140,13 @@
                   <div class="wed-desc-inside" ng-bind-html="data.content">
                     <!-- <p class="bold">{{data.content}}</p> -->
                   </div>
+
                   <div class="read-more clearfix">
                     <a href="" class="color-black pull-left" ng-if="data.type==1" ui-sref="blogtext({id:data.id})">Read More</a>
                     <a href="" class="color-black pull-left" ng-if="data.type==2" ui-sref="blogimage({id:data.id})">Read More</a>
                     <a href="" class="color-black pull-left" ng-if="data.type==3" ui-sref="blogvideo({id:data.id})">Read More</a>
                     <div class="wed-date pull-right color-blacks authorcolor">
-                      <a " class="color-blacks "><span>By {{data.authorname}}</span></a>
+                      <a " class="color-blacks " ui-sref="gsdiaries({id:data.authorid})"><span>By {{data.authorname}}</span></a>
                     </div>
                   </div>
                 </div>

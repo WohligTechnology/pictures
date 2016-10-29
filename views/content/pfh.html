@@ -41,8 +41,18 @@
               <div class="wedding-detail">
                 <div class="asfc-title">
                   <h4 class="uppercase color-red bold">
-                    {{data.name}}
+                    {{data.name}} 
                   </h4>
+                  <div class="row" ng-if="data.date != '' || data.location != ''">
+                      <div class="col-sm-6" ng-if="data.date != ''">
+                          <span class="color-red">Date:</span>
+                          <span>{{data.date | date:"dd MMMM yyyy"}}</span>
+                      </div>
+                      <div class="col-sm-6" ng-if="data.location != ''">
+                          <span class="color-red">Location:</span>
+                          <span>{{data.location}}</span>
+                      </div>
+                  </div>
                 </div>
                 <div class="w-detail mt15 mb15" ng-if="data.content != ''" ng-bind-html="data.content">
                   <!-- <p>

@@ -6,6 +6,7 @@ var adminURL = "";
 // }
 
 adminURL = "http://www.gsentertainment.com/admin/";
+
 // adminURL = "http://gsebackend.com/gsebackend/";
 var apiUrl = adminURL + "index.php/json/";
 var imgpath = adminURL + "uploads/";
@@ -212,6 +213,10 @@ var navigationservice = angular.module('navigationservice', [])
     },
     generalSubmit: function(obj, callback) {
       $http.post(apiUrl + 'generalenquirySubmit', obj).success(callback);
+    },
+    getAuthorDetails: function(id, callback) {
+      $http.get(apiUrl + 'getAuthor?id=' + id).success(callback);
+
     },
 
   };
