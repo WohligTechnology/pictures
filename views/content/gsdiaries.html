@@ -11,7 +11,7 @@
    <div class="wedding-fant-desc">
       <div class="container">
          <div class="author-info text-center">
-            <div class="author-img" ng-style="{'background':'url('+banner[0].authorData.description.banner+')no-repeat'}">
+            <div class="author-img" ng-style="{'background':'url('+authorData.description.banner+')no-repeat'}">
                <div class="author-pic">
                   <img ng-src="{{authorData.description.image |uploadpath}}" class="img-responsive" alt="" />
                </div>
@@ -74,6 +74,7 @@
                       <i class="glyph-icon fi flaticon-book"></i>STORIES</h4>
                </div>
                <div class="row">
+                 <div ng-if="article.length===0" class="text-center">No Stories Found.</div>
                   <div class="col-xs-6 col-sm-4" ng-repeat="data in article">
                      <div class="wed-box box-big border-red pdnone mb30">
                         <div class="wed-img-list event-img-list diary-img-list">

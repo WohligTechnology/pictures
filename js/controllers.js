@@ -97,7 +97,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $scope.homedata = "";
         NavigationService.getHome(function(data) {
             $scope.homedata = data.data;
-            console.log($scope.homedata);
+            console.log($scope.homedata.homediaries);
         });
     })
     .controller('DiariesAuthorCtrl', function($scope, TemplateService, NavigationService, $timeout, $state, $stateParams) {
@@ -1434,7 +1434,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
 })
 
-.controller('GsDiariesCtrl', function($scope, TemplateService, NavigationService, $timeout, $stateParams, $state) {
+.controller('GsDiariesCtrl', function($scope, TemplateService, NavigationService, $timeout, $stateParams, $state,$filter) {
         //Used to name the .html file
         $scope.template = TemplateService.changecontent("gsdiaries");
         $scope.menutitle = NavigationService.makeactive("Gs Diaries");
@@ -1544,11 +1544,12 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             $scope.loadLessFun = function() {
                 $scope.load = false;
                 $scope.article = _.take($scope.authorData.articles, 9);
+                console.log("article",$scope.article);
             }
             $scope.loadLessFun();
 
             $scope.loadMoreFun = function() {
-                $scope.article = $scope.authorarr;
+                $scope.article = _.cloneDeep($scope.authorarr);
                 $scope.load = true;
             }
 

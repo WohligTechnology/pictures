@@ -37,7 +37,7 @@
                                     <p>{{data.location}}</p>
                                     <!-- <p class="red">14<sup>th</sup> January 2011</p> -->
                                     <p>{{data.date | date:"dd MMMM yyyy"}}</p>
-                                    
+
                                 </div>
                             </div>
                         </li>
@@ -50,11 +50,11 @@
                                     <p>{{data.location}}</p>
                                     <!-- <p class="red">14<sup>th</sup> January 2011</p> -->
                                     <p>{{data.date | date:"dd MMMM yyyy"}}</p>
-                                    
+
                                 </div>
                             </div>
                         </li>
-                         
+
                     </flex-slider>
                 </div>
                 <div class="flex-slider" ng-if="tourdata.worldtourupcoming.length>0">
@@ -160,7 +160,7 @@
                                     <a href="" class="color-black pull-left" ng-if="data.type==2" ui-sref="blogimage({id:data.id})">Read More</a>
                                     <a href="" class="color-black pull-left" ng-if="data.type==3" ui-sref="blogvideo({id:data.id})">Read More</a>
                                     <div class="wed-date pull-right color-blacks authorcolor">
-                                        <a class="color-blacks"><span>By {{data.authorname}}</span></a>
+                                        <a class="color-blacks" ui-sref="gsdiaries({id:data.authorid})"><span>By {{data.authorname}}</span></a>
                                     </div>
                                 </div>
                             </div>
