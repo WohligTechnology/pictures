@@ -425,6 +425,11 @@ firstapp.directive('img', function($compile, $parse) {
         }
     };
 });
+firstapp.filter('htmlToPlaintext', function () {
+    return function (text) {
+        return text ? String(text).replace(/<[^>]+>/gm, '') : '';
+    };
+});
 
 firstapp.filter('timeago', function() {
     return function(input, p_allowFuture) {

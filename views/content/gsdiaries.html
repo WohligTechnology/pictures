@@ -1,126 +1,126 @@
 <section>
-    <div class="container">
-        <div class="row">
-            <div class="col-xs-12">
-                <div class="head-banner diaries-banner text-center">
-                    <img src="img/dairies/banner.png" class="img-responsive" title="Dairies">
-                </div>
+   <div class="container">
+      <div class="row">
+         <div class="col-xs-12">
+            <div class="head-banner diaries-banner text-center">
+               <img src="img/dairies/banner.png" class="img-responsive" title="Dairies">
             </div>
-        </div>
-    </div>
-    <div class="wedding-fant-desc">
-        <div class="container">
-            <div class="author-info text-center">
-                <div class="author-img" ng-style="{'background':'url('+authorData.description.banner+')no-repeat'}">
-                    <div class="author-pic">
-                        <img ng-src="{{authorData.description.image |uploadpath}}" class="img-responsive" alt="" />
-                    </div>
-                </div>
-                <div class="author-name">
-                    <span>{{authorData.description.name}}</span>
-                </div>
-                <div class="auth-position">
-                    <span>{{authorData.description.type}}</span>
-                </div>
-                <div class="topic-info">
-                    <div class="topic">
-                        <span>STORIES: </span>
-                    </div>
-                    <div class="topic-count">
-                        <span>{{authorData.storyCount.storyCount}}</span>
-                    </div>
-                </div>
-                <div class="topic-info1">
-                    <div class="topic">
-                        <span>SINCE: </span>
-                    </div>
-                    <div class="topic-count">
-                        <span>{{authorData.description.date}}</span>
-                    </div>
-                </div>
+         </div>
+      </div>
+   </div>
+   <div class="wedding-fant-desc">
+      <div class="container">
+         <div class="author-info text-center">
+            <div class="author-img" ng-style="{'background':'url('+authorData.description.banner+')no-repeat'}">
+               <div class="author-pic">
+                  <img ng-src="{{authorData.description.image |uploadpath}}" class="img-responsive" alt="" />
+               </div>
             </div>
-            <!-- <div class="row">
+            <div class="author-name">
+               <span>{{authorData.description.name}}</span>
+            </div>
+            <div class="auth-position">
+               <span>{{authorData.description.type}}</span>
+            </div>
+            <div class="topic-info">
+               <div class="topic">
+                  <span>STORIES: </span>
+               </div>
+               <div class="topic-count">
+                  <span>{{authorData.storyCount.storyCount}}</span>
+               </div>
+            </div>
+            <div class="topic-info1">
+               <div class="topic">
+                  <span>SINCE: </span>
+               </div>
+               <div class="topic-count">
+                  <span>{{authorData.description.date}}</span>
+               </div>
+            </div>
+         </div>
+         <!-- <div class="row">
                 <div class="col-md-offset-2 col-md-8" ng-bind-html="diaryData.description.content"></div>
             </div> -->
-            <div class="row">
-                <div class="col-md-8 col-md-offset-2">
-                    <p class="topic-desc" ng-bind-html="authorData.description.description">
-                        <!-- Lorem Ipsum Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit.
+         <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+               <p class="topic-desc" ng-bind-html="authorData.description.description">
+                  <!-- Lorem Ipsum Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit.
                         Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non mauris vitae erat consequat auctor eu in elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Mauris in erat justo. Nullam
                         ac urna eu felis dapibus condimentum sit amet a augue. Sed non neque elit. Sed ut imperdiet nisi. Proin condimentum fermentum nunc. -->
-                    </p>
-                    <div class="follow-sec text-center">
-                        <p>FOLLOW ON</p>
-                        <a href="https://www.facebook.com/GSWorldwideEnt/" target="_blank"><i class="fa fa-facebook"></i></a>
-                        <a href="https://twitter.com/GSWorldwideEnt" target="_blank"><i class="fa fa-twitter"></i></a>
-                        <a href="mailto:jsw@gsentertainment.com" target="_blank"><i class="fa fa-envelope-o"></i></a>
-                    </div>
-                </div>
+               </p>
+               <div class="follow-sec text-center">
+                  <p>FOLLOW ON</p>
+                  <a href="https://www.facebook.com/GSWorldwideEnt/" target="_blank"><i class="fa fa-facebook"></i></a>
+                  <a href="https://twitter.com/GSWorldwideEnt" target="_blank"><i class="fa fa-twitter"></i></a>
+                  <a href="mailto:jsw@gsentertainment.com" target="_blank"><i class="fa fa-envelope-o"></i></a>
+               </div>
             </div>
-        </div>
-    </div>
+         </div>
+      </div>
+   </div>
 </section>
 <section class="bg-grey-diaries pd70" ng-hide="filterdata">
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-12">
-                <div class="dairies-box pd-side mb15">
-                    <!-- <div class="story-head text-center">
+   <div class="container">
+      <div class="row">
+         <div class="col-sm-12">
+            <div class="dairies-box pd-side mb15">
+               <!-- <div class="story-head text-center">
                     <img src="img/diary_red.png" alt="" class="img-responsive">
                     <span>STORIES</span>
               </div> -->
-                    <div class="diary text-center story-head">
-                        <h4>
+               <div class="diary text-center story-head">
+                  <h4>
                       <i class="glyph-icon fi flaticon-book"></i>STORIES</h4>
-                    </div>
-                    <div class="row">
-                        <div ng-if="article.length===0" class="text-center">No Stories Found.</div>
-                        <div class="col-xs-6 col-sm-4" ng-repeat="data in article">
-                            <div class="wed-box box-big border-red pdnone mb30">
-                                <div class="wed-img-list event-img-list diary-img-list">
-                                    <img ng-src="{{data.image | uploadpath}}" alt="" class="img-responsive image-size">
-                                    <div class="ribbon-red">
-                                        <img src="img/ribbon_red.png" alt="">
-                                        <span class="color-white uppercase">movies</span>
-                                    </div>
-                                </div>
-                                <div class="wed-desc wed">
-                                    <div class="wed-desc-inside">
-                                        <!-- <p class="bold">{{wedData.content}}</p> -->
-                                        <p class="bold" ng-bind-html="data.content"></p>
-                                    </div>
-                                    <div class="wed-date mar0 clearfix wedd">
-                                        <a><span>By Editor</span></a>
-                                        <div class="wed-date mar0 pull-right">
-                                            <!-- <span>Views:</span> -->
-                                            <!-- <span>{{data.views}}</span> -->
-                                            <div class="follow-sec1 text-right">
-                                                <a href="https://www.facebook.com/GSWorldwideEnt/" target="_blank"><i class="fa fa-facebook"></i></a>
-                                                <a href="https://twitter.com/GSWorldwideEnt" target="_blank"><i class="fa fa-twitter"></i></a>
-                                                <a href="mailto:jsw@gsentertainment.com" target="_blank"><i class="fa fa-envelope-o"></i></a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- <div class="read-more pull-right">
+               </div>
+               <div class="row">
+                  <div ng-if="article.length===0" class="text-center">No Stories Found.</div>
+                  <div class="col-xs-6 col-sm-4" ng-repeat="data in article">
+                     <div class="wed-box box-big border-red pdnone mb30">
+                        <div class="wed-img-list event-img-list diary-img-list">
+                           <img ng-src="{{data.image | uploadpath}}" alt="" class="img-responsive image-size">
+                           <div class="ribbon-red">
+                              <img src="img/ribbon_red.png" alt="">
+                              <span class="color-white uppercase">movies</span>
+                           </div>
+                        </div>
+                        <div class="wed-desc wed">
+                           <div class="wed-desc-inside">
+                              <!-- <p class="bold">{{wedData.content}}</p> -->
+                              <p class="bold" ng-bind-html="data.content|htmlToPlaintext"></p>
+                           </div>
+                           <div class="wed-date mar0 clearfix wedd">
+                              <a><span>By Editor</span></a>
+                              <div class="wed-date mar0 pull-right">
+                                 <!-- <span>Views:</span> -->
+                                 <!-- <span>{{data.views}}</span> -->
+                                 <div class="follow-sec1 text-right">
+                                    <a href="https://www.facebook.com/GSWorldwideEnt/" target="_blank"><i class="fa fa-facebook"></i></a>
+                                    <a href="https://twitter.com/GSWorldwideEnt" target="_blank"><i class="fa fa-twitter"></i></a>
+                                    <a href="mailto:jsw@gsentertainment.com" target="_blank"><i class="fa fa-envelope-o"></i></a>
+                                 </div>
+                              </div>
+                           </div>
+                           <!-- <div class="read-more pull-right">
                               <a class="color-black">Read More</a>
                            </div> -->
-                                    <div class="read-more pull-right" ng-if="data.type==1">
-                                        <a class="color-black" ui-sref="blogtext({id:data.id})">Read More</a>
-                                    </div>
-                                    <div class="read-more pull-right" ng-if="data.type==2">
-                                        <a class="color-black" ui-sref="blogimage({id:data.id})">Read More</a>
-                                    </div>
-                                    <div class="read-more pull-right" ng-if="data.type==3">
-                                        <a class="color-black" ui-sref="blogvideo({id:data.id})">Read More</a>
-                                    </div>
-                                    <div class="wed-date mar0">
-                                        <span>{{data.date}}</span>
-                                    </div>
-                                </div>
-                                <div class="border-blue borders"></div>
-                            </div>
+                           <div class="read-more pull-right" ng-if="data.type==1">
+                              <a class="color-black" ui-sref="blogtext({id:data.id})">Read More</a>
+                           </div>
+                           <div class="read-more pull-right" ng-if="data.type==2">
+                              <a class="color-black" ui-sref="blogimage({id:data.id})">Read More</a>
+                           </div>
+                           <div class="read-more pull-right" ng-if="data.type==3">
+                              <a class="color-black" ui-sref="blogvideo({id:data.id})">Read More</a>
+                           </div>
+                           <div class="wed-date mar0">
+                              <span>{{data.date}}</span>
+                           </div>
                         </div>
-                        <!-- <div class="col-xs-6 col-sm-4">
+                        <div class="border-blue borders"></div>
+                     </div>
+                  </div>
+                  <!-- <div class="col-xs-6 col-sm-4">
                             <div class="wed-box box-big border-red pdnone mb30">
                                 <div class="wed-img-list event-img-list diary-img-list">
                                     <img src="img/movies/movie_diaries/diary1.png" alt="" class="img-responsive image-size">
@@ -400,35 +400,35 @@
                                 <div class="border-blue borders"></div>
                             </div>
                         </div> -->
-                    </div>
-                    <div class="btn-all mr30 text-center">
-                        <button class="btn btn-danger btn-outline" ng-click="loadMoreFun()" ng-if="!load">
+               </div>
+               <div class="btn-all mr30 text-center">
+                  <button class="btn btn-danger btn-outline" ng-click="loadMoreFun()" ng-if="!load">
                      VIEW MORE
                   </button>
-                        <button class="btn btn-danger btn-outline" ng-if="load" ng-click="loadLessFun()">
+                  <button class="btn btn-danger btn-outline" ng-if="load" ng-click="loadLessFun()">
                      VIEW LESS
                   </button>
-                    </div>
+               </div>
 
-                    <!-- <div class="btn-all mr30 text-center">
+               <!-- <div class="btn-all mr30 text-center">
                   <button class="btn btn-danger btn-outline" ng-click="changeDiary(-1);" ng-disabled="DiaryInsideData.pageno==1">
                      VIEW MORE
                   </button>
                </div> -->
 
-                    <!-- <div class="btn-all mr30">
+               <!-- <div class="btn-all mr30">
                         <button class="btn btn-danger btn-outline" ng-click="changeDiary(-1);" ng-disabled="DiaryInsideData.pageno==1">
               Prev
             </button>
                         <button class="btn btn-danger btn-outline pull-right" ng-click="changeDiary(1);" ng-disabled="DiaryInsideData.pageno==DiaryInsideData.lastpage">
               <! <button class="btn btn-danger btn-outline pull-right" ng-click="next();"> -->
-                    <!--
+               <!--
             </button>
                     </div> -->
-                </div>
             </div>
-        </div>
-    </div>
+         </div>
+      </div>
+   </div>
 </section>
 
 
