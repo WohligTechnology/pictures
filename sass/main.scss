@@ -5835,18 +5835,12 @@ z-index: 99;
   bottom: 0;
   left: -1px;
 }
-// .author-pic:after{
-//   content: "";
-//   border-bottom: 45px solid white;
-//   border-left: 380px solid transparent;
-//   position: absolute;
-//   left: 0;
-//   bottom: 0;
-// }
-// .flex-direction-nav .flex-disabled {
-//     @include opacity(1)!important;
-//     z-index: 1;
-// }
+
+.banner-wrap{
+  img.loading{
+      display: none;
+  }
+}
 /* Start writing sass here */
 @import "fancybox-override";
 @import "mobile";
