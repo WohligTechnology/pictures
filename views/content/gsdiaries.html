@@ -35,7 +35,7 @@
                   <span>SINCE: </span>
                </div>
                <div class="topic-count">
-                  <span>{{authorData.description.date}}</span>
+                  <span>{{authorData.description.date | date:'d MMMM y'}}</span>
                </div>
             </div>
          </div>
@@ -114,7 +114,7 @@
                               <a class="color-black" ui-sref="blogvideo({id:data.id})">Read More</a>
                            </div>
                            <div class="wed-date mar0">
-                              <span>{{data.date}}</span>
+                              <span>{{data.date | date:'d MMMM y'}}</span>
                            </div>
                         </div>
                         <div class="border-blue borders"></div>
