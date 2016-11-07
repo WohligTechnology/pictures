@@ -1355,10 +1355,178 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     //     img: "img/movies/ranbir.jpg"
     // };
 })
+.controller('PunjabKingsCtrl', function($scope, TemplateService, NavigationService, $timeout, $stateParams) {
+    //Used to name the .html file
+    $scope.template = TemplateService.changecontent("punjabkings");
+    $scope.menutitle = NavigationService.makeactive("Sports");
+    TemplateService.title = $scope.menutitle;
+    $scope.navigation = NavigationService.getnav();
+    $scope.$on('$viewContentLoaded', function(event) {
+        $timeout(function() {
+
+            ! function(d, s, id) {
+                var js, fjs = d.getElementsByTagName(s)[0],
+                    p = /^http:/.test(d.location) ? 'http' : 'https';
+                if (!d.getElementById(id)) {
+                    js = d.createElement(s);
+                    js.id = id;
+                    js.src = p + "://platform.twitter.com/widgets.js";
+                    fjs.parentNode.insertBefore(js, fjs);
+                }
+            }(document, "script", "twitter-wjs");
+
+            (function(d, s, id) {
+                var js, fjs = d.getElementsByTagName(s)[0];
+                if (d.getElementById(id)) return;
+                js = d.createElement(s);
+                js.id = id;
+                js.src = "//connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.5";
+                fjs.parentNode.insertBefore(js, fjs);
+            }(document, 'script', 'facebook-jssdk'));
+
+
+        }, 1000);
+    });
+
+    var id = '1';
+    $scope.jppPagination = {};
+    $scope.jppPagination.id = 1;
+    $scope.jppPagination.pageno = 1;
+    $scope.jppPagination.maxrow = 500;
+    $scope.lastpage = 1;
+
+
+
+    NavigationService.getSportdataByid(id, function(data) {
+        $scope.jppdata = data.data;
+        console.log($scope.jppdata);
+    })
+    $scope.jppInsidedata = [];
+    $scope.seeMore = false;
+    $scope.seeLess = false;
+    var jppInsideArray = [];
+    $scope.seeLessJpp = function() {
+        NavigationService.getSportInsidedataByid($scope.jppPagination, function(data) {
+            $scope.jppInsidedata = data.queryresult;
+            console.log('$scope.jppInsidedata', $scope.jppInsidedata);
+            jppInsideArray = _.cloneDeep($scope.jppInsidedata);
+
+            $scope.lastpage = data.lastpage;
+            _.each(data.queryresult, function(n) {
+                $scope.jppInsidedata.push(n);
+            })
+
+            $scope.seeMore = true;
+            $scope.jppInsidedata = _.slice($scope.jppInsidedata, [0], [3]);
+            if ($scope.jppInsidedata.length < 3) {
+                $scope.seeMore = false;
+            }
+            console.log('$scope.jppInsidedata', $scope.jppInsidedata);
+        })
+
+    }
+    $scope.seeLessJpp();
+    $scope.seeMoreJpp = function() {
+            $scope.seeMore = false;
+            $scope.seeLess = true;
+
+            $scope.jppInsidedata = jppInsideArray;
+
+        }
+
+    $scope.viewAllJpp = function() {
+        console.log('Inside viewAllJpp');
+        if ($scope.lastpage > $scope.jppPagination.pageno) {
+            ++$scope.jppPagination.pageno;
+            console.log('pageno', $scope.jppPagination.pageno);
+            $scope.jppfilter();
+        }
+    }
+
+
+
+})
 
 .controller('Jppseason1Ctrl', function($scope, TemplateService, NavigationService, $timeout, $stateParams) {
     //Used to name the .html file
     $scope.template = TemplateService.changecontent("jppseason");
+    $scope.menutitle = NavigationService.makeactive("Sports");
+    TemplateService.title = $scope.menutitle;
+    $scope.navigation = NavigationService.getnav();
+    $scope.wallpaper = [{
+        img: "img/jpp/w1.jpg",
+    }, {
+        img: "img/jpp/w2.jpg",
+    }, {
+        img: "img/jpp/w3.jpg",
+    }, {
+        img: "img/jpp/w4.jpg",
+    }, {
+        img: "img/jpp/w5.jpg",
+    }, {
+        img: "img/jpp/w6.jpg",
+    }, {
+        img: "img/jpp/w1.jpg",
+    }, {
+        img: "img/jpp/w2.jpg",
+    }, {
+        img: "img/jpp/w3.jpg",
+    }, {
+        img: "img/jpp/w4.jpg",
+    }, {
+        img: "img/jpp/w5.jpg",
+    }, {
+        img: "img/jpp/w6.jpg",
+    }];
+    $scope.weddings = [{
+        img: "img/jppseason1/1.png",
+        date: "12 January 2016",
+        desc: "Lorem Ipsum is simply dummy text of the printing industry"
+    }, {
+        img: "img/jppseason1/2.png",
+        date: "12 January 2016",
+        desc: "Lorem Ipsum is simply dummy text of the printing industry"
+    }, {
+        img: "img/jppseason1/3.png",
+        date: "12 January 2016",
+        desc: "Lorem Ipsum is simply dummy text of the printing industry"
+    }];
+    $scope.videos = [{
+        img: "img/blog/video/v.png",
+    }, {
+        img: "img/blog/video/v.png",
+    }, {
+        img: "img/blog/video/v.png",
+    }, {
+        img: "img/blog/video/v.png",
+    }, {
+        img: "img/blog/video/v.png",
+    }, {
+        img: "img/blog/video/v.png",
+    }];
+    $scope.wallpaper = _.chunk($scope.wallpaper, 6);
+    for (var i = 0; i < $scope.wallpaper.length; i++) {
+        $scope.wallpaper[i] = _.chunk($scope.wallpaper[i], 3);
+    }
+
+    $scope.seasonData = "";
+    NavigationService.getSeasonData($stateParams.id, function(data) {
+        $scope.seasonData = data.data;
+        $scope.seasonData.imagegallery = _.chunk($scope.seasonData.imagegallery, 6);
+        for (var i = 0; i < $scope.seasonData.imagegallery.length; i++) {
+            $scope.seasonData.imagegallery[i] = _.chunk($scope.seasonData.imagegallery[i], 3);
+        }
+        console.log('$scope.seasonData', $scope.seasonData);
+    })
+    $scope.makeActive = function(video, index) {
+        $scope.seasonData.featuredvideos.splice(index, 1);
+        $scope.seasonData.featuredvideos.unshift(video);
+    }
+
+})
+.controller('PunjabkingsdetailCtrl', function($scope, TemplateService, NavigationService, $timeout, $stateParams) {
+    //Used to name the .html file
+    $scope.template = TemplateService.changecontent("punjabkingsdetail");
     $scope.menutitle = NavigationService.makeactive("Sports");
     TemplateService.title = $scope.menutitle;
     $scope.navigation = NavigationService.getnav();
@@ -1964,7 +2132,6 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             btn: "Enter"
         }, {
             img: "img/sports/1.jpg",
-            // name: "Chennaiyin FC",
             logo: "img/cfc.png",
             link: "pfh",
             btn: "Enter"
@@ -1972,7 +2139,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         }, {
             img: "img/sports/punjab-squad.jpg",
             logo: "img/sports/Kings11-Punjab.png",
-            // name: "SPORTS INITIATIVES",
+            link:"punjabkings",
             btn: "Enter"
         }];
     })

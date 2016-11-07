@@ -78,6 +78,11 @@ firstapp.config(function($stateProvider, $urlRouterProvider, $httpProvider, $loc
             templateUrl: "views/template.html",
             controller: 'JppCtrl'
         })
+        .state('punjabkings', {
+            url: "/punjabkings",
+            templateUrl: "views/template.html",
+            controller: 'PunjabKingsCtrl'
+        })
         .state('aboutus', {
             url: "/aboutus",
             templateUrl: "views/template.html",
@@ -87,6 +92,11 @@ firstapp.config(function($stateProvider, $urlRouterProvider, $httpProvider, $loc
             url: "/jppseason1/:id",
             templateUrl: "views/template.html",
             controller: 'Jppseason1Ctrl'
+        })
+        .state('punjabkingsdetail', {
+            url: "/punjabkingsdetail/:id",
+            templateUrl: "views/template.html",
+            controller: 'PunjabkingsdetailCtrl'
         })
         .state('pfh', {
             url: "/chennaiyinFc",
