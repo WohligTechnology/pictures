@@ -1216,7 +1216,7 @@ footer {
     }
 
     section.footer-next {
-        padding: 15px 0;
+        padding: 20px 0;
         background: rgba(206, 43, 43, 0.4);
 
         p {
@@ -5851,6 +5851,14 @@ z-index: 99;
   img.loading{
       display: none;
   }
+}
+.statement9{
+    color: #fff;
+    font-weight: 600;
+    font-size: 30px;
+    margin-bottom: 40px;
+    margin-top: 20px;
+    letter-spacing: 3px;
 }
 /* Start writing sass here */
 @import "fancybox-override";

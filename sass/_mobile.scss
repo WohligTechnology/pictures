@@ -15,15 +15,16 @@
     .icon-padd {
         padding-left: 36px;
     }
-.double-comma2:before {
-  left: 5px;
-}
+    // .double-comma2:before {
+    //   left: 5px;
+    // }
+
     .banner-text h1 {
         font-size: 50px;
     }
 
     .mission1 {
-        width: 90%;
+        width: 100%;
     }
 
     .pdl-20 {
@@ -212,19 +213,24 @@
     .top-align {
         margin-top: 180px;
     }
+
     .profile-holder {
         width: 100%;
         padding: 10px;
     }
-    .banner-text{
-      top: 30%;
+
+    .banner-text {
+        top: 30%;
     }
-.banner-text h1 {
-  font-size: 45px;
-}
-.bdr-right{
-  margin-top: -20px;
-}
+
+    .banner-text h1 {
+        font-size: 45px;
+    }
+
+    .bdr-right {
+        margin-top: -20px;
+    }
+
     .profile-holder {
         width: 100%;
     }
@@ -238,15 +244,13 @@
     .pdl-20 {
         padding-left: 38px;
     }
-
-    .double-comma2:before {
-        left: 20px;
-    }
-
-    .double-comma1:before {
-        left: 20px;
-    }
-
+    // .double-comma2:before {
+    //     left: 20px;
+    // }
+    //
+    // .double-comma1:before {
+    //     left: 20px;
+    // }
     .profile-pic1 {
         width: 115.19px;
         height: 113.34px;
@@ -572,29 +576,34 @@
     .top-align {
         margin-top: 360px;
     }
-    .history-note .note{
-      margin-top: 15px;
-      width: 100%;
+
+    .history-note .note {
+        margin-top: 15px;
+        width: 100%;
     }
-.profile-holder2,.profile-holder1 {
-    width: 100%;
-  }
-  .db-block{
-    display: block;
-  }
-  .profile-pic1 {
-    width: 252px;
-    height: 248px;
-  }
+
+    .profile-holder1,
+    .profile-holder2 {
+        width: 100%;
+    }
+
+    .db-block {
+        display: block;
+    }
+
+    .profile-pic1 {
+        width: 252px;
+        height: 248px;
+    }
     // .db-block{
     //   display: block;
     // }
     .mission1 {
-        width: 77%;
+        width: 100%;
     }
 
     .mission2 {
-        width: 90%;
+        width: 100%;
     }
 
     .bdr-right {
@@ -603,14 +612,15 @@
 
     .double-comma1:before {
         left: 15;
-        width: 30px;
+        width: 20px;
         height: 25px;
     }
 
-    .double-comma2:before {
-        left: 15;
-        width: 30px;
+    .double-comma2:after {
+        width: 20px;
+        position: absolute;
         height: 25px;
+        right: 64px;
     }
 
     .abt1 {
@@ -626,8 +636,9 @@
     }
 
     .banner-text {
-      top: 24%;
-      width: 80%;
+        top: 24%;
+        width: 80%;
+
         h1 {
             font-size: 22px;
         }
@@ -1335,13 +1346,16 @@
     .banner-talent .banner-wrap .name-event {
         width: 97.6%;
     }
+
     .history-note .note {
-    margin-top: 50px;
-    width: 100%;
-  }
-.ldr1-color{
-  font-size: 25px;
-}
+        margin-top: 50px;
+        width: 100%;
+    }
+
+    .ldr1-color {
+        font-size: 25px;
+    }
+
     .mgb-30 {
         margin-bottom: 30px;
     }
@@ -1364,7 +1378,7 @@
             display: inline-block;
             width: 11px;
             top: 0;
-            left: -10px;
+            left: 50px;
             position: absolute;
             height: 16px;
             margin-right: 5px;
@@ -1375,11 +1389,11 @@
     }
 
     .double-comma2 {
-        &:before {
+        &:after {
             display: inline-block;
             width: 11px;
-            top: 0;
-            left: -5px;
+            bottom: 25px;
+            right: 28px;
             position: absolute;
             height: 16px;
             margin-right: 5px;
@@ -1633,11 +1647,13 @@
     }
 
     .mehendi .flexslider .flex-direction-nav .flex-next {
-        right: -42px !important;
+        right: -55px !important;
+        top: 153px !important;;
     }
 
     .mehendi .flexslider .flex-direction-nav .flex-prev {
-        left: -56px !important;
+        left: -75px !important;
+        top: 153px !important;;
     }
 
     .mehendi .flexslider .flex-direction-nav a {
