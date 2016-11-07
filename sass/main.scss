@@ -3380,7 +3380,7 @@ h4.title-movies {
 }
 
 .statement5 {
-    color: #fff;
+    color: #f13748;
     font-weight: 600;
     font-size: 30px;
     margin-bottom: 40px;
@@ -5009,6 +5009,7 @@ h4.title-movies {
         margin-top: 40px;
         left: 50%;
         transform: translate(-50%, -50%);
+        font-size: 29px;
     }
 }
 
@@ -5070,20 +5071,23 @@ h4.title-movies {
     text-align: center;
     font-size: 22px;
     margin-bottom: 20px;
+    line-height: 25px;
+    display: inline-block;
 }
 
 .mission1 {
     position: relative;
-    width: 76%;
+    width: 100%;
+    display: inline-block;
 }
 
 .mission2 {
     position: relative;
     width: 100%;
 }
-.pdl-40{
-  padding-left: 40px;
-}
+// .pdl-40{
+//   padding-left: 40px;
+// }
 
 // .double-comma1 {
 //     &:before {
@@ -5097,11 +5101,11 @@ h4.title-movies {
 .double-comma1{
   &:before {
     display: inline-block;
-    width: 35px;
-    top: -10px;
-    left: 0px;
+    width: 25px;
+    top: 0;
+    // left: 0px;
     position: absolute;
-    height: 30px;
+    height: 25px;
     margin-right: 5px;
     content: "";
     background: url(../img/comma.png) no-repeat 0 0;
@@ -5109,17 +5113,17 @@ h4.title-movies {
 }
 }
 .double-comma2{
-  &:before {
+  &:after {
     display: inline-block;
-    width: 35px;
-    top: -10px;
-    left: 0px;
+    width: 25px;
+    bottom: 20px;
     position: absolute;
-    height: 30px;
-    margin-right: 5px;
+    height: 25px;
+    margin-left: 10px;
     content: "";
     background: url(../img/comma.png) no-repeat 0 0;
     background-size: 100%;
+    transform: rotateY(180deg);
 }
 }
 
@@ -5224,7 +5228,14 @@ h4.title-movies {
     background-color: #f1f1f1;
 }
 
-.abt6 {}
+.abt6 {
+    background-image: url(../img/5.jpg) !important;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 320px;
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
 
 .abt7 {
     background-image: url('../img/bg-global.jpg') !important;

@@ -1434,7 +1434,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
 })
 
-.controller('GsDiariesCtrl', function($scope, TemplateService, NavigationService, $timeout, $stateParams, $state,$filter) {
+.controller('GsDiariesCtrl', function($scope, TemplateService, NavigationService, $timeout, $stateParams, $state, $filter) {
         //Used to name the .html file
         $scope.template = TemplateService.changecontent("gsdiaries");
         $scope.menutitle = NavigationService.makeactive("Gs Diaries");
@@ -1544,7 +1544,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             $scope.loadLessFun = function() {
                 $scope.load = false;
                 $scope.article = _.take($scope.authorData.articles, 9);
-                console.log("article",$scope.article);
+                console.log("article", $scope.article);
             }
             $scope.loadLessFun();
 
@@ -1970,10 +1970,10 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             btn: "Enter"
 
         }, {
-            img: "img/sports/sportintative.jpg",
-            name: "SPORTS INITIATIVES",
-
-            btn: "Coming Soon"
+            img: "img/sports/punjab-squad.jpg",
+            logo: "img/sports/Kings11-Punjab.png",
+            // name: "SPORTS INITIATIVES",
+            btn: "Enter"
         }];
     })
     .controller('PfhCtrl', function($scope, TemplateService, NavigationService, $timeout, $state) {
