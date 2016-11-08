@@ -12,6 +12,7 @@
     }
 }
 @media screen and (max-width: 1200px) {
+  .history-note .note{    font-size: 25px;}
     .icon-padd {
         padding-left: 36px;
     }
@@ -180,6 +181,8 @@
     }
 }
 @media (max-width: 1024px) {
+  .history-note .note{    font-size: 18px;}
+  .abt2{padding-top: 72px;}
     .top-align {
         margin-top: 240px;
     }
@@ -573,6 +576,7 @@
     }
 }
 @media (max-width: $screen-xs-max) {
+  .abt2{      padding-top: 110px;}
     .top-align {
         margin-top: 360px;
     }
@@ -1343,6 +1347,9 @@
 //     }
 // }
 @media (max-width: 480px) {
+  .abt2 {
+    padding-top: 40px;
+}
     .banner-talent .banner-wrap .name-event {
         width: 97.6%;
     }
