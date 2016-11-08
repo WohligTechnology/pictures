@@ -1375,9 +1375,10 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     var jppInsideArray = [];
     $scope.seeLessJpp = function() {
         NavigationService.getSportInsidedataByid($scope.jppPagination, function(data) {
-            $scope.jppInsidedata = data.queryresult;
+          console.log("punjabkings",data);
+            $scope.jppInsidedata1 = data.queryresult;
             console.log('$scope.jppInsidedata', $scope.jppInsidedata);
-            jppInsideArray = _.cloneDeep($scope.jppInsidedata);
+            jppInsideArray = _.cloneDeep($scope.jppInsidedata1);
 
             $scope.lastpage = data.lastpage;
             _.each(data.queryresult, function(n) {
@@ -1389,7 +1390,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             if ($scope.jppInsidedata.length < 3) {
                 $scope.seeMore = false;
             }
-            console.log('$scope.jppInsidedata', $scope.jppInsidedata);
+            // console.log('$scope.jppInsidedata', $scope.jppInsidedata);
         })
 
     }
