@@ -1321,39 +1321,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     }
 
 
-    //
-    // $scope.jppdetail = [{
-    //     content: "JPP Stadium Branding: (Season 1, 2 & 3)",
-    //     img: "img/ASFC/w2.jpg",
-    //     detail: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
-    // }, {
-    //     content: "JPP Team Management: Season 1",
-    //     img: "img/ASFC/w2.jpg",
-    //     detail: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
-    // }, {
-    //     content: "JPP Team Management: Season 2",
-    //     img: "img/ASFC/w2.jpg",
-    //     detail: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
-    // }];
-    // $scope.wallpaper = [{
-    //     img: "img/jpp/w1.jpg",
-    // }, {
-    //     img: "img/jpp/w2.jpg",
-    // }, {
-    //     img: "img/jpp/w3.jpg",
-    // }, {
-    //     img: "img/jpp/w4.jpg",
-    // }, {
-    //     img: "img/jpp/w5.jpg",
-    // }, {
-    //     img: "img/jpp/w6.jpg",
-    // }];
-    // $scope.clientspeak = {
-    //     category: "Players Speak",
-    //     text: "Awesome teamwork and planning",
-    //     name: "Sunil Joshi",
-    //     img: "img/movies/ranbir.jpg"
-    // };
+
 })
 .controller('PunjabKingsCtrl', function($scope, TemplateService, NavigationService, $timeout, $stateParams) {
     //Used to name the .html file
@@ -1388,9 +1356,9 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         }, 1000);
     });
 
-    var id = '1';
+    var id = '5';
     $scope.jppPagination = {};
-    $scope.jppPagination.id = 1;
+    $scope.jppPagination.id = 5;
     $scope.jppPagination.pageno = 1;
     $scope.jppPagination.maxrow = 500;
     $scope.lastpage = 1;
