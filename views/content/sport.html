@@ -41,6 +41,23 @@
                     </div>
                 </div>
             </div>
+            <div class="play-for-human">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="human">
+                            <img src="img/human.jpg" class="img-responsive" alt="">
+                            <div class="handwritten">
+                                <img src="img/sign.png" class="img-responsive" alt="">
+                            </div>
+                            <div class="red-panel">
+                                <div class="my-btn">
+                                    <button type="button" class="btn btn-default cherry-btn">ENTER</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
             <div class="bg-moviesdiaries" ng-if="sportdata.sportdiaries">
                 <div class="row">
                     <div class="col-md-12">
@@ -76,7 +93,7 @@
                                         <a href="" class="color-black pull-left" ng-if="data.type==2" ui-sref="blogimage({id:data.id})">Read More</a>
                                         <a href="" class="color-black pull-left" ng-if="data.type==3" ui-sref="blogvideo({id:data.id})">Read More</a>
                                         <div class="wed-date pull-right color-blacks authorcolor">
-                                            <a "class="color-blacks " ui-sref="gsdiaries({id:data.authorid})"><span>By {{data.authorname}}</span></a>
+                                            <a "class="color-blacks " ui-sref="gsdiaries({id:data.authorid}) "><span>By {{data.authorname}}</span></a>
                                        </div>
                                     </div>
                                 </div>
@@ -134,7 +151,6 @@
                         </div>
                     </form>
                 </div>
-
             </div>
             <h4 ng-if="subscribeEmail && !checkEmail">
                 <center class="color-white">Thankyou For Subscribing</center>
@@ -142,7 +158,6 @@
             <h4 ng-if="checkEmail && !subscribeEmail">
                 <center class="color-white">This email already exists</center>
             </h4>
-
         </div>
     </div>
 </section>
@@ -217,7 +232,6 @@
                 </div>
             </section>
         </div> -->
-
     <div class="social">
         <!-- <div ng-include = "'/social.html'"></div> -->
         <section class="marg-section">
@@ -230,7 +244,8 @@
                             </div>
                             <div class="social-logo text-center">
                                 <div class="feed-social mt30">
-                                    <div class="fb-page" data-href="https://www.facebook.com/GSWorldwideEnt/" data-tabs="timeline" data-width="360" data-height="480" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true">
+                                    <div class="fb-page" data-href="https://www.facebook.com/GSWorldwideEnt/" data-tabs="timeline" data-width="360" data-height="480"
+                                        data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true">
                                         <div class="fb-xfbml-parse-ignore">
                                             <blockquote cite="https://www.facebook.com/GSWorldwideEnt/">
                                                 <a href="https://www.facebook.com/GSWorldwideEnt/">GS Worldwide Entertainment.</a>
@@ -253,7 +268,8 @@
                                 <img src="img/socials/instagram.png" class="doneLoading">
                             </div>
                             <div class="social-logo text-center ">
-                                <iframe src="//lightwidget.com/widgets/2965b7333833557283d4029e025bd4e8.html" id="lightwidget_2965b73338" name="lightwidget_2965b73338" scrolling="no" allowtransparency="true" class="lightwidget-widget" style="width: 100%; border: 0; overflow: hidden; height:480px;"></iframe>
+                                <iframe src="//lightwidget.com/widgets/2965b7333833557283d4029e025bd4e8.html" id="lightwidget_2965b73338" name="lightwidget_2965b73338"
+                                    scrolling="no" allowtransparency="true" class="lightwidget-widget" style="width: 100%; border: 0; overflow: hidden; height:480px;"></iframe>
                             </div>
                         </div>
                     </div>
@@ -261,8 +277,6 @@
             </div>
         </section>
     </div>
-
-
     <div class="mr30">
         <div class="row">
             <div class="col-md-offset-2 col-md-8">
@@ -272,13 +286,15 @@
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <input type="text" ng-model="formData.firstname" name="firstname" class="form-control" id="exampleInputEmail1" placeholder="First Name" required>
+                                    <input type="text" ng-model="formData.firstname" name="firstname" class="form-control" id="exampleInputEmail1" placeholder="First Name"
+                                        required>
                                     <div class="error-msg" ng-show="talent.firstname.$error.required && talent.firstname.$touched">Please Enter Your First Name.</div>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <input type="text" ng-model="formData.lastname" name="lastname" class="form-control" id="exampleInputEmail1" placeholder="Last Name" required>
+                                    <input type="text" ng-model="formData.lastname" name="lastname" class="form-control" id="exampleInputEmail1" placeholder="Last Name"
+                                        required>
                                     <div class="error-msg" ng-show="talent.lastname.$error.required && talent.lastname.$touched">Please Enter Your Last Name.</div>
                                 </div>
                             </div>
@@ -286,13 +302,15 @@
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <input type="email" ng-model="formData.email" name="email" class="form-control" id="exampleInputEmail1" placeholder="Email" required>
+                                    <input type="email" ng-model="formData.email" name="email" class="form-control" id="exampleInputEmail1" placeholder="Email"
+                                        required>
                                     <div class="error-msg" ng-show="talent.email.$error.required && talent.email.$touched">Please Enter Your Email.</div>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <input type="tel" ng-model="formData.phone" name="phone" class="form-control" id="exampleInputEmail1" maxlength="13" placeholder="Phone number" required>
+                                    <input type="tel" ng-model="formData.phone" name="phone" class="form-control" id="exampleInputEmail1" maxlength="13" placeholder="Phone number"
+                                        required>
                                     <div class="error-msg" ng-show="talent.phone.$error.required && talent.phone.$touched">Please Enter Phone number.</div>
                                 </div>
                             </div>
