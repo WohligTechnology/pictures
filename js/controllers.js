@@ -342,8 +342,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     });
 
     NavigationService.getMovieInside($stateParams.id, function(data) {
-        console.log(data);
-        // $scope.movieMobile = data.data;
+          // $scope.movieMobile = data.data;
         if (data.value != false) {
             $scope.movieInside = data.data;
             console.log(data.data);

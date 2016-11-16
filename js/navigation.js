@@ -48,8 +48,8 @@ var navigationservice = angular.module('navigationservice', [])
     getMoviesData: function(callback) {
       $http.get(apiUrl + 'getMovieDetails').success(callback);
     },
-    getMovieInside: function(movienavigationid, callback) {
-      $http.get(apiUrl + 'getMovieInside?id=' + movieid).success(callback);
+    getMovieInside: function(movieId, callback) {
+      $http.get(apiUrl + 'getMovieInside?id=' + movieId).success(callback);
     },
     getWeddingData: function(callback) {
       $http.get(apiUrl + 'getWeddingDetails').success(callback);

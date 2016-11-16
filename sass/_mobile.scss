@@ -576,6 +576,7 @@
     }
 }
 @media (max-width: $screen-xs-max) {
+
   .abt2{      padding-top: 110px;}
     .top-align {
         margin-top: 360px;
@@ -2071,6 +2072,11 @@
     // }
 }
 @media (max-width: 360px) {
+  .play{
+    li .fa {
+     font-size: 2em ;
+   }
+  }
     .bg-award .awards .nav > li > a {
         padding: 2px 4px;
         font-size: 12px;
