@@ -2261,9 +2261,180 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         };
 
     })
+    .controller('HumanityCtrl', function($scope, TemplateService, NavigationService, $timeout, $state) {
+        //Used to name the .html file
+        $scope.template = TemplateService.changecontent("humanity");
+        $scope.menutitle = NavigationService.makeactive("Sports");
+        TemplateService.title = $scope.menutitle;
+        $scope.navigation = NavigationService.getnav();
+        $scope.$on('$viewContentLoaded', function(event) {
+            $timeout(function() {
+
+                ! function(d, s, id) {
+                    var js, fjs = d.getElementsByTagName(s)[0],
+                        p = /^http:/.test(d.location) ? 'http' : 'https';
+                    if (!d.getElementById(id)) {
+                        js = d.createElement(s);
+                        js.id = id;
+                        js.src = p + "://platform.twitter.com/widgets.js";
+                        fjs.parentNode.insertBefore(js, fjs);
+                    }
+                }(document, "script", "twitter-wjs");
+
+                (function(d, s, id) {
+                    var js, fjs = d.getElementsByTagName(s)[0];
+                    if (d.getElementById(id)) return;
+                    js = d.createElement(s);
+                    js.id = id;
+                    js.src = "//connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.5";
+                    fjs.parentNode.insertBefore(js, fjs);
+                }(document, 'script', 'facebook-jssdk'));
+
+
+            }, 1000);
+        });
+        $scope.pfhInsidedatadetail = [];
+        $scope.seeMore = false;
+        $scope.seeLess = false;
+        var pfhInsideArray = [];
+        $scope.pfhPagination = {};
+        $scope.pfhPagination.id = 6;
+        $scope.pfhPagination.pageno = 1;
+        $scope.pfhPagination.maxrow = 500;
+        $scope.seeLessPfh = function() {
+            NavigationService.getSportInsidedataByid($scope.pfhPagination, function(data) {
+                $scope.pfhInsidedatadetail = data.queryresult;
+                console.log('pfhInsidedatadetail', $scope.pfhInsidedatadetail);
+                pfhInsideArray = _.cloneDeep($scope.pfhInsidedatadetail);
+                // console.log($scope.pfhInsidedatadetail);
+                $scope.lastpage = data.lastpage;
+                // _.each(data.queryresult, function(n) {
+                //     $scope.pfhInsidedatadetail.push(n);
+                // })
+
+                $scope.seeMore = true;
+                $scope.pfhInsidedatadetail = _.slice($scope.pfhInsidedatadetail, [0], [3]);
+                if ($scope.pfhInsidedatadetail.length < 3) {
+                    $scope.seeMore = false;
+                }
+                console.log(' in less $scope.pfhInsidedatadetail', $scope.pfhInsidedatadetail);
+            })
+        };
+        $scope.seeLessPfh();
+        $scope.seeMoerPfh = function() {
+            $scope.seeMore = false;
+            $scope.seeLess = true;
+            // $scope.allMovieName = {}
+            $scope.pfhInsidedatadetail = pfhInsideArray;
+            console.log('in more ', $scope.pfhInsidedatadetail);
+        }
+        NavigationService.getpfhSeasonData($scope.pfhPagination.id, function(data) {
+            $scope.pfhInsidedata = data.data;
+            console.log("pfh", $scope.pfhInsidedata);
+        })
+
+        $scope.formData = {};
+        $scope.formData.enquiryarr = [];
+        $scope.showThanks = false;
+
+        $scope.pfhSubmitForm = function(formValid) {
+            $scope.formData.enquiry = "";
+            if (formValid.$valid && $scope.formData) {
+                if ($scope.formData.enquiryarr.length > 0) {
+                    _.each($scope.formData.enquiryarr, function(n) {
+                        $scope.formData.enquiry += n + ",";
+                    })
+                    $scope.formData.enquiry = $scope.formData.enquiry.substring(0, $scope.formData.enquiry.length - 1);
+                }
+                $scope.formData.category = 17;
+                NavigationService.getInTouch($scope.formData, function(data) {
+                    console.log(data);
+                    if (data.value != false) {
+                        $scope.showThanks = true;
+                    }
+                });
+            }
+        };
+        $scope.pushorpop = function(val) {
+            var foundIndex = $scope.formData.enquiryarr.indexOf(val);
+            if (foundIndex == -1) {
+                $scope.formData.enquiryarr.push(val);
+            } else {
+                $scope.formData.enquiryarr.splice(foundIndex, 1);
+            }
+        }
+
+
+        $scope.subscribe = {};
+        $scope.subscribe.email = "";
+        //
+        // $scope.checkemail=function(email){
+        //
+        // }
+
+        $scope.checkEmail = false;
+        $scope.subscribeEmail = false;
+        $scope.subscribe = function(email) {
+            // if(!email) {
+            //     alert("please enter your email");
+            // }
+            // console.log('Email subscribe: ', email);
+            NavigationService.subscribe(email, function(data) {
+
+                // console.log(data);
+                if (!data.value) {
+                    if ($scope.subscribe.email) {
+                        $scope.checkEmail = true;
+                        $scope.subscribeEmail = false;
+                        $timeout(function() {
+                            $state.reload();
+                            $timeout(function() {
+                                $scope.checkEmail = "";
+                                $scope.subscribeEmail = "";
+                            }, 2000);
+                        }, 3000);
+                    }
+                } else {
+                    $scope.subscribeEmail = true;
+                    $scope.checkEmail = false;
+                    $timeout(function() {
+                        $state.reload();
+                        $timeout(function() {
+                            $scope.checkEmail = "";
+                            $scope.subscribeEmail = "";
+                        }, 2000);
+                    }, 3000);
+                }
+                //console.log(email);
+                $scope.subscribe.email = "";
+            });
+        };
+
+    })
     .controller('PfhDetailCtrl', function($scope, TemplateService, NavigationService, $timeout, $stateParams, $state) {
         //Used to name the .html file
         $scope.template = TemplateService.changecontent("pfhdetail");
+        $scope.menutitle = NavigationService.makeactive("Sports");
+        TemplateService.title = $scope.menutitle;
+        $scope.navigation = NavigationService.getnav();
+        $scope.seasonData = "";
+        NavigationService.getSeasonData($stateParams.id, function(data) {
+            $scope.seasonData = data.data;
+            $scope.seasonData.imagegallery = _.chunk($scope.seasonData.imagegallery, 6);
+            for (var i = 0; i < $scope.seasonData.imagegallery.length; i++) {
+                $scope.seasonData.imagegallery[i] = _.chunk($scope.seasonData.imagegallery[i], 3);
+            }
+            console.log('$scope.seasonData', $scope.seasonData);
+        })
+        $scope.makeActive = function(video, index) {
+            $scope.seasonData.featuredvideos.splice(index, 1);
+            $scope.seasonData.featuredvideos.unshift(video);
+        }
+
+    })
+    .controller('HumanityDetailCtrl', function($scope, TemplateService, NavigationService, $timeout, $stateParams, $state) {
+        //Used to name the .html file
+        $scope.template = TemplateService.changecontent("humanitydetail");
         $scope.menutitle = NavigationService.makeactive("Sports");
         TemplateService.title = $scope.menutitle;
         $scope.navigation = NavigationService.getnav();

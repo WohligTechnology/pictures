@@ -108,6 +108,16 @@ firstapp.config(function($stateProvider, $urlRouterProvider, $httpProvider, $loc
             templateUrl: "views/template.html",
             controller: 'PfhDetailCtrl'
         })
+        .state('humanity', {
+            url: "/playingforhumanity",
+            templateUrl: "views/template.html",
+            controller: 'HumanityCtrl'
+        })
+        .state('humanityDetail', {
+            url: "/humanityDetail/:id",
+            templateUrl: "views/template.html",
+            controller: 'HumanityDetailCtrl'
+        })
         .state('sports', {
             url: "/sports",
             templateUrl: "views/template.html",
