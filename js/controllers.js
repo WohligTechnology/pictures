@@ -2106,9 +2106,10 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
         }, {
             img: "img/sports/punjab-squad.jpg",
-            logo: "img/sports/Kings11-Punjab.png",
+            // logo: "img/sports/Kings11-Punjab.png",
             link:"punjabkings",
-            btn: "Enter"
+            btn: "Enter",
+            name:"sports initiatives"
         }];
     })
     .controller('PfhCtrl', function($scope, TemplateService, NavigationService, $timeout, $state) {
@@ -3736,7 +3737,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             $scope.mediadataContent = data.data.description;
             console.log($scope.mediadataContent);
         })
-
+console.log("$stateParams.year",$stateParams.year);
         $scope.categoryid = $stateParams.id;
         $scope.pagenumber = 1;
         var lastpage = 1;
@@ -3804,7 +3805,37 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             // };
 
 
-
+$scope.getYears=[
+  {
+    "year" :"2016"
+  },
+  {
+    "year" :"2015"
+  },
+  {
+    "year" :"2014"
+  },
+  {
+    "year" :"2013"
+  },
+  {
+    "year" :"2012"
+  },
+  {
+    "year" :"2011"
+  },
+  {
+    "year" :"2010"
+  }];
+    $scope.noyeardata=false;
+$scope.gotoYears=function(yearid){
+if (yearid === "2016") {
+  $scope.noyeardata=false;
+  $scope.seeLessMediayear();
+}else {
+  $scope.noyeardata=true;
+}
+}
 
 
 
@@ -4691,6 +4722,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         NavigationService.getMediacorner(function(data) {
             console.log("dsfasdfasdf");
             $scope.mediadata = data.data.years[0];
+            console.log("data",data);
         });
 
         $scope.checkEmail = false;
