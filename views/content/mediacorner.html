@@ -1,4 +1,4 @@
-<section class="mediacorner">
+<section class="mediacorner" ng-if="!showdiv">
   <div class="container">
     <div class="row">
       <div class="col-xs-12">
@@ -64,9 +64,149 @@
                   </div>
                 </div>
                 <div class="btn-all mr30 text-center">
-                  <button class="btn btn-danger btn-outline" ng-click="seeMoreMediayear();" ng-if="seeMore">
+                  <button class="btn btn-danger btn-outline" ng-click="seeMoreMediayear();" ng-if="!seeLess">
                     View All
                   </button>
+                  <button class="btn btn-danger btn-outline" ng-click="seeLessMediayear();" ng-if="seeLess">
+                    View Less
+                  </button>
+                  <!-- <button class="btn btn-danger btn-outline" ng-click="loadMore()">
+                    Load More
+                  </button> -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <h3 class="text-center" ng-if="noyeardata">No data found.</h3>
+        <div class="col-md-3 col-sm-3 flotimp">
+          <div class="yrs">
+            <div class="blue-tape">
+            </div>
+            <h3>VIEW</h3>
+            <ul class="list-unstyled">
+              <li ng-repeat ="data in getYears" ng-click="gotoYears(data.year);">
+              {{data.year}}
+              </li>
+              <li ng-click="gotoYears(data.year);">
+                ARCHIVES
+              </li>
+              <!-- <li>
+                2015
+              </li>
+              <li>
+                2014
+              </li>
+              <li>
+                2013
+              </li>
+              <li>
+                2012
+              </li>
+              </li>
+              <li>
+                2011
+              </li>
+              <li>
+                2010
+              </li>
+              <li>
+                ARCHIVES
+              </li> -->
+            </ul>
+          </div>
+          <!-- <div class="cat">
+            <div class="blue-tape">
+            </div>
+            <h3>CATEGORIES</h3>
+            <ul class="list-unstyled">
+              <li>MOVIES</li>
+              <li>WEDDINGS</li>
+              <li>SPORTS</li>
+              <li>EVENTS</li>
+              <li>MICE</li>
+              <li>WORLD TOUR</li>
+            </ul>
+          </div> -->
+        </div>
+      </div>
+    </div>
+  </section>
+</section>
+
+
+
+
+
+<section class="mediacorner" ng-if="showdiv">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="head-banner diaries-banner text-center">
+          <img src="img/mediacorner/mediacorner.png" class="img-responsive" title="mediacorner">
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-offset-2 col-md-8">
+        <div class="wedding-fant-desc mt50" ng-bind-html="mediadataContent.content">
+
+        </div>
+      </div>
+    </div>
+  </div>
+  <section class="bg-blog">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-9 col-sm-9" ng-if="mediadatadetail.length>0 && !noyeardata">
+          <div class="bg-grey-similar bg-sports">
+            <div class="bg-moviesdiaries">
+              <div class="pd-side">
+                <div class="row">
+                  <div class="col-md-6 col-sm-6" ng-repeat="data in mediadatadetail track by $index">
+                    <div class="wed-box border-red">
+                      <div class="wed-img-list bordr-color">
+                        <img ng-src="{{data.image | uploadpath}}" alt="" class="img-responsive">
+                        <a ng-if="data.status=='1'" href="{{data.url}}" target="_new">
+                          <div class="overlay1">
+                            <span> VIEW PRESS</span>
+                          </div>
+                        </a>
+                        <a ng-if="data.status=='2'">
+                          <div class="overlay1">
+                            <span> VIEW PRESS</span>
+                          </div>
+                        </a>
+                      </div>
+                      <div class="wed-desc">
+                        <div class="wed-desc-inside">
+                          <p class="bold">{{data.name}}</p>
+                        </div>
+                        <div class="wed-date">
+                          <span>{{data.date | date:"dd MMMM yyyy"}}</span>
+                          <span>|</span>
+                          <span>{{data.medianame}}</span>
+                          <!-- <span>Times of India</span> -->
+                        </div>
+                        <div class="social">
+                          <a><i class="fa fa-facebook"></i></a>
+                          <a><i class="fa fa-twitter"></i></a>
+                          <a><i class="fa fa-envelope-o"></i></a>
+                        </div>
+                        <!-- <div class="social">
+                          <a target="_blank" href="{{data.facebook}}"><i class="fa fa-facebook"></i></a>
+                          <a target="_blank" href="{{data.twitter}}"><i class="fa fa-twitter"></i></a>
+                          <a target="_blank" href="{{data.google}}"><i class="fa fa-envelope-o"></i></a>
+                        </div> -->
+                      </div>
+                      <div class="border-blue borders"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="btn-all mr30 text-center">
+                  <!-- <button class="btn btn-danger btn-outline" ng-click="seeMoreMediayear();" ng-if="seeMore">
+                    View All
+                  </button> -->
                   <button class="btn btn-danger btn-outline" ng-click="seeLessMediayear();" ng-if="seeLess && !seeMore">
                     View Less
                   </button>

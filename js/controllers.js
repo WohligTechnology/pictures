@@ -3750,11 +3750,13 @@ console.log("$stateParams.year",$stateParams.year);
         // $scope.objfilter.subcat = '';
 
         var mediaArray = [];
-        $scope.seeMore = false;
-        $scope.seeLess = false;
+        // $scope.seeMore = false;
+        // $scope.seeLess = false;
         $scope.seeLessMediayear = function() {
+            $scope.seeLess = false;
             NavigationService.getMediaByYear($scope.objfilter, function(data) {
-                // $scope.mediadatadetail = data.queryresult;
+                $scope.mediadatadetail = data.queryresult;
+                console.log("$scope.mediadatadetail",$scope.mediadatadetail);
                 console.log('medData: ', $scope.mediadatadetail);
                 console.log('total: ', data.totalvalues);
                 NavigationService.getMediacorner(function(data) {
@@ -3773,10 +3775,10 @@ console.log("$stateParams.year",$stateParams.year);
 
                 console.log('lastpage:', data.lastpage);
                 lastpage = data.lastpage;
-                _.each(data.queryresult, function(n) {
-                    $scope.mediadatadetail.push(n);
-
-                });
+                // _.each(data.queryresult, function(n) {
+                //     $scope.mediadatadetail.push(n);
+                //
+                // });
                 mediaArray = _.cloneDeep($scope.mediadatadetail);
                 $scope.seeMore = true;
                 $scope.mediadatadetail = _.slice($scope.mediadatadetail, [0], [3]);
@@ -3787,22 +3789,12 @@ console.log("$stateParams.year",$stateParams.year);
         };
         $scope.seeLessMediayear();
         $scope.seeMoreMediayear = function() {
-                $scope.seeMore = false;
+                // $scope.seeMore = false;
                 $scope.seeLess = true;
                 // $scope.allMovieName = {}
                 $scope.mediadatadetail = mediaArray;
             }
-            // console.log('lastpage: ', lastpage);
-            // $scope.loadMore = function() {
-            //     console.log('///////');
-            //     if (lastpage > $scope.objfilter.pageno) {
-            //         console.log('lastpageeee: ', lastpage)
-            //             ++$scope.objfilter.pageno;
-            //         $scope.pages.push($scope.objfilter.pageno);
-            //         console.log('pages:', $scope.pages);
-            //         $scope.getMediayear();
-            //     }
-            // };
+
 
 
 $scope.getYears=[
@@ -3828,11 +3820,14 @@ $scope.getYears=[
     "year" :"2010"
   }];
     $scope.noyeardata=false;
+      $scope.showdiv=false;
+
+
 $scope.gotoYears=function(yearid){
 if (yearid === "2016") {
   $scope.noyeardata=false;
-  $scope.seeMoreMediayear();
-
+  $scope.showdiv=true;
+    $scope.mediadatadetail = mediaArray;
 }else {
   $scope.noyeardata=true;
 }
