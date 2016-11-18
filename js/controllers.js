@@ -3831,7 +3831,8 @@ $scope.getYears=[
 $scope.gotoYears=function(yearid){
 if (yearid === "2016") {
   $scope.noyeardata=false;
-  $scope.seeLessMediayear();
+  $scope.seeMoreMediayear();
+
 }else {
   $scope.noyeardata=true;
 }
