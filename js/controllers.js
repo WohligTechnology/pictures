@@ -21,32 +21,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             });
         };
 
-        $scope.$on('$viewContentLoaded', function(event) {
-            $timeout(function() {
 
-                ! function(d, s, id) {
-                    var js, fjs = d.getElementsByTagName(s)[0],
-                        p = /^http:/.test(d.location) ? 'http' : 'https';
-                    if (!d.getElementById(id)) {
-                        js = d.createElement(s);
-                        js.id = id;
-                        js.src = p + "://platform.twitter.com/widgets.js";
-                        fjs.parentNode.insertBefore(js, fjs);
-                    }
-                }(document, "script", "twitter-wjs");
-
-                (function(d, s, id) {
-                    var js, fjs = d.getElementsByTagName(s)[0];
-                    if (d.getElementById(id)) return;
-                    js = d.createElement(s);
-                    js.id = id;
-                    js.src = "//connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.5";
-                    fjs.parentNode.insertBefore(js, fjs);
-                }(document, 'script', 'facebook-jssdk'));
-
-
-            }, 1000);
-        });
 
         //
         // $scope.checkemail=function(email){
@@ -176,32 +151,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     $scope.menutitle = NavigationService.makeactive("Movies");
     TemplateService.title = $scope.menutitle;
     $scope.navigation = NavigationService.getnav();
-    $scope.$on('$viewContentLoaded', function(event) {
-        $timeout(function() {
 
-            ! function(d, s, id) {
-                var js, fjs = d.getElementsByTagName(s)[0],
-                    p = /^http:/.test(d.location) ? 'http' : 'https';
-                if (!d.getElementById(id)) {
-                    js = d.createElement(s);
-                    js.id = id;
-                    js.src = p + "://platform.twitter.com/widgets.js";
-                    fjs.parentNode.insertBefore(js, fjs);
-                }
-            }(document, "script", "twitter-wjs");
-
-            (function(d, s, id) {
-                var js, fjs = d.getElementsByTagName(s)[0];
-                if (d.getElementById(id)) return;
-                js = d.createElement(s);
-                js.id = id;
-                js.src = "//connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.5";
-                fjs.parentNode.insertBefore(js, fjs);
-            }(document, 'script', 'facebook-jssdk'));
-
-
-        }, 1000);
-    });
 
     $scope.getin = {};
     $scope.getin.enquiryarr = [];
@@ -314,35 +264,10 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     $scope.menutitle = NavigationService.makeactive("Movies");
     TemplateService.title = $scope.menutitle;
     $scope.navigation = NavigationService.getnav();
-    $scope.$on('$viewContentLoaded', function(event) {
-        $timeout(function() {
 
-            ! function(d, s, id) {
-                var js, fjs = d.getElementsByTagName(s)[0],
-                    p = /^http:/.test(d.location) ? 'http' : 'https';
-                if (!d.getElementById(id)) {
-                    js = d.createElement(s);
-                    js.id = id;
-                    js.src = p + "://platform.twitter.com/widgets.js";
-                    fjs.parentNode.insertBefore(js, fjs);
-                }
-            }(document, "script", "twitter-wjs");
-
-            (function(d, s, id) {
-                var js, fjs = d.getElementsByTagName(s)[0];
-                if (d.getElementById(id)) return;
-                js = d.createElement(s);
-                js.id = id;
-                js.src = "//connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.5";
-                fjs.parentNode.insertBefore(js, fjs);
-            }(document, 'script', 'facebook-jssdk'));
-
-
-        }, 1000);
-    });
 
     NavigationService.getMovieInside($stateParams.id, function(data) {
-          // $scope.movieMobile = data.data;
+        // $scope.movieMobile = data.data;
         if (data.value != false) {
             $scope.movieInside = data.data;
             console.log(data.data);
@@ -418,32 +343,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     $scope.menutitle = NavigationService.makeactive("Talents");
     TemplateService.title = $scope.menutitle;
     $scope.navigation = NavigationService.getnav();
-    $scope.$on('$viewContentLoaded', function(event) {
-        $timeout(function() {
 
-            ! function(d, s, id) {
-                var js, fjs = d.getElementsByTagName(s)[0],
-                    p = /^http:/.test(d.location) ? 'http' : 'https';
-                if (!d.getElementById(id)) {
-                    js = d.createElement(s);
-                    js.id = id;
-                    js.src = p + "://platform.twitter.com/widgets.js";
-                    fjs.parentNode.insertBefore(js, fjs);
-                }
-            }(document, "script", "twitter-wjs");
-
-            (function(d, s, id) {
-                var js, fjs = d.getElementsByTagName(s)[0];
-                if (d.getElementById(id)) return;
-                js = d.createElement(s);
-                js.id = id;
-                js.src = "//connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.5";
-                fjs.parentNode.insertBefore(js, fjs);
-            }(document, 'script', 'facebook-jssdk'));
-
-
-        }, 1000);
-    });
 
     $scope.oneAtATime = true;
     $scope.formData = {};
@@ -541,32 +441,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     TemplateService.title = $scope.menutitle;
     $scope.navigation = NavigationService.getnav();
     // var globalObj =true;
-    $scope.$on('$viewContentLoaded', function(event) {
-        $timeout(function() {
 
-            ! function(d, s, id) {
-                var js, fjs = d.getElementsByTagName(s)[0],
-                    p = /^http:/.test(d.location) ? 'http' : 'https';
-                if (!d.getElementById(id)) {
-                    js = d.createElement(s);
-                    js.id = id;
-                    js.src = p + "://platform.twitter.com/widgets.js";
-                    fjs.parentNode.insertBefore(js, fjs);
-                }
-            }(document, "script", "twitter-wjs");
-
-            (function(d, s, id) {
-                var js, fjs = d.getElementsByTagName(s)[0];
-                if (d.getElementById(id)) return;
-                js = d.createElement(s);
-                js.id = id;
-                js.src = "//connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.5";
-                fjs.parentNode.insertBefore(js, fjs);
-            }(document, 'script', 'facebook-jssdk'));
-
-
-        }, 1000);
-    });
 
     $scope.oneAtATime = true;
     $scope.getin = {};
@@ -902,32 +777,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     $scope.menutitle = NavigationService.makeactive("Clients");
     TemplateService.title = $scope.menutitle;
     $scope.navigation = NavigationService.getnav();
-    $scope.$on('$viewContentLoaded', function(event) {
-        $timeout(function() {
 
-            ! function(d, s, id) {
-                var js, fjs = d.getElementsByTagName(s)[0],
-                    p = /^http:/.test(d.location) ? 'http' : 'https';
-                if (!d.getElementById(id)) {
-                    js = d.createElement(s);
-                    js.id = id;
-                    js.src = p + "://platform.twitter.com/widgets.js";
-                    fjs.parentNode.insertBefore(js, fjs);
-                }
-            }(document, "script", "twitter-wjs");
-
-            (function(d, s, id) {
-                var js, fjs = d.getElementsByTagName(s)[0];
-                if (d.getElementById(id)) return;
-                js = d.createElement(s);
-                js.id = id;
-                js.src = "//connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.5";
-                fjs.parentNode.insertBefore(js, fjs);
-            }(document, 'script', 'facebook-jssdk'));
-
-
-        }, 1000);
-    });
 
     // $scope.clientimage = [{
     //   img: "img/client/1.png",
@@ -1010,32 +860,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     $scope.menutitle = NavigationService.makeactive("Sports");
     TemplateService.title = $scope.menutitle;
     $scope.navigation = NavigationService.getnav();
-    $scope.$on('$viewContentLoaded', function(event) {
-        $timeout(function() {
 
-            ! function(d, s, id) {
-                var js, fjs = d.getElementsByTagName(s)[0],
-                    p = /^http:/.test(d.location) ? 'http' : 'https';
-                if (!d.getElementById(id)) {
-                    js = d.createElement(s);
-                    js.id = id;
-                    js.src = p + "://platform.twitter.com/widgets.js";
-                    fjs.parentNode.insertBefore(js, fjs);
-                }
-            }(document, "script", "twitter-wjs");
-
-            (function(d, s, id) {
-                var js, fjs = d.getElementsByTagName(s)[0];
-                if (d.getElementById(id)) return;
-                js = d.createElement(s);
-                js.id = id;
-                js.src = "//connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.5";
-                fjs.parentNode.insertBefore(js, fjs);
-            }(document, 'script', 'facebook-jssdk'));
-
-
-        }, 1000);
-    });
 
     // $scope.asfcdetail = [{
     //     img: "img/ASFC/w1.jpg",
@@ -1231,170 +1056,120 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 })
 
 .controller('JppCtrl', function($scope, TemplateService, NavigationService, $timeout, $stateParams) {
-    //Used to name the .html file
-    $scope.template = TemplateService.changecontent("jpp");
-    $scope.menutitle = NavigationService.makeactive("Sports");
-    TemplateService.title = $scope.menutitle;
-    $scope.navigation = NavigationService.getnav();
-    $scope.$on('$viewContentLoaded', function(event) {
-        $timeout(function() {
+        //Used to name the .html file
+        $scope.template = TemplateService.changecontent("jpp");
+        $scope.menutitle = NavigationService.makeactive("Sports");
+        TemplateService.title = $scope.menutitle;
+        $scope.navigation = NavigationService.getnav();
 
-            ! function(d, s, id) {
-                var js, fjs = d.getElementsByTagName(s)[0],
-                    p = /^http:/.test(d.location) ? 'http' : 'https';
-                if (!d.getElementById(id)) {
-                    js = d.createElement(s);
-                    js.id = id;
-                    js.src = p + "://platform.twitter.com/widgets.js";
-                    fjs.parentNode.insertBefore(js, fjs);
+
+        var id = '1';
+        $scope.jppPagination = {};
+        $scope.jppPagination.id = 1;
+        $scope.jppPagination.pageno = 1;
+        $scope.jppPagination.maxrow = 500;
+        $scope.lastpage = 1;
+
+
+
+        NavigationService.getSportdataByid(id, function(data) {
+            $scope.jppdata = data.data;
+            console.log($scope.jppdata);
+        })
+        $scope.jppInsidedata = [];
+        $scope.seeMore = false;
+        $scope.seeLess = false;
+        var jppInsideArray = [];
+        $scope.seeLessJpp = function() {
+            NavigationService.getSportInsidedataByid($scope.jppPagination, function(data) {
+                $scope.jppInsidedata = data.queryresult;
+                console.log('$scope.jppInsidedata', $scope.jppInsidedata);
+                jppInsideArray = _.cloneDeep($scope.jppInsidedata);
+                // console.log($scope.jppInsidedata);
+                $scope.lastpage = data.lastpage;
+                _.each(data.queryresult, function(n) {
+                    $scope.jppInsidedata.push(n);
+                })
+
+                $scope.seeMore = true;
+                $scope.jppInsidedata = _.slice($scope.jppInsidedata, [0], [3]);
+                if ($scope.jppInsidedata.length < 3) {
+                    $scope.seeMore = false;
                 }
-            }(document, "script", "twitter-wjs");
-
-            (function(d, s, id) {
-                var js, fjs = d.getElementsByTagName(s)[0];
-                if (d.getElementById(id)) return;
-                js = d.createElement(s);
-                js.id = id;
-                js.src = "//connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.5";
-                fjs.parentNode.insertBefore(js, fjs);
-            }(document, 'script', 'facebook-jssdk'));
-
-
-        }, 1000);
-    });
-
-    var id = '1';
-    $scope.jppPagination = {};
-    $scope.jppPagination.id = 1;
-    $scope.jppPagination.pageno = 1;
-    $scope.jppPagination.maxrow = 500;
-    $scope.lastpage = 1;
-
-
-
-    NavigationService.getSportdataByid(id, function(data) {
-        $scope.jppdata = data.data;
-        console.log($scope.jppdata);
-    })
-    $scope.jppInsidedata = [];
-    $scope.seeMore = false;
-    $scope.seeLess = false;
-    var jppInsideArray = [];
-    $scope.seeLessJpp = function() {
-        NavigationService.getSportInsidedataByid($scope.jppPagination, function(data) {
-            $scope.jppInsidedata = data.queryresult;
-            console.log('$scope.jppInsidedata', $scope.jppInsidedata);
-            jppInsideArray = _.cloneDeep($scope.jppInsidedata);
-            // console.log($scope.jppInsidedata);
-            $scope.lastpage = data.lastpage;
-            _.each(data.queryresult, function(n) {
-                $scope.jppInsidedata.push(n);
+                console.log('$scope.jppInsidedata', $scope.jppInsidedata);
             })
 
-            $scope.seeMore = true;
-            $scope.jppInsidedata = _.slice($scope.jppInsidedata, [0], [3]);
-            if ($scope.jppInsidedata.length < 3) {
+        }
+        $scope.seeLessJpp();
+        $scope.seeMoreJpp = function() {
                 $scope.seeMore = false;
+                $scope.seeLess = true;
+                // $scope.allMovieName = {}
+                $scope.jppInsidedata = jppInsideArray;
+                // console.log('dfgyhujkdrftgh', $scope.allMovieName);
             }
-            console.log('$scope.jppInsidedata', $scope.jppInsidedata);
-        })
+            // $scope.jppfilter();
 
-    }
-    $scope.seeLessJpp();
-    $scope.seeMoreJpp = function() {
-            $scope.seeMore = false;
-            $scope.seeLess = true;
-            // $scope.allMovieName = {}
-            $scope.jppInsidedata = jppInsideArray;
-            // console.log('dfgyhujkdrftgh', $scope.allMovieName);
+        $scope.viewAllJpp = function() {
+            console.log('Inside viewAllJpp');
+            if ($scope.lastpage > $scope.jppPagination.pageno) {
+                ++$scope.jppPagination.pageno;
+                console.log('pageno', $scope.jppPagination.pageno);
+                $scope.jppfilter();
+            }
         }
-        // $scope.jppfilter();
-
-    $scope.viewAllJpp = function() {
-        console.log('Inside viewAllJpp');
-        if ($scope.lastpage > $scope.jppPagination.pageno) {
-            ++$scope.jppPagination.pageno;
-            console.log('pageno', $scope.jppPagination.pageno);
-            $scope.jppfilter();
-        }
-    }
 
 
 
-})
-.controller('PunjabKingsCtrl', function($scope, TemplateService, NavigationService, $timeout, $stateParams) {
-    //Used to name the .html file
-    $scope.template = TemplateService.changecontent("punjabkings");
-    $scope.menutitle = NavigationService.makeactive("Sports");
-    TemplateService.title = $scope.menutitle;
-    $scope.navigation = NavigationService.getnav();
-    $scope.$on('$viewContentLoaded', function(event) {
-        $timeout(function() {
-
-            ! function(d, s, id) {
-                var js, fjs = d.getElementsByTagName(s)[0],
-                    p = /^http:/.test(d.location) ? 'http' : 'https';
-                if (!d.getElementById(id)) {
-                    js = d.createElement(s);
-                    js.id = id;
-                    js.src = p + "://platform.twitter.com/widgets.js";
-                    fjs.parentNode.insertBefore(js, fjs);
-                }
-            }(document, "script", "twitter-wjs");
-
-            (function(d, s, id) {
-                var js, fjs = d.getElementsByTagName(s)[0];
-                if (d.getElementById(id)) return;
-                js = d.createElement(s);
-                js.id = id;
-                js.src = "//connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.5";
-                fjs.parentNode.insertBefore(js, fjs);
-            }(document, 'script', 'facebook-jssdk'));
-
-
-        }, 1000);
-    });
-
-    var id = '5';
-    $scope.jppPagination = {};
-    $scope.jppPagination.id = 5;
-    $scope.jppPagination.pageno = 1;
-    $scope.jppPagination.maxrow = 500;
-    $scope.lastpage = 1;
-
-
-
-    NavigationService.getSportdataByid(id, function(data) {
-        $scope.jppdata = data.data;
-        console.log($scope.jppdata);
     })
-    $scope.jppInsidedata = [];
-    $scope.seeMore = false;
-    $scope.seeLess = false;
-    var jppInsideArray = [];
-    $scope.seeLessJpp = function() {
-        NavigationService.getSportInsidedataByid($scope.jppPagination, function(data) {
-          console.log("punjabkings",data);
-            $scope.jppInsidedata1 = data.queryresult;
-            console.log('$scope.jppInsidedata', $scope.jppInsidedata);
-            jppInsideArray = _.cloneDeep($scope.jppInsidedata1);
+    .controller('PunjabKingsCtrl', function($scope, TemplateService, NavigationService, $timeout, $stateParams) {
+        //Used to name the .html file
+        $scope.template = TemplateService.changecontent("punjabkings");
+        $scope.menutitle = NavigationService.makeactive("Sports");
+        TemplateService.title = $scope.menutitle;
+        $scope.navigation = NavigationService.getnav();
 
-            $scope.lastpage = data.lastpage;
-            _.each(data.queryresult, function(n) {
-                $scope.jppInsidedata.push(n);
+
+        var id = '5';
+        $scope.jppPagination = {};
+        $scope.jppPagination.id = 5;
+        $scope.jppPagination.pageno = 1;
+        $scope.jppPagination.maxrow = 500;
+        $scope.lastpage = 1;
+
+
+
+        NavigationService.getSportdataByid(id, function(data) {
+            $scope.jppdata = data.data;
+            console.log($scope.jppdata);
+        })
+        $scope.jppInsidedata = [];
+        $scope.seeMore = false;
+        $scope.seeLess = false;
+        var jppInsideArray = [];
+        $scope.seeLessJpp = function() {
+            NavigationService.getSportInsidedataByid($scope.jppPagination, function(data) {
+                console.log("punjabkings", data);
+                $scope.jppInsidedata1 = data.queryresult;
+                console.log('$scope.jppInsidedata', $scope.jppInsidedata);
+                jppInsideArray = _.cloneDeep($scope.jppInsidedata1);
+
+                $scope.lastpage = data.lastpage;
+                _.each(data.queryresult, function(n) {
+                    $scope.jppInsidedata.push(n);
+                })
+
+                $scope.seeMore = true;
+                $scope.jppInsidedata = _.slice($scope.jppInsidedata, [0], [3]);
+                if ($scope.jppInsidedata.length < 3) {
+                    $scope.seeMore = false;
+                }
+                // console.log('$scope.jppInsidedata', $scope.jppInsidedata);
             })
 
-            $scope.seeMore = true;
-            $scope.jppInsidedata = _.slice($scope.jppInsidedata, [0], [3]);
-            if ($scope.jppInsidedata.length < 3) {
-                $scope.seeMore = false;
-            }
-            // console.log('$scope.jppInsidedata', $scope.jppInsidedata);
-        })
-
-    }
-    $scope.seeLessJpp();
-    $scope.seeMoreJpp = function() {
+        }
+        $scope.seeLessJpp();
+        $scope.seeMoreJpp = function() {
             $scope.seeMore = false;
             $scope.seeLess = true;
 
@@ -1402,173 +1177,173 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
         }
 
-    $scope.viewAllJpp = function() {
-        console.log('Inside viewAllJpp');
-        if ($scope.lastpage > $scope.jppPagination.pageno) {
-            ++$scope.jppPagination.pageno;
-            console.log('pageno', $scope.jppPagination.pageno);
-            $scope.jppfilter();
+        $scope.viewAllJpp = function() {
+            console.log('Inside viewAllJpp');
+            if ($scope.lastpage > $scope.jppPagination.pageno) {
+                ++$scope.jppPagination.pageno;
+                console.log('pageno', $scope.jppPagination.pageno);
+                $scope.jppfilter();
+            }
         }
-    }
 
 
 
-})
+    })
 
 .controller('Jppseason1Ctrl', function($scope, TemplateService, NavigationService, $timeout, $stateParams) {
-    //Used to name the .html file
-    $scope.template = TemplateService.changecontent("jppseason");
-    $scope.menutitle = NavigationService.makeactive("Sports");
-    TemplateService.title = $scope.menutitle;
-    $scope.navigation = NavigationService.getnav();
-    $scope.wallpaper = [{
-        img: "img/jpp/w1.jpg",
-    }, {
-        img: "img/jpp/w2.jpg",
-    }, {
-        img: "img/jpp/w3.jpg",
-    }, {
-        img: "img/jpp/w4.jpg",
-    }, {
-        img: "img/jpp/w5.jpg",
-    }, {
-        img: "img/jpp/w6.jpg",
-    }, {
-        img: "img/jpp/w1.jpg",
-    }, {
-        img: "img/jpp/w2.jpg",
-    }, {
-        img: "img/jpp/w3.jpg",
-    }, {
-        img: "img/jpp/w4.jpg",
-    }, {
-        img: "img/jpp/w5.jpg",
-    }, {
-        img: "img/jpp/w6.jpg",
-    }];
-    $scope.weddings = [{
-        img: "img/jppseason1/1.png",
-        date: "12 January 2016",
-        desc: "Lorem Ipsum is simply dummy text of the printing industry"
-    }, {
-        img: "img/jppseason1/2.png",
-        date: "12 January 2016",
-        desc: "Lorem Ipsum is simply dummy text of the printing industry"
-    }, {
-        img: "img/jppseason1/3.png",
-        date: "12 January 2016",
-        desc: "Lorem Ipsum is simply dummy text of the printing industry"
-    }];
-    $scope.videos = [{
-        img: "img/blog/video/v.png",
-    }, {
-        img: "img/blog/video/v.png",
-    }, {
-        img: "img/blog/video/v.png",
-    }, {
-        img: "img/blog/video/v.png",
-    }, {
-        img: "img/blog/video/v.png",
-    }, {
-        img: "img/blog/video/v.png",
-    }];
-    $scope.wallpaper = _.chunk($scope.wallpaper, 6);
-    for (var i = 0; i < $scope.wallpaper.length; i++) {
-        $scope.wallpaper[i] = _.chunk($scope.wallpaper[i], 3);
-    }
-
-    $scope.seasonData = "";
-    NavigationService.getSeasonData($stateParams.id, function(data) {
-        $scope.seasonData = data.data;
-        $scope.seasonData.imagegallery = _.chunk($scope.seasonData.imagegallery, 6);
-        for (var i = 0; i < $scope.seasonData.imagegallery.length; i++) {
-            $scope.seasonData.imagegallery[i] = _.chunk($scope.seasonData.imagegallery[i], 3);
+        //Used to name the .html file
+        $scope.template = TemplateService.changecontent("jppseason");
+        $scope.menutitle = NavigationService.makeactive("Sports");
+        TemplateService.title = $scope.menutitle;
+        $scope.navigation = NavigationService.getnav();
+        $scope.wallpaper = [{
+            img: "img/jpp/w1.jpg",
+        }, {
+            img: "img/jpp/w2.jpg",
+        }, {
+            img: "img/jpp/w3.jpg",
+        }, {
+            img: "img/jpp/w4.jpg",
+        }, {
+            img: "img/jpp/w5.jpg",
+        }, {
+            img: "img/jpp/w6.jpg",
+        }, {
+            img: "img/jpp/w1.jpg",
+        }, {
+            img: "img/jpp/w2.jpg",
+        }, {
+            img: "img/jpp/w3.jpg",
+        }, {
+            img: "img/jpp/w4.jpg",
+        }, {
+            img: "img/jpp/w5.jpg",
+        }, {
+            img: "img/jpp/w6.jpg",
+        }];
+        $scope.weddings = [{
+            img: "img/jppseason1/1.png",
+            date: "12 January 2016",
+            desc: "Lorem Ipsum is simply dummy text of the printing industry"
+        }, {
+            img: "img/jppseason1/2.png",
+            date: "12 January 2016",
+            desc: "Lorem Ipsum is simply dummy text of the printing industry"
+        }, {
+            img: "img/jppseason1/3.png",
+            date: "12 January 2016",
+            desc: "Lorem Ipsum is simply dummy text of the printing industry"
+        }];
+        $scope.videos = [{
+            img: "img/blog/video/v.png",
+        }, {
+            img: "img/blog/video/v.png",
+        }, {
+            img: "img/blog/video/v.png",
+        }, {
+            img: "img/blog/video/v.png",
+        }, {
+            img: "img/blog/video/v.png",
+        }, {
+            img: "img/blog/video/v.png",
+        }];
+        $scope.wallpaper = _.chunk($scope.wallpaper, 6);
+        for (var i = 0; i < $scope.wallpaper.length; i++) {
+            $scope.wallpaper[i] = _.chunk($scope.wallpaper[i], 3);
         }
-        console.log('$scope.seasonData', $scope.seasonData);
-    })
-    $scope.makeActive = function(video, index) {
-        $scope.seasonData.featuredvideos.splice(index, 1);
-        $scope.seasonData.featuredvideos.unshift(video);
-    }
 
-})
-.controller('PunjabkingsdetailCtrl', function($scope, TemplateService, NavigationService, $timeout, $stateParams) {
-    //Used to name the .html file
-    $scope.template = TemplateService.changecontent("punjabkingsdetail");
-    $scope.menutitle = NavigationService.makeactive("Sports");
-    TemplateService.title = $scope.menutitle;
-    $scope.navigation = NavigationService.getnav();
-    $scope.wallpaper = [{
-        img: "img/jpp/w1.jpg",
-    }, {
-        img: "img/jpp/w2.jpg",
-    }, {
-        img: "img/jpp/w3.jpg",
-    }, {
-        img: "img/jpp/w4.jpg",
-    }, {
-        img: "img/jpp/w5.jpg",
-    }, {
-        img: "img/jpp/w6.jpg",
-    }, {
-        img: "img/jpp/w1.jpg",
-    }, {
-        img: "img/jpp/w2.jpg",
-    }, {
-        img: "img/jpp/w3.jpg",
-    }, {
-        img: "img/jpp/w4.jpg",
-    }, {
-        img: "img/jpp/w5.jpg",
-    }, {
-        img: "img/jpp/w6.jpg",
-    }];
-    $scope.weddings = [{
-        img: "img/jppseason1/1.png",
-        date: "12 January 2016",
-        desc: "Lorem Ipsum is simply dummy text of the printing industry"
-    }, {
-        img: "img/jppseason1/2.png",
-        date: "12 January 2016",
-        desc: "Lorem Ipsum is simply dummy text of the printing industry"
-    }, {
-        img: "img/jppseason1/3.png",
-        date: "12 January 2016",
-        desc: "Lorem Ipsum is simply dummy text of the printing industry"
-    }];
-    $scope.videos = [{
-        img: "img/blog/video/v.png",
-    }, {
-        img: "img/blog/video/v.png",
-    }, {
-        img: "img/blog/video/v.png",
-    }, {
-        img: "img/blog/video/v.png",
-    }, {
-        img: "img/blog/video/v.png",
-    }, {
-        img: "img/blog/video/v.png",
-    }];
-    $scope.wallpaper = _.chunk($scope.wallpaper, 6);
-    for (var i = 0; i < $scope.wallpaper.length; i++) {
-        $scope.wallpaper[i] = _.chunk($scope.wallpaper[i], 3);
-    }
-
-    $scope.seasonData = "";
-    NavigationService.getSeasonData($stateParams.id, function(data) {
-        $scope.seasonData = data.data;
-        $scope.seasonData.imagegallery = _.chunk($scope.seasonData.imagegallery, 6);
-        for (var i = 0; i < $scope.seasonData.imagegallery.length; i++) {
-            $scope.seasonData.imagegallery[i] = _.chunk($scope.seasonData.imagegallery[i], 3);
+        $scope.seasonData = "";
+        NavigationService.getSeasonData($stateParams.id, function(data) {
+            $scope.seasonData = data.data;
+            $scope.seasonData.imagegallery = _.chunk($scope.seasonData.imagegallery, 6);
+            for (var i = 0; i < $scope.seasonData.imagegallery.length; i++) {
+                $scope.seasonData.imagegallery[i] = _.chunk($scope.seasonData.imagegallery[i], 3);
+            }
+            console.log('$scope.seasonData', $scope.seasonData);
+        })
+        $scope.makeActive = function(video, index) {
+            $scope.seasonData.featuredvideos.splice(index, 1);
+            $scope.seasonData.featuredvideos.unshift(video);
         }
-        console.log('$scope.seasonData', $scope.seasonData);
-    })
-    $scope.makeActive = function(video, index) {
-        $scope.seasonData.featuredvideos.splice(index, 1);
-        $scope.seasonData.featuredvideos.unshift(video);
-    }
 
-})
+    })
+    .controller('PunjabkingsdetailCtrl', function($scope, TemplateService, NavigationService, $timeout, $stateParams) {
+        //Used to name the .html file
+        $scope.template = TemplateService.changecontent("punjabkingsdetail");
+        $scope.menutitle = NavigationService.makeactive("Sports");
+        TemplateService.title = $scope.menutitle;
+        $scope.navigation = NavigationService.getnav();
+        $scope.wallpaper = [{
+            img: "img/jpp/w1.jpg",
+        }, {
+            img: "img/jpp/w2.jpg",
+        }, {
+            img: "img/jpp/w3.jpg",
+        }, {
+            img: "img/jpp/w4.jpg",
+        }, {
+            img: "img/jpp/w5.jpg",
+        }, {
+            img: "img/jpp/w6.jpg",
+        }, {
+            img: "img/jpp/w1.jpg",
+        }, {
+            img: "img/jpp/w2.jpg",
+        }, {
+            img: "img/jpp/w3.jpg",
+        }, {
+            img: "img/jpp/w4.jpg",
+        }, {
+            img: "img/jpp/w5.jpg",
+        }, {
+            img: "img/jpp/w6.jpg",
+        }];
+        $scope.weddings = [{
+            img: "img/jppseason1/1.png",
+            date: "12 January 2016",
+            desc: "Lorem Ipsum is simply dummy text of the printing industry"
+        }, {
+            img: "img/jppseason1/2.png",
+            date: "12 January 2016",
+            desc: "Lorem Ipsum is simply dummy text of the printing industry"
+        }, {
+            img: "img/jppseason1/3.png",
+            date: "12 January 2016",
+            desc: "Lorem Ipsum is simply dummy text of the printing industry"
+        }];
+        $scope.videos = [{
+            img: "img/blog/video/v.png",
+        }, {
+            img: "img/blog/video/v.png",
+        }, {
+            img: "img/blog/video/v.png",
+        }, {
+            img: "img/blog/video/v.png",
+        }, {
+            img: "img/blog/video/v.png",
+        }, {
+            img: "img/blog/video/v.png",
+        }];
+        $scope.wallpaper = _.chunk($scope.wallpaper, 6);
+        for (var i = 0; i < $scope.wallpaper.length; i++) {
+            $scope.wallpaper[i] = _.chunk($scope.wallpaper[i], 3);
+        }
+
+        $scope.seasonData = "";
+        NavigationService.getSeasonData($stateParams.id, function(data) {
+            $scope.seasonData = data.data;
+            $scope.seasonData.imagegallery = _.chunk($scope.seasonData.imagegallery, 6);
+            for (var i = 0; i < $scope.seasonData.imagegallery.length; i++) {
+                $scope.seasonData.imagegallery[i] = _.chunk($scope.seasonData.imagegallery[i], 3);
+            }
+            console.log('$scope.seasonData', $scope.seasonData);
+        })
+        $scope.makeActive = function(video, index) {
+            $scope.seasonData.featuredvideos.splice(index, 1);
+            $scope.seasonData.featuredvideos.unshift(video);
+        }
+
+    })
 
 .controller('GsDiariesCtrl', function($scope, TemplateService, NavigationService, $timeout, $stateParams, $state, $filter) {
         //Used to name the .html file
@@ -1967,32 +1742,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $scope.menutitle = NavigationService.makeactive("Sports");
         TemplateService.title = $scope.menutitle;
         $scope.navigation = NavigationService.getnav();
-        $scope.$on('$viewContentLoaded', function(event) {
-            $timeout(function() {
 
-                ! function(d, s, id) {
-                    var js, fjs = d.getElementsByTagName(s)[0],
-                        p = /^http:/.test(d.location) ? 'http' : 'https';
-                    if (!d.getElementById(id)) {
-                        js = d.createElement(s);
-                        js.id = id;
-                        js.src = p + "://platform.twitter.com/widgets.js";
-                        fjs.parentNode.insertBefore(js, fjs);
-                    }
-                }(document, "script", "twitter-wjs");
-
-                (function(d, s, id) {
-                    var js, fjs = d.getElementsByTagName(s)[0];
-                    if (d.getElementById(id)) return;
-                    js = d.createElement(s);
-                    js.id = id;
-                    js.src = "//connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.5";
-                    fjs.parentNode.insertBefore(js, fjs);
-                }(document, 'script', 'facebook-jssdk'));
-
-
-            }, 1000);
-        });
 
         $scope.oneAtATime = true;
         $scope.formData = {};
@@ -2107,9 +1857,9 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         }, {
             img: "img/sports/punjab-squad.jpg",
             // logo: "img/sports/Kings11-Punjab.png",
-            link:"punjabkings",
+            link: "punjabkings",
             btn: "Enter",
-            name:"sports initiatives"
+            name: "sports initiatives"
         }];
     })
     .controller('PfhCtrl', function($scope, TemplateService, NavigationService, $timeout, $state) {
@@ -2118,32 +1868,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $scope.menutitle = NavigationService.makeactive("Sports");
         TemplateService.title = $scope.menutitle;
         $scope.navigation = NavigationService.getnav();
-        $scope.$on('$viewContentLoaded', function(event) {
-            $timeout(function() {
 
-                ! function(d, s, id) {
-                    var js, fjs = d.getElementsByTagName(s)[0],
-                        p = /^http:/.test(d.location) ? 'http' : 'https';
-                    if (!d.getElementById(id)) {
-                        js = d.createElement(s);
-                        js.id = id;
-                        js.src = p + "://platform.twitter.com/widgets.js";
-                        fjs.parentNode.insertBefore(js, fjs);
-                    }
-                }(document, "script", "twitter-wjs");
-
-                (function(d, s, id) {
-                    var js, fjs = d.getElementsByTagName(s)[0];
-                    if (d.getElementById(id)) return;
-                    js = d.createElement(s);
-                    js.id = id;
-                    js.src = "//connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.5";
-                    fjs.parentNode.insertBefore(js, fjs);
-                }(document, 'script', 'facebook-jssdk'));
-
-
-            }, 1000);
-        });
         $scope.pfhInsidedatadetail = [];
         $scope.seeMore = false;
         $scope.seeLess = false;
@@ -2268,32 +1993,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $scope.menutitle = NavigationService.makeactive("Sports");
         TemplateService.title = $scope.menutitle;
         $scope.navigation = NavigationService.getnav();
-        $scope.$on('$viewContentLoaded', function(event) {
-            $timeout(function() {
 
-                ! function(d, s, id) {
-                    var js, fjs = d.getElementsByTagName(s)[0],
-                        p = /^http:/.test(d.location) ? 'http' : 'https';
-                    if (!d.getElementById(id)) {
-                        js = d.createElement(s);
-                        js.id = id;
-                        js.src = p + "://platform.twitter.com/widgets.js";
-                        fjs.parentNode.insertBefore(js, fjs);
-                    }
-                }(document, "script", "twitter-wjs");
-
-                (function(d, s, id) {
-                    var js, fjs = d.getElementsByTagName(s)[0];
-                    if (d.getElementById(id)) return;
-                    js = d.createElement(s);
-                    js.id = id;
-                    js.src = "//connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.5";
-                    fjs.parentNode.insertBefore(js, fjs);
-                }(document, 'script', 'facebook-jssdk'));
-
-
-            }, 1000);
-        });
         $scope.pfhInsidedatadetail = [];
         $scope.seeMore = false;
         $scope.seeLess = false;
@@ -3448,32 +3148,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $scope.menutitle = NavigationService.makeactive("Mice");
         TemplateService.title = $scope.menutitle;
         $scope.navigation = NavigationService.getnav();
-        $scope.$on('$viewContentLoaded', function(event) {
-            $timeout(function() {
 
-                ! function(d, s, id) {
-                    var js, fjs = d.getElementsByTagName(s)[0],
-                        p = /^http:/.test(d.location) ? 'http' : 'https';
-                    if (!d.getElementById(id)) {
-                        js = d.createElement(s);
-                        js.id = id;
-                        js.src = p + "://platform.twitter.com/widgets.js";
-                        fjs.parentNode.insertBefore(js, fjs);
-                    }
-                }(document, "script", "twitter-wjs");
-
-                (function(d, s, id) {
-                    var js, fjs = d.getElementsByTagName(s)[0];
-                    if (d.getElementById(id)) return;
-                    js = d.createElement(s);
-                    js.id = id;
-                    js.src = "//connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.5";
-                    fjs.parentNode.insertBefore(js, fjs);
-                }(document, 'script', 'facebook-jssdk'));
-
-
-            }, 1000);
-        });
 
         $scope.formData = {};
         $scope.oneAtATime = true;
@@ -3607,32 +3282,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $scope.menutitle = NavigationService.makeactive("Mices");
         TemplateService.title = $scope.menutitle;
         $scope.navigation = NavigationService.getnav();
-        $scope.$on('$viewContentLoaded', function(event) {
-            $timeout(function() {
 
-                ! function(d, s, id) {
-                    var js, fjs = d.getElementsByTagName(s)[0],
-                        p = /^http:/.test(d.location) ? 'http' : 'https';
-                    if (!d.getElementById(id)) {
-                        js = d.createElement(s);
-                        js.id = id;
-                        js.src = p + "://platform.twitter.com/widgets.js";
-                        fjs.parentNode.insertBefore(js, fjs);
-                    }
-                }(document, "script", "twitter-wjs");
-
-                (function(d, s, id) {
-                    var js, fjs = d.getElementsByTagName(s)[0];
-                    if (d.getElementById(id)) return;
-                    js = d.createElement(s);
-                    js.id = id;
-                    js.src = "//connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.5";
-                    fjs.parentNode.insertBefore(js, fjs);
-                }(document, 'script', 'facebook-jssdk'));
-
-
-            }, 1000);
-        });
 
         NavigationService.getMiceInsideBanner($stateParams.id, function(data) {
             console.log(data);
@@ -3737,7 +3387,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             $scope.mediadataContent = data.data.description;
             console.log($scope.mediadataContent);
         })
-console.log("$stateParams.year",$stateParams.year);
+        console.log("$stateParams.year", $stateParams.year);
         $scope.categoryid = $stateParams.id;
         $scope.pagenumber = 1;
         var lastpage = 1;
@@ -3756,7 +3406,7 @@ console.log("$stateParams.year",$stateParams.year);
             $scope.seeLess = false;
             NavigationService.getMediaByYear($scope.objfilter, function(data) {
                 $scope.mediadatadetail = data.queryresult;
-                console.log("$scope.mediadatadetail",$scope.mediadatadetail);
+                console.log("$scope.mediadatadetail", $scope.mediadatadetail);
                 console.log('medData: ', $scope.mediadatadetail);
                 console.log('total: ', data.totalvalues);
                 NavigationService.getMediacorner(function(data) {
@@ -3789,49 +3439,42 @@ console.log("$stateParams.year",$stateParams.year);
         };
         $scope.seeLessMediayear();
         $scope.seeMoreMediayear = function() {
-                // $scope.seeMore = false;
-                $scope.seeLess = true;
-                // $scope.allMovieName = {}
+            // $scope.seeMore = false;
+            $scope.seeLess = true;
+            // $scope.allMovieName = {}
+            $scope.mediadatadetail = mediaArray;
+        }
+
+
+
+        $scope.getYears = [{
+            "year": "2016"
+        }, {
+            "year": "2015"
+        }, {
+            "year": "2014"
+        }, {
+            "year": "2013"
+        }, {
+            "year": "2012"
+        }, {
+            "year": "2011"
+        }, {
+            "year": "2010"
+        }];
+        $scope.noyeardata = false;
+        $scope.showdiv = false;
+
+
+        $scope.gotoYears = function(yearid) {
+            if (yearid === "2016") {
+                $scope.noyeardata = false;
+                $scope.showdiv = true;
                 $scope.mediadatadetail = mediaArray;
+            } else {
+                $scope.noyeardata = true;
             }
-
-
-
-$scope.getYears=[
-  {
-    "year" :"2016"
-  },
-  {
-    "year" :"2015"
-  },
-  {
-    "year" :"2014"
-  },
-  {
-    "year" :"2013"
-  },
-  {
-    "year" :"2012"
-  },
-  {
-    "year" :"2011"
-  },
-  {
-    "year" :"2010"
-  }];
-    $scope.noyeardata=false;
-      $scope.showdiv=false;
-
-
-$scope.gotoYears=function(yearid){
-if (yearid === "2016") {
-  $scope.noyeardata=false;
-  $scope.showdiv=true;
-    $scope.mediadatadetail = mediaArray;
-}else {
-  $scope.noyeardata=true;
-}
-}
+        }
 
 
 
@@ -3877,32 +3520,7 @@ if (yearid === "2016") {
         TemplateService.title = $scope.menutitle;
         $scope.navigation = NavigationService.getnav();
 
-        $scope.$on('$viewContentLoaded', function(event) {
-            $timeout(function() {
 
-                ! function(d, s, id) {
-                    var js, fjs = d.getElementsByTagName(s)[0],
-                        p = /^http:/.test(d.location) ? 'http' : 'https';
-                    if (!d.getElementById(id)) {
-                        js = d.createElement(s);
-                        js.id = id;
-                        js.src = p + "://platform.twitter.com/widgets.js";
-                        fjs.parentNode.insertBefore(js, fjs);
-                    }
-                }(document, "script", "twitter-wjs");
-
-                (function(d, s, id) {
-                    var js, fjs = d.getElementsByTagName(s)[0];
-                    if (d.getElementById(id)) return;
-                    js = d.createElement(s);
-                    js.id = id;
-                    js.src = "//connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.5";
-                    fjs.parentNode.insertBefore(js, fjs);
-                }(document, 'script', 'facebook-jssdk'));
-
-
-            }, 1000);
-        });
 
         $scope.oneAtATime = true;
         NavigationService.getEventData(function(data) {
@@ -4040,32 +3658,7 @@ if (yearid === "2016") {
         $scope.menutitle = NavigationService.makeactive("Events");
         TemplateService.title = $scope.menutitle;
         $scope.navigation = NavigationService.getnav();
-        $scope.$on('$viewContentLoaded', function(event) {
-            $timeout(function() {
 
-                ! function(d, s, id) {
-                    var js, fjs = d.getElementsByTagName(s)[0],
-                        p = /^http:/.test(d.location) ? 'http' : 'https';
-                    if (!d.getElementById(id)) {
-                        js = d.createElement(s);
-                        js.id = id;
-                        js.src = p + "://platform.twitter.com/widgets.js";
-                        fjs.parentNode.insertBefore(js, fjs);
-                    }
-                }(document, "script", "twitter-wjs");
-
-                (function(d, s, id) {
-                    var js, fjs = d.getElementsByTagName(s)[0];
-                    if (d.getElementById(id)) return;
-                    js = d.createElement(s);
-                    js.id = id;
-                    js.src = "//connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.5";
-                    fjs.parentNode.insertBefore(js, fjs);
-                }(document, 'script', 'facebook-jssdk'));
-
-
-            }, 1000);
-        });
 
         NavigationService.getEventInsideBanner($stateParams.id, function(data) {
             console.log(data);
@@ -4188,32 +3781,7 @@ if (yearid === "2016") {
         $scope.menutitle = NavigationService.makeactive("Talents");
         TemplateService.title = $scope.menutitle;
         $scope.navigation = NavigationService.getnav();
-        $scope.$on('$viewContentLoaded', function(event) {
-            $timeout(function() {
 
-                ! function(d, s, id) {
-                    var js, fjs = d.getElementsByTagName(s)[0],
-                        p = /^http:/.test(d.location) ? 'http' : 'https';
-                    if (!d.getElementById(id)) {
-                        js = d.createElement(s);
-                        js.id = id;
-                        js.src = p + "://platform.twitter.com/widgets.js";
-                        fjs.parentNode.insertBefore(js, fjs);
-                    }
-                }(document, "script", "twitter-wjs");
-
-                (function(d, s, id) {
-                    var js, fjs = d.getElementsByTagName(s)[0];
-                    if (d.getElementById(id)) return;
-                    js = d.createElement(s);
-                    js.id = id;
-                    js.src = "//connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.5";
-                    fjs.parentNode.insertBefore(js, fjs);
-                }(document, 'script', 'facebook-jssdk'));
-
-
-            }, 1000);
-        });
 
 
         NavigationService.getBanner($stateParams.id, function(data) {
@@ -4325,32 +3893,7 @@ if (yearid === "2016") {
         $scope.menutitle = NavigationService.makeactive("World Tours");
         TemplateService.title = $scope.menutitle;
         $scope.navigation = NavigationService.getnav();
-        $scope.$on('$viewContentLoaded', function(event) {
-            $timeout(function() {
 
-                ! function(d, s, id) {
-                    var js, fjs = d.getElementsByTagName(s)[0],
-                        p = /^http:/.test(d.location) ? 'http' : 'https';
-                    if (!d.getElementById(id)) {
-                        js = d.createElement(s);
-                        js.id = id;
-                        js.src = p + "://platform.twitter.com/widgets.js";
-                        fjs.parentNode.insertBefore(js, fjs);
-                    }
-                }(document, "script", "twitter-wjs");
-
-                (function(d, s, id) {
-                    var js, fjs = d.getElementsByTagName(s)[0];
-                    if (d.getElementById(id)) return;
-                    js = d.createElement(s);
-                    js.id = id;
-                    js.src = "//connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.5";
-                    fjs.parentNode.insertBefore(js, fjs);
-                }(document, 'script', 'facebook-jssdk'));
-
-
-            }, 1000);
-        });
 
         $scope.tourdata = {};
         $scope.formData = {};
@@ -4577,32 +4120,7 @@ if (yearid === "2016") {
         $scope.menutitle = NavigationService.makeactive("World Tours");
         TemplateService.title = $scope.menutitle;
         $scope.navigation = NavigationService.getnav();
-        $scope.$on('$viewContentLoaded', function(event) {
-            $timeout(function() {
 
-                ! function(d, s, id) {
-                    var js, fjs = d.getElementsByTagName(s)[0],
-                        p = /^http:/.test(d.location) ? 'http' : 'https';
-                    if (!d.getElementById(id)) {
-                        js = d.createElement(s);
-                        js.id = id;
-                        js.src = p + "://platform.twitter.com/widgets.js";
-                        fjs.parentNode.insertBefore(js, fjs);
-                    }
-                }(document, "script", "twitter-wjs");
-
-                (function(d, s, id) {
-                    var js, fjs = d.getElementsByTagName(s)[0];
-                    if (d.getElementById(id)) return;
-                    js = d.createElement(s);
-                    js.id = id;
-                    js.src = "//connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.5";
-                    fjs.parentNode.insertBefore(js, fjs);
-                }(document, 'script', 'facebook-jssdk'));
-
-
-            }, 1000);
-        });
 
         NavigationService.getWorldtourInside($stateParams.id, function(data) {
             console.log(data);
@@ -4628,6 +4146,51 @@ if (yearid === "2016") {
             $scope.tourInside.featuredvideos.splice(index, 1);
             $scope.tourInside.featuredvideos.unshift(video);
         }
+    })
+    .controller('socialPluginCtrl', function($scope, TemplateService,
+        NavigationService, $state, $timeout, $rootScope, $interval) {
+
+        function twitterReload(d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0],
+                p = /^http:/.test(d.location) ? 'http' : 'https';
+            if (!d.getElementById(id)) {
+                js = d.createElement(s);
+                js.id = id;
+                js.src = p + "://platform.twitter.com/widgets.js";
+                fjs.parentNode.insertBefore(js, fjs);
+            }
+        }
+
+        function facebookReload(d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            //  if (d.getElementById(id)) return;
+            js = d.createElement(s);
+            js.id = id;
+            js.src = "//connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.5";
+            fjs.parentNode.insertBefore(js, fjs);
+
+        }
+        $timeout(function() {
+            twitterReload(document, "script", "twitter-wjs");
+            facebookReload(document, 'script', 'facebook-jssdk');
+        }, 1000);
+
+        var f, t;
+        f = $interval(function() {
+            if (typeof FB !== undefined) {
+                FB = null;
+                $interval.cancel(f);
+                facebookReload(document, 'script', 'facebook-jssdk');
+            }
+        }, 100);
+        t = $interval(function() {
+            if (typeof twttr !== undefined) {
+                twttr.widgets.load();
+                $interval.cancel(t);
+
+            }
+        }, 100);
+
     })
     .controller('LandingCtrl', function($scope, TemplateService, NavigationService, $timeout, $state) {
         //Used to name the .html file
@@ -4718,7 +4281,7 @@ if (yearid === "2016") {
         NavigationService.getMediacorner(function(data) {
             console.log("dsfasdfasdf");
             $scope.mediadata = data.data.years[0];
-            console.log("data",data);
+            console.log("data", data);
         });
 
         $scope.checkEmail = false;
