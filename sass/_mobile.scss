@@ -1371,9 +1371,19 @@
     .give-mar {
         margin-bottom: 40px;
     }
-    .human-mobilefix{
-        height: 250px;
-    }
+.play-for-human .human {
+    width: 100%;
+    overflow: hidden;
+.human-mobilefix {
+    height: 220px;
+    width: auto;
+    max-width: inherit;
+}
+}
+.social-logo {
+    width: 100%;
+    overflow: hidden;
+}
     footer .followus .followus-inner {
         margin-bottom: 40px;
     }
