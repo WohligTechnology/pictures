@@ -1856,10 +1856,10 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
         }, {
             img: "img/sports/punjab-squad.jpg",
-            // logo: "img/sports/Kings11-Punjab.png",
+            logo: "img/gs-sports.png",
             link: "punjabkings",
             btn: "Enter",
-            name: "sports initiatives"
+            // name: "sports initiatives"
         }];
     })
     .controller('PfhCtrl', function($scope, TemplateService, NavigationService, $timeout, $state) {
