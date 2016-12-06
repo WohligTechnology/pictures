@@ -5415,6 +5415,23 @@ h4.title-movies {
 .flotimp {
     float: right !important;
 }
+.social.social-corner-sharing {
+    a {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    position: relative;
+}
+
+ span {
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+        width: 30px;
+    height: 30px;
+}
+}
 
 /* Start writing sass here */
 
