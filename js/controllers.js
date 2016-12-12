@@ -2822,6 +2822,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             $scope.lastrecord = _.last($scope.blogImageData.image);
             console.log('$scope.lastrecord', $scope.lastrecord);
             console.log('$scope.bigImage', $scope.bigImage);
+
         }
         $scope.previousImage = function() {
             $scope.bigImage = $scope.blogImageData.image[--$scope.activeImage];

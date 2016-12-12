@@ -17,7 +17,7 @@
                 <div class="bthead">
                     <div class="pull-left">
                         <h3 class="text-uppercase">{{blogImageData.description.name}}</h3>
-                        <p class="date-time">By {{blogImageData.description.authorname}} | {{blogImageData.description.date | date : " d MMMM y"}}</p>
+                        <p class="date-time" ui-sref="gsdiaries({id:blogImageData.description.authorid})">By {{blogImageData.description.authorname}} | {{blogImageData.description.date | date : " d MMMM y"}}</p>
                     </div>
 
 

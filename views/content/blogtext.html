@@ -16,7 +16,7 @@
         <div class="bthead">
           <div class="pull-left">
             <h3 class="text-uppercase">{{blogTextData.description.name}}</h3>
-            <p class="date-time">By {{blogTextData.description.authorname}} | {{blogTextData.description.date | date : " d MMMM y"}}</p>
+            <p class="date-time" ui-sref="gsdiaries({id:blogTextData.description.authorid})">By {{blogTextData.description.authorname}} | {{blogTextData.description.date | date : " d MMMM y"}}</p>
           </div>
           <div class="pull-right">
             <span class="social-share">
