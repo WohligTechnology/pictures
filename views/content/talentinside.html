@@ -32,7 +32,7 @@
                             <div class="w-title">
                                 <h4 class="uppercase color-red bold">{{data.name}}</h4>
                                 <div class="wed-date">
-                                    <span>{{data.date | date:"dd MMMM yyyy"}}</span>
+                                    <span ng-if="data.date!='0000-00-00'">{{data.date | date:"dd MMMM yyyy"}}</span>
                                     <span ng-if="data.date && data.location">|</span>
                                     <span>{{data.location}}</span>
                                 </div>
@@ -63,7 +63,7 @@
 <div class="social">
     <section class="marg-section">
         <div class="social-back ">
-                                <div ng-include = "'views/content/social.html'"></div> 
+                                <div ng-include = "'views/content/social.html'"></div>
             <!--<div class="container">
                 <div class="row">
                     <div class="col-md-4 col-sm-4">

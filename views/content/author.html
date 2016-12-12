@@ -75,7 +75,7 @@
                                         </div>
                                     </div>
                                     <div class="wed-date">
-                                        <span>{{data.date | date:"dd MMMM yyyy"}}</span>
+                                        <span ng-if="data.date!='0000-00-00'">{{data.date | date:"dd MMMM yyyy"}}</span>
                                         <div class="read-more pull-right" ng-if="data.type==1">
                                             <a class="color-black bold" ui-sref="blogtext({id:data.id})">Read More</a>
                                         </div>

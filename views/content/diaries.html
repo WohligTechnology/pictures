@@ -53,7 +53,7 @@
                   <div class="read-more pull-right" ng-if="wedData.type==3">
                     <a class="color-black" ui-sref="blogvideo({id:wedData.id})">Read More</a>
                   </div>
-                  <div class="wed-date mar0">
+                  <div class="wed-date mar0" ng-if="wedData.date!='0000-00-00'">
                     <span>{{wedData.date |date:'d MMMM y'}}</span>
                   </div>
                 </div>
@@ -152,7 +152,7 @@
                   <div class="read-more pull-right" ng-if="data.type==3">
                     <a class="color-black bold" ui-sref="blogvideo({id:data.id})">Read More</a>
                   </div>
-                  <div class="wed-date mar0">
+                  <div class="wed-date mar0" ng-if="data.date!='0000-00-00'">
                     <span>{{data.date |date:'d MMMM y'}}</span>
                   </div>
                 </div>

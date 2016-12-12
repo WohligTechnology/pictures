@@ -43,7 +43,7 @@
                           <p class="bold">{{data.name}}</p>
                         </div>
                         <div class="wed-date">
-                          <span>{{data.date | date:"dd MMMM yyyy"}}</span>
+                          <span ng-if="data.date!='0000-00-00'">{{data.date | date:"dd MMMM yyyy"}}</span>
                           <span>|</span>
                           <span>{{data.medianame}}</span>
                           <!-- <span>Times of India</span> -->
@@ -183,7 +183,7 @@
                           <p class="bold">{{data.name}}</p>
                         </div>
                         <div class="wed-date">
-                          <span>{{data.date | date:"dd MMMM yyyy"}}</span>
+                          <span ng-if="data.date!='0000-00-00'">{{data.date | date:"dd MMMM yyyy"}}</span>
                           <span>|</span>
                           <span>{{data.medianame}}</span>
                           <!-- <span>Times of India</span> -->

@@ -54,7 +54,7 @@
                                     <div class="ribbon-red"><img src=img/ribbon_red.png> <span class="color-white uppercase">Event</span></div>
                                 </div>
                                 <div class=wed-desc>
-                                    <div class=wed-date><span>{{data.date | date:'d MMMM y'}}</span></div>
+                                    <div class=wed-date ng-if="data.date!='0000-00-00'"><span>{{data.date | date:'d MMMM y'}}</span></div>
                                     <div class="wed-desc-inside" ng-bind-html="data.content">
 
                                     </div>
@@ -129,7 +129,7 @@
                                     <div class="social">
                                         <section class="marg-section">
                                             <div class="social-back ">
-                                                    <div ng-include = "'views/content/social.html'"></div> 
+                                                    <div ng-include = "'views/content/social.html'"></div>
                                                 <!--<div class="container">
                                                     <div class="row">
                                                         <div class="col-md-4 col-sm-4">

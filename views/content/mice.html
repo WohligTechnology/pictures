@@ -56,7 +56,7 @@
                                     </div>
                                 </div>
                                 <div class="wed-desc">
-                                    <div class="wed-date">
+                                    <div class="wed-date" ng-if="data.date!='0000-00-00'">
                                         <span>{{data.date | date:'d MMMM y'}}</span>
                                     </div>
                                     <div class="wed-desc-inside" ng-bind-html="data.content">
@@ -132,7 +132,7 @@
                                             </div>
                                         </div>
                                         <div class="social">
-                                                        <div ng-include = "'views/content/social.html'"></div> 
+                                                        <div ng-include = "'views/content/social.html'"></div>
                                             <!--<section class="marg-section">
                                                 <div class="social-back ">
                                                     <div class="container">

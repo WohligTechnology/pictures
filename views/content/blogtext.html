@@ -156,7 +156,7 @@
               <div class="wed-desc-inside">
                 <p class="bold text-uppercase">{{data.name}}</p>
               </div>
-              <div class="wed-date">
+              <div class="wed-date" ng-if="data.date!='0000-00-00'">
                 <span>{{data.date | date:"dd MMMM yyyy"}}</span>
               </div>
               <div class="read-more">
@@ -177,7 +177,7 @@
         <div class="bthead">
           <div class="pull-left">
             <h3 class="text-uppercase">{{blogTextData.description.name}}</h3>
-            <p class="date-time">{{mydate | date : " d MMMM y '|' h:mm a"}}</p>
+            <p class="date-time" ng-if="mydate!='0000-00-00'">{{mydate | date : " d MMMM y '|' h:mm a"}}</p>
           </div>
           <div class="pull-right">
             <span class="social-share">
@@ -298,7 +298,7 @@
           <div class="wed-desc-inside">
             <p class="bold text-uppercase">{{data.name}}</p>
           </div>
-          <div class="wed-date">
+          <div class="wed-date" ng-if="data.date!='0000-00-00'">
             <span>{{data.date | date:"dd MMMM yyyy"}}</span>
           </div>
           <div class="read-more">

@@ -78,7 +78,7 @@
                                     </div>
                                 </div>
                                 <div class="wed-desc">
-                                    <div class="wed-date">
+                                    <div class="wed-date" ng-if="data.date!='0000-00-00'">
                                         <span>{{data.date | date:'d MMMM y'}}</span>
                                     </div>
                                     <div class="wed-desc-inside" ng-bind-html="data.content">
@@ -89,7 +89,7 @@
                                         <a href="" class="color-black pull-left" ng-if="data.type==2" ui-sref="blogimage({id:data.id})">Read More</a>
                                         <a href="" class="color-black pull-left" ng-if="data.type==3" ui-sref="blogvideo({id:data.id})">Read More</a>
                                         <div class="wed-date pull-right color-blacks authorcolor">
-                                            <a "class="color-blacks " ui-sref="gsdiaries({id:data.authorid}) "><span>By {{data.authorname}}</span></a>
+                                            <a class="color-blacks " ui-sref="gsdiaries({id:data.authorid}) "><span>By {{data.authorname}}</span></a>
                                        </div>
                                     </div>
                                 </div>
@@ -180,7 +180,7 @@
 
                         <section class="marg-section">
                 <div class="social-back ">
-                                        <div ng-include = "'views/content/social.html'"></div> 
+                                        <div ng-include = "'views/content/social.html'"></div>
             </section>
         </div>
         <div class="container">

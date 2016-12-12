@@ -36,7 +36,7 @@
                                     <h4>{{data.name}}</h4>
                                     <p>{{data.location}}</p>
                                     <!-- <p class="red">14<sup>th</sup> January 2011</p> -->
-                                    <p>{{data.date | date:"dd MMMM yyyy"}}</p>
+                                    <p ng-if="data.date!='0000-00-00'">{{data.date | date:"dd MMMM yyyy"}}</p>
 
                                 </div>
                             </div>
@@ -49,7 +49,7 @@
                                     <h4>{{data.name}}</h4>
                                     <p>{{data.location}}</p>
                                     <!-- <p class="red">14<sup>th</sup> January 2011</p> -->
-                                    <p>{{data.date | date:"dd MMMM yyyy"}}</p>
+                                    <p ng-if="data.date!='0000-00-00'">{{data.date | date:"dd MMMM yyyy"}}</p>
 
                                 </div>
                             </div>
@@ -65,7 +65,7 @@
                                 <div class="wt-data">
                                     <h4>{{data.name}}</h4>
                                     <p>{{data.location}}</p>
-                                    <p class="red">{{data.date | date:"dd MMMM yyyy"}}</p>
+                                    <p class="red" ng-if="data.date!='0000-00-00'">{{data.date | date:"dd MMMM yyyy"}}</p>
                                 </div>
                             </div>
                         </li>
@@ -151,7 +151,7 @@
                                 <div class="ribbon-red"><img src=img/ribbon_red.png> <span class="color-white uppercase">tour</span></div>
                             </div>
                             <div class=wed-desc>
-                                <div class=wed-date><span>{{data.date | date:'d MMMM y'}}</span></div>
+                                <div class=wed-date ng-if="data.date!='0000-00-00'"><span>{{data.date | date:'d MMMM y'}}</span></div>
                                 <div class="wed-desc-inside" ng-bind-html="data.content">
                                     <!-- <p class=bold>{{data.desc}}</p> -->
                                 </div>
@@ -229,7 +229,7 @@
         <div class="social">
             <section class="marg-section">
                 <div class="social-back ">
-                      <div ng-include = "'views/content/social.html'"></div> 
+                      <div ng-include = "'views/content/social.html'"></div>
                     <!--<div class="container">
                         <div class="row">
                             <div class="col-md-4 col-sm-4">

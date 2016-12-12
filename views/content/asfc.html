@@ -74,7 +74,7 @@
                                 <div class="row">
                                     <div class="col-sm-5">
                                         <span class="color-red">Date:</span>
-                                        <span>{{data.date | date:"dd MMMM yyyy"}}</span>
+                                        <span ng-if="data.date!='0000-00-00'">{{data.date | date:"dd MMMM yyyy"}}</span>
                                     </div>
                                     <div class="col-sm-7">
                                         <span class="color-red">Location:</span>
@@ -121,7 +121,7 @@
                             <div class="team-logo text-center min-hgt">
                                 <img ng-src="{{matchData.upcoming[0].logo1 | uploadpath}}" alt="" class="img-responsive">
                                 <div class="date text-center color-white">
-                                    <span>{{matchData.upcoming[0].date | date:"dd MMMM yyyy"}}</span>
+                                    <span ng-if="matchData.upcoming[0].date!='0000-00-00'">{{matchData.upcoming[0].date | date:"dd MMMM yyyy"}}</span>
                                 </div>
                                 <div class="btn-all mt15 mb15 text-center">
                                     <a href="{{matchData.upcoming[0].link}}">
@@ -307,7 +307,7 @@
             </div>
         </div>
             <div class="social">
-            <div ng-include = "'views/content/social.html'"></div> 
+            <div ng-include = "'views/content/social.html'"></div>
                 <!--<section class="marg-section">
                     <div class="social-back ">
                         <div class="container">

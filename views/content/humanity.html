@@ -43,7 +43,7 @@
                   <div class="row" ng-if="data.date != '' || data.location != ''">
                       <div class="col-sm-6" ng-if="data.date != ''">
                           <span class="color-red">Date:</span>
-                          <span>{{data.date | date:"dd MMMM yyyy"}}</span>
+                          <span ng-if="data.date!='0000-00-00'">{{data.date | date:"dd MMMM yyyy"}}</span>
                       </div>
                       <div class="col-sm-6" ng-if="data.location != ''">
                           <span class="color-red">Location:</span>
@@ -208,7 +208,7 @@
       <!-- <div ng-include = "'/social.html'"></div> -->
       <section class="marg-section">
         <div class="social-back ">
-                          <div ng-include = "'views/content/social.html'"></div> 
+                          <div ng-include = "'views/content/social.html'"></div>
           <!--<div class="container">
             <div class="row">
               <div class="col-md-4 col-sm-4">

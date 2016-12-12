@@ -42,7 +42,7 @@
                     <td class="bold">Venue :</td>
                     <td ng-bind-html="tourInside.worldtourdetail.venue"></td>
                   </tr>
-                  <tr ng-if="tourInside.worldtourdetail.date">
+                  <tr ng-if="tourInside.worldtourdetail.date!='0000-00-00'">
                     <td class="bold">Date :</td>
                     <td>{{tourInside.worldtourdetail.date | date:"dd MMMM yyyy"}}</td>
                     <!-- <td>6<sup>th</sup> April 2013</td> -->
@@ -96,7 +96,7 @@
 
                   <div class="video-main">
                     <a fancybox-box href="http://www.youtube.com/embed/{{tourInside.featuredvideos[0].url | youtubethumb:true}}?autoplay=1&modestbranding=0&showinfo=0&rel=0&loop=1" rel="tours" data-fancybox-type="iframe" rel="fancybox-button">
-                   
+
                     <img ng-src="{{tourInside.featuredvideos[0].url | youtubethumb:false}}" alt="" class="img-responsive">
    <i class="fa fa-play"></i>
                     </a>
@@ -165,7 +165,7 @@
 <div class="social">
   <section class="marg-section">
     <div class="social-back ">
-        <div ng-include = "'views/content/social.html'"></div> 
+        <div ng-include = "'views/content/social.html'"></div>
       <!--<div class="container">
         <div class="row">
           <div class="col-md-4 col-sm-4">

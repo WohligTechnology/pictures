@@ -34,7 +34,7 @@
               <img ng-src="{{data.image | uploadpath}}" alt="" class="img-responsive">
               <div class="movie-date">
                 <span>Release Date:</span>
-                <p class="color-red">{{data.releasedate | date:'dd MMMM yyyy'}}</p>
+                <p class="color-red" ng-if="data.releasedate!='0000-00-00'">{{data.releasedate | date:'dd MMMM yyyy'}}</p>
               </div>
             </div>
           </li>
@@ -43,7 +43,7 @@
               <img ng-src="{{data.image | uploadpath}}" alt="" class="img-responsive">
               <div class="movie-date">
                 <span>Release Date:</span>
-                <p class="color-red">{{data.releasedate | date:'dd MMMM yyyy'}}</p>
+                <p class="color-red" ng-if="data.releasedate!='0000-00-00'">{{data.releasedate | date:'dd MMMM yyyy'}}</p>
               </div>
             </div>
           </li>
@@ -56,7 +56,7 @@
               <img ng-src="{{data.image | uploadpath}}" alt="" class="img-responsive">
               <div class="movie-date">
                 <span>Release Date:</span>
-                <p class="color-red">{{data.releasedate | date:'dd MMMM yyyy'}}</p>
+                <p class="color-red" ng-if="data.releasedate!='0000-00-00'">{{data.releasedate | date:'dd MMMM yyyy'}}</p>
               </div>
             </div>
           </li>
@@ -134,7 +134,7 @@
                   </div>
                 </div>
                 <div class="wed-desc">
-                  <div class="wed-date">
+                  <div class="wed-date" ng-if="data.date!='0000-00-00'">
                     <span>{{data.date | date:'d MMMM y'}}</span>
                   </div>
                   <div class="wed-desc-inside" ng-bind-html="data.content">
@@ -216,9 +216,9 @@ including yours, right here!</h4>
     </div>-->
                     <div class="social">
                       <section class="marg-section">
-                                   
+
                         <div class="social-back ">
-                            <div ng-include = "'views/content/social.html'"></div> 
+                            <div ng-include = "'views/content/social.html'"></div>
                           <!--<div class="container">
                             <div class="row">
                               <div class="col-md-4 col-sm-4">
