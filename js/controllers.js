@@ -1680,7 +1680,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         NavigationService.getDiaryInsideByPage($scope.diaryObj, function(data) {
             $scope.diarydata = true;
             $scope.DiaryInsideData = data;
-            console.log($scope.DiaryInsideData);
+            console.log($scope.DiaryInsideData,"DiaryInsideData");
         })
     }
 
@@ -1736,6 +1736,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $scope.filterObj.month = '';
         getFilterResults();
     }
+
 
     function getFilterResults() {
         console.log("fff", $scope.filterObj);
@@ -2838,6 +2839,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
                 console.log('$scope.blogTextData', $scope.blogTextData);
                 $scope.bigImage = $scope.blogImageData.image[$scope.activeImage];
                 console.log('$scope.bigImage', $scope.bigImage);
+                console.log("blogImageData",$scope.blogImageData);
             })
         }
 

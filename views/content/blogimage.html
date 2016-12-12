@@ -19,6 +19,8 @@
                         <h3 class="text-uppercase">{{blogImageData.description.name}}</h3>
                         <p class="date-time">By {{blogImageData.description.authorname}} | {{blogImageData.description.date | date : " d MMMM y"}}</p>
                     </div>
+
+
                     <div class="pull-right">
                         <span class="social-share">
                         <span class='st_facebook_large' displayText='Facebook'></span>
@@ -27,6 +29,9 @@
                         </span>
                     </div>
                     <div class="clearfix"></div>
+                </div>
+                <div >
+                  <p ng-bind-html="blogImageData.description.content"></p>
                 </div>
                 <div class="nimage">
                     <div class="videolink">
