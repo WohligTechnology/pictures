@@ -17,9 +17,8 @@
                 <h4 class="bold">Synopsis</h4>
               </div>
               <div class="cont-main">
-                <p class="text-justify">
-                  {{movieInside.moviedetail.synopsis}}
-                </p>
+                <div class="text-justify" ng-bind-html="movieInside.moviedetail.synopsis">
+                </div>
                 <div class="title-subtitle">
                   <div class="row">
                     <div class="col-sm-5">
@@ -343,10 +342,10 @@
       </div>
     </div>-->
     <div class="social">
-      <!-- <div ng-include = "'/social.html'"></div> -->
       <section class="marg-section">
         <div class="social-back ">
-          <div class="container">
+                          <div ng-include = "'views/content/social.html'"></div> 
+          <!--<div class="container">
             <div class="row">
               <div class="col-md-4 col-sm-4">
                 <div class="social-box text-center">
@@ -381,7 +380,7 @@
                 </div>
               </div>
             </div>
-          </div>
+          </div>-->
         </div>
       </section>
     </div>
