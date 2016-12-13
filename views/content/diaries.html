@@ -37,24 +37,26 @@
                   <div class="wed-desc-inside" ng-bind-html="wedData.content">
                     <!-- <p class="bold">{{wedData.content}}</p> -->
                   </div>
-                  <div class="wed-date mar0 clearfix wedd">
-                    <a ui-sref="gsdiaries({id:wedData.authorid})"><span>By {{wedData.authorname}}</span></a>
-                    <div class="wed-date mar0 pull-right">
-                      <span>Views:</span>
-                      <span>{{wedData.views}}</span>
+                  <div class="min-hght-date">
+                    <div class="wed-date mar0 clearfix wedd">
+                      <a ui-sref="gsdiaries({id:wedData.authorid})"><span>By {{wedData.authorname}}</span></a>
+                      <div class="wed-date mar0 pull-right">
+                        <span>Views:</span>
+                        <span>{{wedData.views}}</span>
+                      </div>
                     </div>
-                  </div>
-                  <div class="read-more pull-right" ng-if="wedData.type==1">
-                    <a class="color-black" ui-sref="blogtext({id:wedData.id})">Read More</a>
-                  </div>
-                  <div class="read-more pull-right" ng-if="wedData.type==2">
-                    <a class="color-black" ui-sref="blogimage({id:wedData.id})">Read More</a>
-                  </div>
-                  <div class="read-more pull-right" ng-if="wedData.type==3">
-                    <a class="color-black" ui-sref="blogvideo({id:wedData.id})">Read More</a>
-                  </div>
-                  <div class="wed-date mar0" ng-if="wedData.date!='0000-00-00'">
-                    <span>{{wedData.date |date:'d MMMM y'}}</span>
+                    <div class="read-more pull-right" ng-if="wedData.type==1">
+                      <a class="color-black" ui-sref="blogtext({id:wedData.id})">Read More</a>
+                    </div>
+                    <div class="read-more pull-right" ng-if="wedData.type==2">
+                      <a class="color-black" ui-sref="blogimage({id:wedData.id})">Read More</a>
+                    </div>
+                    <div class="read-more pull-right" ng-if="wedData.type==3">
+                      <a class="color-black" ui-sref="blogvideo({id:wedData.id})">Read More</a>
+                    </div>
+                    <div class="wed-date mar0" ng-if="wedData.date!='0000-00-00'">
+                      <span>{{wedData.date |date:'d MMMM y'}}</span>
+                    </div>
                   </div>
                 </div>
                 <div class="border-blue borders"></div>
