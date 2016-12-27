@@ -3403,13 +3403,14 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         }
 
     })
-    .controller('MediaCornerCtrl', function($scope, TemplateService, NavigationService, $timeout, $stateParams) {
+    .controller('MediaCornerCtrl', function($scope, TemplateService, NavigationService, $timeout, $stateParams,$filter) {
         //Used to name the .html file
         $scope.template = TemplateService.changecontent("mediacorner");
         $scope.menutitle = NavigationService.makeactive("Media Corner");
         TemplateService.title = $scope.menutitle;
         $scope.navigation = NavigationService.getnav();
         $scope.mediadata = "";
+
         NavigationService.getMediacorner(function(data) {
             $scope.mediadataContent = data.data.description;
             console.log($scope.mediadataContent);
@@ -3433,6 +3434,8 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             $scope.seeLess = false;
             NavigationService.getMediaByYear($scope.objfilter, function(data) {
                 $scope.mediadatadetail = data.queryresult;
+                // $scope.mediadatadetail=$filter('orderBy')(data.queryresult, -order);
+                // $scope.mediadatadetail=$filter('filter')($scope.mediadatadetail, -order);
                 console.log("$scope.mediadatadetail", $scope.mediadatadetail);
                 console.log('medData: ', $scope.mediadatadetail);
                 console.log('total: ', data.totalvalues);
@@ -3464,6 +3467,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
                 }
             });
         };
+
         $scope.seeLessMediayear();
         $scope.seeMoreMediayear = function() {
             // $scope.seeMore = false;
@@ -3498,6 +3502,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
                 $scope.noyeardata = false;
                 $scope.showdiv = true;
                 $scope.mediadatadetail = mediaArray;
+                // $scope.mediadatadetail=$filter('filter')($scope.mediadatadetail, -order);
             } else {
                 $scope.noyeardata = true;
             }
@@ -3817,7 +3822,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
             console.log('$scope.bannerData', $scope.bannerData);
         })
-        $scope.seeMore = false;
+        $scope.seeMore = true;
         $scope.seeLess = false;
         var talentInsideArray = [];
         $scope.seeLessTalent = function() {
