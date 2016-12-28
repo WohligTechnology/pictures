@@ -3433,7 +3433,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $scope.seeLessMediayear = function() {
             $scope.seeLess = false;
             NavigationService.getMediaByYear($scope.objfilter, function(data) {
-                $scope.mediadatadetail = data.queryresult;
+                $scope.mediadatadetail = _.chunk(data.queryresult,2);
                 // $scope.mediadatadetail=$filter('orderBy')(data.queryresult, -order);
                 // $scope.mediadatadetail=$filter('filter')($scope.mediadatadetail, -order);
                 console.log("$scope.mediadatadetail", $scope.mediadatadetail);
@@ -3460,9 +3460,10 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
                 //
                 // });
                 mediaArray = _.cloneDeep($scope.mediadatadetail);
+                console.log("  $scope.mediadatadetail",  $scope.mediadatadetail);
                 $scope.seeMore = true;
-                $scope.mediadatadetail = _.slice($scope.mediadatadetail, [0], [3]);
-                if ($scope.mediadatadetail.length < 3) {
+                $scope.mediadatadetail = _.slice($scope.mediadatadetail, [0], [2]);
+                if ($scope.mediadatadetail.length < 2) {
                     $scope.seeMore = false;
                 }
             });

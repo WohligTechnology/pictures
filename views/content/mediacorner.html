@@ -22,8 +22,9 @@
           <div class="bg-grey-similar bg-sports">
             <div class="bg-moviesdiaries">
               <div class="pd-side">
-                <div class="row">
-                  <div class="col-md-6 col-sm-6" ng-repeat="data in mediadatadetail track by $index">
+                <div class="row" ng-repeat="datas in mediadatadetail">
+                  <div class="col-md-6 col-sm-6" ng-repeat="data in datas">
+                  <!-- <div class="col-md-6 col-sm-6" ng-repeat="data in mediadatadetail track by $index"> -->
                     <div class="wed-box border-red">
                       <div class="wed-img-list bordr-color">
                         <img ng-src="{{data.image | uploadpath}}" alt="" class="img-responsive">
@@ -162,8 +163,9 @@
           <div class="bg-grey-similar bg-sports">
             <div class="bg-moviesdiaries">
               <div class="pd-side">
-                <div class="row">
-                  <div class="col-md-6 col-sm-6" ng-repeat="data in mediadatadetail track by $index">
+                <div class="row" ng-repeat="datas in mediadatadetail">
+                  <div class="col-md-6 col-sm-6" ng-repeat="data in datas">
+                  <!-- <div class="col-md-6 col-sm-6" ng-repeat="data in mediadatadetail track by $index"> -->
                     <div class="wed-box border-red">
                       <div class="wed-img-list bordr-color">
                         <img ng-src="{{data.image | uploadpath}}" alt="" class="img-responsive">
