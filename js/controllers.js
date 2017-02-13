@@ -1470,7 +1470,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         NavigationService.getAuthorDetails($stateParams.id, function(data) {
 
             $scope.authorData = data.data;
-
+        
             if ($scope.authorData.description.banner != '') {
                 $scope.authorData.description.banner = $filter('uploadpath')($scope.authorData.description.banner);
             };
