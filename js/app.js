@@ -367,6 +367,11 @@ firstapp.directive('imageonload', function() {
         }
     };
 });
+firstapp.filter('htmlDecode', function() {
+    return function(value) {
+        return $("<div/>").html(value).text();
+    };
+});
 
 
 firstapp.directive('uploadImage', function($http) {
