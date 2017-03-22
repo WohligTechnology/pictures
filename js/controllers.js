@@ -1881,8 +1881,10 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         }, {
             img: "img/sports/Image_IMG_3662.jpg",
             // img: "img/sports/punjab-squad.jpg",
-            logo: "img/17012017_ITTF_Indian Open_logo_final.png",
-            // logo: "img/gs-sports.png",
+              // logo: "img/gs-sports.png",
+            // logo: "img/17012017_ITTF_Indian Open_logo_final.png",
+            logo: "img/GS SPORT LOGO.png",
+
             link: "punjabkings",
             btn: "Enter",
             // name: "sports initiatives"
