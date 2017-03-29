@@ -33,13 +33,16 @@
                     <span class="color-white uppercase">{{wedData.categoryname}}</span>
                   </div>
                 </div>
+
                 <div class="wed-desc wed">
-                  <div class="wed-desc-inside" ng-bind-html="wedData.content">
+                  <!-- <div class="wed-desc-inside" ng-bind-html="wedData.content"> -->
+                  <div class="wed-desc-inside">
                     <!-- <p class="bold">{{wedData.content}}</p> -->
+                    <p class="bold">{{wedData.content | htmlDecode}}</p>
                   </div>
                   <div class="min-hght-date">
                     <div class="wed-date mar0 clearfix wedd">
-                      <a ui-sref="gsdiaries({id:wedData.authorid})"><span>By {{wedData.authorname}}</span></a>
+                      <a ui-sref="gsdiaries({id:wedData.authorid})"><span>By {{wedData.authorname |htmlDecode}}</span></a>
                       <div class="wed-date mar0 pull-right">
                         <span>Views:</span>
                         <span>{{wedData.views}}</span>
