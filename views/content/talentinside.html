@@ -8,10 +8,14 @@
     </div>
    </div> -->
     <div class="banner banner-movies ab">
-        <img ng-src="{{bannerData.banner | uploadpath}}" class="img-responsive" style="width:100%;">
-        <div class="banner-title ab text-center">
+        <!-- <img ng-src="{{bannerData.banner | uploadpath}}" class="img-responsive" style="width:100%;"> -->
+        <img src="img/talent/talentinside/banner.jpg" class="img-responsive" style="width:100%;">
+        <!-- <div class="banner-title ab text-center">
             <h4 class="wed-box borcol">{{bannerName}}</h4>
             <div class="border-banner bborders"></div>
+        </div> -->
+        <div class="banner-name ab text-center">
+          <h4>LOREM IPSUM</h4>
         </div>
         <div class="overlay"></div>
     </div>
@@ -19,9 +23,77 @@
 <section class="inside">
     <!-- <section infinite-scroll='addMoreItems();' infinite-scroll-distance="0" infinite-scroll-disabled="shouldscroll"> -->
     <div class="container">
+
         <div class="row mt180">
+          <div class="col-md-12">
+<div class="desc-sec">
+  <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with   including versions of Lorem Ipsum.
+  </p>
+</div>
+          </div>
+
+</div>
+<div class="btn-selection mgt7">
+  <div class="row">
+    <div class="col-md-4 col-md-offset-2">
+      <button type="button" class="btn text-center btn-select" ng-click="tab = 1" ng-class="{'active':tab == 1}">
+        GET IN TOUCH
+        </button>
+    </div>
+    <div class="col-md-4">
+      <button type="button" class="btn text-center btn-select" ng-click="tab = 2" ng-class="{'active':tab == 2}">
+        WORK DONE
+        </button>
+    </div>
+
+    <div class="form get-in" ng-if="tab == 1">
+      <form action="">
+
+      <div class="col-md-8 col-md-offset-2">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+        <input type="text" class="form-control" id="usr" placeholder="Name">
+        </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group">
+          <input type="text" class="form-control" id="usr" placeholder="Last Name">
+        </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+        <input type="email" class="form-control" id="email" placeholder="Email">
+      </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group">
+          <input type="text" class="form-control" id="usr" placeholder="Title">
+        </div>
+          </div>
+        </div>
+<div class="row">
+  <div class="col-xs-12">
+    <div class="form-group">
+  <textarea class="form-control" rows="7" id="message" placeholder="Message"></textarea>
+</div>
+  </div>
+</div>
+<button type="submit" class="btn text-center sub-btn">Submit</button>
+      </div>
+
+      </form>
+
+    </div>
+
+  </div>
+</div>
+
+<div class="row" ng-if="tab == 2">
             <div class="col-md-offset-1 col-md-10">
-                <div class="row pd30" ng-repeat="data in talentInsideData">
+                <div class="row get-in" ng-repeat="data in talentInsideData">
                     <div class="col-sm-6">
                         <div class="wedding-imgbox">
                             <img ng-src="{{data.image | uploadpath}}" class="img-responsive" alt="">
@@ -50,17 +122,66 @@
                 </div>
             </div>
         </div>
-        <div class="btn-all text-center" >
+        <!-- <div class="btn-all text-center" > -->
+        <!-- not der -->
         <!-- <div class="btn-all text-center" ng-if="talentInsideArray.length>3"> -->
-            <button class="btn btn-danger btn-outline" ng-click="seeMoreTalent();" ng-if="seeMore">
+        <!-- <not der end> -->
+            <!-- <button class="btn btn-danger btn-outline" ng-click="seeMoreTalent();" ng-if="seeMore">
           View All
         </button>
             <button class="btn btn-danger btn-outline" ng-click="seeLessTalent();" ng-if="seeLess && !seeMore">
           View Less
         </button>
         </div>
-    </div>
+    </div> -->
 </section>
+
+<section class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="text-center">
+        <div class="wedding-diary">
+          <div class="diary-title mr30">
+            <h4 class="uppercase color-red">RELATED ARTICLES</h4>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="pd-side">
+    <div class="row">
+      <div class="col-md-4 col-sm-4 col-xs-6" ng-repeat="data in talentInsideDetailData.relatedarticles track by $index">
+        <div class="wed-box border-red pb5">
+          <div class="wed-img-list sport-img-list">
+            <img src="img/abt-newy.png" alt="" class="img-responsive">
+            <div class="ribbon-red">
+              <img src="img/ribbon_red.png" alt="">
+              <span class="color-white uppercase">Talent</span>
+            </div>
+          </div>
+          <div class="wed-desc">
+            <div class="wed-date" ng-if="data.date!='0000-00-00'">
+              <span>{{data.date | date:"dd MMMM yyyy"}}</span>
+            </div>
+            <div class="wed-desc-inside h30">
+              <p class="bold text-uppercase">{{data.name}}</p>
+            </div>
+            <div class="read-more">
+              <a href="" class="color-black">Read More</a>
+            </div>
+          </div>
+          <div class="border-blue borders"></div>
+        </div>
+      </div>
+    </div>
+    <div class="btn-all mr30 text-center">
+      <button class="btn btn-danger btn-outline" ui-sref="talentinside({id:talentInsideDetailData.talentdetail.talent})">
+      View All
+    </button>
+    </div>
+  </div>
+</section>
+
 <div class="social">
     <section class="marg-section">
         <div class="social-back ">

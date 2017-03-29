@@ -5443,6 +5443,48 @@ h4.title-movies {
 .wed-desc.wed {
     min-height: 105px;
 }
+.btn-selection{
+  display: block;
+  text-align: center;
+}
+.btn-select{
+  padding: 10px;
+  border: 1px solid $brand-danger;
+  color: $brand-danger;
+  background-color: transparent;
+  width: 100%;
+  &:active,&:focus,&:hover{
+    background: $brand-danger;
+    box-shadow: none;
+    color: #fff;
+
+  }
+
+}
+.btn-selection{
+  .btn.active{
+    background-color: $brand-danger;
+    color: #fff;
+  }
+}
+.pdl0{
+  padding-left: 0;
+}
+.pdr0{
+  padding-right: 0;
+}
+.get-in{
+  margin-top: 7%;
+}
+.mgt7{
+  margin-top: 7%;
+}
+.sub-btn{
+  border: 1px solid $brand-danger;
+  color: $brand-danger;
+  background-color: transparent;
+      padding: 5px 16px 6px;
+}
 /* Start writing sass here */
 
 @import "fancybox-override";
