@@ -141,6 +141,12 @@ var navigationservice = angular.module('navigationservice', [])
     getMatch: function(callback) {
       $http.get(apiUrl + 'getMatch').success(callback);
     },
+    getallworkdone: function(callback) {
+      $http.get(apiUrl + 'getallworkdone').success(callback);
+    },
+    getallworkdoneDetail: function(id, callback) {
+      $http.get(apiUrl + 'getTalentDetailInside?id=' + id).success(callback);
+    },
     getDiaries: function(callback) {
       $http.get(apiUrl + 'getDiary').success(callback);
     },
@@ -175,6 +181,14 @@ var navigationservice = angular.module('navigationservice', [])
     getCareerForm: function(formData, callback) {
       $http({
         url: apiUrl + 'careersSubmit',
+        method: 'POST',
+        withCredentials: true,
+        data: formData
+      }).success(callback);
+    },
+    getintouchmoviesubmit: function(formData, callback) {
+      $http({
+        url: apiUrl + 'getintouchmoviesubmit',
         method: 'POST',
         withCredentials: true,
         data: formData

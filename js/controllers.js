@@ -3829,11 +3829,13 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         })
         $scope.seeMore = true;
         $scope.seeLess = false;
-        var talentInsideArray = [];
+        $scope.talentInsideArray = [];
         $scope.seeLessTalent = function() {
             NavigationService.getTalentInside($stateParams.id, function(data) {
                 $scope.talentInsideData = data.queryresult;
-                talentInsideArray = _.cloneDeep($scope.talentInsideData);
+                  $scope.talentInsideArray = _.cloneDeep(data.queryresult);
+                // talentInsideArray = _.cloneDeep($scope.talentInsideData);
+                console.log(  $scope.talentInsideArray,"  $scope.talentInsideArray");
                 $scope.seeMore = true;
                 $scope.talentInsideData = _.slice($scope.talentInsideData, [0], [3]);
                 if ($scope.getClientdata.length < 3) {
@@ -3849,7 +3851,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             $scope.seeMore = false;
             $scope.seeLess = true;
             // $scope.allMovieName = {}
-            $scope.talentInsideData = talentInsideArray;
+            $scope.talentInsideData = $scope.talentInsideArray ;
             // console.log('dfgyhujkdrftgh', $scope.allMovieName);
         }
     })
@@ -3912,6 +3914,51 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         //   $scope.wallpaper[i] = _.chunk($scope.wallpaper[i], 3);
         // }
 
+        // $scope.seeMore = true;
+        // $scope.seeLess = false;
+        // $scope.talentInsideArray = [];
+        // $scope.seeLessTalent = function() {
+        //     NavigationService.getTalentInside("3", function(data) {
+        //         $scope.talentInsideData = data.queryresult;
+        //           $scope.talentInsideArray = _.cloneDeep(data.queryresult);
+        //         // talentInsideArray = _.cloneDeep($scope.talentInsideData);
+        //         console.log(  $scope.talentInsideArray,"  $scope.talentInsideArray");
+        //         $scope.seeMore = true;
+        //         $scope.talentInsideData = _.slice($scope.talentInsideData, [0], [3]);
+        //         if ($scope.getClientdata.length < 3) {
+        //             $scope.seeMore = false;
+        //         }
+        //         console.log('$scope.talentInsideData', $scope.talentInsideData);
+        //     })
+        // }
+        //
+        //
+        // $scope.seeLessTalent();
+        $scope.formDetails={};
+          $scope.formComplete=false;
+        $scope.submitGetInTouchForm=function(formDetails){
+          console.log("formDetails",formDetails);
+          if (formDetails) {
+            NavigationService.getintouchmoviesubmit(formDetails,function(data){
+              console.log("data",data);
+              if (data.value && data.data == "Message saved") {
+                $scope.formComplete=true;
+                $timeout(function() {
+                      $scope.formComplete=false;
+                        $scope.formDetails={};
+                }, 2000);
+              }
+            })
+
+          }
+        }
+
+        NavigationService.getallworkdone(function(data){
+
+          $scope.workdone=data.queryresult;
+            console.log("getallworkdone",  $scope.workdone);
+        })
+
         NavigationService.getTalentInsideDetail($stateParams.id, function(data) {
             $scope.talentInsideDetailData = data.data;
             console.log('$scope.talentInsideDetailData', $scope.talentInsideDetailData);
@@ -3924,6 +3971,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             }
         })
     })
+  
     .controller('WorldTourCtrl', function($scope, TemplateService, NavigationService, $timeout, $state) {
         //Used to name the .html file
         $scope.template = TemplateService.changecontent("worldtour");

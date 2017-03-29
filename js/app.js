@@ -213,6 +213,7 @@ firstapp.config(function($stateProvider, $urlRouterProvider, $httpProvider, $loc
             templateUrl: "views/template.html",
             controller: 'TalentInsideDetailCtrl'
         })
+      
         .state('worldtour', {
             url: "/worldtours",
             templateUrl: "views/template.html",

@@ -18,6 +18,104 @@
               <!-- {{talentInsideDetailData.talentdetail.content}} -->
             </p>
           </div>
+          <div>
+          <div class="btn-selection mgt7">
+            <div class="row">
+              <div class="col-md-4 col-md-offset-2">
+                <button type="button" class="btn text-center btn-select" ng-click="tab = 1" ng-class="{'active':tab == 1}">
+                  GET IN TOUCH
+                  </button>
+              </div>
+              <div class="col-md-4">
+                <button type="button" class="btn text-center btn-select" ng-click="tab = 2" ng-class="{'active':tab == 2}">
+                  WORK DONE
+                  </button>
+
+
+              </div>
+
+              <div class="form get-in" ng-if="tab == 1"  >
+                <form ng-submit="submitGetInTouchForm(formDetails);" name="getintouchform" ng-if="!formComplete">
+
+                <div class="col-md-8 col-md-offset-2">
+                  <div class="row">
+                    <div class="col-md-6">
+                      <div class="form-group">
+                  <input type="text" class="form-control" id="usr" placeholder="Name" ng-model="formDetails.name" required>
+                  </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="form-group">
+                    <input type="text" class="form-control" id="usr" placeholder="Last Name" ng-model="formDetails.lastname" required>
+                  </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-6">
+                      <div class="form-group">
+                  <input type="email" class="form-control" id="email" placeholder="Email" ng-model="formDetails.email" required>
+                </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="form-group">
+                    <input type="text" class="form-control" id="usr" placeholder="Title" ng-model="formDetails.title" required>
+                  </div>
+                    </div>
+                  </div>
+          <div class="row">
+            <div class="col-xs-12">
+              <div class="form-group">
+            <textarea class="form-control" rows="7" id="message" placeholder="Message" ng-model="formDetails.message" required></textarea>
+          </div>
+            </div>
+          </div>
+          <button type="submit" class="btn text-center sub-btn" >Submit</button>
+                </div>
+
+                </form>
+
+              </div>
+              <h2 ng-if="formComplete" class="text-center">
+                Thank You..
+              </h2>
+
+            </div>
+          </div>
+
+          <div class="row" ng-if="tab == 2">
+                      <div class="col-md-offset-1 col-md-10">
+                          <div class="row get-in inside" ng-repeat="data in workdone">
+                              <div class="col-sm-6">
+                                  <div class="wedding-imgbox">
+                                      <img ng-src="{{data.image | uploadpath}}" class="img-responsive" alt="">
+                                  </div>
+                              </div>
+                              <div class="col-sm-6">
+                                  <div class="wedding-detail">
+
+                                      <div class="w-title">
+
+                                          <h4 class="uppercase color-red bold">{{data.title}}</h4>
+                                          <div class="wed-date">
+                                              <span ng-if="data.date!='0000-00-00'">{{data.date | date:"dd MMMM yyyy"}}</span>
+                                              <span ng-if="data.date && data.city">|</span>
+                                              <span>{{data.city}}</span>
+                                          </div>
+                                      </div>
+                                      <div class="w-detail mt15 mb15" ng-if="data.description != ''" ng-bind-html="data.description">
+                                          <!-- <p>
+                                              {{data.content}}
+                                          </p> -->
+                                      </div>
+                                      <div class="w-button">
+                                          <button class="btn btn-danger"  style="margin-top:5px;">Know More</button>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                  </div>
           <!-- <div class="content mt15">
             <p class="text-justify">
               Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with   including versions of Lorem Ipsum.
@@ -28,6 +126,62 @@
     </div>
   </div>
 </section>
+<!-- <section class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="text-center">
+        <div class="wedding-diary">
+          <div class="diary-title mr30">
+            <h4 class="uppercase color-red">RELATED ARTICLES</h4>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="pd-side">
+    <div class="row">
+      <div class="col-md-4 col-sm-4 col-xs-6" ng-repeat="data in talentInsideDetailData.relatedarticles track by $index">
+        <div class="wed-box border-red pb5">
+          <div class="wed-img-list sport-img-list">
+            <img src="img/abt-newy.png" alt="" class="img-responsive">
+            <div class="ribbon-red">
+              <img src="img/ribbon_red.png" alt="">
+              <span class="color-white uppercase">Talent</span>
+            </div>
+          </div>
+          <div class="wed-desc">
+            <div class="wed-date" ng-if="data.date!='0000-00-00'">
+              <span>{{data.date | date:"dd MMMM yyyy"}}</span>
+            </div>
+            <div class="wed-desc-inside h30">
+              <p class="bold text-uppercase">{{data.name}}</p>
+            </div>
+            <div class="read-more">
+              <a href="" class="color-black">Read More</a>
+            </div>
+          </div>
+          <div class="border-blue borders"></div>
+        </div>
+      </div>
+    </div>
+    <div class="btn-all mr30 text-center">
+      <button class="btn btn-danger btn-outline" ui-sref="talentinside({id:talentInsideDetailData.talentdetail.talent})">
+      View All
+    </button>
+    </div>
+  </div>
+</section> -->
+
+
+
+
+
+
+
+
+
+
+
 <section class="mehendi">
   <div class="mehendi-gallery nav-tab-middle ">
     <div class="container">
@@ -79,8 +233,9 @@
     </div>
   </div>
 </section>
-<div class="bg-mehendi" ng-if="talentInsideDetailData.featuredvideos.length>0">
-  <section class="mehendi">
+<div class="bg-mehendi" >
+<!-- <div class="bg-mehendi" ng-if="talentInsideDetailData.featuredvideos.length>0"> -->
+  <section class="mehendi" ng-if="talentInsideDetailData.featuredvideos.length>0">
     <div class="mehendi-movie">
       <div class="container">
         <div class="row">
@@ -133,7 +288,7 @@
       </div>
     </div>
   </section>
-  <section class="container">
+  <section class="container" ng-if="talentInsideDetailData.relatedarticles.length>0">
     <div class="row">
       <div class="col-md-12">
         <div class="text-center">
@@ -150,7 +305,7 @@
         <div class="col-md-4 col-sm-4 col-xs-6" ng-repeat="data in talentInsideDetailData.relatedarticles track by $index">
           <div class="wed-box border-red pb5">
             <div class="wed-img-list sport-img-list">
-              <img ng-src="{{data.image | uploadpath}}" alt="" class="img-responsive">
+              <img ng-src="{{data.image | uploadpath}}" alt="" class="img-responsive" ui-sref="talentinsidedetail({id:data.id})">
               <div class="ribbon-red">
                 <img src="img/ribbon_red.png" alt="">
                 <span class="color-white uppercase">Talent</span>
@@ -164,7 +319,7 @@
                 <p class="bold text-uppercase">{{data.name}}</p>
               </div>
               <div class="read-more">
-                <a href="" class="color-black">Read More</a>
+                <a class="color-black"  ui-sref="talentinsidedetail({id:data.id})">Read More</a>
               </div>
             </div>
             <div class="border-blue borders"></div>
