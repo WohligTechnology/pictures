@@ -3564,7 +3564,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             console.log(data);
             if (data.value != false) {
                 $scope.eventData = data.data;
-                console.log($scope.eventData);
+                console.log("$scope.eventData",$scope.eventData);
             }
         });
 

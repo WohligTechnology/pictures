@@ -73,6 +73,7 @@
                   <h4>
                       <i class="glyph-icon fi flaticon-book"></i>STORIES</h4>
                </div>
+
                <div class="row">
                   <div ng-if="article.length===0" class="text-center">No Stories Found.</div>
                   <div class="col-xs-6 col-sm-4" ng-repeat="data in article">
@@ -81,7 +82,7 @@
                            <img ng-src="{{data.image | uploadpath}}" alt="" class="img-responsive image-size">
                            <div class="ribbon-red">
                               <img src="img/ribbon_red.png" alt="">
-                              <span class="color-white uppercase">movies</span>
+                              <span class="color-white uppercase">{{data.categoryname}}</span>
                            </div>
                         </div>
                         <div class="wed-desc wed">
