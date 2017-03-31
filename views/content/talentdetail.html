@@ -75,16 +75,17 @@
                 </form>
 
               </div>
-              <h2 ng-if="formComplete" class="text-center">
+              <!-- <h2 ng-if="formComplete" class="text-center">
                 Thank You..
-              </h2>
+              </h2> -->
 
             </div>
           </div>
 
           <div class="row" ng-if="tab == 2">
                       <div class="col-md-offset-1 col-md-10">
-                          <div class="row get-in inside" ng-repeat="data in workdone">
+                        <div ng-if="!workdoneByTalentype.length>0" class="no-work">No Work Done found</div>
+                          <div class="row get-in inside" ng-repeat="data in workdoneByTalentype" ng-if="workdoneByTalentype.length>0">
                               <div class="col-sm-6">
                                   <div class="wedding-imgbox">
                                       <img ng-src="{{data.image | uploadpath}}" class="img-responsive" alt="">
@@ -97,7 +98,7 @@
 
                                           <h4 class="uppercase color-red bold">{{data.title}}</h4>
                                           <div class="wed-date">
-                                              <span ng-if="data.date!='0000-00-00'">{{data.date | date:"dd MMMM yyyy"}}</span>
+                                              <span ng-if="data.date!='0000-00-00'">{{data.date | englishNumeralDate}}</span>
                                               <span ng-if="data.date && data.city">|</span>
                                               <span>{{data.city}}</span>
                                           </div>
@@ -108,10 +109,23 @@
                                           </p> -->
                                       </div>
                                       <div class="w-button">
+                                        <a href="{{data.url}}" target="_blank">
                                           <button class="btn btn-danger"  style="margin-top:5px;">Know More</button>
+                                          </a>
                                       </div>
                                   </div>
                               </div>
+                          </div>
+
+                          <div class="btn-all mr30 text-center" ng-if="!workshowMore && getallworkdones.length>3">
+                            <button class="btn btn-danger btn-outline" ng-click="viewAllWorkDone()">
+                            View All
+                          </button>
+                          </div>
+                          <div class="btn-all mr30 text-center" ng-if="workshowMore">
+                            <button class="btn btn-danger btn-outline" ng-click="viewLessWorkDone()">
+                            View Less
+                          </button>
                           </div>
                       </div>
                   </div>

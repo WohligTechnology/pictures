@@ -3855,7 +3855,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             // console.log('dfgyhujkdrftgh', $scope.allMovieName);
         }
     })
-    .controller('TalentInsideDetailCtrl', function($scope, TemplateService, NavigationService, $timeout, $stateParams) {
+    .controller('TalentInsideDetailCtrl', function($scope, TemplateService, NavigationService, $timeout, $stateParams,$uibModal) {
         //Used to name the .html file
         $scope.template = TemplateService.changecontent("talentdetail");
         $scope.menutitle = NavigationService.makeactive("Talents");
@@ -3908,32 +3908,15 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             date: "12 January 2016",
             desc: "Lorem Ipsum is simply dummy text of the printing industry"
         }];
-        //
-        // $scope.wallpaper = _.chunk($scope.wallpaper, 6);
-        // for (var i = 0; i < $scope.wallpaper.length; i++) {
-        //   $scope.wallpaper[i] = _.chunk($scope.wallpaper[i], 3);
-        // }
+        $scope.openModal = function() {
+            var modalInstance = $uibModal.open({
+                animation: $scope.animationsEnabled,
+                templateUrl: 'views/content/modal/getInTouch.html',
 
-        // $scope.seeMore = true;
-        // $scope.seeLess = false;
-        // $scope.talentInsideArray = [];
-        // $scope.seeLessTalent = function() {
-        //     NavigationService.getTalentInside("3", function(data) {
-        //         $scope.talentInsideData = data.queryresult;
-        //           $scope.talentInsideArray = _.cloneDeep(data.queryresult);
-        //         // talentInsideArray = _.cloneDeep($scope.talentInsideData);
-        //         console.log(  $scope.talentInsideArray,"  $scope.talentInsideArray");
-        //         $scope.seeMore = true;
-        //         $scope.talentInsideData = _.slice($scope.talentInsideData, [0], [3]);
-        //         if ($scope.getClientdata.length < 3) {
-        //             $scope.seeMore = false;
-        //         }
-        //         console.log('$scope.talentInsideData', $scope.talentInsideData);
-        //     })
-        // }
-        //
-        //
-        // $scope.seeLessTalent();
+                size: 'lg',
+                windowClass: 'get-modal',
+            });
+        };
         $scope.formDetails={};
           $scope.formComplete=false;
         $scope.submitGetInTouchForm=function(formDetails){
@@ -3943,6 +3926,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
               console.log("data",data);
               if (data.value && data.data == "Message saved") {
                 $scope.formComplete=true;
+                $scope.openModal();
                 $timeout(function() {
                       $scope.formComplete=false;
                         $scope.formDetails={};
@@ -3970,8 +3954,28 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
                 // $scope.weddetail.imagegallery = _.chunk($scope.weddetail.imagegallery, 3);
             }
         })
+        $scope.workdoneByTalentype=[];
+        $scope.allWorkdoneByTalentype=[];
+          $scope.getallworkdones=[];
+          $scope.viewLessWorkDone=function(){
+            $scope.workshowMore=false;
+            NavigationService.getallworkdones($stateParams.id,function(data){
+              $scope.getallworkdones=data.queryresult;
+              $scope.workdoneByTalentype =_.slice(data.queryresult,0, 3);
+                console.log("workdoneByTalentype",  $scope.workdoneByTalentype);
+
+            });
+          }
+    $scope.viewLessWorkDone();
+        $scope.viewAllWorkDone=function(){
+            $scope.workdoneByTalentype=[];
+            $scope.workshowMore=true;
+          $scope.workdoneByTalentype=_.cloneDeep($scope.getallworkdones);
+        }
+
+
     })
-  
+
     .controller('WorldTourCtrl', function($scope, TemplateService, NavigationService, $timeout, $state) {
         //Used to name the .html file
         $scope.template = TemplateService.changecontent("worldtour");

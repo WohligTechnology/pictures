@@ -232,6 +232,10 @@ var navigationservice = angular.module('navigationservice', [])
       $http.get(apiUrl + 'getAuthor?id=' + id).success(callback);
 
     },
+    getallworkdones: function(id, callback) {
+      $http.get(apiUrl + 'getallworkdone?talenttype=' + id).success(callback);
+    },
+  
 
   };
 });

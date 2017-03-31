@@ -213,7 +213,7 @@ firstapp.config(function($stateProvider, $urlRouterProvider, $httpProvider, $loc
             templateUrl: "views/template.html",
             controller: 'TalentInsideDetailCtrl'
         })
-      
+
         .state('worldtour', {
             url: "/worldtours",
             templateUrl: "views/template.html",
@@ -374,7 +374,14 @@ firstapp.filter('htmlDecode', function() {
     };
 });
 
-
+firstapp.filter('englishNumeralDate', function() {
+    return function(value) {
+        if (value) {
+            console.log(angular.isDate(value));
+            return moment(new Date(value)).format("MMMM Do , YYYY");
+        }
+    };
+});
 firstapp.directive('uploadImage', function($http) {
     return {
         templateUrl: 'views/directive/uploadFile.html',
