@@ -1,190 +1,132 @@
 <section>
-  <!-- <div class="banner-movies ab">
+   <!-- <div class="banner-movies ab">
     <img ng-src="{{talentInsideDetailData.talentdetail.image | uploadpath}}" alt="" class="img-responsive">
   </div> -->
-  <div class="banner-movies ab">
-    <img ng-src="{{talentInsideDetailData.talentdetail.banner | uploadpath}}" alt="" class="img-responsive">
-    <div class="banner-name ab text-center">
-      <h4>{{talentInsideDetailData.talentdetail.name}}</h4>
-    </div>
-    <div class="overlay"></div>
-  </div>
-  <div class="banner banner-asfc text-center mt180">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-8 col-md-offset-2">
-          <div class="content mt15 mt30">
-            <p class="text-justify" ng-bind-html="talentInsideDetailData.talentdetail.content">
-              <!-- {{talentInsideDetailData.talentdetail.content}} -->
-            </p>
-          </div>
-          <div>
-          <div class="btn-selection mgt7">
-            <div class="row">
-              <div class="col-md-4 col-md-offset-2">
-                <button type="button" class="btn text-center btn-select" ng-click="tab = 1" ng-class="{'active':tab == 1}">
-                  GET IN TOUCH
-                  </button>
-              </div>
-              <div class="col-md-4">
-                <button type="button" class="btn text-center btn-select" ng-click="tab = 2" ng-class="{'active':tab == 2}">
-                  WORK DONE
-                  </button>
+   <div class="banner-movies ab">
+      <img ng-src="{{talentInsideDetailData.talentdetail.banner | uploadpath}}" alt="" class="img-responsive">
+      <div class="banner-name ab text-center">
+         <h4>{{talentInsideDetailData.talentdetail.name}}</h4>
+      </div>
+      <div class="overlay"></div>
+   </div>
+   <div class="banner banner-asfc text-center mt180">
+      <div class="container">
+         <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+               <div class="content mt15 mt30">
+                  <p class="text-justify" ng-bind-html="talentInsideDetailData.talentdetail.content">
+                  </p>
+               </div>
 
-
-              </div>
-
-              <div class="form get-in" ng-if="tab == 1"  >
-                <form ng-submit="submitGetInTouchForm(formDetails);" name="getintouchform" ng-if="!formComplete">
-
-                <div class="col-md-8 col-md-offset-2">
-                  <div class="row">
-                    <div class="col-md-6">
-                      <div class="form-group">
-                  <input type="text" class="form-control" id="usr" placeholder="Name" ng-model="formDetails.name" required>
-                  </div>
-                    </div>
-                    <div class="col-md-6">
-                      <div class="form-group">
-                    <input type="text" class="form-control" id="usr" placeholder="Last Name" ng-model="formDetails.lastname" required>
-                  </div>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="col-md-6">
-                      <div class="form-group">
-                  <input type="email" class="form-control" id="email" placeholder="Email" ng-model="formDetails.email" required>
-                </div>
-                    </div>
-                    <div class="col-md-6">
-                      <div class="form-group">
-                    <input type="text" class="form-control" id="usr" placeholder="Title" ng-model="formDetails.title" required>
-                  </div>
-                    </div>
-                  </div>
-          <div class="row">
-            <div class="col-xs-12">
-              <div class="form-group">
-            <textarea class="form-control" rows="7" id="message" placeholder="Message" ng-model="formDetails.message" required></textarea>
-          </div>
-            </div>
-          </div>
-          <button type="submit" class="btn text-center sub-btn" >Submit</button>
-                </div>
-
-                </form>
-
-              </div>
-              <!-- <h2 ng-if="formComplete" class="text-center">
-                Thank You..
-              </h2> -->
 
             </div>
-          </div>
+         </div>
+         <div class="row">
+           <div class="col-md-10 col-md-offset-1">
+             <div ng-if="getallworkdones.length>0">
+                <div class="btn-selection mgt7">
+                   <div class="row">
+                      <div class="col-md-4 col-md-offset-2">
+                         <button type="button" class="btn text-center btn-select" ng-click="tab = 1" ng-class="{'active':tab == 1}" ng-init="tab =1">
+                            GET IN TOUCH
+                         </button>
+                      </div>
+                      <div class="col-md-4">
+                         <button type="button" class="btn text-center btn-select" ng-click="tab = 2" ng-class="{'active':tab == 2}">
+                            WORK DONE
+                         </button>
 
-          <div class="row" ng-if="tab == 2">
-                      <div class="col-md-offset-1 col-md-10">
-                        <div ng-if="!workdoneByTalentype.length>0" class="no-work">No Work Done found</div>
-                          <div class="row get-in inside" ng-repeat="data in workdoneByTalentype" ng-if="workdoneByTalentype.length>0">
-                              <div class="col-sm-6">
-                                  <div class="wedding-imgbox">
-                                      <img ng-src="{{data.image | uploadpath}}" class="img-responsive" alt="">
+
+                      </div>
+                    </div>
+                      <div class="form get-in" ng-if="tab == 1">
+                         <form ng-submit="submitGetInTouchForm(formDetails);" name="getintouchform" ng-if="!formComplete">
+
+                            <div class="col-md-8 col-md-offset-2">
+                               <div class="row">
+                                  <div class="col-md-6">
+                                     <div class="form-group">
+                                        <input type="text" class="form-control" id="usr" placeholder="Name" ng-model="formDetails.name" required>
+                                     </div>
                                   </div>
-                              </div>
-                              <div class="col-sm-6">
+                                  <div class="col-md-6">
+                                     <div class="form-group">
+                                        <input type="text" class="form-control" id="usr" placeholder="Last Name" ng-model="formDetails.lastname" required>
+                                     </div>
+                                  </div>
+                               </div>
+                               <div class="row">
+                                  <div class="col-md-6">
+                                     <div class="form-group">
+                                        <input type="email" class="form-control" id="email" placeholder="Email" ng-model="formDetails.email" required>
+                                     </div>
+                                  </div>
+                                  <div class="col-md-6">
+                                     <div class="form-group">
+                                        <input type="text" class="form-control" id="usr" placeholder="Title" ng-model="formDetails.title" required>
+                                     </div>
+                                  </div>
+                               </div>
+                               <div class="row">
+                                  <div class="col-xs-12">
+                                     <div class="form-group">
+                                        <textarea class="form-control" rows="7" id="message" placeholder="Message" ng-model="formDetails.message" required></textarea>
+                                     </div>
+                                  </div>
+                               </div>
+                               <button type="submit" class="btn text-center sub-btn">Submit</button>
+                            </div>
+
+                         </form>
+
+                      </div>
+                      <div class="row" ng-if="tab == 2">
+                         <div class="col-md-12">
+                            <div ng-if="!workdoneByTalentype.length>0" class="no-work">No Work Done found</div>
+                            <div class="row get-in pd30 inside" ng-repeat="data in workdoneByTalentype" ng-if="workdoneByTalentype.length>0">
+                               <div class="col-sm-6">
+                                  <div class="wedding-imgbox">
+                                     <img ng-src="{{data.image | uploadpath}}" class="img-responsive" alt="">
+                                  </div>
+                               </div>
+                               <div class="col-sm-6">
                                   <div class="wedding-detail">
 
-                                      <div class="w-title">
+                                     <div class="w-title">
 
-                                          <h4 class="uppercase color-red bold">{{data.title}}</h4>
-                                          <div class="wed-date">
-                                              <span ng-if="data.date!='0000-00-00'">{{data.date | englishNumeralDate}}</span>
-                                              <span ng-if="data.date && data.city">|</span>
-                                              <span>{{data.city}}</span>
-                                          </div>
-                                      </div>
-                                      <div class="w-detail mt15 mb15" ng-if="data.description != ''" ng-bind-html="data.description">
-                                          <!-- <p>
-                                              {{data.content}}
-                                          </p> -->
-                                      </div>
-                                      <div class="w-button">
+                                        <h4 class="uppercase color-red bold">{{data.title}}</h4>
+                                        <div class="wed-date">
+                                           <span ng-if="data.date!='0000-00-00'">{{data.date | englishNumeralDate}}</span>
+                                           <span ng-if="data.date && data.city">|</span>
+                                           <span>{{data.city}}</span>
+                                        </div>
+                                     </div>
+                                     <div class="w-detail mt15 mb15" ng-if="data.description != ''" ng-bind-html="data.description">
+
+                                     </div>
+                                     <div class="w-button">
                                         <a href="{{data.url}}" target="_blank">
-                                          <button class="btn btn-danger"  style="margin-top:5px;">Know More</button>
-                                          </a>
-                                      </div>
+                                           <button class="btn btn-danger" style="margin-top:5px;">Know More</button>
+                                        </a>
+                                     </div>
                                   </div>
-                              </div>
-                          </div>
+                               </div>
+                            </div>
 
-                          <div class="btn-all mr30 text-center" ng-if="!workshowMore && getallworkdones.length>3">
-                            <button class="btn btn-danger btn-outline" ng-click="viewAllWorkDone()">
-                            View All
-                          </button>
-                          </div>
-                          <div class="btn-all mr30 text-center" ng-if="workshowMore">
-                            <button class="btn btn-danger btn-outline" ng-click="viewLessWorkDone()">
-                            View Less
-                          </button>
-                          </div>
+                            <div class="btn-all mr30 text-center" ng-if="!workshowMore && getallworkdones.length>3">
+                               <button class="btn btn-danger btn-outline" ng-click="viewAllWorkDone()">
+                                  View All
+                               </button>
+                            </div>
+                            <div class="btn-all mr30 text-center" ng-if="workshowMore">
+                               <button class="btn btn-danger btn-outline" ng-click="viewLessWorkDone()">
+                                  View Less
+                               </button>
+                            </div>
+                         </div>
                       </div>
                   </div>
-                  </div>
-          <!-- <div class="content mt15">
-            <p class="text-justify">
-              Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with   including versions of Lorem Ipsum.
-            </p>
-          </div> -->
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-<!-- <section class="container">
-  <div class="row">
-    <div class="col-md-12">
-      <div class="text-center">
-        <div class="wedding-diary">
-          <div class="diary-title mr30">
-            <h4 class="uppercase color-red">RELATED ARTICLES</h4>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="pd-side">
-    <div class="row">
-      <div class="col-md-4 col-sm-4 col-xs-6" ng-repeat="data in talentInsideDetailData.relatedarticles track by $index">
-        <div class="wed-box border-red pb5">
-          <div class="wed-img-list sport-img-list">
-            <img src="img/abt-newy.png" alt="" class="img-responsive">
-            <div class="ribbon-red">
-              <img src="img/ribbon_red.png" alt="">
-              <span class="color-white uppercase">Talent</span>
-            </div>
-          </div>
-          <div class="wed-desc">
-            <div class="wed-date" ng-if="data.date!='0000-00-00'">
-              <span>{{data.date | date:"dd MMMM yyyy"}}</span>
-            </div>
-            <div class="wed-desc-inside h30">
-              <p class="bold text-uppercase">{{data.name}}</p>
-            </div>
-            <div class="read-more">
-              <a href="" class="color-black">Read More</a>
-            </div>
-          </div>
-          <div class="border-blue borders"></div>
-        </div>
-      </div>
-    </div>
-    <div class="btn-all mr30 text-center">
-      <button class="btn btn-danger btn-outline" ui-sref="talentinside({id:talentInsideDetailData.talentdetail.talent})">
-      View All
-    </button>
-    </div>
-  </div>
-</section> -->
+                </div>
 
 
 
@@ -197,16 +139,16 @@
 
 
 <section class="mehendi">
-  <div class="mehendi-gallery nav-tab-middle ">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-offset-1 col-md-10" ng-if="talentInsideDetailData.imagegallery.length>0">
-          <div class="title">
-            <h3 class="letter-spacing color-red uppercase">
+   <div class="mehendi-gallery nav-tab-middle ">
+      <div class="container">
+         <div class="row">
+            <div class="col-md-offset-1 col-md-10" ng-if="talentInsideDetailData.imagegallery.length>0">
+               <div class="title">
+                  <h3 class="letter-spacing color-red uppercase">
               Image Gallery
             </h3>
-          </div>
-          <!-- <div class="title">
+               </div>
+               <!-- <div class="title">
             <h4 class="display-inline uppercase {{styleActives}}" ng-click="doActives(1);">
             Mehendi
           </h4>
@@ -214,22 +156,22 @@
             Sangeet
           </h4>
           </div> -->
-          <div class="mb15">
-            <div class="slider-client">
-              <flex-slider flex-slide="slide in talentInsideDetailData.imagegallery track by $index" animation="slide" animation-loop="false"  slideshow="false" item-margin="20" prev-text="" next-text="">
-                <li class="">
-                  <div class="row" ng-repeat="row in slide track by $index">
-                    <div class="col-xs-4" ng-repeat="wall in row track by $index">
-                                          <a fancybox-box href="{{wall.image | uploadpath}}" rel="talentimage" rel="fancybox-button">
-                      <div class="mb15">
-                        <img ng-src="{{wall.image | uploadpath}}" alt="" class="img-responsive">
-                      </div>
-                      </a>
-                    </div>
-                  </div>
-                </li>
-              </flex-slider>
-              <!-- <flex-slider flex-slide="slide in wall track by $index" ng-if="styleNoActives == 'actives'" animation="slide" animation-loop="false" as-nav-for="#slider" slideshow="false" item-margin="20" prev-text="" next-text="">
+               <div class="mb15">
+                  <div class="slider-client">
+                     <flex-slider flex-slide="slide in talentInsideDetailData.imagegallery track by $index" animation="slide" animation-loop="false" slideshow="false" item-margin="20" prev-text="" next-text="">
+                        <li class="">
+                           <div class="row" ng-repeat="row in slide track by $index">
+                              <div class="col-xs-4" ng-repeat="wall in row track by $index">
+                                 <a fancybox-box href="{{wall.image | uploadpath}}" rel="talentimage" rel="fancybox-button">
+                                    <div class="mb15">
+                                       <img ng-src="{{wall.image | uploadpath}}" alt="" class="img-responsive">
+                                    </div>
+                                 </a>
+                              </div>
+                           </div>
+                        </li>
+                     </flex-slider>
+                     <!-- <flex-slider flex-slide="slide in wall track by $index" ng-if="styleNoActives == 'actives'" animation="slide" animation-loop="false" as-nav-for="#slider" slideshow="false" item-margin="20" prev-text="" next-text="">
                 <li class="">
                   <div class="row" ng-repeat="row in slide">
                     <div class="col-xs-4" ng-repeat="wallpaper in row">
@@ -240,111 +182,111 @@
                   </div>
                 </li>
               </flex-slider> -->
+                  </div>
+               </div>
             </div>
-          </div>
-        </div>
+         </div>
       </div>
-    </div>
-  </div>
+   </div>
 </section>
-<div class="bg-mehendi" >
-<!-- <div class="bg-mehendi" ng-if="talentInsideDetailData.featuredvideos.length>0"> -->
-  <section class="mehendi" ng-if="talentInsideDetailData.featuredvideos.length>0">
-    <div class="mehendi-movie">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-offset-1 col-md-10">
-            <div class="title">
-              <h3 class="letter-spacing color-white uppercase">
+<div class="bg-mehendi">
+   <!-- <div class="bg-mehendi" ng-if="talentInsideDetailData.featuredvideos.length>0"> -->
+   <section class="mehendi" ng-if="talentInsideDetailData.featuredvideos.length>0">
+      <div class="mehendi-movie">
+         <div class="container">
+            <div class="row">
+               <div class="col-md-offset-1 col-md-10">
+                  <div class="title">
+                     <h3 class="letter-spacing color-white uppercase">
                 FEATURED VIDEOS
               </h3>
-            </div>
-
-            <div class="slider-client">
-              <flex-slider slide="video in talentInsideDetailData.featuredvideos track by $index" slider-id="slider" prev-text="" next-text="" sync="#carousel" slideshow="false" animation="slide">
-                <li>
-                  <div class="video-main">
-                    <!-- <img ng-src="{{image.img}}" alt="" class="img-responsive"> -->
-                                        <a fancybox-box href="http://www.youtube.com/embed/{{video.url | youtubethumb:true}}?autoplay=1&modestbranding=0&showinfo=0&rel=0&loop=1" rel="movies" data-fancybox-type="iframe" rel="fancybox-button">
-                    <img ng-src="{{video.url | youtubethumb:false}}" alt="" class="img-responsive">
-       <i class="fa fa-play"></i>
-                    </a>
                   </div>
-                </li>
-              </flex-slider>
 
+                  <div class="slider-client">
+                     <flex-slider slide="video in talentInsideDetailData.featuredvideos track by $index" slider-id="slider" prev-text="" next-text="" sync="#carousel" slideshow="false" animation="slide">
+                        <li>
+                           <div class="video-main">
+                              <!-- <img ng-src="{{image.img}}" alt="" class="img-responsive"> -->
+                              <a fancybox-box href="http://www.youtube.com/embed/{{video.url | youtubethumb:true}}?autoplay=1&modestbranding=0&showinfo=0&rel=0&loop=1" rel="movies" data-fancybox-type="iframe" rel="fancybox-button">
+                                 <img ng-src="{{video.url | youtubethumb:false}}" alt="" class="img-responsive">
+                                 <i class="fa fa-play"></i>
+                              </a>
+                           </div>
+                        </li>
+                     </flex-slider>
+
+                  </div>
+               </div>
             </div>
-          </div>
-        </div>
+         </div>
       </div>
-    </div>
-    <div class="container hidden-xs">
-      <div class="row">
-        <div class="col-md-offset-1 col-md-10">
-          <div class="image-navigation">
-            <flex-slider slide="image in talentInsideDetailData.featuredvideos track by $index" animation="slide" animation-loop="false" item-width="265" item-margin="63" as-nav-for="#slider" slideshow="false" control-nav="false" prev-text="" next-text="" slider-id="carousel"
-              animation-loop="false">
-              <li>
-                <div class="row">
-                  <img src="{{image.url | youtubethumb:false}}" alt="">
-                </div>
-              </li>
-            </flex-slider>
-            <!-- <flex-slider slide="image in vid track by $index" ng-if="styleNoActive == 'vactive'" animation="slide" animation-loop="false" item-width="280" item-margin="40" as-nav-for="#slider" slideshow="false" control-nav="false" prev-text="" next-text="" slider-id="carousel" animation-loop="false">
+      <div class="container hidden-xs">
+         <div class="row">
+            <div class="col-md-offset-1 col-md-10">
+               <div class="image-navigation">
+                  <flex-slider slide="image in talentInsideDetailData.featuredvideos track by $index" animation="slide" animation-loop="false" item-width="265" item-margin="63" as-nav-for="#slider" slideshow="false" control-nav="false" prev-text="" next-text="" slider-id="carousel"
+                    animation-loop="false">
+                     <li>
+                        <div class="row">
+                           <img src="{{image.url | youtubethumb:false}}" alt="">
+                        </div>
+                     </li>
+                  </flex-slider>
+                  <!-- <flex-slider slide="image in vid track by $index" ng-if="styleNoActive == 'vactive'" animation="slide" animation-loop="false" item-width="280" item-margin="40" as-nav-for="#slider" slideshow="false" control-nav="false" prev-text="" next-text="" slider-id="carousel" animation-loop="false">
             <li>
               <div class="row">
                 <img src="{{image.img}}" alt="">
               </div>
             </li>
           </flex-slider> -->
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <section class="container" ng-if="talentInsideDetailData.relatedarticles.length>0">
-    <div class="row">
-      <div class="col-md-12">
-        <div class="text-center">
-          <div class="wedding-diary">
-            <div class="diary-title mr30">
-              <h4 class="uppercase color-red">RELATED ARTICLES</h4>
+               </div>
             </div>
-          </div>
-        </div>
+         </div>
       </div>
-    </div>
-    <div class="pd-side">
+   </section>
+   <section class="container" ng-if="talentInsideDetailData.relatedarticles.length>0">
       <div class="row">
-        <div class="col-md-4 col-sm-4 col-xs-6" ng-repeat="data in talentInsideDetailData.relatedarticles track by $index">
-          <div class="wed-box border-red pb5">
-            <div class="wed-img-list sport-img-list">
-              <img ng-src="{{data.image | uploadpath}}" alt="" class="img-responsive" ui-sref="talentinsidedetail({id:data.id})">
-              <div class="ribbon-red">
-                <img src="img/ribbon_red.png" alt="">
-                <span class="color-white uppercase">Talent</span>
-              </div>
+         <div class="col-md-12">
+            <div class="text-center">
+               <div class="wedding-diary">
+                  <div class="diary-title mr30">
+                     <h4 class="uppercase color-red">RELATED ARTICLES</h4>
+                  </div>
+               </div>
             </div>
-            <div class="wed-desc">
-              <div class="wed-date" ng-if="data.date!='0000-00-00'">
-                <span>{{data.date | date:"dd MMMM yyyy"}}</span>
-              </div>
-              <div class="wed-desc-inside h30">
-                <p class="bold text-uppercase">{{data.name}}</p>
-              </div>
-              <div class="read-more">
-                <a class="color-black"  ui-sref="talentinsidedetail({id:data.id})">Read More</a>
-              </div>
+         </div>
+      </div>
+      <div class="pd-side">
+         <div class="row">
+            <div class="col-md-4 col-sm-4 col-xs-6" ng-repeat="data in talentInsideDetailData.relatedarticles track by $index">
+               <div class="wed-box border-red pb5">
+                  <div class="wed-img-list sport-img-list">
+                     <img ng-src="{{data.image | uploadpath}}" alt="" class="img-responsive" ui-sref="talentinsidedetail({id:data.id})">
+                     <div class="ribbon-red">
+                        <img src="img/ribbon_red.png" alt="">
+                        <span class="color-white uppercase">Talent</span>
+                     </div>
+                  </div>
+                  <div class="wed-desc">
+                     <div class="wed-date" ng-if="data.date!='0000-00-00'">
+                        <span>{{data.date | date:"dd MMMM yyyy"}}</span>
+                     </div>
+                     <div class="wed-desc-inside h30">
+                        <p class="bold text-uppercase">{{data.name}}</p>
+                     </div>
+                     <div class="read-more">
+                        <a class="color-black" ui-sref="talentinsidedetail({id:data.id})">Read More</a>
+                     </div>
+                  </div>
+                  <div class="border-blue borders"></div>
+               </div>
             </div>
-            <div class="border-blue borders"></div>
-          </div>
-        </div>
+         </div>
+         <div class="btn-all mr30 text-center">
+            <button class="btn btn-danger btn-outline" ui-sref="talentinside({id:talentInsideDetailData.talentdetail.talent})">
+               View All
+            </button>
+         </div>
       </div>
-      <div class="btn-all mr30 text-center">
-        <button class="btn btn-danger btn-outline" ui-sref="talentinside({id:talentInsideDetailData.talentdetail.talent})">
-        View All
-      </button>
-      </div>
-    </div>
-  </section>
+   </section>
 </div>
