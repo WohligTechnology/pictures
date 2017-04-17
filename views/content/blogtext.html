@@ -57,8 +57,9 @@
               <form name="comment">
                 <div class="col-md-2">
 
-                  <div class="profilephoto">
-                    <img style="height:75px" ng-src="{{blogCommentData.image}}" alt="No Profile Photo Found." class="img-responsive">
+                  <div class="profilephoto" ng-if="blogCommentData.image">
+
+                    <img style="height:75px" ng-src="{{blogCommentData.image |uploadpath}}" alt="No Profile Photo Found." class="img-responsive">
                   </div>
                 </div>
                 <div class="col-md-10">
@@ -153,9 +154,12 @@
               </div>
             </div>
             <div class="blog-desc">
-              <div class="wed-desc-inside">
-                <p class="bold text-uppercase">{{data.name}}</p>
+              <div class="wed-desc-inside content-bold" ng-bind-html="data.content |shorten:30">
+
               </div>
+              <!-- <div class="wed-desc-inside">
+                <p class="bold text-uppercase">{{data.name}}</p>
+              </div> -->
               <div class="wed-date" ng-if="data.date!='0000-00-00'">
                 <span>{{data.date | date:"dd MMMM yyyy"}}</span>
               </div>

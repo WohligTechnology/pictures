@@ -2816,6 +2816,9 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             }
             // ---------------------end of releted article read more-----------
 
+
+            
+
         NavigationService.getDiaries(function(data) {
             $scope.diaryData = data.data;
             console.log('$scope.diaryData', $scope.diaryData);

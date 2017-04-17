@@ -182,9 +182,12 @@
                             </div>
                         </div>
                         <div class="blog-desc">
-                            <div class="wed-desc-inside">
+                          <div class="wed-desc-inside content-bold" ng-bind-html="data.content |shorten:30">
+
+                          </div>
+                            <!-- <div class="wed-desc-inside">
                                 <p class="bold text-uppercase">{{data.name}}</p>
-                            </div>
+                            </div> -->
                             <div class="wed-date" ng-if="data.date!='0000-00-00'">
                                 <span>{{data.date | date:"dd MMMM yyyy"}}</span>
                             </div>
