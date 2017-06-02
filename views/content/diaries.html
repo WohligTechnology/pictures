@@ -24,7 +24,7 @@
       <div class="col-sm-9">
         <div class="dairies-box pd-side mb15">
           <div class="row">
-            <div class="col-xs-6 col-sm-6" ng-repeat="wedData in DiaryInsideData.queryresult">
+            <div class="col-xs-12 col-sm-6" ng-repeat="wedData in DiaryInsideData.queryresult">
               <div class="wed-box box-big border-red pdnone mb30">
                 <div class="wed-img-list event-img-list diary-img-list">
                   <img ng-src="{{wedData.image | uploadpath}}" alt="" class="img-responsive image-size">
@@ -33,7 +33,6 @@
                     <span class="color-white uppercase">{{wedData.categoryname}}</span>
                   </div>
                 </div>
-
                 <div class="wed-desc wed">
                   <!-- <div class="wed-desc-inside" ng-bind-html="wedData.content"> -->
                   <div class="wed-desc-inside">
@@ -138,6 +137,7 @@
                     <span class="color-white uppercase">{{data.categoryname}}</span>
                   </div>
                 </div>
+
                 <div class="wed-desc wed">
                   <div class="wed-desc-inside" ng-bind-html="data.content">
                   </div>

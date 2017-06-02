@@ -1656,6 +1656,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         name: "WEDDINGS"
     };
 
+
     NavigationService.getDiaries(function(data) {
         $scope.diaryData = data.data;
         console.log('d data', $scope.diaryData);
@@ -1743,7 +1744,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         NavigationService.getFilterDiaries($scope.filterObj, function(data) {
             $scope.filterdata = true;
             $scope.filterDiaries = data;
-            console.log($scope.filterDiaries);
+            console.log($scope.filterDiaries,"$scope.filterDiaries ***************");
         })
     }
 
@@ -2817,7 +2818,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             // ---------------------end of releted article read more-----------
 
 
-            
+
 
         NavigationService.getDiaries(function(data) {
             $scope.diaryData = data.data;
