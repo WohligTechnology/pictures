@@ -94,7 +94,7 @@ firstapp.config(function($stateProvider, $urlRouterProvider, $httpProvider, $loc
             controller: 'Jppseason1Ctrl'
         })
         .state('punjabkingsdetail', {
-            url: "/punjabkingsdetail/:id",
+            url: "/gs-sports/:id",
             templateUrl: "views/template.html",
             controller: 'PunjabkingsdetailCtrl'
         })
