@@ -5102,6 +5102,11 @@ h4.title-movies {
 .content-bold {
   font-weight: bold;
 }
+.tgn-img{
+    height: 11px;
+    vertical-align: middle;
+    margin-left: 2px;
+}
 /* Start writing sass here */
 @import "fancybox-override";
 @import "mobile";
