@@ -79,7 +79,7 @@ firstapp.config(function($stateProvider, $urlRouterProvider, $httpProvider, $loc
             controller: 'JppCtrl'
         })
         .state('punjabkings', {
-            url: "/punjabkings",
+            url: "/gs-sports",
             templateUrl: "views/template.html",
             controller: 'PunjabKingsCtrl'
         })
